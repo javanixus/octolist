@@ -1,9 +1,12 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
 # Octolist
 [![Build Status](https://travis-ci.org/Javanixus/octolist.svg?branch=master)](https://travis-ci.org/Javanixus/octolist)
 [![codecov](https://codecov.io/gh/Javanixus/octolist/branch/master/graph/badge.svg)](https://codecov.io/gh/Javanixus/octolist)
+<p align="center"><img src="https://i.imgur.com/iIrmXCw.png"></p>
+
+## Reviews
+
 <img src="https://i.imgur.com/5qiakCw.png">
+
 ## Features
 
 - Laravel 5.5
@@ -13,8 +16,8 @@
 
 ## Installation
 
-- `git clone https://github.com/blubMe/LaravelVue.git`
-- `cd LaravelVue`
+- `git clone https://github.com/javanixus/octolist.git`
+- `cd octolist`
 - `cp .env.example .env`
 - `composer install`
 - `php artisan key:generate`
