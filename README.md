@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="https://i.imgur.com/iIrmXCw.png"></p>
 
 # Octolist
 [![Build Status](https://travis-ci.org/Javanixus/octolist.svg?branch=master)](https://travis-ci.org/Javanixus/octolist)
@@ -13,8 +13,8 @@
 
 ## Installation
 
-- `git clone https://github.com/blubMe/LaravelVue.git`
-- `cd LaravelVue`
+- `git clone https://github.com/javanixus/octolist.git`
+- `cd octolist`
 - `cp .env.example .env`
 - `composer install`
 - `php artisan key:generate`
