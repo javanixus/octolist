@@ -1,2 +1,2 @@
-# octolist
+# Octolist
 School Project
