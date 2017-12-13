@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-# LaravelVue
-[![Build Status](https://img.shields.io/travis/blubMe/LaravelVue/master.svg?style=flat-square)](https://travis-ci.org/blubMe/LaravelVue)
+# Octolist
+[![Build Status](https://travis-ci.org/Javanixus/octolist.svg?branch=master)](https://travis-ci.org/Javanixus/octolist)
 
 ## Features
 
@@ -53,7 +52,3 @@ npm run production
 - and many more (will update soon..)
 #### V.0.0.1
 - build base
-=======
-# Octolist
-School Project
->>>>>>> e195b487d6a5217df66a1ee8c740ef5c8733f4ff
