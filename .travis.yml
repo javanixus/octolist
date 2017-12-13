@@ -13,7 +13,7 @@ services:
   - mysql
 
 before_install:
-  - mysql -e 'CREATE DATABASE laravelvue;'
+  - mysql -e 'CREATE DATABASE octolist;'
 
 install:
   - cp .env.dusk.testing .env
