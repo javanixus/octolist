@@ -2,6 +2,7 @@
 
 # Octolist
 [![Build Status](https://travis-ci.org/Javanixus/octolist.svg?branch=master)](https://travis-ci.org/Javanixus/octolist)
+[![codecov](https://codecov.io/gh/Javanixus/octolist/branch/master/graph/badge.svg)](https://codecov.io/gh/Javanixus/octolist)
 <img src="https://i.imgur.com/5qiakCw.png">
 ## Features
 
