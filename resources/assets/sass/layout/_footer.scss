@@ -1,0 +1,27 @@
+footer {
+  clear: both;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  .footer--landing-page {
+    text-align: center;
+    padding-bottom: 15px;
+    z-index: 1;
+    position: relative;
+    ul {
+      display: inline-flex;
+      list-style: none;
+      li a {
+        color: #62676d;
+        margin-right: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Open Sans';
+        &:hover {
+          color: #1875F0;
+        }
+      }
+    }
+  }
+}

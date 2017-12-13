@@ -1,0 +1,44 @@
+#getStarted {
+  width: 100%;
+  height: 100vh;
+  background: white;
+}
+
+.wrapper-getStarted {
+  justify-content: center;
+  padding-top: 15%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  h1 {
+    color: #0F55EB;
+  }
+  p {
+    font-weight: lighter;
+    font-size: 2rem;
+    color: #1F2D3D;
+  }
+  .getStarted-desc {
+    color: #3C4858;
+    font-size: 15px;
+  }
+  button {
+    max-width: 120px!important;
+    margin-top: 30px;
+    max-height: 40px;
+  }
+}
+
+.GetStarted-illustration {
+  width: 500px;
+  height: 500px;
+  background: #EFF2F7;
+  position: absolute;
+  z-index: -1;
+  top: 17%;
+  left: 32%;
+}
+
+.getStarted__content {
+  display: inline-grid;
+}

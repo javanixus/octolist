@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-// import router from './router/index';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import store from './store';
@@ -11,7 +10,20 @@ import VueResource from 'vue-resource';
 import VModal from 'vue-js-modal';
 import '../sass/app.scss';
 import VueProgressiveImage from 'vue-progressive-image';
-import Example from './components/ExampleComponent';
+
+import Welcome from './components/welcome';
+import welcome from './components/welcome';
+import login from './components/auth/login';
+import ForgotPass from './components/auth/forgotpass';
+import Dashboard from './components/dashboard';
+import DashboardSiswa from './components/board';
+import Profile from './components/profile';
+import nothing from './components/404';
+import GetStarted from './components/getstarted/GetStarted';
+import GetStarted_welcome from './components/getstarted/hello';
+import About from './components/about';
+import ProfileSetup from './components/getstarted/profile-setup';
+import AdminDashboard from './components/dashboard/admin-dashboard';
 
 Vue.use(VueProgressiveImage, {
   delay: 3000
@@ -32,10 +44,59 @@ Vue.use(VueLazyload, {
 
 const routes = [
     {
-        name: 'Example',
+        name: 'Welcome',
         path: '/',
-        component: Example
-    }
+        component: Welcome
+    },
+    {
+      path: '/login',
+      component: login,
+    },
+    {
+      path: '/forgot',
+      component: ForgotPass
+    },
+    {
+      path: '/dashboard',
+      component: Dashboard,
+    },
+    {
+      path: '/dashboard/board',
+      component: DashboardSiswa,
+    },
+    {
+      path: '/getstarted/profile-setup',
+      component: ProfileSetup,
+    },
+    {
+      path: '/profile',
+      component: Profile,
+    },
+    {
+      path: '/404',
+      component: nothing,
+    },
+    {
+      path: '/getstarted',
+      component: GetStarted,
+      name: GetStarted
+    },
+    {
+      path: '/getstarted/hello',
+      component: GetStarted_welcome
+    },
+    {
+      path: '/about',
+      component: About
+    },
+    {
+      path: '/admin',
+      component: AdminDashboard
+    },
+    {
+      path: '*',
+      redirect: '/404'
+    },
   ];
 
 const router = new VueRouter({ mode: 'history', routes: routes});

@@ -1,0 +1,42 @@
+.button-transparent {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  &:active {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.button-landing {
+  background-color: #0f55eb;
+  color:#fff;
+  transition: .1s ease-in-out;
+  &:active {
+    transition: .1s ease-in-out;
+    box-shadow: none;
+    background-color: #0848d0;
+  }
+}
+
+.button-forgotpass {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  z-index: 99;
+}
+
+.login-button  {
+  width: 100%;
+  max-width: 100%!important;
+  max-height: 100%!important;
+}
+
+.button-green:hover {
+  background-color: #1ba976!important;
+}

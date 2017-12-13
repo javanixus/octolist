@@ -1,0 +1,111 @@
+/* landingpage layout */
+.content--landing {
+  width: 100%;
+  position: relative;
+}
+
+.wrap-landing {
+  width: 100%;
+  height: 400px;
+  padding-top: 5em;
+  position: absolute;
+  z-index: 1;
+
+  .wrap-landing__content {
+    width: 70rem;
+    height: 422px;
+    margin: 0 auto;
+
+    .cover-preview,
+    .landing-desc {
+      float: left;
+      width: 50%;
+      height: auto;
+
+      &::after,
+      &::before {
+        clear: both;
+      }
+    }
+
+    .cover-preview {
+      position: relative;
+
+      .cover-preview__content {
+        position: relative;
+        width: 100%;
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-selet: none;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        &::after {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+          content: '';
+        }
+      }
+    }
+
+    .landing-desc {
+      padding: 0 0 0 40px;
+
+      .landing-desc__content {
+        width: 400px;
+
+        h1 {
+          line-height: 1.2em;
+          font-weight: 600;
+          font-size: -webkit-xxx-large;
+          margin-bottom: 10px;
+          color: #383838;
+          font-family: Montserrat;
+        }
+      }
+    }
+  }
+}
+
+.wrap-landing-button {
+  margin-top: 30px;
+}
+
+.floating {
+  -webkit-animation-name: a;
+  animation-name: a;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.spin {
+  -webkit-animation-name: b;
+  animation-name: b;
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}

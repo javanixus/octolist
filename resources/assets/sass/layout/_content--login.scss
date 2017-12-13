@@ -1,0 +1,32 @@
+.wrap-login {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  .wrap-login--content {
+    width: 300px;
+
+    form.wrap-login--form {
+      width: 300px;
+      height: 200px;
+
+      h3 {
+        line-height: normal;
+      }
+
+      input[placeholder="Username"] {
+        border-radius: 2px 2px 0 0;
+      }
+
+      input[placeholder="Password"] {
+        position: relative;
+        top: -1px;
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+}

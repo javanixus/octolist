@@ -7,3 +7,32 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// base
+@import "base/base";
+// layout
+@import "layout/header";
+@import "layout/content";
+@import "layout/content--landingpage";
+@import "layout/content--login";
+@import "layout/content--profile";
+@import "layout/content--siswa";
+@import "layout/content--internalerror";
+@import "layout/content--about";
+@import "layout/content--getstarted";
+@import "layout/content--admin";
+@import "layout/footer";
+
+// components
+@import "components/button";
+@import "components/input";
+@import "components/typography";
+@import "components/styleguide";
+
+// module
+@import "module/pagination";
+
+// state
+@import "state/event";
+@import "state/responsive";
+@import "state/animation";

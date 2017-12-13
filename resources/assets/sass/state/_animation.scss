@@ -1,0 +1,52 @@
+@-webkit-keyframes load {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+@-moz-keyframes load {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+@keyframes load {
+    0%{background-position:77% 0%}
+    50%{background-position:24% 100%}
+    100%{background-position:77% 0%}
+}
+
+/*
+ tambah animation bagian index.html image float.
+*/
+
+@keyframes float {
+  25%{top: 2px;}
+  50%{top: 4px;}
+  75%{top: 2px;}
+  100%{top: 0px;}
+}
+@keyframes a {
+0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+65% {
+    -webkit-transform: translate3d(0,10px,0);
+    transform: translate3d(0,10px,0);
+}
+100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+}
+
+@keyframes b {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+100% {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+}
+}

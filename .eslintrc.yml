@@ -1,6 +1,6 @@
 ---
   extends:
-    - plugin:vue
+    - plugin:vue/essential
     - airbnb
 
   parserOptions: 

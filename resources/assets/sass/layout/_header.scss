@@ -1,0 +1,159 @@
+.loading {
+  background: linear-gradient(19deg, #21d4fd, #b721ff, #fee140, #fa709a, #00dbde, #fc00ff, #fa8bff, #2bd2ff, #2bff88);
+  background-size: 1800% 1800%;
+  -webkit-animation: load 13s ease infinite;
+  -moz-animation: load 13s ease infinite;
+  transition:height 0.3s ease-out;
+  animation: load 13s ease infinite;
+  width: 100%;
+  padding: 5px;
+  p {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-weight: bolder;
+    font-size: .9rem;
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: auto;
+
+  .navbar__profile , .navbar__profile--profile-page {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    border-bottom: 2px solid rgb(245, 246, 250);
+
+    .left-menu {
+      float: left;
+
+      &::after,
+      &::before {
+        clear: both;
+      }
+    }
+
+    span {
+      font-weight: 500;
+      color: #6F6F6F;
+    }
+  }
+}
+
+.header-menu {
+  height: 60px;
+
+  input {
+    float: left;
+
+    &::after,
+    &::before {
+      clear: both;
+    }
+  }
+
+  .header-menu__left,
+  .header-menu__right {
+    height: 45px;
+    padding-top: 13px;
+    float: left;
+
+    &::after,
+    &::before {
+      clear: both;
+    }
+  }
+
+  .header-menu__right {
+    float: right;
+  }
+}
+
+.navbar-searchbar {
+  width: 400px;
+  margin: 0 auto;
+
+  &:focus {
+    background-color: #f7f7f7!important;
+  }
+}
+
+.wrapper-profile {
+  display: inherit;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.icon-message,
+.icon-notify {
+  height: 24px;
+  width: 24px;
+}
+
+.navbar-extended {
+  width: inherit;
+  display: flex!important;
+  background-color: #fdfdfd;
+  padding: 15px 50px;
+  -webkit-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.03);
+  -moz-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.03);
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.03);
+
+  a {
+    color: #6F6F6F;
+    &:hover {
+    color: #0f55eb;
+    }
+  }
+}
+/* landing page */
+.navbar {
+  width: 100%;
+  height: auto;
+}
+
+.navbar--landing {
+  // background-color: red;
+  width: 100%;
+  height: 58px;
+}
+
+.navbar--fixed {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
+.navbar-extended--profile {
+  display: none;
+}
+
+
+.navbar__profile--profile-page {
+  padding: 10px 50px!important;
+}
+
+.navbar--blue {
+  background-color: #0f55eb;
+  padding: 10px 5px;
+}
+
+.navbar--items-text {
+  padding: 5px 30px;
+  ul li{
+    display: inline-block;
+    margin-right: 2rem;
+    a {
+      color: rgba(255,255,255,0.8);
+      letter-spacing: .025rem;
+    }
+  }
+}
+
+.selected { color: white!important; }
