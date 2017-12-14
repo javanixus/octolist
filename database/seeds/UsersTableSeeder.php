@@ -12,16 +12,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('App\User');
-        for ($i=1; $i <= 30; $i++) {
-            DB::table('users')->insert([
-                'name' => $faker->name(),
-                'email' => $faker->email(20),
-                'password' => $faker->sha256(),
-                'remember_token' => $faker->sha256(),
-                'created_at' => $faker->dateTime(),
-                'updated_at' => $faker->dateTime(),
-            ]);
-        }
+        App\User::truncate(); // Menghapus semua data yang ada pada table users sebelum di seeder
+
+        $users = factory(App\User::class, 'user', 20)->create(); // sebagai gantinya create() kita menggunakan fungsi bawaan factory yaitu make()
     }
 }
