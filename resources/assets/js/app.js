@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
+
 Vue.use(VueRouter);
 import store from './store';
 import VueLazyload from 'vue-lazyload';
@@ -32,6 +33,7 @@ Vue.use(VueProgressiveImage, {
 Vue.use(VueResource);
 Vue.component('detectNetwork', require('v-offline'));
 Vue.component('detectNetworkBar', require('v-offline'));
+
 Vue.config.productionTip = false;
 
 // import lazy load
@@ -43,68 +45,69 @@ Vue.use(VueLazyload, {
 });
 
 const routes = [
-    {
-        name: 'Welcome',
-        path: '/',
-        component: Welcome
-    },
-    {
-      path: '/login',
-      component: login,
-    },
-    {
-      path: '/forgot',
-      component: ForgotPass
-    },
-    {
-      path: '/dashboard',
-      component: Dashboard,
-    },
-    {
-      path: '/dashboard/board',
-      component: DashboardSiswa,
-    },
-    {
-      path: '/getstarted/profile-setup',
-      component: ProfileSetup,
-    },
-    {
-      path: '/profile',
-      component: Profile,
-    },
-    {
-      path: '/404',
-      component: nothing,
-    },
-    {
-      path: '/getstarted',
-      component: GetStarted,
-      name: GetStarted
-    },
-    {
-      path: '/getstarted/hello',
-      component: GetStarted_welcome
-    },
-    {
-      path: '/about',
-      component: About
-    },
-    {
-      path: '/admin',
-      component: AdminDashboard
-    },
-    {
-      path: '*',
-      redirect: '/404'
-    },
-  ];
+  {
+    name: 'Welcome',
+    path: '/',
+    component: Welcome
+  },
+  {
+    path: '/login',
+    component: login,
+  },
+  {
+    path: '/forgot',
+    component: ForgotPass
+  },
+  {
+    path: '/dashboard',
+    component: Dashboard,
+  },
+  {
+    path: '/dashboard/board',
+    component: DashboardSiswa,
+  },
+  {
+    path: '/getstarted/profile-setup',
+    component: ProfileSetup,
+  },
+  {
+    path: '/profile',
+    component: Profile,
+  },
+  {
+    path: '/404',
+    component: nothing,
+  },
+  {
+    path: '/getstarted',
+    component: GetStarted,
+    name: GetStarted
+  },
+  {
+    path: '/getstarted/hello',
+    component: GetStarted_welcome
+  },
+  {
+    path: '/about',
+    component: About
+  },
+  {
+    path: '/admin',
+    component: AdminDashboard
+  },
+  {
+    path: '*',
+    redirect: '/404'
+  },
+];
 
-const router = new VueRouter({ mode: 'history', routes: routes});
+const router = new VueRouter({ mode: 'history', routes });
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router, store,
-    template: '<App/>',
-    components: { App },
-  });
-  
+  el: '#app',
+  router,
+store,
+  template: '<App/>',
+  components: { App },
+});
+
