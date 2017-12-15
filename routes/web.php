@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api', function () {
+Route::get('/api/json', function () {
     return App\User::all();
 });
