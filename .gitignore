@@ -68,4 +68,4 @@ typings/
 .env
 
 # packed filed 
-public/
+/public/
