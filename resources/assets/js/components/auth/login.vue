@@ -40,11 +40,10 @@ export default {
   }),
   methods: {
     authUser() {
-      axios.post('http://localhost:8000/api/login', {username:this.username, password:this.password})
-      .then(response => {
-        console.log(response.data)
-      }),
-      axios.defaults.headers.common['Authorization'] = this.AuthToken;
+      axios.post('http://localhost:8000/api/v1/user/signin', {
+          email :'justharpi@gmail.com',
+          password: 'etah'
+      });
     }
   }
 }

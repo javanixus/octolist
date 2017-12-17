@@ -20163,17 +20163,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      username: '',
-      password: ''
-    };
-  },
   methods: {
     authUser: function authUser() {
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/login', { username: this.username, password: this.password }).then(function (response) {
-        console.log(response.data);
-      }), __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = this.AuthToken;
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/user/signin', {
+        email: 'justharpi@gmail.com',
+        password: 'etah'
+      });
     }
   }
 });
@@ -21202,7 +21197,24 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "marginBottom-s" }, [
+      _c("input", {
+        staticClass: "input-nofill input-text fontSize-s",
+        attrs: { type: "text", name: "username", placeholder: "Username" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "input-nofill input-text fontSize-s",
+        attrs: { type: "password", name: "password", placeholder: "Password" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
