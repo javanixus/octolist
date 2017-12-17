@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function store(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
-
-
+        return 'work';
     }
 
     public function signin(Request $request){
@@ -17,7 +21,7 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        
+
         return $request->email .' and '. $request->password;
     }
 }
