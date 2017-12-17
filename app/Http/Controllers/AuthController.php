@@ -17,9 +17,7 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-
-
-
-        return "Working";
+        
+        return $request->email .' and '. $request->password;
     }
 }

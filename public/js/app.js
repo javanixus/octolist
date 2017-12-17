@@ -20166,18 +20166,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: {
-        username: 'justharpi@gmail.com'
-    },
-    methods: {
-        authUser: function authUser() {
-            console.log(username);
-            //      axios.post('http://localhost:8000/api/v1/user/signin')
-            //      .then(response => {
-            //
-            //      })
-        }
+  methods: {
+    authUser: function authUser() {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/user/signin', {
+        email: 'justharpi@gmail.com',
+        password: 'etah'
+      });
     }
+  }
 });
 
 /***/ }),
@@ -21163,12 +21159,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "marginBottom-s" }, [
       _c("input", {
         staticClass: "input-nofill input-text fontSize-s",
-        attrs: { type: "text", placeholder: "Username" }
+        attrs: { type: "text", name: "username", placeholder: "Username" }
       }),
       _vm._v(" "),
       _c("input", {
         staticClass: "input-nofill input-text fontSize-s",
-        attrs: { type: "password", placeholder: "Password" }
+        attrs: { type: "password", name: "password", placeholder: "Password" }
       })
     ])
   }
