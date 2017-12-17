@@ -20163,6 +20163,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      username: '',
+      password: ''
+    };
+  },
   methods: {
     authUser: function authUser() {
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/user/signin', {
@@ -21127,51 +21133,7 @@ var render = function() {
                 [_vm._v("Kembali")]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "marginBottom-s" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.username,
-                      expression: "username"
-                    }
-                  ],
-                  staticClass: "input-nofill input-text fontSize-s",
-                  attrs: { type: "text", placeholder: "Username" },
-                  domProps: { value: _vm.username },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.username = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.password,
-                      expression: "password"
-                    }
-                  ],
-                  staticClass: "input-nofill input-text fontSize-s",
-                  attrs: { type: "password", placeholder: "Password" },
-                  domProps: { value: _vm.password },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.password = $event.target.value
-                    }
-                  }
-                })
-              ]),
+              _vm._m(0),
               _vm._v(" "),
               _c("div", { staticClass: "marginTop-l" }, [
                 _c(
@@ -21205,12 +21167,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "marginBottom-s" }, [
       _c("input", {
         staticClass: "input-nofill input-text fontSize-s",
-        attrs: { type: "text", name: "username", placeholder: "Username" }
+        attrs: { type: "text", placeholder: "Username" }
       }),
       _vm._v(" "),
       _c("input", {
         staticClass: "input-nofill input-text fontSize-s",
-        attrs: { type: "password", name: "password", placeholder: "Password" }
+        attrs: { type: "password", placeholder: "Password" }
       })
     ])
   }
