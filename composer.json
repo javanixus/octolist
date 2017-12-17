@@ -6,13 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "barryvdh/laravel-cors": "^0.10.0",
         "fideloper/proxy": "~3.3",
         "fzaninotto/faker": "^1.7",
         "laravel/framework": "5.5.*",
+        "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0",
         "spatie/laravel-fractal": "^5.3",
-        "tymon/jwt-auth": "^0.5.12",
         "webpatser/laravel-uuid": "^3.0",
         "zizaco/entrust": "5.2.x-dev"
     },
