@@ -36,9 +36,9 @@ import axios from 'axios';
 export default {
   methods: {
     authUser() {
-      axios.get('http://localhost:8000/api/json')
+      axios.post('http://localhost:8000/api/v1/user/signin')
       .then(response => {
-        console.log(response.data)
+
       })
     }
   }

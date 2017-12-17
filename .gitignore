@@ -1,4 +1,7 @@
 
+### Text Editor ###
+.idea
+
 ### Composer ###
 composer.phar
 /vendor/

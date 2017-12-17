@@ -20166,13 +20166,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  methods: {
-    authUser: function authUser() {
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/json').then(function (response) {
-        console.log(response.data);
-      });
+    data: {
+        username: 'justharpi@gmail.com'
+    },
+    methods: {
+        authUser: function authUser() {
+            console.log(username);
+            //      axios.post('http://localhost:8000/api/v1/user/signin')
+            //      .then(response => {
+            //
+            //      })
+        }
     }
-  }
 });
 
 /***/ }),
