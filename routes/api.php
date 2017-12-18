@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/json', function (Request $request){
-    return App\User::all();
+	// return $request;
+	// return App\User::all();
+    return App\User::where('email',$request->username);
   });
