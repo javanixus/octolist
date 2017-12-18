@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use JWTAuth;
+use JWTException;
 
 class AuthController extends Controller
 {
@@ -24,6 +25,8 @@ class AuthController extends Controller
             'email' => $email,
             'password' => bcrypt($password),
         ]);
+
+        
 
         if ($user->save()){
             $user->signin = [
