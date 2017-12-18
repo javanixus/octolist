@@ -26,3 +26,8 @@ Route::get('/forgot', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/dashboard/board', function () {
+    return view('board');
+});
+

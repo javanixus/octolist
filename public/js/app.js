@@ -23329,19 +23329,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(146)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(80)
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(148)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-7035745f"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -23374,658 +23374,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(79);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("28c729ef", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
+/* 78 */,
+/* 79 */,
 /* 80 */
 /***/ (function(module, exports) {
 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
-/* 81 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "board" } }, [
-    _c("div", { staticClass: "wrapper-siswa" }, [
-      _c("div", { attrs: { id: "wrapper-siswa-vue" } }, [
-        _c("div", { staticClass: "popup" }, [
-          _c("div", { staticClass: "popup__wrapper-task-add" }, [
-            _c("div", { staticClass: "task-add borderRadius-s" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "task-add__content" }, [
-                _c(
-                  "form",
-                  { staticStyle: { width: "100%", display: "flex" } },
-                  [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "task-add__content__preview" }, [
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "task-add-preview__content" }, [
-                        _c("div", { staticClass: "task-item" }, [
-                          _vm._m(3),
-                          _c("span", {
-                            staticClass: "truncate-text",
-                            attrs: { id: "task-title-preview" }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "task-item__delete" }, [
-                            _c(
-                              "svg",
-                              {
-                                staticClass: "feather feather-trash",
-                                attrs: {
-                                  height: "16",
-                                  viewbox: "0 0 24 24",
-                                  width: "16",
-                                  xmlns: "http://www.w3.org/2000/svg"
-                                }
-                              },
-                              [
-                                _c("polyline", {
-                                  attrs: { points: "3 6 5 6 21 6" }
-                                }),
-                                _vm._v(" "),
-                                _c("path", {
-                                  attrs: {
-                                    d:
-                                      "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(4)
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(5),
-        _vm._v(" "),
-        _c("div", { staticClass: "wrapper-siswa-panel" }, [
-          _c("aside", { staticClass: "siswa-panel" }, [
-            _vm._m(6),
-            _vm._v(" "),
-            _c("div", { staticClass: "siswa-panel__content" }, [
-              _vm._m(7),
-              _vm._v(" "),
-              _c("div", { staticClass: "content__member marginTop-xs" }, [
-                _vm._v("\n\t\t\t\t\t\t\t\tTeam saya\n\t\t\t\t\t\t\t\t"),
-                _c("div", { staticClass: "wrapper-member-list" }, [
-                  _c("div", { staticClass: "member-list paddingTop-s" }, [
-                    _vm._m(8),
-                    _vm._v(" "),
-                    _vm._m(9),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "marginRight-xs member-add" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "Icon UserIcon Facepile-placeholderIcon",
-                          staticStyle: {
-                            width: "12px",
-                            height: "12px",
-                            fill: "white"
-                          },
-                          attrs: { viewbox: "0 0 32 32" }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M20.534,16.765C23.203,15.204,25,12.315,25,9c0-4.971-4.029-9-9-9S7,4.029,7,9c0,3.315,1.797,6.204,4.466,7.765C5.962,18.651,2,23.857,2,30c0,0.681,0.065,1.345,0.159,2h27.682C29.935,31.345,30,30.681,30,30C30,23.857,26.038,18.651,20.534,16.765z M9,9c0-3.86,3.14-7,7-7s7,3.14,7,7s-3.14,7-7,7S9,12.86,9,9z M4,30c0-6.617,5.383-12,12-12s12,5.383,12,12H4z"
-                            }
-                          })
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "marginRight-xs member-add" }, [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "Icon UserIcon Facepile-placeholderIcon",
-                          staticStyle: {
-                            width: "12px",
-                            height: "12px",
-                            fill: "white"
-                          },
-                          attrs: { viewbox: "0 0 32 32" }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M20.534,16.765C23.203,15.204,25,12.315,25,9c0-4.971-4.029-9-9-9S7,4.029,7,9c0,3.315,1.797,6.204,4.466,7.765C5.962,18.651,2,23.857,2,30c0,0.681,0.065,1.345,0.159,2h27.682C29.935,31.345,30,30.681,30,30C30,23.857,26.038,18.651,20.534,16.765z M9,9c0-3.86,3.14-7,7-7s7,3.14,7,7s-3.14,7-7,7S9,12.86,9,9z M4,30c0-6.617,5.383-12,12-12s12,5.383,12,12H4z"
-                            }
-                          })
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("main", { staticClass: "wrapper-siswa-content" }, [
-          _c("div", { staticClass: "siswa-content" }, [
-            _c("nav", { staticClass: "siswa-content__navigation" }),
-            _vm._v(" "),
-            _c("aside", { staticClass: "wrapper-siswa-task" }, [
-              _c("div", { staticClass: "siswa-task padding-s" }, [
-                _vm._m(10),
-                _vm._v(" "),
-                _c("div", { staticClass: "siswa-task__content" }, [
-                  _vm._m(11),
-                  _vm._v(" "),
-                  _c("div", { attrs: { id: "task-item-sort" } }, [
-                    _c("div", { staticClass: "task-item" }, [
-                      _vm._m(12),
-                      _c("span", { staticClass: "truncate-text" }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "task-item__delete" }, [
-                        _c(
-                          "svg",
-                          {
-                            staticClass: "feather feather-trash",
-                            attrs: {
-                              height: "16",
-                              viewbox: "0 0 24 24",
-                              width: "16",
-                              xmlns: "http://www.w3.org/2000/svg"
-                            }
-                          },
-                          [
-                            _c("polyline", {
-                              attrs: { points: "3 6 5 6 21 6" }
-                            }),
-                            _vm._v(" "),
-                            _c("path", {
-                              attrs: {
-                                d:
-                                  "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                              }
-                            })
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(13)
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "task-add__header padding-s" }, [
-      _c("h4", [_vm._v("Tambah task")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "task-add__content__form padding-s" }, [
-      _c("p", [_vm._v("Nama task")]),
-      _c("input", {
-        staticClass: "input-text input-text--white",
-        attrs: {
-          "data-rules": "required|email",
-          placeholder: "ex: Fix layout",
-          type: "text"
-        }
-      }),
-      _vm._v(" "),
-      _c("p", [_vm._v("Pilih gambar latar")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "wrapper-selection-taskbg" }, [
-        _c("div", { staticClass: "selection-taskbg padding-xxs" }, [
-          _c("div", { staticClass: "color-badge color1" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "color-badge color2" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "color-badge color3" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "task-add-preview__header textAlignCenter" },
-      [_c("h4", [_vm._v("Preview")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "round" }, [
-      _c("input", {
-        attrs: { id: "checkbox-preview", name: "", type: "checkbox", value: "" }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "checkbox-preview" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "task-add-preview__content__buttonwrap" }, [
-      _c("span", { attrs: { id: "cancel-add-task" } }, [_vm._v("batalkan")]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass:
-            "marginLeft-xs button button-landing button--l borderRadius-s button--melting-blue",
-          attrs: { type: "submit" }
-        },
-        [_vm._v("Buat task ")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wrapper-navigation-siswa" }, [
-      _c("div", { staticClass: "navigation-siswa" }, [
-        _c("div", { staticClass: "navigation-siswa__topbar-left" }, [
-          _c("ul", [
-            _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Pesan")])]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Notifikasi")])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Pengaturan")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "navigation-siswa__topbar-center" }, [
-          _c("input", {
-            staticClass:
-              "navbar-searchbar input-nofill input-nofill--siswa input-text",
-            attrs: {
-              autocomplete: "off",
-              name: "",
-              placeholder: "Search",
-              spellcheck: "false",
-              type: "text",
-              value: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "navigation-siswa__topbar-right" }, [
-          _c("div", { staticClass: "profile-badge--siswa" }, [
-            _c("span", [_vm._v("Fahmi irsyad khairi")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "avatar avatar--xs",
-                attrs: { id: "avatar-dp-id" }
-              },
-              [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "siswa-panel__header" }, [
-      _c("a", { attrs: { href: "dasboard.html" } }, [
-        _c("div", { staticClass: "siswa-panel--board-button look-up" }, [
-          _vm._v("\n\t\t\t\t\t\t\t\tKembali ke board\n\t\t\t\t\t\t\t")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "siswa-panel-title-project paddingTop-xl" }, [
-        _vm._v("\n\t\t\t\t\t\t\t\tnama proyek\n\t\t\t\t\t\t\t\t"),
-        _c("h4", { staticClass: "paddingTop-xs" }, [
-          _vm._v("Project Octolist")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Project ini mempunyai tujuan untuk mempermudah pengerjaan suatu planning dalam sebuah team."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "siswa-panel__content__tips" }, [
-      _c("span", [_vm._v("Fakta #1")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "marginTop-xxs" }, [
-        _vm._v("Faktanya, kamu tidak bisa melihat apapun jika kamu buta.")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "marginRight-xs avatar avatar--xs member-img" },
-      [
-        _c("img", {
-          staticClass: "avatar-img",
-          attrs: {
-            alt: "",
-            src: "/resources/assets/images/avatar0.jpg",
-            title: "Fahmi irsyad khairi"
-          }
-        })
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "marginRight-xs avatar avatar--xs member-img",
-        attrs: { title: "Cyntia P" }
-      },
-      [
-        _c("img", {
-          staticClass: "avatar-img",
-          attrs: { alt: "", src: "/resources/assets/images/love.jpg" }
-        })
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "siswa-task__header" }, [
-      _c("h4", [_vm._v("Tasks list")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "add-task-item look-up", attrs: { id: "add-task" } },
-      [_c("span", [_vm._v("Tambah Task")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "round" }, [
-      _c("input", { staticClass: "checkbox", attrs: { type: "checkbox" } }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "wrapper-siswa-main-content" }, [
-      _c("div", { staticClass: "siswa-main-content" }, [
-        _c("div", { staticClass: "siswa-button-header" })
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7035745f", module.exports)
-  }
-}
-
-/***/ }),
+/* 81 */,
 /* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27773,6 +27132,74 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4a533ed8", module.exports)
+  }
+}
+
+/***/ }),
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(147);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("b5595630", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js?indentedSyntax!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7035745f", module.exports)
   }
 }
 
