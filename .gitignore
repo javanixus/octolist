@@ -68,8 +68,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# packed filed 
-public/
-public/js/
-public/js/app.js
