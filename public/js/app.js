@@ -19133,7 +19133,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/App.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -19145,7 +19144,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-66ab2f82", Component.options)
   } else {
     hotAPI.reload("data-v-66ab2f82", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -19380,7 +19379,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/welcome.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -19395,7 +19393,7 @@ if (false) {(function () {
       delete Component.options._Ctor
     }
     hotAPI.reload("data-v-44b8e2ca", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     data.cssModules = cssModules
     disposed = true
@@ -20080,7 +20078,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/auth/login.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -20095,7 +20092,7 @@ if (false) {(function () {
       delete Component.options._Ctor
     }
     hotAPI.reload("data-v-1a3b4499", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     data.cssModules = cssModules
     disposed = true
@@ -20166,12 +20163,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      username: '',
-      password: ''
-    };
-  },
+
   methods: {
     authUser: function authUser() {
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/user/signin', {
@@ -21220,7 +21212,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/auth/forgotpass.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -21232,7 +21223,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-0cf5e634", Component.options)
   } else {
     hotAPI.reload("data-v-0cf5e634", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -21440,7 +21431,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/dashboard.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -21452,7 +21442,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-2073dee6", Component.options)
   } else {
     hotAPI.reload("data-v-2073dee6", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -23369,7 +23359,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/board.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -23381,7 +23370,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-7035745f", Component.options)
   } else {
     hotAPI.reload("data-v-7035745f", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -24073,7 +24062,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/profile.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -24085,7 +24073,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-2f17fd3c", Component.options)
   } else {
     hotAPI.reload("data-v-2f17fd3c", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -25117,7 +25105,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/404.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -25132,7 +25119,7 @@ if (false) {(function () {
       delete Component.options._Ctor
     }
     hotAPI.reload("data-v-c1ac4c1e", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     data.cssModules = cssModules
     disposed = true
@@ -25328,7 +25315,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/getstarted/GetStarted.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -25340,7 +25326,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-214ae8f0", Component.options)
   } else {
     hotAPI.reload("data-v-214ae8f0", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -25486,7 +25472,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/getstarted/hello.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -25498,7 +25483,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-5f73f545", Component.options)
   } else {
     hotAPI.reload("data-v-5f73f545", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -25654,7 +25639,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/about.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -25666,7 +25650,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-ffce04f4", Component.options)
   } else {
     hotAPI.reload("data-v-ffce04f4", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -26192,7 +26176,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/getstarted/profile-setup.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -26204,7 +26187,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-0db92968", Component.options)
   } else {
     hotAPI.reload("data-v-0db92968", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -26399,7 +26382,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/dashboard/admin-dashboard.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -26411,7 +26393,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-4a533ed8", Component.options)
   } else {
     hotAPI.reload("data-v-4a533ed8", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -26680,7 +26662,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/dashboard/admin-dashboard.Main.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -26692,7 +26673,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-dec38cba", Component.options)
   } else {
     hotAPI.reload("data-v-dec38cba", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -26895,7 +26876,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/dashboard/admin-dashboard.tracking.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -26907,7 +26887,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-510e1681", Component.options)
   } else {
     hotAPI.reload("data-v-510e1681", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -27031,7 +27011,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/events/ErrorPopup.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -27043,7 +27022,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-0fa6e853", Component.options)
   } else {
     hotAPI.reload("data-v-0fa6e853", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -27239,7 +27218,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/events/createProject.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -27251,7 +27229,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-a55411c4", Component.options)
   } else {
     hotAPI.reload("data-v-a55411c4", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -27311,7 +27289,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/events/confirmPopup.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -27323,7 +27300,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-526e2cbb", Component.options)
   } else {
     hotAPI.reload("data-v-526e2cbb", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
