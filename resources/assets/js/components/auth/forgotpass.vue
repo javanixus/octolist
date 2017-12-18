@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="forgotpass">
+  <div id="forgotpass" :class="$style.BgWhite">
     <header class="navbar">
       <div class="navbar--landing">
         <div class="button-forgotpass">
@@ -32,5 +32,10 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" module>
+  .BgWhite {
+    background: white!important;
+    height: 100vh;
+  }
 </style>
+
