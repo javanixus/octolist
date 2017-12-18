@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 use JWTAuth;
+use App\User;
 use JWTException;
 
 class AuthController extends Controller

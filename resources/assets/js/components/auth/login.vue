@@ -34,10 +34,7 @@
 <script>
 import axios from 'axios';
 export default {
-  data: () => ({
-    username: '',
-    password: ''
-  }),
+
   methods: {
     authUser() {
       axios.post('http://localhost:8000/api/v1/user/signin', {
