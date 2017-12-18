@@ -120,7 +120,6 @@
   // import component
   import AdminMain from "./admin-dashboard.Main"
   import AdminTracking from "./admin-dashboard.tracking"
-  //  import AdminProfile from "./admin-dashboard.Profile"
   import ErrorPopup from "../events/ErrorPopup"
   import CreateProjectPopup from "../events/createProject"
   import ConfirmPopup from "../events/confirmPopup"

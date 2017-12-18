@@ -29,6 +29,8 @@ Vue.use(VueProgressiveImage, {
   delay: 3000
 });
 
+Vue.use(VModal);
+
 Vue.use(VueResource);
 Vue.component('detectNetwork', require('v-offline'));
 Vue.component('detectNetworkBar', require('v-offline'));

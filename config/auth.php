@@ -2,8 +2,8 @@
 
 return [
 
-    // entrust 
-    
+    // entrust
+
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -53,7 +53,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
         ],
     ],
