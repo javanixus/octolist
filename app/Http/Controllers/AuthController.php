@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required|min:1',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:5',
         ]);
 
@@ -26,9 +26,26 @@ class AuthController extends Controller
             'password' => bcrypt($password),
         ]);
 
-        
 
         if ($user->save()){
+
+            $credentials = [
+                'email' => $username,
+                'password' => $password,
+            ];
+
+            $token = NULL;
+
+            try {
+                if (! $token = JWTAuth::attempt($credentials)) {
+                    return response()->json(['error' => 'invalid_credentials',
+                    ], 401);
+                }
+            } catch (JWTException $e) {
+                return response()->json(['error' => 'could_not_create_token',
+                ], 500);
+            }
+
             $user->signin = [
                 'href'=> 'api/v1/user/signin',
                 'method'=> 'POST',
@@ -37,6 +54,7 @@ class AuthController extends Controller
             $response = [
                 'msg' => 'User Created',
                 'user' => $user,
+                'token' => $token,
             ];
             return response()->json($response, 201);
         }
