@@ -3,25 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use JWTAuth;
-use App\User;
 use JWTException;
+use App\User;
+use JWTAuth;
 
 class AuthController extends Controller
 {
     public function store(Request $request){
         $this->validate($request, [
-            'name' => 'required|min:1',
-            'email' => 'required|email|unique:users',
+            'name' => 'required:min:1',
+            'username' => 'required|min:1',
+            'email' => 'required|email|unique:users|min:10',
             'password' => 'required|min:5',
         ]);
 
         $name = $request->input('name');
+        $username = $request->input('username');
         $email = $request->input('email');
         $password = $request->input('password');
 
         $user = New User([
             'name' => $name,
+            'username' => $username,
             'email' => $email,
             'password' => bcrypt($password),
         ]);
@@ -30,7 +33,7 @@ class AuthController extends Controller
         if ($user->save()){
 
             $credentials = [
-                'email' => $email,
+                'username' => $username,
                 'password' => $password,
             ];
 
@@ -49,7 +52,7 @@ class AuthController extends Controller
             $user->signin = [
                 'href'=> 'api/v1/user/signin',
                 'method'=> 'POST',
-                'params'=> 'email, password',
+                'params'=> 'username, password',
             ];
             $response = [
                 'msg' => 'User Created',
@@ -69,16 +72,16 @@ class AuthController extends Controller
 
     public function signin(Request $request){
         $this->validate($request, [
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
-        $email = $request->email;
+        $username = $request->username;
         $password = $request->password;
 
-        if ($user = User::where('email', $email)->first()){
+        if ($user = User::where('username', $username)->first()){
             $credentials = [
-                'email'=> $email,
+                'username'=> $username,
                 'password'=> $password,
             ];
 
@@ -108,6 +111,6 @@ class AuthController extends Controller
             'msg' =>  'An error occured',
         ];
 
-        return response()->json($respone, 404);
+        return response()->json($response, 404);
     }
 }

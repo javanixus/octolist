@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware'=> ['web']], function(){
+Route::group(['middleware'=> ['web', 'cors']], function(){
     Route::get('/', function () {
         return view('welcome');
     });
@@ -10,7 +10,5 @@ Route::group(['middleware'=> ['web']], function(){
     Route::get('/forgot', function () {
         return view('forgotpass');
     });
-    Route::get('/admin', function () {
-        return view('admin');
-    });
+    Route::get('/admin', 'PagesController@admin');
 });
