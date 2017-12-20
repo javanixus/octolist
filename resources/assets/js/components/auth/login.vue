@@ -18,8 +18,8 @@
           <h3 class="fontSize-l fontWeight-4 textAlignCenter">Selamat Datang</h3>
           <h3 class="fontSize-l fontWeight-4 textAlignCenter marginBottom-xl">Kembali</h3>
           <div class="marginBottom-s">
-            <input type="text"  class="input-nofill input-text fontSize-s" placeholder="Username">
-            <input type="password"  class="input-nofill input-text fontSize-s" placeholder="Password">
+            <input type="text" v-model="username" class="input-nofill input-text fontSize-s" placeholder="Username">
+            <input type="password" v-model="password" class="input-nofill input-text fontSize-s" placeholder="Password">
           </div>
           <div class="marginTop-l">
             <button @click.prevent="authUser" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
@@ -34,12 +34,17 @@
 <script>
 import axios from 'axios';
 export default {
-
+    data () {
+        return {
+            username : '',
+            password : ''
+            }
+        },
   methods: {
     authUser() {
       axios.post('http://localhost:8000/api/v1/user/signin', {
-          email :'justharpi@gmail.com',
-          password: 'etah'
+          username : this.username,
+          password : this.password
       });
     }
   }
