@@ -32,23 +32,23 @@
 </template>
 
 <script>
-import axios from 'axios';
-export default {
-    data () {
-        return {
-            username : '',
-            password : ''
+    import axios from 'axios';
+    export default {
+        data () {
+            return {
+                username : '',
+                password : ''
             }
         },
-  methods: {
-    authUser() {
-      axios.post('http://localhost:8000/api/v1/user/signin', {
-          username : this.username,
-          password : this.password
-      });
-    }
-  }
-}
+        methods: {
+            authUser() {
+                axios.post('http://localhost:8000/api/v1/user/signin', {
+                    username : this.username,
+                    password : this.password
+                }).then((response) => console.log(response.data));
+                }
+            }
+        }
 </script>
 
 <style lang="css" module>

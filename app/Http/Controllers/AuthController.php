@@ -66,7 +66,7 @@ class AuthController extends Controller
             'msg' => 'Error While Creating User',
         ];
 
-        return response()->json($response, 404);
+        return response()->json($response, 200);
 
     }
 
@@ -89,8 +89,8 @@ class AuthController extends Controller
 
             try {
                 if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['error' => 'invalid_credentials',
-                    ], 401);
+                    return response()->json(['error' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+                    ], 201);
                 }
             } catch (JWTException $e) {
                 return response()->json(['error' => 'could_not_create_token',
@@ -99,7 +99,7 @@ class AuthController extends Controller
 
 
             $response = [
-                'msg' =>  'User Signin',
+                'href' =>  '/user/profile',
                 'user' => $user,
                 'token' => $token,
             ];
@@ -108,9 +108,9 @@ class AuthController extends Controller
         }
 
         $response = [
-            'msg' =>  'An error occured',
+            'msg' =>  'Akun Tidak Terdaftar', // Jika Username tidak ada maka mengembalikan error ini
         ];
 
-        return response()->json($response, 404);
+        return response()->json($response, 201);
     }
 }
