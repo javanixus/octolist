@@ -24,6 +24,7 @@
           <div class="marginTop-l">
             <button @click.prevent="authUser" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
           </div>
+          {{ msg }}
         </form>
       </div>
     </div>
@@ -37,7 +38,8 @@
         data () {
             return {
                 username : '',
-                password : ''
+                password : '',
+                msg : ''
             }
         },
         methods: {
@@ -45,7 +47,7 @@
                 axios.post('http://localhost:8000/api/v1/user/signin', {
                     username : this.username,
                     password : this.password
-                }).then((response) => console.log(response.data));
+                }).then((response) => this.msg = response.data.msg);
                 }
             }
         }

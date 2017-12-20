@@ -41,11 +41,11 @@ class AuthController extends Controller
 
             try {
                 if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['error' => 'invalid_credentials',
+                    return response()->json(['msg' => 'invalid_credentials',
                     ], 401);
                 }
             } catch (JWTException $e) {
-                return response()->json(['error' => 'could_not_create_token',
+                return response()->json(['msg' => 'could_not_create_token',
                 ], 500);
             }
 
@@ -89,11 +89,11 @@ class AuthController extends Controller
 
             try {
                 if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['error' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
                     ], 201);
                 }
             } catch (JWTException $e) {
-                return response()->json(['error' => 'could_not_create_token',
+                return response()->json(['msg' => 'could_not_create_token',
                 ], 500);
             }
 
