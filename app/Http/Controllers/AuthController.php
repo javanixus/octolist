@@ -108,6 +108,6 @@ class AuthController extends Controller
             'msg' =>  'An error occured',
         ];
 
-        return response()->json($respone, 404);
+        return response()->json($response, 404);
     }
 }
