@@ -43,13 +43,8 @@ export default {
   methods: {
     authUser() {
       axios.post('http://localhost:8000/api/v1/user/signin', {
-<<<<<<< HEAD
-          email :username,
-          password: password
-=======
           username : this.username,
           password : this.password
->>>>>>> 89e097480cf7196ea51869878ac2a68efedd47ea
       });
     }
   }
