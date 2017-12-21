@@ -52,8 +52,8 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'cors' => \Barryvdh\Cors\HandleCors::class,
-			'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
-			'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
