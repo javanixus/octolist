@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::group(['middleware'=> ['web', 'cors']], function(){
+    Route::get('/', function () {
     return view('welcome');
 });
 
