@@ -1,15 +1,19 @@
 <template lang="html">
-	<div id="board">
-		<kanban-board :stages="stages" :blocks="blocks" @update-block="updateBlock">
-			<div v-for="block in blocks" :slot="block.id">
-				<div>
-					<strong>id:</strong> {{ block.id }}
-				</div>
-				<div>
-					{{ block.title }}
-				</div>
+	<div class="board">
+		<div class="boardWrapper">
+			<div class="boardWrapper__Main">
+				<kanban-board :stages="stages" :blocks="blocks" @update-block="updateBlock">
+					<div v-for="block in blocks" :slot="block.id">
+						<div>
+							<strong>id:</strong> {{ block.id }}
+						</div>
+						<div>
+							{{ block.title }}
+						</div>
+					</div>
+				</kanban-board>
 			</div>
-		</kanban-board>
+		</div>
 	</div>
 </template>
 
@@ -17,14 +21,25 @@
 	export default {
 		data() {
 			return {
-				stages: ['on-hold', 'in-progress', 'needs-review', 'approved'],
+				stages: ['on-hold', 'in-progress', 'needs-review', 'approved', 'test1', 'test2'],
 				blocks: [{
-					id: 1,
-					status: 'on-hold',
-					title: 'Test',
-				}, ],
+						id: 1,
+						status: 'on-hold',
+						title: 'Test',
+					},
+					{
+						id: 2,
+						status: 'needs-review',
+						title: 'wado',
+					},
+				],
 			}
-		}
+		},
+		methods: {
+			updateBlock(id, status) {
+				this.blocks.find(b => b.id === Number(id)).status = status;
+			},
+		},
 	};
 </script>
 

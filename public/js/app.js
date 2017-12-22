@@ -23467,17 +23467,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
-			stages: ['on-hold', 'in-progress', 'needs-review', 'approved'],
+			stages: ['on-hold', 'in-progress', 'needs-review', 'approved', 'test1', 'test2'],
 			blocks: [{
 				id: 1,
 				status: 'on-hold',
 				title: 'Test'
+			}, {
+				id: 2,
+				status: 'needs-review',
+				title: 'wado'
 			}]
 		};
+	},
+
+	methods: {
+		updateBlock: function updateBlock(id, status) {
+			this.blocks.find(function (b) {
+				return b.id === Number(id);
+			}).status = status;
+		}
 	}
 });
 
@@ -23489,30 +23505,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "board" } },
-    [
+  return _c("div", { staticClass: "board" }, [
+    _c("div", { staticClass: "boardWrapper" }, [
       _c(
-        "kanban-board",
-        {
-          attrs: { stages: _vm.stages, blocks: _vm.blocks },
-          on: { "update-block": _vm.updateBlock }
-        },
-        _vm._l(_vm.blocks, function(block) {
-          return _c("div", { attrs: { slot: block.id }, slot: block.id }, [
-            _c("div", [
-              _c("strong", [_vm._v("id:")]),
-              _vm._v(" " + _vm._s(block.id) + "\n\t\t\t")
-            ]),
-            _vm._v(" "),
-            _c("div", [_vm._v("\n\t\t\t\t" + _vm._s(block.title) + "\n\t\t\t")])
-          ])
-        })
+        "div",
+        { staticClass: "boardWrapper__Main" },
+        [
+          _c(
+            "kanban-board",
+            {
+              attrs: { stages: _vm.stages, blocks: _vm.blocks },
+              on: { "update-block": _vm.updateBlock }
+            },
+            _vm._l(_vm.blocks, function(block) {
+              return _c("div", { attrs: { slot: block.id }, slot: block.id }, [
+                _c("div", [
+                  _c("strong", [_vm._v("id:")]),
+                  _vm._v(" " + _vm._s(block.id) + "\n\t\t\t\t\t")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _vm._v(
+                    "\n\t\t\t\t\t\t" + _vm._s(block.title) + "\n\t\t\t\t\t"
+                  )
+                ])
+              ])
+            })
+          )
+        ],
+        1
       )
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
