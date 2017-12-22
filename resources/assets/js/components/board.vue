@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { debounce } from 'lodash';
+
 	export default {
 		data() {
 			return {
@@ -36,9 +38,9 @@
 			}
 		},
 		methods: {
-			updateBlock(id, status) {
+			updateBlock: debounce(function(id, status) {
 				this.blocks.find(b => b.id === Number(id)).status = status;
-			},
+			}, 500),
 		},
 	};
 </script>
