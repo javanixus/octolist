@@ -23,3 +23,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('/user/signup', 'AuthController@store');
     Route::post('/user/signin', 'AuthController@signin');
 });
+
+Route::group(['middleware' => ['api'],'prefix' => 'testing'] , function(){
+		Route::post('/signup','TestAuthController@signup');
+});
