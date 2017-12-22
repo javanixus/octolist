@@ -6,6 +6,7 @@ import VueLazyload from 'vue-lazyload';
 import VueResource from 'vue-resource';
 import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
+import vueKanban from 'vue-kanban';
 
 import App from './App';
 import store from './store';
@@ -24,7 +25,7 @@ import AdminDashboard from './components/dashboard/admin-dashboard';
 import '../sass/app.scss';
 
 Vue.use(VueRouter);
-
+Vue.use(vueKanban);
 Vue.use(VueProgressiveImage, {
   delay: 3000
 });
