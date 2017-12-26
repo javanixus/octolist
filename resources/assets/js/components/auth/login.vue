@@ -33,32 +33,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-    import axios from 'axios';
-    export default {
-        data () {
-            return {
-                username : '',
-                password : '',
-                msg : ''
-            }
-        },
-        methods: {
-            authUser() {
-                axios.post('http://localhost:8000/api/v1/user/signin', {
-                    username : this.username,
-                    password : this.password
-                }).then((response) => this.msg = response.data.msg);
-					axios.post('http://localhost:8000/api/v1/user/signin', {
-							username : this.username,
-							password : this.password
-					}).then(function (response) {
-    						window.location = response.data.redirect;
-					 });
-              }
-            }
-        }
-=======
   import axios from 'axios';
 
   const HTTP = axios.create({
@@ -67,7 +41,7 @@
       Authorization: 'Bearer {token}'
     }
   });
-  
+
   export default {
     data() {
       return {
@@ -92,7 +66,6 @@
       }
     }
   }
->>>>>>> f3bd2ec871a34938c7f56010b019f3f355b07864
 </script>
 
 <style lang="css" module>
