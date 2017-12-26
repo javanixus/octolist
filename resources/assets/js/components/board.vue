@@ -1,5 +1,12 @@
 <template lang="html">
 	<div class="board">
+		<header id="boardHeaderId">
+			<div class="boardHeader">
+				<nav class="boardHeader__Navigation">
+					navigation
+				</nav>
+			</div>
+		</header>
 		<div class="boardWrapper">
 			<div class="boardWrapper__Main">
 				<kanban-board :stages="stages" :blocks="blocks" @update-block="updateBlock">
@@ -18,8 +25,10 @@
 </template>
 
 <script>
-import { debounce } from 'lodash';
-
+	import {
+		debounce
+	} from 'lodash';
+	
 	export default {
 		data() {
 			return {

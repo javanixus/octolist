@@ -8,9 +8,9 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 30px;
     bottom: 0;
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .boardWrapper__Main {
@@ -25,4 +25,15 @@
     margin-right: 0;
     -webkit-transition: margin .1s ease-in;
     transition: margin .1s ease-in;
+}
+
+.boardHeader {
+    position: relative;
+}
+
+.boardHeader__Navigation {
+    width: 100%;
+    min-height: 30px;
+    background: white;
+    padding: 5px 10px;
 }

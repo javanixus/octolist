@@ -7,6 +7,7 @@ import VueResource from 'vue-resource';
 import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
 import vueKanban from 'vue-kanban';
+import axios from 'axios';
 
 import App from './App';
 import store from './store';
@@ -23,6 +24,7 @@ import About from './components/about';
 import ProfileSetup from './components/getstarted/profile-setup';
 import AdminDashboard from './components/dashboard/admin-dashboard';
 import '../sass/app.scss';
+
 
 Vue.use(VueRouter);
 Vue.use(vueKanban);
