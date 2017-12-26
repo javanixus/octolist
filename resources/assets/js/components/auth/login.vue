@@ -60,7 +60,7 @@
               this.$router.push('/admin');
 
           } else {
-              this.$router.push('/login');
+              this.$router.push('/dashboard');
               console.log(response.data.msg);
           }
         });

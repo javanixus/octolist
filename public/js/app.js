@@ -22249,9 +22249,10 @@ var HTTP = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
         password: this.password
       }).then(function (response) {
         if (response.data.msg === "true") {
-          _this.$router.push('/');
+          _this.$router.push('/admin');
         } else {
           _this.$router.push('/dashboard');
+          console.log(response.data.msg);
         }
       });
     }
