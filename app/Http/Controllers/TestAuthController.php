@@ -16,5 +16,6 @@ class TestAuthController extends Controller
 				'username' => $request->json('username'),
 				'password' => bcrypt($request->json('password'))
 			]);
+			echo $request->json('username');
 		}
 }

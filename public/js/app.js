@@ -20211,6 +20211,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (response) {
                 return _this.msg = response.data.msg;
             });
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/user/signin', {
+                username: this.username,
+                password: this.password
+            }).then(function (response) {
+                window.location = response.data.redirect;
+            });
         }
     }
 });

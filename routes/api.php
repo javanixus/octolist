@@ -22,6 +22,10 @@ Route::post('/login', 'UserController@login');
 Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('/user/signup', 'AuthController@store');
     Route::post('/user/signin', 'AuthController@signin');
+
+		Route::group(['middleware' => ['jwt.auth','cors']], function(){
+			Route::get('/dashboard','UserController@home')->name('dashboard');
+		});
 });
 
 Route::group(['middleware' => ['api'],'prefix' => 'testing'] , function(){

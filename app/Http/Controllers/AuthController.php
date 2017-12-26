@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+Use App\Http\Controllers\TokenSaver;
 use Illuminate\Http\Request;
 use JWTException;
 use App\User;
@@ -103,7 +104,22 @@ class AuthController extends Controller
                 'user' => $user,
                 'token' => $token,
             ];
-            return response()->json($response, 201);
+
+				JWTAuth::setToken($token);
+				// TokenSaver::$token = $token;
+				return ['redirect' => route('dashboard')];
+				// return redirect('/api/v1/dashboard')
+				// 													->withHeaders([
+				// 														'Content-Type' => 'application/json',
+				// 														'Accept' => 'application/json',
+				// 														'Authorization' => 'Bearer '.$token,
+				// 													]);
+            // return response()->json($response, 201)
+						// 							 ->withHeaders([
+						// 								 'Content-Type' 	=> 'application/json',
+						// 								 'Accept'					=> 'application/json',
+						// 								 'Authorization'	=> 'Bearer'.$token;
+						// 							 ]);
         }
 
         $response = [

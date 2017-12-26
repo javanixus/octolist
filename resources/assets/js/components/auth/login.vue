@@ -48,7 +48,13 @@
                     username : this.username,
                     password : this.password
                 }).then((response) => this.msg = response.data.msg);
-                }
+					axios.post('http://localhost:8000/api/v1/user/signin', {
+							username : this.username,
+							password : this.password
+					}).then(function (response) {
+    						window.location = response.data.redirect;
+					 });
+              }
             }
         }
 </script>
