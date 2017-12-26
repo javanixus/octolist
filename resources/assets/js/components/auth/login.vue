@@ -57,9 +57,11 @@
           password: this.password
         }).then((response) => {
           if(response.data.msg === "true"){
-              this.$router.push('/');
+              this.$router.push('/admin');
+
           } else {
-              this.$router.push('/dasboard');
+              this.$router.push('/login');
+              console.log(response.data.msg);
           }
         });
       }
