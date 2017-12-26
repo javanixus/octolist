@@ -59,9 +59,9 @@
           if(response.data.msg === "true"){
             this.$router.push('/');
           }
-          else(
-        this.$router.push('/login')
-          )
+          else {
+            this.msg = (response.data.msg);
+          }
         })
       }
     }
