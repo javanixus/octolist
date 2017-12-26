@@ -59,7 +59,7 @@
           if(response.data.msg === "true"){
               this.$router.push('/');
           } else {
-              this.$router.push('/dasboard');
+              this.$router.push('/dashboard');
           }
         });
       }

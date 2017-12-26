@@ -22250,7 +22250,9 @@ var HTTP = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
       }).then(function (response) {
         if (response.data.msg === "true") {
           _this.$router.push('/');
-        } else _this.$router.push('/login');
+        } else {
+          _this.$router.push('/dashboard');
+        }
       });
     }
   }
