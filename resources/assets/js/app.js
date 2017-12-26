@@ -9,6 +9,7 @@ import VueProgressiveImage from 'vue-progressive-image';
 import vueKanban from 'vue-kanban';
 import axios from 'axios';
 
+
 import App from './App';
 import store from './store';
 import Welcome from './components/welcome';
@@ -25,7 +26,7 @@ import ProfileSetup from './components/getstarted/profile-setup';
 import AdminDashboard from './components/dashboard/admin-dashboard';
 import '../sass/app.scss';
 
-
+Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(vueKanban);
 Vue.use(VueProgressiveImage, {
@@ -57,6 +58,7 @@ const routes = [
   {
     path: '/login',
     component: login,
+    meta: { requiresAuth: true },
   },
   {
     path: '/forgot',
@@ -69,6 +71,7 @@ const routes = [
   {
     path: '/dashboard/board',
     component: DashboardSiswa,
+    name: 'board'
   },
   {
     path: '/getstarted/profile-setup',

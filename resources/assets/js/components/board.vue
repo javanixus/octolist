@@ -30,6 +30,7 @@
 	} from 'lodash';
 	
 	export default {
+		name: 'board',
 		data() {
 			return {
 				stages: ['on-hold', 'in-progress', 'needs-review', 'approved', 'test1', 'test2'],

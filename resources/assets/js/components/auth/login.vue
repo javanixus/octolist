@@ -55,7 +55,14 @@
         HTTP.post('http://localhost:8000/api/v1/user/signin', {
           username: this.username,
           password: this.password
-        }).then((response) => this.msg = response.data.msg);
+        }).then((response) => {
+          if(response.data.msg === "true"){
+            this.$router.push('/');
+          }
+          else(
+        this.$router.push('/login')
+          )
+        })
       }
     }
   }
