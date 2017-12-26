@@ -6,6 +6,9 @@ import VueLazyload from 'vue-lazyload';
 import VueResource from 'vue-resource';
 import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
+import vueKanban from 'vue-kanban';
+import axios from 'axios';
+
 
 import App from './App';
 import store from './store';
@@ -23,8 +26,9 @@ import ProfileSetup from './components/getstarted/profile-setup';
 import AdminDashboard from './components/dashboard/admin-dashboard';
 import '../sass/app.scss';
 
+Vue.use(VueResource);
 Vue.use(VueRouter);
-
+Vue.use(vueKanban);
 Vue.use(VueProgressiveImage, {
   delay: 3000
 });
@@ -54,6 +58,7 @@ const routes = [
   {
     path: '/login',
     component: login,
+    meta: { requiresAuth: true },
   },
   {
     path: '/forgot',
@@ -66,6 +71,7 @@ const routes = [
   {
     path: '/dashboard/board',
     component: DashboardSiswa,
+    name: 'board'
   },
   {
     path: '/getstarted/profile-setup',

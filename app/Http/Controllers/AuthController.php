@@ -101,6 +101,7 @@ class AuthController extends Controller
 
             $response = [
                 'href' =>  '/user/profile',
+                'msg' => 'true',
                 'user' => $user,
                 'token' => $token,
             ];

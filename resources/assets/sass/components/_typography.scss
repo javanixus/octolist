@@ -1,3 +1,12 @@
+@font-face {
+  font-family: sf-pro-text;
+  src: url('../../fonts/sf-pro-text_bold.woff2');
+  src: url('../../fonts/sf-pro-text_regular.woff2');
+  src: url('../../fonts/sf-pro-text_semibold.woff2');
+};
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
 a {
   color: #0f55eb;
 }
