@@ -33,15 +33,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
-
-  const HTTP = axios.create({
-    baseURL: 'http://localhost:8000/',
-    headers: {
-      Authorization: 'Bearer {token}'
-    }
-  });
-  
+  import { HTTP } from './../../router';  
   export default {
     data() {
       return {
