@@ -52,6 +52,9 @@
     },
     methods: {
       authUser() {
+          if ((this.username || this.password) == ''){
+              this.msg = 'Username dan Password Harus diisi';
+          }
         HTTP.post('http://localhost:8000/api/v1/user/signin', {
           username: this.username,
           password: this.password
