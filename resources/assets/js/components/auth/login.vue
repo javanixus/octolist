@@ -18,11 +18,17 @@
             <h3 class="fontSize-l fontWeight-4 textAlignCenter">Selamat Datang</h3>
             <h3 class="fontSize-l fontWeight-4 textAlignCenter marginBottom-xl">Kembali</h3>
             <div class="marginBottom-s">
-              <input type="text" v-model="logItIn.username" class="input-nofill input-text fontSize-s" placeholder="Username">
-              <input type="password" v-model="logItIn.password" class="input-nofill input-text fontSize-s" placeholder="Password">
+              <input type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="logItIn.username" class="input-text fontSize-s" placeholder="Username" name="username">
+              <span style="font-size: 12px; color: red;" v-if="errors.has('username')">
+                {{ errors.first('username') }}
+              </span>
+              <input type="password" v-validate="'required|alpha'" v-model="logItIn.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
+              <span style="font-size: 12px; color: red;" v-if="errors.has('password')">
+                {{ errors.first('password') }}
+              </span>
             </div>
             <div class="marginTop-l">
-              <button @click.prevent="authUser" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
+              <button @click.prevent="authUser" :disabled="!authUserIsPassed" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
             </div>
             {{ logItIn.msg }}
           </form>
@@ -40,15 +46,20 @@
         logItIn : {
           username: '',
           password: '',
-          msg: ''
+          msg: '',
       },
       }
+    },
+    computed: {
+      authUserIsPassed() {
+        return this.logItIn.username && this.logItIn.password;
+      },
     },
     methods: {
       authUser() {
         HTTP.post('http://localhost:8000/api/v1/user/signin', this.logItIn)
         .then((response) => {
-          if(response.data.msg === "true"){
+          if(response.data.passed === true){
               this.$router.push('/admin');
           } else {
             this.logItIn.msg = (response.data.msg);
