@@ -29,7 +29,9 @@ Vue.use(VueLazyload, {
   attempt: 1,
   observer: true,
 });
+//
 
+//
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

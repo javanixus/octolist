@@ -59,13 +59,19 @@
       authUser() {
         HTTP.post('http://localhost:8000/api/v1/user/signin', this.logItIn)
         .then((response) => {
+          const token = response.data.token; // tanam tanam token , tak perlu dibajak
           if(response.data.passed === true){
-              this.$router.push('/admin');
-
+              // this code below will run background ( not reloading )
+              const base64Url = token.split('.')[1]; // make a const named baseurl64 to delete . from token
+              const base64 = base64Url.replace('-','+').replace('_','/'); // sama aja tod 
+              console.log(JSON.parse(window.atob(base64))); // nge log hati yang kosong hehe
+              localStorage.setItem('token', token); // not recommended actually to crud token on localstorage , better with cookie but more complex to code
+              localStorage.getItem('token'); // get the token 
+              this.$router.push('/admin' + '?token=' + token); // pushing to target page
           } else {
             this.logItIn.msg = (response.data.msg);
           }
-        });
+        })
       } 
     }
   }
