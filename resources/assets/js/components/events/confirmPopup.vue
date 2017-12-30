@@ -10,7 +10,7 @@
         <p>Apakah kamu yakin ?</p>
       </div>
       <div class="createProjectModal-footer">
-        <router-link :to="'/'"><button class="green-button">iya</button></router-link>
+        <router-link :to="'/logout'"><button class="green-button">iya</button></router-link>
         <button class="red-button" @click="$modal.hide('confirm-modal')">ga, jadi</button>
       </div>
     </div>
