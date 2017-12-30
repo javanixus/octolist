@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->enum('gender',['f','m'])->nullable();
             $table->string('phone', 13)->nullable();
             $table->string('avatar',255)->nullable();
+            $table->integer('id_class')->unsigned();
+            $table->integer('id_major')->unsigned();
             $table->timestamps();
         });
     }
