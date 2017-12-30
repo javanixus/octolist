@@ -22,9 +22,7 @@ Vue.use(Router);
 /* header passing laravel axios */
 export const HTTP = axios.create({
   baseURL: 'http://localhost:8000/',
-  headers: {
-    Authorization: 'Bearer {token}'
-  }
+  headers: { 'X-Requested-With': 'XMLHttpRequest' }
 });
 /* end of header passing */
 // routing map

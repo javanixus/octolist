@@ -13231,7 +13231,7 @@ var index_esm = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HTTP; });
+/* unused harmony export HTTP */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
@@ -13285,13 +13285,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
 /* header passing laravel axios */
 var HTTP = __WEBPACK_IMPORTED_MODULE_2_axios___default.a.create({
   baseURL: 'http://localhost:8000/',
-  headers: {
-    Authorization: 'Bearer {token}'
-  }
+  headers: { 'X-Requested-With': 'XMLHttpRequest' }
 });
 /* end of header passing */
 // routing map
-/* harmony default export */ __webpack_exports__["b"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
   routes: [{
     name: 'Welcome',
     path: '/',
@@ -13794,13 +13792,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_progressive_image__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_progressive_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_progressive_image__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_kanban__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_index__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sass_app_scss__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sass_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__sass_app_scss__);
+throw new Error("Cannot find module \"vee-validate\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_index__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_app_scss__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__sass_app_scss__);
 // import deb
+
 
 
 
@@ -13815,6 +13815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // exec
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue_kanban__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vee_validate___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_progressive_image___default.a, {
   delay: 3000
 });
@@ -13829,14 +13830,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
   attempt: 1,
   observer: true
 });
+//
 
+//
 /* eslint-disable no-new */
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  router: __WEBPACK_IMPORTED_MODULE_6__router__["b" /* default */],
-  store: __WEBPACK_IMPORTED_MODULE_7__store_index__["a" /* default */],
+  router: __WEBPACK_IMPORTED_MODULE_7__router__["a" /* default */],
+  store: __WEBPACK_IMPORTED_MODULE_8__store_index__["a" /* default */],
   template: '<App/>',
-  components: { App: __WEBPACK_IMPORTED_MODULE_5__App___default.a }
+  components: { App: __WEBPACK_IMPORTED_MODULE_6__App___default.a }
 });
 
 /***/ }),
@@ -20584,72 +20587,9 @@ exports.locals = {
 
 /***/ }),
 /* 77 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(12);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      logItIn: {
-        username: '',
-        password: '',
-        msg: ''
-      }
-    };
-  },
-
-  methods: {
-    authUser: function authUser() {
-      var _this = this;
-
-      __WEBPACK_IMPORTED_MODULE_0__router__["a" /* HTTP */].post('http://localhost:8000/api/v1/user/signin', this.logItIn).then(function (response) {
-        if (response.data.msg === "true") {
-          _this.$router.push('/admin');
-        } else {
-          _this.logItIn.msg = response.data.msg;
-        }
-      });
-    }
-  }
-});
+throw new Error("Module build failed: SyntaxError: Unexpected token (74:0)\n\n\u001b[0m \u001b[90m 72 | \u001b[39m            \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlogItIn\u001b[33m.\u001b[39mmsg \u001b[33m=\u001b[39m (response\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mmsg)\u001b[33m;\u001b[39m\n \u001b[90m 73 | \u001b[39m          }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 74 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 75 | \u001b[39m        })\u001b[33m;\u001b[39m\n \u001b[90m 76 | \u001b[39m      }\n \u001b[90m 77 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 78 */
@@ -20731,14 +20671,28 @@ var render = function() {
                 _c("input", {
                   directives: [
                     {
+                      name: "validate",
+                      rawName: "v-validate",
+                      value: "required|alpha",
+                      expression: "'required|alpha'"
+                    },
+                    {
                       name: "model",
                       rawName: "v-model",
                       value: _vm.logItIn.username,
                       expression: "logItIn.username"
                     }
                   ],
-                  staticClass: "input-nofill input-text fontSize-s",
-                  attrs: { type: "text", placeholder: "Username" },
+                  staticClass: "input-text fontSize-s",
+                  class: {
+                    "input-nofill": true,
+                    "input--danger": _vm.errors.has("username")
+                  },
+                  attrs: {
+                    type: "text",
+                    placeholder: "Username",
+                    name: "username"
+                  },
                   domProps: { value: _vm.logItIn.username },
                   on: {
                     input: function($event) {
@@ -20750,8 +20704,28 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
+                _vm.errors.has("username")
+                  ? _c(
+                      "span",
+                      { staticStyle: { "font-size": "12px", color: "red" } },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.errors.first("username")) +
+                            "\n            "
+                        )
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("input", {
                   directives: [
+                    {
+                      name: "validate",
+                      rawName: "v-validate",
+                      value: "required|alpha",
+                      expression: "'required|alpha'"
+                    },
                     {
                       name: "model",
                       rawName: "v-model",
@@ -20760,7 +20734,15 @@ var render = function() {
                     }
                   ],
                   staticClass: "input-nofill input-text fontSize-s",
-                  attrs: { type: "password", placeholder: "Password" },
+                  class: {
+                    "input-nofill": true,
+                    "input--danger": _vm.errors.has("password")
+                  },
+                  attrs: {
+                    type: "password",
+                    name: "password",
+                    placeholder: "Password"
+                  },
                   domProps: { value: _vm.logItIn.password },
                   on: {
                     input: function($event) {
@@ -20770,7 +20752,21 @@ var render = function() {
                       _vm.$set(_vm.logItIn, "password", $event.target.value)
                     }
                   }
-                })
+                }),
+                _vm._v(" "),
+                _vm.errors.has("password")
+                  ? _c(
+                      "span",
+                      { staticStyle: { "font-size": "12px", color: "red" } },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.errors.first("password")) +
+                            "\n            "
+                        )
+                      ]
+                    )
+                  : _vm._e()
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "marginTop-l" }, [
@@ -20779,7 +20775,11 @@ var render = function() {
                   {
                     staticClass:
                       "login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
-                    attrs: { type: "button", name: "button" },
+                    attrs: {
+                      disabled: !_vm.authUserIsPassed,
+                      type: "button",
+                      name: "button"
+                    },
                     on: {
                       click: function($event) {
                         $event.preventDefault()

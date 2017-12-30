@@ -4,6 +4,7 @@ import VueLazyload from 'vue-lazyload';
 import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
 import vueKanban from 'vue-kanban';
+import VeeValidate from 'vee-validate';
 
 // import page
 import App from './App';
@@ -13,6 +14,7 @@ import '../sass/app.scss';
 
 // exec
 Vue.use(vueKanban);
+Vue.use(VeeValidate);
 Vue.use(VueProgressiveImage, {
   delay: 3000
 });
@@ -27,7 +29,9 @@ Vue.use(VueLazyload, {
   attempt: 1,
   observer: true,
 });
+//
 
+//
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
