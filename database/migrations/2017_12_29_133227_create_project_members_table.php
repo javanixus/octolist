@@ -15,9 +15,15 @@ class CreateProjectMembersTable extends Migration
     {
         Schema::create('project_members', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_projects');
-            $table->integer('id_students');
+            $table->integer('id_projects')->unsigned();
+            $table->integer('id_students')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('project_members', function (Blueprint $table) {
+            $table->foreign('id_students')
+                ->references('id')
+                ->on('users');
         });
     }
 

@@ -6,6 +6,7 @@ import axios from 'axios';
 // import pages to render
 import Welcome from './../components/welcome';
 import login from './../components/auth/login';
+import logout from './../components/auth/logout';
 import ForgotPass from './../components/auth/forgotpass';
 import Dashboard from './../components/dashboard';
 import DashboardSiswa from './../components/board';
@@ -21,9 +22,12 @@ import AdminDashboard from './../components/dashboard/admin-dashboard';
 Vue.use(Router);
 /* header passing laravel axios */
 export const HTTP = axios.create({
-  baseURL: 'http://localhost:8000/',
-  headers: { 'X-Requested-With': 'XMLHttpRequest' }
+  headers: {
+    'Access-Control-Expose-Headers': ['Access-Token', 'Uid'],
+    Authorization: 'Bearer {token}'
+  }
 });
+
 /* end of header passing */
 // routing map
 export default new Router({
@@ -79,6 +83,10 @@ export default new Router({
     {
       path: '/admin',
       component: AdminDashboard
+    },
+    {
+      path: '/logout',
+      component: logout,
     },
     {
       path: '*',

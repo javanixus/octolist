@@ -15,10 +15,17 @@ class CreateProjectCardsTable extends Migration
     {
         Schema::create('project_cards', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_projects');
-            $table->integer('id_cards');
+            $table->integer('id_projects')->unsigned();
+            $table->integer('id_cards')->unsigned();
             $table->timestamps();
         });
+
+        Schema::table('project_cards', function (Blueprint $table) {
+            $table->foreign('id_cards')
+                ->references('id')
+                ->on('cards');
+        });
+
     }
 
     /**

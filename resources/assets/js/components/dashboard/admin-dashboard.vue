@@ -118,6 +118,8 @@
 </style>
 <script>
   // import component
+  import axios from 'axios'
+  import store from './../../store/index'
   import AdminMain from "./admin-dashboard.Main"
   import AdminTracking from "./admin-dashboard.tracking"
   import ErrorPopup from "../events/ErrorPopup"
@@ -127,6 +129,14 @@
     'big-pages')
 
   export default {
+    mounted(){
+      axios.get('http://localhost:8000/admin')
+      .then((response) => {
+        if(response.status === 400){
+          router.push('/login');
+        }
+      })
+    },
     components: {
       'admin-main': AdminMain,
       'admin-tracking': AdminTracking,

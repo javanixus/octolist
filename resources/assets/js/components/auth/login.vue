@@ -28,7 +28,7 @@
               </span>
             </div>
             <div class="marginTop-l">
-              <button @click.prevent="authUser" :disabled="!authUserIsPassed" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
+              <button @click.prevent="authUser" :class="{'loading':logItIn.loader}" :disabled="!authUserIsPassed" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
             </div>
             {{ logItIn.msg }}
           </form>
@@ -40,6 +40,9 @@
 
 <script>
   import { HTTP } from './../../router';
+  import store from './../../store/index';
+  import router from './../../router';
+
   export default {
     data() {
       return {
@@ -47,6 +50,7 @@
           username: '',
           password: '',
           msg: '',
+          loader: false,
       },
       }
     },
@@ -55,22 +59,30 @@
         return this.logItIn.username && this.logItIn.password;
       },
     },
+    beforeCreate(){
+      if (store.state.isLogged){
+        router.push('/admin')
+      }
+    },
     methods: {
       authUser() {
+        this.logItIn.loader = true,
         HTTP.post('http://localhost:8000/api/v1/user/signin', this.logItIn)
         .then((response) => {
-          const token = response.data.token; // tanam tanam token , tak perlu dibajak
-          if(response.data.passed === true){
-              // this code below will run background ( not reloading )
-              const base64Url = token.split('.')[1]; // make a const named baseurl64 to delete . from token
-              const base64 = base64Url.replace('-','+').replace('_','/'); // sama aja tod
-              console.log(JSON.parse(window.atob(base64))); // nge log hati yang kosong hehe
-              localStorage.setItem('token', token); // not recommended actually to crud token on localstorage , better with cookie but more complex to code
-              localStorage.getItem('token'); // get the token
-              this.$router.push('/admin' + '?token=' + token); // pushing to target page
-          } else {
-            this.logItIn.msg = (response.data.msg);
+          if (response.data.passed === true){
+            window.localStorage.setItem('token', response.data.token);
+            const tokenApi = response.data.token;
+            store.commit('LOGIN_USER');
+            router.push('/admin' + '?token=' + tokenApi);
           }
+          else {
+            this.logItIn.msg = (response.data.msg);
+            this.logItIn.loader = false;
+          }
+          () => {
+            this.logItIn.loader = false
+          }
+          console.log(response);
         })
       }
     }

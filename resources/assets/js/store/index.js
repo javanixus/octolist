@@ -2,26 +2,23 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
-const debug = process.env.NODE_ENV !== 'production';
 
-//constanta modified 
 const state = {
-  title: 'halo, saya pampam'
+  isLogged: !!window.localStorage.getItem('token'),
 };
-const getters = {};
+
 const mutations = {
-  SET_TITLE(state, title) {
-    state.title = title;
+  LOGIN_USER(state) {
+    state.isLogged = true;
+  },
+
+  LOGOUT_USER(state) {
+    state.isLogged = false;
   }
 };
-const actions = {
 
-};
-
-//default: Konstanta di atas dimasukkan sebagai parameter instance Vuex bersamaan dengan diekspornya modul tersebut.
 export default new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   state,
-  getters,
-  mutations,
-  actions
+  mutations
 });

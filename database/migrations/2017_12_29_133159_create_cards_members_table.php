@@ -19,6 +19,19 @@ class CreateCardsMembersTable extends Migration
             $table->integer('id_cards')->unsigned();
             $table->timestamps();
         });
+
+
+        Schema::table('cards_members', function (Blueprint $table) {
+            $table->foreign('id_students')
+                ->references('id')
+                ->on('users');
+        });
+
+        Schema::table('cards_members', function (Blueprint $table) {
+            $table->foreign('id_cards')
+                ->references('id')
+                ->on('cards');
+        });
     }
 
     /**
