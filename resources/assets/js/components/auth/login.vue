@@ -90,7 +90,7 @@
           }
           console.log(response);
         })
-      } 
+      }
     }
   }
 </script>
