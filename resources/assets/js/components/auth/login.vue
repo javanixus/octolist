@@ -39,6 +39,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import { HTTP } from './../../router';
   import store from './../../store/index';
   import router from './../../router';
@@ -63,17 +64,22 @@
       if (store.state.isLogged){
         router.push('/admin')
       }
+      console.log(localStorage.getItem('token'));
     },
     methods: {
       authUser() {
         this.logItIn.loader = true,
-        HTTP.post('http://localhost:8000/api/v1/user/signin', this.logItIn)
+        axios.post('http://localhost:8000/api/v1/user/signin', this.logItIn,{
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          withCredentials: true
+        })
         .then((response) => {
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
-            const tokenApi = response.data.token;
             store.commit('LOGIN_USER');
-            router.push('/admin' + '?token=' + tokenApi);
+            router.push('/admin');
           }
           else {
             this.logItIn.msg = (response.data.msg);
