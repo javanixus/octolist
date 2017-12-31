@@ -7,5 +7,9 @@ use \App\User;
 
 class UserController extends Controller
 {
-    //
+    public function index()
+    {
+        $siswa = User::all()->sortBy('name');
+        return response()->json($siswa);
+    }
 }
