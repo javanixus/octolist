@@ -84,7 +84,7 @@
           }
           console.log(response);
         })
-      } 
+      }
     }
   }
 </script>
