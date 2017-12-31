@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 50)->unique();
             $table->string('bio', 255)->nullable();
             $table->enum('gender',['f','m'])->nullable();
-            $table->string('phone', 13)->nullable();
+            $table->string('phone', 20)->nullable();
             $table->string('avatar',255)->nullable();
             $table->integer('id_class')->unsigned()->nullable();
             $table->integer('id_major')->unsigned()->nullable();

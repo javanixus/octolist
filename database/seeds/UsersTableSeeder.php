@@ -12,7 +12,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        App\User::truncate(); // Menghapus semua data yang ada pada table users sebelum di seeder
+        // App\User::truncate();
+        // Menghapus semua data yang ada pada table users sebelum di seeder
 
         $users = factory(App\User::class, 'user', 20)->create(); // sebagai gantinya create() kita menggunakan fungsi bawaan factory yaitu make()
     }
