@@ -25,9 +25,14 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 		Route::group(['middleware' => ['jwt.auth','cors']], function(){
 			Route::get('/dashboard','UserController@home')->name('dashboard');
+			Route::post('/profile/edit/','TestAuthController@EditProfile');
 		});
 });
 
 Route::group(['middleware' => ['api'],'prefix' => 'testing'] , function(){
 		Route::post('/signup','TestAuthController@signup');
+});
+
+Route::group(['middleware' => ['jwt.auth','cors']], function(){
+
 });

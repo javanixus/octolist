@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+Use App\Http\Controllers\TokenSaver;;
 use Illuminate\Http\Request;
+use JWTException;
 use App\TestUser;
+use App\User;
+use JWTAuth;
+use Auth;
 
 class TestAuthController extends Controller
 {
@@ -17,5 +22,9 @@ class TestAuthController extends Controller
 				'password' => bcrypt($request->json('password'))
 			]);
 			echo $request->json('username');
+		}
+
+		public function EditProfile(){
+			return Auth::user()->name;
 		}
 }
