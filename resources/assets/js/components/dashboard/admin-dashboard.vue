@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper-admin-dashboard">
     <error-popup/>
-    <create-project></create-project>
     <confirm-popup></confirm-popup>
     <header class="admin-header">
       <nav class="admin-navigation">
