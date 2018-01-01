@@ -19,12 +19,32 @@ class UserController extends Controller
         return response()->json($siswa);
     }
 
+    public function destroy($id)
+    {
+
+        $user = User::findOrFail($id)->delete();
+        if($user === true ){
+
+            $response = [
+                'status' => $user,
+                'msg' => 'Siswa Berhasil dihapus',
+            ];
+
+            return response()->json($response, 200);
+
+        } else {
+
+            $response = [
+                'status' => $user,
+                'msg' => 'Siswa Gagal dihapus',
+            ];
+
+            return response()->json($response, 500);
+         }
+    }
+
     public function update(Request $request)
     {
         return response()->json($request);
-    }
-
-    public function home(){
-        return 'haloo';
     }
 }
