@@ -206,6 +206,7 @@
         draggable: false,
         canBeShown: false,
         state: null,
+        isOpened: false,
       }
     },
     methods: {
@@ -224,6 +225,7 @@
       detected(e) {
         this.state = e;
       },
+      
     },
     components: {
       'dashboard-app': dashboardBoard,
