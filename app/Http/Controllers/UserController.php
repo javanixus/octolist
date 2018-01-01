@@ -43,8 +43,18 @@ class UserController extends Controller
          }
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        return response()->json($request);
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+
+        if(!empty($user)) {
+            $response = [
+                'msg' => 'edit siswa berhasil',
+            ];
+
+            return response()->json($response);
+        }
+
     }
 }
