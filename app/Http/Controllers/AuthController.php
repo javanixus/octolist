@@ -13,34 +13,21 @@ class AuthController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required:min:1',
-            'nis' => 'required:min:1',
             'username' => 'required|min:1',
             'email' => 'required|email|unique:users|min:10',
             'password' => 'required|min:5',
         ]);
 
-        $nis = $request->input('nis');
         $name = $request->input('name');
         $username = $request->input('username');
-        $password = $request->input('password');
         $email = $request->input('email');
-        $bio = $request->input('bio');
-        $gen = $request->input('gender');
-        $phone = $request->input('phone');
-        $class = $request->input('class');
-        $major = $request->input('major');
+        $password = $request->input('password');
 
         $user = New User([
-            'nis' => $nis,
             'name' => $name,
             'username' => $username,
-            'password' => bcrypt($password),
             'email' => $email,
-            'bio' => $bio,
-            'gender' => $gen,
-            'phone' => $phone,
-            'id_class' => $class,
-            'id_major' => $major,
+            'password' => bcrypt($password),
         ]);
 
 
@@ -122,14 +109,14 @@ class AuthController extends Controller
 
 				JWTAuth::setToken($token);
 				// TokenSaver::$token = $token;
-				return ['redirect' => route('dashboard')];
+				// return ['redirect' => route('dashboard')];
 				// return redirect('/api/v1/dashboard')
 				// 													->withHeaders([
 				// 														'Content-Type' => 'application/json',
 				// 														'Accept' => 'application/json',
 				// 														'Authorization' => 'Bearer '.$token,
 				// 													]);
-            // return response()->json($response, 201)
+            return response()->json($response, 201);
 						// 							 ->withHeaders([
 						// 								 'Content-Type' 	=> 'application/json',
 						// 								 'Accept'					=> 'application/json',
