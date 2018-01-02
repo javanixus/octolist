@@ -28866,10 +28866,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 maxFiles: 1,
                 parallelUploads: 1,
                 headers: {
-                    "Authorization": "Bearer " + localStorage.getItem('token')
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
             },
-            options: null
+            options: []
         };
     },
 
