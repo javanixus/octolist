@@ -12,7 +12,6 @@
   export default {
     mounted () {
       this.$refs.topProgress.start(),
-      this.$store.commit('SET_TITLE', 'Hello Laravel, Vue, and Vuex')
       // Use setTimeout for demo
       setTimeout(() => {
         this.$refs.topProgress.done()
@@ -21,10 +20,6 @@
     components: {
       vueTopprogress
     },
-    computed: mapState({
-      // read state from store
-      title: state => state.title
-    }),
   }
 </script>
 

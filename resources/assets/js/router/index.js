@@ -21,10 +21,12 @@ import AdminDashboard from './../components/dashboard/admin-dashboard';
 // exec
 Vue.use(Router);
 /* header passing laravel axios */
+axios.defaults.baseURL = 'https://localhost:8000';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 export const HTTP = axios.create({
   headers: {
     'Access-Control-Expose-Headers': ['Access-Token', 'Uid'],
-    Authorization: 'Bearer {token}'
+    Authorization: `Bearer ${  localStorage.getItem('token')}`
   }
 });
 

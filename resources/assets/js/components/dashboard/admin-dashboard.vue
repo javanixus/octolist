@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper-admin-dashboard">
     <error-popup/>
-    <create-project></create-project>
     <confirm-popup></confirm-popup>
     <header class="admin-header">
       <nav class="admin-navigation">
@@ -119,6 +118,7 @@
 <script>
   // import component
   import axios from 'axios'
+  import router from './../../router';
   import store from './../../store/index'
   import AdminMain from "./admin-dashboard.Main"
   import AdminTracking from "./admin-dashboard.tracking"
@@ -129,14 +129,6 @@
     'big-pages')
 
   export default {
-    mounted(){
-      axios.get('http://localhost:8000/admin')
-      .then((response) => {
-        if(response.status === 400){
-          router.push('/login');
-        }
-      })
-    },
     components: {
       'admin-main': AdminMain,
       'admin-tracking': AdminTracking,
@@ -153,7 +145,12 @@
         draggable: false,
         canBeShown: false,
         state: null,
-
+        token: localStorage.getItem('token'),
+      }
+    },
+    beforeCreate(){
+      if (store.state.isLogged === false){
+        router.push('/login')
       }
     },
     methods: {
@@ -166,13 +163,13 @@
           "resizable, adaptive, draggable" values is not updated yet.. eh
         */
         this.$nextTick(() => {
-          this.$modal.show('example-modal')
+          this.$modal.show('example-modal');
         })
       },
       detected(e) {
         this.state = e;
       },
-    }
+    },
   }
 
 </script>

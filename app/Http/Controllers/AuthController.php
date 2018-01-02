@@ -100,23 +100,24 @@ class AuthController extends Controller
 
 
             $response = [
-                'href' =>  '/user/profile',
+//                'href' =>  '/user/profile',
                 'msg' => '',
                 'passed' => true,
                 'user' => $user,
                 'token' => $token,
+                'redirect' => route('dashboard'),
             ];
 
 				JWTAuth::setToken($token);
 				// TokenSaver::$token = $token;
-				// return ['redirect' => route('dashboard')];
+//				return ['redirect' => route('dashboard'),'data' => $response];
 				// return redirect('/api/v1/dashboard')
 				// 													->withHeaders([
 				// 														'Content-Type' => 'application/json',
 				// 														'Accept' => 'application/json',
 				// 														'Authorization' => 'Bearer '.$token,
 				// 													]);
-            return response()->json($response, 201);
+             return response()->json($response, 201);
 						// 							 ->withHeaders([
 						// 								 'Content-Type' 	=> 'application/json',
 						// 								 'Accept'					=> 'application/json',

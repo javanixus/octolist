@@ -21,6 +21,8 @@ Route::post('/login', 'UserController@login');
 
 Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('/user/signup', 'AuthController@store');
+    Route::get('/user', 'UserController@index');
+    Route::delete('user/{id}', 'UserController@destroy');
     Route::post('/user/signin', 'AuthController@signin');
 		Route::group(['middleware' => ['jwt.auth','cors']], function(){
 			Route::get('/dashboard','UserController@home')->name('dashboard');
@@ -28,6 +30,8 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::patch('/profile/teacher/edit/','TeacherController@update');
 		});
 });
+
+Route::post('v1/user/signin/settings/{id}', 'AuthController@signin');
 
 Route::group(['middleware' => ['api'],'prefix' => 'testing'] , function(){
 		Route::post('/signup','TestAuthController@signup');

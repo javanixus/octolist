@@ -1,3 +1,6 @@
+<template>
+  
+</template>
 <script>
   import { HTTP } from './../../router';
   import store from './../../store/index';
