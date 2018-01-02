@@ -46,15 +46,15 @@ class UserController extends Controller
         if ($student) {
             $response = [
                 'msg' => 'User Created',
-                'href' => '/users',
+                'href' => '/v1/users',
                 'method' => 'GET',
             ];
             return response()->json($response, 200);
         } else {
             $response = [
-                'msg' => 'Failed',
-                'user' => $user,
-                'token' => $token,
+                'msg' => 'User Created',
+                'href' => '/v1/user',
+                'method' => 'GET',
             ];
             return response()->json($response, 200);
         }

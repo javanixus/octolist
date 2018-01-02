@@ -25,6 +25,18 @@ class TestAuthController extends Controller
 		}
 
 		public function EditProfile(){
+			$user = Auth::user();
+
+
 			return Auth::user()->name;
+		}
+
+		public function CreateProject(Request $request)
+		{
+				$this->validate($request,[
+					'project_title' 			=> 'required',
+					'project_deadline' 	=> 'required',
+					'id_students'				=> 'required',
+				]);
 		}
 }

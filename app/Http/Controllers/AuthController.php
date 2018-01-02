@@ -13,24 +13,23 @@ class AuthController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required:min:1',
-            'nis' => 'required:min:1',
             'username' => 'required|min:1',
             'email' => 'required|email|unique:users|min:10',
             'password' => 'required|min:5',
         ]);
 
-        $nis = $request->input('nis');
         $name = $request->input('name');
         $username = $request->input('username');
-        $password = $request->input('password');
         $email = $request->input('email');
-        $bio = $request->input('bio');
-        $gen = $request->input('gender');
-        $phone = $request->input('phone');
-        $class = $request->input('class');
-        $major = $request->input('major');
+        $password = $request->input('password');
 
-        $user = New User($request->all());
+
+        $user = New User([
+            'name' => $name,
+            'username' => $username,
+            'email' => $email,
+            'password' => bcrypt($password),
+        ]);
 
 
         if ($user->save()){
