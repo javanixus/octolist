@@ -12,39 +12,75 @@ class UserController extends Controller
         $this->middleware('jwt.auth');
     }
 
+
     public function index()
     {
-        $this->middleware('jwt.auth');
-        $siswa = User::all()->sortBy('name');
-        return response()->json($siswa);
+        $students = User::all()->sortBy('name');
+        foreach($students as $student){
+            $student->view_students = array(
+                'href' => 'api/v1/student/'.$student->id,
+                'method' => 'GET',
+            );
+        }
+
+        $response = [
+            'msg' => 'List of Students',
+            'students' => $students,
+        ];
+
+        return response()->json($response, 200);
     }
 
-    public function destroy($id)
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required:min:1',
+            'nis' => 'required:min:1',
+            'username' => 'required|min:1',
+            'email' => 'required|email|unique:users|min:10',
+            'password' => 'required|min:5',
+        ]);
 
-        $user = User::findOrFail($id)->delete();
-        if($user === true ){
+        $student = User::Create($request->all());
 
+        if ($student) {
             $response = [
-                'status' => $user,
-                'msg' => 'Siswa Berhasil dihapus',
+                'msg' => 'User Created',
+                'href' => '/v1/users',
+                'method' => 'GET',
             ];
-
             return response()->json($response, 200);
-
         } else {
-
             $response = [
-                'status' => $user,
-                'msg' => 'Siswa Gagal dihapus',
+                'msg' => 'User Created',
+                'href' => '/v1/user',
+                'method' => 'GET',
             ];
-
-            return response()->json($response, 500);
-         }
+            return response()->json($response, 200);
+        }
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        return response()->json($request);
+        $student = User::findOrFail($id);
+        $student->update($request->all());
+
+        return response()->json();
     }
+
+    public function destroy($id, Request $request)
+    {
+        $student = User::findOrFail($id);
+        $student->delete();
+
+        $response = [
+            'msg' => 'Siswa Berhasil dihapus',
+            'href' => '/v1/users',
+            'method' =>'GET',
+        ];
+
+        return response()->json($response);
+    }
+
+
 }
