@@ -443,3 +443,14 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.editableWrapper {
+  background: white;
+  height: 100px;
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 2px;
+  border: 1px solid #e6e5e6;
+  outline: none;
+  font-weight: lighter;
+}
