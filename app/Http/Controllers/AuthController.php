@@ -30,18 +30,7 @@ class AuthController extends Controller
         $class = $request->input('class');
         $major = $request->input('major');
 
-        $user = New User([
-            'nis' => $nis,
-            'name' => $name,
-            'username' => $username,
-            'password' => bcrypt($password),
-            'email' => $email,
-            'bio' => $bio,
-            'gender' => $gen,
-            'phone' => $phone,
-            'id_class' => $class,
-            'id_major' => $major,
-        ]);
+        $user = New User($request->all());
 
 
         if ($user->save()){
