@@ -1,3 +1,5 @@
+@import "./../components/styleguide";
+
 .board {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -10,7 +12,7 @@
     right: 0;
     top: 30px;
     bottom: 0;
-    padding: 15px 0;
+    padding: 20px 0 0 315px;
 }
 
 .boardWrapper__Main {
@@ -29,11 +31,48 @@
 
 .boardHeader {
     position: relative;
+    padding-left: 300px;
 }
 
 .boardHeader__Navigation {
     width: 100%;
     min-height: 30px;
+    background: $blue;
+    padding: 10px 20px;
+    box-shadow: 0 3px 20px 4px rgba(24,117,240,.16);
+}
+
+.boardHeaderNavigation__item {
+    ul {
+        display: inline-flex;
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        li {
+            margin-right: 5px;
+        }
+    }
+}
+
+// aside
+
+.asideBoardWrapper {
     background: white;
-    padding: 5px 10px;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    left: 0;
+    z-index: 99;
+    top: 0;
+    .asideBoardWrapper__Core {
+        padding: 15px;
+    }
+}
+
+.asideBoard__ProjectTitle {
+    span { font-size: 14px;color:$grey; }
+    h3 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
 }
