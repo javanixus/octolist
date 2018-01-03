@@ -2,7 +2,8 @@
     <modal name="create-project-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.5" transition="nice-modal-fade" :min-width="200" :min-height="200" :adaptive="true" :scrollable="true" :reset="true" width="60%" height="auto" :clickToClose="false">
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
-                <form action="">
+                <form>
+                <!-- @submit.prevent="createProjectSubmit" -->
                     <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
                     </vue-dropzone>
                     <div class="createProjectForm">
@@ -11,7 +12,7 @@
                         <p>Deskripsi project</p>
                         <editable :content="createProjectFormInput.projectDescForm" class="editableWrapper" />
                         <p>Tambah anggota</p>
-                        <v-select :debounce="250" :on-search="getOptions" :options="options" aria-placeholder="search member..."></v-select>
+                        <v-select :debounce="250" :on-search="getOptions" label="full_name" :options="options" aria-placeholder="search member..."></v-select>
                         <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
@@ -79,8 +80,8 @@
                 },
                 dropzoneOptions: {
                     url: 'https://httpbin.org/post',
-                    thumbnailWidth: 150,
                     addRemoveLinks: true,
+                    thumbnailWidth: 150,
                     maxFilesize: 0.5,
                     dictDefaultMessage: "Drag or click to upload cover",
                     maxFiles: 1,
@@ -89,7 +90,7 @@
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                     }
                 },
-                options: [],
+                options: null
             }
         },
         components: {
@@ -102,10 +103,11 @@
         methods: {
             getOptions(search, loading) {
                 loading(true)
-                axios.get('https://api.github.com/search/repositories', { //testing working api search Get
-                    q: search
+                axios.get('https://api.github.com/search/repositories',{
+                    params: { q: search }
                 }).then(response => {
                     this.options = response.data.items
+                    console.log(response)
                     loading(false)
                 })
             },
