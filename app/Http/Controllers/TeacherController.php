@@ -39,13 +39,13 @@ class TeacherController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-					// $user->update($request->except(['password','codes','password_confirmation']));
+				$user->update($request->except(['password','codes','password_confirmation']));
 
-				$user->update([
-													'name' => $request->input('name'),
-													'email' => $request->input('email') ,
-													'phone' => $request->input('nomor'),
-												]);
+				// $user->update([
+				// 									'name' => $request->input('name'),
+				// 									'email' => $request->input('email') ,
+				// 									'phone' => $request->input('nomor'),
+				// 								]);
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
