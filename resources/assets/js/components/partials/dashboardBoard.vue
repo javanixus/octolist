@@ -24,10 +24,7 @@
     </div>
     <div class="project-item__footer">
       <div class="project-item__footer-items">
-        <span>Add people</span>
-      </div>
-      <div class="project-item__footer-items">
-        <span>Details</span>
+        <span>Open project</span>
       </div>
     </div>
   </div>

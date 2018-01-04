@@ -33,11 +33,11 @@
           </div>
         </div>
       </div>
-      <div class="navbar-extended">
+      <!-- <div class="navbar-extended">
         <div class="navbar-extended__item marginMagic">
-          <a href="#" style="color: #0f55eb;" class="marginRight-s">Feed</a> <a href="#" class="marginRight-s">Activity</a> <a href="#" class="marginRight-s">Contribution</a>
+          <a href="#" style="color: #0f55eb;" class="marginRight-s">Feed</a>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="content">
       <div class="content__header">
@@ -114,5 +114,10 @@
 </script>
 
 <style lang="css" scoped>
-  
+  .navbar {
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.03);
+  }
+  .navbar__profile{
+    border: none;
+  }
 </style>

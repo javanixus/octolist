@@ -86,9 +86,12 @@
   }
 
   .project-item__footer {
-    padding-bottom: 20px;
     margin-top: 10px;
     display: flex;
+    padding: 10px 0 15px 0;
+    border-top: 1px solid #eee;
+    justify-content: center;
+    align-items: center;
 
     .project-item__footer-items {
       span {
