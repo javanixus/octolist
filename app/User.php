@@ -9,15 +9,32 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function getNameAttribute($name){ // Accessor
-        return ucwords(strtolower($name));
+    public function getNameAttribute($value){ // Accessor
+        return ucwords($value);
     }
 
-    public function setNameAttribute($name){ // Mutator
-        return $this->attributes['name'] = strtolower($name);
+    public function getBioAttribute($value){ // Accessor
+        return ucfirst($value);
     }
-    public function setPasswordAttribute($password){ // Mutator
-        return $this->attributes['password'] = bcrypt($password);
+
+    public function setNameAttribute($value){ // Mutator
+        return $this->attributes['name'] = strtolower($value);
+    }
+
+    public function setBioAttribute($value){ // Mutator
+        return $this->attributes['bio'] = strtolower($value);
+    }
+
+    public function setEmailAttribute($value){ // Mutator
+        return $this->attributes['email'] = strtolower($value);
+    }
+
+    public function setUsernameAttribute($value){ // Mutator
+        return $this->attributes['username'] = strtolower($value);
+    }
+
+    public function setPasswordAttribute($value){ // Mutator
+        return $this->attributes['password'] = bcrypt($value);
     }
 
     protected $fillable = [
