@@ -9,6 +9,7 @@
       </div>
     </detectNetworkBar>
     <create-project />
+    <profile-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
         <a href="javascript:void(0)"><span>Octolist</span></a>
@@ -26,7 +27,7 @@
           <div class="profile-badge">
             <a href="javascript:void(0)"></a>
             <div class="border-gradient">
-              <div id="avatar-dp-id" class="avatar avatar--s avatar-dp">
+              <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
                 <img class="avatar-img" src="images/avatar0.jpg" alt="" />
               </div>
             </div>
@@ -43,7 +44,7 @@
       <div class="content__header">
         <div class="header-menu">
           <div class="header-menu__right paddingRight-xxl">
-            <div id="add-task" style="max-width: 300px;" @click="$modal.show('create-project-modal')" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue green-bg button-green">
+            <div id="add-task" style="max-width: 300px;" @click="popupCreateProjectClickOpen()" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue green-bg button-green">
               Buat Project Baru
             </div>
           </div>
@@ -74,6 +75,7 @@
 <script>
   import dashboardBoard from './partials/dashboardBoard.vue';
   import createProjectPopup from './events/createProject.vue';
+  import profileMenuPopup from './events/profilemenuPopup.vue';
 
   export default {
     data(){
@@ -99,16 +101,20 @@
         */
         this.$nextTick(() => {
           this.$modal.show('create-project-modal');
+          this.$modal.show('profile-popup-modal');
         })
       },
       detected(e) {
         this.state = e;
       },
-      
+      popupCreateProjectClickOpen(){
+        this.$modal.show('create-project-modal');
+      }
     },
     components: {
       'dashboard-app': dashboardBoard,
       'create-project': createProjectPopup,
+      'profile-popup': profileMenuPopup,
     }
   }
 </script>

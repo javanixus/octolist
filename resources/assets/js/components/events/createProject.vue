@@ -90,7 +90,7 @@
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                     }
                 },
-                options: null
+                options: null,
             }
         },
         components: {
