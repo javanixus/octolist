@@ -12,9 +12,14 @@ class UserController extends Controller
         $this->middleware('jwt.auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $students = User::all()->sortBy('name');
+        $que = $request->get('q');
+        if (!empty($que)){
+            $students = User::Where('name', 'like', "%$que%")->get();
+        } else {
+            $students = User::all()->sortBy('name');
+        }
         foreach($students as $student){
             $student->view_students = array(
                 'href' => 'api/v1/student/'.$student->id,
@@ -25,6 +30,7 @@ class UserController extends Controller
         $response = [
             'msg' => 'List of Students',
             'students' => $students,
+            'students_count' => $students->count(),
         ];
 
         return response()->json($response, 200);
