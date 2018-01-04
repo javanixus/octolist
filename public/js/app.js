@@ -28886,10 +28886,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             loading(true);
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('https://api.github.com/search/repositories', {
-                params: { q: search }
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/api/v1/user', {
+                params: { q: search },
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
             }).then(function (response) {
-                _this.options = response.data.items;
+                _this.options = response.data.students;
                 console.log(response);
                 loading(false);
             });
@@ -41280,7 +41283,6 @@ var render = function() {
                       debounce: 250,
                       "on-search": _vm.getOptions,
                       label: "full_name",
-                      options: _vm.options,
                       "aria-placeholder": "search member..."
                     }
                   })

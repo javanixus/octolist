@@ -12,7 +12,7 @@
                         <p>Deskripsi project</p>
                         <editable :content="createProjectFormInput.projectDescForm" class="editableWrapper" />
                         <p>Tambah anggota</p>
-                        <v-select :debounce="250" :on-search="getOptions" label="full_name" :options="options" aria-placeholder="search member..."></v-select>
+                        <v-select :debounce="250" :on-search="getOptions" label="full_name" aria-placeholder="search member..."></v-select>
                         <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
@@ -103,10 +103,13 @@
         methods: {
             getOptions(search, loading) {
                 loading(true)
-                axios.get('https://api.github.com/search/repositories',{
-                    params: { q: search }
+                axios.get('http://localhost:8000/api/v1/user',{
+                    params: { q: search },
+                    headers: {
+                        "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+                    }
                 }).then(response => {
-                    this.options = response.data.items
+                    this.options = response.data.students
                     console.log(response)
                     loading(false)
                 })
