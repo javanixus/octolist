@@ -12,7 +12,6 @@ class UserController extends Controller
         $this->middleware('jwt.auth');
     }
 
-
     public function index()
     {
         $students = User::all()->sortBy('name');
@@ -39,6 +38,7 @@ class UserController extends Controller
             'username' => 'required|min:1',
             'email' => 'required|email|unique:users|min:10',
             'password' => 'required|min:5',
+            'phone' => 'unique:users|min:12|max:15',
         ]);
 
         $student = User::Create($request->all());

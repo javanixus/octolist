@@ -10,9 +10,9 @@ Route::post('/login', 'UserController@login');
 
 Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('/user/signin', 'AuthController@signin');
-//    Route::post('/user/signup', 'AuthController@store');
+    Route::post('/user/signup', 'AuthController@store');
     Route::post('/user', 'UserController@store');
-    Route::get('/user', 'UserController@index');
+    Route::get('/users', 'UserController@index');
     Route::patch('/user/{id}', 'UserController@update');
     Route::delete('/user/{id}', 'UserController@destroy');
 

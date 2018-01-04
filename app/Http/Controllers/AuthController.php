@@ -18,6 +18,8 @@ class AuthController extends Controller
             'password' => 'required|min:5',
         ]);
 
+        $nis = $request->input('nis');
+        $bio = $request->input('bio');
         $name = $request->input('name');
         $username = $request->input('username');
         $email = $request->input('email');
@@ -26,6 +28,8 @@ class AuthController extends Controller
 
         $user = New User([
             'name' => $name,
+            'nis' => $nis,
+            'bio' => $bio,
             'username' => $username,
             'email' => $email,
             'password' => bcrypt($password),
