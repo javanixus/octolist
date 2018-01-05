@@ -5,6 +5,7 @@ import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
 import vueKanban from 'vue-kanban';
 import VeeValidate from 'vee-validate';
+import vBlur from 'v-blur';
 
 // import page
 import App from './App';
@@ -13,6 +14,7 @@ import store from './store/index';
 import '../sass/app.scss';
 
 // exec
+Vue.use(vBlur);
 Vue.use(vueKanban);
 Vue.use(VeeValidate);
 Vue.use(VueProgressiveImage, {

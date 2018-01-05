@@ -70,9 +70,12 @@
 }
 
 .asideBoard__ProjectTitle {
-    span { font-size: 14px;color:$grey; }
+    span { font-size: 14px; color:$grey; }
     h3 {
-        font-size: 20px;
+        font-size: 25px;
         margin-top: 10px;
     }
+}
+.asideBoard__ProjectDesc {
+    span { font-size: 13px; font-family: 'Roboto'; color: $grey;}
 }

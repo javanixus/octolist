@@ -79,7 +79,7 @@
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
             store.commit('LOGIN_USER');
-            router.push('/admin');
+            router.push('/dashboard');
           }
           else {
             this.logItIn.msg = (response.data.msg);

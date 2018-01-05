@@ -44,6 +44,7 @@
     "laravel-mix": "^1.7.2",
     "moment": "^2.20.1",
     "postcss-unprefix": "^2.1.1",
+    "v-blur": "^1.0.0",
     "v-offline": "^1.0.4",
     "vee-validate": "^2.0.0-rc.27",
     "vue": "^2.5.13",

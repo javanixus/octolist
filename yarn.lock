@@ -7727,6 +7727,10 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
+v-blur@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/v-blur/-/v-blur-1.0.0.tgz#6684d375be66b1852b566afe7685d29feb5a4e2e"
+
 v-offline@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/v-offline/-/v-offline-1.0.4.tgz#353c299696b132ab7fa9895f1d61b8558ce49780"

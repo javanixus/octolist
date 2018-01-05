@@ -90,7 +90,7 @@
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                     }
                 },
-                options: null
+                options: null,
             }
         },
         components: {
@@ -106,7 +106,7 @@
                 axios.get('http://localhost:8000/api/v1/user',{
                     params: { q: search },
                     headers: {
-                        "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+                        "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }
                 }).then(response => {
                     this.options = response.data.students
