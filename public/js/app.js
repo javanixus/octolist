@@ -41976,7 +41976,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "asideBoard__ProjectDesc" }, [
                 _c("span", [
                   _vm._v(
-                    "\n\t\t\t\t\t\t\tlorem ipsum dolor sit amet , this project will be cool website ever cause gg dude :100:.\n\t\t\t\t\t\t"
+                    "\n\t\t\t\t\t\t\tproject ini mempunyai tujuan untuk mempermudah pengerjaan suatu proyek dan planning dalam sebuah team\n\t\t\t\t\t\t"
                   )
                 ])
               ]),
