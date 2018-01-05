@@ -101,8 +101,7 @@
             'v-select': vSelect,
         },
         methods: {
-            getOptions(search, loading) {
-                loading(true)
+            getOptions(search) {
                 axios.get('http://localhost:8000/api/v1/users', {
                     params: {
                         q: search
@@ -113,7 +112,6 @@
                 }).then(response => {
                     this.options = response.data.students
                     console.log(response)
-                    loading(false)
                 })
             },
             createProject() {

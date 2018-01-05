@@ -28906,10 +28906,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'v-select': __WEBPACK_IMPORTED_MODULE_3_vue_select___default.a
     },
     methods: {
-        getOptions: function getOptions(search, loading) {
+        getOptions: function getOptions(search) {
             var _this = this;
 
-            loading(true);
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/api/v1/users', {
                 params: {
                     q: search
@@ -28920,7 +28919,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (response) {
                 _this.options = response.data.students;
                 console.log(response);
-                loading(false);
             });
         },
         createProject: function createProject() {
