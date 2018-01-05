@@ -29,34 +29,34 @@
     .v--modal-overlay {
         background: rgba(0, 0, 0, 0.6);
     }
-    
+
     .createProjectModal-wrapper {
         background: #edeff0;
     }
-    
+
     .createProjectForm {
         padding: 15px 0;
     }
-    
+
     .createProjectForm p {
         font-size: 14px;
         text-align: left;
         margin: 8px 0;
     }
-    
+
     .modifyFooter {
         display: inline-flex;
         align-items: center;
         justify-content: flex-end;
     }
-    
+
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
         margin-left: 15px;
         font-size: 14px;
     }
-    
+
     .red-bg {
         background: #ec008c;
     }
@@ -69,7 +69,7 @@
     import vSelect from 'vue-select'
     import router from './../../router'
     import editor from 'vue2-medium-editor'
-    
+
     export default {
         data() {
             return {
