@@ -142,7 +142,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 26);
+/******/ 	return __webpack_require__(__webpack_require__.s = 27);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -356,7 +356,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(49)
+var listToStyles = __webpack_require__(51)
 
 /*
 type StyleObject = {
@@ -565,7 +565,7 @@ function applyToTag (styleElement, obj) {
 
 
 var bind = __webpack_require__(15);
-var isBuffer = __webpack_require__(55);
+var isBuffer = __webpack_require__(57);
 
 /*global toString:true*/
 
@@ -869,67 +869,40 @@ module.exports = {
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export HTTP */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_welcome__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_welcome__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_welcome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_welcome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_auth_login__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_auth_login__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_auth_login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_auth_login__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_auth_logout__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_auth_logout__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_auth_logout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_auth_logout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_auth_forgotpass__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_auth_forgotpass__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_auth_forgotpass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_auth_forgotpass__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dashboard__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dashboard__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_dashboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_board__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_board__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_board___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_board__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_profile__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_profile__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_profile___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_profile__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_404__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_404__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_404___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_404__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_getstarted_GetStarted__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_getstarted_GetStarted__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_getstarted_GetStarted___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_getstarted_GetStarted__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_getstarted_hello__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_getstarted_hello__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_getstarted_hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_getstarted_hello__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_about__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_about__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_about___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_about__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_getstarted_profile_setup__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_getstarted_profile_setup__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_getstarted_profile_setup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_getstarted_profile_setup__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_admin_dashboard__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_admin_dashboard__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_admin_dashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_dashboard_admin_dashboard__);
 // import deb
 
@@ -1017,7 +990,40 @@ var HTTP = __WEBPACK_IMPORTED_MODULE_2_axios___default.a.create({
 }));
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(56);
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -1045,7 +1051,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var Vue // late bind
@@ -1279,13 +1285,13 @@ exports.reload = tryWrap(function (id, options) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(14);
 
 
 
@@ -1311,7 +1317,7 @@ var mutations = {
 }));
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12125,17 +12131,17 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(11).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(12).setImmediate))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(3);
-var normalizeHeaderName = __webpack_require__(57);
+var normalizeHeaderName = __webpack_require__(59);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -12225,10 +12231,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -12281,13 +12287,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(28);
+__webpack_require__(29);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -12477,7 +12483,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13422,12 +13428,6 @@ var index_esm = {
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(54);
-
-/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13453,12 +13453,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(3);
-var settle = __webpack_require__(58);
-var buildURL = __webpack_require__(60);
-var parseHeaders = __webpack_require__(61);
-var isURLSameOrigin = __webpack_require__(62);
+var settle = __webpack_require__(60);
+var buildURL = __webpack_require__(62);
+var parseHeaders = __webpack_require__(63);
+var isURLSameOrigin = __webpack_require__(64);
 var createError = __webpack_require__(17);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(63);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(65);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -13555,7 +13555,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(64);
+      var cookies = __webpack_require__(66);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -13639,7 +13639,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(59);
+var enhanceError = __webpack_require__(61);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -13702,17 +13702,17 @@ module.exports = Cancel;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(73);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("46f372aa", content, false);
+var update = __webpack_require__(2)("0e553632", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./welcome.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./welcome.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./welcome.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./welcome.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -13728,17 +13728,17 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(78);
+var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("c162582c", content, false);
+var update = __webpack_require__(2)("7beede32", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./login.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./login.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -13754,17 +13754,17 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(87);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("16d6a83c", content, false);
+var update = __webpack_require__(2)("438bf4da", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./forgotpass.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./forgotpass.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./forgotpass.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./forgotpass.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -13777,20 +13777,71 @@ if(false) {
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(97)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(99)
+/* template */
+var __vue_template__ = __webpack_require__(108)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-a55411c4"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/events/createProject.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a55411c4", Component.options)
+  } else {
+    hotAPI.reload("data-v-a55411c4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(104);
+var content = __webpack_require__(126);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("13c453f4", content, false);
+var update = __webpack_require__(2)("d50cb7e4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./404.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./404.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./404.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./404.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -13800,13 +13851,13 @@ if(false) {
 }
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -13860,36 +13911,39 @@ module.exports = {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(27);
-module.exports = __webpack_require__(24);
+__webpack_require__(28);
+module.exports = __webpack_require__(25);
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_lazyload__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_lazyload__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_lazyload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_lazyload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_js_modal__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_js_modal__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_js_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_js_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_progressive_image__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_progressive_image__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_progressive_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_progressive_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_kanban__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vee_validate__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_index__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_app_scss__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__sass_app_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_kanban__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vee_validate__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_v_blur__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_v_blur___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_v_blur__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__App__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__store_index__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_app_scss__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__sass_app_scss__);
 // import deb
+
 
 
 
@@ -13904,14 +13958,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // exec
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_v_blur___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue_kanban__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vee_validate__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_progressive_image___default.a, {
   delay: 3000
 });
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_js_modal___default.a);
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetwork', __webpack_require__(25));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetworkBar', __webpack_require__(25));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetwork', __webpack_require__(26));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetworkBar', __webpack_require__(26));
 /* space needed between this line */
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_lazyload___default.a, {
@@ -13926,14 +13981,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 /* eslint-disable no-new */
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  router: __WEBPACK_IMPORTED_MODULE_7__router__["a" /* default */],
-  store: __WEBPACK_IMPORTED_MODULE_8__store_index__["a" /* default */],
+  router: __WEBPACK_IMPORTED_MODULE_8__router__["a" /* default */],
+  store: __WEBPACK_IMPORTED_MODULE_9__store_index__["a" /* default */],
   template: '<App/>',
-  components: { App: __WEBPACK_IMPORTED_MODULE_6__App___default.a }
+  components: { App: __WEBPACK_IMPORTED_MODULE_7__App___default.a }
 });
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -14123,10 +14178,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(13)))
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -14138,7 +14193,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(root, factory) {
@@ -14861,9 +14916,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     }, function(module, exports, __webpack_require__) {
         exports = module.exports = __webpack_require__(0)(), exports.push([ module.i, "\n.vue-dialog div {\n  box-sizing: border-box;\n}\n.vue-dialog .dialog-flex {\n  width: 100%;\n  height: 100%;\n}\n.vue-dialog .dialog-content {\n  flex: 1 0 auto;\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n}\n.vue-dialog .dialog-c-title {\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n.vue-dialog .dialog-c-text {\n}\n.vue-dialog .vue-dialog-buttons {\n  display: flex;\n  flex: 0 1 auto;\n  width: 100%;\n  border-top: 1px solid #eee;\n}\n.vue-dialog .vue-dialog-buttons-none {\n  width: 100%;\n  padding-bottom: 15px;\n}\n.vue-dialog-button {\n  font-size: 12px !important;\n  background: transparent;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  cursor: pointer;\n  box-sizing: border-box;\n  line-height: 40px;\n  height: 40px;\n  color: inherit;\n  font: inherit;\n  outline: none;\n}\n.vue-dialog-button:hover {\n  background: rgba(0, 0, 0, 0.01);\n}\n.vue-dialog-button:active {\n  background: rgba(0, 0, 0, 0.025);\n}\n.vue-dialog-button:not(:first-of-type) {\n  border-left: 1px solid #eee;\n}\n", "" ]);
     }, function(module, exports, __webpack_require__) {
-        exports = module.exports = __webpack_require__(0)(), exports.push([ module.i, "\n.v--modal-block-scroll {\n  overflow: hidden;\n  position: fixed;\n  width: 100vw;\n}\n.v--modal-overlay {\n  position: fixed;\n  box-sizing: border-box;\n  left: 0;\n  top: 0;\n  width: 100vw;\n  height: 100vh;\n  background: rgba(0, 0, 0, 0.2);\n  z-index: 999;\n  opacity: 1;\n}\n.v--modal-overlay.scrollable {\n  height: 100%;\n  min-height: 100vh;\n  overflow-y: auto;\n  padding-bottom: 10px;\n  -webkit-overflow-scrolling: touch;\n}\n.v--modal-overlay .v--modal-box {\n  position: relative;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.v--modal-overlay.scrollable .v--modal-box {\n  margin-bottom: 2px;\n  /* transition: top 0.2s ease; */\n}\n.v--modal {\n  background-color: white;\n  text-align: left;\n  border-radius: 3px;\n  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, .4);\n  padding: 0;\n}\n.v--modal.v--modal-fullscreen {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  left: 0;\n  top: 0;\n}\n.v--modal-top-right {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.overlay-fade-enter-active, .overlay-fade-leave-active {\n  transition: all 0.2s;\n}\n.overlay-fade-enter, .overlay-fade-leave-active {\n  opacity: 0;\n}\n.nice-modal-fade-enter-active, .nice-modal-fade-leave-active {\n  transition: all 0.4s;\n}\n.nice-modal-fade-enter, .nice-modal-fade-leave-active {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n", "" ]);
+        exports = module.exports = __webpack_require__(0)(), exports.push([ module.i, "\n.v--modal-block-scroll {\n  overflow: hidden;\n  position: fixed;\n  width: 100vw;\n}\n.v--modal-overlay {\n  position: fixed;\n  box-sizing: border-box;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100vh;\n  background: rgba(0, 0, 0, 0.2);\n  z-index: 999;\n  opacity: 1;\n}\n.v--modal-overlay.scrollable {\n  height: 100%;\n  min-height: 100vh;\n  overflow-y: auto;\n  padding-bottom: 10px;\n  -webkit-overflow-scrolling: touch;\n}\n.v--modal-overlay .v--modal-box {\n  position: relative;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.v--modal-overlay.scrollable .v--modal-box {\n  margin-bottom: 2px;\n  /* transition: top 0.2s ease; */\n}\n.v--modal {\n  background-color: white;\n  text-align: left;\n  border-radius: 3px;\n  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);\n  padding: 0;\n}\n.v--modal.v--modal-fullscreen {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  left: 0;\n  top: 0;\n}\n.v--modal-top-right {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.overlay-fade-enter-active,\n.overlay-fade-leave-active {\n  transition: all 0.2s;\n}\n.overlay-fade-enter,\n.overlay-fade-leave-active {\n  opacity: 0;\n}\n.nice-modal-fade-enter-active,\n.nice-modal-fade-leave-active {\n  transition: all 0.4s;\n}\n.nice-modal-fade-enter,\n.nice-modal-fade-leave-active {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n", "" ]);
     }, function(module, exports, __webpack_require__) {
-        exports = module.exports = __webpack_require__(0)(), exports.push([ module.i, "\n.vue-modal-resizer {\n  display: block;\n  overflow: hidden;\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  right: 0;\n  bottom: 0;\n  z-index: 9999999;\n  background: transparent;\n  cursor: se-resize;\n}\n.vue-modal-resizer::after {\n  display: block;\n  position: absolute;\n  content: '';\n  background: transparent;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 10px solid #ddd;\n  border-left: 10px solid transparent;\n}\n.vue-modal-resizer.clicked::after {\n  border-bottom: 10px solid #369BE9;\n}\n", "" ]);
+        exports = module.exports = __webpack_require__(0)(), exports.push([ module.i, "\n.vue-modal-resizer {\n  display: block;\n  overflow: hidden;\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  right: 0;\n  bottom: 0;\n  z-index: 9999999;\n  background: transparent;\n  cursor: se-resize;\n}\n.vue-modal-resizer::after {\n  display: block;\n  position: absolute;\n  content: '';\n  background: transparent;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 10px solid #ddd;\n  border-left: 10px solid transparent;\n}\n.vue-modal-resizer.clicked::after {\n  border-bottom: 10px solid #369be9;\n}\n", "" ]);
     }, function(module, exports, __webpack_require__) {
         __webpack_require__(20);
         var Component = __webpack_require__(1)(__webpack_require__(9), __webpack_require__(17), null, null);
@@ -15026,7 +15081,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -15037,11 +15092,11 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 !function(e,t){if(true)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var r=t();for(var n in r)("object"==typeof exports?exports:e)[n]=r[n]}}(this,function(){return function(e){function t(n){if(r[n])return r[n].exports;var i=r[n]={i:n,l:!1,exports:{}};return e[n].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var r={};return t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t){e.exports=function(){var e=[];return e.toString=function(){for(var e=[],t=0;t<this.length;t++){var r=this[t];r[2]?e.push("@media "+r[2]+"{"+r[1]+"}"):e.push(r[1])}return e.join("")},e.i=function(t,r){"string"==typeof t&&(t=[[null,t,""]]);for(var n={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(n[o]=!0)}for(i=0;i<t.length;i++){var a=t[i];"number"==typeof a[0]&&n[a[0]]||(r&&!a[2]?a[2]=r:r&&(a[2]="("+a[2]+") and ("+r+")"),e.push(a))}},e}},function(e,t,r){function n(e){for(var t=0;t<e.length;t++){var r=e[t],n=u[r.id];if(n){n.refs++;for(var i=0;i<n.parts.length;i++)n.parts[i](r.parts[i]);for(;i<r.parts.length;i++)n.parts.push(o(r.parts[i]));n.parts.length>r.parts.length&&(n.parts.length=r.parts.length)}else{for(var a=[],i=0;i<r.parts.length;i++)a.push(o(r.parts[i]));u[r.id]={id:r.id,refs:1,parts:a}}}}function i(){var e=document.createElement("style");return e.type="text/css",d.appendChild(e),e}function o(e){var t,r,n=document.querySelector('style[data-vue-ssr-id~="'+e.id+'"]');if(n){if(h)return g;n.parentNode.removeChild(n)}if(v){var o=f++;n=p||(p=i()),t=a.bind(null,n,o,!1),r=a.bind(null,n,o,!0)}else n=i(),t=s.bind(null,n),r=function(){n.parentNode.removeChild(n)};return t(e),function(n){if(n){if(n.css===e.css&&n.media===e.media&&n.sourceMap===e.sourceMap)return;t(e=n)}else r()}}function a(e,t,r,n){var i=r?"":n.css;if(e.styleSheet)e.styleSheet.cssText=m(t,i);else{var o=document.createTextNode(i),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(o,a[t]):e.appendChild(o)}}function s(e,t){var r=t.css,n=t.media,i=t.sourceMap;if(n&&e.setAttribute("media",n),i&&(r+="\n/*# sourceURL="+i.sources[0]+" */",r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),e.styleSheet)e.styleSheet.cssText=r;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(r))}}var l="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!l)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var c=r(8),u={},d=l&&(document.head||document.getElementsByTagName("head")[0]),p=null,f=0,h=!1,g=function(){},v="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());e.exports=function(e,t,r){h=r;var i=c(e,t);return n(i),function(t){for(var r=[],o=0;o<i.length;o++){var a=i[o],s=u[a.id];s.refs--,r.push(s)}t?(i=c(e,t),n(i)):i=[];for(var o=0;o<r.length;o++){var s=r[o];if(0===s.refs){for(var l=0;l<s.parts.length;l++)s.parts[l]();delete u[s.id]}}}};var m=function(){var e=[];return function(t,r){return e[t]=r,e.filter(Boolean).join("\n")}}()},function(e,t){e.exports=function(e,t,r,n){var i,o=e=e||{},a=typeof e.default;"object"!==a&&"function"!==a||(i=e,o=e.default);var s="function"==typeof o?o.options:o;if(t&&(s.render=t.render,s.staticRenderFns=t.staticRenderFns),r&&(s._scopeId=r),n){var l=Object.create(s.computed||null);Object.keys(n).forEach(function(e){var t=n[e];l[e]=function(){return t}}),s.computed=l}return{esModule:i,exports:o,options:s}}},function(e,t,r){"use strict";var n=r(10);t.a={props:{src:{type:null,required:!0},placeholder:{type:String},blur:{type:Number},aspectRatio:{type:Number},noRatio:{type:Boolean},fallback:{type:String}},data:function(){return{isRendered:!1,options:{},defaultBlur:20,image:null,placeholderImage:null,aspectRatioDetect:.5625,isPollingKilled:!1,cached:!1,imageError:!1}},watch:{src:function(){this.handleImageLoading()}},computed:{shouldPlaceholderRender:function(){return!!this.placeholderImage},shouldImageRender:function(){return this.isRendered},calculatedRatio:function(){return this.aspectRatio||this.aspectRatioDetect},wrapperStyle:function(){return this.noRatio?{}:{paddingBottom:100*this.calculatedRatio+"%"}},blurStyle:function(){var e=this.defaultBlur;return Object(n.a)(this.blur)?this.getBlurStyle(this.blur):Object(n.a)(this.options.blur)?this.getBlurStyle(this.options.blur):this.getBlurStyle(e)}},mounted:function(){this.handleImageLoading()},methods:{getBlurStyle:function(e){if(0!==e)return{filter:"blur("+e+"px)"}},defineAspectRatio:function(e){var t=this,r=this.options.timeout||2500,n=this.options.pollInterval||80,i=setInterval(function(){if(e.naturalWidth){clearInterval(i);var r=e.naturalHeight,n=e.naturalWidth;t.aspectRatioDetect=r/n}},n);setTimeout(function(){e.naturalWidth||(clearInterval(i),t.isPollingKilled=!0)},r)},loadImage:function(){var e=this,t=new Image,r=this.options.delay||0,n=this.fallback||this.options.fallback,i=this.imageError?n:this.src;this.image=null,this.isRendered=!1,this.aspectRatio||this.defineAspectRatio(t),t.onload=function(){if(!e.image){e.isPollingKilled&&!e.aspectRatio&&e.defineAspectRatio(t),e.image=i;var n=void 0;try{n=e.$refs.canvas.getContext("2d"),n.drawImage(e.$refs.main,0,0)}catch(e){}e.$nextTick(function(){setTimeout(function(){e.isRendered=!0,e.placeholderImage=null},r)}),e.imageError=!1,e.$emit("onLoad",t.src)}},t.onerror=function(t){e.$emit("onError",t),(e.fallback||e.options.fallback)&&(e.imageError=!0,e.handleImageLoading())},t.src=i},loadPlaceholder:function(){var e=this;if(this.placeholder||this.options.placeholder){var t=new Image,r=this.placeholder;this.options.placeholder&&!this.placeholder&&(r=this.options.placeholder),t.onload=function(){e.placeholderImage=r,e.$emit("onLoadPlaceholder",r)},t.onerror=function(t){e.$emit("onPlaceholderError",t)},t.src=r}},handleImageLoading:function(){this.loadPlaceholder(),this.loadImage()}}}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(5),i=r.n(n),o=r(12),a=r.n(o),s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},l=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return s({},e,{data:function(){return{options:t}}})},c=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};e.component("progressive-img",l(i.a,t)),e.component("progressive-background",l(a.a,t))};t.default={install:c}},function(e,t,r){r(6);var n=r(2)(r(9),r(11),null,null);e.exports=n.exports},function(e,t,r){var n=r(7);"string"==typeof n&&(n=[[e.i,n,""]]),n.locals&&(e.exports=n.locals);r(1)("c467ffae",n,!0)},function(e,t,r){t=e.exports=r(0)(),t.push([e.i,".progressive-image{position:relative;overflow:hidden}.canvas{visibility:hidden;position:absolute;top:0;left:0}.progressive-image-main{position:absolute;top:0;left:0;width:100%;height:auto;z-index:1;transition-duration:.3s;transition-property:all;transition-timing-function:ease-out;transform:translateZ(0)}.progressive-image-before-enter{opacity:1}.progressive-image-enter{opacity:0}.progressive-image-placeholder{position:absolute;top:0;left:0;z-index:0;overflow:hidden;transition-duration:.3s;transition-property:all;transition-timing-function:ease-out;backface-visibility:hidden;transform:translateZ(0) scale(1.1);width:100%;height:100%;background-size:cover}.progressive-image-placeholder-out{transition-duration:inherit;transition-property:all;transition-timing-function:ease-out;transition-delay:.4s;opacity:0}",""])},function(e,t){e.exports=function(e,t){for(var r=[],n={},i=0;i<t.length;i++){var o=t[i],a=o[0],s=o[1],l=o[2],c=o[3],u={id:e+":"+i,css:s,media:l,sourceMap:c};n[a]?n[a].parts.push(u):r.push(n[a]={id:a,parts:[u]})}return r}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(3),i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};t.default={name:"progressive-img",mixins:[n.a],computed:{placeholderStyle:function(){return i({},this.blurStyle,{"background-image":"url("+this.placeholder+")"})}}}},function(e,t,r){"use strict";r.d(t,"a",function(){return n});var n=function(e){return void 0!==e&&null!==e}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{ref:"image",staticClass:"progressive-image"},[e.shouldImageRender?e._e():r("canvas",{ref:"canvas",staticClass:"canvas",attrs:{width:"1",height:"1"}}),e._v(" "),r("div",{staticClass:"progressive-image-wrapper",style:e.wrapperStyle},[r("transition",{attrs:{"enter-class":"progressive-image-enter","enter-active-class":"progressive-image-before-enter"}},[r("img",{directives:[{name:"show",rawName:"v-show",value:e.shouldImageRender,expression:"shouldImageRender"}],ref:"main",staticClass:"progressive-image-main",attrs:{src:e.image}})]),e._v(" "),r("transition",{attrs:{"enter-class":"progressive-image-enter","enter-active-class":"progressive-image-before-enter"}},[e.shouldPlaceholderRender?r("div",{staticClass:"progressive-image-placeholder",class:{"progressive-image-placeholder-out":e.shouldImageRender},style:e.placeholderStyle}):e._e()])],1)])},staticRenderFns:[]}},function(e,t,r){var n={};n.$style=r(13);var i=r(2)(r(15),r(16),null,n);e.exports=i.exports},function(e,t,r){var n=r(14);"string"==typeof n&&(n=[[e.i,n,""]]),n.locals&&(e.exports=n.locals);r(1)("b4050912",n,!0)},function(e,t,r){t=e.exports=r(0)(),t.push([e.i,"._2BthHRY48Qth9Ja9ecuFEQ_0{position:relative;width:100%;height:100%;overflow:hidden}._30VsZs3N14iSeemk3xHHZL_0{position:relative;z-index:1}._3em-Y1_N-m7q8CbVUFEIzb_0{visibility:hidden;position:absolute;top:0;left:0}.arZxkKg-w3Qec3gGdgaPh_0{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;transition:all .4s ease-out;background-position:50%;background-repeat:no-repeat;background-size:cover}._2WZ48QHYw0iFj9daPgvHd_0{transform:scale(1.1);z-index:0}._10rgjDNoIpLvLRaxZc7CL0_0{opacity:1}._2Dw5nQ56jB5hJmnsvE24Be_0{opacity:0}",""]),t.locals={component:"_2BthHRY48Qth9Ja9ecuFEQ_0",slot:"_30VsZs3N14iSeemk3xHHZL_0",canvas:"_3em-Y1_N-m7q8CbVUFEIzb_0",image:"arZxkKg-w3Qec3gGdgaPh_0",placeholder:"_2WZ48QHYw0iFj9daPgvHd_0 arZxkKg-w3Qec3gGdgaPh_0",before:"_10rgjDNoIpLvLRaxZc7CL0_0",enter:"_2Dw5nQ56jB5hJmnsvE24Be_0"}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(3),i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};t.default={name:"progressive-background",props:{noRatio:{type:Boolean,required:!1}},mixins:[n.a],data:function(){return{applyRatio:!this.noRatio}},computed:{imageStyle:function(){return{backgroundImage:"url("+this.image+")"}},placeholderStyle:function(){return i({},this.blurStyle,{backgroundImage:"url("+this.placeholderImage+")"})}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,r=e._self._c||t;return r("div",{class:e.$style.component},[e.shouldImageRender?e._e():r("div",[r("canvas",{ref:"canvas",staticClass:"canvas",attrs:{width:"1",height:"1"}}),e._v(" "),r("img",{ref:"main",attrs:{src:e.image,hidden:""}})]),e._v(" "),r("div",{style:e.wrapperStyle},[r("transition",{attrs:{"enter-class":e.$style.enter,"enter-active-class":e.$style.before}},[e.shouldImageRender?r("div",{class:e.$style.image,style:e.imageStyle}):e._e()]),e._v(" "),r("div",{class:e.$style.slot},[e._t("default")],2),e._v(" "),r("transition",{attrs:{"enter-class":e.$style.enter,"enter-active-class":e.$style.before}},[e.shouldPlaceholderRender?r("div",{class:e.$style.placeholder,style:e.placeholderStyle}):e._e()])],1)])},staticRenderFns:[]}}])});
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Kanban__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Kanban__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Kanban___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Kanban__);
 
 
@@ -15053,15 +15108,15 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(34)
+var __vue_script__ = __webpack_require__(35)
 /* template */
-var __vue_template__ = __webpack_require__(44)
+var __vue_template__ = __webpack_require__(45)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -15100,12 +15155,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dragula__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dragula__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dragula___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_dragula__);
 
 
@@ -15162,15 +15217,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var emitter = __webpack_require__(36);
-var crossvent = __webpack_require__(40);
-var classes = __webpack_require__(43);
+var emitter = __webpack_require__(37);
+var crossvent = __webpack_require__(41);
+var classes = __webpack_require__(44);
 var doc = document;
 var documentElement = doc.documentElement;
 
@@ -15775,17 +15830,17 @@ function getCoord (coord, e) {
 
 module.exports = dragula;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var atoa = __webpack_require__(37);
-var debounce = __webpack_require__(38);
+var atoa = __webpack_require__(38);
+var debounce = __webpack_require__(39);
 
 module.exports = function emitter (thing, options) {
   var opts = options || {};
@@ -15839,20 +15894,20 @@ module.exports = function emitter (thing, options) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = function atoa (a, n) { return Array.prototype.slice.call(a, n); }
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ticky = __webpack_require__(39);
+var ticky = __webpack_require__(40);
 
 module.exports = function debounce (fn, args, ctx) {
   if (!fn) { return; }
@@ -15863,7 +15918,7 @@ module.exports = function debounce (fn, args, ctx) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {var si = typeof setImmediate === 'function', tick;
@@ -15874,17 +15929,17 @@ if (si) {
 }
 
 module.exports = tick;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12).setImmediate))
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var customEvent = __webpack_require__(41);
-var eventmap = __webpack_require__(42);
+var customEvent = __webpack_require__(42);
+var eventmap = __webpack_require__(43);
 var doc = global.document;
 var addEvent = addEventEasy;
 var removeEvent = removeEventEasy;
@@ -15983,10 +16038,10 @@ function find (el, type, fn) {
   }
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -16038,10 +16093,10 @@ function CustomEvent (type, params) {
   return e;
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16059,10 +16114,10 @@ for (eventname in global) {
 
 module.exports = eventmap;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16102,7 +16157,7 @@ module.exports = {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -16173,7 +16228,7 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16187,7 +16242,7 @@ if (false) {
 /* unused harmony export Rules */
 /* unused harmony export version */
 /**
-  * vee-validate v2.0.0
+  * vee-validate v2.0.0-rc.27
   * (c) 2017 Abdelrahman Awad
   * @license MIT
   */
@@ -16214,7 +16269,6 @@ var setDataAttribute = function (el, name, value) { return el.setAttribute(("dat
  * Creates a proxy object if available in the environment.
  */
 var createProxy = function (target, handler) {
-  /* istanbul ignore next */
   if (typeof Proxy === 'undefined') {
     return target;
   }
@@ -16560,14 +16614,23 @@ var uniqId = function () {
  * finds the first element that satisfies the predicate callback, polyfills array.find
  */
 var find = function (arrayLike, predicate) {
-  var array = Array.isArray(arrayLike) ? arrayLike : toArray(arrayLike);
-  for (var i = 0; i < array.length; i++) {
-    if (predicate(array[i])) {
-      return array[i];
-    }
+  var array = toArray(arrayLike);
+
+  if (isCallable(array.find)) {
+    return array.find(predicate);
   }
 
-  return undefined;
+  var result;
+  array.some(function (item) {
+    if (predicate(item)) {
+      result = item;
+      return true;
+    }
+
+    return false;
+  });
+
+  return result;
 };
 
 /**
@@ -17304,6 +17367,10 @@ Generator.resolveRules = function resolveRules (el, binding) {
     return getDataAttribute(el, 'rules');
   }
 
+  if (typeof binding.value === 'string') {
+    return binding.value;
+  }
+
   if (~['string', 'object'].indexOf(typeof binding.value.rules)) {
     return binding.value.rules;
   }
@@ -17393,6 +17460,10 @@ Generator.resolveScope = function resolveScope (el, binding, vnode) {
     if ( vnode === void 0 ) vnode = {};
 
   var scope = null;
+  if (isObject(binding.value)) {
+    scope = binding.value.scope;
+  }
+
   if (vnode.child && isNullOrUndefined(scope)) {
     scope = vnode.child.$attrs && vnode.child.$attrs['data-vv-scope'];
   }
@@ -17411,12 +17482,17 @@ Generator.resolveModel = function resolveModel (binding, vnode) {
     return binding.arg;
   }
 
+  if (isObject(binding.value) && binding.value.arg) {
+    return binding.value.arg;
+  }
+
   var model = vnode.data.model || find(vnode.data.directives, function (d) { return d.name === 'model'; });
   if (!model) {
     return null;
   }
 
   var watchable = /^[a-z_]+[0-9]*(\w*\.[a-z_]\w*)*$/i.test(model.expression) && hasPath(model.expression, vnode.context);
+
   if (!watchable) {
     return null;
   }
@@ -17549,7 +17625,6 @@ var Field = function Field (el, options) {
   this.delay = 0;
   this.rules = {};
   this._cacheId(options);
-  this.classNames = assign({}, DEFAULT_OPTIONS.classNames);
   options = assign({}, DEFAULT_OPTIONS, options);
   this._delay = !isNullOrUndefined(options.delay) ? options.delay : 0; // cache initial delay
   this.validity = options.validity;
@@ -17679,7 +17754,7 @@ Field.prototype.update = function update (options) {
   this.model = options.model || this.model;
   this.listen = options.listen !== undefined ? options.listen : this.listen;
   this.classes = (options.classes || this.classes || false) && !this.component;
-  this.classNames = isObject(options.classNames) ? merge(this.classNames, options.classNames) : this.classNames;
+  this.classNames = options.classNames || this.classNames || DEFAULT_OPTIONS.classNames;
   this.getter = isCallable(options.getter) ? options.getter : this.getter;
   this._alias = options.alias || this._alias;
   this.events = (options.events) ? makeEventsArray(options.events) : this.events;
@@ -17698,7 +17773,6 @@ Field.prototype.update = function update (options) {
   }
 
   this.updated = true;
-  this.addValueListeners();
 
   // no need to continue.
   if (!this.el) {
@@ -17706,6 +17780,7 @@ Field.prototype.update = function update (options) {
   }
 
   this.updateClasses();
+  this.addValueListeners();
   this.updateAriaAttrs();
 };
 
@@ -17716,7 +17791,7 @@ Field.prototype.reset = function reset () {
     var this$1 = this;
 
   var defaults = createFlags();
-  Object.keys(this.flags).filter(function (flag) { return flag !== 'required'; }).forEach(function (flag) {
+  Object.keys(this.flags).forEach(function (flag) {
     this$1.flags[flag] = defaults[flag];
   });
 
@@ -17774,13 +17849,10 @@ Field.prototype.updateDependencies = function updateDependencies () {
 
   // we get the selectors for each field.
   var fields = Object.keys(this.rules).reduce(function (prev, r) {
-    if (Validator.isTargetRule(r)) {
-      var selector = this$1.rules[r][0];
-      if (r === 'confirmed' && !selector) {
-        selector = (this$1.name) + "_confirmation";
-      }
-
-      prev.push({ selector: selector, name: r });
+    if (r === 'confirmed') {
+      prev.push({ selector: this$1.rules[r][0] || ((this$1.name) + "_confirmation"), name: r });
+    } else if (Validator.isTargetRule(r)) {
+      prev.push({ selector: this$1.rules[r][0], name: r });
     }
 
     return prev;
@@ -17863,20 +17935,14 @@ Field.prototype.unwatch = function unwatch (tag) {
  * Updates the element classes depending on each field flag status.
  */
 Field.prototype.updateClasses = function updateClasses () {
-  if (!this.classes || this.isDisabled) { return; }
+  if (!this.classes) { return; }
 
   toggleClass(this.el, this.classNames.dirty, this.flags.dirty);
   toggleClass(this.el, this.classNames.pristine, this.flags.pristine);
+  toggleClass(this.el, this.classNames.valid, !!this.flags.valid);
+  toggleClass(this.el, this.classNames.invalid, !!this.flags.invalid);
   toggleClass(this.el, this.classNames.touched, this.flags.touched);
   toggleClass(this.el, this.classNames.untouched, this.flags.untouched);
-  // make sure we don't set any classes if the state is undetermined.
-  if (!isNullOrUndefined(this.flags.valid) && this.flags.validated) {
-    toggleClass(this.el, this.classNames.valid, this.flags.valid);
-  }
-
-  if (!isNullOrUndefined(this.flags.invalid) && this.flags.validated) {
-    toggleClass(this.el, this.classNames.invalid, this.flags.invalid);
-  }
 };
 
 /**
@@ -18009,51 +18075,39 @@ Field.prototype.addValueListeners = function addValueListeners () {
       debouncedFn.apply(void 0, args);
     };
 
-    this$1._addComponentEventListener(e, validate);
-    this$1._addHTMLEventListener(e, validate);
-  });
-};
-
-Field.prototype._addComponentEventListener = function _addComponentEventListener (evt, validate) {
-    var this$1 = this;
-
-  if (!this.component) { return; }
-
-  this.component.$on(evt, validate);
-  this.watchers.push({
-    tag: 'input_vue',
-    unwatch: function () {
-      this$1.component.$off(evt, validate);
-    }
-  });
-};
-
-Field.prototype._addHTMLEventListener = function _addHTMLEventListener (evt, validate) {
-    var this$1 = this;
-
-  if (!this.el) { return; }
-
-  if (~['radio', 'checkbox'].indexOf(this.el.type)) {
-    var els = document.querySelectorAll(("input[name=\"" + (this.el.name) + "\"]"));
-    toArray(els).forEach(function (el) {
-      el.addEventListener(evt, validate);
+    if (this$1.component) {
+      this$1.component.$on(e, validate);
       this$1.watchers.push({
-        tag: 'input_native',
+        tag: 'input_vue',
         unwatch: function () {
-          el.removeEventListener(evt, validate);
+          this$1.component.$off(e, validate);
         }
       });
-    });
-
-    return;
-  }
-
-  this.el.addEventListener(evt, validate);
-  this.watchers.push({
-    tag: 'input_native',
-    unwatch: function () {
-      this$1.el.removeEventListener(evt, validate);
+      return;
     }
+
+    if (~['radio', 'checkbox'].indexOf(this$1.el.type)) {
+      var els = document.querySelectorAll(("input[name=\"" + (this$1.el.name) + "\"]"));
+      toArray(els).forEach(function (el) {
+        el.addEventListener(e, validate);
+        this$1.watchers.push({
+          tag: 'input_native',
+          unwatch: function () {
+            el.removeEventListener(e, validate);
+          }
+        });
+      });
+
+      return;
+    }
+
+    this$1.el.addEventListener(e, validate);
+    this$1.watchers.push({
+      tag: 'input_native',
+      unwatch: function () {
+        this$1.el.removeEventListener(e, validate);
+      }
+    });
   });
 };
 
@@ -18080,7 +18134,8 @@ Field.prototype.updateCustomValidity = function updateCustomValidity () {
  * Removes all listeners.
  */
 Field.prototype.destroy = function destroy () {
-  this.unwatch();
+  this.watchers.forEach(function (w) { return w.unwatch(); });
+  this.watchers = [];
   this.dependencies.forEach(function (d) { return d.field.destroy(); });
   this.dependencies = [];
 };
@@ -18354,7 +18409,6 @@ Validator.localize = function localize (lang, dictionary) {
 Validator.prototype.attach = function attach (field) {
   // deprecate: handle old signature.
   if (arguments.length > 1) {
-    warn('This signature of the attach method has been deprecated, please consult the docs.');
     field = assign({}, {
       name: arguments[0],
       rules: arguments[1]
@@ -18489,18 +18543,18 @@ Validator.prototype.validate = function validate (name, value, scope) {
   var silentRun = field.isDisabled;
 
   return this._validate(field, value, silentRun).then(function (result) {
+    field.setFlags({
+      pending: false,
+      valid: result.valid,
+      validated: true
+    });
+
     this$1.errors.remove(field.name, field.scope, field.id);
     if (silentRun) {
       return Promise.resolve(true);
     } else if (result.errors) {
       result.errors.forEach(function (e) { return this$1.errors.add(e); });
     }
-
-    field.setFlags({
-      pending: false,
-      valid: result.valid,
-      validated: true
-    });
 
     return result.valid;
   });
@@ -18922,6 +18976,15 @@ var fakeFlags = createProxy({}, {
  * Checks if a parent validator instance was requested.
  */
 var requestsValidator = function (injections) {
+  if (! injections) {
+    return false;
+  }
+
+  /* istanbul ignore next */
+  if (Array.isArray(injections) && ~injections.indexOf('$validator')) {
+    return true;
+  }
+
   if (isObject(injections) && injections.$validator) {
     return true;
   }
@@ -19002,6 +19065,7 @@ var mixin = {
       return this.$validator.flags;
     };
   },
+
   beforeDestroy: function beforeDestroy () {
     if (isBuiltInComponent(this.$vnode)) { return; }
 
@@ -19078,16 +19142,15 @@ var Vue;
 function install (_Vue, options) {
   if ( options === void 0 ) options = {};
 
-  if (Vue && _Vue === Vue) {
-    if (true) {
-      warn('already installed, Vue.use(VeeValidate) should only be called once.');
-    }
+  if (Vue) {
+    warn('already installed, Vue.use(VeeValidate) should only be called once.');
     return;
   }
 
   Vue = _Vue;
   Config.merge(options);
   var ref = Config.current;
+  var locale = ref.locale;
   var dictionary = ref.dictionary;
   var i18n = ref.i18n;
 
@@ -19102,8 +19165,8 @@ function install (_Vue, options) {
     });
   }
 
-  if (!i18n && options.locale) {
-    Validator.localize(options.locale); // set the locale
+  if (!i18n) {
+    Validator.localize(locale); // set the locale
   }
 
   Validator.setStrictMode(Config.current.strict);
@@ -19243,8 +19306,7 @@ var locale = {
 
 if (isDefinedGlobally()) {
   // eslint-disable-next-line
-  VeeValidate.Validator.localize(( obj = {}, obj[locale.name] = locale, obj ));
-  var obj;
+  VeeValidate.Validator.addLocale(locale);
 }
 
 // 
@@ -22541,6 +22603,13 @@ var validate$8 = function (value, options) {
   return !! options.filter(function (option) { return option == value; }).length;
 };
 
+var is = function (value, ref) {
+  if ( ref === void 0 ) ref = [];
+  var other = ref[0];
+
+  return value === other;
+};
+
 var isIP_1 = createCommonjsModule(function (module, exports) {
 'use strict';
 
@@ -22640,20 +22709,6 @@ var ip = function (value, ref) {
   }
 
   return isIP(value, version);
-};
-
-var is = function (value, ref) {
-  if ( ref === void 0 ) ref = [];
-  var other = ref[0];
-
-  return value === other;
-};
-
-var is_not = function (value, ref) {
-  if ( ref === void 0 ) ref = [];
-  var other = ref[0];
-
-  return value !== other;
 };
 
 /**
@@ -23001,7 +23056,6 @@ var Rules = {
   integer: integer,
   length: length,
   ip: ip,
-  is_not: is_not,
   is: is,
   max: max$1,
   max_value: max_value,
@@ -23067,7 +23121,8 @@ var mapScope = function (scope, deep) {
     // scope.
     var isScope = field.indexOf('$') === 0;
     if (deep && isScope) {
-      return combine(mapScope(scope[field]), flags);
+      flags = mapScope(scope[field]);
+      return flags;
     } else if (!deep && isScope) {
       return flags;
     }
@@ -23131,7 +23186,7 @@ var mapFields = function (fields) {
   }, {});
 };
 
-var version = '2.0.0';
+var version = '2.0.0-rc.27';
 
 var rulesPlugin = function (ref) {
   var Validator$$1 = ref.Validator;
@@ -23163,19 +23218,26 @@ var index_esm = {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,o){ true?module.exports=o():"function"==typeof define&&define.amd?define("v-blur",o):e["v-blur"]=o()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},o={};return o.blur=function(o,t){if("boolean"!=typeof t&&"object"!==(void 0===t?"undefined":e(t)))throw new Error("Expected directive binding value type to be a boolean or an object but found a "+(void 0===t?"undefined":e(t))+" instead");"boolean"==typeof t&&(t={isBlurred:t});var n=t.opacity||.5,i=t.filter||"blur(1.5px)",r=t.transition||"all .2s linear";o.style.opacity=t.isBlurred?n:1,o.style.filter=t.isBlurred?i:"none",o.style.transition=r},o.bind=function(e,t){o.blur(e,t.value)},o.update=function(e,t){t.value!==t.oldValue&&o.blur(e,t.value)},{install:function(e){e.directive("blur",o)}}});
+
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(47)
+  __webpack_require__(49)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(50)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -23214,23 +23276,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(48);
+var content = __webpack_require__(50);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2d8a5e95", content, false);
+var update = __webpack_require__(2)("7a9ef29d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./App.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./App.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -23240,7 +23302,7 @@ if(false) {
 }
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -23254,7 +23316,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports) {
 
 /**
@@ -23287,13 +23349,13 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_top_progress__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_top_progress__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_top_progress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_top_progress__);
 //
 //
@@ -23323,14 +23385,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define(e):t.vueTopProgress=e()}(this,function(){"use strict";function t(t,e,s){return t<e?e:t>s?s:t}var e=function(){function t(){var s=e.shift();s&&s(t)}var e=[];return function(s){e.push(s),1===e.length&&t()}}(),s={render:function(){var t=this,e=t.$createElement,s=t._self._c||e;return s("transition",{attrs:{css:!1},on:{"before-enter":t.beforeEnter,enter:t.enter,"after-enter":t.afterEnter}},[t.show?s("div",{staticClass:"top-progress",style:t.barStyle},[s("div",{staticClass:"peg",style:t.pegStyle})]):t._e()])},staticRenderFns:[],name:"vueTopprogress",data:function(){return{error:!1,show:!1,progress:0,opacity:1,status:null,isPaused:!1}},props:{speed:{type:Number,default:350},color:{type:String,default:"#29d"},colorShadow:String,errorColor:{type:String,default:"#f44336"},trickle:{type:Boolean,default:!0},trickleSpeed:{type:Number,default:250},easing:{type:String,default:"linear"},height:{type:Number,default:3},minimum:{type:Number,default:.8},maximum:{type:Number,default:97.5},zIndex:{type:Number,default:9999}},computed:{progressColor:function(){return this.error?this.errorColor:this.color},isStarted:function(){return"number"==typeof this.status},boxShadow:function(){return this.colorShadow||this.progressColor},barStyle:function(){return{position:"fixed",top:"0",left:"0",right:"0",width:this.progress+"%",height:this.height+"px",backgroundColor:this.progressColor,transition:"all "+this.speed+"ms "+this.easing,opacity:""+this.opacity,zIndex:""+this.zIndex}},pegStyle:function(){return{display:"block",position:"absolute",right:"0",width:"100px",height:"100%",opacity:this.progress?"1":"0",boxShadow:"0 0 10px "+this.boxShadow+", 0 0 5px "+this.boxShadow,transform:"rotate(3deg) translate(0px, -4px)"}}},methods:{beforeEnter:function(t){this.opacity=0,this.progress=0,this.width=0},enter:function(t,e){this.opacity=1,e()},afterEnter:function(t){this._runStart()},_work:function(){var t=this;setTimeout(function(){t.isStarted&&!t.isPaused&&(t.increase(),t._work())},this.trickleSpeed)},_runStart:function(){this.status=100===this.progress?null:this.progress,this.trickle&&this._work()},start:function(){this.isPaused=!1,this.show?this._runStart():this.show=!0},set:function(s){var r=this;this.isPaused=!1;var i=void 0;i=this.isStarted?s<this.progress?t(s,0,100):t(s,this.minimum,100):0,this.status=100===i?null:i,e(function(t){r.progress=i,100===i?setTimeout(function(){r.opacity=0,setTimeout(function(){r.show=!1,r.error=!1,t()},r.speed)},r.speed):setTimeout(t,r.speed)})},increase:function(e){var s=this.progress;s<100&&"number"!=typeof e&&(e=s>=0&&s<25?3*Math.random()+3:s>=25&&s<50?3*Math.random():s>=50&&s<85?2*Math.random():s>=85&&s<99?.5:0),this.set(t(s+e,0,this.maximum))},decrease:function(t){0!==this.progress&&this.increase(-t)},done:function(){this.set(100)},getProgress:function(){return this.status?this.progress:0},pause:function(){this.isPaused=!0},fail:function(){this.error=!0,this.done()}}},r=function t(e){t.installed||e.component(s.name,s)};return"undefined"!=typeof window&&window.Vue&&r(window.Vue),{vueTopprogress:s,install:r}});
 
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -23359,7 +23421,7 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25989,7 +26051,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25997,8 +26059,8 @@ if (inBrowser && window.Vue) {
 
 var utils = __webpack_require__(3);
 var bind = __webpack_require__(15);
-var Axios = __webpack_require__(56);
-var defaults = __webpack_require__(10);
+var Axios = __webpack_require__(58);
+var defaults = __webpack_require__(11);
 
 /**
  * Create an instance of Axios
@@ -26032,14 +26094,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(19);
-axios.CancelToken = __webpack_require__(70);
+axios.CancelToken = __webpack_require__(72);
 axios.isCancel = __webpack_require__(18);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(71);
+axios.spread = __webpack_require__(73);
 
 module.exports = axios;
 
@@ -26048,7 +26110,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports) {
 
 /*!
@@ -26075,16 +26137,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(10);
+var defaults = __webpack_require__(11);
 var utils = __webpack_require__(3);
-var InterceptorManager = __webpack_require__(65);
-var dispatchRequest = __webpack_require__(66);
+var InterceptorManager = __webpack_require__(67);
+var dispatchRequest = __webpack_require__(68);
 
 /**
  * Create a new instance of Axios
@@ -26161,7 +26223,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26180,7 +26242,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26213,7 +26275,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26241,7 +26303,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26316,7 +26378,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26376,7 +26438,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26451,7 +26513,7 @@ module.exports = (
 
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26494,7 +26556,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26554,7 +26616,7 @@ module.exports = (
 
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26613,18 +26675,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(3);
-var transformData = __webpack_require__(67);
+var transformData = __webpack_require__(69);
 var isCancel = __webpack_require__(18);
-var defaults = __webpack_require__(10);
-var isAbsoluteURL = __webpack_require__(68);
-var combineURLs = __webpack_require__(69);
+var defaults = __webpack_require__(11);
+var isAbsoluteURL = __webpack_require__(70);
+var combineURLs = __webpack_require__(71);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -26706,7 +26768,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26733,7 +26795,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26754,7 +26816,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26775,7 +26837,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26839,7 +26901,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26873,18 +26935,18 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var disposed = false
 var cssModules = {}
-module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./welcome.vue"], function () {
+module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-44b8e2ca\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./welcome.vue"], function () {
   var oldLocals = cssModules["$style"]
   if (!oldLocals) return
   var newLocals = __webpack_require__(20)
   if (JSON.stringify(newLocals) === JSON.stringify(oldLocals)) return
   cssModules["$style"] = newLocals
-  __webpack_require__(7).rerender("data-v-44b8e2ca")
+  __webpack_require__(8).rerender("data-v-44b8e2ca")
 })
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -26893,9 +26955,9 @@ Object.defineProperty(this, "$style", { get: function () { return cssModules["$s
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(74)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(75)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -26936,10 +26998,10 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -26955,12 +27017,12 @@ exports.locals = {
 };
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -27045,7 +27107,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -27528,7 +27590,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "cover-preview__content" }, [
         _c("img", {
           attrs: {
-            src: __webpack_require__(76),
+            src: __webpack_require__(78),
             alt: "Octolist Introduce"
           }
         }),
@@ -27573,24 +27635,24 @@ if (false) {
 }
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/dribbble.gif?028e0c4d78479e9f0612ea99bd19dd0e";
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var disposed = false
 var cssModules = {}
-module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./login.vue"], function () {
+module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-1a3b4499\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./login.vue"], function () {
   var oldLocals = cssModules["$style"]
   if (!oldLocals) return
   var newLocals = __webpack_require__(21)
   if (JSON.stringify(newLocals) === JSON.stringify(oldLocals)) return
   cssModules["$style"] = newLocals
-  __webpack_require__(7).rerender("data-v-1a3b4499")
+  __webpack_require__(8).rerender("data-v-1a3b4499")
 })
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -27599,9 +27661,9 @@ Object.defineProperty(this, "$style", { get: function () { return cssModules["$s
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(79)
+var __vue_script__ = __webpack_require__(81)
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -27642,10 +27704,10 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -27661,15 +27723,15 @@ exports.locals = {
 };
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(9);
 //
 //
 //
@@ -27753,7 +27815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (response.data.passed === true) {
           window.localStorage.setItem('token', response.data.token);
           __WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].commit('LOGIN_USER');
-          __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/admin');
+          __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/dashboard');
         } else {
           _this.logItIn.msg = response.data.msg;
           _this.logItIn.loader = false;
@@ -27768,7 +27830,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -27986,15 +28048,15 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(82)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(165)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28033,13 +28095,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(9);
 //
 //
 //
@@ -28057,18 +28119,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 83 */
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7a3e570a", module.exports)
+  }
+}
+
+/***/ }),
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var disposed = false
 var cssModules = {}
-module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./forgotpass.vue"], function () {
+module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-0cf5e634\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./forgotpass.vue"], function () {
   var oldLocals = cssModules["$style"]
   if (!oldLocals) return
   var newLocals = __webpack_require__(22)
   if (JSON.stringify(newLocals) === JSON.stringify(oldLocals)) return
   cssModules["$style"] = newLocals
-  __webpack_require__(7).rerender("data-v-0cf5e634")
+  __webpack_require__(8).rerender("data-v-0cf5e634")
 })
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -28077,9 +28159,9 @@ Object.defineProperty(this, "$style", { get: function () { return cssModules["$s
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(85)
+var __vue_script__ = __webpack_require__(88)
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(89)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28120,10 +28202,10 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ }),
-/* 84 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -28139,7 +28221,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 85 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28177,7 +28259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 86 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -28273,19 +28355,19 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(88)
+  __webpack_require__(91)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(90)
+var __vue_script__ = __webpack_require__(93)
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(114)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28324,23 +28406,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 88 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(89);
+var content = __webpack_require__(92);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("f9acc46a", content, false);
+var update = __webpack_require__(2)("dd8529da", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2073dee6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./dashboard.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2073dee6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./dashboard.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2073dee6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2073dee6\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -28350,7 +28432,7 @@ if(false) {
 }
 
 /***/ }),
-/* 89 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -28358,21 +28440,27 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.navbar[data-v-2073dee6]{box-shadow:0 3px 10px 0 rgba(0,0,0,.03)\n}\n.navbar__profile[data-v-2073dee6]{border:none\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 90 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__);
 //
 //
 //
@@ -28446,6 +28534,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+
+
+
 
 
 
@@ -28477,20 +28571,13045 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       */
       this.$nextTick(function () {
         _this.$modal.show('create-project-modal');
+        _this.$modal.show('profile-popup-modal');
+        _this.$modal.show('report-popup-modal');
       });
     },
     detected: function detected(e) {
       this.state = e;
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('create-project-modal');
     }
   },
   components: {
     'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
-    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a
+    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a
   }
 });
 
 /***/ }),
-/* 91 */
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(95)
+/* template */
+var __vue_template__ = __webpack_require__(96)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/partials/dashboardBoard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-58e33808", Component.options)
+  } else {
+    hotAPI.reload("data-v-58e33808", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {},
+  data: function data() {
+    return {};
+  }
+});
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "project-item" }, [
+      _c("div", { staticClass: "project-item__header" }, [
+        _c("span", { staticClass: "overlay-dark" }, [
+          _c("a", { attrs: { href: "javascript:void(0)" } }, [
+            _c("img", {
+              staticClass: "icon",
+              attrs: { src: "images/edit.svg", alt: "" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("img", { attrs: { src: "images/dragon-girl.png", alt: "" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "project-item__content" }, [
+        _c("h5", [_vm._v("\n      Typography Culture\n    ")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "content-red" }, [
+          _c("div", { staticClass: "content-desc" }, [
+            _c("div", { staticClass: "content-people" }, [
+              _c("img", { attrs: { src: "images/kecil1.png", alt: "" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images/kecil6.jpg", alt: "" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images/kecil5.jpg", alt: "" } })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "project-item__footer" }, [
+        _c("div", { staticClass: "project-item__footer-items" }, [
+          _c("span", [_vm._v("Open project")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-58e33808", module.exports)
+  }
+}
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(98);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("120cfbb5", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a55411c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./createProject.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a55411c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./createProject.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.v--modal-overlay[data-v-a55411c4]{background:rgba(0,0,0,.6)\n}\n.createProjectModal-wrapper[data-v-a55411c4]{background:#edeff0\n}\n.createProjectForm[data-v-a55411c4]{padding:15px 0\n}\n.createProjectForm p[data-v-a55411c4]{font-size:14px;text-align:left;margin:8px 0\n}\n.modifyFooter[data-v-a55411c4]{display:inline-flex;align-items:center;justify-content:flex-end\n}\n.button--xl[data-v-a55411c4]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}\n.red-bg[data-v-a55411c4]{background:#ec008c\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_dropzone__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_select__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_select__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_medium_editor__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue2_medium_editor__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            createProjectFormInput: {
+                projectNameForm: '',
+                projectDescForm: '',
+                projectMemberForm: ''
+            },
+            dropzoneOptions: {
+                url: 'https://httpbin.org/post',
+                addRemoveLinks: true,
+                thumbnailWidth: 150,
+                maxFilesize: 0.5,
+                dictDefaultMessage: "Drag or click to upload cover",
+                maxFiles: 1,
+                parallelUploads: 1,
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            },
+            options: null
+        };
+    },
+
+    components: {
+        'vue-dropzone': __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default.a,
+        'editable': {
+            template: '<div contenteditable="true"></div>'
+        },
+        'v-select': __WEBPACK_IMPORTED_MODULE_3_vue_select___default.a
+    },
+    methods: {
+        getOptions: function getOptions(search, loading) {
+            var _this = this;
+
+            loading(true);
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/api/v1/user', {
+                params: { q: search },
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            }).then(function (response) {
+                _this.options = response.data.students;
+                console.log(response);
+                loading(false);
+            });
+        },
+        createProject: function createProject() {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('http://localhost:8000/api/v1/user/signin', this.createProjectFormInput).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard');
+                if (__WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard') === false) {
+                    // add behavior here
+                }
+            });
+        }
+    },
+    computed: {
+        createProjectIsPassed: function createProjectIsPassed() {
+            return this.createProjectFormInput.projectNameForm && this.createProjectFormInput.projectDescForm && this.createProjectFormInput.projectMemberForm;
+        }
+    },
+    props: ['content']
+});
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,o){ true?module.exports=o():"function"==typeof define&&define.amd?define(o):e.vue2Dropzone=o()}(this,function(){"use strict";var e={getSignedURL:function(e,o){e.name,e.type;return new Promise(function(e,n){var t=new FormData,i=new XMLHttpRequest;i.open("POST",o.signingURL),i.onload=function(){200==i.status?e(JSON.parse(i.response)):n(i.statusText)},i.onerror=function(e){console.error("Network Error : Could not send request to AWS (Maybe CORS errors)"),n(e)},Object.entries(o.headers).forEach(function(e){var o=e[0],n=e[1];i.setRequestHeader(o,n)}),Object.entries(o.params).forEach(function(e){var o=e[0],n=e[1];t.append(o,n)}),i.send(t)})},sendFile:function(e,o){var n=new FormData;return this.getSignedURL(e,o).then(function(o){var t=o.signature;return Object.keys(t).forEach(function(e){n.append(e,t[e])}),n.append("file",e),new Promise(function(e,t){var i=new XMLHttpRequest;i.open("POST",o.postEndpoint),i.onload=function(){if(201==i.status){var o=(new window.DOMParser).parseFromString(i.response,"text/xml").firstChild.children[0].innerHTML;e({success:!0,message:o})}else{var n=(new window.DOMParser).parseFromString(i.response,"text/xml").firstChild.children[0].innerHTML;t({success:!1,message:n+". Request is marked as resolved when returns as status 201"})}},i.onerror=function(e){var o=(new window.DOMParser).parseFromString(i.response,"text/xml").firstChild.children[1].innerHTML;t({success:!1,message:o})},i.send(n)})}).catch(function(e){return e})}};return{render:function(){var e=this.$createElement;return(this._self._c||e)("div",{ref:"dropzoneElement",class:{"vue-dropzone dropzone":this.includeStyling},attrs:{id:this.id}})},staticRenderFns:[],props:{id:{type:String,required:!0},options:{type:Object,required:!0},includeStyling:{type:Boolean,default:!0,required:!1},awss3:{type:Object,required:!1,default:null},destroyDropzone:{type:Boolean,default:!0,required:!1}},data:function(){return{isS3:!1,wasQueueAutoProcess:!0}},computed:{dropzoneSettings:function(){var e={thumbnailWidth:200,thumbnailHeight:200};return Object.keys(this.options).forEach(function(o){e[o]=this.options[o]},this),null!==this.awss3&&(e.autoProcessQueue=!1,this.isS3=!0,void 0!==this.options.autoProcessQueue&&(this.wasQueueAutoProcess=this.options.autoProcessQueue)),e}},methods:{manuallyAddFile:function(e,o){e.manuallyAdded=!0,this.dropzone.emit("addedfile",e),o&&this.dropzone.emit("thumbnail",e,o);for(var n=e.previewElement.querySelectorAll("[data-dz-thumbnail]"),t=0;t<n.length;t++)n[t].style.width=this.dropzoneSettings.thumbnailWidth+"px",n[t].style.height=this.dropzoneSettings.thumbnailHeight+"px",n[t].style["object-fit"]="contain";this.dropzone.emit("complete",e),this.dropzone.options.maxFiles&&this.dropzone.options.maxFiles--,this.dropzone.files.push(e),this.$emit("vdropzone-file-added-manually",e)},setOption:function(e,o){this.dropzone.options[e]=o},removeAllFiles:function(e){this.dropzone.removeAllFiles(e)},processQueue:function(){var e=this,o=this.dropzone;this.isS3&&!this.wasQueueAutoProcess?this.getQueuedFiles().forEach(function(o){e.getSignedAndUploadToS3(o)}):this.dropzone.processQueue(),this.dropzone.on("success",function(){o.options.autoProcessQueue=!0}),this.dropzone.on("queuecomplete",function(){o.options.autoProcessQueue=!1})},init:function(){return this.dropzone.init()},destroy:function(){return this.dropzone.destroy()},updateTotalUploadProgress:function(){return this.dropzone.updateTotalUploadProgress()},getFallbackForm:function(){return this.dropzone.getFallbackForm()},getExistingFallback:function(){return this.dropzone.getExistingFallback()},setupEventListeners:function(){return this.dropzone.setupEventListeners()},removeEventListeners:function(){return this.dropzone.removeEventListeners()},disable:function(){return this.dropzone.disable()},enable:function(){return this.dropzone.enable()},filesize:function(e){return this.dropzone.filesize(e)},accept:function(e,o){return this.dropzone.accept(e,o)},addFile:function(e){return this.dropzone.addFile(e)},removeFile:function(e){this.dropzone.removeFile(e)},getAcceptedFiles:function(){return this.dropzone.getAcceptedFiles()},getRejectedFiles:function(){return this.dropzone.getRejectedFiles()},getFilesWithStatus:function(){return this.dropzone.getFilesWithStatus()},getQueuedFiles:function(){return this.dropzone.getQueuedFiles()},getUploadingFiles:function(){return this.dropzone.getUploadingFiles()},getAddedFiles:function(){return this.dropzone.getAddedFiles()},getActiveFiles:function(){return this.dropzone.getActiveFiles()},getSignedAndUploadToS3:function(o){var n=this;e.sendFile(o,this.awss3).then(function(e){e.success?(o.s3ObjectLocation=e.message,setTimeout(function(){return n.dropzone.processFile(o)}),n.$emit("vdropzone-s3-upload-success",e.message)):"undefined"!=typeof message?n.$emit("vdropzone-s3-upload-error",e.message):n.$emit("vdropzone-s3-upload-error","Network Error : Could not send request to AWS. (Maybe CORS error)")}).catch(function(e){alert(e)})},setAWSSigningURL:function(e){this.isS3&&(this.awss3.signingURL=e)}},mounted:function(){if(!this.$isServer||!this.hasBeenMounted){this.hasBeenMounted=!0;var e=__webpack_require__(101);e.autoDiscover=!1,this.dropzone=new e(this.$refs.dropzoneElement,this.dropzoneSettings);var o=this;this.dropzone.on("thumbnail",function(e,n){o.$emit("vdropzone-thumbnail",e,n)}),this.dropzone.on("addedfile",function(e){o.duplicateCheck&&this.files.length&&this.files.forEach(function(n){n.name===e.name&&(this.removeFile(e),o.$emit("duplicate-file",e))},this),o.$emit("vdropzone-file-added",e),o.isS3&&o.wasQueueAutoProcess&&o.getSignedAndUploadToS3(e)}),this.dropzone.on("addedfiles",function(e){o.$emit("vdropzone-files-added",e)}),this.dropzone.on("removedfile",function(e){o.$emit("vdropzone-removed-file",e),e.manuallyAdded&&o.dropzone.options.maxFiles++}),this.dropzone.on("success",function(e,n){o.$emit("vdropzone-success",e,n),o.isS3&&o.wasQueueAutoProcess&&o.setOption("autoProcessQueue",!1)}),this.dropzone.on("successmultiple",function(e,n){o.$emit("vdropzone-success-multiple",e,n)}),this.dropzone.on("error",function(e,n,t){o.$emit("vdropzone-error",e,n,t)}),this.dropzone.on("errormultiple",function(e,n,t){o.$emit("vdropzone-error-multiple",e,n,t)}),this.dropzone.on("sending",function(e,n,t){o.isS3&&t.append("s3ObjectLocation",e.s3ObjectLocation),o.$emit("vdropzone-sending",e,n,t)}),this.dropzone.on("sendingmultiple",function(e,n,t){o.$emit("vdropzone-sending-multiple",e,n,t)}),this.dropzone.on("complete",function(e){o.$emit("vdropzone-complete",e)}),this.dropzone.on("completemultiple",function(e){o.$emit("vdropzone-complete-multiple",e)}),this.dropzone.on("canceled",function(e){o.$emit("vdropzone-canceled",e)}),this.dropzone.on("canceledmultiple",function(e){o.$emit("vdropzone-canceled-multiple",e)}),this.dropzone.on("maxfilesreached",function(e){o.$emit("vdropzone-max-files-reached",e)}),this.dropzone.on("maxfilesexceeded",function(e){o.$emit("vdropzone-max-files-exceeded",e)}),this.dropzone.on("processing",function(e){o.$emit("vdropzone-processing",e)}),this.dropzone.on("processing",function(e){o.$emit("vdropzone-processing",e)}),this.dropzone.on("processingmultiple",function(e){o.$emit("vdropzone-processing-multiple",e)}),this.dropzone.on("uploadprogress",function(e,n,t){o.$emit("vdropzone-upload-progress",e,n,t)}),this.dropzone.on("totaluploadprogress",function(e,n,t){o.$emit("vdropzone-total-upload-progress",e,n,t)}),this.dropzone.on("reset",function(){o.$emit("vdropzone-reset")}),this.dropzone.on("queuecomplete",function(){o.$emit("vdropzone-queue-complete")}),this.dropzone.on("drop",function(e){o.$emit("vdropzone-drop",e)}),this.dropzone.on("dragstart",function(e){o.$emit("vdropzone-drag-start",e)}),this.dropzone.on("dragend",function(e){o.$emit("vdropzone-drag-end",e)}),this.dropzone.on("dragenter",function(e){o.$emit("vdropzone-drag-enter",e)}),this.dropzone.on("dragover",function(e){o.$emit("vdropzone-drag-over",e)}),this.dropzone.on("dragleave",function(e){o.$emit("vdropzone-drag-leave",e)}),o.$emit("vdropzone-mounted")}},beforeDestroy:function(){this.destroyDropzone&&this.dropzone.destroy()}}});
+//# sourceMappingURL=vue2Dropzone.js.map
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*
+ *
+ * More info at [www.dropzonejs.com](http://www.dropzonejs.com)
+ *
+ * Copyright (c) 2012, Matias Meno
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */
+
+// The Emitter class provides the ability to call `.on()` on Dropzone to listen
+// to events.
+// It is strongly based on component's emitter class, and I removed the
+// functionality because of the dependency hell with different frameworks.
+var Emitter = function () {
+  function Emitter() {
+    _classCallCheck(this, Emitter);
+  }
+
+  _createClass(Emitter, [{
+    key: "on",
+
+    // Add an event listener for given event
+    value: function on(event, fn) {
+      this._callbacks = this._callbacks || {};
+      // Create namespace for this event
+      if (!this._callbacks[event]) {
+        this._callbacks[event] = [];
+      }
+      this._callbacks[event].push(fn);
+      return this;
+    }
+  }, {
+    key: "emit",
+    value: function emit(event) {
+      this._callbacks = this._callbacks || {};
+      var callbacks = this._callbacks[event];
+
+      if (callbacks) {
+        for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+
+        for (var _iterator = callbacks, _isArray = true, _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+          var _ref;
+
+          if (_isArray) {
+            if (_i >= _iterator.length) break;
+            _ref = _iterator[_i++];
+          } else {
+            _i = _iterator.next();
+            if (_i.done) break;
+            _ref = _i.value;
+          }
+
+          var callback = _ref;
+
+          callback.apply(this, args);
+        }
+      }
+
+      return this;
+    }
+
+    // Remove event listener for given event. If fn is not provided, all event
+    // listeners for that event will be removed. If neither is provided, all
+    // event listeners will be removed.
+
+  }, {
+    key: "off",
+    value: function off(event, fn) {
+      if (!this._callbacks || arguments.length === 0) {
+        this._callbacks = {};
+        return this;
+      }
+
+      // specific event
+      var callbacks = this._callbacks[event];
+      if (!callbacks) {
+        return this;
+      }
+
+      // remove all handlers
+      if (arguments.length === 1) {
+        delete this._callbacks[event];
+        return this;
+      }
+
+      // remove specific handler
+      for (var i = 0; i < callbacks.length; i++) {
+        var callback = callbacks[i];
+        if (callback === fn) {
+          callbacks.splice(i, 1);
+          break;
+        }
+      }
+
+      return this;
+    }
+  }]);
+
+  return Emitter;
+}();
+
+var Dropzone = function (_Emitter) {
+  _inherits(Dropzone, _Emitter);
+
+  _createClass(Dropzone, null, [{
+    key: "initClass",
+    value: function initClass() {
+
+      // Exposing the emitter class, mainly for tests
+      this.prototype.Emitter = Emitter;
+
+      /*
+       This is a list of all available events you can register on a dropzone object.
+        You can register an event handler like this:
+        dropzone.on("dragEnter", function() { });
+        */
+      this.prototype.events = ["drop", "dragstart", "dragend", "dragenter", "dragover", "dragleave", "addedfile", "addedfiles", "removedfile", "thumbnail", "error", "errormultiple", "processing", "processingmultiple", "uploadprogress", "totaluploadprogress", "sending", "sendingmultiple", "success", "successmultiple", "canceled", "canceledmultiple", "complete", "completemultiple", "reset", "maxfilesexceeded", "maxfilesreached", "queuecomplete"];
+
+      this.prototype.defaultOptions = {
+        /**
+         * Has to be specified on elements other than form (or when the form
+         * doesn't have an `action` attribute). You can also
+         * provide a function that will be called with `files` and
+         * must return the url (since `v3.12.0`)
+         */
+        url: null,
+
+        /**
+         * Can be changed to `"put"` if necessary. You can also provide a function
+         * that will be called with `files` and must return the method (since `v3.12.0`).
+         */
+        method: "post",
+
+        /**
+         * Will be set on the XHRequest.
+         */
+        withCredentials: false,
+
+        /**
+         * The timeout for the XHR requests in milliseconds (since `v4.4.0`).
+         */
+        timeout: 30000,
+
+        /**
+         * How many file uploads to process in parallel (See the
+         * Enqueuing file uploads* documentation section for more info)
+         */
+        parallelUploads: 2,
+
+        /**
+         * Whether to send multiple files in one request. If
+         * this it set to true, then the fallback file input element will
+         * have the `multiple` attribute as well. This option will
+         * also trigger additional events (like `processingmultiple`). See the events
+         * documentation section for more information.
+         */
+        uploadMultiple: false,
+
+        /**
+         * Whether you want files to be uploaded in chunks to your server. This can't be
+         * used in combination with `uploadMultiple`.
+         *
+         * See [chunksUploaded](#config-chunksUploaded) for the callback to finalise an upload.
+         */
+        chunking: false,
+
+        /**
+         * If `chunking` is enabled, this defines whether **every** file should be chunked,
+         * even if the file size is below chunkSize. This means, that the additional chunk
+         * form data will be submitted and the `chunksUploaded` callback will be invoked.
+         */
+        forceChunking: false,
+
+        /**
+         * If `chunking` is `true`, then this defines the chunk size in bytes.
+         */
+        chunkSize: 2000000,
+
+        /**
+         * If `true`, the individual chunks of a file are being uploaded simultaneously.
+         */
+        parallelChunkUploads: false,
+
+        /**
+         * Whether a chunk should be retried if it fails.
+         */
+        retryChunks: false,
+
+        /**
+         * If `retryChunks` is true, how many times should it be retried.
+         */
+        retryChunksLimit: 3,
+
+        /**
+         * If not `null` defines how many files this Dropzone handles. If it exceeds,
+         * the event `maxfilesexceeded` will be called. The dropzone element gets the
+         * class `dz-max-files-reached` accordingly so you can provide visual feedback.
+         */
+        maxFilesize: 256,
+
+        /**
+         * The name of the file param that gets transferred.
+         * **NOTE**: If you have the option  `uploadMultiple` set to `true`, then
+         * Dropzone will append `[]` to the name.
+         */
+        paramName: "file",
+
+        /**
+         * Whether thumbnails for images should be generated
+         */
+        createImageThumbnails: true,
+
+        /**
+         * In MB. When the filename exceeds this limit, the thumbnail will not be generated.
+         */
+        maxThumbnailFilesize: 10,
+
+        /**
+         * If `null`, the ratio of the image will be used to calculate it.
+         */
+        thumbnailWidth: 120,
+
+        /**
+         * The same as `thumbnailWidth`. If both are null, images will not be resized.
+         */
+        thumbnailHeight: 120,
+
+        /**
+         * How the images should be scaled down in case both, `thumbnailWidth` and `thumbnailHeight` are provided.
+         * Can be either `contain` or `crop`.
+         */
+        thumbnailMethod: 'crop',
+
+        /**
+         * If set, images will be resized to these dimensions before being **uploaded**.
+         * If only one, `resizeWidth` **or** `resizeHeight` is provided, the original aspect
+         * ratio of the file will be preserved.
+         *
+         * The `options.transformFile` function uses these options, so if the `transformFile` function
+         * is overridden, these options don't do anything.
+         */
+        resizeWidth: null,
+
+        /**
+         * See `resizeWidth`.
+         */
+        resizeHeight: null,
+
+        /**
+         * The mime type of the resized image (before it gets uploaded to the server).
+         * If `null` the original mime type will be used. To force jpeg, for example, use `image/jpeg`.
+         * See `resizeWidth` for more information.
+         */
+        resizeMimeType: null,
+
+        /**
+         * The quality of the resized images. See `resizeWidth`.
+         */
+        resizeQuality: 0.8,
+
+        /**
+         * How the images should be scaled down in case both, `resizeWidth` and `resizeHeight` are provided.
+         * Can be either `contain` or `crop`.
+         */
+        resizeMethod: 'contain',
+
+        /**
+         * The base that is used to calculate the filesize. You can change this to
+         * 1024 if you would rather display kibibytes, mebibytes, etc...
+         * 1024 is technically incorrect, because `1024 bytes` are `1 kibibyte` not `1 kilobyte`.
+         * You can change this to `1024` if you don't care about validity.
+         */
+        filesizeBase: 1000,
+
+        /**
+         * Can be used to limit the maximum number of files that will be handled by this Dropzone
+         */
+        maxFiles: null,
+
+        /**
+         * An optional object to send additional headers to the server. Eg:
+         * `{ "My-Awesome-Header": "header value" }`
+         */
+        headers: null,
+
+        /**
+         * If `true`, the dropzone element itself will be clickable, if `false`
+         * nothing will be clickable.
+         *
+         * You can also pass an HTML element, a CSS selector (for multiple elements)
+         * or an array of those. In that case, all of those elements will trigger an
+         * upload when clicked.
+         */
+        clickable: true,
+
+        /**
+         * Whether hidden files in directories should be ignored.
+         */
+        ignoreHiddenFiles: true,
+
+        /**
+         * The default implementation of `accept` checks the file's mime type or
+         * extension against this list. This is a comma separated list of mime
+         * types or file extensions.
+         *
+         * Eg.: `image/*,application/pdf,.psd`
+         *
+         * If the Dropzone is `clickable` this option will also be used as
+         * [`accept`](https://developer.mozilla.org/en-US/docs/HTML/Element/input#attr-accept)
+         * parameter on the hidden file input as well.
+         */
+        acceptedFiles: null,
+
+        /**
+         * **Deprecated!**
+         * Use acceptedFiles instead.
+         */
+        acceptedMimeTypes: null,
+
+        /**
+         * If false, files will be added to the queue but the queue will not be
+         * processed automatically.
+         * This can be useful if you need some additional user input before sending
+         * files (or if you want want all files sent at once).
+         * If you're ready to send the file simply call `myDropzone.processQueue()`.
+         *
+         * See the [enqueuing file uploads](#enqueuing-file-uploads) documentation
+         * section for more information.
+         */
+        autoProcessQueue: true,
+
+        /**
+         * If false, files added to the dropzone will not be queued by default.
+         * You'll have to call `enqueueFile(file)` manually.
+         */
+        autoQueue: true,
+
+        /**
+         * If `true`, this will add a link to every file preview to remove or cancel (if
+         * already uploading) the file. The `dictCancelUpload`, `dictCancelUploadConfirmation`
+         * and `dictRemoveFile` options are used for the wording.
+         */
+        addRemoveLinks: false,
+
+        /**
+         * Defines where to display the file previews – if `null` the
+         * Dropzone element itself is used. Can be a plain `HTMLElement` or a CSS
+         * selector. The element should have the `dropzone-previews` class so
+         * the previews are displayed properly.
+         */
+        previewsContainer: null,
+
+        /**
+         * This is the element the hidden input field (which is used when clicking on the
+         * dropzone to trigger file selection) will be appended to. This might
+         * be important in case you use frameworks to switch the content of your page.
+         */
+        hiddenInputContainer: "body",
+
+        /**
+         * If null, no capture type will be specified
+         * If camera, mobile devices will skip the file selection and choose camera
+         * If microphone, mobile devices will skip the file selection and choose the microphone
+         * If camcorder, mobile devices will skip the file selection and choose the camera in video mode
+         * On apple devices multiple must be set to false.  AcceptedFiles may need to
+         * be set to an appropriate mime type (e.g. "image/*", "audio/*", or "video/*").
+         */
+        capture: null,
+
+        /**
+         * **Deprecated**. Use `renameFile` instead.
+         */
+        renameFilename: null,
+
+        /**
+         * A function that is invoked before the file is uploaded to the server and renames the file.
+         * This function gets the `File` as argument and can use the `file.name`. The actual name of the
+         * file that gets used during the upload can be accessed through `file.upload.filename`.
+         */
+        renameFile: null,
+
+        /**
+         * If `true` the fallback will be forced. This is very useful to test your server
+         * implementations first and make sure that everything works as
+         * expected without dropzone if you experience problems, and to test
+         * how your fallbacks will look.
+         */
+        forceFallback: false,
+
+        /**
+         * The text used before any files are dropped.
+         */
+        dictDefaultMessage: "Drop files here to upload",
+
+        /**
+         * The text that replaces the default message text it the browser is not supported.
+         */
+        dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+
+        /**
+         * The text that will be added before the fallback form.
+         * If you provide a  fallback element yourself, or if this option is `null` this will
+         * be ignored.
+         */
+        dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
+
+        /**
+         * If the filesize is too big.
+         * `{{filesize}}` and `{{maxFilesize}}` will be replaced with the respective configuration values.
+         */
+        dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+
+        /**
+         * If the file doesn't match the file type.
+         */
+        dictInvalidFileType: "You can't upload files of this type.",
+
+        /**
+         * If the server response was invalid.
+         * `{{statusCode}}` will be replaced with the servers status code.
+         */
+        dictResponseError: "Server responded with {{statusCode}} code.",
+
+        /**
+         * If `addRemoveLinks` is true, the text to be used for the cancel upload link.
+         */
+        dictCancelUpload: "Cancel upload",
+
+        /**
+         * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
+         */
+        dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
+
+        /**
+         * If `addRemoveLinks` is true, the text to be used to remove a file.
+         */
+        dictRemoveFile: "Remove file",
+
+        /**
+         * If this is not null, then the user will be prompted before removing a file.
+         */
+        dictRemoveFileConfirmation: null,
+
+        /**
+         * Displayed if `maxFiles` is st and exceeded.
+         * The string `{{maxFiles}}` will be replaced by the configuration value.
+         */
+        dictMaxFilesExceeded: "You can not upload any more files.",
+
+        /**
+         * Allows you to translate the different units. Starting with `tb` for terabytes and going down to
+         * `b` for bytes.
+         */
+        dictFileSizeUnits: { tb: "TB", gb: "GB", mb: "MB", kb: "KB", b: "b" },
+
+        /**
+         * Called when dropzone initialized
+         * You can add event listeners here
+         */
+        init: function init() {},
+
+
+        /**
+         * Can be an **object** of additional parameters to transfer to the server, **or** a `Function`
+         * that gets invoked with the `files`, `xhr` and, if it's a chunked upload, `chunk` arguments. In case
+         * of a function, this needs to return a map.
+         *
+         * The default implementation does nothing for normal uploads, but adds relevant information for
+         * chunked uploads.
+         *
+         * This is the same as adding hidden input fields in the form element.
+         */
+        params: function params(files, xhr, chunk) {
+          if (chunk) {
+            return {
+              dzuuid: chunk.file.upload.uuid,
+              dzchunkindex: chunk.index,
+              dztotalfilesize: chunk.file.size,
+              dzchunksize: this.options.chunkSize,
+              dztotalchunkcount: chunk.file.upload.totalChunkCount,
+              dzchunkbyteoffset: chunk.index * this.options.chunkSize
+            };
+          }
+        },
+
+
+        /**
+         * A function that gets a [file](https://developer.mozilla.org/en-US/docs/DOM/File)
+         * and a `done` function as parameters.
+         *
+         * If the done function is invoked without arguments, the file is "accepted" and will
+         * be processed. If you pass an error message, the file is rejected, and the error
+         * message will be displayed.
+         * This function will not be called if the file is too big or doesn't match the mime types.
+         */
+        accept: function accept(file, done) {
+          return done();
+        },
+
+
+        /**
+         * The callback that will be invoked when all chunks have been uploaded for a file.
+         * It gets the file for which the chunks have been uploaded as the first parameter,
+         * and the `done` function as second. `done()` needs to be invoked when everything
+         * needed to finish the upload process is done.
+         */
+        chunksUploaded: function chunksUploaded(file, done) {
+          done();
+        },
+
+        /**
+         * Gets called when the browser is not supported.
+         * The default implementation shows the fallback input field and adds
+         * a text.
+         */
+        fallback: function fallback() {
+          // This code should pass in IE7... :(
+          var messageElement = void 0;
+          this.element.className = this.element.className + " dz-browser-not-supported";
+
+          for (var _iterator2 = this.element.getElementsByTagName("div"), _isArray2 = true, _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
+            var _ref2;
+
+            if (_isArray2) {
+              if (_i2 >= _iterator2.length) break;
+              _ref2 = _iterator2[_i2++];
+            } else {
+              _i2 = _iterator2.next();
+              if (_i2.done) break;
+              _ref2 = _i2.value;
+            }
+
+            var child = _ref2;
+
+            if (/(^| )dz-message($| )/.test(child.className)) {
+              messageElement = child;
+              child.className = "dz-message"; // Removes the 'dz-default' class
+              break;
+            }
+          }
+          if (!messageElement) {
+            messageElement = Dropzone.createElement("<div class=\"dz-message\"><span></span></div>");
+            this.element.appendChild(messageElement);
+          }
+
+          var span = messageElement.getElementsByTagName("span")[0];
+          if (span) {
+            if (span.textContent != null) {
+              span.textContent = this.options.dictFallbackMessage;
+            } else if (span.innerText != null) {
+              span.innerText = this.options.dictFallbackMessage;
+            }
+          }
+
+          return this.element.appendChild(this.getFallbackForm());
+        },
+
+
+        /**
+         * Gets called to calculate the thumbnail dimensions.
+         *
+         * It gets `file`, `width` and `height` (both may be `null`) as parameters and must return an object containing:
+         *
+         *  - `srcWidth` & `srcHeight` (required)
+         *  - `trgWidth` & `trgHeight` (required)
+         *  - `srcX` & `srcY` (optional, default `0`)
+         *  - `trgX` & `trgY` (optional, default `0`)
+         *
+         * Those values are going to be used by `ctx.drawImage()`.
+         */
+        resize: function resize(file, width, height, resizeMethod) {
+          var info = {
+            srcX: 0,
+            srcY: 0,
+            srcWidth: file.width,
+            srcHeight: file.height
+          };
+
+          var srcRatio = file.width / file.height;
+
+          // Automatically calculate dimensions if not specified
+          if (width == null && height == null) {
+            width = info.srcWidth;
+            height = info.srcHeight;
+          } else if (width == null) {
+            width = height * srcRatio;
+          } else if (height == null) {
+            height = width / srcRatio;
+          }
+
+          // Make sure images aren't upscaled
+          width = Math.min(width, info.srcWidth);
+          height = Math.min(height, info.srcHeight);
+
+          var trgRatio = width / height;
+
+          if (info.srcWidth > width || info.srcHeight > height) {
+            // Image is bigger and needs rescaling
+            if (resizeMethod === 'crop') {
+              if (srcRatio > trgRatio) {
+                info.srcHeight = file.height;
+                info.srcWidth = info.srcHeight * trgRatio;
+              } else {
+                info.srcWidth = file.width;
+                info.srcHeight = info.srcWidth / trgRatio;
+              }
+            } else if (resizeMethod === 'contain') {
+              // Method 'contain'
+              if (srcRatio > trgRatio) {
+                height = width / srcRatio;
+              } else {
+                width = height * srcRatio;
+              }
+            } else {
+              throw new Error("Unknown resizeMethod '" + resizeMethod + "'");
+            }
+          }
+
+          info.srcX = (file.width - info.srcWidth) / 2;
+          info.srcY = (file.height - info.srcHeight) / 2;
+
+          info.trgWidth = width;
+          info.trgHeight = height;
+
+          return info;
+        },
+
+
+        /**
+         * Can be used to transform the file (for example, resize an image if necessary).
+         *
+         * The default implementation uses `resizeWidth` and `resizeHeight` (if provided) and resizes
+         * images according to those dimensions.
+         *
+         * Gets the `file` as the first parameter, and a `done()` function as the second, that needs
+         * to be invoked with the file when the transformation is done.
+         */
+        transformFile: function transformFile(file, done) {
+          if ((this.options.resizeWidth || this.options.resizeHeight) && file.type.match(/image.*/)) {
+            return this.resizeImage(file, this.options.resizeWidth, this.options.resizeHeight, this.options.resizeMethod, done);
+          } else {
+            return done(file);
+          }
+        },
+
+
+        /**
+         * A string that contains the template used for each dropped
+         * file. Change it to fulfill your needs but make sure to properly
+         * provide all elements.
+         *
+         * If you want to use an actual HTML element instead of providing a String
+         * as a config option, you could create a div with the id `tpl`,
+         * put the template inside it and provide the element like this:
+         *
+         *     document
+         *       .querySelector('#tpl')
+         *       .innerHTML
+         *
+         */
+        previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-image\"><img data-dz-thumbnail /></div>\n  <div class=\"dz-details\">\n    <div class=\"dz-size\"><span data-dz-size></span></div>\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n  </div>\n  <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n  <div class=\"dz-success-mark\">\n    <svg width=\"54px\" height=\"54px\" viewBox=\"0 0 54 54\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:sketch=\"http://www.bohemiancoding.com/sketch/ns\">\n      <title>Check</title>\n      <defs></defs>\n      <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" sketch:type=\"MSPage\">\n        <path d=\"M23.5,31.8431458 L17.5852419,25.9283877 C16.0248253,24.3679711 13.4910294,24.366835 11.9289322,25.9289322 C10.3700136,27.4878508 10.3665912,30.0234455 11.9283877,31.5852419 L20.4147581,40.0716123 C20.5133999,40.1702541 20.6159315,40.2626649 20.7218615,40.3488435 C22.2835669,41.8725651 24.794234,41.8626202 26.3461564,40.3106978 L43.3106978,23.3461564 C44.8771021,21.7797521 44.8758057,19.2483887 43.3137085,17.6862915 C41.7547899,16.1273729 39.2176035,16.1255422 37.6538436,17.6893022 L23.5,31.8431458 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z\" id=\"Oval-2\" stroke-opacity=\"0.198794158\" stroke=\"#747474\" fill-opacity=\"0.816519475\" fill=\"#FFFFFF\" sketch:type=\"MSShapeGroup\"></path>\n      </g>\n    </svg>\n  </div>\n  <div class=\"dz-error-mark\">\n    <svg width=\"54px\" height=\"54px\" viewBox=\"0 0 54 54\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:sketch=\"http://www.bohemiancoding.com/sketch/ns\">\n      <title>Error</title>\n      <defs></defs>\n      <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" sketch:type=\"MSPage\">\n        <g id=\"Check-+-Oval-2\" sketch:type=\"MSLayerGroup\" stroke=\"#747474\" stroke-opacity=\"0.198794158\" fill=\"#FFFFFF\" fill-opacity=\"0.816519475\">\n          <path d=\"M32.6568542,29 L38.3106978,23.3461564 C39.8771021,21.7797521 39.8758057,19.2483887 38.3137085,17.6862915 C36.7547899,16.1273729 34.2176035,16.1255422 32.6538436,17.6893022 L27,23.3431458 L21.3461564,17.6893022 C19.7823965,16.1255422 17.2452101,16.1273729 15.6862915,17.6862915 C14.1241943,19.2483887 14.1228979,21.7797521 15.6893022,23.3461564 L21.3431458,29 L15.6893022,34.6538436 C14.1228979,36.2202479 14.1241943,38.7516113 15.6862915,40.3137085 C17.2452101,41.8726271 19.7823965,41.8744578 21.3461564,40.3106978 L27,34.6568542 L32.6538436,40.3106978 C34.2176035,41.8744578 36.7547899,41.8726271 38.3137085,40.3137085 C39.8758057,38.7516113 39.8771021,36.2202479 38.3106978,34.6538436 L32.6568542,29 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z\" id=\"Oval-2\" sketch:type=\"MSShapeGroup\"></path>\n        </g>\n      </g>\n    </svg>\n  </div>\n</div>",
+
+        // END OPTIONS
+        // (Required by the dropzone documentation parser)
+
+
+        /*
+         Those functions register themselves to the events on init and handle all
+         the user interface specific stuff. Overwriting them won't break the upload
+         but can break the way it's displayed.
+         You can overwrite them if you don't like the default behavior. If you just
+         want to add an additional event handler, register it on the dropzone object
+         and don't overwrite those options.
+         */
+
+        // Those are self explanatory and simply concern the DragnDrop.
+        drop: function drop(e) {
+          return this.element.classList.remove("dz-drag-hover");
+        },
+        dragstart: function dragstart(e) {},
+        dragend: function dragend(e) {
+          return this.element.classList.remove("dz-drag-hover");
+        },
+        dragenter: function dragenter(e) {
+          return this.element.classList.add("dz-drag-hover");
+        },
+        dragover: function dragover(e) {
+          return this.element.classList.add("dz-drag-hover");
+        },
+        dragleave: function dragleave(e) {
+          return this.element.classList.remove("dz-drag-hover");
+        },
+        paste: function paste(e) {},
+
+
+        // Called whenever there are no files left in the dropzone anymore, and the
+        // dropzone should be displayed as if in the initial state.
+        reset: function reset() {
+          return this.element.classList.remove("dz-started");
+        },
+
+
+        // Called when a file is added to the queue
+        // Receives `file`
+        addedfile: function addedfile(file) {
+          var _this2 = this;
+
+          if (this.element === this.previewsContainer) {
+            this.element.classList.add("dz-started");
+          }
+
+          if (this.previewsContainer) {
+            file.previewElement = Dropzone.createElement(this.options.previewTemplate.trim());
+            file.previewTemplate = file.previewElement; // Backwards compatibility
+
+            this.previewsContainer.appendChild(file.previewElement);
+            for (var _iterator3 = file.previewElement.querySelectorAll("[data-dz-name]"), _isArray3 = true, _i3 = 0, _iterator3 = _isArray3 ? _iterator3 : _iterator3[Symbol.iterator]();;) {
+              var _ref3;
+
+              if (_isArray3) {
+                if (_i3 >= _iterator3.length) break;
+                _ref3 = _iterator3[_i3++];
+              } else {
+                _i3 = _iterator3.next();
+                if (_i3.done) break;
+                _ref3 = _i3.value;
+              }
+
+              var node = _ref3;
+
+              node.textContent = file.name;
+            }
+            for (var _iterator4 = file.previewElement.querySelectorAll("[data-dz-size]"), _isArray4 = true, _i4 = 0, _iterator4 = _isArray4 ? _iterator4 : _iterator4[Symbol.iterator]();;) {
+              if (_isArray4) {
+                if (_i4 >= _iterator4.length) break;
+                node = _iterator4[_i4++];
+              } else {
+                _i4 = _iterator4.next();
+                if (_i4.done) break;
+                node = _i4.value;
+              }
+
+              node.innerHTML = this.filesize(file.size);
+            }
+
+            if (this.options.addRemoveLinks) {
+              file._removeLink = Dropzone.createElement("<a class=\"dz-remove\" href=\"javascript:undefined;\" data-dz-remove>" + this.options.dictRemoveFile + "</a>");
+              file.previewElement.appendChild(file._removeLink);
+            }
+
+            var removeFileEvent = function removeFileEvent(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              if (file.status === Dropzone.UPLOADING) {
+                return Dropzone.confirm(_this2.options.dictCancelUploadConfirmation, function () {
+                  return _this2.removeFile(file);
+                });
+              } else {
+                if (_this2.options.dictRemoveFileConfirmation) {
+                  return Dropzone.confirm(_this2.options.dictRemoveFileConfirmation, function () {
+                    return _this2.removeFile(file);
+                  });
+                } else {
+                  return _this2.removeFile(file);
+                }
+              }
+            };
+
+            for (var _iterator5 = file.previewElement.querySelectorAll("[data-dz-remove]"), _isArray5 = true, _i5 = 0, _iterator5 = _isArray5 ? _iterator5 : _iterator5[Symbol.iterator]();;) {
+              var _ref4;
+
+              if (_isArray5) {
+                if (_i5 >= _iterator5.length) break;
+                _ref4 = _iterator5[_i5++];
+              } else {
+                _i5 = _iterator5.next();
+                if (_i5.done) break;
+                _ref4 = _i5.value;
+              }
+
+              var removeLink = _ref4;
+
+              removeLink.addEventListener("click", removeFileEvent);
+            }
+          }
+        },
+
+
+        // Called whenever a file is removed.
+        removedfile: function removedfile(file) {
+          if (file.previewElement != null && file.previewElement.parentNode != null) {
+            file.previewElement.parentNode.removeChild(file.previewElement);
+          }
+          return this._updateMaxFilesReachedClass();
+        },
+
+
+        // Called when a thumbnail has been generated
+        // Receives `file` and `dataUrl`
+        thumbnail: function thumbnail(file, dataUrl) {
+          if (file.previewElement) {
+            file.previewElement.classList.remove("dz-file-preview");
+            for (var _iterator6 = file.previewElement.querySelectorAll("[data-dz-thumbnail]"), _isArray6 = true, _i6 = 0, _iterator6 = _isArray6 ? _iterator6 : _iterator6[Symbol.iterator]();;) {
+              var _ref5;
+
+              if (_isArray6) {
+                if (_i6 >= _iterator6.length) break;
+                _ref5 = _iterator6[_i6++];
+              } else {
+                _i6 = _iterator6.next();
+                if (_i6.done) break;
+                _ref5 = _i6.value;
+              }
+
+              var thumbnailElement = _ref5;
+
+              thumbnailElement.alt = file.name;
+              thumbnailElement.src = dataUrl;
+            }
+
+            return setTimeout(function () {
+              return file.previewElement.classList.add("dz-image-preview");
+            }, 1);
+          }
+        },
+
+
+        // Called whenever an error occurs
+        // Receives `file` and `message`
+        error: function error(file, message) {
+          if (file.previewElement) {
+            file.previewElement.classList.add("dz-error");
+            if (typeof message !== "String" && message.error) {
+              message = message.error;
+            }
+            for (var _iterator7 = file.previewElement.querySelectorAll("[data-dz-errormessage]"), _isArray7 = true, _i7 = 0, _iterator7 = _isArray7 ? _iterator7 : _iterator7[Symbol.iterator]();;) {
+              var _ref6;
+
+              if (_isArray7) {
+                if (_i7 >= _iterator7.length) break;
+                _ref6 = _iterator7[_i7++];
+              } else {
+                _i7 = _iterator7.next();
+                if (_i7.done) break;
+                _ref6 = _i7.value;
+              }
+
+              var node = _ref6;
+
+              node.textContent = message;
+            }
+          }
+        },
+        errormultiple: function errormultiple() {},
+
+
+        // Called when a file gets processed. Since there is a cue, not all added
+        // files are processed immediately.
+        // Receives `file`
+        processing: function processing(file) {
+          if (file.previewElement) {
+            file.previewElement.classList.add("dz-processing");
+            if (file._removeLink) {
+              return file._removeLink.textContent = this.options.dictCancelUpload;
+            }
+          }
+        },
+        processingmultiple: function processingmultiple() {},
+
+
+        // Called whenever the upload progress gets updated.
+        // Receives `file`, `progress` (percentage 0-100) and `bytesSent`.
+        // To get the total number of bytes of the file, use `file.size`
+        uploadprogress: function uploadprogress(file, progress, bytesSent) {
+          if (file.previewElement) {
+            for (var _iterator8 = file.previewElement.querySelectorAll("[data-dz-uploadprogress]"), _isArray8 = true, _i8 = 0, _iterator8 = _isArray8 ? _iterator8 : _iterator8[Symbol.iterator]();;) {
+              var _ref7;
+
+              if (_isArray8) {
+                if (_i8 >= _iterator8.length) break;
+                _ref7 = _iterator8[_i8++];
+              } else {
+                _i8 = _iterator8.next();
+                if (_i8.done) break;
+                _ref7 = _i8.value;
+              }
+
+              var node = _ref7;
+
+              node.nodeName === 'PROGRESS' ? node.value = progress : node.style.width = progress + "%";
+            }
+          }
+        },
+
+
+        // Called whenever the total upload progress gets updated.
+        // Called with totalUploadProgress (0-100), totalBytes and totalBytesSent
+        totaluploadprogress: function totaluploadprogress() {},
+
+
+        // Called just before the file is sent. Gets the `xhr` object as second
+        // parameter, so you can modify it (for example to add a CSRF token) and a
+        // `formData` object to add additional information.
+        sending: function sending() {},
+        sendingmultiple: function sendingmultiple() {},
+
+
+        // When the complete upload is finished and successful
+        // Receives `file`
+        success: function success(file) {
+          if (file.previewElement) {
+            return file.previewElement.classList.add("dz-success");
+          }
+        },
+        successmultiple: function successmultiple() {},
+
+
+        // When the upload is canceled.
+        canceled: function canceled(file) {
+          return this.emit("error", file, "Upload canceled.");
+        },
+        canceledmultiple: function canceledmultiple() {},
+
+
+        // When the upload is finished, either with success or an error.
+        // Receives `file`
+        complete: function complete(file) {
+          if (file._removeLink) {
+            file._removeLink.textContent = this.options.dictRemoveFile;
+          }
+          if (file.previewElement) {
+            return file.previewElement.classList.add("dz-complete");
+          }
+        },
+        completemultiple: function completemultiple() {},
+        maxfilesexceeded: function maxfilesexceeded() {},
+        maxfilesreached: function maxfilesreached() {},
+        queuecomplete: function queuecomplete() {},
+        addedfiles: function addedfiles() {}
+      };
+
+      this.prototype._thumbnailQueue = [];
+      this.prototype._processingThumbnail = false;
+    }
+
+    // global utility
+
+  }, {
+    key: "extend",
+    value: function extend(target) {
+      for (var _len2 = arguments.length, objects = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        objects[_key2 - 1] = arguments[_key2];
+      }
+
+      for (var _iterator9 = objects, _isArray9 = true, _i9 = 0, _iterator9 = _isArray9 ? _iterator9 : _iterator9[Symbol.iterator]();;) {
+        var _ref8;
+
+        if (_isArray9) {
+          if (_i9 >= _iterator9.length) break;
+          _ref8 = _iterator9[_i9++];
+        } else {
+          _i9 = _iterator9.next();
+          if (_i9.done) break;
+          _ref8 = _i9.value;
+        }
+
+        var object = _ref8;
+
+        for (var key in object) {
+          var val = object[key];
+          target[key] = val;
+        }
+      }
+      return target;
+    }
+  }]);
+
+  function Dropzone(el, options) {
+    _classCallCheck(this, Dropzone);
+
+    var _this = _possibleConstructorReturn(this, (Dropzone.__proto__ || Object.getPrototypeOf(Dropzone)).call(this));
+
+    var fallback = void 0,
+        left = void 0;
+    _this.element = el;
+    // For backwards compatibility since the version was in the prototype previously
+    _this.version = Dropzone.version;
+
+    _this.defaultOptions.previewTemplate = _this.defaultOptions.previewTemplate.replace(/\n*/g, "");
+
+    _this.clickableElements = [];
+    _this.listeners = [];
+    _this.files = []; // All files
+
+    if (typeof _this.element === "string") {
+      _this.element = document.querySelector(_this.element);
+    }
+
+    // Not checking if instance of HTMLElement or Element since IE9 is extremely weird.
+    if (!_this.element || _this.element.nodeType == null) {
+      throw new Error("Invalid dropzone element.");
+    }
+
+    if (_this.element.dropzone) {
+      throw new Error("Dropzone already attached.");
+    }
+
+    // Now add this dropzone to the instances.
+    Dropzone.instances.push(_this);
+
+    // Put the dropzone inside the element itself.
+    _this.element.dropzone = _this;
+
+    var elementOptions = (left = Dropzone.optionsForElement(_this.element)) != null ? left : {};
+
+    _this.options = Dropzone.extend({}, _this.defaultOptions, elementOptions, options != null ? options : {});
+
+    // If the browser failed, just call the fallback and leave
+    if (_this.options.forceFallback || !Dropzone.isBrowserSupported()) {
+      var _ret;
+
+      return _ret = _this.options.fallback.call(_this), _possibleConstructorReturn(_this, _ret);
+    }
+
+    // @options.url = @element.getAttribute "action" unless @options.url?
+    if (_this.options.url == null) {
+      _this.options.url = _this.element.getAttribute("action");
+    }
+
+    if (!_this.options.url) {
+      throw new Error("No URL provided.");
+    }
+
+    if (_this.options.acceptedFiles && _this.options.acceptedMimeTypes) {
+      throw new Error("You can't provide both 'acceptedFiles' and 'acceptedMimeTypes'. 'acceptedMimeTypes' is deprecated.");
+    }
+
+    if (_this.options.uploadMultiple && _this.options.chunking) {
+      throw new Error('You cannot set both: uploadMultiple and chunking.');
+    }
+
+    // Backwards compatibility
+    if (_this.options.acceptedMimeTypes) {
+      _this.options.acceptedFiles = _this.options.acceptedMimeTypes;
+      delete _this.options.acceptedMimeTypes;
+    }
+
+    // Backwards compatibility
+    if (_this.options.renameFilename != null) {
+      _this.options.renameFile = function (file) {
+        return _this.options.renameFilename.call(_this, file.name, file);
+      };
+    }
+
+    _this.options.method = _this.options.method.toUpperCase();
+
+    if ((fallback = _this.getExistingFallback()) && fallback.parentNode) {
+      // Remove the fallback
+      fallback.parentNode.removeChild(fallback);
+    }
+
+    // Display previews in the previewsContainer element or the Dropzone element unless explicitly set to false
+    if (_this.options.previewsContainer !== false) {
+      if (_this.options.previewsContainer) {
+        _this.previewsContainer = Dropzone.getElement(_this.options.previewsContainer, "previewsContainer");
+      } else {
+        _this.previewsContainer = _this.element;
+      }
+    }
+
+    if (_this.options.clickable) {
+      if (_this.options.clickable === true) {
+        _this.clickableElements = [_this.element];
+      } else {
+        _this.clickableElements = Dropzone.getElements(_this.options.clickable, "clickable");
+      }
+    }
+
+    _this.init();
+    return _this;
+  }
+
+  // Returns all files that have been accepted
+
+
+  _createClass(Dropzone, [{
+    key: "getAcceptedFiles",
+    value: function getAcceptedFiles() {
+      return this.files.filter(function (file) {
+        return file.accepted;
+      }).map(function (file) {
+        return file;
+      });
+    }
+
+    // Returns all files that have been rejected
+    // Not sure when that's going to be useful, but added for completeness.
+
+  }, {
+    key: "getRejectedFiles",
+    value: function getRejectedFiles() {
+      return this.files.filter(function (file) {
+        return !file.accepted;
+      }).map(function (file) {
+        return file;
+      });
+    }
+  }, {
+    key: "getFilesWithStatus",
+    value: function getFilesWithStatus(status) {
+      return this.files.filter(function (file) {
+        return file.status === status;
+      }).map(function (file) {
+        return file;
+      });
+    }
+
+    // Returns all files that are in the queue
+
+  }, {
+    key: "getQueuedFiles",
+    value: function getQueuedFiles() {
+      return this.getFilesWithStatus(Dropzone.QUEUED);
+    }
+  }, {
+    key: "getUploadingFiles",
+    value: function getUploadingFiles() {
+      return this.getFilesWithStatus(Dropzone.UPLOADING);
+    }
+  }, {
+    key: "getAddedFiles",
+    value: function getAddedFiles() {
+      return this.getFilesWithStatus(Dropzone.ADDED);
+    }
+
+    // Files that are either queued or uploading
+
+  }, {
+    key: "getActiveFiles",
+    value: function getActiveFiles() {
+      return this.files.filter(function (file) {
+        return file.status === Dropzone.UPLOADING || file.status === Dropzone.QUEUED;
+      }).map(function (file) {
+        return file;
+      });
+    }
+
+    // The function that gets called when Dropzone is initialized. You
+    // can (and should) setup event listeners inside this function.
+
+  }, {
+    key: "init",
+    value: function init() {
+      var _this3 = this;
+
+      // In case it isn't set already
+      if (this.element.tagName === "form") {
+        this.element.setAttribute("enctype", "multipart/form-data");
+      }
+
+      if (this.element.classList.contains("dropzone") && !this.element.querySelector(".dz-message")) {
+        this.element.appendChild(Dropzone.createElement("<div class=\"dz-default dz-message\"><span>" + this.options.dictDefaultMessage + "</span></div>"));
+      }
+
+      if (this.clickableElements.length) {
+        var setupHiddenFileInput = function setupHiddenFileInput() {
+          if (_this3.hiddenFileInput) {
+            _this3.hiddenFileInput.parentNode.removeChild(_this3.hiddenFileInput);
+          }
+          _this3.hiddenFileInput = document.createElement("input");
+          _this3.hiddenFileInput.setAttribute("type", "file");
+          if (_this3.options.maxFiles === null || _this3.options.maxFiles > 1) {
+            _this3.hiddenFileInput.setAttribute("multiple", "multiple");
+          }
+          _this3.hiddenFileInput.className = "dz-hidden-input";
+
+          if (_this3.options.acceptedFiles !== null) {
+            _this3.hiddenFileInput.setAttribute("accept", _this3.options.acceptedFiles);
+          }
+          if (_this3.options.capture !== null) {
+            _this3.hiddenFileInput.setAttribute("capture", _this3.options.capture);
+          }
+
+          // Not setting `display="none"` because some browsers don't accept clicks
+          // on elements that aren't displayed.
+          _this3.hiddenFileInput.style.visibility = "hidden";
+          _this3.hiddenFileInput.style.position = "absolute";
+          _this3.hiddenFileInput.style.top = "0";
+          _this3.hiddenFileInput.style.left = "0";
+          _this3.hiddenFileInput.style.height = "0";
+          _this3.hiddenFileInput.style.width = "0";
+          document.querySelector(_this3.options.hiddenInputContainer).appendChild(_this3.hiddenFileInput);
+          return _this3.hiddenFileInput.addEventListener("change", function () {
+            var files = _this3.hiddenFileInput.files;
+
+            if (files.length) {
+              for (var _iterator10 = files, _isArray10 = true, _i10 = 0, _iterator10 = _isArray10 ? _iterator10 : _iterator10[Symbol.iterator]();;) {
+                var _ref9;
+
+                if (_isArray10) {
+                  if (_i10 >= _iterator10.length) break;
+                  _ref9 = _iterator10[_i10++];
+                } else {
+                  _i10 = _iterator10.next();
+                  if (_i10.done) break;
+                  _ref9 = _i10.value;
+                }
+
+                var file = _ref9;
+
+                _this3.addFile(file);
+              }
+            }
+            _this3.emit("addedfiles", files);
+            return setupHiddenFileInput();
+          });
+        };
+        setupHiddenFileInput();
+      }
+
+      this.URL = window.URL !== null ? window.URL : window.webkitURL;
+
+      // Setup all event listeners on the Dropzone object itself.
+      // They're not in @setupEventListeners() because they shouldn't be removed
+      // again when the dropzone gets disabled.
+      for (var _iterator11 = this.events, _isArray11 = true, _i11 = 0, _iterator11 = _isArray11 ? _iterator11 : _iterator11[Symbol.iterator]();;) {
+        var _ref10;
+
+        if (_isArray11) {
+          if (_i11 >= _iterator11.length) break;
+          _ref10 = _iterator11[_i11++];
+        } else {
+          _i11 = _iterator11.next();
+          if (_i11.done) break;
+          _ref10 = _i11.value;
+        }
+
+        var eventName = _ref10;
+
+        this.on(eventName, this.options[eventName]);
+      }
+
+      this.on("uploadprogress", function () {
+        return _this3.updateTotalUploadProgress();
+      });
+
+      this.on("removedfile", function () {
+        return _this3.updateTotalUploadProgress();
+      });
+
+      this.on("canceled", function (file) {
+        return _this3.emit("complete", file);
+      });
+
+      // Emit a `queuecomplete` event if all files finished uploading.
+      this.on("complete", function (file) {
+        if (_this3.getAddedFiles().length === 0 && _this3.getUploadingFiles().length === 0 && _this3.getQueuedFiles().length === 0) {
+          // This needs to be deferred so that `queuecomplete` really triggers after `complete`
+          return setTimeout(function () {
+            return _this3.emit("queuecomplete");
+          }, 0);
+        }
+      });
+
+      var noPropagation = function noPropagation(e) {
+        e.stopPropagation();
+        if (e.preventDefault) {
+          return e.preventDefault();
+        } else {
+          return e.returnValue = false;
+        }
+      };
+
+      // Create the listeners
+      this.listeners = [{
+        element: this.element,
+        events: {
+          "dragstart": function dragstart(e) {
+            return _this3.emit("dragstart", e);
+          },
+          "dragenter": function dragenter(e) {
+            noPropagation(e);
+            return _this3.emit("dragenter", e);
+          },
+          "dragover": function dragover(e) {
+            // Makes it possible to drag files from chrome's download bar
+            // http://stackoverflow.com/questions/19526430/drag-and-drop-file-uploads-from-chrome-downloads-bar
+            // Try is required to prevent bug in Internet Explorer 11 (SCRIPT65535 exception)
+            var efct = void 0;
+            try {
+              efct = e.dataTransfer.effectAllowed;
+            } catch (error) {}
+            e.dataTransfer.dropEffect = 'move' === efct || 'linkMove' === efct ? 'move' : 'copy';
+
+            noPropagation(e);
+            return _this3.emit("dragover", e);
+          },
+          "dragleave": function dragleave(e) {
+            return _this3.emit("dragleave", e);
+          },
+          "drop": function drop(e) {
+            noPropagation(e);
+            return _this3.drop(e);
+          },
+          "dragend": function dragend(e) {
+            return _this3.emit("dragend", e);
+          }
+
+          // This is disabled right now, because the browsers don't implement it properly.
+          // "paste": (e) =>
+          //   noPropagation e
+          //   @paste e
+        } }];
+
+      this.clickableElements.forEach(function (clickableElement) {
+        return _this3.listeners.push({
+          element: clickableElement,
+          events: {
+            "click": function click(evt) {
+              // Only the actual dropzone or the message element should trigger file selection
+              if (clickableElement !== _this3.element || evt.target === _this3.element || Dropzone.elementInside(evt.target, _this3.element.querySelector(".dz-message"))) {
+                _this3.hiddenFileInput.click(); // Forward the click
+              }
+              return true;
+            }
+          }
+        });
+      });
+
+      this.enable();
+
+      return this.options.init.call(this);
+    }
+
+    // Not fully tested yet
+
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      this.disable();
+      this.removeAllFiles(true);
+      if (this.hiddenFileInput != null ? this.hiddenFileInput.parentNode : undefined) {
+        this.hiddenFileInput.parentNode.removeChild(this.hiddenFileInput);
+        this.hiddenFileInput = null;
+      }
+      delete this.element.dropzone;
+      return Dropzone.instances.splice(Dropzone.instances.indexOf(this), 1);
+    }
+  }, {
+    key: "updateTotalUploadProgress",
+    value: function updateTotalUploadProgress() {
+      var totalUploadProgress = void 0;
+      var totalBytesSent = 0;
+      var totalBytes = 0;
+
+      var activeFiles = this.getActiveFiles();
+
+      if (activeFiles.length) {
+        for (var _iterator12 = this.getActiveFiles(), _isArray12 = true, _i12 = 0, _iterator12 = _isArray12 ? _iterator12 : _iterator12[Symbol.iterator]();;) {
+          var _ref11;
+
+          if (_isArray12) {
+            if (_i12 >= _iterator12.length) break;
+            _ref11 = _iterator12[_i12++];
+          } else {
+            _i12 = _iterator12.next();
+            if (_i12.done) break;
+            _ref11 = _i12.value;
+          }
+
+          var file = _ref11;
+
+          totalBytesSent += file.upload.bytesSent;
+          totalBytes += file.upload.total;
+        }
+        totalUploadProgress = 100 * totalBytesSent / totalBytes;
+      } else {
+        totalUploadProgress = 100;
+      }
+
+      return this.emit("totaluploadprogress", totalUploadProgress, totalBytes, totalBytesSent);
+    }
+
+    // @options.paramName can be a function taking one parameter rather than a string.
+    // A parameter name for a file is obtained simply by calling this with an index number.
+
+  }, {
+    key: "_getParamName",
+    value: function _getParamName(n) {
+      if (typeof this.options.paramName === "function") {
+        return this.options.paramName(n);
+      } else {
+        return "" + this.options.paramName + (this.options.uploadMultiple ? "[" + n + "]" : "");
+      }
+    }
+
+    // If @options.renameFile is a function,
+    // the function will be used to rename the file.name before appending it to the formData
+
+  }, {
+    key: "_renameFile",
+    value: function _renameFile(file) {
+      if (typeof this.options.renameFile !== "function") {
+        return file.name;
+      }
+      return this.options.renameFile(file);
+    }
+
+    // Returns a form that can be used as fallback if the browser does not support DragnDrop
+    //
+    // If the dropzone is already a form, only the input field and button are returned. Otherwise a complete form element is provided.
+    // This code has to pass in IE7 :(
+
+  }, {
+    key: "getFallbackForm",
+    value: function getFallbackForm() {
+      var existingFallback = void 0,
+          form = void 0;
+      if (existingFallback = this.getExistingFallback()) {
+        return existingFallback;
+      }
+
+      var fieldsString = "<div class=\"dz-fallback\">";
+      if (this.options.dictFallbackText) {
+        fieldsString += "<p>" + this.options.dictFallbackText + "</p>";
+      }
+      fieldsString += "<input type=\"file\" name=\"" + this._getParamName(0) + "\" " + (this.options.uploadMultiple ? 'multiple="multiple"' : undefined) + " /><input type=\"submit\" value=\"Upload!\"></div>";
+
+      var fields = Dropzone.createElement(fieldsString);
+      if (this.element.tagName !== "FORM") {
+        form = Dropzone.createElement("<form action=\"" + this.options.url + "\" enctype=\"multipart/form-data\" method=\"" + this.options.method + "\"></form>");
+        form.appendChild(fields);
+      } else {
+        // Make sure that the enctype and method attributes are set properly
+        this.element.setAttribute("enctype", "multipart/form-data");
+        this.element.setAttribute("method", this.options.method);
+      }
+      return form != null ? form : fields;
+    }
+
+    // Returns the fallback elements if they exist already
+    //
+    // This code has to pass in IE7 :(
+
+  }, {
+    key: "getExistingFallback",
+    value: function getExistingFallback() {
+      var getFallback = function getFallback(elements) {
+        for (var _iterator13 = elements, _isArray13 = true, _i13 = 0, _iterator13 = _isArray13 ? _iterator13 : _iterator13[Symbol.iterator]();;) {
+          var _ref12;
+
+          if (_isArray13) {
+            if (_i13 >= _iterator13.length) break;
+            _ref12 = _iterator13[_i13++];
+          } else {
+            _i13 = _iterator13.next();
+            if (_i13.done) break;
+            _ref12 = _i13.value;
+          }
+
+          var el = _ref12;
+
+          if (/(^| )fallback($| )/.test(el.className)) {
+            return el;
+          }
+        }
+      };
+
+      var _arr = ["div", "form"];
+      for (var _i14 = 0; _i14 < _arr.length; _i14++) {
+        var tagName = _arr[_i14];
+        var fallback;
+        if (fallback = getFallback(this.element.getElementsByTagName(tagName))) {
+          return fallback;
+        }
+      }
+    }
+
+    // Activates all listeners stored in @listeners
+
+  }, {
+    key: "setupEventListeners",
+    value: function setupEventListeners() {
+      return this.listeners.map(function (elementListeners) {
+        return function () {
+          var result = [];
+          for (var event in elementListeners.events) {
+            var listener = elementListeners.events[event];
+            result.push(elementListeners.element.addEventListener(event, listener, false));
+          }
+          return result;
+        }();
+      });
+    }
+
+    // Deactivates all listeners stored in @listeners
+
+  }, {
+    key: "removeEventListeners",
+    value: function removeEventListeners() {
+      return this.listeners.map(function (elementListeners) {
+        return function () {
+          var result = [];
+          for (var event in elementListeners.events) {
+            var listener = elementListeners.events[event];
+            result.push(elementListeners.element.removeEventListener(event, listener, false));
+          }
+          return result;
+        }();
+      });
+    }
+
+    // Removes all event listeners and cancels all files in the queue or being processed.
+
+  }, {
+    key: "disable",
+    value: function disable() {
+      var _this4 = this;
+
+      this.clickableElements.forEach(function (element) {
+        return element.classList.remove("dz-clickable");
+      });
+      this.removeEventListeners();
+
+      return this.files.map(function (file) {
+        return _this4.cancelUpload(file);
+      });
+    }
+  }, {
+    key: "enable",
+    value: function enable() {
+      this.clickableElements.forEach(function (element) {
+        return element.classList.add("dz-clickable");
+      });
+      return this.setupEventListeners();
+    }
+
+    // Returns a nicely formatted filesize
+
+  }, {
+    key: "filesize",
+    value: function filesize(size) {
+      var selectedSize = 0;
+      var selectedUnit = "b";
+
+      if (size > 0) {
+        var units = ['tb', 'gb', 'mb', 'kb', 'b'];
+
+        for (var i = 0; i < units.length; i++) {
+          var unit = units[i];
+          var cutoff = Math.pow(this.options.filesizeBase, 4 - i) / 10;
+
+          if (size >= cutoff) {
+            selectedSize = size / Math.pow(this.options.filesizeBase, 4 - i);
+            selectedUnit = unit;
+            break;
+          }
+        }
+
+        selectedSize = Math.round(10 * selectedSize) / 10; // Cutting of digits
+      }
+
+      return "<strong>" + selectedSize + "</strong> " + this.options.dictFileSizeUnits[selectedUnit];
+    }
+
+    // Adds or removes the `dz-max-files-reached` class from the form.
+
+  }, {
+    key: "_updateMaxFilesReachedClass",
+    value: function _updateMaxFilesReachedClass() {
+      if (this.options.maxFiles != null && this.getAcceptedFiles().length >= this.options.maxFiles) {
+        if (this.getAcceptedFiles().length === this.options.maxFiles) {
+          this.emit('maxfilesreached', this.files);
+        }
+        return this.element.classList.add("dz-max-files-reached");
+      } else {
+        return this.element.classList.remove("dz-max-files-reached");
+      }
+    }
+  }, {
+    key: "drop",
+    value: function drop(e) {
+      if (!e.dataTransfer) {
+        return;
+      }
+      this.emit("drop", e);
+
+      var files = e.dataTransfer.files;
+
+      this.emit("addedfiles", files);
+
+      // Even if it's a folder, files.length will contain the folders.
+      if (files.length) {
+        var items = e.dataTransfer.items;
+
+        if (items && items.length && items[0].webkitGetAsEntry != null) {
+          // The browser supports dropping of folders, so handle items instead of files
+          this._addFilesFromItems(items);
+        } else {
+          this.handleFiles(files);
+        }
+      }
+    }
+  }, {
+    key: "paste",
+    value: function paste(e) {
+      if (__guard__(e != null ? e.clipboardData : undefined, function (x) {
+        return x.items;
+      }) == null) {
+        return;
+      }
+
+      this.emit("paste", e);
+      var items = e.clipboardData.items;
+
+
+      if (items.length) {
+        return this._addFilesFromItems(items);
+      }
+    }
+  }, {
+    key: "handleFiles",
+    value: function handleFiles(files) {
+      var _this5 = this;
+
+      return files.map(function (file) {
+        return _this5.addFile(file);
+      });
+    }
+
+    // When a folder is dropped (or files are pasted), items must be handled
+    // instead of files.
+
+  }, {
+    key: "_addFilesFromItems",
+    value: function _addFilesFromItems(items) {
+      var _this6 = this;
+
+      return function () {
+        var result = [];
+        for (var _iterator14 = items, _isArray14 = true, _i15 = 0, _iterator14 = _isArray14 ? _iterator14 : _iterator14[Symbol.iterator]();;) {
+          var _ref13;
+
+          if (_isArray14) {
+            if (_i15 >= _iterator14.length) break;
+            _ref13 = _iterator14[_i15++];
+          } else {
+            _i15 = _iterator14.next();
+            if (_i15.done) break;
+            _ref13 = _i15.value;
+          }
+
+          var item = _ref13;
+
+          var entry;
+          if (item.webkitGetAsEntry != null && (entry = item.webkitGetAsEntry())) {
+            if (entry.isFile) {
+              result.push(_this6.addFile(item.getAsFile()));
+            } else if (entry.isDirectory) {
+              // Append all files from that directory to files
+              result.push(_this6._addFilesFromDirectory(entry, entry.name));
+            } else {
+              result.push(undefined);
+            }
+          } else if (item.getAsFile != null) {
+            if (item.kind == null || item.kind === "file") {
+              result.push(_this6.addFile(item.getAsFile()));
+            } else {
+              result.push(undefined);
+            }
+          } else {
+            result.push(undefined);
+          }
+        }
+        return result;
+      }();
+    }
+
+    // Goes through the directory, and adds each file it finds recursively
+
+  }, {
+    key: "_addFilesFromDirectory",
+    value: function _addFilesFromDirectory(directory, path) {
+      var _this7 = this;
+
+      var dirReader = directory.createReader();
+
+      var errorHandler = function errorHandler(error) {
+        return __guardMethod__(console, 'log', function (o) {
+          return o.log(error);
+        });
+      };
+
+      var readEntries = function readEntries() {
+        return dirReader.readEntries(function (entries) {
+          if (entries.length > 0) {
+            for (var _iterator15 = entries, _isArray15 = true, _i16 = 0, _iterator15 = _isArray15 ? _iterator15 : _iterator15[Symbol.iterator]();;) {
+              var _ref14;
+
+              if (_isArray15) {
+                if (_i16 >= _iterator15.length) break;
+                _ref14 = _iterator15[_i16++];
+              } else {
+                _i16 = _iterator15.next();
+                if (_i16.done) break;
+                _ref14 = _i16.value;
+              }
+
+              var entry = _ref14;
+
+              if (entry.isFile) {
+                entry.file(function (file) {
+                  if (_this7.options.ignoreHiddenFiles && file.name.substring(0, 1) === '.') {
+                    return;
+                  }
+                  file.fullPath = path + "/" + file.name;
+                  return _this7.addFile(file);
+                });
+              } else if (entry.isDirectory) {
+                _this7._addFilesFromDirectory(entry, path + "/" + entry.name);
+              }
+            }
+
+            // Recursively call readEntries() again, since browser only handle
+            // the first 100 entries.
+            // See: https://developer.mozilla.org/en-US/docs/Web/API/DirectoryReader#readEntries
+            readEntries();
+          }
+          return null;
+        }, errorHandler);
+      };
+
+      return readEntries();
+    }
+
+    // If `done()` is called without argument the file is accepted
+    // If you call it with an error message, the file is rejected
+    // (This allows for asynchronous validation)
+    //
+    // This function checks the filesize, and if the file.type passes the
+    // `acceptedFiles` check.
+
+  }, {
+    key: "accept",
+    value: function accept(file, done) {
+      if (file.size > this.options.maxFilesize * 1024 * 1024) {
+        return done(this.options.dictFileTooBig.replace("{{filesize}}", Math.round(file.size / 1024 / 10.24) / 100).replace("{{maxFilesize}}", this.options.maxFilesize));
+      } else if (!Dropzone.isValidFile(file, this.options.acceptedFiles)) {
+        return done(this.options.dictInvalidFileType);
+      } else if (this.options.maxFiles != null && this.getAcceptedFiles().length >= this.options.maxFiles) {
+        done(this.options.dictMaxFilesExceeded.replace("{{maxFiles}}", this.options.maxFiles));
+        return this.emit("maxfilesexceeded", file);
+      } else {
+        return this.options.accept.call(this, file, done);
+      }
+    }
+  }, {
+    key: "addFile",
+    value: function addFile(file) {
+      var _this8 = this;
+
+      file.upload = {
+        uuid: Dropzone.uuidv4(),
+        progress: 0,
+        // Setting the total upload size to file.size for the beginning
+        // It's actual different than the size to be transmitted.
+        total: file.size,
+        bytesSent: 0,
+        filename: this._renameFile(file),
+        chunked: this.options.chunking && (this.options.forceChunking || file.size > this.options.chunkSize),
+        totalChunkCount: Math.ceil(file.size / this.options.chunkSize)
+      };
+      this.files.push(file);
+
+      file.status = Dropzone.ADDED;
+
+      this.emit("addedfile", file);
+
+      this._enqueueThumbnail(file);
+
+      return this.accept(file, function (error) {
+        if (error) {
+          file.accepted = false;
+          _this8._errorProcessing([file], error); // Will set the file.status
+        } else {
+          file.accepted = true;
+          if (_this8.options.autoQueue) {
+            _this8.enqueueFile(file);
+          } // Will set .accepted = true
+        }
+        return _this8._updateMaxFilesReachedClass();
+      });
+    }
+
+    // Wrapper for enqueueFile
+
+  }, {
+    key: "enqueueFiles",
+    value: function enqueueFiles(files) {
+      for (var _iterator16 = files, _isArray16 = true, _i17 = 0, _iterator16 = _isArray16 ? _iterator16 : _iterator16[Symbol.iterator]();;) {
+        var _ref15;
+
+        if (_isArray16) {
+          if (_i17 >= _iterator16.length) break;
+          _ref15 = _iterator16[_i17++];
+        } else {
+          _i17 = _iterator16.next();
+          if (_i17.done) break;
+          _ref15 = _i17.value;
+        }
+
+        var file = _ref15;
+
+        this.enqueueFile(file);
+      }
+      return null;
+    }
+  }, {
+    key: "enqueueFile",
+    value: function enqueueFile(file) {
+      var _this9 = this;
+
+      if (file.status === Dropzone.ADDED && file.accepted === true) {
+        file.status = Dropzone.QUEUED;
+        if (this.options.autoProcessQueue) {
+          return setTimeout(function () {
+            return _this9.processQueue();
+          }, 0); // Deferring the call
+        }
+      } else {
+        throw new Error("This file can't be queued because it has already been processed or was rejected.");
+      }
+    }
+  }, {
+    key: "_enqueueThumbnail",
+    value: function _enqueueThumbnail(file) {
+      var _this10 = this;
+
+      if (this.options.createImageThumbnails && file.type.match(/image.*/) && file.size <= this.options.maxThumbnailFilesize * 1024 * 1024) {
+        this._thumbnailQueue.push(file);
+        return setTimeout(function () {
+          return _this10._processThumbnailQueue();
+        }, 0); // Deferring the call
+      }
+    }
+  }, {
+    key: "_processThumbnailQueue",
+    value: function _processThumbnailQueue() {
+      var _this11 = this;
+
+      if (this._processingThumbnail || this._thumbnailQueue.length === 0) {
+        return;
+      }
+
+      this._processingThumbnail = true;
+      var file = this._thumbnailQueue.shift();
+      return this.createThumbnail(file, this.options.thumbnailWidth, this.options.thumbnailHeight, this.options.thumbnailMethod, true, function (dataUrl) {
+        _this11.emit("thumbnail", file, dataUrl);
+        _this11._processingThumbnail = false;
+        return _this11._processThumbnailQueue();
+      });
+    }
+
+    // Can be called by the user to remove a file
+
+  }, {
+    key: "removeFile",
+    value: function removeFile(file) {
+      if (file.status === Dropzone.UPLOADING) {
+        this.cancelUpload(file);
+      }
+      this.files = without(this.files, file);
+
+      this.emit("removedfile", file);
+      if (this.files.length === 0) {
+        return this.emit("reset");
+      }
+    }
+
+    // Removes all files that aren't currently processed from the list
+
+  }, {
+    key: "removeAllFiles",
+    value: function removeAllFiles(cancelIfNecessary) {
+      // Create a copy of files since removeFile() changes the @files array.
+      if (cancelIfNecessary == null) {
+        cancelIfNecessary = false;
+      }
+      for (var _iterator17 = this.files.slice(), _isArray17 = true, _i18 = 0, _iterator17 = _isArray17 ? _iterator17 : _iterator17[Symbol.iterator]();;) {
+        var _ref16;
+
+        if (_isArray17) {
+          if (_i18 >= _iterator17.length) break;
+          _ref16 = _iterator17[_i18++];
+        } else {
+          _i18 = _iterator17.next();
+          if (_i18.done) break;
+          _ref16 = _i18.value;
+        }
+
+        var file = _ref16;
+
+        if (file.status !== Dropzone.UPLOADING || cancelIfNecessary) {
+          this.removeFile(file);
+        }
+      }
+      return null;
+    }
+
+    // Resizes an image before it gets sent to the server. This function is the default behavior of
+    // `options.transformFile` if `resizeWidth` or `resizeHeight` are set. The callback is invoked with
+    // the resized blob.
+
+  }, {
+    key: "resizeImage",
+    value: function resizeImage(file, width, height, resizeMethod, callback) {
+      var _this12 = this;
+
+      return this.createThumbnail(file, width, height, resizeMethod, false, function (dataUrl, canvas) {
+        if (canvas === null) {
+          // The image has not been resized
+          return callback(file);
+        } else {
+          var resizeMimeType = _this12.options.resizeMimeType;
+
+          if (resizeMimeType == null) {
+            resizeMimeType = file.type;
+          }
+          var resizedDataURL = canvas.toDataURL(resizeMimeType, _this12.options.resizeQuality);
+          if (resizeMimeType === 'image/jpeg' || resizeMimeType === 'image/jpg') {
+            // Now add the original EXIF information
+            resizedDataURL = ExifRestore.restore(file.dataURL, resizedDataURL);
+          }
+          return callback(Dropzone.dataURItoBlob(resizedDataURL));
+        }
+      });
+    }
+  }, {
+    key: "createThumbnail",
+    value: function createThumbnail(file, width, height, resizeMethod, fixOrientation, callback) {
+      var _this13 = this;
+
+      var fileReader = new FileReader();
+
+      fileReader.onload = function () {
+
+        file.dataURL = fileReader.result;
+
+        // Don't bother creating a thumbnail for SVG images since they're vector
+        if (file.type === "image/svg+xml") {
+          if (callback != null) {
+            callback(fileReader.result);
+          }
+          return;
+        }
+
+        return _this13.createThumbnailFromUrl(file, width, height, resizeMethod, fixOrientation, callback);
+      };
+
+      return fileReader.readAsDataURL(file);
+    }
+  }, {
+    key: "createThumbnailFromUrl",
+    value: function createThumbnailFromUrl(file, width, height, resizeMethod, fixOrientation, callback, crossOrigin) {
+      var _this14 = this;
+
+      // Not using `new Image` here because of a bug in latest Chrome versions.
+      // See https://github.com/enyo/dropzone/pull/226
+      var img = document.createElement("img");
+
+      if (crossOrigin) {
+        img.crossOrigin = crossOrigin;
+      }
+
+      img.onload = function () {
+        var loadExif = function loadExif(callback) {
+          return callback(1);
+        };
+        if (typeof EXIF !== 'undefined' && EXIF !== null && fixOrientation) {
+          loadExif = function loadExif(callback) {
+            return EXIF.getData(img, function () {
+              return callback(EXIF.getTag(this, 'Orientation'));
+            });
+          };
+        }
+
+        return loadExif(function (orientation) {
+          file.width = img.width;
+          file.height = img.height;
+
+          var resizeInfo = _this14.options.resize.call(_this14, file, width, height, resizeMethod);
+
+          var canvas = document.createElement("canvas");
+          var ctx = canvas.getContext("2d");
+
+          canvas.width = resizeInfo.trgWidth;
+          canvas.height = resizeInfo.trgHeight;
+
+          if (orientation > 4) {
+            canvas.width = resizeInfo.trgHeight;
+            canvas.height = resizeInfo.trgWidth;
+          }
+
+          switch (orientation) {
+            case 2:
+              // horizontal flip
+              ctx.translate(canvas.width, 0);
+              ctx.scale(-1, 1);
+              break;
+            case 3:
+              // 180° rotate left
+              ctx.translate(canvas.width, canvas.height);
+              ctx.rotate(Math.PI);
+              break;
+            case 4:
+              // vertical flip
+              ctx.translate(0, canvas.height);
+              ctx.scale(1, -1);
+              break;
+            case 5:
+              // vertical flip + 90 rotate right
+              ctx.rotate(0.5 * Math.PI);
+              ctx.scale(1, -1);
+              break;
+            case 6:
+              // 90° rotate right
+              ctx.rotate(0.5 * Math.PI);
+              ctx.translate(0, -canvas.height);
+              break;
+            case 7:
+              // horizontal flip + 90 rotate right
+              ctx.rotate(0.5 * Math.PI);
+              ctx.translate(canvas.width, -canvas.height);
+              ctx.scale(-1, 1);
+              break;
+            case 8:
+              // 90° rotate left
+              ctx.rotate(-0.5 * Math.PI);
+              ctx.translate(-canvas.width, 0);
+              break;
+          }
+
+          // This is a bugfix for iOS' scaling bug.
+          drawImageIOSFix(ctx, img, resizeInfo.srcX != null ? resizeInfo.srcX : 0, resizeInfo.srcY != null ? resizeInfo.srcY : 0, resizeInfo.srcWidth, resizeInfo.srcHeight, resizeInfo.trgX != null ? resizeInfo.trgX : 0, resizeInfo.trgY != null ? resizeInfo.trgY : 0, resizeInfo.trgWidth, resizeInfo.trgHeight);
+
+          var thumbnail = canvas.toDataURL("image/png");
+
+          if (callback != null) {
+            return callback(thumbnail, canvas);
+          }
+        });
+      };
+
+      if (callback != null) {
+        img.onerror = callback;
+      }
+
+      return img.src = file.dataURL;
+    }
+
+    // Goes through the queue and processes files if there aren't too many already.
+
+  }, {
+    key: "processQueue",
+    value: function processQueue() {
+      var parallelUploads = this.options.parallelUploads;
+
+      var processingLength = this.getUploadingFiles().length;
+      var i = processingLength;
+
+      // There are already at least as many files uploading than should be
+      if (processingLength >= parallelUploads) {
+        return;
+      }
+
+      var queuedFiles = this.getQueuedFiles();
+
+      if (!(queuedFiles.length > 0)) {
+        return;
+      }
+
+      if (this.options.uploadMultiple) {
+        // The files should be uploaded in one request
+        return this.processFiles(queuedFiles.slice(0, parallelUploads - processingLength));
+      } else {
+        while (i < parallelUploads) {
+          if (!queuedFiles.length) {
+            return;
+          } // Nothing left to process
+          this.processFile(queuedFiles.shift());
+          i++;
+        }
+      }
+    }
+
+    // Wrapper for `processFiles`
+
+  }, {
+    key: "processFile",
+    value: function processFile(file) {
+      return this.processFiles([file]);
+    }
+
+    // Loads the file, then calls finishedLoading()
+
+  }, {
+    key: "processFiles",
+    value: function processFiles(files) {
+      for (var _iterator18 = files, _isArray18 = true, _i19 = 0, _iterator18 = _isArray18 ? _iterator18 : _iterator18[Symbol.iterator]();;) {
+        var _ref17;
+
+        if (_isArray18) {
+          if (_i19 >= _iterator18.length) break;
+          _ref17 = _iterator18[_i19++];
+        } else {
+          _i19 = _iterator18.next();
+          if (_i19.done) break;
+          _ref17 = _i19.value;
+        }
+
+        var file = _ref17;
+
+        file.processing = true; // Backwards compatibility
+        file.status = Dropzone.UPLOADING;
+
+        this.emit("processing", file);
+      }
+
+      if (this.options.uploadMultiple) {
+        this.emit("processingmultiple", files);
+      }
+
+      return this.uploadFiles(files);
+    }
+  }, {
+    key: "_getFilesWithXhr",
+    value: function _getFilesWithXhr(xhr) {
+      var files = void 0;
+      return files = this.files.filter(function (file) {
+        return file.xhr === xhr;
+      }).map(function (file) {
+        return file;
+      });
+    }
+
+    // Cancels the file upload and sets the status to CANCELED
+    // **if** the file is actually being uploaded.
+    // If it's still in the queue, the file is being removed from it and the status
+    // set to CANCELED.
+
+  }, {
+    key: "cancelUpload",
+    value: function cancelUpload(file) {
+      if (file.status === Dropzone.UPLOADING) {
+        var groupedFiles = this._getFilesWithXhr(file.xhr);
+        for (var _iterator19 = groupedFiles, _isArray19 = true, _i20 = 0, _iterator19 = _isArray19 ? _iterator19 : _iterator19[Symbol.iterator]();;) {
+          var _ref18;
+
+          if (_isArray19) {
+            if (_i20 >= _iterator19.length) break;
+            _ref18 = _iterator19[_i20++];
+          } else {
+            _i20 = _iterator19.next();
+            if (_i20.done) break;
+            _ref18 = _i20.value;
+          }
+
+          var groupedFile = _ref18;
+
+          groupedFile.status = Dropzone.CANCELED;
+        }
+        if (typeof file.xhr !== 'undefined') {
+          file.xhr.abort();
+        }
+        for (var _iterator20 = groupedFiles, _isArray20 = true, _i21 = 0, _iterator20 = _isArray20 ? _iterator20 : _iterator20[Symbol.iterator]();;) {
+          var _ref19;
+
+          if (_isArray20) {
+            if (_i21 >= _iterator20.length) break;
+            _ref19 = _iterator20[_i21++];
+          } else {
+            _i21 = _iterator20.next();
+            if (_i21.done) break;
+            _ref19 = _i21.value;
+          }
+
+          var _groupedFile = _ref19;
+
+          this.emit("canceled", _groupedFile);
+        }
+        if (this.options.uploadMultiple) {
+          this.emit("canceledmultiple", groupedFiles);
+        }
+      } else if (file.status === Dropzone.ADDED || file.status === Dropzone.QUEUED) {
+        file.status = Dropzone.CANCELED;
+        this.emit("canceled", file);
+        if (this.options.uploadMultiple) {
+          this.emit("canceledmultiple", [file]);
+        }
+      }
+
+      if (this.options.autoProcessQueue) {
+        return this.processQueue();
+      }
+    }
+  }, {
+    key: "resolveOption",
+    value: function resolveOption(option) {
+      if (typeof option === 'function') {
+        for (var _len3 = arguments.length, args = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+          args[_key3 - 1] = arguments[_key3];
+        }
+
+        return option.apply(this, args);
+      }
+      return option;
+    }
+  }, {
+    key: "uploadFile",
+    value: function uploadFile(file) {
+      return this.uploadFiles([file]);
+    }
+  }, {
+    key: "uploadFiles",
+    value: function uploadFiles(files) {
+      var _this15 = this;
+
+      this._transformFiles(files, function (transformedFiles) {
+        if (files[0].upload.chunked) {
+          // This file should be sent in chunks!
+
+          // If the chunking option is set, we **know** that there can only be **one** file, since
+          // uploadMultiple is not allowed with this option.
+          var file = files[0];
+          var transformedFile = transformedFiles[0];
+          var startedChunkCount = 0;
+
+          file.upload.chunks = [];
+
+          var handleNextChunk = function handleNextChunk() {
+            var chunkIndex = 0;
+
+            // Find the next item in file.upload.chunks that is not defined yet.
+            while (file.upload.chunks[chunkIndex] !== undefined) {
+              chunkIndex++;
+            }
+
+            // This means, that all chunks have already been started.
+            if (chunkIndex >= file.upload.totalChunkCount) return;
+
+            startedChunkCount++;
+
+            var start = chunkIndex * _this15.options.chunkSize;
+            var end = Math.min(start + _this15.options.chunkSize, file.size);
+
+            var dataBlock = {
+              name: _this15._getParamName(0),
+              data: transformedFile.webkitSlice ? transformedFile.webkitSlice(start, end) : transformedFile.slice(start, end),
+              filename: file.upload.filename,
+              chunkIndex: chunkIndex
+            };
+
+            file.upload.chunks[chunkIndex] = {
+              file: file,
+              index: chunkIndex,
+              dataBlock: dataBlock, // In case we want to retry.
+              status: Dropzone.UPLOADING,
+              progress: 0,
+              retries: 0 // The number of times this block has been retried.
+            };
+
+            _this15._uploadData(files, [dataBlock]);
+          };
+
+          file.upload.finishedChunkUpload = function (chunk) {
+            var allFinished = true;
+            chunk.status = Dropzone.SUCCESS;
+
+            // Clear the data from the chunk
+            chunk.dataBlock = null;
+
+            for (var i = 0; i < file.upload.totalChunkCount; i++) {
+              if (file.upload.chunks[i] === undefined) {
+                return handleNextChunk();
+              }
+              if (file.upload.chunks[i].status !== Dropzone.SUCCESS) {
+                allFinished = false;
+              }
+            }
+
+            if (allFinished) {
+              _this15.options.chunksUploaded(file, function () {
+                _this15._finished(files, '', null);
+              });
+            }
+          };
+
+          if (_this15.options.parallelChunkUploads) {
+            for (var i = 0; i < file.upload.totalChunkCount; i++) {
+              handleNextChunk();
+            }
+          } else {
+            handleNextChunk();
+          }
+        } else {
+          var dataBlocks = [];
+          for (var _i22 = 0; _i22 < files.length; _i22++) {
+            dataBlocks[_i22] = {
+              name: _this15._getParamName(_i22),
+              data: transformedFiles[_i22],
+              filename: files[_i22].upload.filename
+            };
+          }
+          _this15._uploadData(files, dataBlocks);
+        }
+      });
+    }
+
+    /// Returns the right chunk for given file and xhr
+
+  }, {
+    key: "_getChunk",
+    value: function _getChunk(file, xhr) {
+      for (var i = 0; i < file.upload.totalChunkCount; i++) {
+        if (file.upload.chunks[i] !== undefined && file.upload.chunks[i].xhr === xhr) {
+          return file.upload.chunks[i];
+        }
+      }
+    }
+
+    // This function actually uploads the file(s) to the server.
+    // If dataBlocks contains the actual data to upload (meaning, that this could either be transformed
+    // files, or individual chunks for chunked upload).
+
+  }, {
+    key: "_uploadData",
+    value: function _uploadData(files, dataBlocks) {
+      var _this16 = this;
+
+      var xhr = new XMLHttpRequest();
+
+      // Put the xhr object in the file objects to be able to reference it later.
+      for (var _iterator21 = files, _isArray21 = true, _i23 = 0, _iterator21 = _isArray21 ? _iterator21 : _iterator21[Symbol.iterator]();;) {
+        var _ref20;
+
+        if (_isArray21) {
+          if (_i23 >= _iterator21.length) break;
+          _ref20 = _iterator21[_i23++];
+        } else {
+          _i23 = _iterator21.next();
+          if (_i23.done) break;
+          _ref20 = _i23.value;
+        }
+
+        var file = _ref20;
+
+        file.xhr = xhr;
+      }
+      if (files[0].upload.chunked) {
+        // Put the xhr object in the right chunk object, so it can be associated later, and found with _getChunk
+        files[0].upload.chunks[dataBlocks[0].chunkIndex].xhr = xhr;
+      }
+
+      var method = this.resolveOption(this.options.method, files);
+      var url = this.resolveOption(this.options.url, files);
+      xhr.open(method, url, true);
+
+      // Setting the timeout after open because of IE11 issue: https://gitlab.com/meno/dropzone/issues/8
+      xhr.timeout = this.resolveOption(this.options.timeout, files);
+
+      // Has to be after `.open()`. See https://github.com/enyo/dropzone/issues/179
+      xhr.withCredentials = !!this.options.withCredentials;
+
+      xhr.onload = function (e) {
+        _this16._finishedUploading(files, xhr, e);
+      };
+
+      xhr.onerror = function () {
+        _this16._handleUploadError(files, xhr);
+      };
+
+      // Some browsers do not have the .upload property
+      var progressObj = xhr.upload != null ? xhr.upload : xhr;
+      progressObj.onprogress = function (e) {
+        return _this16._updateFilesUploadProgress(files, xhr, e);
+      };
+
+      var headers = {
+        "Accept": "application/json",
+        "Cache-Control": "no-cache",
+        "X-Requested-With": "XMLHttpRequest"
+      };
+
+      if (this.options.headers) {
+        Dropzone.extend(headers, this.options.headers);
+      }
+
+      for (var headerName in headers) {
+        var headerValue = headers[headerName];
+        if (headerValue) {
+          xhr.setRequestHeader(headerName, headerValue);
+        }
+      }
+
+      var formData = new FormData();
+
+      // Adding all @options parameters
+      if (this.options.params) {
+        var additionalParams = this.options.params;
+        if (typeof additionalParams === 'function') {
+          additionalParams = additionalParams.call(this, files, xhr, files[0].upload.chunked ? this._getChunk(files[0], xhr) : null);
+        }
+
+        for (var key in additionalParams) {
+          var value = additionalParams[key];
+          formData.append(key, value);
+        }
+      }
+
+      // Let the user add additional data if necessary
+      for (var _iterator22 = files, _isArray22 = true, _i24 = 0, _iterator22 = _isArray22 ? _iterator22 : _iterator22[Symbol.iterator]();;) {
+        var _ref21;
+
+        if (_isArray22) {
+          if (_i24 >= _iterator22.length) break;
+          _ref21 = _iterator22[_i24++];
+        } else {
+          _i24 = _iterator22.next();
+          if (_i24.done) break;
+          _ref21 = _i24.value;
+        }
+
+        var _file = _ref21;
+
+        this.emit("sending", _file, xhr, formData);
+      }
+      if (this.options.uploadMultiple) {
+        this.emit("sendingmultiple", files, xhr, formData);
+      }
+
+      this._addFormElementData(formData);
+
+      // Finally add the files
+      // Has to be last because some servers (eg: S3) expect the file to be the last parameter
+      for (var i = 0; i < dataBlocks.length; i++) {
+        var dataBlock = dataBlocks[i];
+        formData.append(dataBlock.name, dataBlock.data, dataBlock.filename);
+      }
+
+      this.submitRequest(xhr, formData, files);
+    }
+
+    // Transforms all files with this.options.transformFile and invokes done with the transformed files when done.
+
+  }, {
+    key: "_transformFiles",
+    value: function _transformFiles(files, done) {
+      var _this17 = this;
+
+      var transformedFiles = [];
+      // Clumsy way of handling asynchronous calls, until I get to add a proper Future library.
+      var doneCounter = 0;
+
+      var _loop = function _loop(i) {
+        _this17.options.transformFile.call(_this17, files[i], function (transformedFile) {
+          transformedFiles[i] = transformedFile;
+          if (++doneCounter === files.length) {
+            done(transformedFiles);
+          }
+        });
+      };
+
+      for (var i = 0; i < files.length; i++) {
+        _loop(i);
+      }
+    }
+
+    // Takes care of adding other input elements of the form to the AJAX request
+
+  }, {
+    key: "_addFormElementData",
+    value: function _addFormElementData(formData) {
+      // Take care of other input elements
+      if (this.element.tagName === "FORM") {
+        for (var _iterator23 = this.element.querySelectorAll("input, textarea, select, button"), _isArray23 = true, _i25 = 0, _iterator23 = _isArray23 ? _iterator23 : _iterator23[Symbol.iterator]();;) {
+          var _ref22;
+
+          if (_isArray23) {
+            if (_i25 >= _iterator23.length) break;
+            _ref22 = _iterator23[_i25++];
+          } else {
+            _i25 = _iterator23.next();
+            if (_i25.done) break;
+            _ref22 = _i25.value;
+          }
+
+          var input = _ref22;
+
+          var inputName = input.getAttribute("name");
+          var inputType = input.getAttribute("type");
+          if (inputType) inputType = inputType.toLowerCase();
+
+          // If the input doesn't have a name, we can't use it.
+          if (typeof inputName === 'undefined' || inputName === null) continue;
+
+          if (input.tagName === "SELECT" && input.hasAttribute("multiple")) {
+            // Possibly multiple values
+            for (var _iterator24 = input.options, _isArray24 = true, _i26 = 0, _iterator24 = _isArray24 ? _iterator24 : _iterator24[Symbol.iterator]();;) {
+              var _ref23;
+
+              if (_isArray24) {
+                if (_i26 >= _iterator24.length) break;
+                _ref23 = _iterator24[_i26++];
+              } else {
+                _i26 = _iterator24.next();
+                if (_i26.done) break;
+                _ref23 = _i26.value;
+              }
+
+              var option = _ref23;
+
+              if (option.selected) {
+                formData.append(inputName, option.value);
+              }
+            }
+          } else if (!inputType || inputType !== "checkbox" && inputType !== "radio" || input.checked) {
+            formData.append(inputName, input.value);
+          }
+        }
+      }
+    }
+
+    // Invoked when there is new progress information about given files.
+    // If e is not provided, it is assumed that the upload is finished.
+
+  }, {
+    key: "_updateFilesUploadProgress",
+    value: function _updateFilesUploadProgress(files, xhr, e) {
+      var progress = void 0;
+      if (typeof e !== 'undefined') {
+        progress = 100 * e.loaded / e.total;
+
+        if (files[0].upload.chunked) {
+          var file = files[0];
+          // Since this is a chunked upload, we need to update the appropriate chunk progress.
+          var chunk = this._getChunk(file, xhr);
+          chunk.progress = progress;
+          chunk.total = e.total;
+          chunk.bytesSent = e.loaded;
+          var fileProgress = 0,
+              fileTotal = void 0,
+              fileBytesSent = void 0;
+          file.upload.progress = 0;
+          file.upload.total = 0;
+          file.upload.bytesSent = 0;
+          for (var i = 0; i < file.upload.totalChunkCount; i++) {
+            if (file.upload.chunks[i] !== undefined && file.upload.chunks[i].progress !== undefined) {
+              file.upload.progress += file.upload.chunks[i].progress;
+              file.upload.total += file.upload.chunks[i].total;
+              file.upload.bytesSent += file.upload.chunks[i].bytesSent;
+            }
+          }
+          file.upload.progress = file.upload.progress / file.upload.totalChunkCount;
+        } else {
+          for (var _iterator25 = files, _isArray25 = true, _i27 = 0, _iterator25 = _isArray25 ? _iterator25 : _iterator25[Symbol.iterator]();;) {
+            var _ref24;
+
+            if (_isArray25) {
+              if (_i27 >= _iterator25.length) break;
+              _ref24 = _iterator25[_i27++];
+            } else {
+              _i27 = _iterator25.next();
+              if (_i27.done) break;
+              _ref24 = _i27.value;
+            }
+
+            var _file2 = _ref24;
+
+            _file2.upload.progress = progress;
+            _file2.upload.total = e.total;
+            _file2.upload.bytesSent = e.loaded;
+          }
+        }
+        for (var _iterator26 = files, _isArray26 = true, _i28 = 0, _iterator26 = _isArray26 ? _iterator26 : _iterator26[Symbol.iterator]();;) {
+          var _ref25;
+
+          if (_isArray26) {
+            if (_i28 >= _iterator26.length) break;
+            _ref25 = _iterator26[_i28++];
+          } else {
+            _i28 = _iterator26.next();
+            if (_i28.done) break;
+            _ref25 = _i28.value;
+          }
+
+          var _file3 = _ref25;
+
+          this.emit("uploadprogress", _file3, _file3.upload.progress, _file3.upload.bytesSent);
+        }
+      } else {
+        // Called when the file finished uploading
+
+        var allFilesFinished = true;
+
+        progress = 100;
+
+        for (var _iterator27 = files, _isArray27 = true, _i29 = 0, _iterator27 = _isArray27 ? _iterator27 : _iterator27[Symbol.iterator]();;) {
+          var _ref26;
+
+          if (_isArray27) {
+            if (_i29 >= _iterator27.length) break;
+            _ref26 = _iterator27[_i29++];
+          } else {
+            _i29 = _iterator27.next();
+            if (_i29.done) break;
+            _ref26 = _i29.value;
+          }
+
+          var _file4 = _ref26;
+
+          if (_file4.upload.progress !== 100 || _file4.upload.bytesSent !== _file4.upload.total) {
+            allFilesFinished = false;
+          }
+          _file4.upload.progress = progress;
+          _file4.upload.bytesSent = _file4.upload.total;
+        }
+
+        // Nothing to do, all files already at 100%
+        if (allFilesFinished) {
+          return;
+        }
+
+        for (var _iterator28 = files, _isArray28 = true, _i30 = 0, _iterator28 = _isArray28 ? _iterator28 : _iterator28[Symbol.iterator]();;) {
+          var _ref27;
+
+          if (_isArray28) {
+            if (_i30 >= _iterator28.length) break;
+            _ref27 = _iterator28[_i30++];
+          } else {
+            _i30 = _iterator28.next();
+            if (_i30.done) break;
+            _ref27 = _i30.value;
+          }
+
+          var _file5 = _ref27;
+
+          this.emit("uploadprogress", _file5, progress, _file5.upload.bytesSent);
+        }
+      }
+    }
+  }, {
+    key: "_finishedUploading",
+    value: function _finishedUploading(files, xhr, e) {
+      var response = void 0;
+
+      if (files[0].status === Dropzone.CANCELED) {
+        return;
+      }
+
+      if (xhr.readyState !== 4) {
+        return;
+      }
+
+      if (xhr.responseType !== 'arraybuffer' && xhr.responseType !== 'blob') {
+        response = xhr.responseText;
+
+        if (xhr.getResponseHeader("content-type") && ~xhr.getResponseHeader("content-type").indexOf("application/json")) {
+          try {
+            response = JSON.parse(response);
+          } catch (error) {
+            e = error;
+            response = "Invalid JSON response from server.";
+          }
+        }
+      }
+
+      this._updateFilesUploadProgress(files);
+
+      if (!(200 <= xhr.status && xhr.status < 300)) {
+        this._handleUploadError(files, xhr, response);
+      } else {
+        if (files[0].upload.chunked) {
+          files[0].upload.finishedChunkUpload(this._getChunk(files[0], xhr));
+        } else {
+          this._finished(files, response, e);
+        }
+      }
+    }
+  }, {
+    key: "_handleUploadError",
+    value: function _handleUploadError(files, xhr, response) {
+      if (files[0].status === Dropzone.CANCELED) {
+        return;
+      }
+
+      if (files[0].upload.chunked && this.options.retryChunks) {
+        var chunk = this._getChunk(files[0], xhr);
+        if (chunk.retries++ < this.options.retryChunksLimit) {
+          this._uploadData(files, [chunk.dataBlock]);
+          return;
+        } else {
+          console.warn('Retried this chunk too often. Giving up.');
+        }
+      }
+
+      for (var _iterator29 = files, _isArray29 = true, _i31 = 0, _iterator29 = _isArray29 ? _iterator29 : _iterator29[Symbol.iterator]();;) {
+        var _ref28;
+
+        if (_isArray29) {
+          if (_i31 >= _iterator29.length) break;
+          _ref28 = _iterator29[_i31++];
+        } else {
+          _i31 = _iterator29.next();
+          if (_i31.done) break;
+          _ref28 = _i31.value;
+        }
+
+        var file = _ref28;
+
+        this._errorProcessing(files, response || this.options.dictResponseError.replace("{{statusCode}}", xhr.status), xhr);
+      }
+    }
+  }, {
+    key: "submitRequest",
+    value: function submitRequest(xhr, formData, files) {
+      xhr.send(formData);
+    }
+
+    // Called internally when processing is finished.
+    // Individual callbacks have to be called in the appropriate sections.
+
+  }, {
+    key: "_finished",
+    value: function _finished(files, responseText, e) {
+      for (var _iterator30 = files, _isArray30 = true, _i32 = 0, _iterator30 = _isArray30 ? _iterator30 : _iterator30[Symbol.iterator]();;) {
+        var _ref29;
+
+        if (_isArray30) {
+          if (_i32 >= _iterator30.length) break;
+          _ref29 = _iterator30[_i32++];
+        } else {
+          _i32 = _iterator30.next();
+          if (_i32.done) break;
+          _ref29 = _i32.value;
+        }
+
+        var file = _ref29;
+
+        file.status = Dropzone.SUCCESS;
+        this.emit("success", file, responseText, e);
+        this.emit("complete", file);
+      }
+      if (this.options.uploadMultiple) {
+        this.emit("successmultiple", files, responseText, e);
+        this.emit("completemultiple", files);
+      }
+
+      if (this.options.autoProcessQueue) {
+        return this.processQueue();
+      }
+    }
+
+    // Called internally when processing is finished.
+    // Individual callbacks have to be called in the appropriate sections.
+
+  }, {
+    key: "_errorProcessing",
+    value: function _errorProcessing(files, message, xhr) {
+      for (var _iterator31 = files, _isArray31 = true, _i33 = 0, _iterator31 = _isArray31 ? _iterator31 : _iterator31[Symbol.iterator]();;) {
+        var _ref30;
+
+        if (_isArray31) {
+          if (_i33 >= _iterator31.length) break;
+          _ref30 = _iterator31[_i33++];
+        } else {
+          _i33 = _iterator31.next();
+          if (_i33.done) break;
+          _ref30 = _i33.value;
+        }
+
+        var file = _ref30;
+
+        file.status = Dropzone.ERROR;
+        this.emit("error", file, message, xhr);
+        this.emit("complete", file);
+      }
+      if (this.options.uploadMultiple) {
+        this.emit("errormultiple", files, message, xhr);
+        this.emit("completemultiple", files);
+      }
+
+      if (this.options.autoProcessQueue) {
+        return this.processQueue();
+      }
+    }
+  }], [{
+    key: "uuidv4",
+    value: function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : r & 0x3 | 0x8;
+        return v.toString(16);
+      });
+    }
+  }]);
+
+  return Dropzone;
+}(Emitter);
+
+Dropzone.initClass();
+
+Dropzone.version = "5.2.0";
+
+// This is a map of options for your different dropzones. Add configurations
+// to this object for your different dropzone elemens.
+//
+// Example:
+//
+//     Dropzone.options.myDropzoneElementId = { maxFilesize: 1 };
+//
+// To disable autoDiscover for a specific element, you can set `false` as an option:
+//
+//     Dropzone.options.myDisabledElementId = false;
+//
+// And in html:
+//
+//     <form action="/upload" id="my-dropzone-element-id" class="dropzone"></form>
+Dropzone.options = {};
+
+// Returns the options for an element or undefined if none available.
+Dropzone.optionsForElement = function (element) {
+  // Get the `Dropzone.options.elementId` for this element if it exists
+  if (element.getAttribute("id")) {
+    return Dropzone.options[camelize(element.getAttribute("id"))];
+  } else {
+    return undefined;
+  }
+};
+
+// Holds a list of all dropzone instances
+Dropzone.instances = [];
+
+// Returns the dropzone for given element if any
+Dropzone.forElement = function (element) {
+  if (typeof element === "string") {
+    element = document.querySelector(element);
+  }
+  if ((element != null ? element.dropzone : undefined) == null) {
+    throw new Error("No Dropzone found for given element. This is probably because you're trying to access it before Dropzone had the time to initialize. Use the `init` option to setup any additional observers on your Dropzone.");
+  }
+  return element.dropzone;
+};
+
+// Set to false if you don't want Dropzone to automatically find and attach to .dropzone elements.
+Dropzone.autoDiscover = true;
+
+// Looks for all .dropzone elements and creates a dropzone for them
+Dropzone.discover = function () {
+  var dropzones = void 0;
+  if (document.querySelectorAll) {
+    dropzones = document.querySelectorAll(".dropzone");
+  } else {
+    dropzones = [];
+    // IE :(
+    var checkElements = function checkElements(elements) {
+      return function () {
+        var result = [];
+        for (var _iterator32 = elements, _isArray32 = true, _i34 = 0, _iterator32 = _isArray32 ? _iterator32 : _iterator32[Symbol.iterator]();;) {
+          var _ref31;
+
+          if (_isArray32) {
+            if (_i34 >= _iterator32.length) break;
+            _ref31 = _iterator32[_i34++];
+          } else {
+            _i34 = _iterator32.next();
+            if (_i34.done) break;
+            _ref31 = _i34.value;
+          }
+
+          var el = _ref31;
+
+          if (/(^| )dropzone($| )/.test(el.className)) {
+            result.push(dropzones.push(el));
+          } else {
+            result.push(undefined);
+          }
+        }
+        return result;
+      }();
+    };
+    checkElements(document.getElementsByTagName("div"));
+    checkElements(document.getElementsByTagName("form"));
+  }
+
+  return function () {
+    var result = [];
+    for (var _iterator33 = dropzones, _isArray33 = true, _i35 = 0, _iterator33 = _isArray33 ? _iterator33 : _iterator33[Symbol.iterator]();;) {
+      var _ref32;
+
+      if (_isArray33) {
+        if (_i35 >= _iterator33.length) break;
+        _ref32 = _iterator33[_i35++];
+      } else {
+        _i35 = _iterator33.next();
+        if (_i35.done) break;
+        _ref32 = _i35.value;
+      }
+
+      var dropzone = _ref32;
+
+      // Create a dropzone unless auto discover has been disabled for specific element
+      if (Dropzone.optionsForElement(dropzone) !== false) {
+        result.push(new Dropzone(dropzone));
+      } else {
+        result.push(undefined);
+      }
+    }
+    return result;
+  }();
+};
+
+// Since the whole Drag'n'Drop API is pretty new, some browsers implement it,
+// but not correctly.
+// So I created a blacklist of userAgents. Yes, yes. Browser sniffing, I know.
+// But what to do when browsers *theoretically* support an API, but crash
+// when using it.
+//
+// This is a list of regular expressions tested against navigator.userAgent
+//
+// ** It should only be used on browser that *do* support the API, but
+// incorrectly **
+//
+Dropzone.blacklistedBrowsers = [
+// The mac os and windows phone version of opera 12 seems to have a problem with the File drag'n'drop API.
+/opera.*(Macintosh|Windows Phone).*version\/12/i];
+
+// Checks if the browser is supported
+Dropzone.isBrowserSupported = function () {
+  var capableBrowser = true;
+
+  if (window.File && window.FileReader && window.FileList && window.Blob && window.FormData && document.querySelector) {
+    if (!("classList" in document.createElement("a"))) {
+      capableBrowser = false;
+    } else {
+      // The browser supports the API, but may be blacklisted.
+      for (var _iterator34 = Dropzone.blacklistedBrowsers, _isArray34 = true, _i36 = 0, _iterator34 = _isArray34 ? _iterator34 : _iterator34[Symbol.iterator]();;) {
+        var _ref33;
+
+        if (_isArray34) {
+          if (_i36 >= _iterator34.length) break;
+          _ref33 = _iterator34[_i36++];
+        } else {
+          _i36 = _iterator34.next();
+          if (_i36.done) break;
+          _ref33 = _i36.value;
+        }
+
+        var regex = _ref33;
+
+        if (regex.test(navigator.userAgent)) {
+          capableBrowser = false;
+          continue;
+        }
+      }
+    }
+  } else {
+    capableBrowser = false;
+  }
+
+  return capableBrowser;
+};
+
+Dropzone.dataURItoBlob = function (dataURI) {
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0, end = byteString.length, asc = 0 <= end; asc ? i <= end : i >= end; asc ? i++ : i--) {
+    ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob
+  return new Blob([ab], { type: mimeString });
+};
+
+// Returns an array without the rejected item
+var without = function without(list, rejectedItem) {
+  return list.filter(function (item) {
+    return item !== rejectedItem;
+  }).map(function (item) {
+    return item;
+  });
+};
+
+// abc-def_ghi -> abcDefGhi
+var camelize = function camelize(str) {
+  return str.replace(/[\-_](\w)/g, function (match) {
+    return match.charAt(1).toUpperCase();
+  });
+};
+
+// Creates an element from string
+Dropzone.createElement = function (string) {
+  var div = document.createElement("div");
+  div.innerHTML = string;
+  return div.childNodes[0];
+};
+
+// Tests if given element is inside (or simply is) the container
+Dropzone.elementInside = function (element, container) {
+  if (element === container) {
+    return true;
+  } // Coffeescript doesn't support do/while loops
+  while (element = element.parentNode) {
+    if (element === container) {
+      return true;
+    }
+  }
+  return false;
+};
+
+Dropzone.getElement = function (el, name) {
+  var element = void 0;
+  if (typeof el === "string") {
+    element = document.querySelector(el);
+  } else if (el.nodeType != null) {
+    element = el;
+  }
+  if (element == null) {
+    throw new Error("Invalid `" + name + "` option provided. Please provide a CSS selector or a plain HTML element.");
+  }
+  return element;
+};
+
+Dropzone.getElements = function (els, name) {
+  var el = void 0,
+      elements = void 0;
+  if (els instanceof Array) {
+    elements = [];
+    try {
+      for (var _iterator35 = els, _isArray35 = true, _i37 = 0, _iterator35 = _isArray35 ? _iterator35 : _iterator35[Symbol.iterator]();;) {
+        if (_isArray35) {
+          if (_i37 >= _iterator35.length) break;
+          el = _iterator35[_i37++];
+        } else {
+          _i37 = _iterator35.next();
+          if (_i37.done) break;
+          el = _i37.value;
+        }
+
+        elements.push(this.getElement(el, name));
+      }
+    } catch (e) {
+      elements = null;
+    }
+  } else if (typeof els === "string") {
+    elements = [];
+    for (var _iterator36 = document.querySelectorAll(els), _isArray36 = true, _i38 = 0, _iterator36 = _isArray36 ? _iterator36 : _iterator36[Symbol.iterator]();;) {
+      if (_isArray36) {
+        if (_i38 >= _iterator36.length) break;
+        el = _iterator36[_i38++];
+      } else {
+        _i38 = _iterator36.next();
+        if (_i38.done) break;
+        el = _i38.value;
+      }
+
+      elements.push(el);
+    }
+  } else if (els.nodeType != null) {
+    elements = [els];
+  }
+
+  if (elements == null || !elements.length) {
+    throw new Error("Invalid `" + name + "` option provided. Please provide a CSS selector, a plain HTML element or a list of those.");
+  }
+
+  return elements;
+};
+
+// Asks the user the question and calls accepted or rejected accordingly
+//
+// The default implementation just uses `window.confirm` and then calls the
+// appropriate callback.
+Dropzone.confirm = function (question, accepted, rejected) {
+  if (window.confirm(question)) {
+    return accepted();
+  } else if (rejected != null) {
+    return rejected();
+  }
+};
+
+// Validates the mime type like this:
+//
+// https://developer.mozilla.org/en-US/docs/HTML/Element/input#attr-accept
+Dropzone.isValidFile = function (file, acceptedFiles) {
+  if (!acceptedFiles) {
+    return true;
+  } // If there are no accepted mime types, it's OK
+  acceptedFiles = acceptedFiles.split(",");
+
+  var mimeType = file.type;
+  var baseMimeType = mimeType.replace(/\/.*$/, "");
+
+  for (var _iterator37 = acceptedFiles, _isArray37 = true, _i39 = 0, _iterator37 = _isArray37 ? _iterator37 : _iterator37[Symbol.iterator]();;) {
+    var _ref34;
+
+    if (_isArray37) {
+      if (_i39 >= _iterator37.length) break;
+      _ref34 = _iterator37[_i39++];
+    } else {
+      _i39 = _iterator37.next();
+      if (_i39.done) break;
+      _ref34 = _i39.value;
+    }
+
+    var validType = _ref34;
+
+    validType = validType.trim();
+    if (validType.charAt(0) === ".") {
+      if (file.name.toLowerCase().indexOf(validType.toLowerCase(), file.name.length - validType.length) !== -1) {
+        return true;
+      }
+    } else if (/\/\*$/.test(validType)) {
+      // This is something like a image/* mime type
+      if (baseMimeType === validType.replace(/\/.*$/, "")) {
+        return true;
+      }
+    } else {
+      if (mimeType === validType) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
+// Augment jQuery
+if (typeof jQuery !== 'undefined' && jQuery !== null) {
+  jQuery.fn.dropzone = function (options) {
+    return this.each(function () {
+      return new Dropzone(this, options);
+    });
+  };
+}
+
+if (typeof module !== 'undefined' && module !== null) {
+  module.exports = Dropzone;
+} else {
+  window.Dropzone = Dropzone;
+}
+
+// Dropzone file status codes
+Dropzone.ADDED = "added";
+
+Dropzone.QUEUED = "queued";
+// For backwards compatibility. Now, if a file is accepted, it's either queued
+// or uploading.
+Dropzone.ACCEPTED = Dropzone.QUEUED;
+
+Dropzone.UPLOADING = "uploading";
+Dropzone.PROCESSING = Dropzone.UPLOADING; // alias
+
+Dropzone.CANCELED = "canceled";
+Dropzone.ERROR = "error";
+Dropzone.SUCCESS = "success";
+
+/*
+
+ Bugfix for iOS 6 and 7
+ Source: http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
+ based on the work of https://github.com/stomita/ios-imagefile-megapixel
+
+ */
+
+// Detecting vertical squash in loaded image.
+// Fixes a bug which squash image vertically while drawing into canvas for some images.
+// This is a bug in iOS6 devices. This function from https://github.com/stomita/ios-imagefile-megapixel
+var detectVerticalSquash = function detectVerticalSquash(img) {
+  var iw = img.naturalWidth;
+  var ih = img.naturalHeight;
+  var canvas = document.createElement("canvas");
+  canvas.width = 1;
+  canvas.height = ih;
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var _ctx$getImageData = ctx.getImageData(1, 0, 1, ih),
+      data = _ctx$getImageData.data;
+
+  // search image edge pixel position in case it is squashed vertically.
+
+
+  var sy = 0;
+  var ey = ih;
+  var py = ih;
+  while (py > sy) {
+    var alpha = data[(py - 1) * 4 + 3];
+
+    if (alpha === 0) {
+      ey = py;
+    } else {
+      sy = py;
+    }
+
+    py = ey + sy >> 1;
+  }
+  var ratio = py / ih;
+
+  if (ratio === 0) {
+    return 1;
+  } else {
+    return ratio;
+  }
+};
+
+// A replacement for context.drawImage
+// (args are for source and destination).
+var drawImageIOSFix = function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
+  var vertSquashRatio = detectVerticalSquash(img);
+  return ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
+};
+
+// Based on MinifyJpeg
+// Source: http://www.perry.cz/files/ExifRestorer.js
+// http://elicon.blog57.fc2.com/blog-entry-206.html
+
+var ExifRestore = function () {
+  function ExifRestore() {
+    _classCallCheck(this, ExifRestore);
+  }
+
+  _createClass(ExifRestore, null, [{
+    key: "initClass",
+    value: function initClass() {
+      this.KEY_STR = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    }
+  }, {
+    key: "encode64",
+    value: function encode64(input) {
+      var output = '';
+      var chr1 = undefined;
+      var chr2 = undefined;
+      var chr3 = '';
+      var enc1 = undefined;
+      var enc2 = undefined;
+      var enc3 = undefined;
+      var enc4 = '';
+      var i = 0;
+      while (true) {
+        chr1 = input[i++];
+        chr2 = input[i++];
+        chr3 = input[i++];
+        enc1 = chr1 >> 2;
+        enc2 = (chr1 & 3) << 4 | chr2 >> 4;
+        enc3 = (chr2 & 15) << 2 | chr3 >> 6;
+        enc4 = chr3 & 63;
+        if (isNaN(chr2)) {
+          enc3 = enc4 = 64;
+        } else if (isNaN(chr3)) {
+          enc4 = 64;
+        }
+        output = output + this.KEY_STR.charAt(enc1) + this.KEY_STR.charAt(enc2) + this.KEY_STR.charAt(enc3) + this.KEY_STR.charAt(enc4);
+        chr1 = chr2 = chr3 = '';
+        enc1 = enc2 = enc3 = enc4 = '';
+        if (!(i < input.length)) {
+          break;
+        }
+      }
+      return output;
+    }
+  }, {
+    key: "restore",
+    value: function restore(origFileBase64, resizedFileBase64) {
+      if (!origFileBase64.match('data:image/jpeg;base64,')) {
+        return resizedFileBase64;
+      }
+      var rawImage = this.decode64(origFileBase64.replace('data:image/jpeg;base64,', ''));
+      var segments = this.slice2Segments(rawImage);
+      var image = this.exifManipulation(resizedFileBase64, segments);
+      return "data:image/jpeg;base64," + this.encode64(image);
+    }
+  }, {
+    key: "exifManipulation",
+    value: function exifManipulation(resizedFileBase64, segments) {
+      var exifArray = this.getExifArray(segments);
+      var newImageArray = this.insertExif(resizedFileBase64, exifArray);
+      var aBuffer = new Uint8Array(newImageArray);
+      return aBuffer;
+    }
+  }, {
+    key: "getExifArray",
+    value: function getExifArray(segments) {
+      var seg = undefined;
+      var x = 0;
+      while (x < segments.length) {
+        seg = segments[x];
+        if (seg[0] === 255 & seg[1] === 225) {
+          return seg;
+        }
+        x++;
+      }
+      return [];
+    }
+  }, {
+    key: "insertExif",
+    value: function insertExif(resizedFileBase64, exifArray) {
+      var imageData = resizedFileBase64.replace('data:image/jpeg;base64,', '');
+      var buf = this.decode64(imageData);
+      var separatePoint = buf.indexOf(255, 3);
+      var mae = buf.slice(0, separatePoint);
+      var ato = buf.slice(separatePoint);
+      var array = mae;
+      array = array.concat(exifArray);
+      array = array.concat(ato);
+      return array;
+    }
+  }, {
+    key: "slice2Segments",
+    value: function slice2Segments(rawImageArray) {
+      var head = 0;
+      var segments = [];
+      while (true) {
+        var length;
+        if (rawImageArray[head] === 255 & rawImageArray[head + 1] === 218) {
+          break;
+        }
+        if (rawImageArray[head] === 255 & rawImageArray[head + 1] === 216) {
+          head += 2;
+        } else {
+          length = rawImageArray[head + 2] * 256 + rawImageArray[head + 3];
+          var endPoint = head + length + 2;
+          var seg = rawImageArray.slice(head, endPoint);
+          segments.push(seg);
+          head = endPoint;
+        }
+        if (head > rawImageArray.length) {
+          break;
+        }
+      }
+      return segments;
+    }
+  }, {
+    key: "decode64",
+    value: function decode64(input) {
+      var output = '';
+      var chr1 = undefined;
+      var chr2 = undefined;
+      var chr3 = '';
+      var enc1 = undefined;
+      var enc2 = undefined;
+      var enc3 = undefined;
+      var enc4 = '';
+      var i = 0;
+      var buf = [];
+      // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+      var base64test = /[^A-Za-z0-9\+\/\=]/g;
+      if (base64test.exec(input)) {
+        console.warn('There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, \'+\', \'/\',and \'=\'\nExpect errors in decoding.');
+      }
+      input = input.replace(/[^A-Za-z0-9\+\/\=]/g, '');
+      while (true) {
+        enc1 = this.KEY_STR.indexOf(input.charAt(i++));
+        enc2 = this.KEY_STR.indexOf(input.charAt(i++));
+        enc3 = this.KEY_STR.indexOf(input.charAt(i++));
+        enc4 = this.KEY_STR.indexOf(input.charAt(i++));
+        chr1 = enc1 << 2 | enc2 >> 4;
+        chr2 = (enc2 & 15) << 4 | enc3 >> 2;
+        chr3 = (enc3 & 3) << 6 | enc4;
+        buf.push(chr1);
+        if (enc3 !== 64) {
+          buf.push(chr2);
+        }
+        if (enc4 !== 64) {
+          buf.push(chr3);
+        }
+        chr1 = chr2 = chr3 = '';
+        enc1 = enc2 = enc3 = enc4 = '';
+        if (!(i < input.length)) {
+          break;
+        }
+      }
+      return buf;
+    }
+  }]);
+
+  return ExifRestore;
+}();
+
+ExifRestore.initClass();
+
+/*
+ * contentloaded.js
+ *
+ * Author: Diego Perini (diego.perini at gmail.com)
+ * Summary: cross-browser wrapper for DOMContentLoaded
+ * Updated: 20101020
+ * License: MIT
+ * Version: 1.2
+ *
+ * URL:
+ * http://javascript.nwbox.com/ContentLoaded/
+ * http://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
+ */
+
+// @win window reference
+// @fn function reference
+var contentLoaded = function contentLoaded(win, fn) {
+  var done = false;
+  var top = true;
+  var doc = win.document;
+  var root = doc.documentElement;
+  var add = doc.addEventListener ? "addEventListener" : "attachEvent";
+  var rem = doc.addEventListener ? "removeEventListener" : "detachEvent";
+  var pre = doc.addEventListener ? "" : "on";
+  var init = function init(e) {
+    if (e.type === "readystatechange" && doc.readyState !== "complete") {
+      return;
+    }
+    (e.type === "load" ? win : doc)[rem](pre + e.type, init, false);
+    if (!done && (done = true)) {
+      return fn.call(win, e.type || e);
+    }
+  };
+
+  var poll = function poll() {
+    try {
+      root.doScroll("left");
+    } catch (e) {
+      setTimeout(poll, 50);
+      return;
+    }
+    return init("poll");
+  };
+
+  if (doc.readyState !== "complete") {
+    if (doc.createEventObject && root.doScroll) {
+      try {
+        top = !win.frameElement;
+      } catch (error) {}
+      if (top) {
+        poll();
+      }
+    }
+    doc[add](pre + "DOMContentLoaded", init, false);
+    doc[add](pre + "readystatechange", init, false);
+    return win[add](pre + "load", init, false);
+  }
+};
+
+// As a single function to be able to write tests.
+Dropzone._autoDiscoverFunction = function () {
+  if (Dropzone.autoDiscover) {
+    return Dropzone.discover();
+  }
+};
+contentLoaded(window, Dropzone._autoDiscoverFunction);
+
+function __guard__(value, transform) {
+  return typeof value !== 'undefined' && value !== null ? transform(value) : undefined;
+}
+function __guardMethod__(obj, methodName, transform) {
+  if (typeof obj !== 'undefined' && obj !== null && typeof obj[methodName] === 'function') {
+    return transform(obj, methodName);
+  } else {
+    return undefined;
+  }
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(103);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(104)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!./vue2Dropzone.css", function() {
+			var newContent = require("!!../../css-loader/index.js!./vue2Dropzone.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*\n * The MIT License\n * Copyright (c) 2012 Matias Meno <m@tias.me>\n */\n@-webkit-keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@-moz-keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@-webkit-keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@-moz-keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@-webkit-keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n@-moz-keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n@keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n.dropzone, .dropzone * {\n  box-sizing: border-box; }\n\n.dropzone {\n  min-height: 150px;\n  border: 2px solid rgba(0, 0, 0, 0.3);\n  background: white;\n  padding: 20px 20px; }\n  .dropzone.dz-clickable {\n    cursor: pointer; }\n    .dropzone.dz-clickable * {\n      cursor: default; }\n    .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {\n      cursor: pointer; }\n  .dropzone.dz-started .dz-message {\n    display: none; }\n  .dropzone.dz-drag-hover {\n    border-style: solid; }\n    .dropzone.dz-drag-hover .dz-message {\n      opacity: 0.5; }\n  .dropzone .dz-message {\n    text-align: center;\n    margin: 2em 0; }\n  .dropzone .dz-preview {\n    position: relative;\n    display: inline-block;\n    vertical-align: top;\n    margin: 16px;\n    min-height: 100px; }\n    .dropzone .dz-preview:hover {\n      z-index: 1000; }\n      .dropzone .dz-preview:hover .dz-details {\n        opacity: 1; }\n    .dropzone .dz-preview.dz-file-preview .dz-image {\n      border-radius: 20px;\n      background: #999;\n      background: linear-gradient(to bottom, #eee, #ddd); }\n    .dropzone .dz-preview.dz-file-preview .dz-details {\n      opacity: 1; }\n    .dropzone .dz-preview.dz-image-preview {\n      background: white; }\n      .dropzone .dz-preview.dz-image-preview .dz-details {\n        -webkit-transition: opacity 0.2s linear;\n        -moz-transition: opacity 0.2s linear;\n        -ms-transition: opacity 0.2s linear;\n        -o-transition: opacity 0.2s linear;\n        transition: opacity 0.2s linear; }\n    .dropzone .dz-preview .dz-remove {\n      font-size: 14px;\n      text-align: center;\n      display: block;\n      cursor: pointer;\n      border: none; }\n      .dropzone .dz-preview .dz-remove:hover {\n        text-decoration: underline; }\n    .dropzone .dz-preview:hover .dz-details {\n      opacity: 1; }\n    .dropzone .dz-preview .dz-details {\n      z-index: 20;\n      position: absolute;\n      top: 0;\n      left: 0;\n      opacity: 0;\n      font-size: 13px;\n      min-width: 100%;\n      max-width: 100%;\n      padding: 2em 1em;\n      text-align: center;\n      color: rgba(0, 0, 0, 0.9);\n      line-height: 150%; }\n      .dropzone .dz-preview .dz-details .dz-size {\n        margin-bottom: 1em;\n        font-size: 16px; }\n      .dropzone .dz-preview .dz-details .dz-filename {\n        white-space: nowrap; }\n        .dropzone .dz-preview .dz-details .dz-filename:hover span {\n          border: 1px solid rgba(200, 200, 200, 0.8);\n          background-color: rgba(255, 255, 255, 0.8); }\n        .dropzone .dz-preview .dz-details .dz-filename:not(:hover) {\n          overflow: hidden;\n          text-overflow: ellipsis; }\n          .dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {\n            border: 1px solid transparent; }\n      .dropzone .dz-preview .dz-details .dz-filename span, .dropzone .dz-preview .dz-details .dz-size span {\n        background-color: rgba(255, 255, 255, 0.4);\n        padding: 0 0.4em;\n        border-radius: 3px; }\n    .dropzone .dz-preview:hover .dz-image img {\n      -webkit-transform: scale(1.05, 1.05);\n      -moz-transform: scale(1.05, 1.05);\n      -ms-transform: scale(1.05, 1.05);\n      -o-transform: scale(1.05, 1.05);\n      transform: scale(1.05, 1.05);\n      -webkit-filter: blur(8px);\n      filter: blur(8px); }\n    .dropzone .dz-preview .dz-image {\n      border-radius: 20px;\n      overflow: hidden;\n      width: 120px;\n      height: 120px;\n      position: relative;\n      display: block;\n      z-index: 10; }\n      .dropzone .dz-preview .dz-image img {\n        display: block; }\n    .dropzone .dz-preview.dz-success .dz-success-mark {\n      -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -moz-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -ms-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -o-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1); }\n    .dropzone .dz-preview.dz-error .dz-error-mark {\n      opacity: 1;\n      -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -moz-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -ms-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -o-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1); }\n    .dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {\n      pointer-events: none;\n      opacity: 0;\n      z-index: 500;\n      position: absolute;\n      display: block;\n      top: 50%;\n      left: 50%;\n      margin-left: -27px;\n      margin-top: -27px; }\n      .dropzone .dz-preview .dz-success-mark svg, .dropzone .dz-preview .dz-error-mark svg {\n        display: block;\n        width: 54px;\n        height: 54px; }\n    .dropzone .dz-preview.dz-processing .dz-progress {\n      opacity: 1;\n      -webkit-transition: all 0.2s linear;\n      -moz-transition: all 0.2s linear;\n      -ms-transition: all 0.2s linear;\n      -o-transition: all 0.2s linear;\n      transition: all 0.2s linear; }\n    .dropzone .dz-preview.dz-complete .dz-progress {\n      opacity: 0;\n      -webkit-transition: opacity 0.4s ease-in;\n      -moz-transition: opacity 0.4s ease-in;\n      -ms-transition: opacity 0.4s ease-in;\n      -o-transition: opacity 0.4s ease-in;\n      transition: opacity 0.4s ease-in; }\n    .dropzone .dz-preview:not(.dz-processing) .dz-progress {\n      -webkit-animation: pulse 6s ease infinite;\n      -moz-animation: pulse 6s ease infinite;\n      -ms-animation: pulse 6s ease infinite;\n      -o-animation: pulse 6s ease infinite;\n      animation: pulse 6s ease infinite; }\n    .dropzone .dz-preview .dz-progress {\n      opacity: 1;\n      z-index: 1000;\n      pointer-events: none;\n      position: absolute;\n      height: 16px;\n      left: 50%;\n      top: 50%;\n      margin-top: -8px;\n      width: 80px;\n      margin-left: -40px;\n      background: rgba(255, 255, 255, 0.9);\n      -webkit-transform: scale(1);\n      border-radius: 8px;\n      overflow: hidden; }\n      .dropzone .dz-preview .dz-progress .dz-upload {\n        background: #333;\n        background: linear-gradient(to bottom, #666, #444);\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        width: 0;\n        -webkit-transition: width 300ms ease-in-out;\n        -moz-transition: width 300ms ease-in-out;\n        -ms-transition: width 300ms ease-in-out;\n        -o-transition: width 300ms ease-in-out;\n        transition: width 300ms ease-in-out; }\n    .dropzone .dz-preview.dz-error .dz-error-message {\n      display: block; }\n    .dropzone .dz-preview.dz-error:hover .dz-error-message {\n      opacity: 1;\n      pointer-events: auto; }\n    .dropzone .dz-preview .dz-error-message {\n      pointer-events: none;\n      z-index: 1000;\n      position: absolute;\n      display: block;\n      display: none;\n      opacity: 0;\n      -webkit-transition: opacity 0.3s ease;\n      -moz-transition: opacity 0.3s ease;\n      -ms-transition: opacity 0.3s ease;\n      -o-transition: opacity 0.3s ease;\n      transition: opacity 0.3s ease;\n      border-radius: 8px;\n      font-size: 13px;\n      top: 130px;\n      left: -10px;\n      width: 140px;\n      background: #be2626;\n      background: linear-gradient(to bottom, #be2626, #a92222);\n      padding: 0.5em 1.2em;\n      color: white; }\n      .dropzone .dz-preview .dz-error-message:after {\n        content: '';\n        position: absolute;\n        top: -6px;\n        left: 64px;\n        width: 0;\n        height: 0;\n        border-left: 6px solid transparent;\n        border-right: 6px solid transparent;\n        border-bottom: 6px solid #be2626; }\n\n.vue-dropzone {\n  border: 2px solid #E5E5E5;\n  font-family: 'Arial', sans-serif;\n  letter-spacing: 0.2px;\n  color: #777;\n  transition: background-color 0.2s linear;\n}\n.vue-dropzone:hover {\n  background-color: #F6F6F6;\n}\n.vue-dropzone i {\n  color: #CCC;\n}\n.vue-dropzone .dz-preview .dz-image {\n  border-radius: 0;\n  width: 100%;\n  height: 100%;\n}\n.vue-dropzone .dz-preview .dz-image img:not([src]) {\n  width: 200px;\n  height: 200px;\n}\n.vue-dropzone .dz-preview .dz-image:hover img {\n  transform: none;\n  -webkit-filter: none;\n}\n.vue-dropzone .dz-preview .dz-details {\n  bottom: 0;\n  top: 0;\n  color: white;\n  background-color: rgba(33, 150, 243, 0.8);\n  transition: opacity .2s linear;\n  text-align: left;\n}\n.vue-dropzone .dz-preview .dz-details .dz-filename {\n  overflow: hidden;\n}\n.vue-dropzone .dz-preview .dz-details .dz-filename span,\n.vue-dropzone .dz-preview .dz-details .dz-size span {\n  background-color: transparent;\n}\n.vue-dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {\n  border: none;\n}\n.vue-dropzone .dz-preview .dz-details .dz-filename:hover span {\n  background-color: transparent;\n  border: none;\n}\n.vue-dropzone .dz-preview .dz-progress .dz-upload {\n  background: #cccccc;\n}\n.vue-dropzone .dz-preview .dz-remove {\n  position: absolute;\n  z-index: 30;\n  color: white;\n  margin-left: 15px;\n  padding: 10px;\n  top: inherit;\n  bottom: 15px;\n  border: 2px white solid;\n  text-decoration: none;\n  text-transform: uppercase;\n  font-size: 0.8rem;\n  font-weight: 800;\n  letter-spacing: 1.1px;\n  opacity: 0;\n}\n.vue-dropzone .dz-preview:hover .dz-remove {\n  opacity: 1;\n}\n.vue-dropzone .dz-preview .dz-success-mark,\n.vue-dropzone .dz-preview .dz-error-mark {\n  margin-left: auto;\n  margin-top: auto;\n  width: 100%;\n  top: 35%;\n  left: 0;\n}\n.vue-dropzone .dz-preview .dz-success-mark svg,\n.vue-dropzone .dz-preview .dz-error-mark svg {\n  margin-left: auto;\n  margin-right: auto;\n}\n.vue-dropzone .dz-preview .dz-error-message {\n  top: calc(15%);\n  margin-left: auto;\n  margin-right: auto;\n  left: 0;\n  width: 100%;\n}\n.vue-dropzone .dz-preview .dz-error-message:after {\n  bottom: -6px;\n  top: initial;\n  border-top: 6px solid #a92222;\n  border-bottom: none;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(105);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.VueSelect=e():t.VueSelect=e()}(this,function(){return function(t){function e(r){if(n[r])return n[r].exports;var o=n[r]={exports:{},id:r,loaded:!1};return t[r].call(o.exports,o,o.exports,e),o.loaded=!0,o.exports}var n={};return e.m=t,e.c=n,e.p="/",e(0)}([function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.mixins=e.VueSelect=void 0;var o=n(83),i=r(o),a=n(42),s=r(a);e.default=i.default,e.VueSelect=i.default,e.mixins=s.default},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){t.exports=!n(9)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e,n){var r=n(11),o=n(33),i=n(25),a=Object.defineProperty;e.f=n(2)?Object.defineProperty:function(t,e,n){if(r(t),e=i(e,!0),r(n),o)try{return a(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e){var n=t.exports={version:"2.5.2"};"number"==typeof __e&&(__e=n)},function(t,e,n){var r=n(4),o=n(14);t.exports=n(2)?function(t,e,n){return r.f(t,e,o(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var r=n(59),o=n(16);t.exports=function(t){return r(o(t))}},function(t,e,n){var r=n(23)("wks"),o=n(15),i=n(1).Symbol,a="function"==typeof i,s=t.exports=function(t){return r[t]||(r[t]=a&&i[t]||(a?i:o)("Symbol."+t))};s.store=r},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e,n){var r=n(10);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var r=n(1),o=n(5),i=n(56),a=n(6),s="prototype",u=function(t,e,n){var l,c,f,p=t&u.F,d=t&u.G,h=t&u.S,b=t&u.P,v=t&u.B,g=t&u.W,y=d?o:o[e]||(o[e]={}),m=y[s],x=d?r:h?r[e]:(r[e]||{})[s];d&&(n=e);for(l in n)c=!p&&x&&void 0!==x[l],c&&l in y||(f=c?x[l]:n[l],y[l]=d&&"function"!=typeof x[l]?n[l]:v&&c?i(f,r):g&&x[l]==f?function(t){var e=function(e,n,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,r)}return t.apply(this,arguments)};return e[s]=t[s],e}(f):b&&"function"==typeof f?i(Function.call,f):f,b&&((y.virtual||(y.virtual={}))[l]=f,t&u.R&&m&&!m[l]&&a(m,l,f)))};u.F=1,u.G=2,u.S=4,u.P=8,u.B=16,u.W=32,u.U=64,u.R=128,t.exports=u},function(t,e,n){var r=n(38),o=n(17);t.exports=Object.keys||function(t){return r(t,o)}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e){var n=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+r).toString(36))}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e){t.exports={}},function(t,e){t.exports=!0},function(t,e){e.f={}.propertyIsEnumerable},function(t,e,n){var r=n(4).f,o=n(3),i=n(8)("toStringTag");t.exports=function(t,e,n){t&&!o(t=n?t:t.prototype,i)&&r(t,i,{configurable:!0,value:e})}},function(t,e,n){var r=n(23)("keys"),o=n(15);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,e,n){var r=n(1),o="__core-js_shared__",i=r[o]||(r[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,e){var n=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:n)(t)}},function(t,e,n){var r=n(10);t.exports=function(t,e){if(!r(t))return t;var n,o;if(e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;if("function"==typeof(n=t.valueOf)&&!r(o=n.call(t)))return o;if(!e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){var r=n(1),o=n(5),i=n(19),a=n(27),s=n(4).f;t.exports=function(t){var e=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in e||s(e,t,{value:a.f(t)})}},function(t,e,n){e.f=n(8)},function(t,e){"use strict";t.exports={props:{loading:{type:Boolean,default:!1},onSearch:{type:Function,default:function(t,e){}}},data:function(){return{mutableLoading:!1}},watch:{search:function(){this.search.length>0&&(this.onSearch(this.search,this.toggleLoading),this.$emit("search",this.search,this.toggleLoading))},loading:function(t){this.mutableLoading=t}},methods:{toggleLoading:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null;return null==t?this.mutableLoading=!this.mutableLoading:this.mutableLoading=t}}}},function(t,e){"use strict";t.exports={watch:{typeAheadPointer:function(){this.maybeAdjustScroll()}},methods:{maybeAdjustScroll:function(){var t=this.pixelsToPointerTop(),e=this.pixelsToPointerBottom();return t<=this.viewport().top?this.scrollTo(t):e>=this.viewport().bottom?this.scrollTo(this.viewport().top+this.pointerHeight()):void 0},pixelsToPointerTop:function t(){var t=0;if(this.$refs.dropdownMenu)for(var e=0;e<this.typeAheadPointer;e++)t+=this.$refs.dropdownMenu.children[e].offsetHeight;return t},pixelsToPointerBottom:function(){return this.pixelsToPointerTop()+this.pointerHeight()},pointerHeight:function(){var t=!!this.$refs.dropdownMenu&&this.$refs.dropdownMenu.children[this.typeAheadPointer];return t?t.offsetHeight:0},viewport:function(){return{top:this.$refs.dropdownMenu?this.$refs.dropdownMenu.scrollTop:0,bottom:this.$refs.dropdownMenu?this.$refs.dropdownMenu.offsetHeight+this.$refs.dropdownMenu.scrollTop:0}},scrollTo:function(t){return this.$refs.dropdownMenu?this.$refs.dropdownMenu.scrollTop=t:null}}}},function(t,e){"use strict";t.exports={data:function(){return{typeAheadPointer:-1}},watch:{filteredOptions:function(){this.typeAheadPointer=0}},methods:{typeAheadUp:function(){this.typeAheadPointer>0&&(this.typeAheadPointer--,this.maybeAdjustScroll&&this.maybeAdjustScroll())},typeAheadDown:function(){this.typeAheadPointer<this.filteredOptions.length-1&&(this.typeAheadPointer++,this.maybeAdjustScroll&&this.maybeAdjustScroll())},typeAheadSelect:function(){this.filteredOptions[this.typeAheadPointer]?this.select(this.filteredOptions[this.typeAheadPointer]):this.taggable&&this.search.length&&this.select(this.search),this.clearSearchOnSelect&&(this.search="")}}}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e,n){var r=n(10),o=n(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,e,n){t.exports=!n(2)&&!n(9)(function(){return 7!=Object.defineProperty(n(32)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){"use strict";var r=n(19),o=n(12),i=n(39),a=n(6),s=n(3),u=n(18),l=n(61),c=n(21),f=n(67),p=n(8)("iterator"),d=!([].keys&&"next"in[].keys()),h="@@iterator",b="keys",v="values",g=function(){return this};t.exports=function(t,e,n,y,m,x,w){l(n,e,y);var S,O,_,j=function(t){if(!d&&t in M)return M[t];switch(t){case b:return function(){return new n(this,t)};case v:return function(){return new n(this,t)}}return function(){return new n(this,t)}},k=e+" Iterator",P=m==v,A=!1,M=t.prototype,L=M[p]||M[h]||m&&M[m],C=L||j(m),T=m?P?j("entries"):C:void 0,E="Array"==e?M.entries||L:L;if(E&&(_=f(E.call(new t)),_!==Object.prototype&&_.next&&(c(_,k,!0),r||s(_,p)||a(_,p,g))),P&&L&&L.name!==v&&(A=!0,C=function(){return L.call(this)}),r&&!w||!d&&!A&&M[p]||a(M,p,C),u[e]=C,u[k]=g,m)if(S={values:P?C:j(v),keys:x?C:j(b),entries:T},w)for(O in S)O in M||i(M,O,S[O]);else o(o.P+o.F*(d||A),e,S);return S}},function(t,e,n){var r=n(11),o=n(64),i=n(17),a=n(22)("IE_PROTO"),s=function(){},u="prototype",l=function(){var t,e=n(32)("iframe"),r=i.length,o="<",a=">";for(e.style.display="none",n(58).appendChild(e),e.src="javascript:",t=e.contentWindow.document,t.open(),t.write(o+"script"+a+"document.F=Object"+o+"/script"+a),t.close(),l=t.F;r--;)delete l[u][i[r]];return l()};t.exports=Object.create||function(t,e){var n;return null!==t?(s[u]=r(t),n=new s,s[u]=null,n[a]=t):n=l(),void 0===e?n:o(n,e)}},function(t,e,n){var r=n(38),o=n(17).concat("length","prototype");e.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){var r=n(3),o=n(7),i=n(55)(!1),a=n(22)("IE_PROTO");t.exports=function(t,e){var n,s=o(t),u=0,l=[];for(n in s)n!=a&&r(s,n)&&l.push(n);for(;e.length>u;)r(s,n=e[u++])&&(~i(l,n)||l.push(n));return l}},function(t,e,n){t.exports=n(6)},function(t,e,n){var r=n(16);t.exports=function(t){return Object(r(t))}},function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o=n(44),i=r(o),a=n(47),s=r(a),u=n(48),l=r(u),c=n(29),f=r(c),p=n(30),d=r(p),h=n(28),b=r(h);e.default={mixins:[f.default,d.default,b.default],props:{value:{default:null},options:{type:Array,default:function(){return[]}},disabled:{type:Boolean,default:!1},maxHeight:{type:String,default:"400px"},searchable:{type:Boolean,default:!0},multiple:{type:Boolean,default:!1},placeholder:{type:String,default:""},transition:{type:String,default:"fade"},clearSearchOnSelect:{type:Boolean,default:!0},closeOnSelect:{type:Boolean,default:!0},label:{type:String,default:"label"},getOptionLabel:{type:Function,default:function(t){return"object"===("undefined"==typeof t?"undefined":(0,l.default)(t))&&this.label&&t[this.label]?t[this.label]:t}},onChange:{type:Function,default:function(t){this.$emit("input",t)}},taggable:{type:Boolean,default:!1},tabindex:{type:Number,default:null},pushTags:{type:Boolean,default:!1},filterable:{type:Boolean,default:!0},createOption:{type:Function,default:function(t){return"object"===(0,l.default)(this.mutableOptions[0])&&(t=(0,s.default)({},this.label,t)),this.$emit("option:created",t),t}},resetOnOptionsChange:{type:Boolean,default:!1},noDrop:{type:Boolean,default:!1},inputId:{type:String},dir:{type:String,default:"auto"}},data:function(){return{search:"",open:!1,mutableValue:null,mutableOptions:[]}},watch:{value:function(t){this.mutableValue=t},mutableValue:function(t,e){this.multiple?this.onChange?this.onChange(t):null:this.onChange&&t!==e?this.onChange(t):null},options:function(t){this.mutableOptions=t},mutableOptions:function(){!this.taggable&&this.resetOnOptionsChange&&(this.mutableValue=this.multiple?[]:null)},multiple:function(t){this.mutableValue=t?[]:null}},created:function(){this.mutableValue=this.value,this.mutableOptions=this.options.slice(0),this.mutableLoading=this.loading,this.$on("option:created",this.maybePushTag)},methods:{select:function(t){this.isOptionSelected(t)?this.deselect(t):(this.taggable&&!this.optionExists(t)&&(t=this.createOption(t)),this.multiple&&!this.mutableValue?this.mutableValue=[t]:this.multiple?this.mutableValue.push(t):this.mutableValue=t),this.onAfterSelect(t)},deselect:function(t){var e=this;if(this.multiple){var n=-1;this.mutableValue.forEach(function(r){(r===t||"object"===("undefined"==typeof r?"undefined":(0,l.default)(r))&&r[e.label]===t[e.label])&&(n=r)});var r=this.mutableValue.indexOf(n);this.mutableValue.splice(r,1)}else this.mutableValue=null},onAfterSelect:function(t){this.closeOnSelect&&(this.open=!this.open,this.$refs.search.blur()),this.clearSearchOnSelect&&(this.search="")},toggleDropdown:function(t){t.target!==this.$refs.openIndicator&&t.target!==this.$refs.search&&t.target!==this.$refs.toggle&&t.target!==this.$el||(this.open?this.$refs.search.blur():this.disabled||(this.open=!0,this.$refs.search.focus()))},isOptionSelected:function(t){var e=this;if(this.multiple&&this.mutableValue){var n=!1;return this.mutableValue.forEach(function(r){"object"===("undefined"==typeof r?"undefined":(0,l.default)(r))&&r[e.label]===t[e.label]?n=!0:"object"===("undefined"==typeof r?"undefined":(0,l.default)(r))&&r[e.label]===t?n=!0:r===t&&(n=!0)}),n}return this.mutableValue===t},onEscape:function(){this.search.length?this.search="":this.$refs.search.blur()},onSearchBlur:function(){this.clearSearchOnBlur&&(this.search=""),this.open=!1,this.$emit("search:blur")},onSearchFocus:function(){this.open=!0,this.$emit("search:focus")},maybeDeleteValue:function(){if(!this.$refs.search.value.length&&this.mutableValue)return this.multiple?this.mutableValue.pop():this.mutableValue=null},optionExists:function(t){var e=this,n=!1;return this.mutableOptions.forEach(function(r){"object"===("undefined"==typeof r?"undefined":(0,l.default)(r))&&r[e.label]===t?n=!0:r===t&&(n=!0)}),n},maybePushTag:function(t){this.pushTags&&this.mutableOptions.push(t)}},computed:{dropdownClasses:function(){return{open:this.dropdownOpen,single:!this.multiple,searching:this.searching,searchable:this.searchable,unsearchable:!this.searchable,loading:this.mutableLoading,rtl:"rtl"===this.dir,disabled:this.disabled}},clearSearchOnBlur:function(){return this.clearSearchOnSelect&&!this.multiple},searching:function(){return!!this.search},dropdownOpen:function(){return!this.noDrop&&(this.open&&!this.mutableLoading)},searchPlaceholder:function(){if(this.isValueEmpty&&this.placeholder)return this.placeholder},filteredOptions:function(){var t=this;if(!this.filterable&&!this.taggable)return this.mutableOptions.slice();var e=this.mutableOptions.filter(function(e){return"object"===("undefined"==typeof e?"undefined":(0,l.default)(e))&&e.hasOwnProperty(t.label)?e[t.label].toLowerCase().indexOf(t.search.toLowerCase())>-1:"object"!==("undefined"==typeof e?"undefined":(0,l.default)(e))||e.hasOwnProperty(t.label)?e.toLowerCase().indexOf(t.search.toLowerCase())>-1:console.warn('[vue-select warn]: Label key "option.'+t.label+'" does not exist in options object.\nhttp://sagalbot.github.io/vue-select/#ex-labels')});return this.taggable&&this.search.length&&!this.optionExists(this.search)&&e.unshift(this.search),e},isValueEmpty:function(){return!this.mutableValue||("object"===(0,l.default)(this.mutableValue)?!(0,i.default)(this.mutableValue).length:!this.mutableValue.length)},valueAsArray:function(){return this.multiple?this.mutableValue:this.mutableValue?[this.mutableValue]:[]}}}},function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o=n(28),i=r(o),a=n(30),s=r(a),u=n(29),l=r(u);e.default={ajax:i.default,pointer:s.default,pointerScroll:l.default}},function(t,e,n){t.exports={default:n(49),__esModule:!0}},function(t,e,n){t.exports={default:n(50),__esModule:!0}},function(t,e,n){t.exports={default:n(51),__esModule:!0}},function(t,e,n){t.exports={default:n(52),__esModule:!0}},function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}e.__esModule=!0;var o=n(43),i=r(o);e.default=function(t,e,n){return e in t?(0,i.default)(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}e.__esModule=!0;var o=n(46),i=r(o),a=n(45),s=r(a),u="function"==typeof s.default&&"symbol"==typeof i.default?function(t){return typeof t}:function(t){return t&&"function"==typeof s.default&&t.constructor===s.default&&t!==s.default.prototype?"symbol":typeof t};e.default="function"==typeof s.default&&"symbol"===u(i.default)?function(t){return"undefined"==typeof t?"undefined":u(t)}:function(t){return t&&"function"==typeof s.default&&t.constructor===s.default&&t!==s.default.prototype?"symbol":"undefined"==typeof t?"undefined":u(t)}},function(t,e,n){n(73);var r=n(5).Object;t.exports=function(t,e,n){return r.defineProperty(t,e,n)}},function(t,e,n){n(74),t.exports=n(5).Object.keys},function(t,e,n){n(77),n(75),n(78),n(79),t.exports=n(5).Symbol},function(t,e,n){n(76),n(80),t.exports=n(27).f("iterator")},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e){t.exports=function(){}},function(t,e,n){var r=n(7),o=n(71),i=n(70);t.exports=function(t){return function(e,n,a){var s,u=r(e),l=o(u.length),c=i(a,l);if(t&&n!=n){for(;l>c;)if(s=u[c++],s!=s)return!0}else for(;l>c;c++)if((t||c in u)&&u[c]===n)return t||c||0;return!t&&-1}}},function(t,e,n){var r=n(53);t.exports=function(t,e,n){if(r(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,r){return t.call(e,n,r)};case 3:return function(n,r,o){return t.call(e,n,r,o)}}return function(){return t.apply(e,arguments)}}},function(t,e,n){var r=n(13),o=n(37),i=n(20);t.exports=function(t){var e=r(t),n=o.f;if(n)for(var a,s=n(t),u=i.f,l=0;s.length>l;)u.call(t,a=s[l++])&&e.push(a);return e}},function(t,e,n){var r=n(1).document;t.exports=r&&r.documentElement},function(t,e,n){var r=n(31);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,e,n){var r=n(31);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,e,n){"use strict";var r=n(35),o=n(14),i=n(21),a={};n(6)(a,n(8)("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(a,{next:o(1,n)}),i(t,e+" Iterator")}},function(t,e){t.exports=function(t,e){return{value:e,done:!!t}}},function(t,e,n){var r=n(15)("meta"),o=n(10),i=n(3),a=n(4).f,s=0,u=Object.isExtensible||function(){return!0},l=!n(9)(function(){return u(Object.preventExtensions({}))}),c=function(t){a(t,r,{value:{i:"O"+ ++s,w:{}}})},f=function(t,e){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!u(t))return"F";if(!e)return"E";c(t)}return t[r].i},p=function(t,e){if(!i(t,r)){if(!u(t))return!0;if(!e)return!1;c(t)}return t[r].w},d=function(t){return l&&h.NEED&&u(t)&&!i(t,r)&&c(t),t},h=t.exports={KEY:r,NEED:!1,fastKey:f,getWeak:p,onFreeze:d}},function(t,e,n){var r=n(4),o=n(11),i=n(13);t.exports=n(2)?Object.defineProperties:function(t,e){o(t);for(var n,a=i(e),s=a.length,u=0;s>u;)r.f(t,n=a[u++],e[n]);return t}},function(t,e,n){var r=n(20),o=n(14),i=n(7),a=n(25),s=n(3),u=n(33),l=Object.getOwnPropertyDescriptor;e.f=n(2)?l:function(t,e){if(t=i(t),e=a(e,!0),u)try{return l(t,e)}catch(t){}if(s(t,e))return o(!r.f.call(t,e),t[e])}},function(t,e,n){var r=n(7),o=n(36).f,i={}.toString,a="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],s=function(t){try{return o(t)}catch(t){return a.slice()}};t.exports.f=function(t){return a&&"[object Window]"==i.call(t)?s(t):o(r(t))}},function(t,e,n){var r=n(3),o=n(40),i=n(22)("IE_PROTO"),a=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?a:null}},function(t,e,n){var r=n(12),o=n(5),i=n(9);t.exports=function(t,e){var n=(o.Object||{})[t]||Object[t],a={};a[t]=e(n),r(r.S+r.F*i(function(){n(1)}),"Object",a)}},function(t,e,n){var r=n(24),o=n(16);t.exports=function(t){return function(e,n){var i,a,s=String(o(e)),u=r(n),l=s.length;return u<0||u>=l?t?"":void 0:(i=s.charCodeAt(u),i<55296||i>56319||u+1===l||(a=s.charCodeAt(u+1))<56320||a>57343?t?s.charAt(u):i:t?s.slice(u,u+2):(i-55296<<10)+(a-56320)+65536)}}},function(t,e,n){var r=n(24),o=Math.max,i=Math.min;t.exports=function(t,e){return t=r(t),t<0?o(t+e,0):i(t,e)}},function(t,e,n){var r=n(24),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,e,n){"use strict";var r=n(54),o=n(62),i=n(18),a=n(7);t.exports=n(34)(Array,"Array",function(t,e){this._t=a(t),this._i=0,this._k=e},function(){var t=this._t,e=this._k,n=this._i++;return!t||n>=t.length?(this._t=void 0,o(1)):"keys"==e?o(0,n):"values"==e?o(0,t[n]):o(0,[n,t[n]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,e,n){var r=n(12);r(r.S+r.F*!n(2),"Object",{defineProperty:n(4).f})},function(t,e,n){var r=n(40),o=n(13);n(68)("keys",function(){return function(t){return o(r(t))}})},function(t,e){},function(t,e,n){"use strict";var r=n(69)(!0);n(34)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,e=this._t,n=this._i;return n>=e.length?{value:void 0,done:!0}:(t=r(e,n),this._i+=t.length,{value:t,done:!1})})},function(t,e,n){"use strict";var r=n(1),o=n(3),i=n(2),a=n(12),s=n(39),u=n(63).KEY,l=n(9),c=n(23),f=n(21),p=n(15),d=n(8),h=n(27),b=n(26),v=n(57),g=n(60),y=n(11),m=n(10),x=n(7),w=n(25),S=n(14),O=n(35),_=n(66),j=n(65),k=n(4),P=n(13),A=j.f,M=k.f,L=_.f,C=r.Symbol,T=r.JSON,E=T&&T.stringify,V="prototype",F=d("_hidden"),$=d("toPrimitive"),B={}.propertyIsEnumerable,N=c("symbol-registry"),D=c("symbols"),I=c("op-symbols"),R=Object[V],z="function"==typeof C,H=r.QObject,G=!H||!H[V]||!H[V].findChild,U=i&&l(function(){return 7!=O(M({},"a",{get:function(){return M(this,"a",{value:7}).a}})).a})?function(t,e,n){var r=A(R,e);r&&delete R[e],M(t,e,n),r&&t!==R&&M(R,e,r)}:M,W=function(t){var e=D[t]=O(C[V]);return e._k=t,e},J=z&&"symbol"==typeof C.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof C},K=function(t,e,n){return t===R&&K(I,e,n),y(t),e=w(e,!0),y(n),o(D,e)?(n.enumerable?(o(t,F)&&t[F][e]&&(t[F][e]=!1),n=O(n,{enumerable:S(0,!1)})):(o(t,F)||M(t,F,S(1,{})),t[F][e]=!0),U(t,e,n)):M(t,e,n)},Y=function(t,e){y(t);for(var n,r=v(e=x(e)),o=0,i=r.length;i>o;)K(t,n=r[o++],e[n]);return t},q=function(t,e){return void 0===e?O(t):Y(O(t),e)},Q=function(t){var e=B.call(this,t=w(t,!0));return!(this===R&&o(D,t)&&!o(I,t))&&(!(e||!o(this,t)||!o(D,t)||o(this,F)&&this[F][t])||e)},Z=function(t,e){if(t=x(t),e=w(e,!0),t!==R||!o(D,e)||o(I,e)){var n=A(t,e);return!n||!o(D,e)||o(t,F)&&t[F][e]||(n.enumerable=!0),n}},X=function(t){for(var e,n=L(x(t)),r=[],i=0;n.length>i;)o(D,e=n[i++])||e==F||e==u||r.push(e);return r},tt=function(t){for(var e,n=t===R,r=L(n?I:x(t)),i=[],a=0;r.length>a;)!o(D,e=r[a++])||n&&!o(R,e)||i.push(D[e]);return i};z||(C=function(){if(this instanceof C)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),e=function(n){this===R&&e.call(I,n),o(this,F)&&o(this[F],t)&&(this[F][t]=!1),U(this,t,S(1,n))};return i&&G&&U(R,t,{configurable:!0,set:e}),W(t)},s(C[V],"toString",function(){return this._k}),j.f=Z,k.f=K,n(36).f=_.f=X,n(20).f=Q,n(37).f=tt,i&&!n(19)&&s(R,"propertyIsEnumerable",Q,!0),h.f=function(t){return W(d(t))}),a(a.G+a.W+a.F*!z,{Symbol:C});for(var et="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),nt=0;et.length>nt;)d(et[nt++]);for(var rt=P(d.store),ot=0;rt.length>ot;)b(rt[ot++]);a(a.S+a.F*!z,"Symbol",{for:function(t){return o(N,t+="")?N[t]:N[t]=C(t)},keyFor:function(t){if(!J(t))throw TypeError(t+" is not a symbol!");for(var e in N)if(N[e]===t)return e},useSetter:function(){G=!0},useSimple:function(){G=!1}}),a(a.S+a.F*!z,"Object",{create:q,defineProperty:K,defineProperties:Y,getOwnPropertyDescriptor:Z,getOwnPropertyNames:X,getOwnPropertySymbols:tt}),T&&a(a.S+a.F*(!z||l(function(){var t=C();return"[null]"!=E([t])||"{}"!=E({a:t})||"{}"!=E(Object(t))})),"JSON",{stringify:function(t){for(var e,n,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);if(n=e=r[1],(m(e)||void 0!==t)&&!J(t))return g(e)||(e=function(t,e){if(n&&(e=n.call(this,t,e)),!J(e))return e}),r[1]=e,E.apply(T,r)}}),C[V][$]||n(6)(C[V],$,C[V].valueOf),f(C,"Symbol"),f(Math,"Math",!0),f(r.JSON,"JSON",!0)},function(t,e,n){n(26)("asyncIterator")},function(t,e,n){n(26)("observable")},function(t,e,n){n(72);for(var r=n(1),o=n(6),i=n(18),a=n(8)("toStringTag"),s="CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,TextTrackList,TouchList".split(","),u=0;u<s.length;u++){var l=s[u],c=r[l],f=c&&c.prototype;f&&!f[a]&&o(f,a,l),i[l]=i.Array}},function(t,e,n){e=t.exports=n(82)(),e.push([t.id,'.v-select{position:relative;font-family:sans-serif}.v-select,.v-select *{box-sizing:border-box}.v-select.rtl .open-indicator{left:10px;right:auto}.v-select.rtl .selected-tag{float:right;margin-right:3px;margin-left:1px}.v-select.rtl .dropdown-menu{text-align:right}.v-select .open-indicator{position:absolute;bottom:6px;right:10px;cursor:pointer;pointer-events:all;opacity:1;height:20px}.v-select .open-indicator,.v-select .open-indicator:before{display:inline-block;transition:all .15s cubic-bezier(1,-.115,.975,.855);transition-timing-function:cubic-bezier(1,-.115,.975,.855);width:10px}.v-select .open-indicator:before{border-color:rgba(60,60,60,.5);border-style:solid;border-width:3px 3px 0 0;content:"";height:10px;vertical-align:top;transform:rotate(133deg);box-sizing:inherit}.v-select.open .open-indicator:before{transform:rotate(315deg)}.v-select.loading .open-indicator{opacity:0}.v-select.open .open-indicator{bottom:1px}.v-select .dropdown-toggle{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;padding:0;background:none;border:1px solid rgba(60,60,60,.26);border-radius:4px;white-space:normal}.v-select .dropdown-toggle:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}.v-select.searchable .dropdown-toggle{cursor:text}.v-select.unsearchable .dropdown-toggle{cursor:pointer}.v-select.open .dropdown-toggle{border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0}.v-select .dropdown-menu{display:block;position:absolute;top:100%;left:0;z-index:1000;min-width:160px;padding:5px 0;margin:0;width:100%;overflow-y:scroll;border:1px solid rgba(0,0,0,.26);box-shadow:0 3px 6px 0 rgba(0,0,0,.15);border-top:none;border-radius:0 0 4px 4px;text-align:left;list-style:none;background:#fff}.v-select .no-options{text-align:center}.v-select .selected-tag{color:#333;background-color:#f0f0f0;border:1px solid #ccc;border-radius:4px;height:26px;margin:4px 1px 0 3px;padding:1px .25em;float:left;line-height:24px}.v-select.single .selected-tag{background-color:transparent;border-color:transparent}.v-select.single.open .selected-tag{position:absolute;opacity:.5}.v-select.single.loading .selected-tag,.v-select.single.open.searching .selected-tag{display:none}.v-select .selected-tag .close{float:none;margin-right:0;font-size:20px;appearance:none;padding:0;cursor:pointer;background:0 0;border:0;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.v-select.single.searching:not(.open):not(.loading) input[type=search]{opacity:.2}.v-select input[type=search]::-webkit-search-cancel-button,.v-select input[type=search]::-webkit-search-decoration,.v-select input[type=search]::-webkit-search-results-button,.v-select input[type=search]::-webkit-search-results-decoration{display:none}.v-select input[type=search]::-ms-clear{display:none}.v-select input[type=search],.v-select input[type=search]:focus{appearance:none;-webkit-appearance:none;-moz-appearance:none;line-height:1.42857143;font-size:1em;height:34px;display:inline-block;border:none;outline:none;margin:0;padding:0 .5em;width:10em;max-width:100%;background:none;position:relative;box-shadow:none;float:left;clear:none}.v-select li{line-height:1.42857143}.v-select li>a{display:block;padding:3px 20px;clear:both;color:#333;white-space:nowrap}.v-select li:hover{cursor:pointer}.v-select .dropdown-menu .active>a{color:#333;background:rgba(50,50,50,.1)}.v-select .dropdown-menu>.highlight>a{background:#5897fb;color:#fff}.v-select .highlight:not(:last-child){margin-bottom:0}.v-select .spinner{opacity:0;position:absolute;top:5px;right:10px;font-size:5px;text-indent:-9999em;overflow:hidden;border-top:.9em solid hsla(0,0%,39%,.1);border-right:.9em solid hsla(0,0%,39%,.1);border-bottom:.9em solid hsla(0,0%,39%,.1);border-left:.9em solid rgba(60,60,60,.45);transform:translateZ(0);animation:vSelectSpinner 1.1s infinite linear;transition:opacity .1s}.v-select .spinner,.v-select .spinner:after{border-radius:50%;width:5em;height:5em}.v-select.disabled .dropdown-toggle,.v-select.disabled .dropdown-toggle input,.v-select.disabled .open-indicator,.v-select.disabled .selected-tag .close{cursor:not-allowed;background-color:#f8f8f8}.v-select.loading .spinner{opacity:1}@-webkit-keyframes vSelectSpinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes vSelectSpinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.fade-enter-active,.fade-leave-active{transition:opacity .15s cubic-bezier(1,.5,.8,1)}.fade-enter,.fade-leave-to{opacity:0}',""])},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var n=this[e];n[2]?t.push("@media "+n[2]+"{"+n[1]+"}"):t.push(n[1])}return t.join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<e.length;o++){var a=e[o];"number"==typeof a[0]&&r[a[0]]||(n&&!a[2]?a[2]=n:n&&(a[2]="("+a[2]+") and ("+n+")"),t.push(a))}},t}},function(t,e,n){n(87);var r=n(84)(n(41),n(85),null,null);t.exports=r.exports},function(t,e){t.exports=function(t,e,n,r){var o,i=t=t||{},a=typeof t.default;"object"!==a&&"function"!==a||(o=t,i=t.default);var s="function"==typeof i?i.options:i;if(e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),n&&(s._scopeId=n),r){var u=s.computed||(s.computed={});Object.keys(r).forEach(function(t){var e=r[t];u[t]=function(){return e}})}return{esModule:o,exports:i,options:s}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticClass:"dropdown v-select",class:t.dropdownClasses,attrs:{dir:t.dir}},[n("div",{ref:"toggle",class:["dropdown-toggle","clearfix"],on:{mousedown:function(e){e.preventDefault(),t.toggleDropdown(e)}}},[t._l(t.valueAsArray,function(e){return n("span",{key:e.index,staticClass:"selected-tag"},[t._t("selected-option",[t._v("\n        "+t._s(t.getOptionLabel(e))+"\n      ")],null,e),t._v(" "),t.multiple?n("button",{staticClass:"close",attrs:{disabled:t.disabled,type:"button","aria-label":"Remove option"},on:{click:function(n){t.deselect(e)}}},[n("span",{attrs:{"aria-hidden":"true"}},[t._v("×")])]):t._e()],2)}),t._v(" "),n("input",{directives:[{name:"model",rawName:"v-model",value:t.search,expression:"search"}],ref:"search",staticClass:"form-control",style:{width:t.isValueEmpty?"100%":"auto"},attrs:{type:"search",autocomplete:"false",disabled:t.disabled,placeholder:t.searchPlaceholder,tabindex:t.tabindex,readonly:!t.searchable,id:t.inputId,"aria-label":"Search for option"},domProps:{value:t.search},on:{keydown:[function(e){return"button"in e||!t._k(e.keyCode,"delete",[8,46],e.key)?void t.maybeDeleteValue(e):null},function(e){return"button"in e||!t._k(e.keyCode,"up",38,e.key)?(e.preventDefault(),void t.typeAheadUp(e)):null},function(e){return"button"in e||!t._k(e.keyCode,"down",40,e.key)?(e.preventDefault(),void t.typeAheadDown(e)):null},function(e){return"button"in e||!t._k(e.keyCode,"enter",13,e.key)?(e.preventDefault(),void t.typeAheadSelect(e)):null}],keyup:function(e){return"button"in e||!t._k(e.keyCode,"esc",27,e.key)?void t.onEscape(e):null},blur:t.onSearchBlur,focus:t.onSearchFocus,input:function(e){e.target.composing||(t.search=e.target.value)}}}),t._v(" "),t.noDrop?t._e():n("i",{ref:"openIndicator",staticClass:"open-indicator",attrs:{role:"presentation"}}),t._v(" "),t._t("spinner",[n("div",{directives:[{name:"show",rawName:"v-show",value:t.mutableLoading,expression:"mutableLoading"}],staticClass:"spinner"},[t._v("Loading...")])])],2),t._v(" "),n("transition",{attrs:{name:t.transition}},[t.dropdownOpen?n("ul",{ref:"dropdownMenu",staticClass:"dropdown-menu",style:{"max-height":t.maxHeight}},[t._l(t.filteredOptions,function(e,r){return n("li",{
+key:r,class:{active:t.isOptionSelected(e),highlight:r===t.typeAheadPointer},on:{mouseover:function(e){t.typeAheadPointer=r}}},[n("a",{on:{mousedown:function(n){n.preventDefault(),t.select(e)}}},[t._t("option",[t._v("\n          "+t._s(t.getOptionLabel(e))+"\n        ")],null,e)],2)])}),t._v(" "),t.filteredOptions.length?t._e():n("li",{staticClass:"no-options"},[t._t("no-options",[t._v("Sorry, no matching options.")])],2)],2):t._e()])],1)},staticRenderFns:[]}},function(t,e,n){function r(t,e){for(var n=0;n<t.length;n++){var r=t[n],o=f[r.id];if(o){o.refs++;for(var i=0;i<o.parts.length;i++)o.parts[i](r.parts[i]);for(;i<r.parts.length;i++)o.parts.push(u(r.parts[i],e))}else{for(var a=[],i=0;i<r.parts.length;i++)a.push(u(r.parts[i],e));f[r.id]={id:r.id,refs:1,parts:a}}}}function o(t){for(var e=[],n={},r=0;r<t.length;r++){var o=t[r],i=o[0],a=o[1],s=o[2],u=o[3],l={css:a,media:s,sourceMap:u};n[i]?n[i].parts.push(l):e.push(n[i]={id:i,parts:[l]})}return e}function i(t,e){var n=h(),r=g[g.length-1];if("top"===t.insertAt)r?r.nextSibling?n.insertBefore(e,r.nextSibling):n.appendChild(e):n.insertBefore(e,n.firstChild),g.push(e);else{if("bottom"!==t.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");n.appendChild(e)}}function a(t){t.parentNode.removeChild(t);var e=g.indexOf(t);e>=0&&g.splice(e,1)}function s(t){var e=document.createElement("style");return e.type="text/css",i(t,e),e}function u(t,e){var n,r,o;if(e.singleton){var i=v++;n=b||(b=s(e)),r=l.bind(null,n,i,!1),o=l.bind(null,n,i,!0)}else n=s(e),r=c.bind(null,n),o=function(){a(n)};return r(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;r(t=e)}else o()}}function l(t,e,n,r){var o=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=y(e,o);else{var i=document.createTextNode(o),a=t.childNodes;a[e]&&t.removeChild(a[e]),a.length?t.insertBefore(i,a[e]):t.appendChild(i)}}function c(t,e){var n=e.css,r=e.media,o=e.sourceMap;if(r&&t.setAttribute("media",r),o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */"),t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}var f={},p=function(t){var e;return function(){return"undefined"==typeof e&&(e=t.apply(this,arguments)),e}},d=p(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),h=p(function(){return document.head||document.getElementsByTagName("head")[0]}),b=null,v=0,g=[];t.exports=function(t,e){e=e||{},"undefined"==typeof e.singleton&&(e.singleton=d()),"undefined"==typeof e.insertAt&&(e.insertAt="bottom");var n=o(t);return r(n,e),function(t){for(var i=[],a=0;a<n.length;a++){var s=n[a],u=f[s.id];u.refs--,i.push(u)}if(t){var l=o(t);r(l,e)}for(var a=0;a<i.length;a++){var u=i[a];if(0===u.refs){for(var c=0;c<u.parts.length;c++)u.parts[c]();delete f[u.id]}}}};var y=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}()},function(t,e,n){var r=n(81);"string"==typeof r&&(r=[[t.id,r,""]]);n(86)(r,{});r.locals&&(t.exports=r.locals)}])});
+//# sourceMappingURL=vue-select.js.map
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["vueMediumEditor"] = factory();
+	else
+		root["vueMediumEditor"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {var __WEBPACK_AMD_DEFINE_RESULT__;/*global self, document, DOMException */
+
+/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+
+// Full polyfill for browsers with no classList support
+if (!("classList" in document.createElement("_"))) {
+  (function (view) {
+
+  "use strict";
+
+  if (!('Element' in view)) return;
+
+  var
+      classListProp = "classList"
+    , protoProp = "prototype"
+    , elemCtrProto = view.Element[protoProp]
+    , objCtr = Object
+    , strTrim = String[protoProp].trim || function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    }
+    , arrIndexOf = Array[protoProp].indexOf || function (item) {
+      var
+          i = 0
+        , len = this.length
+      ;
+      for (; i < len; i++) {
+        if (i in this && this[i] === item) {
+          return i;
+        }
+      }
+      return -1;
+    }
+    // Vendors: please allow content code to instantiate DOMExceptions
+    , DOMEx = function (type, message) {
+      this.name = type;
+      this.code = DOMException[type];
+      this.message = message;
+    }
+    , checkTokenAndGetIndex = function (classList, token) {
+      if (token === "") {
+        throw new DOMEx(
+            "SYNTAX_ERR"
+          , "An invalid or illegal string was specified"
+        );
+      }
+      if (/\s/.test(token)) {
+        throw new DOMEx(
+            "INVALID_CHARACTER_ERR"
+          , "String contains an invalid character"
+        );
+      }
+      return arrIndexOf.call(classList, token);
+    }
+    , ClassList = function (elem) {
+      var
+          trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
+        , classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+        , i = 0
+        , len = classes.length
+      ;
+      for (; i < len; i++) {
+        this.push(classes[i]);
+      }
+      this._updateClassName = function () {
+        elem.setAttribute("class", this.toString());
+      };
+    }
+    , classListProto = ClassList[protoProp] = []
+    , classListGetter = function () {
+      return new ClassList(this);
+    }
+  ;
+  // Most DOMException implementations don't allow calling DOMException's toString()
+  // on non-DOMExceptions. Error's toString() is sufficient here.
+  DOMEx[protoProp] = Error[protoProp];
+  classListProto.item = function (i) {
+    return this[i] || null;
+  };
+  classListProto.contains = function (token) {
+    token += "";
+    return checkTokenAndGetIndex(this, token) !== -1;
+  };
+  classListProto.add = function () {
+    var
+        tokens = arguments
+      , i = 0
+      , l = tokens.length
+      , token
+      , updated = false
+    ;
+    do {
+      token = tokens[i] + "";
+      if (checkTokenAndGetIndex(this, token) === -1) {
+        this.push(token);
+        updated = true;
+      }
+    }
+    while (++i < l);
+
+    if (updated) {
+      this._updateClassName();
+    }
+  };
+  classListProto.remove = function () {
+    var
+        tokens = arguments
+      , i = 0
+      , l = tokens.length
+      , token
+      , updated = false
+      , index
+    ;
+    do {
+      token = tokens[i] + "";
+      index = checkTokenAndGetIndex(this, token);
+      while (index !== -1) {
+        this.splice(index, 1);
+        updated = true;
+        index = checkTokenAndGetIndex(this, token);
+      }
+    }
+    while (++i < l);
+
+    if (updated) {
+      this._updateClassName();
+    }
+  };
+  classListProto.toggle = function (token, force) {
+    token += "";
+
+    var
+        result = this.contains(token)
+      , method = result ?
+        force !== true && "remove"
+      :
+        force !== false && "add"
+    ;
+
+    if (method) {
+      this[method](token);
+    }
+
+    if (force === true || force === false) {
+      return force;
+    } else {
+      return !result;
+    }
+  };
+  classListProto.toString = function () {
+    return this.join(" ");
+  };
+
+  if (objCtr.defineProperty) {
+    var classListPropDesc = {
+        get: classListGetter
+      , enumerable: true
+      , configurable: true
+    };
+    try {
+      objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+    } catch (ex) { // IE 8 doesn't support enumerable:true
+      if (ex.number === -0x7FF5EC54) {
+        classListPropDesc.enumerable = false;
+        objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+      }
+    }
+  } else if (objCtr[protoProp].__defineGetter__) {
+    elemCtrProto.__defineGetter__(classListProp, classListGetter);
+  }
+
+  }(self));
+}
+
+/* Blob.js
+ * A Blob implementation.
+ * 2014-07-24
+ *
+ * By Eli Grey, http://eligrey.com
+ * By Devin Samarin, https://github.com/dsamarin
+ * License: X11/MIT
+ *   See https://github.com/eligrey/Blob.js/blob/master/LICENSE.md
+ */
+
+/*global self, unescape */
+/*jslint bitwise: true, regexp: true, confusion: true, es5: true, vars: true, white: true,
+  plusplus: true */
+
+/*! @source http://purl.eligrey.com/github/Blob.js/blob/master/Blob.js */
+
+(function (view) {
+  "use strict";
+
+  view.URL = view.URL || view.webkitURL;
+
+  if (view.Blob && view.URL) {
+    try {
+      new Blob;
+      return;
+    } catch (e) {}
+  }
+
+  // Internally we use a BlobBuilder implementation to base Blob off of
+  // in order to support older browsers that only have BlobBuilder
+  var BlobBuilder = view.BlobBuilder || view.WebKitBlobBuilder || view.MozBlobBuilder || (function(view) {
+    var
+        get_class = function(object) {
+        return Object.prototype.toString.call(object).match(/^\[object\s(.*)\]$/)[1];
+      }
+      , FakeBlobBuilder = function BlobBuilder() {
+        this.data = [];
+      }
+      , FakeBlob = function Blob(data, type, encoding) {
+        this.data = data;
+        this.size = data.length;
+        this.type = type;
+        this.encoding = encoding;
+      }
+      , FBB_proto = FakeBlobBuilder.prototype
+      , FB_proto = FakeBlob.prototype
+      , FileReaderSync = view.FileReaderSync
+      , FileException = function(type) {
+        this.code = this[this.name = type];
+      }
+      , file_ex_codes = (
+          "NOT_FOUND_ERR SECURITY_ERR ABORT_ERR NOT_READABLE_ERR ENCODING_ERR "
+        + "NO_MODIFICATION_ALLOWED_ERR INVALID_STATE_ERR SYNTAX_ERR"
+      ).split(" ")
+      , file_ex_code = file_ex_codes.length
+      , real_URL = view.URL || view.webkitURL || view
+      , real_create_object_URL = real_URL.createObjectURL
+      , real_revoke_object_URL = real_URL.revokeObjectURL
+      , URL = real_URL
+      , btoa = view.btoa
+      , atob = view.atob
+
+      , ArrayBuffer = view.ArrayBuffer
+      , Uint8Array = view.Uint8Array
+
+      , origin = /^[\w-]+:\/*\[?[\w\.:-]+\]?(?::[0-9]+)?/
+    ;
+    FakeBlob.fake = FB_proto.fake = true;
+    while (file_ex_code--) {
+      FileException.prototype[file_ex_codes[file_ex_code]] = file_ex_code + 1;
+    }
+    // Polyfill URL
+    if (!real_URL.createObjectURL) {
+      URL = view.URL = function(uri) {
+        var
+            uri_info = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+          , uri_origin
+        ;
+        uri_info.href = uri;
+        if (!("origin" in uri_info)) {
+          if (uri_info.protocol.toLowerCase() === "data:") {
+            uri_info.origin = null;
+          } else {
+            uri_origin = uri.match(origin);
+            uri_info.origin = uri_origin && uri_origin[1];
+          }
+        }
+        return uri_info;
+      };
+    }
+    URL.createObjectURL = function(blob) {
+      var
+          type = blob.type
+        , data_URI_header
+      ;
+      if (type === null) {
+        type = "application/octet-stream";
+      }
+      if (blob instanceof FakeBlob) {
+        data_URI_header = "data:" + type;
+        if (blob.encoding === "base64") {
+          return data_URI_header + ";base64," + blob.data;
+        } else if (blob.encoding === "URI") {
+          return data_URI_header + "," + decodeURIComponent(blob.data);
+        } if (btoa) {
+          return data_URI_header + ";base64," + btoa(blob.data);
+        } else {
+          return data_URI_header + "," + encodeURIComponent(blob.data);
+        }
+      } else if (real_create_object_URL) {
+        return real_create_object_URL.call(real_URL, blob);
+      }
+    };
+    URL.revokeObjectURL = function(object_URL) {
+      if (object_URL.substring(0, 5) !== "data:" && real_revoke_object_URL) {
+        real_revoke_object_URL.call(real_URL, object_URL);
+      }
+    };
+    FBB_proto.append = function(data/*, endings*/) {
+      var bb = this.data;
+      // decode data to a binary string
+      if (Uint8Array && (data instanceof ArrayBuffer || data instanceof Uint8Array)) {
+        var
+            str = ""
+          , buf = new Uint8Array(data)
+          , i = 0
+          , buf_len = buf.length
+        ;
+        for (; i < buf_len; i++) {
+          str += String.fromCharCode(buf[i]);
+        }
+        bb.push(str);
+      } else if (get_class(data) === "Blob" || get_class(data) === "File") {
+        if (FileReaderSync) {
+          var fr = new FileReaderSync;
+          bb.push(fr.readAsBinaryString(data));
+        } else {
+          // async FileReader won't work as BlobBuilder is sync
+          throw new FileException("NOT_READABLE_ERR");
+        }
+      } else if (data instanceof FakeBlob) {
+        if (data.encoding === "base64" && atob) {
+          bb.push(atob(data.data));
+        } else if (data.encoding === "URI") {
+          bb.push(decodeURIComponent(data.data));
+        } else if (data.encoding === "raw") {
+          bb.push(data.data);
+        }
+      } else {
+        if (typeof data !== "string") {
+          data += ""; // convert unsupported types to strings
+        }
+        // decode UTF-16 to binary string
+        bb.push(unescape(encodeURIComponent(data)));
+      }
+    };
+    FBB_proto.getBlob = function(type) {
+      if (!arguments.length) {
+        type = null;
+      }
+      return new FakeBlob(this.data.join(""), type, "raw");
+    };
+    FBB_proto.toString = function() {
+      return "[object BlobBuilder]";
+    };
+    FB_proto.slice = function(start, end, type) {
+      var args = arguments.length;
+      if (args < 3) {
+        type = null;
+      }
+      return new FakeBlob(
+          this.data.slice(start, args > 1 ? end : this.data.length)
+        , type
+        , this.encoding
+      );
+    };
+    FB_proto.toString = function() {
+      return "[object Blob]";
+    };
+    FB_proto.close = function() {
+      this.size = 0;
+      delete this.data;
+    };
+    return FakeBlobBuilder;
+  }(view));
+
+  view.Blob = function(blobParts, options) {
+    var type = options ? (options.type || "") : "";
+    var builder = new BlobBuilder();
+    if (blobParts) {
+      for (var i = 0, len = blobParts.length; i < len; i++) {
+        if (Uint8Array && blobParts[i] instanceof Uint8Array) {
+          builder.append(blobParts[i].buffer);
+        }
+        else {
+          builder.append(blobParts[i]);
+        }
+      }
+    }
+    var blob = builder.getBlob(type);
+    if (!blob.slice && blob.webkitSlice) {
+      blob.slice = blob.webkitSlice;
+    }
+    return blob;
+  };
+
+  var getPrototypeOf = Object.getPrototypeOf || function(object) {
+    return object.__proto__;
+  };
+  view.Blob.prototype = getPrototypeOf(new view.Blob());
+}(typeof self !== "undefined" && self || typeof window !== "undefined" && window || this.content || this));
+
+(function (root, factory) {
+    'use strict';
+    var isElectron = typeof module === 'object' && typeof process !== 'undefined' && process && process.versions && process.versions.electron;
+    if (!isElectron && typeof module === 'object') {
+        module.exports = factory;
+    } else if (true) {
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+            return factory;
+        }.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else {
+        root.MediumEditor = factory;
+    }
+}(this, function () {
+
+    'use strict';
+
+function MediumEditor(elements, options) {
+    'use strict';
+    return this.init(elements, options);
+}
+
+MediumEditor.extensions = {};
+/*jshint unused: true */
+(function (window) {
+    'use strict';
+
+    function copyInto(overwrite, dest) {
+        var prop,
+            sources = Array.prototype.slice.call(arguments, 2);
+        dest = dest || {};
+        for (var i = 0; i < sources.length; i++) {
+            var source = sources[i];
+            if (source) {
+                for (prop in source) {
+                    if (source.hasOwnProperty(prop) &&
+                        typeof source[prop] !== 'undefined' &&
+                        (overwrite || dest.hasOwnProperty(prop) === false)) {
+                        dest[prop] = source[prop];
+                    }
+                }
+            }
+        }
+        return dest;
+    }
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
+    // Some browsers (including phantom) don't return true for Node.contains(child)
+    // if child is a text node.  Detect these cases here and use a fallback
+    // for calls to Util.isDescendant()
+    var nodeContainsWorksWithTextNodes = false;
+    try {
+        var testParent = document.createElement('div'),
+            testText = document.createTextNode(' ');
+        testParent.appendChild(testText);
+        nodeContainsWorksWithTextNodes = testParent.contains(testText);
+    } catch (exc) {}
+
+    var Util = {
+
+        // http://stackoverflow.com/questions/17907445/how-to-detect-ie11#comment30165888_17907562
+        // by rg89
+        isIE: ((navigator.appName === 'Microsoft Internet Explorer') || ((navigator.appName === 'Netscape') && (new RegExp('Trident/.*rv:([0-9]{1,}[.0-9]{0,})').exec(navigator.userAgent) !== null))),
+
+        isEdge: (/Edge\/\d+/).exec(navigator.userAgent) !== null,
+
+        // if firefox
+        isFF: (navigator.userAgent.toLowerCase().indexOf('firefox') > -1),
+
+        // http://stackoverflow.com/a/11752084/569101
+        isMac: (window.navigator.platform.toUpperCase().indexOf('MAC') >= 0),
+
+        // https://github.com/jashkenas/underscore
+        // Lonely letter MUST USE the uppercase code
+        keyCode: {
+            BACKSPACE: 8,
+            TAB: 9,
+            ENTER: 13,
+            ESCAPE: 27,
+            SPACE: 32,
+            DELETE: 46,
+            K: 75, // K keycode, and not k
+            M: 77,
+            V: 86
+        },
+
+        /**
+         * Returns true if it's metaKey on Mac, or ctrlKey on non-Mac.
+         * See #591
+         */
+        isMetaCtrlKey: function (event) {
+            if ((Util.isMac && event.metaKey) || (!Util.isMac && event.ctrlKey)) {
+                return true;
+            }
+
+            return false;
+        },
+
+        /**
+         * Returns true if the key associated to the event is inside keys array
+         *
+         * @see : https://github.com/jquery/jquery/blob/0705be475092aede1eddae01319ec931fb9c65fc/src/event.js#L473-L484
+         * @see : http://stackoverflow.com/q/4471582/569101
+         */
+        isKey: function (event, keys) {
+            var keyCode = Util.getKeyCode(event);
+
+            // it's not an array let's just compare strings!
+            if (false === Array.isArray(keys)) {
+                return keyCode === keys;
+            }
+
+            if (-1 === keys.indexOf(keyCode)) {
+                return false;
+            }
+
+            return true;
+        },
+
+        getKeyCode: function (event) {
+            var keyCode = event.which;
+
+            // getting the key code from event
+            if (null === keyCode) {
+                keyCode = event.charCode !== null ? event.charCode : event.keyCode;
+            }
+
+            return keyCode;
+        },
+
+        blockContainerElementNames: [
+            // elements our editor generates
+            'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'pre', 'ul', 'li', 'ol',
+            // all other known block elements
+            'address', 'article', 'aside', 'audio', 'canvas', 'dd', 'dl', 'dt', 'fieldset',
+            'figcaption', 'figure', 'footer', 'form', 'header', 'hgroup', 'main', 'nav',
+            'noscript', 'output', 'section', 'video',
+            'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td'
+        ],
+
+        emptyElementNames: ['br', 'col', 'colgroup', 'hr', 'img', 'input', 'source', 'wbr'],
+
+        extend: function extend(/* dest, source1, source2, ...*/) {
+            var args = [true].concat(Array.prototype.slice.call(arguments));
+            return copyInto.apply(this, args);
+        },
+
+        defaults: function defaults(/*dest, source1, source2, ...*/) {
+            var args = [false].concat(Array.prototype.slice.call(arguments));
+            return copyInto.apply(this, args);
+        },
+
+        /*
+         * Create a link around the provided text nodes which must be adjacent to each other and all be
+         * descendants of the same closest block container. If the preconditions are not met, unexpected
+         * behavior will result.
+         */
+        createLink: function (document, textNodes, href, target) {
+            var anchor = document.createElement('a');
+            Util.moveTextRangeIntoElement(textNodes[0], textNodes[textNodes.length - 1], anchor);
+            anchor.setAttribute('href', href);
+            if (target) {
+                if (target === '_blank') {
+                    anchor.setAttribute('rel', 'noopener noreferrer');
+                }
+                anchor.setAttribute('target', target);
+            }
+            return anchor;
+        },
+
+        /*
+         * Given the provided match in the format {start: 1, end: 2} where start and end are indices into the
+         * textContent of the provided element argument, modify the DOM inside element to ensure that the text
+         * identified by the provided match can be returned as text nodes that contain exactly that text, without
+         * any additional text at the beginning or end of the returned array of adjacent text nodes.
+         *
+         * The only DOM manipulation performed by this function is splitting the text nodes, non-text nodes are
+         * not affected in any way.
+         */
+        findOrCreateMatchingTextNodes: function (document, element, match) {
+            var treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_ALL, null, false),
+                matchedNodes = [],
+                currentTextIndex = 0,
+                startReached = false,
+                currentNode = null,
+                newNode = null;
+
+            while ((currentNode = treeWalker.nextNode()) !== null) {
+                if (currentNode.nodeType > 3) {
+                    continue;
+                } else if (currentNode.nodeType === 3) {
+                    if (!startReached && match.start < (currentTextIndex + currentNode.nodeValue.length)) {
+                        startReached = true;
+                        newNode = Util.splitStartNodeIfNeeded(currentNode, match.start, currentTextIndex);
+                    }
+                    if (startReached) {
+                        Util.splitEndNodeIfNeeded(currentNode, newNode, match.end, currentTextIndex);
+                    }
+                    if (startReached && currentTextIndex === match.end) {
+                        break; // Found the node(s) corresponding to the link. Break out and move on to the next.
+                    } else if (startReached && currentTextIndex > (match.end + 1)) {
+                        throw new Error('PerformLinking overshot the target!'); // should never happen...
+                    }
+
+                    if (startReached) {
+                        matchedNodes.push(newNode || currentNode);
+                    }
+
+                    currentTextIndex += currentNode.nodeValue.length;
+                    if (newNode !== null) {
+                        currentTextIndex += newNode.nodeValue.length;
+                        // Skip the newNode as we'll already have pushed it to the matches
+                        treeWalker.nextNode();
+                    }
+                    newNode = null;
+                } else if (currentNode.tagName.toLowerCase() === 'img') {
+                    if (!startReached && (match.start <= currentTextIndex)) {
+                        startReached = true;
+                    }
+                    if (startReached) {
+                        matchedNodes.push(currentNode);
+                    }
+                }
+            }
+            return matchedNodes;
+        },
+
+        /*
+         * Given the provided text node and text coordinates, split the text node if needed to make it align
+         * precisely with the coordinates.
+         *
+         * This function is intended to be called from Util.findOrCreateMatchingTextNodes.
+         */
+        splitStartNodeIfNeeded: function (currentNode, matchStartIndex, currentTextIndex) {
+            if (matchStartIndex !== currentTextIndex) {
+                return currentNode.splitText(matchStartIndex - currentTextIndex);
+            }
+            return null;
+        },
+
+        /*
+         * Given the provided text node and text coordinates, split the text node if needed to make it align
+         * precisely with the coordinates. The newNode argument should from the result of Util.splitStartNodeIfNeeded,
+         * if that function has been called on the same currentNode.
+         *
+         * This function is intended to be called from Util.findOrCreateMatchingTextNodes.
+         */
+        splitEndNodeIfNeeded: function (currentNode, newNode, matchEndIndex, currentTextIndex) {
+            var textIndexOfEndOfFarthestNode,
+                endSplitPoint;
+            textIndexOfEndOfFarthestNode = currentTextIndex + currentNode.nodeValue.length +
+                    (newNode ? newNode.nodeValue.length : 0) - 1;
+            endSplitPoint = matchEndIndex - currentTextIndex -
+                    (newNode ? currentNode.nodeValue.length : 0);
+            if (textIndexOfEndOfFarthestNode >= matchEndIndex &&
+                    currentTextIndex !== textIndexOfEndOfFarthestNode &&
+                    endSplitPoint !== 0) {
+                (newNode || currentNode).splitText(endSplitPoint);
+            }
+        },
+
+        /*
+        * Take an element, and break up all of its text content into unique pieces such that:
+         * 1) All text content of the elements are in separate blocks. No piece of text content should span
+         *    across multiple blocks. This means no element return by this function should have
+         *    any blocks as children.
+         * 2) The union of the textcontent of all of the elements returned here covers all
+         *    of the text within the element.
+         *
+         *
+         * EXAMPLE:
+         * In the event that we have something like:
+         *
+         * <blockquote>
+         *   <p>Some Text</p>
+         *   <ol>
+         *     <li>List Item 1</li>
+         *     <li>List Item 2</li>
+         *   </ol>
+         * </blockquote>
+         *
+         * This function would return these elements as an array:
+         *   [ <p>Some Text</p>, <li>List Item 1</li>, <li>List Item 2</li> ]
+         *
+         * Since the <blockquote> and <ol> elements contain blocks within them they are not returned.
+         * Since the <p> and <li>'s don't contain block elements and cover all the text content of the
+         * <blockquote> container, they are the elements returned.
+         */
+        splitByBlockElements: function (element) {
+            if (element.nodeType !== 3 && element.nodeType !== 1) {
+                return [];
+            }
+
+            var toRet = [],
+                blockElementQuery = MediumEditor.util.blockContainerElementNames.join(',');
+
+            if (element.nodeType === 3 || element.querySelectorAll(blockElementQuery).length === 0) {
+                return [element];
+            }
+
+            for (var i = 0; i < element.childNodes.length; i++) {
+                var child = element.childNodes[i];
+                if (child.nodeType === 3) {
+                    toRet.push(child);
+                } else if (child.nodeType === 1) {
+                    var blockElements = child.querySelectorAll(blockElementQuery);
+                    if (blockElements.length === 0) {
+                        toRet.push(child);
+                    } else {
+                        toRet = toRet.concat(MediumEditor.util.splitByBlockElements(child));
+                    }
+                }
+            }
+
+            return toRet;
+        },
+
+        // Find the next node in the DOM tree that represents any text that is being
+        // displayed directly next to the targetNode (passed as an argument)
+        // Text that appears directly next to the current node can be:
+        //  - A sibling text node
+        //  - A descendant of a sibling element
+        //  - A sibling text node of an ancestor
+        //  - A descendant of a sibling element of an ancestor
+        findAdjacentTextNodeWithContent: function findAdjacentTextNodeWithContent(rootNode, targetNode, ownerDocument) {
+            var pastTarget = false,
+                nextNode,
+                nodeIterator = ownerDocument.createNodeIterator(rootNode, NodeFilter.SHOW_TEXT, null, false);
+
+            // Use a native NodeIterator to iterate over all the text nodes that are descendants
+            // of the rootNode.  Once past the targetNode, choose the first non-empty text node
+            nextNode = nodeIterator.nextNode();
+            while (nextNode) {
+                if (nextNode === targetNode) {
+                    pastTarget = true;
+                } else if (pastTarget) {
+                    if (nextNode.nodeType === 3 && nextNode.nodeValue && nextNode.nodeValue.trim().length > 0) {
+                        break;
+                    }
+                }
+                nextNode = nodeIterator.nextNode();
+            }
+
+            return nextNode;
+        },
+
+        // Find an element's previous sibling within a medium-editor element
+        // If one doesn't exist, find the closest ancestor's previous sibling
+        findPreviousSibling: function (node) {
+            if (!node || Util.isMediumEditorElement(node)) {
+                return false;
+            }
+
+            var previousSibling = node.previousSibling;
+            while (!previousSibling && !Util.isMediumEditorElement(node.parentNode)) {
+                node = node.parentNode;
+                previousSibling = node.previousSibling;
+            }
+
+            return previousSibling;
+        },
+
+        isDescendant: function isDescendant(parent, child, checkEquality) {
+            if (!parent || !child) {
+                return false;
+            }
+            if (parent === child) {
+                return !!checkEquality;
+            }
+            // If parent is not an element, it can't have any descendants
+            if (parent.nodeType !== 1) {
+                return false;
+            }
+            if (nodeContainsWorksWithTextNodes || child.nodeType !== 3) {
+                return parent.contains(child);
+            }
+            var node = child.parentNode;
+            while (node !== null) {
+                if (node === parent) {
+                    return true;
+                }
+                node = node.parentNode;
+            }
+            return false;
+        },
+
+        // https://github.com/jashkenas/underscore
+        isElement: function isElement(obj) {
+            return !!(obj && obj.nodeType === 1);
+        },
+
+        // https://github.com/jashkenas/underscore
+        throttle: function (func, wait) {
+            var THROTTLE_INTERVAL = 50,
+                context,
+                args,
+                result,
+                timeout = null,
+                previous = 0,
+                later = function () {
+                    previous = Date.now();
+                    timeout = null;
+                    result = func.apply(context, args);
+                    if (!timeout) {
+                        context = args = null;
+                    }
+                };
+
+            if (!wait && wait !== 0) {
+                wait = THROTTLE_INTERVAL;
+            }
+
+            return function () {
+                var now = Date.now(),
+                    remaining = wait - (now - previous);
+
+                context = this;
+                args = arguments;
+                if (remaining <= 0 || remaining > wait) {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    }
+                    previous = now;
+                    result = func.apply(context, args);
+                    if (!timeout) {
+                        context = args = null;
+                    }
+                } else if (!timeout) {
+                    timeout = setTimeout(later, remaining);
+                }
+                return result;
+            };
+        },
+
+        traverseUp: function (current, testElementFunction) {
+            if (!current) {
+                return false;
+            }
+
+            do {
+                if (current.nodeType === 1) {
+                    if (testElementFunction(current)) {
+                        return current;
+                    }
+                    // do not traverse upwards past the nearest containing editor
+                    if (Util.isMediumEditorElement(current)) {
+                        return false;
+                    }
+                }
+
+                current = current.parentNode;
+            } while (current);
+
+            return false;
+        },
+
+        htmlEntities: function (str) {
+            // converts special characters (like <) into their escaped/encoded values (like &lt;).
+            // This allows you to show to display the string without the browser reading it as HTML.
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        },
+
+        // http://stackoverflow.com/questions/6690752/insert-html-at-caret-in-a-contenteditable-div
+        insertHTMLCommand: function (doc, html) {
+            var selection, range, el, fragment, node, lastNode, toReplace,
+                res = false,
+                ecArgs = ['insertHTML', false, html];
+
+            /* Edge's implementation of insertHTML is just buggy right now:
+             * - Doesn't allow leading white space at the beginning of an element
+             * - Found a case when a <font size="2"> tag was inserted when calling alignCenter inside a blockquote
+             *
+             * There are likely other bugs, these are just the ones we found so far.
+             * For now, let's just use the same fallback we did for IE
+             */
+            if (!MediumEditor.util.isEdge && doc.queryCommandSupported('insertHTML')) {
+                try {
+                    return doc.execCommand.apply(doc, ecArgs);
+                } catch (ignore) {}
+            }
+
+            selection = doc.getSelection();
+            if (selection.rangeCount) {
+                range = selection.getRangeAt(0);
+                toReplace = range.commonAncestorContainer;
+
+                // https://github.com/yabwe/medium-editor/issues/748
+                // If the selection is an empty editor element, create a temporary text node inside of the editor
+                // and select it so that we don't delete the editor element
+                if (Util.isMediumEditorElement(toReplace) && !toReplace.firstChild) {
+                    range.selectNode(toReplace.appendChild(doc.createTextNode('')));
+                } else if ((toReplace.nodeType === 3 && range.startOffset === 0 && range.endOffset === toReplace.nodeValue.length) ||
+                        (toReplace.nodeType !== 3 && toReplace.innerHTML === range.toString())) {
+                    // Ensure range covers maximum amount of nodes as possible
+                    // By moving up the DOM and selecting ancestors whose only child is the range
+                    while (!Util.isMediumEditorElement(toReplace) &&
+                            toReplace.parentNode &&
+                            toReplace.parentNode.childNodes.length === 1 &&
+                            !Util.isMediumEditorElement(toReplace.parentNode)) {
+                        toReplace = toReplace.parentNode;
+                    }
+                    range.selectNode(toReplace);
+                }
+                range.deleteContents();
+
+                el = doc.createElement('div');
+                el.innerHTML = html;
+                fragment = doc.createDocumentFragment();
+                while (el.firstChild) {
+                    node = el.firstChild;
+                    lastNode = fragment.appendChild(node);
+                }
+                range.insertNode(fragment);
+
+                // Preserve the selection:
+                if (lastNode) {
+                    range = range.cloneRange();
+                    range.setStartAfter(lastNode);
+                    range.collapse(true);
+                    MediumEditor.selection.selectRange(doc, range);
+                }
+                res = true;
+            }
+
+            // https://github.com/yabwe/medium-editor/issues/992
+            // If we're monitoring calls to execCommand, notify listeners as if a real call had happened
+            if (doc.execCommand.callListeners) {
+                doc.execCommand.callListeners(ecArgs, res);
+            }
+            return res;
+        },
+
+        execFormatBlock: function (doc, tagName) {
+            // Get the top level block element that contains the selection
+            var blockContainer = Util.getTopBlockContainer(MediumEditor.selection.getSelectionStart(doc)),
+                childNodes;
+
+            // Special handling for blockquote
+            if (tagName === 'blockquote') {
+                if (blockContainer) {
+                    childNodes = Array.prototype.slice.call(blockContainer.childNodes);
+                    // Check if the blockquote has a block element as a child (nested blocks)
+                    if (childNodes.some(function (childNode) {
+                        return Util.isBlockContainer(childNode);
+                    })) {
+                        // FF handles blockquote differently on formatBlock
+                        // allowing nesting, we need to use outdent
+                        // https://developer.mozilla.org/en-US/docs/Rich-Text_Editing_in_Mozilla
+                        return doc.execCommand('outdent', false, null);
+                    }
+                }
+
+                // When IE blockquote needs to be called as indent
+                // http://stackoverflow.com/questions/1816223/rich-text-editor-with-blockquote-function/1821777#1821777
+                if (Util.isIE) {
+                    return doc.execCommand('indent', false, tagName);
+                }
+            }
+
+            // If the blockContainer is already the element type being passed in
+            // treat it as 'undo' formatting and just convert it to a <p>
+            if (blockContainer && tagName === blockContainer.nodeName.toLowerCase()) {
+                tagName = 'p';
+            }
+
+            // When IE we need to add <> to heading elements
+            // http://stackoverflow.com/questions/10741831/execcommand-formatblock-headings-in-ie
+            if (Util.isIE) {
+                tagName = '<' + tagName + '>';
+            }
+
+            // When FF, IE and Edge, we have to handle blockquote node seperately as 'formatblock' does not work.
+            // https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Commands
+            if (blockContainer && blockContainer.nodeName.toLowerCase() === 'blockquote') {
+                // For IE, just use outdent
+                if (Util.isIE && tagName === '<p>') {
+                    return doc.execCommand('outdent', false, tagName);
+                }
+
+                // For Firefox and Edge, make sure there's a nested block element before calling outdent
+                if ((Util.isFF || Util.isEdge) && tagName === 'p') {
+                    childNodes = Array.prototype.slice.call(blockContainer.childNodes);
+                    // If there are some non-block elements we need to wrap everything in a <p> before we outdent
+                    if (childNodes.some(function (childNode) {
+                        return !Util.isBlockContainer(childNode);
+                    })) {
+                        doc.execCommand('formatBlock', false, tagName);
+                    }
+                    return doc.execCommand('outdent', false, tagName);
+                }
+            }
+
+            return doc.execCommand('formatBlock', false, tagName);
+        },
+
+        /**
+         * Set target to blank on the given el element
+         *
+         * TODO: not sure if this should be here
+         *
+         * When creating a link (using core -> createLink) the selection returned by Firefox will be the parent of the created link
+         * instead of the created link itself (as it is for Chrome for example), so we retrieve all "a" children to grab the good one by
+         * using `anchorUrl` to ensure that we are adding target="_blank" on the good one.
+         * This isn't a bulletproof solution anyway ..
+         */
+        setTargetBlank: function (el, anchorUrl) {
+            var i, url = anchorUrl || false;
+            if (el.nodeName.toLowerCase() === 'a') {
+                el.target = '_blank';
+                el.rel = 'noopener noreferrer';
+            } else {
+                el = el.getElementsByTagName('a');
+
+                for (i = 0; i < el.length; i += 1) {
+                    if (false === url || url === el[i].attributes.href.value) {
+                        el[i].target = '_blank';
+                        el[i].rel = 'noopener noreferrer';
+                    }
+                }
+            }
+        },
+
+        /*
+         * this function is called to explicitly remove the target='_blank' as FF holds on to _blank value even
+         * after unchecking the checkbox on anchor form
+         */
+        removeTargetBlank: function (el, anchorUrl) {
+            var i;
+            if (el.nodeName.toLowerCase() === 'a') {
+                el.removeAttribute('target');
+                el.removeAttribute('rel');
+            } else {
+                el = el.getElementsByTagName('a');
+
+                for (i = 0; i < el.length; i += 1) {
+                    if (anchorUrl === el[i].attributes.href.value) {
+                        el[i].removeAttribute('target');
+                        el[i].removeAttribute('rel');
+                    }
+                }
+            }
+        },
+
+        /*
+         * this function adds one or several classes on an a element.
+         * if el parameter is not an a, it will look for a children of el.
+         * if no a children are found, it will look for the a parent.
+         */
+        addClassToAnchors: function (el, buttonClass) {
+            var classes = buttonClass.split(' '),
+                i,
+                j;
+            if (el.nodeName.toLowerCase() === 'a') {
+                for (j = 0; j < classes.length; j += 1) {
+                    el.classList.add(classes[j]);
+                }
+            } else {
+                var aChildren = el.getElementsByTagName('a');
+                if (aChildren.length === 0) {
+                    var parentAnchor = Util.getClosestTag(el, 'a');
+                    el = parentAnchor ? [parentAnchor] : [];
+                } else {
+                    el = aChildren;
+                }
+                for (i = 0; i < el.length; i += 1) {
+                    for (j = 0; j < classes.length; j += 1) {
+                        el[i].classList.add(classes[j]);
+                    }
+                }
+            }
+        },
+
+        isListItem: function (node) {
+            if (!node) {
+                return false;
+            }
+            if (node.nodeName.toLowerCase() === 'li') {
+                return true;
+            }
+
+            var parentNode = node.parentNode,
+                tagName = parentNode.nodeName.toLowerCase();
+            while (tagName === 'li' || (!Util.isBlockContainer(parentNode) && tagName !== 'div')) {
+                if (tagName === 'li') {
+                    return true;
+                }
+                parentNode = parentNode.parentNode;
+                if (parentNode) {
+                    tagName = parentNode.nodeName.toLowerCase();
+                } else {
+                    return false;
+                }
+            }
+            return false;
+        },
+
+        cleanListDOM: function (ownerDocument, element) {
+            if (element.nodeName.toLowerCase() !== 'li') {
+                return;
+            }
+
+            var list = element.parentElement;
+
+            if (list.parentElement.nodeName.toLowerCase() === 'p') { // yes we need to clean up
+                Util.unwrap(list.parentElement, ownerDocument);
+
+                // move cursor at the end of the text inside the list
+                // for some unknown reason, the cursor is moved to end of the "visual" line
+                MediumEditor.selection.moveCursor(ownerDocument, element.firstChild, element.firstChild.textContent.length);
+            }
+        },
+
+        /* splitDOMTree
+         *
+         * Given a root element some descendant element, split the root element
+         * into its own element containing the descendant element and all elements
+         * on the left or right side of the descendant ('right' is default)
+         *
+         * example:
+         *
+         *         <div>
+         *      /    |   \
+         *  <span> <span> <span>
+         *   / \    / \    / \
+         *  1   2  3   4  5   6
+         *
+         *  If I wanted to split this tree given the <div> as the root and "4" as the leaf
+         *  the result would be (the prime ' marks indicates nodes that are created as clones):
+         *
+         *   SPLITTING OFF 'RIGHT' TREE       SPLITTING OFF 'LEFT' TREE
+         *
+         *     <div>            <div>'              <div>'      <div>
+         *      / \              / \                 / \          |
+         * <span> <span>   <span>' <span>       <span> <span>   <span>
+         *   / \    |        |      / \           /\     /\       /\
+         *  1   2   3        4     5   6         1  2   3  4     5  6
+         *
+         *  The above example represents splitting off the 'right' or 'left' part of a tree, where
+         *  the <div>' would be returned as an element not appended to the DOM, and the <div>
+         *  would remain in place where it was
+         *
+        */
+        splitOffDOMTree: function (rootNode, leafNode, splitLeft) {
+            var splitOnNode = leafNode,
+                createdNode = null,
+                splitRight = !splitLeft;
+
+            // loop until we hit the root
+            while (splitOnNode !== rootNode) {
+                var currParent = splitOnNode.parentNode,
+                    newParent = currParent.cloneNode(false),
+                    targetNode = (splitRight ? splitOnNode : currParent.firstChild),
+                    appendLast;
+
+                // Create a new parent element which is a clone of the current parent
+                if (createdNode) {
+                    if (splitRight) {
+                        // If we're splitting right, add previous created element before siblings
+                        newParent.appendChild(createdNode);
+                    } else {
+                        // If we're splitting left, add previous created element last
+                        appendLast = createdNode;
+                    }
+                }
+                createdNode = newParent;
+
+                while (targetNode) {
+                    var sibling = targetNode.nextSibling;
+                    // Special handling for the 'splitNode'
+                    if (targetNode === splitOnNode) {
+                        if (!targetNode.hasChildNodes()) {
+                            targetNode.parentNode.removeChild(targetNode);
+                        } else {
+                            // For the node we're splitting on, if it has children, we need to clone it
+                            // and not just move it
+                            targetNode = targetNode.cloneNode(false);
+                        }
+                        // If the resulting split node has content, add it
+                        if (targetNode.textContent) {
+                            createdNode.appendChild(targetNode);
+                        }
+
+                        targetNode = (splitRight ? sibling : null);
+                    } else {
+                        // For general case, just remove the element and only
+                        // add it to the split tree if it contains something
+                        targetNode.parentNode.removeChild(targetNode);
+                        if (targetNode.hasChildNodes() || targetNode.textContent) {
+                            createdNode.appendChild(targetNode);
+                        }
+
+                        targetNode = sibling;
+                    }
+                }
+
+                // If we had an element we wanted to append at the end, do that now
+                if (appendLast) {
+                    createdNode.appendChild(appendLast);
+                }
+
+                splitOnNode = currParent;
+            }
+
+            return createdNode;
+        },
+
+        moveTextRangeIntoElement: function (startNode, endNode, newElement) {
+            if (!startNode || !endNode) {
+                return false;
+            }
+
+            var rootNode = Util.findCommonRoot(startNode, endNode);
+            if (!rootNode) {
+                return false;
+            }
+
+            if (endNode === startNode) {
+                var temp = startNode.parentNode,
+                    sibling = startNode.nextSibling;
+                temp.removeChild(startNode);
+                newElement.appendChild(startNode);
+                if (sibling) {
+                    temp.insertBefore(newElement, sibling);
+                } else {
+                    temp.appendChild(newElement);
+                }
+                return newElement.hasChildNodes();
+            }
+
+            // create rootChildren array which includes all the children
+            // we care about
+            var rootChildren = [],
+                firstChild,
+                lastChild,
+                nextNode;
+            for (var i = 0; i < rootNode.childNodes.length; i++) {
+                nextNode = rootNode.childNodes[i];
+                if (!firstChild) {
+                    if (Util.isDescendant(nextNode, startNode, true)) {
+                        firstChild = nextNode;
+                    }
+                } else {
+                    if (Util.isDescendant(nextNode, endNode, true)) {
+                        lastChild = nextNode;
+                        break;
+                    } else {
+                        rootChildren.push(nextNode);
+                    }
+                }
+            }
+
+            var afterLast = lastChild.nextSibling,
+                fragment = rootNode.ownerDocument.createDocumentFragment();
+
+            // build up fragment on startNode side of tree
+            if (firstChild === startNode) {
+                firstChild.parentNode.removeChild(firstChild);
+                fragment.appendChild(firstChild);
+            } else {
+                fragment.appendChild(Util.splitOffDOMTree(firstChild, startNode));
+            }
+
+            // add any elements between firstChild & lastChild
+            rootChildren.forEach(function (element) {
+                element.parentNode.removeChild(element);
+                fragment.appendChild(element);
+            });
+
+            // build up fragment on endNode side of the tree
+            if (lastChild === endNode) {
+                lastChild.parentNode.removeChild(lastChild);
+                fragment.appendChild(lastChild);
+            } else {
+                fragment.appendChild(Util.splitOffDOMTree(lastChild, endNode, true));
+            }
+
+            // Add fragment into passed in element
+            newElement.appendChild(fragment);
+
+            if (lastChild.parentNode === rootNode) {
+                // If last child is in the root, insert newElement in front of it
+                rootNode.insertBefore(newElement, lastChild);
+            } else if (afterLast) {
+                // If last child was removed, but it had a sibling, insert in front of it
+                rootNode.insertBefore(newElement, afterLast);
+            } else {
+                // lastChild was removed and was the last actual element just append
+                rootNode.appendChild(newElement);
+            }
+
+            return newElement.hasChildNodes();
+        },
+
+        /* based on http://stackoverflow.com/a/6183069 */
+        depthOfNode: function (inNode) {
+            var theDepth = 0,
+                node = inNode;
+            while (node.parentNode !== null) {
+                node = node.parentNode;
+                theDepth++;
+            }
+            return theDepth;
+        },
+
+        findCommonRoot: function (inNode1, inNode2) {
+            var depth1 = Util.depthOfNode(inNode1),
+                depth2 = Util.depthOfNode(inNode2),
+                node1 = inNode1,
+                node2 = inNode2;
+
+            while (depth1 !== depth2) {
+                if (depth1 > depth2) {
+                    node1 = node1.parentNode;
+                    depth1 -= 1;
+                } else {
+                    node2 = node2.parentNode;
+                    depth2 -= 1;
+                }
+            }
+
+            while (node1 !== node2) {
+                node1 = node1.parentNode;
+                node2 = node2.parentNode;
+            }
+
+            return node1;
+        },
+        /* END - based on http://stackoverflow.com/a/6183069 */
+
+        isElementAtBeginningOfBlock: function (node) {
+            var textVal,
+                sibling;
+            while (!Util.isBlockContainer(node) && !Util.isMediumEditorElement(node)) {
+                sibling = node;
+                while (sibling = sibling.previousSibling) {
+                    textVal = sibling.nodeType === 3 ? sibling.nodeValue : sibling.textContent;
+                    if (textVal.length > 0) {
+                        return false;
+                    }
+                }
+                node = node.parentNode;
+            }
+            return true;
+        },
+
+        isMediumEditorElement: function (element) {
+            return element && element.getAttribute && !!element.getAttribute('data-medium-editor-element');
+        },
+
+        getContainerEditorElement: function (element) {
+            return Util.traverseUp(element, function (node) {
+                return Util.isMediumEditorElement(node);
+            });
+        },
+
+        isBlockContainer: function (element) {
+            return element && element.nodeType !== 3 && Util.blockContainerElementNames.indexOf(element.nodeName.toLowerCase()) !== -1;
+        },
+
+        /* Finds the closest ancestor which is a block container element
+         * If element is within editor element but not within any other block element,
+         * the editor element is returned
+         */
+        getClosestBlockContainer: function (node) {
+            return Util.traverseUp(node, function (node) {
+                return Util.isBlockContainer(node) || Util.isMediumEditorElement(node);
+            });
+        },
+
+        /* Finds highest level ancestor element which is a block container element
+         * If element is within editor element but not within any other block element,
+         * the editor element is returned
+         */
+        getTopBlockContainer: function (element) {
+            var topBlock = Util.isBlockContainer(element) ? element : false;
+            Util.traverseUp(element, function (el) {
+                if (Util.isBlockContainer(el)) {
+                    topBlock = el;
+                }
+                if (!topBlock && Util.isMediumEditorElement(el)) {
+                    topBlock = el;
+                    return true;
+                }
+                return false;
+            });
+            return topBlock;
+        },
+
+        getFirstSelectableLeafNode: function (element) {
+            while (element && element.firstChild) {
+                element = element.firstChild;
+            }
+
+            // We don't want to set the selection to an element that can't have children, this messes up Gecko.
+            element = Util.traverseUp(element, function (el) {
+                return Util.emptyElementNames.indexOf(el.nodeName.toLowerCase()) === -1;
+            });
+            // Selecting at the beginning of a table doesn't work in PhantomJS.
+            if (element.nodeName.toLowerCase() === 'table') {
+                var firstCell = element.querySelector('th, td');
+                if (firstCell) {
+                    element = firstCell;
+                }
+            }
+            return element;
+        },
+
+        // TODO: remove getFirstTextNode AND _getFirstTextNode when jumping in 6.0.0 (no code references)
+        getFirstTextNode: function (element) {
+            Util.warn('getFirstTextNode is deprecated and will be removed in version 6.0.0');
+            return Util._getFirstTextNode(element);
+        },
+
+        _getFirstTextNode: function (element) {
+            if (element.nodeType === 3) {
+                return element;
+            }
+
+            for (var i = 0; i < element.childNodes.length; i++) {
+                var textNode = Util._getFirstTextNode(element.childNodes[i]);
+                if (textNode !== null) {
+                    return textNode;
+                }
+            }
+            return null;
+        },
+
+        ensureUrlHasProtocol: function (url) {
+            if (url.indexOf('://') === -1) {
+                return 'http://' + url;
+            }
+            return url;
+        },
+
+        warn: function () {
+            if (window.console !== undefined && typeof window.console.warn === 'function') {
+                window.console.warn.apply(window.console, arguments);
+            }
+        },
+
+        deprecated: function (oldName, newName, version) {
+            // simple deprecation warning mechanism.
+            var m = oldName + ' is deprecated, please use ' + newName + ' instead.';
+            if (version) {
+                m += ' Will be removed in ' + version;
+            }
+            Util.warn(m);
+        },
+
+        deprecatedMethod: function (oldName, newName, args, version) {
+            // run the replacement and warn when someone calls a deprecated method
+            Util.deprecated(oldName, newName, version);
+            if (typeof this[newName] === 'function') {
+                this[newName].apply(this, args);
+            }
+        },
+
+        cleanupAttrs: function (el, attrs) {
+            attrs.forEach(function (attr) {
+                el.removeAttribute(attr);
+            });
+        },
+
+        cleanupTags: function (el, tags) {
+            if (tags.indexOf(el.nodeName.toLowerCase()) !== -1) {
+                el.parentNode.removeChild(el);
+            }
+        },
+
+        unwrapTags: function (el, tags) {
+            if (tags.indexOf(el.nodeName.toLowerCase()) !== -1) {
+                MediumEditor.util.unwrap(el, document);
+            }
+        },
+
+        // get the closest parent
+        getClosestTag: function (el, tag) {
+            return Util.traverseUp(el, function (element) {
+                return element.nodeName.toLowerCase() === tag.toLowerCase();
+            });
+        },
+
+        unwrap: function (el, doc) {
+            var fragment = doc.createDocumentFragment(),
+                nodes = Array.prototype.slice.call(el.childNodes);
+
+            // cast nodeList to array since appending child
+            // to a different node will alter length of el.childNodes
+            for (var i = 0; i < nodes.length; i++) {
+                fragment.appendChild(nodes[i]);
+            }
+
+            if (fragment.childNodes.length) {
+                el.parentNode.replaceChild(fragment, el);
+            } else {
+                el.parentNode.removeChild(el);
+            }
+        },
+
+        guid: function () {
+            function _s4() {
+                return Math
+                    .floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+
+            return _s4() + _s4() + '-' + _s4() + '-' + _s4() + '-' + _s4() + '-' + _s4() + _s4() + _s4();
+        }
+    };
+
+    MediumEditor.util = Util;
+}(window));
+
+(function () {
+    'use strict';
+
+    var Extension = function (options) {
+        MediumEditor.util.extend(this, options);
+    };
+
+    Extension.extend = function (protoProps) {
+        // magic extender thinger. mostly borrowed from backbone/goog.inherits
+        // place this function on some thing you want extend-able.
+        //
+        // example:
+        //
+        //      function Thing(args){
+        //          this.options = args;
+        //      }
+        //
+        //      Thing.prototype = { foo: "bar" };
+        //      Thing.extend = extenderify;
+        //
+        //      var ThingTwo = Thing.extend({ foo: "baz" });
+        //
+        //      var thingOne = new Thing(); // foo === "bar"
+        //      var thingTwo = new ThingTwo(); // foo === "baz"
+        //
+        //      which seems like some simply shallow copy nonsense
+        //      at first, but a lot more is going on there.
+        //
+        //      passing a `constructor` to the extend props
+        //      will cause the instance to instantiate through that
+        //      instead of the parent's constructor.
+
+        var parent = this,
+            child;
+
+        // The constructor function for the new subclass is either defined by you
+        // (the "constructor" property in your `extend` definition), or defaulted
+        // by us to simply call the parent's constructor.
+
+        if (protoProps && protoProps.hasOwnProperty('constructor')) {
+            child = protoProps.constructor;
+        } else {
+            child = function () {
+                return parent.apply(this, arguments);
+            };
+        }
+
+        // das statics (.extend comes over, so your subclass can have subclasses too)
+        MediumEditor.util.extend(child, parent);
+
+        // Set the prototype chain to inherit from `parent`, without calling
+        // `parent`'s constructor function.
+        var Surrogate = function () {
+            this.constructor = child;
+        };
+        Surrogate.prototype = parent.prototype;
+        child.prototype = new Surrogate();
+
+        if (protoProps) {
+            MediumEditor.util.extend(child.prototype, protoProps);
+        }
+
+        // todo: $super?
+
+        return child;
+    };
+
+    Extension.prototype = {
+        /* init: [function]
+         *
+         * Called by MediumEditor during initialization.
+         * The .base property will already have been set to
+         * current instance of MediumEditor when this is called.
+         * All helper methods will exist as well
+         */
+        init: function () {},
+
+        /* base: [MediumEditor instance]
+         *
+         * If not overriden, this will be set to the current instance
+         * of MediumEditor, before the init method is called
+         */
+        base: undefined,
+
+        /* name: [string]
+         *
+         * 'name' of the extension, used for retrieving the extension.
+         * If not set, MediumEditor will set this to be the key
+         * used when passing the extension into MediumEditor via the
+         * 'extensions' option
+         */
+        name: undefined,
+
+        /* checkState: [function (node)]
+         *
+         * If implemented, this function will be called one or more times
+         * the state of the editor & toolbar are updated.
+         * When the state is updated, the editor does the following:
+         *
+         * 1) Find the parent node containing the current selection
+         * 2) Call checkState on the extension, passing the node as an argument
+         * 3) Get the parent node of the previous node
+         * 4) Repeat steps #2 and #3 until we move outside the parent contenteditable
+         */
+        checkState: undefined,
+
+        /* destroy: [function ()]
+         *
+         * This method should remove any created html, custom event handlers
+         * or any other cleanup tasks that should be performed.
+         * If implemented, this function will be called when MediumEditor's
+         * destroy method has been called.
+         */
+        destroy: undefined,
+
+        /* As alternatives to checkState, these functions provide a more structured
+         * path to updating the state of an extension (usually a button) whenever
+         * the state of the editor & toolbar are updated.
+         */
+
+        /* queryCommandState: [function ()]
+         *
+         * If implemented, this function will be called once on each extension
+         * when the state of the editor/toolbar is being updated.
+         *
+         * If this function returns a non-null value, the extension will
+         * be ignored as the code climbs the dom tree.
+         *
+         * If this function returns true, and the setActive() function is defined
+         * setActive() will be called
+         */
+        queryCommandState: undefined,
+
+        /* isActive: [function ()]
+         *
+         * If implemented, this function will be called when MediumEditor
+         * has determined that this extension is 'active' for the current selection.
+         * This may be called when the editor & toolbar are being updated,
+         * but only if queryCommandState() or isAlreadyApplied() functions
+         * are implemented, and when called, return true.
+         */
+        isActive: undefined,
+
+        /* isAlreadyApplied: [function (node)]
+         *
+         * If implemented, this function is similar to checkState() in
+         * that it will be called repeatedly as MediumEditor moves up
+         * the DOM to update the editor & toolbar after a state change.
+         *
+         * NOTE: This function will NOT be called if checkState() has
+         * been implemented. This function will NOT be called if
+         * queryCommandState() is implemented and returns a non-null
+         * value when called
+         */
+        isAlreadyApplied: undefined,
+
+        /* setActive: [function ()]
+         *
+         * If implemented, this function is called when MediumEditor knows
+         * that this extension is currently enabled.  Currently, this
+         * function is called when updating the editor & toolbar, and
+         * only if queryCommandState() or isAlreadyApplied(node) return
+         * true when called
+         */
+        setActive: undefined,
+
+        /* setInactive: [function ()]
+         *
+         * If implemented, this function is called when MediumEditor knows
+         * that this extension is currently disabled.  Curently, this
+         * is called at the beginning of each state change for
+         * the editor & toolbar. After calling this, MediumEditor
+         * will attempt to update the extension, either via checkState()
+         * or the combination of queryCommandState(), isAlreadyApplied(node),
+         * isActive(), and setActive()
+         */
+        setInactive: undefined,
+
+        /* getInteractionElements: [function ()]
+         *
+         * If the extension renders any elements that the user can interact with,
+         * this method should be implemented and return the root element or an array
+         * containing all of the root elements. MediumEditor will call this function
+         * during interaction to see if the user clicked on something outside of the editor.
+         * The elements are used to check if the target element of a click or
+         * other user event is a descendant of any extension elements.
+         * This way, the editor can also count user interaction within editor elements as
+         * interactions with the editor, and thus not trigger 'blur'
+         */
+        getInteractionElements: undefined,
+
+        /************************ Helpers ************************
+         * The following are helpers that are either set by MediumEditor
+         * during initialization, or are helper methods which either
+         * route calls to the MediumEditor instance or provide common
+         * functionality for all extensions
+         *********************************************************/
+
+        /* window: [Window]
+         *
+         * If not overriden, this will be set to the window object
+         * to be used by MediumEditor and its extensions.  This is
+         * passed via the 'contentWindow' option to MediumEditor
+         * and is the global 'window' object by default
+         */
+        'window': undefined,
+
+        /* document: [Document]
+         *
+         * If not overriden, this will be set to the document object
+         * to be used by MediumEditor and its extensions. This is
+         * passed via the 'ownerDocument' optin to MediumEditor
+         * and is the global 'document' object by default
+         */
+        'document': undefined,
+
+        /* getEditorElements: [function ()]
+         *
+         * Helper function which returns an array containing
+         * all the contenteditable elements for this instance
+         * of MediumEditor
+         */
+        getEditorElements: function () {
+            return this.base.elements;
+        },
+
+        /* getEditorId: [function ()]
+         *
+         * Helper function which returns a unique identifier
+         * for this instance of MediumEditor
+         */
+        getEditorId: function () {
+            return this.base.id;
+        },
+
+        /* getEditorOptions: [function (option)]
+         *
+         * Helper function which returns the value of an option
+         * used to initialize this instance of MediumEditor
+         */
+        getEditorOption: function (option) {
+            return this.base.options[option];
+        }
+    };
+
+    /* List of method names to add to the prototype of Extension
+     * Each of these methods will be defined as helpers that
+     * just call directly into the MediumEditor instance.
+     *
+     * example for 'on' method:
+     * Extension.prototype.on = function () {
+     *     return this.base.on.apply(this.base, arguments);
+     * }
+     */
+    [
+        // general helpers
+        'execAction',
+
+        // event handling
+        'on',
+        'off',
+        'subscribe',
+        'trigger'
+
+    ].forEach(function (helper) {
+        Extension.prototype[helper] = function () {
+            return this.base[helper].apply(this.base, arguments);
+        };
+    });
+
+    MediumEditor.Extension = Extension;
+})();
+
+(function () {
+    'use strict';
+
+    function filterOnlyParentElements(node) {
+        if (MediumEditor.util.isBlockContainer(node)) {
+            return NodeFilter.FILTER_ACCEPT;
+        } else {
+            return NodeFilter.FILTER_SKIP;
+        }
+    }
+
+    var Selection = {
+        findMatchingSelectionParent: function (testElementFunction, contentWindow) {
+            var selection = contentWindow.getSelection(),
+                range,
+                current;
+
+            if (selection.rangeCount === 0) {
+                return false;
+            }
+
+            range = selection.getRangeAt(0);
+            current = range.commonAncestorContainer;
+
+            return MediumEditor.util.traverseUp(current, testElementFunction);
+        },
+
+        getSelectionElement: function (contentWindow) {
+            return this.findMatchingSelectionParent(function (el) {
+                return MediumEditor.util.isMediumEditorElement(el);
+            }, contentWindow);
+        },
+
+        // http://stackoverflow.com/questions/17678843/cant-restore-selection-after-html-modify-even-if-its-the-same-html
+        // Tim Down
+        exportSelection: function (root, doc) {
+            if (!root) {
+                return null;
+            }
+
+            var selectionState = null,
+                selection = doc.getSelection();
+
+            if (selection.rangeCount > 0) {
+                var range = selection.getRangeAt(0),
+                    preSelectionRange = range.cloneRange(),
+                    start;
+
+                preSelectionRange.selectNodeContents(root);
+                preSelectionRange.setEnd(range.startContainer, range.startOffset);
+                start = preSelectionRange.toString().length;
+
+                selectionState = {
+                    start: start,
+                    end: start + range.toString().length
+                };
+
+                // Check to see if the selection starts with any images
+                // if so we need to make sure the the beginning of the selection is
+                // set correctly when importing selection
+                if (this.doesRangeStartWithImages(range, doc)) {
+                    selectionState.startsWithImage = true;
+                }
+
+                // Check to see if the selection has any trailing images
+                // if so, this this means we need to look for them when we import selection
+                var trailingImageCount = this.getTrailingImageCount(root, selectionState, range.endContainer, range.endOffset);
+                if (trailingImageCount) {
+                    selectionState.trailingImageCount = trailingImageCount;
+                }
+
+                // If start = 0 there may still be an empty paragraph before it, but we don't care.
+                if (start !== 0) {
+                    var emptyBlocksIndex = this.getIndexRelativeToAdjacentEmptyBlocks(doc, root, range.startContainer, range.startOffset);
+                    if (emptyBlocksIndex !== -1) {
+                        selectionState.emptyBlocksIndex = emptyBlocksIndex;
+                    }
+                }
+            }
+
+            return selectionState;
+        },
+
+        // http://stackoverflow.com/questions/17678843/cant-restore-selection-after-html-modify-even-if-its-the-same-html
+        // Tim Down
+        //
+        // {object} selectionState - the selection to import
+        // {DOMElement} root - the root element the selection is being restored inside of
+        // {Document} doc - the document to use for managing selection
+        // {boolean} [favorLaterSelectionAnchor] - defaults to false. If true, import the cursor immediately
+        //      subsequent to an anchor tag if it would otherwise be placed right at the trailing edge inside the
+        //      anchor. This cursor positioning, even though visually equivalent to the user, can affect behavior
+        //      in MS IE.
+        importSelection: function (selectionState, root, doc, favorLaterSelectionAnchor) {
+            if (!selectionState || !root) {
+                return;
+            }
+
+            var range = doc.createRange();
+            range.setStart(root, 0);
+            range.collapse(true);
+
+            var node = root,
+                nodeStack = [],
+                charIndex = 0,
+                foundStart = false,
+                foundEnd = false,
+                trailingImageCount = 0,
+                stop = false,
+                nextCharIndex,
+                allowRangeToStartAtEndOfNode = false,
+                lastTextNode = null;
+
+            // When importing selection, the start of the selection may lie at the end of an element
+            // or at the beginning of an element.  Since visually there is no difference between these 2
+            // we will try to move the selection to the beginning of an element since this is generally
+            // what users will expect and it's a more predictable behavior.
+            //
+            // However, there are some specific cases when we don't want to do this:
+            //  1) We're attempting to move the cursor outside of the end of an anchor [favorLaterSelectionAnchor = true]
+            //  2) The selection starts with an image, which is special since an image doesn't have any 'content'
+            //     as far as selection and ranges are concerned
+            //  3) The selection starts after a specified number of empty block elements (selectionState.emptyBlocksIndex)
+            //
+            // For these cases, we want the selection to start at a very specific location, so we should NOT
+            // automatically move the cursor to the beginning of the first actual chunk of text
+            if (favorLaterSelectionAnchor || selectionState.startsWithImage || typeof selectionState.emptyBlocksIndex !== 'undefined') {
+                allowRangeToStartAtEndOfNode = true;
+            }
+
+            while (!stop && node) {
+                // Only iterate over elements and text nodes
+                if (node.nodeType > 3) {
+                    node = nodeStack.pop();
+                    continue;
+                }
+
+                // If we hit a text node, we need to add the amount of characters to the overall count
+                if (node.nodeType === 3 && !foundEnd) {
+                    nextCharIndex = charIndex + node.length;
+                    // Check if we're at or beyond the start of the selection we're importing
+                    if (!foundStart && selectionState.start >= charIndex && selectionState.start <= nextCharIndex) {
+                        // NOTE: We only want to allow a selection to start at the END of an element if
+                        //  allowRangeToStartAtEndOfNode is true
+                        if (allowRangeToStartAtEndOfNode || selectionState.start < nextCharIndex) {
+                            range.setStart(node, selectionState.start - charIndex);
+                            foundStart = true;
+                        }
+                        // We're at the end of a text node where the selection could start but we shouldn't
+                        // make the selection start here because allowRangeToStartAtEndOfNode is false.
+                        // However, we should keep a reference to this node in case there aren't any more
+                        // text nodes after this, so that we have somewhere to import the selection to
+                        else {
+                            lastTextNode = node;
+                        }
+                    }
+                    // We've found the start of the selection, check if we're at or beyond the end of the selection we're importing
+                    if (foundStart && selectionState.end >= charIndex && selectionState.end <= nextCharIndex) {
+                        if (!selectionState.trailingImageCount) {
+                            range.setEnd(node, selectionState.end - charIndex);
+                            stop = true;
+                        } else {
+                            foundEnd = true;
+                        }
+                    }
+                    charIndex = nextCharIndex;
+                } else {
+                    if (selectionState.trailingImageCount && foundEnd) {
+                        if (node.nodeName.toLowerCase() === 'img') {
+                            trailingImageCount++;
+                        }
+                        if (trailingImageCount === selectionState.trailingImageCount) {
+                            // Find which index the image is in its parent's children
+                            var endIndex = 0;
+                            while (node.parentNode.childNodes[endIndex] !== node) {
+                                endIndex++;
+                            }
+                            range.setEnd(node.parentNode, endIndex + 1);
+                            stop = true;
+                        }
+                    }
+
+                    if (!stop && node.nodeType === 1) {
+                        // this is an element
+                        // add all its children to the stack
+                        var i = node.childNodes.length - 1;
+                        while (i >= 0) {
+                            nodeStack.push(node.childNodes[i]);
+                            i -= 1;
+                        }
+                    }
+                }
+
+                if (!stop) {
+                    node = nodeStack.pop();
+                }
+            }
+
+            // If we've gone through the entire text but didn't find the beginning of a text node
+            // to make the selection start at, we should fall back to starting the selection
+            // at the END of the last text node we found
+            if (!foundStart && lastTextNode) {
+                range.setStart(lastTextNode, lastTextNode.length);
+                range.setEnd(lastTextNode, lastTextNode.length);
+            }
+
+            if (typeof selectionState.emptyBlocksIndex !== 'undefined') {
+                range = this.importSelectionMoveCursorPastBlocks(doc, root, selectionState.emptyBlocksIndex, range);
+            }
+
+            // If the selection is right at the ending edge of a link, put it outside the anchor tag instead of inside.
+            if (favorLaterSelectionAnchor) {
+                range = this.importSelectionMoveCursorPastAnchor(selectionState, range);
+            }
+
+            this.selectRange(doc, range);
+        },
+
+        // Utility method called from importSelection only
+        importSelectionMoveCursorPastAnchor: function (selectionState, range) {
+            var nodeInsideAnchorTagFunction = function (node) {
+                return node.nodeName.toLowerCase() === 'a';
+            };
+            if (selectionState.start === selectionState.end &&
+                    range.startContainer.nodeType === 3 &&
+                    range.startOffset === range.startContainer.nodeValue.length &&
+                    MediumEditor.util.traverseUp(range.startContainer, nodeInsideAnchorTagFunction)) {
+                var prevNode = range.startContainer,
+                    currentNode = range.startContainer.parentNode;
+                while (currentNode !== null && currentNode.nodeName.toLowerCase() !== 'a') {
+                    if (currentNode.childNodes[currentNode.childNodes.length - 1] !== prevNode) {
+                        currentNode = null;
+                    } else {
+                        prevNode = currentNode;
+                        currentNode = currentNode.parentNode;
+                    }
+                }
+                if (currentNode !== null && currentNode.nodeName.toLowerCase() === 'a') {
+                    var currentNodeIndex = null;
+                    for (var i = 0; currentNodeIndex === null && i < currentNode.parentNode.childNodes.length; i++) {
+                        if (currentNode.parentNode.childNodes[i] === currentNode) {
+                            currentNodeIndex = i;
+                        }
+                    }
+                    range.setStart(currentNode.parentNode, currentNodeIndex + 1);
+                    range.collapse(true);
+                }
+            }
+            return range;
+        },
+
+        // Uses the emptyBlocksIndex calculated by getIndexRelativeToAdjacentEmptyBlocks
+        // to move the cursor back to the start of the correct paragraph
+        importSelectionMoveCursorPastBlocks: function (doc, root, index, range) {
+            var treeWalker = doc.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, filterOnlyParentElements, false),
+                startContainer = range.startContainer,
+                startBlock,
+                targetNode,
+                currIndex = 0;
+            index = index || 1; // If index is 0, we still want to move to the next block
+
+            // Chrome counts newlines and spaces that separate block elements as actual elements.
+            // If the selection is inside one of these text nodes, and it has a previous sibling
+            // which is a block element, we want the treewalker to start at the previous sibling
+            // and NOT at the parent of the textnode
+            if (startContainer.nodeType === 3 && MediumEditor.util.isBlockContainer(startContainer.previousSibling)) {
+                startBlock = startContainer.previousSibling;
+            } else {
+                startBlock = MediumEditor.util.getClosestBlockContainer(startContainer);
+            }
+
+            // Skip over empty blocks until we hit the block we want the selection to be in
+            while (treeWalker.nextNode()) {
+                if (!targetNode) {
+                    // Loop through all blocks until we hit the starting block element
+                    if (startBlock === treeWalker.currentNode) {
+                        targetNode = treeWalker.currentNode;
+                    }
+                } else {
+                    targetNode = treeWalker.currentNode;
+                    currIndex++;
+                    // We hit the target index, bail
+                    if (currIndex === index) {
+                        break;
+                    }
+                    // If we find a non-empty block, ignore the emptyBlocksIndex and just put selection here
+                    if (targetNode.textContent.length > 0) {
+                        break;
+                    }
+                }
+            }
+
+            if (!targetNode) {
+                targetNode = startBlock;
+            }
+
+            // We're selecting a high-level block node, so make sure the cursor gets moved into the deepest
+            // element at the beginning of the block
+            range.setStart(MediumEditor.util.getFirstSelectableLeafNode(targetNode), 0);
+
+            return range;
+        },
+
+        // Returns -1 unless the cursor is at the beginning of a paragraph/block
+        // If the paragraph/block is preceeded by empty paragraphs/block (with no text)
+        // it will return the number of empty paragraphs before the cursor.
+        // Otherwise, it will return 0, which indicates the cursor is at the beginning
+        // of a paragraph/block, and not at the end of the paragraph/block before it
+        getIndexRelativeToAdjacentEmptyBlocks: function (doc, root, cursorContainer, cursorOffset) {
+            // If there is text in front of the cursor, that means there isn't only empty blocks before it
+            if (cursorContainer.textContent.length > 0 && cursorOffset > 0) {
+                return -1;
+            }
+
+            // Check if the block that contains the cursor has any other text in front of the cursor
+            var node = cursorContainer;
+            if (node.nodeType !== 3) {
+                node = cursorContainer.childNodes[cursorOffset];
+            }
+            if (node) {
+                // The element isn't at the beginning of a block, so it has content before it
+                if (!MediumEditor.util.isElementAtBeginningOfBlock(node)) {
+                    return -1;
+                }
+
+                var previousSibling = MediumEditor.util.findPreviousSibling(node);
+                // If there is no previous sibling, this is the first text element in the editor
+                if (!previousSibling) {
+                    return -1;
+                }
+                // If the previous sibling has text, then there are no empty blocks before this
+                else if (previousSibling.nodeValue) {
+                    return -1;
+                }
+            }
+
+            // Walk over block elements, counting number of empty blocks between last piece of text
+            // and the block the cursor is in
+            var closestBlock = MediumEditor.util.getClosestBlockContainer(cursorContainer),
+                treeWalker = doc.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, filterOnlyParentElements, false),
+                emptyBlocksCount = 0;
+            while (treeWalker.nextNode()) {
+                var blockIsEmpty = treeWalker.currentNode.textContent === '';
+                if (blockIsEmpty || emptyBlocksCount > 0) {
+                    emptyBlocksCount += 1;
+                }
+                if (treeWalker.currentNode === closestBlock) {
+                    return emptyBlocksCount;
+                }
+                if (!blockIsEmpty) {
+                    emptyBlocksCount = 0;
+                }
+            }
+
+            return emptyBlocksCount;
+        },
+
+        // Returns true if the selection range begins with an image tag
+        // Returns false if the range starts with any non empty text nodes
+        doesRangeStartWithImages: function (range, doc) {
+            if (range.startOffset !== 0 || range.startContainer.nodeType !== 1) {
+                return false;
+            }
+
+            if (range.startContainer.nodeName.toLowerCase() === 'img') {
+                return true;
+            }
+
+            var img = range.startContainer.querySelector('img');
+            if (!img) {
+                return false;
+            }
+
+            var treeWalker = doc.createTreeWalker(range.startContainer, NodeFilter.SHOW_ALL, null, false);
+            while (treeWalker.nextNode()) {
+                var next = treeWalker.currentNode;
+                // If we hit the image, then there isn't any text before the image so
+                // the image is at the beginning of the range
+                if (next === img) {
+                    break;
+                }
+                // If we haven't hit the iamge, but found text that contains content
+                // then the range doesn't start with an image
+                if (next.nodeValue) {
+                    return false;
+                }
+            }
+
+            return true;
+        },
+
+        getTrailingImageCount: function (root, selectionState, endContainer, endOffset) {
+            // If the endOffset of a range is 0, the endContainer doesn't contain images
+            // If the endContainer is a text node, there are no trailing images
+            if (endOffset === 0 || endContainer.nodeType !== 1) {
+                return 0;
+            }
+
+            // If the endContainer isn't an image, and doesn't have an image descendants
+            // there are no trailing images
+            if (endContainer.nodeName.toLowerCase() !== 'img' && !endContainer.querySelector('img')) {
+                return 0;
+            }
+
+            var lastNode = endContainer.childNodes[endOffset - 1];
+            while (lastNode.hasChildNodes()) {
+                lastNode = lastNode.lastChild;
+            }
+
+            var node = root,
+                nodeStack = [],
+                charIndex = 0,
+                foundStart = false,
+                foundEnd = false,
+                stop = false,
+                nextCharIndex,
+                trailingImages = 0;
+
+            while (!stop && node) {
+                // Only iterate over elements and text nodes
+                if (node.nodeType > 3) {
+                    node = nodeStack.pop();
+                    continue;
+                }
+
+                if (node.nodeType === 3 && !foundEnd) {
+                    trailingImages = 0;
+                    nextCharIndex = charIndex + node.length;
+                    if (!foundStart && selectionState.start >= charIndex && selectionState.start <= nextCharIndex) {
+                        foundStart = true;
+                    }
+                    if (foundStart && selectionState.end >= charIndex && selectionState.end <= nextCharIndex) {
+                        foundEnd = true;
+                    }
+                    charIndex = nextCharIndex;
+                } else {
+                    if (node.nodeName.toLowerCase() === 'img') {
+                        trailingImages++;
+                    }
+
+                    if (node === lastNode) {
+                        stop = true;
+                    } else if (node.nodeType === 1) {
+                        // this is an element
+                        // add all its children to the stack
+                        var i = node.childNodes.length - 1;
+                        while (i >= 0) {
+                            nodeStack.push(node.childNodes[i]);
+                            i -= 1;
+                        }
+                    }
+                }
+
+                if (!stop) {
+                    node = nodeStack.pop();
+                }
+            }
+
+            return trailingImages;
+        },
+
+        // determine if the current selection contains any 'content'
+        // content being any non-white space text or an image
+        selectionContainsContent: function (doc) {
+            var sel = doc.getSelection();
+
+            // collapsed selection or selection withour range doesn't contain content
+            if (!sel || sel.isCollapsed || !sel.rangeCount) {
+                return false;
+            }
+
+            // if toString() contains any text, the selection contains some content
+            if (sel.toString().trim() !== '') {
+                return true;
+            }
+
+            // if selection contains only image(s), it will return empty for toString()
+            // so check for an image manually
+            var selectionNode = this.getSelectedParentElement(sel.getRangeAt(0));
+            if (selectionNode) {
+                if (selectionNode.nodeName.toLowerCase() === 'img' ||
+                    (selectionNode.nodeType === 1 && selectionNode.querySelector('img'))) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+
+        selectionInContentEditableFalse: function (contentWindow) {
+            // determine if the current selection is exclusively inside
+            // a contenteditable="false", though treat the case of an
+            // explicit contenteditable="true" inside a "false" as false.
+            var sawtrue,
+                sawfalse = this.findMatchingSelectionParent(function (el) {
+                    var ce = el && el.getAttribute('contenteditable');
+                    if (ce === 'true') {
+                        sawtrue = true;
+                    }
+                    return el.nodeName !== '#text' && ce === 'false';
+                }, contentWindow);
+
+            return !sawtrue && sawfalse;
+        },
+
+        // http://stackoverflow.com/questions/4176923/html-of-selected-text
+        // by Tim Down
+        getSelectionHtml: function getSelectionHtml(doc) {
+            var i,
+                html = '',
+                sel = doc.getSelection(),
+                len,
+                container;
+            if (sel.rangeCount) {
+                container = doc.createElement('div');
+                for (i = 0, len = sel.rangeCount; i < len; i += 1) {
+                    container.appendChild(sel.getRangeAt(i).cloneContents());
+                }
+                html = container.innerHTML;
+            }
+            return html;
+        },
+
+        /**
+         *  Find the caret position within an element irrespective of any inline tags it may contain.
+         *
+         *  @param {DOMElement} An element containing the cursor to find offsets relative to.
+         *  @param {Range} A Range representing cursor position. Will window.getSelection if none is passed.
+         *  @return {Object} 'left' and 'right' attributes contain offsets from begining and end of Element
+         */
+        getCaretOffsets: function getCaretOffsets(element, range) {
+            var preCaretRange, postCaretRange;
+
+            if (!range) {
+                range = window.getSelection().getRangeAt(0);
+            }
+
+            preCaretRange = range.cloneRange();
+            postCaretRange = range.cloneRange();
+
+            preCaretRange.selectNodeContents(element);
+            preCaretRange.setEnd(range.endContainer, range.endOffset);
+
+            postCaretRange.selectNodeContents(element);
+            postCaretRange.setStart(range.endContainer, range.endOffset);
+
+            return {
+                left: preCaretRange.toString().length,
+                right: postCaretRange.toString().length
+            };
+        },
+
+        // http://stackoverflow.com/questions/15867542/range-object-get-selection-parent-node-chrome-vs-firefox
+        rangeSelectsSingleNode: function (range) {
+            var startNode = range.startContainer;
+            return startNode === range.endContainer &&
+                startNode.hasChildNodes() &&
+                range.endOffset === range.startOffset + 1;
+        },
+
+        getSelectedParentElement: function (range) {
+            if (!range) {
+                return null;
+            }
+
+            // Selection encompasses a single element
+            if (this.rangeSelectsSingleNode(range) && range.startContainer.childNodes[range.startOffset].nodeType !== 3) {
+                return range.startContainer.childNodes[range.startOffset];
+            }
+
+            // Selection range starts inside a text node, so get its parent
+            if (range.startContainer.nodeType === 3) {
+                return range.startContainer.parentNode;
+            }
+
+            // Selection starts inside an element
+            return range.startContainer;
+        },
+
+        getSelectedElements: function (doc) {
+            var selection = doc.getSelection(),
+                range,
+                toRet,
+                currNode;
+
+            if (!selection.rangeCount || selection.isCollapsed || !selection.getRangeAt(0).commonAncestorContainer) {
+                return [];
+            }
+
+            range = selection.getRangeAt(0);
+
+            if (range.commonAncestorContainer.nodeType === 3) {
+                toRet = [];
+                currNode = range.commonAncestorContainer;
+                while (currNode.parentNode && currNode.parentNode.childNodes.length === 1) {
+                    toRet.push(currNode.parentNode);
+                    currNode = currNode.parentNode;
+                }
+
+                return toRet;
+            }
+
+            return [].filter.call(range.commonAncestorContainer.getElementsByTagName('*'), function (el) {
+                return (typeof selection.containsNode === 'function') ? selection.containsNode(el, true) : true;
+            });
+        },
+
+        selectNode: function (node, doc) {
+            var range = doc.createRange();
+            range.selectNodeContents(node);
+            this.selectRange(doc, range);
+        },
+
+        select: function (doc, startNode, startOffset, endNode, endOffset) {
+            var range = doc.createRange();
+            range.setStart(startNode, startOffset);
+            if (endNode) {
+                range.setEnd(endNode, endOffset);
+            } else {
+                range.collapse(true);
+            }
+            this.selectRange(doc, range);
+            return range;
+        },
+
+        /**
+         *  Clear the current highlighted selection and set the caret to the start or the end of that prior selection, defaults to end.
+         *
+         *  @param {DomDocument} doc            Current document
+         *  @param {boolean} moveCursorToStart  A boolean representing whether or not to set the caret to the beginning of the prior selection.
+         */
+        clearSelection: function (doc, moveCursorToStart) {
+            if (moveCursorToStart) {
+                doc.getSelection().collapseToStart();
+            } else {
+                doc.getSelection().collapseToEnd();
+            }
+        },
+
+        /**
+         * Move cursor to the given node with the given offset.
+         *
+         * @param  {DomDocument} doc     Current document
+         * @param  {DomElement}  node    Element where to jump
+         * @param  {integer}     offset  Where in the element should we jump, 0 by default
+         */
+        moveCursor: function (doc, node, offset) {
+            this.select(doc, node, offset);
+        },
+
+        getSelectionRange: function (ownerDocument) {
+            var selection = ownerDocument.getSelection();
+            if (selection.rangeCount === 0) {
+                return null;
+            }
+            return selection.getRangeAt(0);
+        },
+
+        selectRange: function (ownerDocument, range) {
+            var selection = ownerDocument.getSelection();
+
+            selection.removeAllRanges();
+            selection.addRange(range);
+        },
+
+        // http://stackoverflow.com/questions/1197401/how-can-i-get-the-element-the-caret-is-in-with-javascript-when-using-contentedi
+        // by You
+        getSelectionStart: function (ownerDocument) {
+            var node = ownerDocument.getSelection().anchorNode,
+                startNode = (node && node.nodeType === 3 ? node.parentNode : node);
+
+            return startNode;
+        }
+    };
+
+    MediumEditor.selection = Selection;
+}());
+
+(function () {
+    'use strict';
+
+    function isElementDescendantOfExtension(extensions, element) {
+        return extensions.some(function (extension) {
+            if (typeof extension.getInteractionElements !== 'function') {
+                return false;
+            }
+
+            var extensionElements = extension.getInteractionElements();
+            if (!extensionElements) {
+                return false;
+            }
+
+            if (!Array.isArray(extensionElements)) {
+                extensionElements = [extensionElements];
+            }
+            return extensionElements.some(function (el) {
+                return MediumEditor.util.isDescendant(el, element, true);
+            });
+        });
+    }
+
+    var Events = function (instance) {
+        this.base = instance;
+        this.options = this.base.options;
+        this.events = [];
+        this.disabledEvents = {};
+        this.customEvents = {};
+        this.listeners = {};
+    };
+
+    Events.prototype = {
+        InputEventOnContenteditableSupported: !MediumEditor.util.isIE && !MediumEditor.util.isEdge,
+
+        // Helpers for event handling
+
+        attachDOMEvent: function (targets, event, listener, useCapture) {
+            var win = this.base.options.contentWindow,
+                doc = this.base.options.ownerDocument;
+
+            targets = MediumEditor.util.isElement(targets) || [win, doc].indexOf(targets) > -1 ? [targets] : targets;
+
+            Array.prototype.forEach.call(targets, function (target) {
+                target.addEventListener(event, listener, useCapture);
+                this.events.push([target, event, listener, useCapture]);
+            }.bind(this));
+        },
+
+        detachDOMEvent: function (targets, event, listener, useCapture) {
+            var index, e,
+                win = this.base.options.contentWindow,
+                doc = this.base.options.ownerDocument;
+
+            if (targets !== null) {
+                targets = MediumEditor.util.isElement(targets) || [win, doc].indexOf(targets) > -1 ? [targets] : targets;
+
+                Array.prototype.forEach.call(targets, function (target) {
+                    index = this.indexOfListener(target, event, listener, useCapture);
+                    if (index !== -1) {
+                        e = this.events.splice(index, 1)[0];
+                        e[0].removeEventListener(e[1], e[2], e[3]);
+                    }
+                }.bind(this));
+            }
+        },
+
+        indexOfListener: function (target, event, listener, useCapture) {
+            var i, n, item;
+            for (i = 0, n = this.events.length; i < n; i = i + 1) {
+                item = this.events[i];
+                if (item[0] === target && item[1] === event && item[2] === listener && item[3] === useCapture) {
+                    return i;
+                }
+            }
+            return -1;
+        },
+
+        detachAllDOMEvents: function () {
+            var e = this.events.pop();
+            while (e) {
+                e[0].removeEventListener(e[1], e[2], e[3]);
+                e = this.events.pop();
+            }
+        },
+
+        detachAllEventsFromElement: function (element) {
+            var filtered = this.events.filter(function (e) {
+                return e && e[0].getAttribute && e[0].getAttribute('medium-editor-index') === element.getAttribute('medium-editor-index');
+            });
+
+            for (var i = 0, len = filtered.length; i < len; i++) {
+                var e = filtered[i];
+                this.detachDOMEvent(e[0], e[1], e[2], e[3]);
+            }
+        },
+
+        // Attach all existing handlers to a new element
+        attachAllEventsToElement: function (element) {
+            if (this.listeners['editableInput']) {
+                this.contentCache[element.getAttribute('medium-editor-index')] = element.innerHTML;
+            }
+
+            if (this.eventsCache) {
+                this.eventsCache.forEach(function (e) {
+                    this.attachDOMEvent(element, e['name'], e['handler'].bind(this));
+                }, this);
+            }
+        },
+
+        enableCustomEvent: function (event) {
+            if (this.disabledEvents[event] !== undefined) {
+                delete this.disabledEvents[event];
+            }
+        },
+
+        disableCustomEvent: function (event) {
+            this.disabledEvents[event] = true;
+        },
+
+        // custom events
+        attachCustomEvent: function (event, listener) {
+            this.setupListener(event);
+            if (!this.customEvents[event]) {
+                this.customEvents[event] = [];
+            }
+            this.customEvents[event].push(listener);
+        },
+
+        detachCustomEvent: function (event, listener) {
+            var index = this.indexOfCustomListener(event, listener);
+            if (index !== -1) {
+                this.customEvents[event].splice(index, 1);
+                // TODO: If array is empty, should detach internal listeners via destroyListener()
+            }
+        },
+
+        indexOfCustomListener: function (event, listener) {
+            if (!this.customEvents[event] || !this.customEvents[event].length) {
+                return -1;
+            }
+
+            return this.customEvents[event].indexOf(listener);
+        },
+
+        detachAllCustomEvents: function () {
+            this.customEvents = {};
+            // TODO: Should detach internal listeners here via destroyListener()
+        },
+
+        triggerCustomEvent: function (name, data, editable) {
+            if (this.customEvents[name] && !this.disabledEvents[name]) {
+                this.customEvents[name].forEach(function (listener) {
+                    listener(data, editable);
+                });
+            }
+        },
+
+        // Cleaning up
+
+        destroy: function () {
+            this.detachAllDOMEvents();
+            this.detachAllCustomEvents();
+            this.detachExecCommand();
+
+            if (this.base.elements) {
+                this.base.elements.forEach(function (element) {
+                    element.removeAttribute('data-medium-focused');
+                });
+            }
+        },
+
+        // Listening to calls to document.execCommand
+
+        // Attach a listener to be notified when document.execCommand is called
+        attachToExecCommand: function () {
+            if (this.execCommandListener) {
+                return;
+            }
+
+            // Store an instance of the listener so:
+            // 1) We only attach to execCommand once
+            // 2) We can remove the listener later
+            this.execCommandListener = function (execInfo) {
+                this.handleDocumentExecCommand(execInfo);
+            }.bind(this);
+
+            // Ensure that execCommand has been wrapped correctly
+            this.wrapExecCommand();
+
+            // Add listener to list of execCommand listeners
+            this.options.ownerDocument.execCommand.listeners.push(this.execCommandListener);
+        },
+
+        // Remove our listener for calls to document.execCommand
+        detachExecCommand: function () {
+            var doc = this.options.ownerDocument;
+            if (!this.execCommandListener || !doc.execCommand.listeners) {
+                return;
+            }
+
+            // Find the index of this listener in the array of listeners so it can be removed
+            var index = doc.execCommand.listeners.indexOf(this.execCommandListener);
+            if (index !== -1) {
+                doc.execCommand.listeners.splice(index, 1);
+            }
+
+            // If the list of listeners is now empty, put execCommand back to its original state
+            if (!doc.execCommand.listeners.length) {
+                this.unwrapExecCommand();
+            }
+        },
+
+        // Wrap document.execCommand in a custom method so we can listen to calls to it
+        wrapExecCommand: function () {
+            var doc = this.options.ownerDocument;
+
+            // Ensure all instance of MediumEditor only wrap execCommand once
+            if (doc.execCommand.listeners) {
+                return;
+            }
+
+            // Helper method to call all listeners to execCommand
+            var callListeners = function (args, result) {
+                if (doc.execCommand.listeners) {
+                    doc.execCommand.listeners.forEach(function (listener) {
+                        listener({
+                            command: args[0],
+                            value: args[2],
+                            args: args,
+                            result: result
+                        });
+                    });
+                }
+            },
+
+                // Create a wrapper method for execCommand which will:
+                // 1) Call document.execCommand with the correct arguments
+                // 2) Loop through any listeners and notify them that execCommand was called
+                //    passing extra info on the call
+                // 3) Return the result
+                wrapper = function () {
+                    var result = doc.execCommand.orig.apply(this, arguments);
+
+                    if (!doc.execCommand.listeners) {
+                        return result;
+                    }
+
+                    var args = Array.prototype.slice.call(arguments);
+                    callListeners(args, result);
+
+                    return result;
+                };
+
+            // Store a reference to the original execCommand
+            wrapper.orig = doc.execCommand;
+
+            // Attach an array for storing listeners
+            wrapper.listeners = [];
+
+            // Helper for notifying listeners
+            wrapper.callListeners = callListeners;
+
+            // Overwrite execCommand
+            doc.execCommand = wrapper;
+        },
+
+        // Revert document.execCommand back to its original self
+        unwrapExecCommand: function () {
+            var doc = this.options.ownerDocument;
+            if (!doc.execCommand.orig) {
+                return;
+            }
+
+            // Use the reference to the original execCommand to revert back
+            doc.execCommand = doc.execCommand.orig;
+        },
+
+        // Listening to browser events to emit events medium-editor cares about
+        setupListener: function (name) {
+            if (this.listeners[name]) {
+                return;
+            }
+
+            switch (name) {
+                case 'externalInteraction':
+                    // Detecting when user has interacted with elements outside of MediumEditor
+                    this.attachDOMEvent(this.options.ownerDocument.body, 'mousedown', this.handleBodyMousedown.bind(this), true);
+                    this.attachDOMEvent(this.options.ownerDocument.body, 'click', this.handleBodyClick.bind(this), true);
+                    this.attachDOMEvent(this.options.ownerDocument.body, 'focus', this.handleBodyFocus.bind(this), true);
+                    break;
+                case 'blur':
+                    // Detecting when focus is lost
+                    this.setupListener('externalInteraction');
+                    break;
+                case 'focus':
+                    // Detecting when focus moves into some part of MediumEditor
+                    this.setupListener('externalInteraction');
+                    break;
+                case 'editableInput':
+                    // setup cache for knowing when the content has changed
+                    this.contentCache = {};
+                    this.base.elements.forEach(function (element) {
+                        this.contentCache[element.getAttribute('medium-editor-index')] = element.innerHTML;
+                    }, this);
+
+                    // Attach to the 'oninput' event, handled correctly by most browsers
+                    if (this.InputEventOnContenteditableSupported) {
+                        this.attachToEachElement('input', this.handleInput);
+                    }
+
+                    // For browsers which don't support the input event on contenteditable (IE)
+                    // we'll attach to 'selectionchange' on the document and 'keypress' on the editables
+                    if (!this.InputEventOnContenteditableSupported) {
+                        this.setupListener('editableKeypress');
+                        this.keypressUpdateInput = true;
+                        this.attachDOMEvent(document, 'selectionchange', this.handleDocumentSelectionChange.bind(this));
+                        // Listen to calls to execCommand
+                        this.attachToExecCommand();
+                    }
+                    break;
+                case 'editableClick':
+                    // Detecting click in the contenteditables
+                    this.attachToEachElement('click', this.handleClick);
+                    break;
+                case 'editableBlur':
+                    // Detecting blur in the contenteditables
+                    this.attachToEachElement('blur', this.handleBlur);
+                    break;
+                case 'editableKeypress':
+                    // Detecting keypress in the contenteditables
+                    this.attachToEachElement('keypress', this.handleKeypress);
+                    break;
+                case 'editableKeyup':
+                    // Detecting keyup in the contenteditables
+                    this.attachToEachElement('keyup', this.handleKeyup);
+                    break;
+                case 'editableKeydown':
+                    // Detecting keydown on the contenteditables
+                    this.attachToEachElement('keydown', this.handleKeydown);
+                    break;
+                case 'editableKeydownSpace':
+                    // Detecting keydown for SPACE on the contenteditables
+                    this.setupListener('editableKeydown');
+                    break;
+                case 'editableKeydownEnter':
+                    // Detecting keydown for ENTER on the contenteditables
+                    this.setupListener('editableKeydown');
+                    break;
+                case 'editableKeydownTab':
+                    // Detecting keydown for TAB on the contenteditable
+                    this.setupListener('editableKeydown');
+                    break;
+                case 'editableKeydownDelete':
+                    // Detecting keydown for DELETE/BACKSPACE on the contenteditables
+                    this.setupListener('editableKeydown');
+                    break;
+                case 'editableMouseover':
+                    // Detecting mouseover on the contenteditables
+                    this.attachToEachElement('mouseover', this.handleMouseover);
+                    break;
+                case 'editableDrag':
+                    // Detecting dragover and dragleave on the contenteditables
+                    this.attachToEachElement('dragover', this.handleDragging);
+                    this.attachToEachElement('dragleave', this.handleDragging);
+                    break;
+                case 'editableDrop':
+                    // Detecting drop on the contenteditables
+                    this.attachToEachElement('drop', this.handleDrop);
+                    break;
+                // TODO: We need to have a custom 'paste' event separate from 'editablePaste'
+                // Need to think about the way to introduce this without breaking folks
+                case 'editablePaste':
+                    // Detecting paste on the contenteditables
+                    this.attachToEachElement('paste', this.handlePaste);
+                    break;
+            }
+            this.listeners[name] = true;
+        },
+
+        attachToEachElement: function (name, handler) {
+            // build our internal cache to know which element got already what handler attached
+            if (!this.eventsCache) {
+                this.eventsCache = [];
+            }
+
+            this.base.elements.forEach(function (element) {
+                this.attachDOMEvent(element, name, handler.bind(this));
+            }, this);
+
+            this.eventsCache.push({ 'name': name, 'handler': handler });
+        },
+
+        cleanupElement: function (element) {
+            var index = element.getAttribute('medium-editor-index');
+            if (index) {
+                this.detachAllEventsFromElement(element);
+                if (this.contentCache) {
+                    delete this.contentCache[index];
+                }
+            }
+        },
+
+        focusElement: function (element) {
+            element.focus();
+            this.updateFocus(element, { target: element, type: 'focus' });
+        },
+
+        updateFocus: function (target, eventObj) {
+            var hadFocus = this.base.getFocusedElement(),
+                toFocus;
+
+            // For clicks, we need to know if the mousedown that caused the click happened inside the existing focused element
+            // or one of the extension elements.  If so, we don't want to focus another element
+            if (hadFocus &&
+                eventObj.type === 'click' &&
+                this.lastMousedownTarget &&
+                (MediumEditor.util.isDescendant(hadFocus, this.lastMousedownTarget, true) ||
+                    isElementDescendantOfExtension(this.base.extensions, this.lastMousedownTarget))) {
+                toFocus = hadFocus;
+            }
+
+            if (!toFocus) {
+                this.base.elements.some(function (element) {
+                    // If the target is part of an editor element, this is the element getting focus
+                    if (!toFocus && (MediumEditor.util.isDescendant(element, target, true))) {
+                        toFocus = element;
+                    }
+
+                    // bail if we found an element that's getting focus
+                    return !!toFocus;
+                }, this);
+            }
+
+            // Check if the target is external (not part of the editor, toolbar, or any other extension)
+            var externalEvent = !MediumEditor.util.isDescendant(hadFocus, target, true) &&
+                !isElementDescendantOfExtension(this.base.extensions, target);
+
+            if (toFocus !== hadFocus) {
+                // If element has focus, and focus is going outside of editor
+                // Don't blur focused element if clicking on editor, toolbar, or anchorpreview
+                if (hadFocus && externalEvent) {
+                    // Trigger blur on the editable that has lost focus
+                    hadFocus.removeAttribute('data-medium-focused');
+                    this.triggerCustomEvent('blur', eventObj, hadFocus);
+                }
+
+                // If focus is going into an editor element
+                if (toFocus) {
+                    // Trigger focus on the editable that now has focus
+                    toFocus.setAttribute('data-medium-focused', true);
+                    this.triggerCustomEvent('focus', eventObj, toFocus);
+                }
+            }
+
+            if (externalEvent) {
+                this.triggerCustomEvent('externalInteraction', eventObj);
+            }
+        },
+
+        updateInput: function (target, eventObj) {
+            if (!this.contentCache) {
+                return;
+            }
+            // An event triggered which signifies that the user may have changed someting
+            // Look in our cache of input for the contenteditables to see if something changed
+            var index = target.getAttribute('medium-editor-index'),
+                html = target.innerHTML;
+
+            if (html !== this.contentCache[index]) {
+                // The content has changed since the last time we checked, fire the event
+                this.triggerCustomEvent('editableInput', eventObj, target);
+            }
+            this.contentCache[index] = html;
+        },
+
+        handleDocumentSelectionChange: function (event) {
+            // When selectionchange fires, target and current target are set
+            // to document, since this is where the event is handled
+            // However, currentTarget will have an 'activeElement' property
+            // which will point to whatever element has focus.
+            if (event.currentTarget && event.currentTarget.activeElement) {
+                var activeElement = event.currentTarget.activeElement,
+                    currentTarget;
+                // We can look at the 'activeElement' to determine if the selectionchange has
+                // happened within a contenteditable owned by this instance of MediumEditor
+                this.base.elements.some(function (element) {
+                    if (MediumEditor.util.isDescendant(element, activeElement, true)) {
+                        currentTarget = element;
+                        return true;
+                    }
+                    return false;
+                }, this);
+
+                // We know selectionchange fired within one of our contenteditables
+                if (currentTarget) {
+                    this.updateInput(currentTarget, { target: activeElement, currentTarget: currentTarget });
+                }
+            }
+        },
+
+        handleDocumentExecCommand: function () {
+            // document.execCommand has been called
+            // If one of our contenteditables currently has focus, we should
+            // attempt to trigger the 'editableInput' event
+            var target = this.base.getFocusedElement();
+            if (target) {
+                this.updateInput(target, { target: target, currentTarget: target });
+            }
+        },
+
+        handleBodyClick: function (event) {
+            this.updateFocus(event.target, event);
+        },
+
+        handleBodyFocus: function (event) {
+            this.updateFocus(event.target, event);
+        },
+
+        handleBodyMousedown: function (event) {
+            this.lastMousedownTarget = event.target;
+        },
+
+        handleInput: function (event) {
+            this.updateInput(event.currentTarget, event);
+        },
+
+        handleClick: function (event) {
+            this.triggerCustomEvent('editableClick', event, event.currentTarget);
+        },
+
+        handleBlur: function (event) {
+            this.triggerCustomEvent('editableBlur', event, event.currentTarget);
+        },
+
+        handleKeypress: function (event) {
+            this.triggerCustomEvent('editableKeypress', event, event.currentTarget);
+
+            // If we're doing manual detection of the editableInput event we need
+            // to check for input changes during 'keypress'
+            if (this.keypressUpdateInput) {
+                var eventObj = { target: event.target, currentTarget: event.currentTarget };
+
+                // In IE, we need to let the rest of the event stack complete before we detect
+                // changes to input, so using setTimeout here
+                setTimeout(function () {
+                    this.updateInput(eventObj.currentTarget, eventObj);
+                }.bind(this), 0);
+            }
+        },
+
+        handleKeyup: function (event) {
+            this.triggerCustomEvent('editableKeyup', event, event.currentTarget);
+        },
+
+        handleMouseover: function (event) {
+            this.triggerCustomEvent('editableMouseover', event, event.currentTarget);
+        },
+
+        handleDragging: function (event) {
+            this.triggerCustomEvent('editableDrag', event, event.currentTarget);
+        },
+
+        handleDrop: function (event) {
+            this.triggerCustomEvent('editableDrop', event, event.currentTarget);
+        },
+
+        handlePaste: function (event) {
+            this.triggerCustomEvent('editablePaste', event, event.currentTarget);
+        },
+
+        handleKeydown: function (event) {
+
+            this.triggerCustomEvent('editableKeydown', event, event.currentTarget);
+
+            if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.SPACE)) {
+                return this.triggerCustomEvent('editableKeydownSpace', event, event.currentTarget);
+            }
+
+            if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.ENTER) || (event.ctrlKey && MediumEditor.util.isKey(event, MediumEditor.util.keyCode.M))) {
+                return this.triggerCustomEvent('editableKeydownEnter', event, event.currentTarget);
+            }
+
+            if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.TAB)) {
+                return this.triggerCustomEvent('editableKeydownTab', event, event.currentTarget);
+            }
+
+            if (MediumEditor.util.isKey(event, [MediumEditor.util.keyCode.DELETE, MediumEditor.util.keyCode.BACKSPACE])) {
+                return this.triggerCustomEvent('editableKeydownDelete', event, event.currentTarget);
+            }
+        }
+    };
+
+    MediumEditor.Events = Events;
+}());
+
+(function () {
+    'use strict';
+
+    var Button = MediumEditor.Extension.extend({
+
+        /* Button Options */
+
+        /* action: [string]
+         * The action argument to pass to MediumEditor.execAction()
+         * when the button is clicked
+         */
+        action: undefined,
+
+        /* aria: [string]
+         * The value to add as the aria-label attribute of the button
+         * element displayed in the toolbar.
+         * This is also used as the tooltip for the button
+         */
+        aria: undefined,
+
+        /* tagNames: [Array]
+         * NOTE: This is not used if useQueryState is set to true.
+         *
+         * Array of element tag names that would indicate that this
+         * button has already been applied. If this action has already
+         * been applied, the button will be displayed as 'active' in the toolbar
+         *
+         * Example:
+         * For 'bold', if the text is ever within a <b> or <strong>
+         * tag that indicates the text is already bold. So the array
+         * of tagNames for bold would be: ['b', 'strong']
+         */
+        tagNames: undefined,
+
+        /* style: [Object]
+         * NOTE: This is not used if useQueryState is set to true.
+         *
+         * A pair of css property & value(s) that indicate that this
+         * button has already been applied. If this action has already
+         * been applied, the button will be displayed as 'active' in the toolbar
+         * Properties of the object:
+         *   prop [String]: name of the css property
+         *   value [String]: value(s) of the css property
+         *                   multiple values can be separated by a '|'
+         *
+         * Example:
+         * For 'bold', if the text is ever within an element with a 'font-weight'
+         * style property set to '700' or 'bold', that indicates the text
+         * is already bold.  So the style object for bold would be:
+         * { prop: 'font-weight', value: '700|bold' }
+         */
+        style: undefined,
+
+        /* useQueryState: [boolean]
+         * Enables/disables whether this button should use the built-in
+         * document.queryCommandState() method to determine whether
+         * the action has already been applied.  If the action has already
+         * been applied, the button will be displayed as 'active' in the toolbar
+         *
+         * Example:
+         * For 'bold', if this is set to true, the code will call:
+         * document.queryCommandState('bold') which will return true if the
+         * browser thinks the text is already bold, and false otherwise
+         */
+        useQueryState: undefined,
+
+        /* contentDefault: [string]
+         * Default innerHTML to put inside the button
+         */
+        contentDefault: undefined,
+
+        /* contentFA: [string]
+         * The innerHTML to use for the content of the button
+         * if the `buttonLabels` option for MediumEditor is set to 'fontawesome'
+         */
+        contentFA: undefined,
+
+        /* classList: [Array]
+         * An array of classNames (strings) to be added to the button
+         */
+        classList: undefined,
+
+        /* attrs: [object]
+         * A set of key-value pairs to add to the button as custom attributes
+         */
+        attrs: undefined,
+
+        // The button constructor can optionally accept the name of a built-in button
+        // (ie 'bold', 'italic', etc.)
+        // When the name of a button is passed, it will initialize itself with the
+        // configuration for that button
+        constructor: function (options) {
+            if (Button.isBuiltInButton(options)) {
+                MediumEditor.Extension.call(this, this.defaults[options]);
+            } else {
+                MediumEditor.Extension.call(this, options);
+            }
+        },
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.button = this.createButton();
+            this.on(this.button, 'click', this.handleClick.bind(this));
+        },
+
+        /* getButton: [function ()]
+         *
+         * If implemented, this function will be called when
+         * the toolbar is being created.  The DOM Element returned
+         * by this function will be appended to the toolbar along
+         * with any other buttons.
+         */
+        getButton: function () {
+            return this.button;
+        },
+
+        getAction: function () {
+            return (typeof this.action === 'function') ? this.action(this.base.options) : this.action;
+        },
+
+        getAria: function () {
+            return (typeof this.aria === 'function') ? this.aria(this.base.options) : this.aria;
+        },
+
+        getTagNames: function () {
+            return (typeof this.tagNames === 'function') ? this.tagNames(this.base.options) : this.tagNames;
+        },
+
+        createButton: function () {
+            var button = this.document.createElement('button'),
+                content = this.contentDefault,
+                ariaLabel = this.getAria(),
+                buttonLabels = this.getEditorOption('buttonLabels');
+            // Add class names
+            button.classList.add('medium-editor-action');
+            button.classList.add('medium-editor-action-' + this.name);
+            if (this.classList) {
+                this.classList.forEach(function (className) {
+                    button.classList.add(className);
+                });
+            }
+
+            // Add attributes
+            button.setAttribute('data-action', this.getAction());
+            if (ariaLabel) {
+                button.setAttribute('title', ariaLabel);
+                button.setAttribute('aria-label', ariaLabel);
+            }
+            if (this.attrs) {
+                Object.keys(this.attrs).forEach(function (attr) {
+                    button.setAttribute(attr, this.attrs[attr]);
+                }, this);
+            }
+
+            if (buttonLabels === 'fontawesome' && this.contentFA) {
+                content = this.contentFA;
+            }
+            button.innerHTML = content;
+            return button;
+        },
+
+        handleClick: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var action = this.getAction();
+
+            if (action) {
+                this.execAction(action);
+            }
+        },
+
+        isActive: function () {
+            return this.button.classList.contains(this.getEditorOption('activeButtonClass'));
+        },
+
+        setInactive: function () {
+            this.button.classList.remove(this.getEditorOption('activeButtonClass'));
+            delete this.knownState;
+        },
+
+        setActive: function () {
+            this.button.classList.add(this.getEditorOption('activeButtonClass'));
+            delete this.knownState;
+        },
+
+        queryCommandState: function () {
+            var queryState = null;
+            if (this.useQueryState) {
+                queryState = this.base.queryCommandState(this.getAction());
+            }
+            return queryState;
+        },
+
+        isAlreadyApplied: function (node) {
+            var isMatch = false,
+                tagNames = this.getTagNames(),
+                styleVals,
+                computedStyle;
+
+            if (this.knownState === false || this.knownState === true) {
+                return this.knownState;
+            }
+
+            if (tagNames && tagNames.length > 0) {
+                isMatch = tagNames.indexOf(node.nodeName.toLowerCase()) !== -1;
+            }
+
+            if (!isMatch && this.style) {
+                styleVals = this.style.value.split('|');
+                computedStyle = this.window.getComputedStyle(node, null).getPropertyValue(this.style.prop);
+                styleVals.forEach(function (val) {
+                    if (!this.knownState) {
+                        isMatch = (computedStyle.indexOf(val) !== -1);
+                        // text-decoration is not inherited by default
+                        // so if the computed style for text-decoration doesn't match
+                        // don't write to knownState so we can fallback to other checks
+                        if (isMatch || this.style.prop !== 'text-decoration') {
+                            this.knownState = isMatch;
+                        }
+                    }
+                }, this);
+            }
+
+            return isMatch;
+        }
+    });
+
+    Button.isBuiltInButton = function (name) {
+        return (typeof name === 'string') && MediumEditor.extensions.button.prototype.defaults.hasOwnProperty(name);
+    };
+
+    MediumEditor.extensions.button = Button;
+}());
+
+(function () {
+    'use strict';
+
+    /* MediumEditor.extensions.button.defaults: [Object]
+     * Set of default config options for all of the built-in MediumEditor buttons
+     */
+    MediumEditor.extensions.button.prototype.defaults = {
+        'bold': {
+            name: 'bold',
+            action: 'bold',
+            aria: 'bold',
+            tagNames: ['b', 'strong'],
+            style: {
+                prop: 'font-weight',
+                value: '700|bold'
+            },
+            useQueryState: true,
+            contentDefault: '<b>B</b>',
+            contentFA: '<i class="fa fa-bold"></i>'
+        },
+        'italic': {
+            name: 'italic',
+            action: 'italic',
+            aria: 'italic',
+            tagNames: ['i', 'em'],
+            style: {
+                prop: 'font-style',
+                value: 'italic'
+            },
+            useQueryState: true,
+            contentDefault: '<b><i>I</i></b>',
+            contentFA: '<i class="fa fa-italic"></i>'
+        },
+        'underline': {
+            name: 'underline',
+            action: 'underline',
+            aria: 'underline',
+            tagNames: ['u'],
+            style: {
+                prop: 'text-decoration',
+                value: 'underline'
+            },
+            useQueryState: true,
+            contentDefault: '<b><u>U</u></b>',
+            contentFA: '<i class="fa fa-underline"></i>'
+        },
+        'strikethrough': {
+            name: 'strikethrough',
+            action: 'strikethrough',
+            aria: 'strike through',
+            tagNames: ['strike'],
+            style: {
+                prop: 'text-decoration',
+                value: 'line-through'
+            },
+            useQueryState: true,
+            contentDefault: '<s>A</s>',
+            contentFA: '<i class="fa fa-strikethrough"></i>'
+        },
+        'superscript': {
+            name: 'superscript',
+            action: 'superscript',
+            aria: 'superscript',
+            tagNames: ['sup'],
+            /* firefox doesn't behave the way we want it to, so we CAN'T use queryCommandState for superscript
+               https://github.com/guardian/scribe/blob/master/BROWSERINCONSISTENCIES.md#documentquerycommandstate */
+            // useQueryState: true
+            contentDefault: '<b>x<sup>1</sup></b>',
+            contentFA: '<i class="fa fa-superscript"></i>'
+        },
+        'subscript': {
+            name: 'subscript',
+            action: 'subscript',
+            aria: 'subscript',
+            tagNames: ['sub'],
+            /* firefox doesn't behave the way we want it to, so we CAN'T use queryCommandState for subscript
+               https://github.com/guardian/scribe/blob/master/BROWSERINCONSISTENCIES.md#documentquerycommandstate */
+            // useQueryState: true
+            contentDefault: '<b>x<sub>1</sub></b>',
+            contentFA: '<i class="fa fa-subscript"></i>'
+        },
+        'image': {
+            name: 'image',
+            action: 'image',
+            aria: 'image',
+            tagNames: ['img'],
+            contentDefault: '<b>image</b>',
+            contentFA: '<i class="fa fa-picture-o"></i>'
+        },
+        'html': {
+            name: 'html',
+            action: 'html',
+            aria: 'evaluate html',
+            tagNames: ['iframe', 'object'],
+            contentDefault: '<b>html</b>',
+            contentFA: '<i class="fa fa-code"></i>'
+        },
+        'orderedlist': {
+            name: 'orderedlist',
+            action: 'insertorderedlist',
+            aria: 'ordered list',
+            tagNames: ['ol'],
+            useQueryState: true,
+            contentDefault: '<b>1.</b>',
+            contentFA: '<i class="fa fa-list-ol"></i>'
+        },
+        'unorderedlist': {
+            name: 'unorderedlist',
+            action: 'insertunorderedlist',
+            aria: 'unordered list',
+            tagNames: ['ul'],
+            useQueryState: true,
+            contentDefault: '<b>&bull;</b>',
+            contentFA: '<i class="fa fa-list-ul"></i>'
+        },
+        'indent': {
+            name: 'indent',
+            action: 'indent',
+            aria: 'indent',
+            tagNames: [],
+            contentDefault: '<b>&rarr;</b>',
+            contentFA: '<i class="fa fa-indent"></i>'
+        },
+        'outdent': {
+            name: 'outdent',
+            action: 'outdent',
+            aria: 'outdent',
+            tagNames: [],
+            contentDefault: '<b>&larr;</b>',
+            contentFA: '<i class="fa fa-outdent"></i>'
+        },
+        'justifyCenter': {
+            name: 'justifyCenter',
+            action: 'justifyCenter',
+            aria: 'center justify',
+            tagNames: [],
+            style: {
+                prop: 'text-align',
+                value: 'center'
+            },
+            contentDefault: '<b>C</b>',
+            contentFA: '<i class="fa fa-align-center"></i>'
+        },
+        'justifyFull': {
+            name: 'justifyFull',
+            action: 'justifyFull',
+            aria: 'full justify',
+            tagNames: [],
+            style: {
+                prop: 'text-align',
+                value: 'justify'
+            },
+            contentDefault: '<b>J</b>',
+            contentFA: '<i class="fa fa-align-justify"></i>'
+        },
+        'justifyLeft': {
+            name: 'justifyLeft',
+            action: 'justifyLeft',
+            aria: 'left justify',
+            tagNames: [],
+            style: {
+                prop: 'text-align',
+                value: 'left'
+            },
+            contentDefault: '<b>L</b>',
+            contentFA: '<i class="fa fa-align-left"></i>'
+        },
+        'justifyRight': {
+            name: 'justifyRight',
+            action: 'justifyRight',
+            aria: 'right justify',
+            tagNames: [],
+            style: {
+                prop: 'text-align',
+                value: 'right'
+            },
+            contentDefault: '<b>R</b>',
+            contentFA: '<i class="fa fa-align-right"></i>'
+        },
+        // Known inline elements that are not removed, or not removed consistantly across browsers:
+        // <span>, <label>, <br>
+        'removeFormat': {
+            name: 'removeFormat',
+            aria: 'remove formatting',
+            action: 'removeFormat',
+            contentDefault: '<b>X</b>',
+            contentFA: '<i class="fa fa-eraser"></i>'
+        },
+
+        /***** Buttons for appending block elements (append-<element> action) *****/
+
+        'quote': {
+            name: 'quote',
+            action: 'append-blockquote',
+            aria: 'blockquote',
+            tagNames: ['blockquote'],
+            contentDefault: '<b>&ldquo;</b>',
+            contentFA: '<i class="fa fa-quote-right"></i>'
+        },
+        'pre': {
+            name: 'pre',
+            action: 'append-pre',
+            aria: 'preformatted text',
+            tagNames: ['pre'],
+            contentDefault: '<b>0101</b>',
+            contentFA: '<i class="fa fa-code fa-lg"></i>'
+        },
+        'h1': {
+            name: 'h1',
+            action: 'append-h1',
+            aria: 'header type one',
+            tagNames: ['h1'],
+            contentDefault: '<b>H1</b>',
+            contentFA: '<i class="fa fa-header"><sup>1</sup>'
+        },
+        'h2': {
+            name: 'h2',
+            action: 'append-h2',
+            aria: 'header type two',
+            tagNames: ['h2'],
+            contentDefault: '<b>H2</b>',
+            contentFA: '<i class="fa fa-header"><sup>2</sup>'
+        },
+        'h3': {
+            name: 'h3',
+            action: 'append-h3',
+            aria: 'header type three',
+            tagNames: ['h3'],
+            contentDefault: '<b>H3</b>',
+            contentFA: '<i class="fa fa-header"><sup>3</sup>'
+        },
+        'h4': {
+            name: 'h4',
+            action: 'append-h4',
+            aria: 'header type four',
+            tagNames: ['h4'],
+            contentDefault: '<b>H4</b>',
+            contentFA: '<i class="fa fa-header"><sup>4</sup>'
+        },
+        'h5': {
+            name: 'h5',
+            action: 'append-h5',
+            aria: 'header type five',
+            tagNames: ['h5'],
+            contentDefault: '<b>H5</b>',
+            contentFA: '<i class="fa fa-header"><sup>5</sup>'
+        },
+        'h6': {
+            name: 'h6',
+            action: 'append-h6',
+            aria: 'header type six',
+            tagNames: ['h6'],
+            contentDefault: '<b>H6</b>',
+            contentFA: '<i class="fa fa-header"><sup>6</sup>'
+        }
+    };
+
+})();
+
+(function () {
+    'use strict';
+
+    /* Base functionality for an extension which will display
+     * a 'form' inside the toolbar
+     */
+    var FormExtension = MediumEditor.extensions.button.extend({
+
+        init: function () {
+            MediumEditor.extensions.button.prototype.init.apply(this, arguments);
+        },
+
+        // default labels for the form buttons
+        formSaveLabel: '&#10003;',
+        formCloseLabel: '&times;',
+
+        /* activeClass: [string]
+         * set class which added to shown form
+         */
+        activeClass: 'medium-editor-toolbar-form-active',
+
+        /* hasForm: [boolean]
+         *
+         * Setting this to true will cause getForm() to be called
+         * when the toolbar is created, so the form can be appended
+         * inside the toolbar container
+         */
+        hasForm: true,
+
+        /* getForm: [function ()]
+         *
+         * When hasForm is true, this function must be implemented
+         * and return a DOM Element which will be appended to
+         * the toolbar container. The form should start hidden, and
+         * the extension can choose when to hide/show it
+         */
+        getForm: function () {},
+
+        /* isDisplayed: [function ()]
+         *
+         * This function should return true/false reflecting
+         * whether the form is currently displayed
+         */
+        isDisplayed: function () {
+            if (this.hasForm) {
+                return this.getForm().classList.contains(this.activeClass);
+            }
+            return false;
+        },
+
+        /* hideForm: [function ()]
+         *
+         * This function should show the form element inside
+         * the toolbar container
+         */
+        showForm: function () {
+            if (this.hasForm) {
+                this.getForm().classList.add(this.activeClass);
+            }
+        },
+
+        /* hideForm: [function ()]
+         *
+         * This function should hide the form element inside
+         * the toolbar container
+         */
+        hideForm: function () {
+            if (this.hasForm) {
+                this.getForm().classList.remove(this.activeClass);
+            }
+        },
+
+        /************************ Helpers ************************
+         * The following are helpers that are either set by MediumEditor
+         * during initialization, or are helper methods which either
+         * route calls to the MediumEditor instance or provide common
+         * functionality for all form extensions
+         *********************************************************/
+
+        /* showToolbarDefaultActions: [function ()]
+         *
+         * Helper method which will turn back the toolbar after canceling
+         * the customized form
+         */
+        showToolbarDefaultActions: function () {
+            var toolbar = this.base.getExtensionByName('toolbar');
+            if (toolbar) {
+                toolbar.showToolbarDefaultActions();
+            }
+        },
+
+        /* hideToolbarDefaultActions: [function ()]
+         *
+         * Helper function which will hide the default contents of the
+         * toolbar, but leave the toolbar container in the same state
+         * to allow a form to display its custom contents inside the toolbar
+         */
+        hideToolbarDefaultActions: function () {
+            var toolbar = this.base.getExtensionByName('toolbar');
+            if (toolbar) {
+                toolbar.hideToolbarDefaultActions();
+            }
+        },
+
+        /* setToolbarPosition: [function ()]
+         *
+         * Helper function which will update the size and position
+         * of the toolbar based on the toolbar content and the current
+         * position of the user's selection
+         */
+        setToolbarPosition: function () {
+            var toolbar = this.base.getExtensionByName('toolbar');
+            if (toolbar) {
+                toolbar.setToolbarPosition();
+            }
+        }
+    });
+
+    MediumEditor.extensions.form = FormExtension;
+})();
+(function () {
+    'use strict';
+
+    var AnchorForm = MediumEditor.extensions.form.extend({
+        /* Anchor Form Options */
+
+        /* customClassOption: [string]  (previously options.anchorButton + options.anchorButtonClass)
+         * Custom class name the user can optionally have added to their created links (ie 'button').
+         * If passed as a non-empty string, a checkbox will be displayed allowing the user to choose
+         * whether to have the class added to the created link or not.
+         */
+        customClassOption: null,
+
+        /* customClassOptionText: [string]
+         * text to be shown in the checkbox when the __customClassOption__ is being used.
+         */
+        customClassOptionText: 'Button',
+
+        /* linkValidation: [boolean]  (previously options.checkLinkFormat)
+         * enables/disables check for common URL protocols on anchor links.
+         */
+        linkValidation: false,
+
+        /* placeholderText: [string]  (previously options.anchorInputPlaceholder)
+         * text to be shown as placeholder of the anchor input.
+         */
+        placeholderText: 'Paste or type a link',
+
+        /* targetCheckbox: [boolean]  (previously options.anchorTarget)
+         * enables/disables displaying a "Open in new window" checkbox, which when checked
+         * changes the `target` attribute of the created link.
+         */
+        targetCheckbox: false,
+
+        /* targetCheckboxText: [string]  (previously options.anchorInputCheckboxLabel)
+         * text to be shown in the checkbox enabled via the __targetCheckbox__ option.
+         */
+        targetCheckboxText: 'Open in new window',
+
+        // Options for the Button base class
+        name: 'anchor',
+        action: 'createLink',
+        aria: 'link',
+        tagNames: ['a'],
+        contentDefault: '<b>#</b>',
+        contentFA: '<i class="fa fa-link"></i>',
+
+        init: function () {
+            MediumEditor.extensions.form.prototype.init.apply(this, arguments);
+
+            this.subscribe('editableKeydown', this.handleKeydown.bind(this));
+        },
+
+        // Called when the button the toolbar is clicked
+        // Overrides ButtonExtension.handleClick
+        handleClick: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var range = MediumEditor.selection.getSelectionRange(this.document);
+
+            if (range.startContainer.nodeName.toLowerCase() === 'a' ||
+                range.endContainer.nodeName.toLowerCase() === 'a' ||
+                MediumEditor.util.getClosestTag(MediumEditor.selection.getSelectedParentElement(range), 'a')) {
+                return this.execAction('unlink');
+            }
+
+            if (!this.isDisplayed()) {
+                this.showForm();
+            }
+
+            return false;
+        },
+
+        // Called when user hits the defined shortcut (CTRL / COMMAND + K)
+        handleKeydown: function (event) {
+            if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.K) && MediumEditor.util.isMetaCtrlKey(event) && !event.shiftKey) {
+                this.handleClick(event);
+            }
+        },
+
+        // Called by medium-editor to append form to the toolbar
+        getForm: function () {
+            if (!this.form) {
+                this.form = this.createForm();
+            }
+            return this.form;
+        },
+
+        getTemplate: function () {
+            var template = [
+                '<input type="text" class="medium-editor-toolbar-input" placeholder="', this.placeholderText, '">'
+            ];
+
+            template.push(
+                '<a href="#" class="medium-editor-toolbar-save">',
+                this.getEditorOption('buttonLabels') === 'fontawesome' ? '<i class="fa fa-check"></i>' : this.formSaveLabel,
+                '</a>'
+            );
+
+            template.push('<a href="#" class="medium-editor-toolbar-close">',
+                this.getEditorOption('buttonLabels') === 'fontawesome' ? '<i class="fa fa-times"></i>' : this.formCloseLabel,
+                '</a>');
+
+            // both of these options are slightly moot with the ability to
+            // override the various form buildup/serialize functions.
+
+            if (this.targetCheckbox) {
+                // fixme: ideally, this targetCheckboxText would be a formLabel too,
+                // figure out how to deprecate? also consider `fa-` icon default implcations.
+                template.push(
+                    '<div class="medium-editor-toolbar-form-row">',
+                    '<input type="checkbox" class="medium-editor-toolbar-anchor-target" id="medium-editor-toolbar-anchor-target-field-' + this.getEditorId() + '">',
+                    '<label for="medium-editor-toolbar-anchor-target-field-' + this.getEditorId() + '">',
+                    this.targetCheckboxText,
+                    '</label>',
+                    '</div>'
+                );
+            }
+
+            if (this.customClassOption) {
+                // fixme: expose this `Button` text as a formLabel property, too
+                // and provide similar access to a `fa-` icon default.
+                template.push(
+                    '<div class="medium-editor-toolbar-form-row">',
+                    '<input type="checkbox" class="medium-editor-toolbar-anchor-button">',
+                    '<label>',
+                    this.customClassOptionText,
+                    '</label>',
+                    '</div>'
+                );
+            }
+
+            return template.join('');
+
+        },
+
+        // Used by medium-editor when the default toolbar is to be displayed
+        isDisplayed: function () {
+            return MediumEditor.extensions.form.prototype.isDisplayed.apply(this);
+        },
+
+        hideForm: function () {
+            MediumEditor.extensions.form.prototype.hideForm.apply(this);
+            this.getInput().value = '';
+        },
+
+        showForm: function (opts) {
+            var input = this.getInput(),
+                targetCheckbox = this.getAnchorTargetCheckbox(),
+                buttonCheckbox = this.getAnchorButtonCheckbox();
+
+            opts = opts || { value: '' };
+            // TODO: This is for backwards compatability
+            // We don't need to support the 'string' argument in 6.0.0
+            if (typeof opts === 'string') {
+                opts = {
+                    value: opts
+                };
+            }
+
+            this.base.saveSelection();
+            this.hideToolbarDefaultActions();
+            MediumEditor.extensions.form.prototype.showForm.apply(this);
+            this.setToolbarPosition();
+
+            input.value = opts.value;
+            input.focus();
+
+            // If we have a target checkbox, we want it to be checked/unchecked
+            // based on whether the existing link has target=_blank
+            if (targetCheckbox) {
+                targetCheckbox.checked = opts.target === '_blank';
+            }
+
+            // If we have a custom class checkbox, we want it to be checked/unchecked
+            // based on whether an existing link already has the class
+            if (buttonCheckbox) {
+                var classList = opts.buttonClass ? opts.buttonClass.split(' ') : [];
+                buttonCheckbox.checked = (classList.indexOf(this.customClassOption) !== -1);
+            }
+        },
+
+        // Called by core when tearing down medium-editor (destroy)
+        destroy: function () {
+            if (!this.form) {
+                return false;
+            }
+
+            if (this.form.parentNode) {
+                this.form.parentNode.removeChild(this.form);
+            }
+
+            delete this.form;
+        },
+
+        // core methods
+
+        getFormOpts: function () {
+            // no notion of private functions? wanted `_getFormOpts`
+            var targetCheckbox = this.getAnchorTargetCheckbox(),
+                buttonCheckbox = this.getAnchorButtonCheckbox(),
+                opts = {
+                    value: this.getInput().value.trim()
+                };
+
+            if (this.linkValidation) {
+                opts.value = this.checkLinkFormat(opts.value);
+            }
+
+            opts.target = '_self';
+            if (targetCheckbox && targetCheckbox.checked) {
+                opts.target = '_blank';
+            }
+
+            if (buttonCheckbox && buttonCheckbox.checked) {
+                opts.buttonClass = this.customClassOption;
+            }
+
+            return opts;
+        },
+
+        doFormSave: function () {
+            var opts = this.getFormOpts();
+            this.completeFormSave(opts);
+        },
+
+        completeFormSave: function (opts) {
+            this.base.restoreSelection();
+            this.execAction(this.action, opts);
+            this.base.checkSelection();
+        },
+
+        ensureEncodedUri: function (str) {
+            return str === decodeURI(str) ? encodeURI(str) : str;
+        },
+
+        ensureEncodedUriComponent: function (str) {
+            return str === decodeURIComponent(str) ? encodeURIComponent(str) : str;
+        },
+
+        ensureEncodedParam: function (param) {
+            var split = param.split('='),
+                key = split[0],
+                val = split[1];
+
+            return key + (val === undefined ? '' : '=' + this.ensureEncodedUriComponent(val));
+        },
+
+        ensureEncodedQuery: function (queryString) {
+            return queryString.split('&').map(this.ensureEncodedParam.bind(this)).join('&');
+        },
+
+        checkLinkFormat: function (value) {
+            // Matches any alphabetical characters followed by ://
+            // Matches protocol relative "//"
+            // Matches common external protocols "mailto:" "tel:" "maps:"
+            // Matches relative hash link, begins with "#"
+            var urlSchemeRegex = /^([a-z]+:)?\/\/|^(mailto|tel|maps):|^\#/i,
+                hasScheme = urlSchemeRegex.test(value),
+                scheme = '',
+                // telRegex is a regex for checking if the string is a telephone number
+                telRegex = /^\+?\s?\(?(?:\d\s?\-?\)?){3,20}$/,
+                urlParts = value.match(/^(.*?)(?:\?(.*?))?(?:#(.*))?$/),
+                path = urlParts[1],
+                query = urlParts[2],
+                fragment = urlParts[3];
+
+            if (telRegex.test(value)) {
+                return 'tel:' + value;
+            }
+
+            if (!hasScheme) {
+                var host = path.split('/')[0];
+                // if the host part of the path looks like a hostname
+                if (host.match(/.+(\.|:).+/) || host === 'localhost') {
+                    scheme = 'http://';
+                }
+            }
+
+            return scheme +
+                // Ensure path is encoded
+                this.ensureEncodedUri(path) +
+                // Ensure query is encoded
+                (query === undefined ? '' : '?' + this.ensureEncodedQuery(query)) +
+                // Include fragment unencoded as encodeUriComponent is too
+                // heavy handed for the many characters allowed in a fragment
+                (fragment === undefined ? '' : '#' + fragment);
+        },
+
+        doFormCancel: function () {
+            this.base.restoreSelection();
+            this.base.checkSelection();
+        },
+
+        // form creation and event handling
+        attachFormEvents: function (form) {
+            var close = form.querySelector('.medium-editor-toolbar-close'),
+                save = form.querySelector('.medium-editor-toolbar-save'),
+                input = form.querySelector('.medium-editor-toolbar-input');
+
+            // Handle clicks on the form itself
+            this.on(form, 'click', this.handleFormClick.bind(this));
+
+            // Handle typing in the textbox
+            this.on(input, 'keyup', this.handleTextboxKeyup.bind(this));
+
+            // Handle close button clicks
+            this.on(close, 'click', this.handleCloseClick.bind(this));
+
+            // Handle save button clicks (capture)
+            this.on(save, 'click', this.handleSaveClick.bind(this), true);
+
+        },
+
+        createForm: function () {
+            var doc = this.document,
+                form = doc.createElement('div');
+
+            // Anchor Form (div)
+            form.className = 'medium-editor-toolbar-form';
+            form.id = 'medium-editor-toolbar-form-anchor-' + this.getEditorId();
+            form.innerHTML = this.getTemplate();
+            this.attachFormEvents(form);
+
+            return form;
+        },
+
+        getInput: function () {
+            return this.getForm().querySelector('input.medium-editor-toolbar-input');
+        },
+
+        getAnchorTargetCheckbox: function () {
+            return this.getForm().querySelector('.medium-editor-toolbar-anchor-target');
+        },
+
+        getAnchorButtonCheckbox: function () {
+            return this.getForm().querySelector('.medium-editor-toolbar-anchor-button');
+        },
+
+        handleTextboxKeyup: function (event) {
+            // For ENTER -> create the anchor
+            if (event.keyCode === MediumEditor.util.keyCode.ENTER) {
+                event.preventDefault();
+                this.doFormSave();
+                return;
+            }
+
+            // For ESCAPE -> close the form
+            if (event.keyCode === MediumEditor.util.keyCode.ESCAPE) {
+                event.preventDefault();
+                this.doFormCancel();
+            }
+        },
+
+        handleFormClick: function (event) {
+            // make sure not to hide form when clicking inside the form
+            event.stopPropagation();
+        },
+
+        handleSaveClick: function (event) {
+            // Clicking Save -> create the anchor
+            event.preventDefault();
+            this.doFormSave();
+        },
+
+        handleCloseClick: function (event) {
+            // Click Close -> close the form
+            event.preventDefault();
+            this.doFormCancel();
+        }
+    });
+
+    MediumEditor.extensions.anchor = AnchorForm;
+}());
+
+(function () {
+    'use strict';
+
+    var AnchorPreview = MediumEditor.Extension.extend({
+        name: 'anchor-preview',
+
+        // Anchor Preview Options
+
+        /* hideDelay: [number]  (previously options.anchorPreviewHideDelay)
+         * time in milliseconds to show the anchor tag preview after the mouse has left the anchor tag.
+         */
+        hideDelay: 500,
+
+        /* previewValueSelector: [string]
+         * the default selector to locate where to put the activeAnchor value in the preview
+         */
+        previewValueSelector: 'a',
+
+        /* showWhenToolbarIsVisible: [boolean]
+         * determines whether the anchor tag preview shows up when the toolbar is visible
+         */
+        showWhenToolbarIsVisible: false,
+
+        /* showOnEmptyLinks: [boolean]
+        * determines whether the anchor tag preview shows up on links with href="" or href="#something"
+        */
+        showOnEmptyLinks: true,
+
+        init: function () {
+            this.anchorPreview = this.createPreview();
+
+            this.getEditorOption('elementsContainer').appendChild(this.anchorPreview);
+
+            this.attachToEditables();
+        },
+
+        getInteractionElements: function () {
+            return this.getPreviewElement();
+        },
+
+        // TODO: Remove this function in 6.0.0
+        getPreviewElement: function () {
+            return this.anchorPreview;
+        },
+
+        createPreview: function () {
+            var el = this.document.createElement('div');
+
+            el.id = 'medium-editor-anchor-preview-' + this.getEditorId();
+            el.className = 'medium-editor-anchor-preview';
+            el.innerHTML = this.getTemplate();
+
+            this.on(el, 'click', this.handleClick.bind(this));
+
+            return el;
+        },
+
+        getTemplate: function () {
+            return '<div class="medium-editor-toolbar-anchor-preview" id="medium-editor-toolbar-anchor-preview">' +
+                '    <a class="medium-editor-toolbar-anchor-preview-inner"></a>' +
+                '</div>';
+        },
+
+        destroy: function () {
+            if (this.anchorPreview) {
+                if (this.anchorPreview.parentNode) {
+                    this.anchorPreview.parentNode.removeChild(this.anchorPreview);
+                }
+                delete this.anchorPreview;
+            }
+        },
+
+        hidePreview: function () {
+            if (this.anchorPreview) {
+                this.anchorPreview.classList.remove('medium-editor-anchor-preview-active');
+            }
+            this.activeAnchor = null;
+        },
+
+        showPreview: function (anchorEl) {
+            if (this.anchorPreview.classList.contains('medium-editor-anchor-preview-active') ||
+                    anchorEl.getAttribute('data-disable-preview')) {
+                return true;
+            }
+
+            if (this.previewValueSelector) {
+                this.anchorPreview.querySelector(this.previewValueSelector).textContent = anchorEl.attributes.href.value;
+                this.anchorPreview.querySelector(this.previewValueSelector).href = anchorEl.attributes.href.value;
+            }
+
+            this.anchorPreview.classList.add('medium-toolbar-arrow-over');
+            this.anchorPreview.classList.remove('medium-toolbar-arrow-under');
+
+            if (!this.anchorPreview.classList.contains('medium-editor-anchor-preview-active')) {
+                this.anchorPreview.classList.add('medium-editor-anchor-preview-active');
+            }
+
+            this.activeAnchor = anchorEl;
+
+            this.positionPreview();
+            this.attachPreviewHandlers();
+
+            return this;
+        },
+
+        positionPreview: function (activeAnchor) {
+            activeAnchor = activeAnchor || this.activeAnchor;
+            var containerWidth = this.window.innerWidth,
+                buttonHeight = this.anchorPreview.offsetHeight,
+                boundary = activeAnchor.getBoundingClientRect(),
+                diffLeft = this.diffLeft,
+                diffTop = this.diffTop,
+                elementsContainer = this.getEditorOption('elementsContainer'),
+                elementsContainerAbsolute = ['absolute', 'fixed'].indexOf(window.getComputedStyle(elementsContainer).getPropertyValue('position')) > -1,
+                relativeBoundary = {},
+                halfOffsetWidth, defaultLeft, middleBoundary, elementsContainerBoundary, top;
+
+            halfOffsetWidth = this.anchorPreview.offsetWidth / 2;
+            var toolbarExtension = this.base.getExtensionByName('toolbar');
+            if (toolbarExtension) {
+                diffLeft = toolbarExtension.diffLeft;
+                diffTop = toolbarExtension.diffTop;
+            }
+            defaultLeft = diffLeft - halfOffsetWidth;
+
+            // If container element is absolute / fixed, recalculate boundaries to be relative to the container
+            if (elementsContainerAbsolute) {
+                elementsContainerBoundary = elementsContainer.getBoundingClientRect();
+                ['top', 'left'].forEach(function (key) {
+                    relativeBoundary[key] = boundary[key] - elementsContainerBoundary[key];
+                });
+
+                relativeBoundary.width = boundary.width;
+                relativeBoundary.height = boundary.height;
+                boundary = relativeBoundary;
+
+                containerWidth = elementsContainerBoundary.width;
+
+                // Adjust top position according to container scroll position
+                top = elementsContainer.scrollTop;
+            } else {
+                // Adjust top position according to window scroll position
+                top = this.window.pageYOffset;
+            }
+
+            middleBoundary = boundary.left + boundary.width / 2;
+            top += buttonHeight + boundary.top + boundary.height - diffTop - this.anchorPreview.offsetHeight;
+
+            this.anchorPreview.style.top = Math.round(top) + 'px';
+            this.anchorPreview.style.right = 'initial';
+            if (middleBoundary < halfOffsetWidth) {
+                this.anchorPreview.style.left = defaultLeft + halfOffsetWidth + 'px';
+                this.anchorPreview.style.right = 'initial';
+            } else if ((containerWidth - middleBoundary) < halfOffsetWidth) {
+                this.anchorPreview.style.left = 'auto';
+                this.anchorPreview.style.right = 0;
+            } else {
+                this.anchorPreview.style.left = defaultLeft + middleBoundary + 'px';
+                this.anchorPreview.style.right = 'initial';
+            }
+        },
+
+        attachToEditables: function () {
+            this.subscribe('editableMouseover', this.handleEditableMouseover.bind(this));
+            this.subscribe('positionedToolbar', this.handlePositionedToolbar.bind(this));
+        },
+
+        handlePositionedToolbar: function () {
+            // If the toolbar is visible and positioned, we don't need to hide the preview
+            // when showWhenToolbarIsVisible is true
+            if (!this.showWhenToolbarIsVisible) {
+                this.hidePreview();
+            }
+        },
+
+        handleClick: function (event) {
+            var anchorExtension = this.base.getExtensionByName('anchor'),
+                activeAnchor = this.activeAnchor;
+
+            if (anchorExtension && activeAnchor) {
+                event.preventDefault();
+
+                this.base.selectElement(this.activeAnchor);
+
+                // Using setTimeout + delay because:
+                // We may actually be displaying the anchor form, which should be controlled by delay
+                this.base.delay(function () {
+                    if (activeAnchor) {
+                        var opts = {
+                            value: activeAnchor.attributes.href.value,
+                            target: activeAnchor.getAttribute('target'),
+                            buttonClass: activeAnchor.getAttribute('class')
+                        };
+                        anchorExtension.showForm(opts);
+                        activeAnchor = null;
+                    }
+                }.bind(this));
+            }
+
+            this.hidePreview();
+        },
+
+        handleAnchorMouseout: function () {
+            this.anchorToPreview = null;
+            this.off(this.activeAnchor, 'mouseout', this.instanceHandleAnchorMouseout);
+            this.instanceHandleAnchorMouseout = null;
+        },
+
+        handleEditableMouseover: function (event) {
+            var target = MediumEditor.util.getClosestTag(event.target, 'a');
+
+            if (false === target) {
+                return;
+            }
+
+            // Detect empty href attributes
+            // The browser will make href="" or href="#top"
+            // into absolute urls when accessed as event.target.href, so check the html
+            if (!this.showOnEmptyLinks &&
+                (!/href=["']\S+["']/.test(target.outerHTML) || /href=["']#\S+["']/.test(target.outerHTML))) {
+                return true;
+            }
+
+            // only show when toolbar is not present
+            var toolbar = this.base.getExtensionByName('toolbar');
+            if (!this.showWhenToolbarIsVisible && toolbar && toolbar.isDisplayed && toolbar.isDisplayed()) {
+                return true;
+            }
+
+            // detach handler for other anchor in case we hovered multiple anchors quickly
+            if (this.activeAnchor && this.activeAnchor !== target) {
+                this.detachPreviewHandlers();
+            }
+
+            this.anchorToPreview = target;
+
+            this.instanceHandleAnchorMouseout = this.handleAnchorMouseout.bind(this);
+            this.on(this.anchorToPreview, 'mouseout', this.instanceHandleAnchorMouseout);
+            // Using setTimeout + delay because:
+            // - We're going to show the anchor preview according to the configured delay
+            //   if the mouse has not left the anchor tag in that time
+            this.base.delay(function () {
+                if (this.anchorToPreview) {
+                    this.showPreview(this.anchorToPreview);
+                }
+            }.bind(this));
+        },
+
+        handlePreviewMouseover: function () {
+            this.lastOver = (new Date()).getTime();
+            this.hovering = true;
+        },
+
+        handlePreviewMouseout: function (event) {
+            if (!event.relatedTarget || !/anchor-preview/.test(event.relatedTarget.className)) {
+                this.hovering = false;
+            }
+        },
+
+        updatePreview: function () {
+            if (this.hovering) {
+                return true;
+            }
+            var durr = (new Date()).getTime() - this.lastOver;
+            if (durr > this.hideDelay) {
+                // hide the preview 1/2 second after mouse leaves the link
+                this.detachPreviewHandlers();
+            }
+        },
+
+        detachPreviewHandlers: function () {
+            // cleanup
+            clearInterval(this.intervalTimer);
+            if (this.instanceHandlePreviewMouseover) {
+                this.off(this.anchorPreview, 'mouseover', this.instanceHandlePreviewMouseover);
+                this.off(this.anchorPreview, 'mouseout', this.instanceHandlePreviewMouseout);
+                if (this.activeAnchor) {
+                    this.off(this.activeAnchor, 'mouseover', this.instanceHandlePreviewMouseover);
+                    this.off(this.activeAnchor, 'mouseout', this.instanceHandlePreviewMouseout);
+                }
+            }
+
+            this.hidePreview();
+
+            this.hovering = this.instanceHandlePreviewMouseover = this.instanceHandlePreviewMouseout = null;
+        },
+
+        // TODO: break up method and extract out handlers
+        attachPreviewHandlers: function () {
+            this.lastOver = (new Date()).getTime();
+            this.hovering = true;
+
+            this.instanceHandlePreviewMouseover = this.handlePreviewMouseover.bind(this);
+            this.instanceHandlePreviewMouseout = this.handlePreviewMouseout.bind(this);
+
+            this.intervalTimer = setInterval(this.updatePreview.bind(this), 200);
+
+            this.on(this.anchorPreview, 'mouseover', this.instanceHandlePreviewMouseover);
+            this.on(this.anchorPreview, 'mouseout', this.instanceHandlePreviewMouseout);
+            this.on(this.activeAnchor, 'mouseover', this.instanceHandlePreviewMouseover);
+            this.on(this.activeAnchor, 'mouseout', this.instanceHandlePreviewMouseout);
+        }
+    });
+
+    MediumEditor.extensions.anchorPreview = AnchorPreview;
+}());
+
+(function () {
+    'use strict';
+
+    var WHITESPACE_CHARS,
+        KNOWN_TLDS_FRAGMENT,
+        LINK_REGEXP_TEXT,
+        KNOWN_TLDS_REGEXP,
+        LINK_REGEXP;
+
+    WHITESPACE_CHARS = [' ', '\t', '\n', '\r', '\u00A0', '\u2000', '\u2001', '\u2002', '\u2003',
+                                    '\u2028', '\u2029'];
+    KNOWN_TLDS_FRAGMENT = 'com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|' +
+        'xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|' +
+        'bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|' +
+        'fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|' +
+        'is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|' +
+        'mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|' +
+        'pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|' +
+        'tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw';
+
+    LINK_REGEXP_TEXT =
+        '(' +
+        // Version of Gruber URL Regexp optimized for JS: http://stackoverflow.com/a/17733640
+        '((?:(https?://|ftps?://|nntp://)|www\\d{0,3}[.]|[a-z0-9.\\-]+[.](' + KNOWN_TLDS_FRAGMENT + ')\\\/)\\S+(?:[^\\s`!\\[\\]{};:\'\".,?\u00AB\u00BB\u201C\u201D\u2018\u2019]))' +
+        // Addition to above Regexp to support bare domains/one level subdomains with common non-i18n TLDs and without www prefix:
+        ')|(([a-z0-9\\-]+\\.)?[a-z0-9\\-]+\\.(' + KNOWN_TLDS_FRAGMENT + '))';
+
+    KNOWN_TLDS_REGEXP = new RegExp('^(' + KNOWN_TLDS_FRAGMENT + ')$', 'i');
+
+    LINK_REGEXP = new RegExp(LINK_REGEXP_TEXT, 'gi');
+
+    function nodeIsNotInsideAnchorTag(node) {
+        return !MediumEditor.util.getClosestTag(node, 'a');
+    }
+
+    var AutoLink = MediumEditor.Extension.extend({
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.disableEventHandling = false;
+            this.subscribe('editableKeypress', this.onKeypress.bind(this));
+            this.subscribe('editableBlur', this.onBlur.bind(this));
+            // MS IE has it's own auto-URL detect feature but ours is better in some ways. Be consistent.
+            this.document.execCommand('AutoUrlDetect', false, false);
+        },
+
+        isLastInstance: function () {
+            var activeInstances = 0;
+            for (var i = 0; i < this.window._mediumEditors.length; i++) {
+                var editor = this.window._mediumEditors[i];
+                if (editor !== null && editor.getExtensionByName('autoLink') !== undefined) {
+                    activeInstances++;
+                }
+            }
+            return activeInstances === 1;
+        },
+
+        destroy: function () {
+            // Turn AutoUrlDetect back on
+            if (this.document.queryCommandSupported('AutoUrlDetect') && this.isLastInstance()) {
+                this.document.execCommand('AutoUrlDetect', false, true);
+            }
+        },
+
+        onBlur: function (blurEvent, editable) {
+            this.performLinking(editable);
+        },
+
+        onKeypress: function (keyPressEvent) {
+            if (this.disableEventHandling) {
+                return;
+            }
+
+            if (MediumEditor.util.isKey(keyPressEvent, [MediumEditor.util.keyCode.SPACE, MediumEditor.util.keyCode.ENTER])) {
+                clearTimeout(this.performLinkingTimeout);
+                // Saving/restoring the selection in the middle of a keypress doesn't work well...
+                this.performLinkingTimeout = setTimeout(function () {
+                    try {
+                        var sel = this.base.exportSelection();
+                        if (this.performLinking(keyPressEvent.target)) {
+                            // pass true for favorLaterSelectionAnchor - this is needed for links at the end of a
+                            // paragraph in MS IE, or MS IE causes the link to be deleted right after adding it.
+                            this.base.importSelection(sel, true);
+                        }
+                    } catch (e) {
+                        if (window.console) {
+                            window.console.error('Failed to perform linking', e);
+                        }
+                        this.disableEventHandling = true;
+                    }
+                }.bind(this), 0);
+            }
+        },
+
+        performLinking: function (contenteditable) {
+            /*
+            Perform linking on blockElement basis, blockElements are HTML elements with text content and without
+            child element.
+
+            Example:
+            - HTML content
+            <blockquote>
+              <p>link.</p>
+              <p>my</p>
+            </blockquote>
+
+            - blockElements
+            [<p>link.</p>, <p>my</p>]
+
+            otherwise the detection can wrongly find the end of one paragraph and the beginning of another paragraph
+            to constitute a link, such as a paragraph ending "link." and the next paragraph beginning with "my" is
+            interpreted into "link.my" and the code tries to create a link across blockElements - which doesn't work
+            and is terrible.
+            (Medium deletes the spaces/returns between P tags so the textContent ends up without paragraph spacing)
+            */
+            var blockElements = MediumEditor.util.splitByBlockElements(contenteditable),
+                documentModified = false;
+            if (blockElements.length === 0) {
+                blockElements = [contenteditable];
+            }
+            for (var i = 0; i < blockElements.length; i++) {
+                documentModified = this.removeObsoleteAutoLinkSpans(blockElements[i]) || documentModified;
+                documentModified = this.performLinkingWithinElement(blockElements[i]) || documentModified;
+            }
+            this.base.events.updateInput(contenteditable, { target: contenteditable, currentTarget: contenteditable });
+            return documentModified;
+        },
+
+        removeObsoleteAutoLinkSpans: function (element) {
+            if (!element || element.nodeType === 3) {
+                return false;
+            }
+
+            var spans = element.querySelectorAll('span[data-auto-link="true"]'),
+                documentModified = false;
+
+            for (var i = 0; i < spans.length; i++) {
+                var textContent = spans[i].textContent;
+                if (textContent.indexOf('://') === -1) {
+                    textContent = MediumEditor.util.ensureUrlHasProtocol(textContent);
+                }
+                if (spans[i].getAttribute('data-href') !== textContent && nodeIsNotInsideAnchorTag(spans[i])) {
+                    documentModified = true;
+                    var trimmedTextContent = textContent.replace(/\s+$/, '');
+                    if (spans[i].getAttribute('data-href') === trimmedTextContent) {
+                        var charactersTrimmed = textContent.length - trimmedTextContent.length,
+                            subtree = MediumEditor.util.splitOffDOMTree(spans[i], this.splitTextBeforeEnd(spans[i], charactersTrimmed));
+                        spans[i].parentNode.insertBefore(subtree, spans[i].nextSibling);
+                    } else {
+                        // Some editing has happened to the span, so just remove it entirely. The user can put it back
+                        // around just the href content if they need to prevent it from linking
+                        MediumEditor.util.unwrap(spans[i], this.document);
+                    }
+                }
+            }
+            return documentModified;
+        },
+
+        splitTextBeforeEnd: function (element, characterCount) {
+            var treeWalker = this.document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false),
+                lastChildNotExhausted = true;
+
+            // Start the tree walker at the last descendant of the span
+            while (lastChildNotExhausted) {
+                lastChildNotExhausted = treeWalker.lastChild() !== null;
+            }
+
+            var currentNode,
+                currentNodeValue,
+                previousNode;
+            while (characterCount > 0 && previousNode !== null) {
+                currentNode = treeWalker.currentNode;
+                currentNodeValue = currentNode.nodeValue;
+                if (currentNodeValue.length > characterCount) {
+                    previousNode = currentNode.splitText(currentNodeValue.length - characterCount);
+                    characterCount = 0;
+                } else {
+                    previousNode = treeWalker.previousNode();
+                    characterCount -= currentNodeValue.length;
+                }
+            }
+            return previousNode;
+        },
+
+        performLinkingWithinElement: function (element) {
+            var matches = this.findLinkableText(element),
+                linkCreated = false;
+
+            for (var matchIndex = 0; matchIndex < matches.length; matchIndex++) {
+                var matchingTextNodes = MediumEditor.util.findOrCreateMatchingTextNodes(this.document, element,
+                        matches[matchIndex]);
+                if (this.shouldNotLink(matchingTextNodes)) {
+                    continue;
+                }
+                this.createAutoLink(matchingTextNodes, matches[matchIndex].href);
+            }
+            return linkCreated;
+        },
+
+        shouldNotLink: function (textNodes) {
+            var shouldNotLink = false;
+            for (var i = 0; i < textNodes.length && shouldNotLink === false; i++) {
+                // Do not link if the text node is either inside an anchor or inside span[data-auto-link]
+                shouldNotLink = !!MediumEditor.util.traverseUp(textNodes[i], function (node) {
+                    return node.nodeName.toLowerCase() === 'a' ||
+                        (node.getAttribute && node.getAttribute('data-auto-link') === 'true');
+                });
+            }
+            return shouldNotLink;
+        },
+
+        findLinkableText: function (contenteditable) {
+            var textContent = contenteditable.textContent,
+                match = null,
+                matches = [];
+
+            while ((match = LINK_REGEXP.exec(textContent)) !== null) {
+                var matchOk = true,
+                    matchEnd = match.index + match[0].length;
+                // If the regexp detected something as a link that has text immediately preceding/following it, bail out.
+                matchOk = (match.index === 0 || WHITESPACE_CHARS.indexOf(textContent[match.index - 1]) !== -1) &&
+                    (matchEnd === textContent.length || WHITESPACE_CHARS.indexOf(textContent[matchEnd]) !== -1);
+                // If the regexp detected a bare domain that doesn't use one of our expected TLDs, bail out.
+                matchOk = matchOk && (match[0].indexOf('/') !== -1 ||
+                    KNOWN_TLDS_REGEXP.test(match[0].split('.').pop().split('?').shift()));
+
+                if (matchOk) {
+                    matches.push({
+                        href: match[0],
+                        start: match.index,
+                        end: matchEnd
+                    });
+                }
+            }
+            return matches;
+        },
+
+        createAutoLink: function (textNodes, href) {
+            href = MediumEditor.util.ensureUrlHasProtocol(href);
+            var anchor = MediumEditor.util.createLink(this.document, textNodes, href, this.getEditorOption('targetBlank') ? '_blank' : null),
+                span = this.document.createElement('span');
+            span.setAttribute('data-auto-link', 'true');
+            span.setAttribute('data-href', href);
+            anchor.insertBefore(span, anchor.firstChild);
+            while (anchor.childNodes.length > 1) {
+                span.appendChild(anchor.childNodes[1]);
+            }
+        }
+
+    });
+
+    MediumEditor.extensions.autoLink = AutoLink;
+}());
+
+(function () {
+    'use strict';
+
+    var CLASS_DRAG_OVER = 'medium-editor-dragover';
+
+    function clearClassNames(element) {
+        var editable = MediumEditor.util.getContainerEditorElement(element),
+            existing = Array.prototype.slice.call(editable.parentElement.querySelectorAll('.' + CLASS_DRAG_OVER));
+
+        existing.forEach(function (el) {
+            el.classList.remove(CLASS_DRAG_OVER);
+        });
+    }
+
+    var FileDragging = MediumEditor.Extension.extend({
+        name: 'fileDragging',
+
+        allowedTypes: ['image'],
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.subscribe('editableDrag', this.handleDrag.bind(this));
+            this.subscribe('editableDrop', this.handleDrop.bind(this));
+        },
+
+        handleDrag: function (event) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'copy';
+
+            var target = event.target.classList ? event.target : event.target.parentElement;
+
+            // Ensure the class gets removed from anything that had it before
+            clearClassNames(target);
+
+            if (event.type === 'dragover') {
+                target.classList.add(CLASS_DRAG_OVER);
+            }
+        },
+
+        handleDrop: function (event) {
+            // Prevent file from opening in the current window
+            event.preventDefault();
+            event.stopPropagation();
+            // Select the dropping target, and set the selection to the end of the target
+            // https://github.com/yabwe/medium-editor/issues/980
+            this.base.selectElement(event.target);
+            var selection = this.base.exportSelection();
+            selection.start = selection.end;
+            this.base.importSelection(selection);
+            // IE9 does not support the File API, so prevent file from opening in the window
+            // but also don't try to actually get the file
+            if (event.dataTransfer.files) {
+                Array.prototype.slice.call(event.dataTransfer.files).forEach(function (file) {
+                    if (this.isAllowedFile(file)) {
+                        if (file.type.match('image')) {
+                            this.insertImageFile(file);
+                        }
+                    }
+                }, this);
+            }
+
+            // Make sure we remove our class from everything
+            clearClassNames(event.target);
+        },
+
+        isAllowedFile: function (file) {
+            return this.allowedTypes.some(function (fileType) {
+                return !!file.type.match(fileType);
+            });
+        },
+
+        insertImageFile: function (file) {
+            if (typeof FileReader !== 'function') {
+                return;
+            }
+            var fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+
+            // attach the onload event handler, makes it easier to listen in with jasmine
+            fileReader.addEventListener('load', function (e) {
+                var addImageElement = this.document.createElement('img');
+                addImageElement.src = e.target.result;
+                MediumEditor.util.insertHTMLCommand(this.document, addImageElement.outerHTML);
+            }.bind(this));
+        }
+    });
+
+    MediumEditor.extensions.fileDragging = FileDragging;
+}());
+
+(function () {
+    'use strict';
+
+    var KeyboardCommands = MediumEditor.Extension.extend({
+        name: 'keyboard-commands',
+
+        /* KeyboardCommands Options */
+
+        /* commands: [Array]
+         * Array of objects describing each command and the combination of keys that will trigger it
+         * Required for each object:
+         *   command [String] (argument passed to editor.execAction())
+         *   key [String] (keyboard character that triggers this command)
+         *   meta [boolean] (whether the ctrl/meta key has to be active or inactive)
+         *   shift [boolean] (whether the shift key has to be active or inactive)
+         *   alt [boolean] (whether the alt key has to be active or inactive)
+         */
+        commands: [
+            {
+                command: 'bold',
+                key: 'B',
+                meta: true,
+                shift: false,
+                alt: false
+            },
+            {
+                command: 'italic',
+                key: 'I',
+                meta: true,
+                shift: false,
+                alt: false
+            },
+            {
+                command: 'underline',
+                key: 'U',
+                meta: true,
+                shift: false,
+                alt: false
+            }
+        ],
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.subscribe('editableKeydown', this.handleKeydown.bind(this));
+            this.keys = {};
+            this.commands.forEach(function (command) {
+                var keyCode = command.key.charCodeAt(0);
+                if (!this.keys[keyCode]) {
+                    this.keys[keyCode] = [];
+                }
+                this.keys[keyCode].push(command);
+            }, this);
+        },
+
+        handleKeydown: function (event) {
+            var keyCode = MediumEditor.util.getKeyCode(event);
+            if (!this.keys[keyCode]) {
+                return;
+            }
+
+            var isMeta = MediumEditor.util.isMetaCtrlKey(event),
+                isShift = !!event.shiftKey,
+                isAlt = !!event.altKey;
+
+            this.keys[keyCode].forEach(function (data) {
+                if (data.meta === isMeta &&
+                    data.shift === isShift &&
+                    (data.alt === isAlt ||
+                     undefined === data.alt)) { // TODO deprecated: remove check for undefined === data.alt when jumping to 6.0.0
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    // command can be a function to execute
+                    if (typeof data.command === 'function') {
+                        data.command.apply(this);
+                    }
+                    // command can be false so the shortcut is just disabled
+                    else if (false !== data.command) {
+                        this.execAction(data.command);
+                    }
+                }
+            }, this);
+        }
+    });
+
+    MediumEditor.extensions.keyboardCommands = KeyboardCommands;
+}());
+
+(function () {
+    'use strict';
+
+    var FontNameForm = MediumEditor.extensions.form.extend({
+
+        name: 'fontname',
+        action: 'fontName',
+        aria: 'change font name',
+        contentDefault: '&#xB1;', // ±
+        contentFA: '<i class="fa fa-font"></i>',
+
+        fonts: ['', 'Arial', 'Verdana', 'Times New Roman'],
+
+        init: function () {
+            MediumEditor.extensions.form.prototype.init.apply(this, arguments);
+        },
+
+        // Called when the button the toolbar is clicked
+        // Overrides ButtonExtension.handleClick
+        handleClick: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (!this.isDisplayed()) {
+                // Get FontName of current selection (convert to string since IE returns this as number)
+                var fontName = this.document.queryCommandValue('fontName') + '';
+                this.showForm(fontName);
+            }
+
+            return false;
+        },
+
+        // Called by medium-editor to append form to the toolbar
+        getForm: function () {
+            if (!this.form) {
+                this.form = this.createForm();
+            }
+            return this.form;
+        },
+
+        // Used by medium-editor when the default toolbar is to be displayed
+        isDisplayed: function () {
+            return this.getForm().style.display === 'block';
+        },
+
+        hideForm: function () {
+            this.getForm().style.display = 'none';
+            this.getSelect().value = '';
+        },
+
+        showForm: function (fontName) {
+            var select = this.getSelect();
+
+            this.base.saveSelection();
+            this.hideToolbarDefaultActions();
+            this.getForm().style.display = 'block';
+            this.setToolbarPosition();
+
+            select.value = fontName || '';
+            select.focus();
+        },
+
+        // Called by core when tearing down medium-editor (destroy)
+        destroy: function () {
+            if (!this.form) {
+                return false;
+            }
+
+            if (this.form.parentNode) {
+                this.form.parentNode.removeChild(this.form);
+            }
+
+            delete this.form;
+        },
+
+        // core methods
+
+        doFormSave: function () {
+            this.base.restoreSelection();
+            this.base.checkSelection();
+        },
+
+        doFormCancel: function () {
+            this.base.restoreSelection();
+            this.clearFontName();
+            this.base.checkSelection();
+        },
+
+        // form creation and event handling
+        createForm: function () {
+            var doc = this.document,
+                form = doc.createElement('div'),
+                select = doc.createElement('select'),
+                close = doc.createElement('a'),
+                save = doc.createElement('a'),
+                option;
+
+            // Font Name Form (div)
+            form.className = 'medium-editor-toolbar-form';
+            form.id = 'medium-editor-toolbar-form-fontname-' + this.getEditorId();
+
+            // Handle clicks on the form itself
+            this.on(form, 'click', this.handleFormClick.bind(this));
+
+            // Add font names
+            for (var i = 0; i<this.fonts.length; i++) {
+                option = doc.createElement('option');
+                option.innerHTML = this.fonts[i];
+                option.value = this.fonts[i];
+                select.appendChild(option);
+            }
+
+            select.className = 'medium-editor-toolbar-select';
+            form.appendChild(select);
+
+            // Handle typing in the textbox
+            this.on(select, 'change', this.handleFontChange.bind(this));
+
+            // Add save buton
+            save.setAttribute('href', '#');
+            save.className = 'medium-editor-toobar-save';
+            save.innerHTML = this.getEditorOption('buttonLabels') === 'fontawesome' ?
+                             '<i class="fa fa-check"></i>' :
+                             '&#10003;';
+            form.appendChild(save);
+
+            // Handle save button clicks (capture)
+            this.on(save, 'click', this.handleSaveClick.bind(this), true);
+
+            // Add close button
+            close.setAttribute('href', '#');
+            close.className = 'medium-editor-toobar-close';
+            close.innerHTML = this.getEditorOption('buttonLabels') === 'fontawesome' ?
+                              '<i class="fa fa-times"></i>' :
+                              '&times;';
+            form.appendChild(close);
+
+            // Handle close button clicks
+            this.on(close, 'click', this.handleCloseClick.bind(this));
+
+            return form;
+        },
+
+        getSelect: function () {
+            return this.getForm().querySelector('select.medium-editor-toolbar-select');
+        },
+
+        clearFontName: function () {
+            MediumEditor.selection.getSelectedElements(this.document).forEach(function (el) {
+                if (el.nodeName.toLowerCase() === 'font' && el.hasAttribute('face')) {
+                    el.removeAttribute('face');
+                }
+            });
+        },
+
+        handleFontChange: function () {
+            var font = this.getSelect().value;
+            if (font === '') {
+                this.clearFontName();
+            } else {
+                this.execAction('fontName', { value: font });
+            }
+        },
+
+        handleFormClick: function (event) {
+            // make sure not to hide form when clicking inside the form
+            event.stopPropagation();
+        },
+
+        handleSaveClick: function (event) {
+            // Clicking Save -> create the font size
+            event.preventDefault();
+            this.doFormSave();
+        },
+
+        handleCloseClick: function (event) {
+            // Click Close -> close the form
+            event.preventDefault();
+            this.doFormCancel();
+        }
+    });
+
+    MediumEditor.extensions.fontName = FontNameForm;
+}());
+
+(function () {
+    'use strict';
+
+    var FontSizeForm = MediumEditor.extensions.form.extend({
+
+        name: 'fontsize',
+        action: 'fontSize',
+        aria: 'increase/decrease font size',
+        contentDefault: '&#xB1;', // ±
+        contentFA: '<i class="fa fa-text-height"></i>',
+
+        init: function () {
+            MediumEditor.extensions.form.prototype.init.apply(this, arguments);
+        },
+
+        // Called when the button the toolbar is clicked
+        // Overrides ButtonExtension.handleClick
+        handleClick: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (!this.isDisplayed()) {
+                // Get fontsize of current selection (convert to string since IE returns this as number)
+                var fontSize = this.document.queryCommandValue('fontSize') + '';
+                this.showForm(fontSize);
+            }
+
+            return false;
+        },
+
+        // Called by medium-editor to append form to the toolbar
+        getForm: function () {
+            if (!this.form) {
+                this.form = this.createForm();
+            }
+            return this.form;
+        },
+
+        // Used by medium-editor when the default toolbar is to be displayed
+        isDisplayed: function () {
+            return this.getForm().style.display === 'block';
+        },
+
+        hideForm: function () {
+            this.getForm().style.display = 'none';
+            this.getInput().value = '';
+        },
+
+        showForm: function (fontSize) {
+            var input = this.getInput();
+
+            this.base.saveSelection();
+            this.hideToolbarDefaultActions();
+            this.getForm().style.display = 'block';
+            this.setToolbarPosition();
+
+            input.value = fontSize || '';
+            input.focus();
+        },
+
+        // Called by core when tearing down medium-editor (destroy)
+        destroy: function () {
+            if (!this.form) {
+                return false;
+            }
+
+            if (this.form.parentNode) {
+                this.form.parentNode.removeChild(this.form);
+            }
+
+            delete this.form;
+        },
+
+        // core methods
+
+        doFormSave: function () {
+            this.base.restoreSelection();
+            this.base.checkSelection();
+        },
+
+        doFormCancel: function () {
+            this.base.restoreSelection();
+            this.clearFontSize();
+            this.base.checkSelection();
+        },
+
+        // form creation and event handling
+        createForm: function () {
+            var doc = this.document,
+                form = doc.createElement('div'),
+                input = doc.createElement('input'),
+                close = doc.createElement('a'),
+                save = doc.createElement('a');
+
+            // Font Size Form (div)
+            form.className = 'medium-editor-toolbar-form';
+            form.id = 'medium-editor-toolbar-form-fontsize-' + this.getEditorId();
+
+            // Handle clicks on the form itself
+            this.on(form, 'click', this.handleFormClick.bind(this));
+
+            // Add font size slider
+            input.setAttribute('type', 'range');
+            input.setAttribute('min', '1');
+            input.setAttribute('max', '7');
+            input.className = 'medium-editor-toolbar-input';
+            form.appendChild(input);
+
+            // Handle typing in the textbox
+            this.on(input, 'change', this.handleSliderChange.bind(this));
+
+            // Add save buton
+            save.setAttribute('href', '#');
+            save.className = 'medium-editor-toobar-save';
+            save.innerHTML = this.getEditorOption('buttonLabels') === 'fontawesome' ?
+                             '<i class="fa fa-check"></i>' :
+                             '&#10003;';
+            form.appendChild(save);
+
+            // Handle save button clicks (capture)
+            this.on(save, 'click', this.handleSaveClick.bind(this), true);
+
+            // Add close button
+            close.setAttribute('href', '#');
+            close.className = 'medium-editor-toobar-close';
+            close.innerHTML = this.getEditorOption('buttonLabels') === 'fontawesome' ?
+                              '<i class="fa fa-times"></i>' :
+                              '&times;';
+            form.appendChild(close);
+
+            // Handle close button clicks
+            this.on(close, 'click', this.handleCloseClick.bind(this));
+
+            return form;
+        },
+
+        getInput: function () {
+            return this.getForm().querySelector('input.medium-editor-toolbar-input');
+        },
+
+        clearFontSize: function () {
+            MediumEditor.selection.getSelectedElements(this.document).forEach(function (el) {
+                if (el.nodeName.toLowerCase() === 'font' && el.hasAttribute('size')) {
+                    el.removeAttribute('size');
+                }
+            });
+        },
+
+        handleSliderChange: function () {
+            var size = this.getInput().value;
+            if (size === '4') {
+                this.clearFontSize();
+            } else {
+                this.execAction('fontSize', { value: size });
+            }
+        },
+
+        handleFormClick: function (event) {
+            // make sure not to hide form when clicking inside the form
+            event.stopPropagation();
+        },
+
+        handleSaveClick: function (event) {
+            // Clicking Save -> create the font size
+            event.preventDefault();
+            this.doFormSave();
+        },
+
+        handleCloseClick: function (event) {
+            // Click Close -> close the form
+            event.preventDefault();
+            this.doFormCancel();
+        }
+    });
+
+    MediumEditor.extensions.fontSize = FontSizeForm;
+}());
+(function () {
+    'use strict';
+
+    /* Helpers and internal variables that don't need to be members of actual paste handler */
+
+    var pasteBinDefaultContent = '%ME_PASTEBIN%',
+        lastRange = null,
+        keyboardPasteEditable = null,
+        stopProp = function (event) {
+            event.stopPropagation();
+        };
+
+    /*jslint regexp: true*/
+    /*
+        jslint does not allow character negation, because the negation
+        will not match any unicode characters. In the regexes in this
+        block, negation is used specifically to match the end of an html
+        tag, and in fact unicode characters *should* be allowed.
+    */
+    function createReplacements() {
+        return [
+            // Remove anything but the contents within the BODY element
+            [new RegExp(/^[\s\S]*<body[^>]*>\s*|\s*<\/body[^>]*>[\s\S]*$/g), ''],
+
+            // cleanup comments added by Chrome when pasting html
+            [new RegExp(/<!--StartFragment-->|<!--EndFragment-->/g), ''],
+
+            // Trailing BR elements
+            [new RegExp(/<br>$/i), ''],
+
+            // replace two bogus tags that begin pastes from google docs
+            [new RegExp(/<[^>]*docs-internal-guid[^>]*>/gi), ''],
+            [new RegExp(/<\/b>(<br[^>]*>)?$/gi), ''],
+
+             // un-html spaces and newlines inserted by OS X
+            [new RegExp(/<span class="Apple-converted-space">\s+<\/span>/g), ' '],
+            [new RegExp(/<br class="Apple-interchange-newline">/g), '<br>'],
+
+            // replace google docs italics+bold with a span to be replaced once the html is inserted
+            [new RegExp(/<span[^>]*(font-style:italic;font-weight:(bold|700)|font-weight:(bold|700);font-style:italic)[^>]*>/gi), '<span class="replace-with italic bold">'],
+
+            // replace google docs italics with a span to be replaced once the html is inserted
+            [new RegExp(/<span[^>]*font-style:italic[^>]*>/gi), '<span class="replace-with italic">'],
+
+            //[replace google docs bolds with a span to be replaced once the html is inserted
+            [new RegExp(/<span[^>]*font-weight:(bold|700)[^>]*>/gi), '<span class="replace-with bold">'],
+
+             // replace manually entered b/i/a tags with real ones
+            [new RegExp(/&lt;(\/?)(i|b|a)&gt;/gi), '<$1$2>'],
+
+             // replace manually a tags with real ones, converting smart-quotes from google docs
+            [new RegExp(/&lt;a(?:(?!href).)+href=(?:&quot;|&rdquo;|&ldquo;|"|“|”)(((?!&quot;|&rdquo;|&ldquo;|"|“|”).)*)(?:&quot;|&rdquo;|&ldquo;|"|“|”)(?:(?!&gt;).)*&gt;/gi), '<a href="$1">'],
+
+            // Newlines between paragraphs in html have no syntactic value,
+            // but then have a tendency to accidentally become additional paragraphs down the line
+            [new RegExp(/<\/p>\n+/gi), '</p>'],
+            [new RegExp(/\n+<p/gi), '<p'],
+
+            // Microsoft Word makes these odd tags, like <o:p></o:p>
+            [new RegExp(/<\/?o:[a-z]*>/gi), ''],
+
+            // Microsoft Word adds some special elements around list items
+            [new RegExp(/<!\[if !supportLists\]>(((?!<!).)*)<!\[endif]\>/gi), '$1']
+        ];
+    }
+    /*jslint regexp: false*/
+
+    /**
+     * Gets various content types out of the Clipboard API. It will also get the
+     * plain text using older IE and WebKit API.
+     *
+     * @param {event} event Event fired on paste.
+     * @param {win} reference to window
+     * @param {doc} reference to document
+     * @return {Object} Object with mime types and data for those mime types.
+     */
+    function getClipboardContent(event, win, doc) {
+        var dataTransfer = event.clipboardData || win.clipboardData || doc.dataTransfer,
+            data = {};
+
+        if (!dataTransfer) {
+            return data;
+        }
+
+        // Use old WebKit/IE API
+        if (dataTransfer.getData) {
+            var legacyText = dataTransfer.getData('Text');
+            if (legacyText && legacyText.length > 0) {
+                data['text/plain'] = legacyText;
+            }
+        }
+
+        if (dataTransfer.types) {
+            for (var i = 0; i < dataTransfer.types.length; i++) {
+                var contentType = dataTransfer.types[i];
+                data[contentType] = dataTransfer.getData(contentType);
+            }
+        }
+
+        return data;
+    }
+
+    var PasteHandler = MediumEditor.Extension.extend({
+        /* Paste Options */
+
+        /* forcePlainText: [boolean]
+         * Forces pasting as plain text.
+         */
+        forcePlainText: true,
+
+        /* cleanPastedHTML: [boolean]
+         * cleans pasted content from different sources, like google docs etc.
+         */
+        cleanPastedHTML: false,
+
+        /* preCleanReplacements: [Array]
+         * custom pairs (2 element arrays) of RegExp and replacement text to use during past when
+         * __forcePlainText__ or __cleanPastedHTML__ are `true` OR when calling `cleanPaste(text)` helper method.
+         * These replacements are executed before any medium editor defined replacements.
+         */
+        preCleanReplacements: [],
+
+        /* cleanReplacements: [Array]
+         * custom pairs (2 element arrays) of RegExp and replacement text to use during paste when
+         * __forcePlainText__ or __cleanPastedHTML__ are `true` OR when calling `cleanPaste(text)` helper method.
+         * These replacements are executed after any medium editor defined replacements.
+         */
+        cleanReplacements: [],
+
+        /* cleanAttrs:: [Array]
+         * list of element attributes to remove during paste when __cleanPastedHTML__ is `true` or when
+         * calling `cleanPaste(text)` or `pasteHTML(html, options)` helper methods.
+         */
+        cleanAttrs: ['class', 'style', 'dir'],
+
+        /* cleanTags: [Array]
+         * list of element tag names to remove during paste when __cleanPastedHTML__ is `true` or when
+         * calling `cleanPaste(text)` or `pasteHTML(html, options)` helper methods.
+         */
+        cleanTags: ['meta'],
+
+        /* unwrapTags: [Array]
+         * list of element tag names to unwrap (remove the element tag but retain its child elements)
+         * during paste when __cleanPastedHTML__ is `true` or when
+         * calling `cleanPaste(text)` or `pasteHTML(html, options)` helper methods.
+         */
+        unwrapTags: [],
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            if (this.forcePlainText || this.cleanPastedHTML) {
+                this.subscribe('editableKeydown', this.handleKeydown.bind(this));
+                // We need access to the full event data in paste
+                // so we can't use the editablePaste event here
+                this.getEditorElements().forEach(function (element) {
+                    this.on(element, 'paste', this.handlePaste.bind(this));
+                }, this);
+                this.subscribe('addElement', this.handleAddElement.bind(this));
+            }
+        },
+
+        handleAddElement: function (event, editable) {
+            this.on(editable, 'paste', this.handlePaste.bind(this));
+        },
+
+        destroy: function () {
+            // Make sure pastebin is destroyed in case it's still around for some reason
+            if (this.forcePlainText || this.cleanPastedHTML) {
+                this.removePasteBin();
+            }
+        },
+
+        handlePaste: function (event, editable) {
+            if (event.defaultPrevented) {
+                return;
+            }
+
+            var clipboardContent = getClipboardContent(event, this.window, this.document),
+                pastedHTML = clipboardContent['text/html'],
+                pastedPlain = clipboardContent['text/plain'];
+
+            if (this.window.clipboardData && event.clipboardData === undefined && !pastedHTML) {
+                // If window.clipboardData exists, but event.clipboardData doesn't exist,
+                // we're probably in IE. IE only has two possibilities for clipboard
+                // data format: 'Text' and 'URL'.
+                //
+                // For IE, we'll fallback to 'Text' for text/html
+                pastedHTML = pastedPlain;
+            }
+
+            if (pastedHTML || pastedPlain) {
+                event.preventDefault();
+
+                this.doPaste(pastedHTML, pastedPlain, editable);
+            }
+        },
+
+        doPaste: function (pastedHTML, pastedPlain, editable) {
+            var paragraphs,
+                html = '',
+                p;
+
+            if (this.cleanPastedHTML && pastedHTML) {
+                return this.cleanPaste(pastedHTML);
+            }
+
+            if (!(this.getEditorOption('disableReturn') || (editable && editable.getAttribute('data-disable-return')))) {
+                paragraphs = pastedPlain.split(/[\r\n]+/g);
+                // If there are no \r\n in data, don't wrap in <p>
+                if (paragraphs.length > 1) {
+                    for (p = 0; p < paragraphs.length; p += 1) {
+                        if (paragraphs[p] !== '') {
+                            html += '<p>' + MediumEditor.util.htmlEntities(paragraphs[p]) + '</p>';
+                        }
+                    }
+                } else {
+                    html = MediumEditor.util.htmlEntities(paragraphs[0]);
+                }
+            } else {
+                html = MediumEditor.util.htmlEntities(pastedPlain);
+            }
+            MediumEditor.util.insertHTMLCommand(this.document, html);
+        },
+
+        handlePasteBinPaste: function (event) {
+            if (event.defaultPrevented) {
+                this.removePasteBin();
+                return;
+            }
+
+            var clipboardContent = getClipboardContent(event, this.window, this.document),
+                pastedHTML = clipboardContent['text/html'],
+                pastedPlain = clipboardContent['text/plain'],
+                editable = keyboardPasteEditable;
+
+            // If we have valid html already, or we're not in cleanPastedHTML mode
+            // we can ignore the paste bin and just paste now
+            if (!this.cleanPastedHTML || pastedHTML) {
+                event.preventDefault();
+                this.removePasteBin();
+                this.doPaste(pastedHTML, pastedPlain, editable);
+
+                // The event handling code listens for paste on the editable element
+                // in order to trigger the editablePaste event.  Since this paste event
+                // is happening on the pastebin, the event handling code never knows about it
+                // So, we have to trigger editablePaste manually
+                this.trigger('editablePaste', { currentTarget: editable, target: editable }, editable);
+                return;
+            }
+
+            // We need to look at the paste bin, so do a setTimeout to let the paste
+            // fall through into the paste bin
+            setTimeout(function () {
+                // Only look for HTML if we're in cleanPastedHTML mode
+                if (this.cleanPastedHTML) {
+                    // If clipboard didn't have HTML, try the paste bin
+                    pastedHTML = this.getPasteBinHtml();
+                }
+
+                // If we needed the paste bin, we're done with it now, remove it
+                this.removePasteBin();
+
+                // Handle the paste with the html from the paste bin
+                this.doPaste(pastedHTML, pastedPlain, editable);
+
+                // The event handling code listens for paste on the editable element
+                // in order to trigger the editablePaste event.  Since this paste event
+                // is happening on the pastebin, the event handling code never knows about it
+                // So, we have to trigger editablePaste manually
+                this.trigger('editablePaste', { currentTarget: editable, target: editable }, editable);
+            }.bind(this), 0);
+        },
+
+        handleKeydown: function (event, editable) {
+            // if it's not Ctrl+V, do nothing
+            if (!(MediumEditor.util.isKey(event, MediumEditor.util.keyCode.V) && MediumEditor.util.isMetaCtrlKey(event))) {
+                return;
+            }
+
+            event.stopImmediatePropagation();
+
+            this.removePasteBin();
+            this.createPasteBin(editable);
+        },
+
+        createPasteBin: function (editable) {
+            var rects,
+                range = MediumEditor.selection.getSelectionRange(this.document),
+                top = this.window.pageYOffset;
+
+            keyboardPasteEditable = editable;
+
+            if (range) {
+                rects = range.getClientRects();
+
+                // on empty line, rects is empty so we grab information from the first container of the range
+                if (rects.length) {
+                    top += rects[0].top;
+                } else if (range.startContainer.getBoundingClientRect !== undefined) {
+                    top += range.startContainer.getBoundingClientRect().top;
+                } else {
+                    top += range.getBoundingClientRect().top;
+                }
+            }
+
+            lastRange = range;
+
+            var pasteBinElm = this.document.createElement('div');
+            pasteBinElm.id = this.pasteBinId = 'medium-editor-pastebin-' + (+Date.now());
+            pasteBinElm.setAttribute('style', 'border: 1px red solid; position: absolute; top: ' + top + 'px; width: 10px; height: 10px; overflow: hidden; opacity: 0');
+            pasteBinElm.setAttribute('contentEditable', true);
+            pasteBinElm.innerHTML = pasteBinDefaultContent;
+
+            this.document.body.appendChild(pasteBinElm);
+
+            // avoid .focus() to stop other event (actually the paste event)
+            this.on(pasteBinElm, 'focus', stopProp);
+            this.on(pasteBinElm, 'focusin', stopProp);
+            this.on(pasteBinElm, 'focusout', stopProp);
+
+            pasteBinElm.focus();
+
+            MediumEditor.selection.selectNode(pasteBinElm, this.document);
+
+            if (!this.boundHandlePaste) {
+                this.boundHandlePaste = this.handlePasteBinPaste.bind(this);
+            }
+
+            this.on(pasteBinElm, 'paste', this.boundHandlePaste);
+        },
+
+        removePasteBin: function () {
+            if (null !== lastRange) {
+                MediumEditor.selection.selectRange(this.document, lastRange);
+                lastRange = null;
+            }
+
+            if (null !== keyboardPasteEditable) {
+                keyboardPasteEditable = null;
+            }
+
+            var pasteBinElm = this.getPasteBin();
+            if (!pasteBinElm) {
+                return;
+            }
+
+            if (pasteBinElm) {
+                this.off(pasteBinElm, 'focus', stopProp);
+                this.off(pasteBinElm, 'focusin', stopProp);
+                this.off(pasteBinElm, 'focusout', stopProp);
+                this.off(pasteBinElm, 'paste', this.boundHandlePaste);
+                pasteBinElm.parentElement.removeChild(pasteBinElm);
+            }
+        },
+
+        getPasteBin: function () {
+            return this.document.getElementById(this.pasteBinId);
+        },
+
+        getPasteBinHtml: function () {
+            var pasteBinElm = this.getPasteBin();
+
+            if (!pasteBinElm) {
+                return false;
+            }
+
+            // WebKit has a nice bug where it clones the paste bin if you paste from for example notepad
+            // so we need to force plain text mode in this case
+            if (pasteBinElm.firstChild && pasteBinElm.firstChild.id === 'mcepastebin') {
+                return false;
+            }
+
+            var pasteBinHtml = pasteBinElm.innerHTML;
+
+            // If paste bin is empty try using plain text mode
+            // since that is better than nothing right
+            if (!pasteBinHtml || pasteBinHtml === pasteBinDefaultContent) {
+                return false;
+            }
+
+            return pasteBinHtml;
+        },
+
+        cleanPaste: function (text) {
+            var i, elList, tmp, workEl,
+                multiline = /<p|<br|<div/.test(text),
+                replacements = [].concat(
+                    this.preCleanReplacements || [],
+                    createReplacements(),
+                    this.cleanReplacements || []);
+
+            for (i = 0; i < replacements.length; i += 1) {
+                text = text.replace(replacements[i][0], replacements[i][1]);
+            }
+
+            if (!multiline) {
+                return this.pasteHTML(text);
+            }
+
+            // create a temporary div to cleanup block elements
+            tmp = this.document.createElement('div');
+
+            // double br's aren't converted to p tags, but we want paragraphs.
+            tmp.innerHTML = '<p>' + text.split('<br><br>').join('</p><p>') + '</p>';
+
+            // block element cleanup
+            elList = tmp.querySelectorAll('a,p,div,br');
+            for (i = 0; i < elList.length; i += 1) {
+                workEl = elList[i];
+
+                // Microsoft Word replaces some spaces with newlines.
+                // While newlines between block elements are meaningless, newlines within
+                // elements are sometimes actually spaces.
+                workEl.innerHTML = workEl.innerHTML.replace(/\n/gi, ' ');
+
+                switch (workEl.nodeName.toLowerCase()) {
+                    case 'p':
+                    case 'div':
+                        this.filterCommonBlocks(workEl);
+                        break;
+                    case 'br':
+                        this.filterLineBreak(workEl);
+                        break;
+                }
+            }
+
+            this.pasteHTML(tmp.innerHTML);
+        },
+
+        pasteHTML: function (html, options) {
+            options = MediumEditor.util.defaults({}, options, {
+                cleanAttrs: this.cleanAttrs,
+                cleanTags: this.cleanTags,
+                unwrapTags: this.unwrapTags
+            });
+
+            var elList, workEl, i, fragmentBody, pasteBlock = this.document.createDocumentFragment();
+
+            pasteBlock.appendChild(this.document.createElement('body'));
+
+            fragmentBody = pasteBlock.querySelector('body');
+            fragmentBody.innerHTML = html;
+
+            this.cleanupSpans(fragmentBody);
+
+            elList = fragmentBody.querySelectorAll('*');
+            for (i = 0; i < elList.length; i += 1) {
+                workEl = elList[i];
+
+                if ('a' === workEl.nodeName.toLowerCase() && this.getEditorOption('targetBlank')) {
+                    MediumEditor.util.setTargetBlank(workEl);
+                }
+
+                MediumEditor.util.cleanupAttrs(workEl, options.cleanAttrs);
+                MediumEditor.util.cleanupTags(workEl, options.cleanTags);
+                MediumEditor.util.unwrapTags(workEl, options.unwrapTags);
+            }
+
+            MediumEditor.util.insertHTMLCommand(this.document, fragmentBody.innerHTML.replace(/&nbsp;/g, ' '));
+        },
+
+        // TODO (6.0): Make this an internal helper instead of member of paste handler
+        isCommonBlock: function (el) {
+            return (el && (el.nodeName.toLowerCase() === 'p' || el.nodeName.toLowerCase() === 'div'));
+        },
+
+        // TODO (6.0): Make this an internal helper instead of member of paste handler
+        filterCommonBlocks: function (el) {
+            if (/^\s*$/.test(el.textContent) && el.parentNode) {
+                el.parentNode.removeChild(el);
+            }
+        },
+
+        // TODO (6.0): Make this an internal helper instead of member of paste handler
+        filterLineBreak: function (el) {
+            if (this.isCommonBlock(el.previousElementSibling)) {
+                // remove stray br's following common block elements
+                this.removeWithParent(el);
+            } else if (this.isCommonBlock(el.parentNode) && (el.parentNode.firstChild === el || el.parentNode.lastChild === el)) {
+                // remove br's just inside open or close tags of a div/p
+                this.removeWithParent(el);
+            } else if (el.parentNode && el.parentNode.childElementCount === 1 && el.parentNode.textContent === '') {
+                // and br's that are the only child of elements other than div/p
+                this.removeWithParent(el);
+            }
+        },
+
+        // TODO (6.0): Make this an internal helper instead of member of paste handler
+        // remove an element, including its parent, if it is the only element within its parent
+        removeWithParent: function (el) {
+            if (el && el.parentNode) {
+                if (el.parentNode.parentNode && el.parentNode.childElementCount === 1) {
+                    el.parentNode.parentNode.removeChild(el.parentNode);
+                } else {
+                    el.parentNode.removeChild(el);
+                }
+            }
+        },
+
+        // TODO (6.0): Make this an internal helper instead of member of paste handler
+        cleanupSpans: function (containerEl) {
+            var i,
+                el,
+                newEl,
+                spans = containerEl.querySelectorAll('.replace-with'),
+                isCEF = function (el) {
+                    return (el && el.nodeName !== '#text' && el.getAttribute('contenteditable') === 'false');
+                };
+
+            for (i = 0; i < spans.length; i += 1) {
+                el = spans[i];
+                newEl = this.document.createElement(el.classList.contains('bold') ? 'b' : 'i');
+
+                if (el.classList.contains('bold') && el.classList.contains('italic')) {
+                    // add an i tag as well if this has both italics and bold
+                    newEl.innerHTML = '<i>' + el.innerHTML + '</i>';
+                } else {
+                    newEl.innerHTML = el.innerHTML;
+                }
+                el.parentNode.replaceChild(newEl, el);
+            }
+
+            spans = containerEl.querySelectorAll('span');
+            for (i = 0; i < spans.length; i += 1) {
+                el = spans[i];
+
+                // bail if span is in contenteditable = false
+                if (MediumEditor.util.traverseUp(el, isCEF)) {
+                    return false;
+                }
+
+                // remove empty spans, replace others with their contents
+                MediumEditor.util.unwrap(el, this.document);
+            }
+        }
+    });
+
+    MediumEditor.extensions.paste = PasteHandler;
+}());
+
+(function () {
+    'use strict';
+
+    var Placeholder = MediumEditor.Extension.extend({
+        name: 'placeholder',
+
+        /* Placeholder Options */
+
+        /* text: [string]
+         * Text to display in the placeholder
+         */
+        text: 'Type your text',
+
+        /* hideOnClick: [boolean]
+         * Should we hide the placeholder on click (true) or when user starts typing (false)
+         */
+        hideOnClick: true,
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.initPlaceholders();
+            this.attachEventHandlers();
+        },
+
+        initPlaceholders: function () {
+            this.getEditorElements().forEach(this.initElement, this);
+        },
+
+        handleAddElement: function (event, editable) {
+            this.initElement(editable);
+        },
+
+        initElement: function (el) {
+            if (!el.getAttribute('data-placeholder')) {
+                el.setAttribute('data-placeholder', this.text);
+            }
+            this.updatePlaceholder(el);
+        },
+
+        destroy: function () {
+            this.getEditorElements().forEach(this.cleanupElement, this);
+        },
+
+        handleRemoveElement: function (event, editable) {
+            this.cleanupElement(editable);
+        },
+
+        cleanupElement: function (el) {
+            if (el.getAttribute('data-placeholder') === this.text) {
+                el.removeAttribute('data-placeholder');
+            }
+        },
+
+        showPlaceholder: function (el) {
+            if (el) {
+                // https://github.com/yabwe/medium-editor/issues/234
+                // In firefox, styling the placeholder with an absolutely positioned
+                // pseudo element causes the cursor to appear in a bad location
+                // when the element is completely empty, so apply a different class to
+                // style it with a relatively positioned pseudo element
+                if (MediumEditor.util.isFF && el.childNodes.length === 0) {
+                    el.classList.add('medium-editor-placeholder-relative');
+                    el.classList.remove('medium-editor-placeholder');
+                } else {
+                    el.classList.add('medium-editor-placeholder');
+                    el.classList.remove('medium-editor-placeholder-relative');
+                }
+            }
+        },
+
+        hidePlaceholder: function (el) {
+            if (el) {
+                el.classList.remove('medium-editor-placeholder');
+                el.classList.remove('medium-editor-placeholder-relative');
+            }
+        },
+
+        updatePlaceholder: function (el, dontShow) {
+            // If the element has content, hide the placeholder
+            if (el.querySelector('img, blockquote, ul, ol, table') || (el.textContent.replace(/^\s+|\s+$/g, '') !== '')) {
+                return this.hidePlaceholder(el);
+            }
+
+            if (!dontShow) {
+                this.showPlaceholder(el);
+            }
+        },
+
+        attachEventHandlers: function () {
+            if (this.hideOnClick) {
+                // For the 'hideOnClick' option, the placeholder should always be hidden on focus
+                this.subscribe('focus', this.handleFocus.bind(this));
+            }
+
+            // If the editor has content, it should always hide the placeholder
+            this.subscribe('editableInput', this.handleInput.bind(this));
+
+            // When the editor loses focus, check if the placeholder should be visible
+            this.subscribe('blur', this.handleBlur.bind(this));
+
+            // Need to know when elements are added/removed from the editor
+            this.subscribe('addElement', this.handleAddElement.bind(this));
+            this.subscribe('removeElement', this.handleRemoveElement.bind(this));
+        },
+
+        handleInput: function (event, element) {
+            // If the placeholder should be hidden on focus and the
+            // element has focus, don't show the placeholder
+            var dontShow = this.hideOnClick && (element === this.base.getFocusedElement());
+
+            // Editor's content has changed, check if the placeholder should be hidden
+            this.updatePlaceholder(element, dontShow);
+        },
+
+        handleFocus: function (event, element) {
+            // Editor has focus, hide the placeholder
+            this.hidePlaceholder(element);
+        },
+
+        handleBlur: function (event, element) {
+            // Editor has lost focus, check if the placeholder should be shown
+            this.updatePlaceholder(element);
+        }
+    });
+
+    MediumEditor.extensions.placeholder = Placeholder;
+}());
+
+(function () {
+    'use strict';
+
+    var Toolbar = MediumEditor.Extension.extend({
+        name: 'toolbar',
+
+        /* Toolbar Options */
+
+        /* align: ['left'|'center'|'right']
+         * When the __static__ option is true, this aligns the static toolbar
+         * relative to the medium-editor element.
+         */
+        align: 'center',
+
+        /* allowMultiParagraphSelection: [boolean]
+         * enables/disables whether the toolbar should be displayed when
+         * selecting multiple paragraphs/block elements
+         */
+        allowMultiParagraphSelection: true,
+
+        /* buttons: [Array]
+         * the names of the set of buttons to display on the toolbar.
+         */
+        buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'quote'],
+
+        /* diffLeft: [Number]
+         * value in pixels to be added to the X axis positioning of the toolbar.
+         */
+        diffLeft: 0,
+
+        /* diffTop: [Number]
+         * value in pixels to be added to the Y axis positioning of the toolbar.
+         */
+        diffTop: -10,
+
+        /* firstButtonClass: [string]
+         * CSS class added to the first button in the toolbar.
+         */
+        firstButtonClass: 'medium-editor-button-first',
+
+        /* lastButtonClass: [string]
+         * CSS class added to the last button in the toolbar.
+         */
+        lastButtonClass: 'medium-editor-button-last',
+
+        /* standardizeSelectionStart: [boolean]
+         * enables/disables standardizing how the beginning of a range is decided
+         * between browsers whenever the selected text is analyzed for updating toolbar buttons status.
+         */
+        standardizeSelectionStart: false,
+
+        /* static: [boolean]
+         * enable/disable the toolbar always displaying in the same location
+         * relative to the medium-editor element.
+         */
+        static: false,
+
+        /* sticky: [boolean]
+         * When the __static__ option is true, this enables/disables the toolbar
+         * "sticking" to the viewport and staying visible on the screen while
+         * the page scrolls.
+         */
+        sticky: false,
+
+        /* stickyTopOffset: [Number]
+         * Value in pixel of the top offset above the toolbar
+         */
+        stickyTopOffset: 0,
+
+        /* updateOnEmptySelection: [boolean]
+         * When the __static__ option is true, this enables/disables updating
+         * the state of the toolbar buttons even when the selection is collapsed
+         * (there is no selection, just a cursor).
+         */
+        updateOnEmptySelection: false,
+
+        /* relativeContainer: [node]
+         * appending the toolbar to a given node instead of body
+         */
+        relativeContainer: null,
+
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.initThrottledMethods();
+
+            if (!this.relativeContainer) {
+                this.getEditorOption('elementsContainer').appendChild(this.getToolbarElement());
+            } else {
+                this.relativeContainer.appendChild(this.getToolbarElement());
+            }
+        },
+
+        // Helper method to execute method for every extension, but ignoring the toolbar extension
+        forEachExtension: function (iterator, context) {
+            return this.base.extensions.forEach(function (command) {
+                if (command === this) {
+                    return;
+                }
+                return iterator.apply(context || this, arguments);
+            }, this);
+        },
+
+        // Toolbar creation/deletion
+
+        createToolbar: function () {
+            var toolbar = this.document.createElement('div');
+
+            toolbar.id = 'medium-editor-toolbar-' + this.getEditorId();
+            toolbar.className = 'medium-editor-toolbar';
+
+            if (this.static) {
+                toolbar.className += ' static-toolbar';
+            } else if (this.relativeContainer) {
+                toolbar.className += ' medium-editor-relative-toolbar';
+            } else {
+                toolbar.className += ' medium-editor-stalker-toolbar';
+            }
+
+            toolbar.appendChild(this.createToolbarButtons());
+
+            // Add any forms that extensions may have
+            this.forEachExtension(function (extension) {
+                if (extension.hasForm) {
+                    toolbar.appendChild(extension.getForm());
+                }
+            });
+
+            this.attachEventHandlers();
+
+            return toolbar;
+        },
+
+        createToolbarButtons: function () {
+            var ul = this.document.createElement('ul'),
+                li,
+                btn,
+                buttons,
+                extension,
+                buttonName,
+                buttonOpts;
+
+            ul.id = 'medium-editor-toolbar-actions' + this.getEditorId();
+            ul.className = 'medium-editor-toolbar-actions';
+            ul.style.display = 'block';
+
+            this.buttons.forEach(function (button) {
+                if (typeof button === 'string') {
+                    buttonName = button;
+                    buttonOpts = null;
+                } else {
+                    buttonName = button.name;
+                    buttonOpts = button;
+                }
+
+                // If the button already exists as an extension, it'll be returned
+                // othwerise it'll create the default built-in button
+                extension = this.base.addBuiltInExtension(buttonName, buttonOpts);
+
+                if (extension && typeof extension.getButton === 'function') {
+                    btn = extension.getButton(this.base);
+                    li = this.document.createElement('li');
+                    if (MediumEditor.util.isElement(btn)) {
+                        li.appendChild(btn);
+                    } else {
+                        li.innerHTML = btn;
+                    }
+                    ul.appendChild(li);
+                }
+            }, this);
+
+            buttons = ul.querySelectorAll('button');
+            if (buttons.length > 0) {
+                buttons[0].classList.add(this.firstButtonClass);
+                buttons[buttons.length - 1].classList.add(this.lastButtonClass);
+            }
+
+            return ul;
+        },
+
+        destroy: function () {
+            if (this.toolbar) {
+                if (this.toolbar.parentNode) {
+                    this.toolbar.parentNode.removeChild(this.toolbar);
+                }
+                delete this.toolbar;
+            }
+        },
+
+        // Toolbar accessors
+
+        getInteractionElements: function () {
+            return this.getToolbarElement();
+        },
+
+        getToolbarElement: function () {
+            if (!this.toolbar) {
+                this.toolbar = this.createToolbar();
+            }
+
+            return this.toolbar;
+        },
+
+        getToolbarActionsElement: function () {
+            return this.getToolbarElement().querySelector('.medium-editor-toolbar-actions');
+        },
+
+        // Toolbar event handlers
+
+        initThrottledMethods: function () {
+            // throttledPositionToolbar is throttled because:
+            // - It will be called when the browser is resizing, which can fire many times very quickly
+            // - For some event (like resize) a slight lag in UI responsiveness is OK and provides performance benefits
+            this.throttledPositionToolbar = MediumEditor.util.throttle(function () {
+                if (this.base.isActive) {
+                    this.positionToolbarIfShown();
+                }
+            }.bind(this));
+        },
+
+        attachEventHandlers: function () {
+            // MediumEditor custom events for when user beings and ends interaction with a contenteditable and its elements
+            this.subscribe('blur', this.handleBlur.bind(this));
+            this.subscribe('focus', this.handleFocus.bind(this));
+
+            // Updating the state of the toolbar as things change
+            this.subscribe('editableClick', this.handleEditableClick.bind(this));
+            this.subscribe('editableKeyup', this.handleEditableKeyup.bind(this));
+
+            // Handle mouseup on document for updating the selection in the toolbar
+            this.on(this.document.documentElement, 'mouseup', this.handleDocumentMouseup.bind(this));
+
+            // Add a scroll event for sticky toolbar
+            if (this.static && this.sticky) {
+                // On scroll (capture), re-position the toolbar
+                this.on(this.window, 'scroll', this.handleWindowScroll.bind(this), true);
+            }
+
+            // On resize, re-position the toolbar
+            this.on(this.window, 'resize', this.handleWindowResize.bind(this));
+        },
+
+        handleWindowScroll: function () {
+            this.positionToolbarIfShown();
+        },
+
+        handleWindowResize: function () {
+            this.throttledPositionToolbar();
+        },
+
+        handleDocumentMouseup: function (event) {
+            // Do not trigger checkState when mouseup fires over the toolbar
+            if (event &&
+                    event.target &&
+                    MediumEditor.util.isDescendant(this.getToolbarElement(), event.target)) {
+                return false;
+            }
+            this.checkState();
+        },
+
+        handleEditableClick: function () {
+            // Delay the call to checkState to handle bug where selection is empty
+            // immediately after clicking inside a pre-existing selection
+            setTimeout(function () {
+                this.checkState();
+            }.bind(this), 0);
+        },
+
+        handleEditableKeyup: function () {
+            this.checkState();
+        },
+
+        handleBlur: function () {
+            // Kill any previously delayed calls to hide the toolbar
+            clearTimeout(this.hideTimeout);
+
+            // Blur may fire even if we have a selection, so we want to prevent any delayed showToolbar
+            // calls from happening in this specific case
+            clearTimeout(this.delayShowTimeout);
+
+            // Delay the call to hideToolbar to handle bug with multiple editors on the page at once
+            this.hideTimeout = setTimeout(function () {
+                this.hideToolbar();
+            }.bind(this), 1);
+        },
+
+        handleFocus: function () {
+            this.checkState();
+        },
+
+        // Hiding/showing toolbar
+
+        isDisplayed: function () {
+            return this.getToolbarElement().classList.contains('medium-editor-toolbar-active');
+        },
+
+        showToolbar: function () {
+            clearTimeout(this.hideTimeout);
+            if (!this.isDisplayed()) {
+                this.getToolbarElement().classList.add('medium-editor-toolbar-active');
+                this.trigger('showToolbar', {}, this.base.getFocusedElement());
+            }
+        },
+
+        hideToolbar: function () {
+            if (this.isDisplayed()) {
+                this.getToolbarElement().classList.remove('medium-editor-toolbar-active');
+                this.trigger('hideToolbar', {}, this.base.getFocusedElement());
+            }
+        },
+
+        isToolbarDefaultActionsDisplayed: function () {
+            return this.getToolbarActionsElement().style.display === 'block';
+        },
+
+        hideToolbarDefaultActions: function () {
+            if (this.isToolbarDefaultActionsDisplayed()) {
+                this.getToolbarActionsElement().style.display = 'none';
+            }
+        },
+
+        showToolbarDefaultActions: function () {
+            this.hideExtensionForms();
+
+            if (!this.isToolbarDefaultActionsDisplayed()) {
+                this.getToolbarActionsElement().style.display = 'block';
+            }
+
+            // Using setTimeout + options.delay because:
+            // We will actually be displaying the toolbar, which should be controlled by options.delay
+            this.delayShowTimeout = this.base.delay(function () {
+                this.showToolbar();
+            }.bind(this));
+        },
+
+        hideExtensionForms: function () {
+            // Hide all extension forms
+            this.forEachExtension(function (extension) {
+                if (extension.hasForm && extension.isDisplayed()) {
+                    extension.hideForm();
+                }
+            });
+        },
+
+        // Responding to changes in user selection
+
+        // Checks for existance of multiple block elements in the current selection
+        multipleBlockElementsSelected: function () {
+            var regexEmptyHTMLTags = /<[^\/>][^>]*><\/[^>]+>/gim, // http://stackoverflow.com/questions/3129738/remove-empty-tags-using-regex
+                regexBlockElements = new RegExp('<(' + MediumEditor.util.blockContainerElementNames.join('|') + ')[^>]*>', 'g'),
+                selectionHTML = MediumEditor.selection.getSelectionHtml(this.document).replace(regexEmptyHTMLTags, ''), // Filter out empty blocks from selection
+                hasMultiParagraphs = selectionHTML.match(regexBlockElements); // Find how many block elements are within the html
+
+            return !!hasMultiParagraphs && hasMultiParagraphs.length > 1;
+        },
+
+        modifySelection: function () {
+            var selection = this.window.getSelection(),
+                selectionRange = selection.getRangeAt(0);
+
+            /*
+            * In firefox, there are cases (ie doubleclick of a word) where the selectionRange start
+            * will be at the very end of an element.  In other browsers, the selectionRange start
+            * would instead be at the very beginning of an element that actually has content.
+            * example:
+            *   <span>foo</span><span>bar</span>
+            *
+            * If the text 'bar' is selected, most browsers will have the selectionRange start at the beginning
+            * of the 'bar' span.  However, there are cases where firefox will have the selectionRange start
+            * at the end of the 'foo' span.  The contenteditable behavior will be ok, but if there are any
+            * properties on the 'bar' span, they won't be reflected accurately in the toolbar
+            * (ie 'Bold' button wouldn't be active)
+            *
+            * So, for cases where the selectionRange start is at the end of an element/node, find the next
+            * adjacent text node that actually has content in it, and move the selectionRange start there.
+            */
+            if (this.standardizeSelectionStart &&
+                    selectionRange.startContainer.nodeValue &&
+                    (selectionRange.startOffset === selectionRange.startContainer.nodeValue.length)) {
+                var adjacentNode = MediumEditor.util.findAdjacentTextNodeWithContent(MediumEditor.selection.getSelectionElement(this.window), selectionRange.startContainer, this.document);
+                if (adjacentNode) {
+                    var offset = 0;
+                    while (adjacentNode.nodeValue.substr(offset, 1).trim().length === 0) {
+                        offset = offset + 1;
+                    }
+                    selectionRange = MediumEditor.selection.select(this.document, adjacentNode, offset,
+                        selectionRange.endContainer, selectionRange.endOffset);
+                }
+            }
+        },
+
+        checkState: function () {
+            if (this.base.preventSelectionUpdates) {
+                return;
+            }
+
+            // If no editable has focus OR selection is inside contenteditable = false
+            // hide toolbar
+            if (!this.base.getFocusedElement() ||
+                    MediumEditor.selection.selectionInContentEditableFalse(this.window)) {
+                return this.hideToolbar();
+            }
+
+            // If there's no selection element, selection element doesn't belong to this editor
+            // or toolbar is disabled for this selection element
+            // hide toolbar
+            var selectionElement = MediumEditor.selection.getSelectionElement(this.window);
+            if (!selectionElement ||
+                    this.getEditorElements().indexOf(selectionElement) === -1 ||
+                    selectionElement.getAttribute('data-disable-toolbar')) {
+                return this.hideToolbar();
+            }
+
+            // Now we know there's a focused editable with a selection
+
+            // If the updateOnEmptySelection option is true, show the toolbar
+            if (this.updateOnEmptySelection && this.static) {
+                return this.showAndUpdateToolbar();
+            }
+
+            // If we don't have a 'valid' selection -> hide toolbar
+            if (!MediumEditor.selection.selectionContainsContent(this.document) ||
+                (this.allowMultiParagraphSelection === false && this.multipleBlockElementsSelected())) {
+                return this.hideToolbar();
+            }
+
+            this.showAndUpdateToolbar();
+        },
+
+        // Updating the toolbar
+
+        showAndUpdateToolbar: function () {
+            this.modifySelection();
+            this.setToolbarButtonStates();
+            this.trigger('positionToolbar', {}, this.base.getFocusedElement());
+            this.showToolbarDefaultActions();
+            this.setToolbarPosition();
+        },
+
+        setToolbarButtonStates: function () {
+            this.forEachExtension(function (extension) {
+                if (typeof extension.isActive === 'function' &&
+                    typeof extension.setInactive === 'function') {
+                    extension.setInactive();
+                }
+            });
+
+            this.checkActiveButtons();
+        },
+
+        checkActiveButtons: function () {
+            var manualStateChecks = [],
+                queryState = null,
+                selectionRange = MediumEditor.selection.getSelectionRange(this.document),
+                parentNode,
+                updateExtensionState = function (extension) {
+                    if (typeof extension.checkState === 'function') {
+                        extension.checkState(parentNode);
+                    } else if (typeof extension.isActive === 'function' &&
+                               typeof extension.isAlreadyApplied === 'function' &&
+                               typeof extension.setActive === 'function') {
+                        if (!extension.isActive() && extension.isAlreadyApplied(parentNode)) {
+                            extension.setActive();
+                        }
+                    }
+                };
+
+            if (!selectionRange) {
+                return;
+            }
+
+            // Loop through all extensions
+            this.forEachExtension(function (extension) {
+                // For those extensions where we can use document.queryCommandState(), do so
+                if (typeof extension.queryCommandState === 'function') {
+                    queryState = extension.queryCommandState();
+                    // If queryCommandState returns a valid value, we can trust the browser
+                    // and don't need to do our manual checks
+                    if (queryState !== null) {
+                        if (queryState && typeof extension.setActive === 'function') {
+                            extension.setActive();
+                        }
+                        return;
+                    }
+                }
+                // We can't use queryCommandState for this extension, so add to manualStateChecks
+                manualStateChecks.push(extension);
+            });
+
+            parentNode = MediumEditor.selection.getSelectedParentElement(selectionRange);
+
+            // Make sure the selection parent isn't outside of the contenteditable
+            if (!this.getEditorElements().some(function (element) {
+                    return MediumEditor.util.isDescendant(element, parentNode, true);
+                })) {
+                return;
+            }
+
+            // Climb up the DOM and do manual checks for whether a certain extension is currently enabled for this node
+            while (parentNode) {
+                manualStateChecks.forEach(updateExtensionState);
+
+                // we can abort the search upwards if we leave the contentEditable element
+                if (MediumEditor.util.isMediumEditorElement(parentNode)) {
+                    break;
+                }
+                parentNode = parentNode.parentNode;
+            }
+        },
+
+        // Positioning toolbar
+
+        positionToolbarIfShown: function () {
+            if (this.isDisplayed()) {
+                this.setToolbarPosition();
+            }
+        },
+
+        setToolbarPosition: function () {
+            var container = this.base.getFocusedElement(),
+                selection = this.window.getSelection();
+
+            // If there isn't a valid selection, bail
+            if (!container) {
+                return this;
+            }
+
+            if (this.static || !selection.isCollapsed) {
+                this.showToolbar();
+
+                // we don't need any absolute positioning if relativeContainer is set
+                if (!this.relativeContainer) {
+                    if (this.static) {
+                        this.positionStaticToolbar(container);
+                    } else {
+                        this.positionToolbar(selection);
+                    }
+                }
+
+                this.trigger('positionedToolbar', {}, this.base.getFocusedElement());
+            }
+        },
+
+        positionStaticToolbar: function (container) {
+            // position the toolbar at left 0, so we can get the real width of the toolbar
+            this.getToolbarElement().style.left = '0';
+
+            // document.documentElement for IE 9
+            var scrollTop = (this.document.documentElement && this.document.documentElement.scrollTop) || this.document.body.scrollTop,
+                windowWidth = this.window.innerWidth,
+                toolbarElement = this.getToolbarElement(),
+                containerRect = container.getBoundingClientRect(),
+                containerTop = containerRect.top + scrollTop,
+                containerCenter = (containerRect.left + (containerRect.width / 2)),
+                toolbarHeight = toolbarElement.offsetHeight,
+                toolbarWidth = toolbarElement.offsetWidth,
+                halfOffsetWidth = toolbarWidth / 2,
+                targetLeft;
+
+            if (this.sticky) {
+                // If it's beyond the height of the editor, position it at the bottom of the editor
+                if (scrollTop > (containerTop + container.offsetHeight - toolbarHeight - this.stickyTopOffset)) {
+                    toolbarElement.style.top = (containerTop + container.offsetHeight - toolbarHeight) + 'px';
+                    toolbarElement.classList.remove('medium-editor-sticky-toolbar');
+                // Stick the toolbar to the top of the window
+                } else if (scrollTop > (containerTop - toolbarHeight - this.stickyTopOffset)) {
+                    toolbarElement.classList.add('medium-editor-sticky-toolbar');
+                    toolbarElement.style.top = this.stickyTopOffset + 'px';
+                // Normal static toolbar position
+                } else {
+                    toolbarElement.classList.remove('medium-editor-sticky-toolbar');
+                    toolbarElement.style.top = containerTop - toolbarHeight + 'px';
+                }
+            } else {
+                toolbarElement.style.top = containerTop - toolbarHeight + 'px';
+            }
+
+            switch (this.align) {
+                case 'left':
+                    targetLeft = containerRect.left;
+                    break;
+
+                case 'right':
+                    targetLeft = containerRect.right - toolbarWidth;
+                    break;
+
+                case 'center':
+                    targetLeft = containerCenter - halfOffsetWidth;
+                    break;
+            }
+
+            if (targetLeft < 0) {
+                targetLeft = 0;
+            } else if ((targetLeft + toolbarWidth) > windowWidth) {
+                targetLeft = (windowWidth - Math.ceil(toolbarWidth) - 1);
+            }
+
+            toolbarElement.style.left = targetLeft + 'px';
+        },
+
+        positionToolbar: function (selection) {
+            // position the toolbar at left 0, so we can get the real width of the toolbar
+            this.getToolbarElement().style.left = '0';
+            this.getToolbarElement().style.right = 'initial';
+
+            var range = selection.getRangeAt(0),
+                boundary = range.getBoundingClientRect();
+
+            // Handle selections with just images
+            if (!boundary || ((boundary.height === 0 && boundary.width === 0) && range.startContainer === range.endContainer)) {
+                // If there's a nested image, use that for the bounding rectangle
+                if (range.startContainer.nodeType === 1 && range.startContainer.querySelector('img')) {
+                    boundary = range.startContainer.querySelector('img').getBoundingClientRect();
+                } else {
+                    boundary = range.startContainer.getBoundingClientRect();
+                }
+            }
+
+            var containerWidth = this.window.innerWidth,
+                toolbarElement = this.getToolbarElement(),
+                toolbarHeight = toolbarElement.offsetHeight,
+                toolbarWidth = toolbarElement.offsetWidth,
+                halfOffsetWidth = toolbarWidth / 2,
+                buttonHeight = 50,
+                defaultLeft = this.diffLeft - halfOffsetWidth,
+                elementsContainer = this.getEditorOption('elementsContainer'),
+                elementsContainerAbsolute = ['absolute', 'fixed'].indexOf(window.getComputedStyle(elementsContainer).getPropertyValue('position')) > -1,
+                positions = {},
+                relativeBoundary = {},
+                middleBoundary, elementsContainerBoundary;
+
+            // If container element is absolute / fixed, recalculate boundaries to be relative to the container
+            if (elementsContainerAbsolute) {
+                elementsContainerBoundary = elementsContainer.getBoundingClientRect();
+                ['top', 'left'].forEach(function (key) {
+                    relativeBoundary[key] = boundary[key] - elementsContainerBoundary[key];
+                });
+
+                relativeBoundary.width = boundary.width;
+                relativeBoundary.height = boundary.height;
+                boundary = relativeBoundary;
+
+                containerWidth = elementsContainerBoundary.width;
+
+                // Adjust top position according to container scroll position
+                positions.top = elementsContainer.scrollTop;
+            } else {
+                // Adjust top position according to window scroll position
+                positions.top = this.window.pageYOffset;
+            }
+
+            middleBoundary = boundary.left + boundary.width / 2;
+            positions.top += boundary.top - toolbarHeight;
+
+            if (boundary.top < buttonHeight) {
+                toolbarElement.classList.add('medium-toolbar-arrow-over');
+                toolbarElement.classList.remove('medium-toolbar-arrow-under');
+                positions.top += buttonHeight + boundary.height - this.diffTop;
+            } else {
+                toolbarElement.classList.add('medium-toolbar-arrow-under');
+                toolbarElement.classList.remove('medium-toolbar-arrow-over');
+                positions.top += this.diffTop;
+            }
+
+            if (middleBoundary < halfOffsetWidth) {
+                positions.left = defaultLeft + halfOffsetWidth;
+                positions.right = 'initial';
+            } else if ((containerWidth - middleBoundary) < halfOffsetWidth) {
+                positions.left = 'auto';
+                positions.right = 0;
+            } else {
+                positions.left = defaultLeft + middleBoundary;
+                positions.right = 'initial';
+            }
+
+            ['top', 'left', 'right'].forEach(function (key) {
+                toolbarElement.style[key] = positions[key] + (isNaN(positions[key]) ? '' : 'px');
+            });
+        }
+    });
+
+    MediumEditor.extensions.toolbar = Toolbar;
+}());
+
+(function () {
+    'use strict';
+
+    var ImageDragging = MediumEditor.Extension.extend({
+        init: function () {
+            MediumEditor.Extension.prototype.init.apply(this, arguments);
+
+            this.subscribe('editableDrag', this.handleDrag.bind(this));
+            this.subscribe('editableDrop', this.handleDrop.bind(this));
+        },
+
+        handleDrag: function (event) {
+            var className = 'medium-editor-dragover';
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'copy';
+
+            if (event.type === 'dragover') {
+                event.target.classList.add(className);
+            } else if (event.type === 'dragleave') {
+                event.target.classList.remove(className);
+            }
+        },
+
+        handleDrop: function (event) {
+            var className = 'medium-editor-dragover',
+                files;
+            event.preventDefault();
+            event.stopPropagation();
+
+            // IE9 does not support the File API, so prevent file from opening in a new window
+            // but also don't try to actually get the file
+            if (event.dataTransfer.files) {
+                files = Array.prototype.slice.call(event.dataTransfer.files, 0);
+                files.some(function (file) {
+                    if (file.type.match('image')) {
+                        var fileReader, id;
+                        fileReader = new FileReader();
+                        fileReader.readAsDataURL(file);
+
+                        id = 'medium-img-' + (+new Date());
+                        MediumEditor.util.insertHTMLCommand(this.document, '<img class="medium-editor-image-loading" id="' + id + '" />');
+
+                        fileReader.onload = function () {
+                            var img = this.document.getElementById(id);
+                            if (img) {
+                                img.removeAttribute('id');
+                                img.removeAttribute('class');
+                                img.src = fileReader.result;
+                            }
+                        }.bind(this);
+                    }
+                }.bind(this));
+            }
+            event.target.classList.remove(className);
+        }
+    });
+
+    MediumEditor.extensions.imageDragging = ImageDragging;
+}());
+
+(function () {
+    'use strict';
+
+    // Event handlers that shouldn't be exposed externally
+
+    function handleDisableExtraSpaces(event) {
+        var node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument),
+            textContent = node.textContent,
+            caretPositions = MediumEditor.selection.getCaretOffsets(node);
+
+        if ((textContent[caretPositions.left - 1] === undefined) || (textContent[caretPositions.left - 1].trim() === '') || (textContent[caretPositions.left] !== undefined && textContent[caretPositions.left].trim() === '')) {
+            event.preventDefault();
+        }
+    }
+
+    function handleDisabledEnterKeydown(event, element) {
+        if (this.options.disableReturn || element.getAttribute('data-disable-return')) {
+            event.preventDefault();
+        } else if (this.options.disableDoubleReturn || element.getAttribute('data-disable-double-return')) {
+            var node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument);
+
+            // if current text selection is empty OR previous sibling text is empty OR it is not a list
+            if ((node && node.textContent.trim() === '' && node.nodeName.toLowerCase() !== 'li') ||
+                (node.previousElementSibling && node.previousElementSibling.nodeName.toLowerCase() !== 'br' &&
+                 node.previousElementSibling.textContent.trim() === '')) {
+                event.preventDefault();
+            }
+        }
+    }
+
+    function handleTabKeydown(event) {
+        // Override tab only for pre nodes
+        var node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument),
+            tag = node && node.nodeName.toLowerCase();
+
+        if (tag === 'pre') {
+            event.preventDefault();
+            MediumEditor.util.insertHTMLCommand(this.options.ownerDocument, '    ');
+        }
+
+        // Tab to indent list structures!
+        if (MediumEditor.util.isListItem(node)) {
+            event.preventDefault();
+
+            // If Shift is down, outdent, otherwise indent
+            if (event.shiftKey) {
+                this.options.ownerDocument.execCommand('outdent', false, null);
+            } else {
+                this.options.ownerDocument.execCommand('indent', false, null);
+            }
+        }
+    }
+
+    function handleBlockDeleteKeydowns(event) {
+        var p, node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument),
+            tagName = node.nodeName.toLowerCase(),
+            isEmpty = /^(\s+|<br\/?>)?$/i,
+            isHeader = /h\d/i;
+
+        if (MediumEditor.util.isKey(event, [MediumEditor.util.keyCode.BACKSPACE, MediumEditor.util.keyCode.ENTER]) &&
+                // has a preceeding sibling
+                node.previousElementSibling &&
+                // in a header
+                isHeader.test(tagName) &&
+                // at the very end of the block
+                MediumEditor.selection.getCaretOffsets(node).left === 0) {
+            if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.BACKSPACE) && isEmpty.test(node.previousElementSibling.innerHTML)) {
+                // backspacing the begining of a header into an empty previous element will
+                // change the tagName of the current node to prevent one
+                // instead delete previous node and cancel the event.
+                node.previousElementSibling.parentNode.removeChild(node.previousElementSibling);
+                event.preventDefault();
+            } else if (!this.options.disableDoubleReturn && MediumEditor.util.isKey(event, MediumEditor.util.keyCode.ENTER)) {
+                // hitting return in the begining of a header will create empty header elements before the current one
+                // instead, make "<p><br></p>" element, which are what happens if you hit return in an empty paragraph
+                p = this.options.ownerDocument.createElement('p');
+                p.innerHTML = '<br>';
+                node.previousElementSibling.parentNode.insertBefore(p, node);
+                event.preventDefault();
+            }
+        } else if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.DELETE) &&
+                    // between two sibling elements
+                    node.nextElementSibling &&
+                    node.previousElementSibling &&
+                    // not in a header
+                    !isHeader.test(tagName) &&
+                    // in an empty tag
+                    isEmpty.test(node.innerHTML) &&
+                    // when the next tag *is* a header
+                    isHeader.test(node.nextElementSibling.nodeName.toLowerCase())) {
+            // hitting delete in an empty element preceding a header, ex:
+            //  <p>[CURSOR]</p><h1>Header</h1>
+            // Will cause the h1 to become a paragraph.
+            // Instead, delete the paragraph node and move the cursor to the begining of the h1
+
+            // remove node and move cursor to start of header
+            MediumEditor.selection.moveCursor(this.options.ownerDocument, node.nextElementSibling);
+
+            node.previousElementSibling.parentNode.removeChild(node);
+
+            event.preventDefault();
+        } else if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.BACKSPACE) &&
+                tagName === 'li' &&
+                // hitting backspace inside an empty li
+                isEmpty.test(node.innerHTML) &&
+                // is first element (no preceeding siblings)
+                !node.previousElementSibling &&
+                // parent also does not have a sibling
+                !node.parentElement.previousElementSibling &&
+                // is not the only li in a list
+                node.nextElementSibling &&
+                node.nextElementSibling.nodeName.toLowerCase() === 'li') {
+            // backspacing in an empty first list element in the first list (with more elements) ex:
+            //  <ul><li>[CURSOR]</li><li>List Item 2</li></ul>
+            // will remove the first <li> but add some extra element before (varies based on browser)
+            // Instead, this will:
+            // 1) remove the list element
+            // 2) create a paragraph before the list
+            // 3) move the cursor into the paragraph
+
+            // create a paragraph before the list
+            p = this.options.ownerDocument.createElement('p');
+            p.innerHTML = '<br>';
+            node.parentElement.parentElement.insertBefore(p, node.parentElement);
+
+            // move the cursor into the new paragraph
+            MediumEditor.selection.moveCursor(this.options.ownerDocument, p);
+
+            // remove the list element
+            node.parentElement.removeChild(node);
+
+            event.preventDefault();
+        } else if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.BACKSPACE) &&
+                (MediumEditor.util.getClosestTag(node, 'blockquote') !== false) &&
+                MediumEditor.selection.getCaretOffsets(node).left === 0) {
+
+            // when cursor is at the begining of the element and the element is <blockquote>
+            // then pressing backspace key should change the <blockquote> to a <p> tag
+            event.preventDefault();
+            MediumEditor.util.execFormatBlock(this.options.ownerDocument, 'p');
+        } else if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.ENTER) &&
+                (MediumEditor.util.getClosestTag(node, 'blockquote') !== false) &&
+                MediumEditor.selection.getCaretOffsets(node).right === 0) {
+
+            // when cursor is at the end of <blockquote>,
+            // then pressing enter key should create <p> tag, not <blockquote>
+            p = this.options.ownerDocument.createElement('p');
+            p.innerHTML = '<br>';
+            node.parentElement.insertBefore(p, node.nextSibling);
+
+            // move the cursor into the new paragraph
+            MediumEditor.selection.moveCursor(this.options.ownerDocument, p);
+
+            event.preventDefault();
+        } else if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.BACKSPACE) &&
+                MediumEditor.util.isMediumEditorElement(node.parentElement) &&
+                !node.previousElementSibling &&
+                node.nextElementSibling &&
+                isEmpty.test(node.innerHTML)) {
+
+            // when cursor is in the first element, it's empty and user presses backspace,
+            // do delete action instead to get rid of the first element and move caret to 2nd
+            event.preventDefault();
+            MediumEditor.selection.moveCursor(this.options.ownerDocument, node.nextSibling);
+            node.parentElement.removeChild(node);
+        }
+    }
+
+    function handleKeyup(event) {
+        var node = MediumEditor.selection.getSelectionStart(this.options.ownerDocument),
+            tagName;
+
+        if (!node) {
+            return;
+        }
+
+        // https://github.com/yabwe/medium-editor/issues/994
+        // Firefox thrown an error when calling `formatBlock` on an empty editable blockContainer that's not a <div>
+        if (MediumEditor.util.isMediumEditorElement(node) && node.children.length === 0 && !MediumEditor.util.isBlockContainer(node)) {
+            this.options.ownerDocument.execCommand('formatBlock', false, 'p');
+        }
+
+        // https://github.com/yabwe/medium-editor/issues/834
+        // https://github.com/yabwe/medium-editor/pull/382
+        // Don't call format block if this is a block element (ie h1, figCaption, etc.)
+        if (MediumEditor.util.isKey(event, MediumEditor.util.keyCode.ENTER) &&
+            !MediumEditor.util.isListItem(node) &&
+            !MediumEditor.util.isBlockContainer(node)) {
+
+            tagName = node.nodeName.toLowerCase();
+            // For anchor tags, unlink
+            if (tagName === 'a') {
+                this.options.ownerDocument.execCommand('unlink', false, null);
+            } else if (!event.shiftKey && !event.ctrlKey) {
+                this.options.ownerDocument.execCommand('formatBlock', false, 'p');
+            }
+        }
+    }
+
+    function handleEditableInput(event, editable) {
+        var textarea = editable.parentNode.querySelector('textarea[medium-editor-textarea-id="' + editable.getAttribute('medium-editor-textarea-id') + '"]');
+        if (textarea) {
+            textarea.value = editable.innerHTML.trim();
+        }
+    }
+
+    // Internal helper methods which shouldn't be exposed externally
+
+    function addToEditors(win) {
+        if (!win._mediumEditors) {
+            // To avoid breaking users who are assuming that the unique id on
+            // medium-editor elements will start at 1, inserting a 'null' in the
+            // array so the unique-id can always map to the index of the editor instance
+            win._mediumEditors = [null];
+        }
+
+        // If this already has a unique id, re-use it
+        if (!this.id) {
+            this.id = win._mediumEditors.length;
+        }
+
+        win._mediumEditors[this.id] = this;
+    }
+
+    function removeFromEditors(win) {
+        if (!win._mediumEditors || !win._mediumEditors[this.id]) {
+            return;
+        }
+
+        /* Setting the instance to null in the array instead of deleting it allows:
+         * 1) Each instance to preserve its own unique-id, even after being destroyed
+         *    and initialized again
+         * 2) The unique-id to always correspond to an index in the array of medium-editor
+         *    instances. Thus, we will be able to look at a contenteditable, and determine
+         *    which instance it belongs to, by indexing into the global array.
+         */
+        win._mediumEditors[this.id] = null;
+    }
+
+    function createElementsArray(selector, doc, filterEditorElements) {
+        var elements = [];
+
+        if (!selector) {
+            selector = [];
+        }
+        // If string, use as query selector
+        if (typeof selector === 'string') {
+            selector = doc.querySelectorAll(selector);
+        }
+        // If element, put into array
+        if (MediumEditor.util.isElement(selector)) {
+            selector = [selector];
+        }
+
+        if (filterEditorElements) {
+            // Remove elements that have already been initialized by the editor
+            // selecotr might not be an array (ie NodeList) so use for loop
+            for (var i = 0; i < selector.length; i++) {
+                var el = selector[i];
+                if (MediumEditor.util.isElement(el) &&
+                    !el.getAttribute('data-medium-editor-element') &&
+                    !el.getAttribute('medium-editor-textarea-id')) {
+                    elements.push(el);
+                }
+            }
+        } else {
+            // Convert NodeList (or other array like object) into an array
+            elements = Array.prototype.slice.apply(selector);
+        }
+
+        return elements;
+    }
+
+    function cleanupTextareaElement(element) {
+        var textarea = element.parentNode.querySelector('textarea[medium-editor-textarea-id="' + element.getAttribute('medium-editor-textarea-id') + '"]');
+        if (textarea) {
+            // Un-hide the textarea
+            textarea.classList.remove('medium-editor-hidden');
+            textarea.removeAttribute('medium-editor-textarea-id');
+        }
+        if (element.parentNode) {
+            element.parentNode.removeChild(element);
+        }
+    }
+
+    function setExtensionDefaults(extension, defaults) {
+        Object.keys(defaults).forEach(function (prop) {
+            if (extension[prop] === undefined) {
+                extension[prop] = defaults[prop];
+            }
+        });
+        return extension;
+    }
+
+    function initExtension(extension, name, instance) {
+        var extensionDefaults = {
+            'window': instance.options.contentWindow,
+            'document': instance.options.ownerDocument,
+            'base': instance
+        };
+
+        // Add default options into the extension
+        extension = setExtensionDefaults(extension, extensionDefaults);
+
+        // Call init on the extension
+        if (typeof extension.init === 'function') {
+            extension.init();
+        }
+
+        // Set extension name (if not already set)
+        if (!extension.name) {
+            extension.name = name;
+        }
+        return extension;
+    }
+
+    function isToolbarEnabled() {
+        // If any of the elements don't have the toolbar disabled
+        // We need a toolbar
+        if (this.elements.every(function (element) {
+                return !!element.getAttribute('data-disable-toolbar');
+            })) {
+            return false;
+        }
+
+        return this.options.toolbar !== false;
+    }
+
+    function isAnchorPreviewEnabled() {
+        // If toolbar is disabled, don't add
+        if (!isToolbarEnabled.call(this)) {
+            return false;
+        }
+
+        return this.options.anchorPreview !== false;
+    }
+
+    function isPlaceholderEnabled() {
+        return this.options.placeholder !== false;
+    }
+
+    function isAutoLinkEnabled() {
+        return this.options.autoLink !== false;
+    }
+
+    function isImageDraggingEnabled() {
+        return this.options.imageDragging !== false;
+    }
+
+    function isKeyboardCommandsEnabled() {
+        return this.options.keyboardCommands !== false;
+    }
+
+    function shouldUseFileDraggingExtension() {
+        // Since the file-dragging extension replaces the image-dragging extension,
+        // we need to check if the user passed an overrided image-dragging extension.
+        // If they have, to avoid breaking users, we won't use file-dragging extension.
+        return !this.options.extensions['imageDragging'];
+    }
+
+    function createContentEditable(textarea) {
+        var div = this.options.ownerDocument.createElement('div'),
+            now = Date.now(),
+            uniqueId = 'medium-editor-' + now,
+            atts = textarea.attributes;
+
+        // Some browsers can move pretty fast, since we're using a timestamp
+        // to make a unique-id, ensure that the id is actually unique on the page
+        while (this.options.ownerDocument.getElementById(uniqueId)) {
+            now++;
+            uniqueId = 'medium-editor-' + now;
+        }
+
+        div.className = textarea.className;
+        div.id = uniqueId;
+        div.innerHTML = textarea.value;
+
+        textarea.setAttribute('medium-editor-textarea-id', uniqueId);
+
+        // re-create all attributes from the textearea to the new created div
+        for (var i = 0, n = atts.length; i < n; i++) {
+            // do not re-create existing attributes
+            if (!div.hasAttribute(atts[i].nodeName)) {
+                div.setAttribute(atts[i].nodeName, atts[i].nodeValue);
+            }
+        }
+
+        // If textarea has a form, listen for reset on the form to clear
+        // the content of the created div
+        if (textarea.form) {
+            this.on(textarea.form, 'reset', function (event) {
+                if (!event.defaultPrevented) {
+                    this.resetContent(this.options.ownerDocument.getElementById(uniqueId));
+                }
+            }.bind(this));
+        }
+
+        textarea.classList.add('medium-editor-hidden');
+        textarea.parentNode.insertBefore(
+            div,
+            textarea
+        );
+
+        return div;
+    }
+
+    function initElement(element, editorId) {
+        if (!element.getAttribute('data-medium-editor-element')) {
+            if (element.nodeName.toLowerCase() === 'textarea') {
+                element = createContentEditable.call(this, element);
+
+                // Make sure we only attach to editableInput once for <textarea> elements
+                if (!this.instanceHandleEditableInput) {
+                    this.instanceHandleEditableInput = handleEditableInput.bind(this);
+                    this.subscribe('editableInput', this.instanceHandleEditableInput);
+                }
+            }
+
+            if (!this.options.disableEditing && !element.getAttribute('data-disable-editing')) {
+                element.setAttribute('contentEditable', true);
+                element.setAttribute('spellcheck', this.options.spellcheck);
+            }
+
+            // Make sure we only attach to editableKeydownEnter once for disable-return options
+            if (!this.instanceHandleEditableKeydownEnter) {
+                if (element.getAttribute('data-disable-return') || element.getAttribute('data-disable-double-return')) {
+                    this.instanceHandleEditableKeydownEnter = handleDisabledEnterKeydown.bind(this);
+                    this.subscribe('editableKeydownEnter', this.instanceHandleEditableKeydownEnter);
+                }
+            }
+
+            // if we're not disabling return, add a handler to help handle cleanup
+            // for certain cases when enter is pressed
+            if (!this.options.disableReturn && !element.getAttribute('data-disable-return')) {
+                this.on(element, 'keyup', handleKeyup.bind(this));
+            }
+
+            var elementId = MediumEditor.util.guid();
+
+            element.setAttribute('data-medium-editor-element', true);
+            element.classList.add('medium-editor-element');
+            element.setAttribute('role', 'textbox');
+            element.setAttribute('aria-multiline', true);
+            element.setAttribute('data-medium-editor-editor-index', editorId);
+            // TODO: Merge data-medium-editor-element and medium-editor-index attributes for 6.0.0
+            // medium-editor-index is not named correctly anymore and can be re-purposed to signify
+            // whether the element has been initialized or not
+            element.setAttribute('medium-editor-index', elementId);
+            initialContent[elementId] = element.innerHTML;
+
+            this.events.attachAllEventsToElement(element);
+        }
+
+        return element;
+    }
+
+    function attachHandlers() {
+        // attach to tabs
+        this.subscribe('editableKeydownTab', handleTabKeydown.bind(this));
+
+        // Bind keys which can create or destroy a block element: backspace, delete, return
+        this.subscribe('editableKeydownDelete', handleBlockDeleteKeydowns.bind(this));
+        this.subscribe('editableKeydownEnter', handleBlockDeleteKeydowns.bind(this));
+
+        // Bind double space event
+        if (this.options.disableExtraSpaces) {
+            this.subscribe('editableKeydownSpace', handleDisableExtraSpaces.bind(this));
+        }
+
+        // Make sure we only attach to editableKeydownEnter once for disable-return options
+        if (!this.instanceHandleEditableKeydownEnter) {
+            // disabling return or double return
+            if (this.options.disableReturn || this.options.disableDoubleReturn) {
+                this.instanceHandleEditableKeydownEnter = handleDisabledEnterKeydown.bind(this);
+                this.subscribe('editableKeydownEnter', this.instanceHandleEditableKeydownEnter);
+            }
+        }
+    }
+
+    function initExtensions() {
+
+        this.extensions = [];
+
+        // Passed in extensions
+        Object.keys(this.options.extensions).forEach(function (name) {
+            // Always save the toolbar extension for last
+            if (name !== 'toolbar' && this.options.extensions[name]) {
+                this.extensions.push(initExtension(this.options.extensions[name], name, this));
+            }
+        }, this);
+
+        // 4 Cases for imageDragging + fileDragging extensons:
+        //
+        // 1. ImageDragging ON + No Custom Image Dragging Extension:
+        //    * Use fileDragging extension (default options)
+        // 2. ImageDragging OFF + No Custom Image Dragging Extension:
+        //    * Use fileDragging extension w/ images turned off
+        // 3. ImageDragging ON + Custom Image Dragging Extension:
+        //    * Don't use fileDragging (could interfere with custom image dragging extension)
+        // 4. ImageDragging OFF + Custom Image Dragging:
+        //    * Don't use fileDragging (could interfere with custom image dragging extension)
+        if (shouldUseFileDraggingExtension.call(this)) {
+            var opts = this.options.fileDragging;
+            if (!opts) {
+                opts = {};
+
+                // Image is in the 'allowedTypes' list by default.
+                // If imageDragging is off override the 'allowedTypes' list with an empty one
+                if (!isImageDraggingEnabled.call(this)) {
+                    opts.allowedTypes = [];
+                }
+            }
+            this.addBuiltInExtension('fileDragging', opts);
+        }
+
+        // Built-in extensions
+        var builtIns = {
+            paste: true,
+            'anchor-preview': isAnchorPreviewEnabled.call(this),
+            autoLink: isAutoLinkEnabled.call(this),
+            keyboardCommands: isKeyboardCommandsEnabled.call(this),
+            placeholder: isPlaceholderEnabled.call(this)
+        };
+        Object.keys(builtIns).forEach(function (name) {
+            if (builtIns[name]) {
+                this.addBuiltInExtension(name);
+            }
+        }, this);
+
+        // Users can pass in a custom toolbar extension
+        // so check for that first and if it's not present
+        // just create the default toolbar
+        var toolbarExtension = this.options.extensions['toolbar'];
+        if (!toolbarExtension && isToolbarEnabled.call(this)) {
+            // Backwards compatability
+            var toolbarOptions = MediumEditor.util.extend({}, this.options.toolbar, {
+                allowMultiParagraphSelection: this.options.allowMultiParagraphSelection // deprecated
+            });
+            toolbarExtension = new MediumEditor.extensions.toolbar(toolbarOptions);
+        }
+
+        // If the toolbar is not disabled, so we actually have an extension
+        // initialize it and add it to the extensions array
+        if (toolbarExtension) {
+            this.extensions.push(initExtension(toolbarExtension, 'toolbar', this));
+        }
+    }
+
+    function mergeOptions(defaults, options) {
+        var deprecatedProperties = [
+            ['allowMultiParagraphSelection', 'toolbar.allowMultiParagraphSelection']
+        ];
+        // warn about using deprecated properties
+        if (options) {
+            deprecatedProperties.forEach(function (pair) {
+                if (options.hasOwnProperty(pair[0]) && options[pair[0]] !== undefined) {
+                    MediumEditor.util.deprecated(pair[0], pair[1], 'v6.0.0');
+                }
+            });
+        }
+
+        return MediumEditor.util.defaults({}, options, defaults);
+    }
+
+    function execActionInternal(action, opts) {
+        /*jslint regexp: true*/
+        var appendAction = /^append-(.+)$/gi,
+            justifyAction = /justify([A-Za-z]*)$/g, /* Detecting if is justifyCenter|Right|Left */
+            match,
+            cmdValueArgument;
+        /*jslint regexp: false*/
+
+        // Actions starting with 'append-' should attempt to format a block of text ('formatBlock') using a specific
+        // type of block element (ie append-blockquote, append-h1, append-pre, etc.)
+        match = appendAction.exec(action);
+        if (match) {
+            return MediumEditor.util.execFormatBlock(this.options.ownerDocument, match[1]);
+        }
+
+        if (action === 'fontSize') {
+            // TODO: Deprecate support for opts.size in 6.0.0
+            if (opts.size) {
+                MediumEditor.util.deprecated('.size option for fontSize command', '.value', '6.0.0');
+            }
+            cmdValueArgument = opts.value || opts.size;
+            return this.options.ownerDocument.execCommand('fontSize', false, cmdValueArgument);
+        }
+
+        if (action === 'fontName') {
+            // TODO: Deprecate support for opts.name in 6.0.0
+            if (opts.name) {
+                MediumEditor.util.deprecated('.name option for fontName command', '.value', '6.0.0');
+            }
+            cmdValueArgument = opts.value || opts.name;
+            return this.options.ownerDocument.execCommand('fontName', false, cmdValueArgument);
+        }
+
+        if (action === 'createLink') {
+            return this.createLink(opts);
+        }
+
+        if (action === 'image') {
+            var src = this.options.contentWindow.getSelection().toString().trim();
+            return this.options.ownerDocument.execCommand('insertImage', false, src);
+        }
+
+        if (action === 'html') {
+            var html = this.options.contentWindow.getSelection().toString().trim();
+            return MediumEditor.util.insertHTMLCommand(this.options.ownerDocument, html);
+        }
+
+        /* Issue: https://github.com/yabwe/medium-editor/issues/595
+         * If the action is to justify the text */
+        if (justifyAction.exec(action)) {
+            var result = this.options.ownerDocument.execCommand(action, false, null),
+                parentNode = MediumEditor.selection.getSelectedParentElement(MediumEditor.selection.getSelectionRange(this.options.ownerDocument));
+            if (parentNode) {
+                cleanupJustifyDivFragments.call(this, MediumEditor.util.getTopBlockContainer(parentNode));
+            }
+
+            return result;
+        }
+
+        cmdValueArgument = opts && opts.value;
+        return this.options.ownerDocument.execCommand(action, false, cmdValueArgument);
+    }
+
+    /* If we've just justified text within a container block
+     * Chrome may have removed <br> elements and instead wrapped lines in <div> elements
+     * with a text-align property.  If so, we want to fix this
+     */
+    function cleanupJustifyDivFragments(blockContainer) {
+        if (!blockContainer) {
+            return;
+        }
+
+        var textAlign,
+            childDivs = Array.prototype.slice.call(blockContainer.childNodes).filter(function (element) {
+                var isDiv = element.nodeName.toLowerCase() === 'div';
+                if (isDiv && !textAlign) {
+                    textAlign = element.style.textAlign;
+                }
+                return isDiv;
+            });
+
+        /* If we found child <div> elements with text-align style attributes
+         * we should fix this by:
+         *
+         * 1) Unwrapping each <div> which has a text-align style
+         * 2) Insert a <br> element after each set of 'unwrapped' div children
+         * 3) Set the text-align style of the parent block element
+         */
+        if (childDivs.length) {
+            // Since we're mucking with the HTML, preserve selection
+            this.saveSelection();
+            childDivs.forEach(function (div) {
+                if (div.style.textAlign === textAlign) {
+                    var lastChild = div.lastChild;
+                    if (lastChild) {
+                        // Instead of a div, extract the child elements and add a <br>
+                        MediumEditor.util.unwrap(div, this.options.ownerDocument);
+                        var br = this.options.ownerDocument.createElement('BR');
+                        lastChild.parentNode.insertBefore(br, lastChild.nextSibling);
+                    }
+                }
+            }, this);
+            blockContainer.style.textAlign = textAlign;
+            // We're done, so restore selection
+            this.restoreSelection();
+        }
+    }
+
+    var initialContent = {};
+
+    MediumEditor.prototype = {
+        // NOT DOCUMENTED - exposed for backwards compatability
+        init: function (elements, options) {
+            this.options = mergeOptions.call(this, this.defaults, options);
+            this.origElements = elements;
+
+            if (!this.options.elementsContainer) {
+                this.options.elementsContainer = this.options.ownerDocument.body;
+            }
+
+            return this.setup();
+        },
+
+        setup: function () {
+            if (this.isActive) {
+                return;
+            }
+
+            addToEditors.call(this, this.options.contentWindow);
+            this.events = new MediumEditor.Events(this);
+            this.elements = [];
+
+            this.addElements(this.origElements);
+
+            if (this.elements.length === 0) {
+                return;
+            }
+
+            this.isActive = true;
+
+            // Call initialization helpers
+            initExtensions.call(this);
+            attachHandlers.call(this);
+        },
+
+        destroy: function () {
+            if (!this.isActive) {
+                return;
+            }
+
+            this.isActive = false;
+
+            this.extensions.forEach(function (extension) {
+                if (typeof extension.destroy === 'function') {
+                    extension.destroy();
+                }
+            }, this);
+
+            this.events.destroy();
+
+            this.elements.forEach(function (element) {
+                // Reset elements content, fix for issue where after editor destroyed the red underlines on spelling errors are left
+                if (this.options.spellcheck) {
+                    element.innerHTML = element.innerHTML;
+                }
+
+                // cleanup extra added attributes
+                element.removeAttribute('contentEditable');
+                element.removeAttribute('spellcheck');
+                element.removeAttribute('data-medium-editor-element');
+                element.classList.remove('medium-editor-element');
+                element.removeAttribute('role');
+                element.removeAttribute('aria-multiline');
+                element.removeAttribute('medium-editor-index');
+                element.removeAttribute('data-medium-editor-editor-index');
+
+                // Remove any elements created for textareas
+                if (element.getAttribute('medium-editor-textarea-id')) {
+                    cleanupTextareaElement(element);
+                }
+            }, this);
+            this.elements = [];
+            this.instanceHandleEditableKeydownEnter = null;
+            this.instanceHandleEditableInput = null;
+
+            removeFromEditors.call(this, this.options.contentWindow);
+        },
+
+        on: function (target, event, listener, useCapture) {
+            this.events.attachDOMEvent(target, event, listener, useCapture);
+
+            return this;
+        },
+
+        off: function (target, event, listener, useCapture) {
+            this.events.detachDOMEvent(target, event, listener, useCapture);
+
+            return this;
+        },
+
+        subscribe: function (event, listener) {
+            this.events.attachCustomEvent(event, listener);
+
+            return this;
+        },
+
+        unsubscribe: function (event, listener) {
+            this.events.detachCustomEvent(event, listener);
+
+            return this;
+        },
+
+        trigger: function (name, data, editable) {
+            this.events.triggerCustomEvent(name, data, editable);
+
+            return this;
+        },
+
+        delay: function (fn) {
+            var self = this;
+            return setTimeout(function () {
+                if (self.isActive) {
+                    fn();
+                }
+            }, this.options.delay);
+        },
+
+        serialize: function () {
+            var i,
+                elementid,
+                content = {},
+                len = this.elements.length;
+
+            for (i = 0; i < len; i += 1) {
+                elementid = (this.elements[i].id !== '') ? this.elements[i].id : 'element-' + i;
+                content[elementid] = {
+                    value: this.elements[i].innerHTML.trim()
+                };
+            }
+            return content;
+        },
+
+        getExtensionByName: function (name) {
+            var extension;
+            if (this.extensions && this.extensions.length) {
+                this.extensions.some(function (ext) {
+                    if (ext.name === name) {
+                        extension = ext;
+                        return true;
+                    }
+                    return false;
+                });
+            }
+            return extension;
+        },
+
+        /**
+         * NOT DOCUMENTED - exposed as a helper for other extensions to use
+         */
+        addBuiltInExtension: function (name, opts) {
+            var extension = this.getExtensionByName(name),
+                merged;
+            if (extension) {
+                return extension;
+            }
+
+            switch (name) {
+                case 'anchor':
+                    merged = MediumEditor.util.extend({}, this.options.anchor, opts);
+                    extension = new MediumEditor.extensions.anchor(merged);
+                    break;
+                case 'anchor-preview':
+                    extension = new MediumEditor.extensions.anchorPreview(this.options.anchorPreview);
+                    break;
+                case 'autoLink':
+                    extension = new MediumEditor.extensions.autoLink();
+                    break;
+                case 'fileDragging':
+                    extension = new MediumEditor.extensions.fileDragging(opts);
+                    break;
+                case 'fontname':
+                    extension = new MediumEditor.extensions.fontName(this.options.fontName);
+                    break;
+                case 'fontsize':
+                    extension = new MediumEditor.extensions.fontSize(opts);
+                    break;
+                case 'keyboardCommands':
+                    extension = new MediumEditor.extensions.keyboardCommands(this.options.keyboardCommands);
+                    break;
+                case 'paste':
+                    extension = new MediumEditor.extensions.paste(this.options.paste);
+                    break;
+                case 'placeholder':
+                    extension = new MediumEditor.extensions.placeholder(this.options.placeholder);
+                    break;
+                default:
+                    // All of the built-in buttons for MediumEditor are extensions
+                    // so check to see if the extension we're creating is a built-in button
+                    if (MediumEditor.extensions.button.isBuiltInButton(name)) {
+                        if (opts) {
+                            merged = MediumEditor.util.defaults({}, opts, MediumEditor.extensions.button.prototype.defaults[name]);
+                            extension = new MediumEditor.extensions.button(merged);
+                        } else {
+                            extension = new MediumEditor.extensions.button(name);
+                        }
+                    }
+            }
+
+            if (extension) {
+                this.extensions.push(initExtension(extension, name, this));
+            }
+
+            return extension;
+        },
+
+        stopSelectionUpdates: function () {
+            this.preventSelectionUpdates = true;
+        },
+
+        startSelectionUpdates: function () {
+            this.preventSelectionUpdates = false;
+        },
+
+        checkSelection: function () {
+            var toolbar = this.getExtensionByName('toolbar');
+            if (toolbar) {
+                toolbar.checkState();
+            }
+            return this;
+        },
+
+        // Wrapper around document.queryCommandState for checking whether an action has already
+        // been applied to the current selection
+        queryCommandState: function (action) {
+            var fullAction = /^full-(.+)$/gi,
+                match,
+                queryState = null;
+
+            // Actions starting with 'full-' need to be modified since this is a medium-editor concept
+            match = fullAction.exec(action);
+            if (match) {
+                action = match[1];
+            }
+
+            try {
+                queryState = this.options.ownerDocument.queryCommandState(action);
+            } catch (exc) {
+                queryState = null;
+            }
+
+            return queryState;
+        },
+
+        execAction: function (action, opts) {
+            /*jslint regexp: true*/
+            var fullAction = /^full-(.+)$/gi,
+                match,
+                result;
+            /*jslint regexp: false*/
+
+            // Actions starting with 'full-' should be applied to to the entire contents of the editable element
+            // (ie full-bold, full-append-pre, etc.)
+            match = fullAction.exec(action);
+            if (match) {
+                // Store the current selection to be restored after applying the action
+                this.saveSelection();
+                // Select all of the contents before calling the action
+                this.selectAllContents();
+                result = execActionInternal.call(this, match[1], opts);
+                // Restore the previous selection
+                this.restoreSelection();
+            } else {
+                result = execActionInternal.call(this, action, opts);
+            }
+
+            // do some DOM clean-up for known browser issues after the action
+            if (action === 'insertunorderedlist' || action === 'insertorderedlist') {
+                MediumEditor.util.cleanListDOM(this.options.ownerDocument, this.getSelectedParentElement());
+            }
+
+            this.checkSelection();
+            return result;
+        },
+
+        getSelectedParentElement: function (range) {
+            if (range === undefined) {
+                range = this.options.contentWindow.getSelection().getRangeAt(0);
+            }
+            return MediumEditor.selection.getSelectedParentElement(range);
+        },
+
+        selectAllContents: function () {
+            var currNode = MediumEditor.selection.getSelectionElement(this.options.contentWindow);
+
+            if (currNode) {
+                // Move to the lowest descendant node that still selects all of the contents
+                while (currNode.children.length === 1) {
+                    currNode = currNode.children[0];
+                }
+
+                this.selectElement(currNode);
+            }
+        },
+
+        selectElement: function (element) {
+            MediumEditor.selection.selectNode(element, this.options.ownerDocument);
+
+            var selElement = MediumEditor.selection.getSelectionElement(this.options.contentWindow);
+            if (selElement) {
+                this.events.focusElement(selElement);
+            }
+        },
+
+        getFocusedElement: function () {
+            var focused;
+            this.elements.some(function (element) {
+                // Find the element that has focus
+                if (!focused && element.getAttribute('data-medium-focused')) {
+                    focused = element;
+                }
+
+                // bail if we found the element that had focus
+                return !!focused;
+            }, this);
+
+            return focused;
+        },
+
+        // Export the state of the selection in respect to one of this
+        // instance of MediumEditor's elements
+        exportSelection: function () {
+            var selectionElement = MediumEditor.selection.getSelectionElement(this.options.contentWindow),
+                editableElementIndex = this.elements.indexOf(selectionElement),
+                selectionState = null;
+
+            if (editableElementIndex >= 0) {
+                selectionState = MediumEditor.selection.exportSelection(selectionElement, this.options.ownerDocument);
+            }
+
+            if (selectionState !== null && editableElementIndex !== 0) {
+                selectionState.editableElementIndex = editableElementIndex;
+            }
+
+            return selectionState;
+        },
+
+        saveSelection: function () {
+            this.selectionState = this.exportSelection();
+        },
+
+        // Restore a selection based on a selectionState returned by a call
+        // to MediumEditor.exportSelection
+        importSelection: function (selectionState, favorLaterSelectionAnchor) {
+            if (!selectionState) {
+                return;
+            }
+
+            var editableElement = this.elements[selectionState.editableElementIndex || 0];
+            MediumEditor.selection.importSelection(selectionState, editableElement, this.options.ownerDocument, favorLaterSelectionAnchor);
+        },
+
+        restoreSelection: function () {
+            this.importSelection(this.selectionState);
+        },
+
+        createLink: function (opts) {
+            var currentEditor = MediumEditor.selection.getSelectionElement(this.options.contentWindow),
+                customEvent = {},
+                targetUrl;
+
+            // Make sure the selection is within an element this editor is tracking
+            if (this.elements.indexOf(currentEditor) === -1) {
+                return;
+            }
+
+            try {
+                this.events.disableCustomEvent('editableInput');
+                // TODO: Deprecate support for opts.url in 6.0.0
+                if (opts.url) {
+                    MediumEditor.util.deprecated('.url option for createLink', '.value', '6.0.0');
+                }
+                targetUrl = opts.url || opts.value;
+                if (targetUrl && targetUrl.trim().length > 0) {
+                    var currentSelection = this.options.contentWindow.getSelection();
+                    if (currentSelection) {
+                        var currRange = currentSelection.getRangeAt(0),
+                            commonAncestorContainer = currRange.commonAncestorContainer,
+                            exportedSelection,
+                            startContainerParentElement,
+                            endContainerParentElement,
+                            textNodes;
+
+                        // If the selection is contained within a single text node
+                        // and the selection starts at the beginning of the text node,
+                        // MSIE still says the startContainer is the parent of the text node.
+                        // If the selection is contained within a single text node, we
+                        // want to just use the default browser 'createLink', so we need
+                        // to account for this case and adjust the commonAncestorContainer accordingly
+                        if (currRange.endContainer.nodeType === 3 &&
+                            currRange.startContainer.nodeType !== 3 &&
+                            currRange.startOffset === 0 &&
+                            currRange.startContainer.firstChild === currRange.endContainer) {
+                            commonAncestorContainer = currRange.endContainer;
+                        }
+
+                        startContainerParentElement = MediumEditor.util.getClosestBlockContainer(currRange.startContainer);
+                        endContainerParentElement = MediumEditor.util.getClosestBlockContainer(currRange.endContainer);
+
+                        // If the selection is not contained within a single text node
+                        // but the selection is contained within the same block element
+                        // we want to make sure we create a single link, and not multiple links
+                        // which can happen with the built in browser functionality
+                        if (commonAncestorContainer.nodeType !== 3 && commonAncestorContainer.textContent.length !== 0 && startContainerParentElement === endContainerParentElement) {
+                            var parentElement = (startContainerParentElement || currentEditor),
+                                fragment = this.options.ownerDocument.createDocumentFragment();
+
+                            // since we are going to create a link from an extracted text,
+                            // be sure that if we are updating a link, we won't let an empty link behind (see #754)
+                            // (Workaroung for Chrome)
+                            this.execAction('unlink');
+
+                            exportedSelection = this.exportSelection();
+                            fragment.appendChild(parentElement.cloneNode(true));
+
+                            if (currentEditor === parentElement) {
+                                // We have to avoid the editor itself being wiped out when it's the only block element,
+                                // as our reference inside this.elements gets detached from the page when insertHTML runs.
+                                // If we just use [parentElement, 0] and [parentElement, parentElement.childNodes.length]
+                                // as the range boundaries, this happens whenever parentElement === currentEditor.
+                                // The tradeoff to this workaround is that a orphaned tag can sometimes be left behind at
+                                // the end of the editor's content.
+                                // In Gecko:
+                                // as an empty <strong></strong> if parentElement.lastChild is a <strong> tag.
+                                // In WebKit:
+                                // an invented <br /> tag at the end in the same situation
+                                MediumEditor.selection.select(
+                                    this.options.ownerDocument,
+                                    parentElement.firstChild,
+                                    0,
+                                    parentElement.lastChild,
+                                    parentElement.lastChild.nodeType === 3 ?
+                                    parentElement.lastChild.nodeValue.length : parentElement.lastChild.childNodes.length
+                                );
+                            } else {
+                                MediumEditor.selection.select(
+                                    this.options.ownerDocument,
+                                    parentElement,
+                                    0,
+                                    parentElement,
+                                    parentElement.childNodes.length
+                                );
+                            }
+
+                            var modifiedExportedSelection = this.exportSelection();
+
+                            textNodes = MediumEditor.util.findOrCreateMatchingTextNodes(
+                                this.options.ownerDocument,
+                                fragment,
+                                {
+                                    start: exportedSelection.start - modifiedExportedSelection.start,
+                                    end: exportedSelection.end - modifiedExportedSelection.start,
+                                    editableElementIndex: exportedSelection.editableElementIndex
+                                }
+                            );
+                            // If textNodes are not present, when changing link on images
+                            // ex: <a><img src="http://image.test.com"></a>, change fragment to currRange.startContainer
+                            // and set textNodes array to [imageElement, imageElement]
+                            if (textNodes.length === 0) {
+                                fragment = this.options.ownerDocument.createDocumentFragment();
+                                fragment.appendChild(commonAncestorContainer.cloneNode(true));
+                                textNodes = [fragment.firstChild.firstChild, fragment.firstChild.lastChild];
+                            }
+
+                            // Creates the link in the document fragment
+                            MediumEditor.util.createLink(this.options.ownerDocument, textNodes, targetUrl.trim());
+
+                            // Chrome trims the leading whitespaces when inserting HTML, which messes up restoring the selection.
+                            var leadingWhitespacesCount = (fragment.firstChild.innerHTML.match(/^\s+/) || [''])[0].length;
+
+                            // Now move the created link back into the original document in a way to preserve undo/redo history
+                            MediumEditor.util.insertHTMLCommand(this.options.ownerDocument, fragment.firstChild.innerHTML.replace(/^\s+/, ''));
+                            exportedSelection.start -= leadingWhitespacesCount;
+                            exportedSelection.end -= leadingWhitespacesCount;
+
+                            this.importSelection(exportedSelection);
+                        } else {
+                            this.options.ownerDocument.execCommand('createLink', false, targetUrl);
+                        }
+
+                        if (this.options.targetBlank || opts.target === '_blank') {
+                            MediumEditor.util.setTargetBlank(MediumEditor.selection.getSelectionStart(this.options.ownerDocument), targetUrl);
+                        } else {
+                            MediumEditor.util.removeTargetBlank(MediumEditor.selection.getSelectionStart(this.options.ownerDocument), targetUrl);
+                        }
+
+                        if (opts.buttonClass) {
+                            MediumEditor.util.addClassToAnchors(MediumEditor.selection.getSelectionStart(this.options.ownerDocument), opts.buttonClass);
+                        }
+                    }
+                }
+                // Fire input event for backwards compatibility if anyone was listening directly to the DOM input event
+                if (this.options.targetBlank || opts.target === '_blank' || opts.buttonClass) {
+                    customEvent = this.options.ownerDocument.createEvent('HTMLEvents');
+                    customEvent.initEvent('input', true, true, this.options.contentWindow);
+                    for (var i = 0, len = this.elements.length; i < len; i += 1) {
+                        this.elements[i].dispatchEvent(customEvent);
+                    }
+                }
+            } finally {
+                this.events.enableCustomEvent('editableInput');
+            }
+            // Fire our custom editableInput event
+            this.events.triggerCustomEvent('editableInput', customEvent, currentEditor);
+        },
+
+        cleanPaste: function (text) {
+            this.getExtensionByName('paste').cleanPaste(text);
+        },
+
+        pasteHTML: function (html, options) {
+            this.getExtensionByName('paste').pasteHTML(html, options);
+        },
+
+        setContent: function (html, index) {
+            index = index || 0;
+
+            if (this.elements[index]) {
+                var target = this.elements[index];
+                target.innerHTML = html;
+                this.checkContentChanged(target);
+            }
+        },
+
+        getContent: function (index) {
+            index = index || 0;
+
+            if (this.elements[index]) {
+                return this.elements[index].innerHTML.trim();
+            }
+            return null;
+        },
+
+        checkContentChanged: function (editable) {
+            editable = editable || MediumEditor.selection.getSelectionElement(this.options.contentWindow);
+            this.events.updateInput(editable, { target: editable, currentTarget: editable });
+        },
+
+        resetContent: function (element) {
+            // For all elements that exist in the this.elements array, we can assume:
+            // - Its initial content has been set in the initialContent object
+            // - It has a medium-editor-index attribute which is the key value in the initialContent object
+
+            if (element) {
+                var index = this.elements.indexOf(element);
+                if (index !== -1) {
+                    this.setContent(initialContent[element.getAttribute('medium-editor-index')], index);
+                }
+                return;
+            }
+
+            this.elements.forEach(function (el, idx) {
+                this.setContent(initialContent[el.getAttribute('medium-editor-index')], idx);
+            }, this);
+        },
+
+        addElements: function (selector) {
+            // Convert elements into an array
+            var elements = createElementsArray(selector, this.options.ownerDocument, true);
+
+            // Do we have elements to add now?
+            if (elements.length === 0) {
+                return false;
+            }
+
+            elements.forEach(function (element) {
+                // Initialize all new elements (we check that in those functions don't worry)
+                element = initElement.call(this, element, this.id);
+
+                // Add new elements to our internal elements array
+                this.elements.push(element);
+
+                // Trigger event so extensions can know when an element has been added
+                this.trigger('addElement', { target: element, currentTarget: element }, element);
+            }, this);
+        },
+
+        removeElements: function (selector) {
+            // Convert elements into an array
+            var elements = createElementsArray(selector, this.options.ownerDocument),
+                toRemove = elements.map(function (el) {
+                    // For textareas, make sure we're looking at the editor div and not the textarea itself
+                    if (el.getAttribute('medium-editor-textarea-id') && el.parentNode) {
+                        return el.parentNode.querySelector('div[medium-editor-textarea-id="' + el.getAttribute('medium-editor-textarea-id') + '"]');
+                    } else {
+                        return el;
+                    }
+                });
+
+            this.elements = this.elements.filter(function (element) {
+                // If this is an element we want to remove
+                if (toRemove.indexOf(element) !== -1) {
+                    this.events.cleanupElement(element);
+                    if (element.getAttribute('medium-editor-textarea-id')) {
+                        cleanupTextareaElement(element);
+                    }
+                    // Trigger event so extensions can clean-up elements that are being removed
+                    this.trigger('removeElement', { target: element, currentTarget: element }, element);
+                    return false;
+                }
+                return true;
+            }, this);
+        }
+    };
+
+    MediumEditor.getEditorFromElement = function (element) {
+        var index = element.getAttribute('data-medium-editor-editor-index'),
+            win = element && element.ownerDocument && (element.ownerDocument.defaultView || element.ownerDocument.parentWindow);
+        if (win && win._mediumEditors && win._mediumEditors[index]) {
+            return win._mediumEditors[index];
+        }
+        return null;
+    };
+}());
+
+(function () {
+    // summary: The default options hash used by the Editor
+
+    MediumEditor.prototype.defaults = {
+        activeButtonClass: 'medium-editor-button-active',
+        buttonLabels: false,
+        delay: 0,
+        disableReturn: false,
+        disableDoubleReturn: false,
+        disableExtraSpaces: false,
+        disableEditing: false,
+        autoLink: false,
+        elementsContainer: false,
+        contentWindow: window,
+        ownerDocument: document,
+        targetBlank: false,
+        extensions: {},
+        spellcheck: true
+    };
+})();
+
+MediumEditor.parseVersionString = function (release) {
+    var split = release.split('-'),
+        version = split[0].split('.'),
+        preRelease = (split.length > 1) ? split[1] : '';
+    return {
+        major: parseInt(version[0], 10),
+        minor: parseInt(version[1], 10),
+        revision: parseInt(version[2], 10),
+        preRelease: preRelease,
+        toString: function () {
+            return [version[0], version[1], version[2]].join('.') + (preRelease ? '-' + preRelease : '');
+        }
+    };
+};
+
+MediumEditor.version = MediumEditor.parseVersionString.call(this, ({
+    // grunt-bump looks for this:
+    'version': '5.23.2'
+}).version);
+
+    return MediumEditor;
+}()));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mediumEditor = __webpack_require__(0);
+
+var _mediumEditor2 = _interopRequireDefault(_mediumEditor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'medium-editor',
+  props: {
+    text: [String],
+    customTag: {
+      type: [String],
+      default: function _default() {
+        return 'div';
+      }
+    },
+    options: {
+      type: [Object],
+      default: function _default() {}
+    }
+  },
+  render: function render(h) {
+    return h(this.customTag, { ref: 'element' });
+  },
+  mounted: function mounted(evt) {
+    this.createAndSubscribe();
+  },
+  beforeDestroy: function beforeDestroy(evt) {
+    this.tearDown();
+  },
+
+  methods: {
+    tearDown: function tearDown() {
+      this.api.unsubscribe('editableInput', this.emit);
+      this.api.destroy();
+    },
+    createAndSubscribe: function createAndSubscribe() {
+      var _this = this;
+
+      this.$refs.element.innerHTML = this.text;
+
+      this.api = new _mediumEditor2.default(this.$refs.element, this.options);
+
+      // bind edit operations to model
+      // we need to store the handler in order to later on detach it again
+      this.emit = function (event) {
+        return _this.$emit('edit', { event: event, api: _this.api });
+      };
+      this.api.subscribe('editableInput', this.emit);
+    }
+  },
+  watch: {
+    text: function text(newText) {
+      // innerHTML MUST not be performed if the text did not actually change.
+      // otherwise, the caret position will be reset.
+      if (newText !== this.$refs.element.innerHTML) {
+        this.$refs.element.innerHTML = this.text;
+      }
+    },
+
+    /**
+     * There is currently no way to change the options of a medium editor
+     * without destroying and re-setting up the MediumEditor object.
+     * We only tear down the editor, if the options actually changed.
+     * See: https://github.com/yabwe/medium-editor/issues/1129
+     */
+    options: function options(newOptions) {
+      if (newOptions !== this.options) {
+        this.tearDown();
+        this.createAndSubscribe();
+      }
+    }
+  },
+  MediumEditor: _mediumEditor2.default
+};
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "create-project-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.5,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        scrollable: true,
+        reset: true,
+        width: "60%",
+        height: "auto",
+        clickToClose: false
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content" }, [
+          _c(
+            "form",
+            [
+              _c("vue-dropzone", {
+                ref: "myVueDropzone",
+                attrs: { id: "dropzone", options: _vm.dropzoneOptions }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "createProjectForm" },
+                [
+                  _c("p", [_vm._v("Nama project")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.createProjectFormInput.projectNameForm,
+                        expression: "createProjectFormInput.projectNameForm"
+                      }
+                    ],
+                    staticClass: "input-nofill input-text fontSize-s",
+                    attrs: {
+                      type: "text",
+                      placeholder: "ex: Project Umbrella"
+                    },
+                    domProps: {
+                      value: _vm.createProjectFormInput.projectNameForm
+                    },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.createProjectFormInput,
+                          "projectNameForm",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Deskripsi project")]),
+                  _vm._v(" "),
+                  _c("editable", {
+                    staticClass: "editableWrapper",
+                    attrs: {
+                      content: _vm.createProjectFormInput.projectDescForm
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Tambah anggota")]),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: {
+                      debounce: 250,
+                      "on-search": _vm.getOptions,
+                      label: "full_name",
+                      "aria-placeholder": "search member..."
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "createProjectModal-footer modifyFooter" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "button button-landing button--xl borderRadius-s button--melting-blue red-bg",
+                on: {
+                  click: function($event) {
+                    _vm.$modal.hide("create-project-modal")
+                  }
+                }
+              },
+              [_vm._v("Batalkan")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
+                attrs: { disabled: !_vm.createProjectIsPassed },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.createProject($event)
+                  }
+                }
+              },
+              [_vm._v("Buat project")]
+            )
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-a55411c4", module.exports)
+  }
+}
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(110)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(112)
+/* template */
+var __vue_template__ = __webpack_require__(113)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/events/profilemenuPopup.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5cfba31a", Component.options)
+  } else {
+    hotAPI.reload("data-v-5cfba31a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(111);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("207a0422", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ec008c!important\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      profilePopupCover: 'images/avatar0.jpg',
+      blurConfig: {
+        isBlurred: true, // activate and deactivate blur directive , i always turning on it
+        opacity: 1,
+        filter: 'blur(1px)',
+        transition: 'all .3s linear'
+      }
+    };
+  }
+});
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "profile-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.13,
+        "pivot-x": 0.95,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        clickToClose: true
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
+          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
+            _c("div", {
+              directives: [
+                {
+                  name: "blur",
+                  rawName: "v-blur",
+                  value: _vm.blurConfig,
+                  expression: "blurConfig"
+                }
+              ],
+              staticClass: "profileMenuPopup__Header",
+              style: { backgroundImage: "url(" + this.profilePopupCover + ")" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "profileMenuPopup__Content" }, [
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: { path: "/profile" } } }, [
+                      _vm._v("Profile")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [_vm._v("Help")]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "redColor",
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("report-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Report Bugs")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("confirm-modal"),
+                          _vm.$modal.hide("profile-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Keluar")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5cfba31a", module.exports)
+  }
+}
+
+/***/ }),
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -28513,7 +41632,69 @@ var render = function() {
       _vm._v(" "),
       _c("create-project"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("confirm-popup"),
+      _vm._v(" "),
+      _c("profile-popup"),
+      _vm._v(" "),
+      _c("report-popup"),
+      _vm._v(" "),
+      _c("div", { staticClass: "navbar" }, [
+        _c(
+          "div",
+          { staticClass: "navbar__profile navbar__profile--profile-page" },
+          [
+            _c(
+              "span",
+              [
+                _c("router-link", { attrs: { to: { path: "/dashboard" } } }, [
+                  _vm._v("Octolist")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "wrapper-profile right-menu" }, [
+              _c("div", {
+                staticClass: "icon-bell marginTop-xs marginRight-s",
+                attrs: { id: "message" }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "icon-message marginTop-xs marginRight-s",
+                attrs: { id: "bell" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "profile-badge" }, [
+                _c("a", { attrs: { href: "javascript:void(0)" } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-gradient" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "avatar avatar--s avatar-dp",
+                      attrs: { id: "avatar-dp-id" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.$modal.show("profile-popup-modal")
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "avatar-img",
+                        attrs: { src: "images/avatar0.jpg", alt: "" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [
         _c("div", { staticClass: "content__header" }, [
@@ -28528,7 +41709,7 @@ var render = function() {
                   attrs: { id: "add-task" },
                   on: {
                     click: function($event) {
-                      _vm.$modal.show("create-project-modal")
+                      _vm.popupCreateProjectClickOpen()
                     }
                   }
                 },
@@ -28570,98 +41751,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar" }, [
-      _c(
-        "div",
-        { staticClass: "navbar__profile navbar__profile--profile-page" },
-        [
-          _c("a", { attrs: { href: "javascript:void(0)" } }, [
-            _c("span", [_vm._v("Octolist")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "navbar-searchbar" }, [
-            _c("input", {
-              staticClass:
-                "navbar-searchbar input-nofill input-text fontSize-s borderRadius-m",
-              attrs: {
-                autocomplete: "off",
-                autocorrect: "off",
-                autocapitalize: "off",
-                spellcheck: "false",
-                type: "text",
-                name: "",
-                value: "",
-                placeholder: "Search"
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticStyle: {
-                width: "20px",
-                height: "20px",
-                position: "absolute",
-                top: "12px",
-                right: "12px"
-              },
-              attrs: { src: "images/search.svg", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "wrapper-profile right-menu" }, [
-            _c("div", {
-              staticClass: "icon-bell marginTop-xs marginRight-s",
-              attrs: { id: "message" }
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "icon-message marginTop-xs marginRight-s",
-              attrs: { id: "bell" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "profile-badge" }, [
-              _c("a", { attrs: { href: "javascript:void(0)" } }),
-              _vm._v(" "),
-              _c("div", { staticClass: "border-gradient" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "avatar avatar--s avatar-dp",
-                    attrs: { id: "avatar-dp-id" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "avatar-img",
-                      attrs: { src: "images/avatar0.jpg", alt: "" }
-                    })
-                  ]
-                )
-              ])
-            ])
-          ])
-        ]
-      ),
+    return _c("div", { staticClass: "navbar-searchbar" }, [
+      _c("input", {
+        staticClass:
+          "navbar-searchbar input-nofill input-text fontSize-s borderRadius-m",
+        attrs: {
+          autocomplete: "off",
+          autocorrect: "off",
+          autocapitalize: "off",
+          spellcheck: "false",
+          type: "text",
+          name: "",
+          value: "",
+          placeholder: "Search"
+        }
+      }),
       _vm._v(" "),
-      _c("div", { staticClass: "navbar-extended" }, [
-        _c("div", { staticClass: "navbar-extended__item marginMagic" }, [
-          _c(
-            "a",
-            {
-              staticClass: "marginRight-s",
-              staticStyle: { color: "#0f55eb" },
-              attrs: { href: "#" }
-            },
-            [_vm._v("Feed")]
-          ),
-          _vm._v(" "),
-          _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-            _vm._v("Activity")
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-            _vm._v("Contribution")
-          ])
-        ])
-      ])
+      _c("img", {
+        staticStyle: {
+          width: "20px",
+          height: "20px",
+          position: "absolute",
+          top: "12px",
+          right: "12px"
+        },
+        attrs: { src: "images/search.svg", alt: "" }
+      })
     ])
   },
   function() {
@@ -28683,19 +41798,19 @@ if (false) {
 }
 
 /***/ }),
-/* 92 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(173)
+  __webpack_require__(116)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(95)
+var __vue_script__ = __webpack_require__(118)
 /* template */
-var __vue_template__ = __webpack_require__(175)
+var __vue_template__ = __webpack_require__(119)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28734,9 +41849,47 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 93 */,
-/* 94 */,
-/* 95 */
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(117);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("d0ee6cf8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./board.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./board.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 118 */
 /***/ (function(module, exports) {
 
 //
@@ -28783,21 +41936,90 @@ module.exports = Component.exports
 //
 
 /***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "board" }, [
+      _c("header", { attrs: { id: "boardHeaderId" } }, [
+        _c("div", { staticClass: "boardHeader" }, [
+          _c("nav", { staticClass: "boardHeader__Navigation" }, [
+            _c("div", { staticClass: "boardHeaderNavigation__item" }, [
+              _c("ul", [
+                _c("li", [_vm._v("board")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("project")])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "boardWrapper" }, [
+        _c("div", { staticClass: "boardWrapper__Main" }, [
+          _vm._v("\n\t\t\tkanban here\n\t\t")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("aside", [
+        _c("div", { staticClass: "asideBoardWrapper" }, [
+          _c("div", { staticClass: "asideBoardWrapper__Core" }, [
+            _c("div", { staticClass: "asideBoard" }, [
+              _c("div", { staticClass: "asideBoard__ProjectTitle" }, [
+                _c("span", [_vm._v("Project name")]),
+                _vm._v(" "),
+                _c("h3", [_vm._v("Project Octolist")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "asideBoard__ProjectDesc" }, [
+                _c("span", [
+                  _vm._v(
+                    "\n\t\t\t\t\t\t\tproject ini mempunyai tujuan untuk mempermudah pengerjaan suatu proyek dan planning dalam sebuah team\n\t\t\t\t\t\t"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "asideBoard__ProjectMember" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7035745f", module.exports)
+  }
+}
+
+/***/ }),
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(99)
+  __webpack_require__(121)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(101)
+var __vue_script__ = __webpack_require__(123)
 /* template */
-var __vue_template__ = __webpack_require__(102)
+var __vue_template__ = __webpack_require__(124)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28836,23 +42058,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 99 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(100);
+var content = __webpack_require__(122);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0eff62ea", content, false);
+var update = __webpack_require__(2)("d985a7da", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f17fd3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./profile.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f17fd3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./profile.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f17fd3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profile.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2f17fd3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profile.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -28862,7 +42084,7 @@ if(false) {
 }
 
 /***/ }),
-/* 100 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -28870,138 +42092,27 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.profile-head__title h4{text-align:center!important\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 101 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__);
 //
 //
 //
@@ -29069,117 +42180,166 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      projectIds: [],
+      projectItems: [],
+      resizable: false,
+      adaptive: false,
+      draggable: false,
+      canBeShown: false,
+      state: null,
+      isOpened: false,
+      profile: {
+        name: 'Fahmi Irsyad K',
+        quote: 'semua bisa diraih kalau punya niat dan semangat'
+      }
+    };
+  },
+
+  methods: {
+    show: function show(resizable, adaptive, draggable) {
+      var _this = this;
+
+      this.resizable = resizable;
+      this.adaptive = adaptive;
+      this.draggable = draggable;
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(function () {
+        _this.$modal.show('create-project-modal');
+        _this.$modal.show('profile-popup-modal');
+        _this.$modal.show('report-popup-modal');
+      });
+    },
+    detected: function detected(e) {
+      this.state = e;
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('create-project-modal');
+    }
+  },
+  components: {
+    'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
+    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a
+  }
+});
 
 /***/ }),
-/* 102 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("nav", [
+  return _c(
+    "div",
+    [
+      _c("detectNetworkBar", { on: { "detected-condition": _vm.detected } }, [
+        _c("div", { attrs: { slot: "online" }, slot: "online" }),
+        _vm._v(" "),
+        _c("div", { attrs: { slot: "offline" }, slot: "offline" }, [
+          _c("div", { staticClass: "loading high-noon" }, [
+            _c("p", [_vm._v("Trying to connect to the serve.")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("create-project"),
+      _vm._v(" "),
+      _c("confirm-popup"),
+      _vm._v(" "),
+      _c("profile-popup"),
+      _vm._v(" "),
+      _c("report-popup"),
+      _vm._v(" "),
       _c("div", { staticClass: "navbar navbar--fixed" }, [
         _c(
           "div",
           { staticClass: "navbar__profile navbar__profile--profile-page" },
           [
+            _c(
+              "span",
+              [
+                _c("router-link", { attrs: { to: { path: "/dashboard" } } }, [
+                  _vm._v("Octolist")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
             _vm._m(0),
             _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
             _c("div", { staticClass: "wrapper-profile right-menu" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "icon-bell marginTop-xs marginRight-s",
-                  attrs: { id: "message" }
-                },
-                [
+              _c("div", { staticClass: "profile-badge" }, [
+                _c("a", { attrs: { href: "javascript:void(0)" } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-gradient" }, [
                   _c(
-                    "svg",
+                    "div",
                     {
-                      staticClass: "feather feather-message-circle",
-                      attrs: {
-                        height: "24",
-                        viewbox: "0 0 24 24",
-                        width: "24",
-                        xmlns: "http://www.w3.org/2000/svg"
+                      staticClass: "avatar avatar--s avatar-dp",
+                      attrs: { id: "avatar-dp-id" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.$modal.show("profile-popup-modal")
+                        }
                       }
                     },
                     [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                        }
+                      _c("img", {
+                        staticClass: "avatar-img",
+                        attrs: { src: "images/avatar0.jpg", alt: "" }
                       })
                     ]
                   )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "icon-message marginTop-xs marginRight-s",
-                  attrs: { id: "bell" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "feather feather-bell",
-                      attrs: {
-                        height: "24",
-                        viewbox: "0 0 24 24",
-                        width: "24",
-                        xmlns: "http://www.w3.org/2000/svg"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(2)
+                ])
+              ])
             ])
           ]
-        ),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        _vm._m(4),
-        _vm._v(" "),
-        _vm._m(5),
-        _vm._v(" "),
-        _vm._m(6)
+        )
+      ]),
+      _vm._v(" "),
+      _c("header", [
+        _c("div", { staticClass: "wrapper-profile-head" }, [
+          _c("div", { staticClass: "profile-head marginMagic" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "profile-head__title" }, [
+              _c("h4", { staticClass: "fontSize-l" }, [
+                _vm._v(_vm._s(this.profile.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "profile-head__quotes" }, [
+              _c("q", { staticStyle: { color: "#6F6F6F" } }, [
+                _vm._v(_vm._s(this.profile.quote))
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8)
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "javascript:void(0)" } }, [
-      _c("span", [_vm._v("Octolist")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -29190,11 +42350,13 @@ var staticRenderFns = [
           "navbar-searchbar input-nofill input-text fontSize-s borderRadius-m",
         attrs: {
           autocomplete: "off",
-          name: "",
-          placeholder: "Search",
+          autocorrect: "off",
+          autocapitalize: "off",
           spellcheck: "false",
           type: "text",
-          value: ""
+          name: "",
+          value: "",
+          placeholder: "Search"
         }
       }),
       _vm._v(" "),
@@ -29206,7 +42368,7 @@ var staticRenderFns = [
           top: "12px",
           right: "12px"
         },
-        attrs: { alt: "", src: "/resources/assets/svg/search.svg" }
+        attrs: { src: "images/search.svg", alt: "" }
       })
     ])
   },
@@ -29214,23 +42376,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile-badge" }, [
-      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-        _c("div", { staticClass: "border-gradient" }, [
-          _c(
-            "div",
-            {
-              staticClass: "avatar avatar--s avatar-dp",
-              attrs: { id: "avatar-dp-id" }
-            },
-            [
-              _c("img", {
-                staticClass: "avatar-img",
-                attrs: { alt: "", src: "assets/img/avatar0.jpg" }
-              })
-            ]
-          )
-        ])
+    return _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
+      _c("div", { staticClass: "avatar avatar--xl avatar--glow marginMagic" }, [
+        _c("img", {
+          staticClass: "avatar-img",
+          attrs: { alt: "", src: "/images/avatar0.jpg" }
+        })
       ])
     ])
   },
@@ -29238,571 +42389,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-profile margin-l",
-        attrs: { id: "profile-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "profile-popup borderRadius-s" }, [
-          _c("div", { staticClass: "profile-popup__cover" }, [
-            _c("div", {
-              staticClass: "overlay-dark",
-              staticStyle: { display: "block" }
-            }),
-            _c("img", {
-              attrs: { alt: "", src: "/resources/assets/images/avatar0.jpg" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "profile-popup__cover-title" }, [
-              _c(
-                "p",
-                {
-                  staticClass: "fontWeight-6",
-                  staticStyle: { color: "white!important" }
-                },
-                [_vm._v("Fahmi Irsyad Khairi")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-popup__content padding-m" }, [
-            _c("div", { staticClass: "profile-popup__content__items" }, [
-              _c("ul", [
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "profile.html" }
-                    },
-                    [_vm._v("Profile")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Settings")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Task")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Logout")]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-notification margin-l",
-        attrs: { id: "notification-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "notification-popup borderRadius-s" }, [
-          _c("div", { staticClass: "notification-popup__header padding-m" }, [
-            _c(
-              "p",
-              {
-                staticClass: "fontWeight-6",
-                staticStyle: {
-                  "font-family": "Open Sans",
-                  color: "#5d5b5b",
-                  margin: "0"
-                }
-              },
-              [_vm._v("Notification")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "notification-popup__content" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items notification-popup__items--unread padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "assets/img/love.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Cyntia pratita")
-                      ]),
-                      _vm._v(
-                        ' mengomentari "i like all these pictures, the overall mood is perfect."'
-                      ),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 4 jam yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: {
-                      alt: "",
-                      src: "/resources/assets/images/avatar0.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Pampam")
-                      ]),
-                      _vm._v(" menambahkan jadwal pada card "),
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("UI Concept")
-                      ]),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 2 menit yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: {
-                      alt: "",
-                      src: "/resources/assets/images/kecil6.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Klarak Luis D")
-                      ]),
-                      _vm._v(" menyelesaikan card "),
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Database Relation")
-                      ]),
-                      _vm._v("."),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 15 menit yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup-button padding-xs textAlignCenter"
-              },
-              [
-                _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "fontSize-s fontWeight-6",
-                      staticStyle: {
-                        "font-family": "Open Sans",
-                        color: "#5d5b5b"
-                      }
-                    },
-                    [_vm._v("Lihat semua")]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-notification margin-l",
-        attrs: { id: "message-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "message-popup borderRadius-s" }, [
-          _c("div", { staticClass: "notification-popup__header padding-m" }, [
-            _c(
-              "p",
-              {
-                staticClass: "fontWeight-6",
-                staticStyle: {
-                  "font-family": "Open Sans",
-                  color: "#5d5b5b",
-                  margin: "0"
-                }
-              },
-              [_vm._v("Pesan Masuk")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "notification-popup__content" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "/resources/assets/images/love.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Cyntia pratita")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "fontSize-s" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [
-                          _vm._v(
-                            "eh , yang ini di revisi yak :) . ada perubahan hehe , lagi males w."
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items notification-popup__items--unread padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "/resources/assets/images/5.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Steve G")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "fontSize-s" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [
-                          _vm._v(
-                            "i've uploaded new concept on project, pls review it and tell me if u found an issu ..."
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup-button padding-xs textAlignCenter"
-              },
-              [
-                _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "fontSize-s fontWeight-6",
-                      staticStyle: {
-                        "font-family": "Open Sans",
-                        color: "#5d5b5b"
-                      }
-                    },
-                    [_vm._v("Lihat semua")]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-extended--profile" }, [
-      _c("div", { staticClass: "navbar-extended__item marginMagic" }, [
-        _c(
-          "a",
-          {
-            staticClass: "marginRight-s",
-            staticStyle: { color: "#0f55eb" },
-            attrs: { href: "#" }
-          },
-          [_vm._v("Feed")]
-        ),
-        _vm._v(" "),
-        _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-          _vm._v("Activity")
+    return _c("div", { staticClass: "wrapper-profile-menu paddingBottom-l" }, [
+      _c("ul", { staticClass: "profile-menu marginMagic" }, [
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Feed")])
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-          _vm._v("Contribution")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [
-      _c("div", { staticClass: "wrapper-profile-head" }, [
-        _c("div", { staticClass: "profile-head marginMagic" }, [
-          _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-            _c(
-              "div",
-              { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
-              [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-head__title" }, [
-            _c("h4", { staticClass: "fontSize-l" }, [_vm._v("Fahmi irsyad k")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-head__quotes" }, [
-            _c(
-              "q",
-              {
-                staticStyle: { color: "#6F6F6F" },
-                attrs: { cite: "https://facebook.com" }
-              },
-              [_vm._v("semua bisa diraih kalau punya niat dan semangat")]
-            )
-          ])
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Activity")])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "wrapper-profile-menu paddingBottom-l" }, [
-          _c("ul", { staticClass: "profile-menu marginMagic" }, [
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Feed")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Activity")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Contribution")])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticStyle: { height: "1000px" } }, [
-      _c("main", [
-        _c("div", { staticClass: "wrapper-feed padding-l" }, [
-          _c("div", { staticClass: "feedpage" }, [
-            _c("div", { staticClass: "feed-items clearfix" }, [
-              _c("div", { staticClass: "feed-items__dp avatar avatar--m" }, [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "feed-items__content marginLeft-m borderRadius-s"
-                },
-                [
-                  _c("div", { staticClass: "feed-items__images" }, [
-                    _c("img", {
-                      attrs: {
-                        alt: "",
-                        src: "/resources/assets/images/background.jpg"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "feed-items__desc padding-m" }, [
-                    _c("div", { staticClass: "text-limit" }, [
-                      _c("span", [_vm._v("Update Link : https://google.com")])
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "feed-items clearfix" }, [
-              _c("div", { staticClass: "feed-items__dp avatar avatar--m" }, [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "feed-items__content marginLeft-m borderRadius-s"
-                },
-                [
-                  _c("div", { staticClass: "feed-items__images" }, [
-                    _c("img", {
-                      attrs: {
-                        alt: "",
-                        src: "/resources/assets/images/avatar0.jpg"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "feed-items__desc padding-m" }, [
-                    _c("div", { staticClass: "text-limit" }, [
-                      _c("span", [_vm._v("Update Link : https://google.com")])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Contribution")])
         ])
       ])
     ])
@@ -29818,29 +42416,29 @@ if (false) {
 }
 
 /***/ }),
-/* 103 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var disposed = false
 var cssModules = {}
-module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0&bustCache!./404.vue"], function () {
+module.hot && module.hot.accept(["!!vue-style-loader!css-loader?{\"localIdentName\":\"[hash:base64]_0\",\"importLoaders\":true,\"modules\":true}!../../../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-c1ac4c1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./404.vue"], function () {
   var oldLocals = cssModules["$style"]
   if (!oldLocals) return
-  var newLocals = __webpack_require__(23)
+  var newLocals = __webpack_require__(24)
   if (JSON.stringify(newLocals) === JSON.stringify(oldLocals)) return
   cssModules["$style"] = newLocals
-  __webpack_require__(7).rerender("data-v-c1ac4c1e")
+  __webpack_require__(8).rerender("data-v-c1ac4c1e")
 })
 function injectStyle (ssrContext) {
   if (disposed) return
-  cssModules["$style"] = __webpack_require__(23)
+  cssModules["$style"] = __webpack_require__(24)
 Object.defineProperty(this, "$style", { get: function () { return cssModules["$style"] }})
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(105)
+var __vue_script__ = __webpack_require__(127)
 /* template */
-var __vue_template__ = __webpack_require__(106)
+var __vue_template__ = __webpack_require__(128)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29881,10 +42479,10 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ }),
-/* 104 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -29900,7 +42498,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 105 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29938,7 +42536,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 106 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30038,19 +42636,19 @@ if (false) {
 }
 
 /***/ }),
-/* 107 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(108)
+  __webpack_require__(130)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(110)
+var __vue_script__ = __webpack_require__(132)
 /* template */
-var __vue_template__ = __webpack_require__(111)
+var __vue_template__ = __webpack_require__(133)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30089,23 +42687,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 108 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(109);
+var content = __webpack_require__(131);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("246ffa8d", content, false);
+var update = __webpack_require__(2)("1e8883f6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-214ae8f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./GetStarted.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-214ae8f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./GetStarted.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-214ae8f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GetStarted.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-214ae8f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GetStarted.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -30115,7 +42713,7 @@ if(false) {
 }
 
 /***/ }),
-/* 109 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -30129,7 +42727,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 110 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30148,7 +42746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 111 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30195,19 +42793,19 @@ if (false) {
 }
 
 /***/ }),
-/* 112 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(113)
+  __webpack_require__(135)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(115)
+var __vue_script__ = __webpack_require__(137)
 /* template */
-var __vue_template__ = __webpack_require__(116)
+var __vue_template__ = __webpack_require__(138)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30246,23 +42844,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 113 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(114);
+var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2443d156", content, false);
+var update = __webpack_require__(2)("c9e82c44", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f73f545\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./hello.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f73f545\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./hello.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f73f545\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./hello.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5f73f545\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./hello.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -30272,7 +42870,7 @@ if(false) {
 }
 
 /***/ }),
-/* 114 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -30286,7 +42884,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 115 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30311,7 +42909,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 116 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30362,19 +42960,19 @@ if (false) {
 }
 
 /***/ }),
-/* 117 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(118)
+  __webpack_require__(140)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(120)
+var __vue_script__ = __webpack_require__(142)
 /* template */
-var __vue_template__ = __webpack_require__(121)
+var __vue_template__ = __webpack_require__(143)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30413,23 +43011,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 118 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(119);
+var content = __webpack_require__(141);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("07ef56f3", content, false);
+var update = __webpack_require__(2)("4f4a350a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffce04f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./about.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffce04f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./about.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffce04f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./about.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ffce04f4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./about.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -30439,7 +43037,7 @@ if(false) {
 }
 
 /***/ }),
-/* 119 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -30453,7 +43051,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 120 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30578,7 +43176,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 121 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30899,19 +43497,19 @@ if (false) {
 }
 
 /***/ }),
-/* 122 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(123)
+  __webpack_require__(145)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(125)
+var __vue_script__ = __webpack_require__(147)
 /* template */
-var __vue_template__ = __webpack_require__(126)
+var __vue_template__ = __webpack_require__(148)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30950,23 +43548,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 123 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(124);
+var content = __webpack_require__(146);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("9c8bc710", content, false);
+var update = __webpack_require__(2)("249cf780", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db92968\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./profile-setup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db92968\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./profile-setup.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db92968\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profile-setup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db92968\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profile-setup.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -30976,7 +43574,7 @@ if(false) {
 }
 
 /***/ }),
-/* 124 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -30990,7 +43588,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 125 */
+/* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31021,7 +43619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 126 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31105,19 +43703,19 @@ if (false) {
 }
 
 /***/ }),
-/* 127 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(128)
+  __webpack_require__(150)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(130)
+var __vue_script__ = __webpack_require__(152)
 /* template */
-var __vue_template__ = __webpack_require__(153)
+var __vue_template__ = __webpack_require__(173)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31156,23 +43754,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 128 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(151);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("ceeb4944", content, false);
+var update = __webpack_require__(2)("2ba00e34", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a533ed8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a533ed8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a533ed8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a533ed8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -31182,7 +43780,7 @@ if(false) {
 }
 
 /***/ }),
-/* 129 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -31196,24 +43794,24 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 130 */
+/* 152 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_createProject__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_createProject__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_createProject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__events_createProject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__events_confirmPopup__);
 //
 //
@@ -31344,7 +43942,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var AdminProfile = function AdminProfile(r) {
   return __webpack_require__.e/* require.ensure */(0).then((function () {
-    return r(__webpack_require__(154));
+    return r(__webpack_require__(174));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 
@@ -31396,19 +43994,19 @@ var AdminProfile = function AdminProfile(r) {
 });
 
 /***/ }),
-/* 131 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(132)
+  __webpack_require__(154)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(134)
+var __vue_script__ = __webpack_require__(156)
 /* template */
-var __vue_template__ = __webpack_require__(135)
+var __vue_template__ = __webpack_require__(157)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31447,23 +44045,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 132 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(133);
+var content = __webpack_require__(155);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("287cbfb9", content, false);
+var update = __webpack_require__(2)("f430b89e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dec38cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.Main.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dec38cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.Main.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dec38cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.Main.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dec38cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.Main.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -31473,7 +44071,7 @@ if(false) {
 }
 
 /***/ }),
-/* 133 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -31487,7 +44085,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 134 */
+/* 156 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31527,7 +44125,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 135 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31610,19 +44208,19 @@ if (false) {
 }
 
 /***/ }),
-/* 136 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(137)
+  __webpack_require__(159)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(139)
+var __vue_script__ = __webpack_require__(161)
 /* template */
-var __vue_template__ = __webpack_require__(140)
+var __vue_template__ = __webpack_require__(162)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31661,23 +44259,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 137 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(138);
+var content = __webpack_require__(160);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4dcf692f", content, false);
+var update = __webpack_require__(2)("2c343a27", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-510e1681\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.tracking.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-510e1681\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./admin-dashboard.tracking.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-510e1681\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.tracking.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-510e1681\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./admin-dashboard.tracking.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -31687,7 +44285,7 @@ if(false) {
 }
 
 /***/ }),
-/* 138 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -31701,7 +44299,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 139 */
+/* 161 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31718,7 +44316,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 140 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31745,19 +44343,19 @@ if (false) {
 }
 
 /***/ }),
-/* 141 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(142)
+  __webpack_require__(164)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(144)
+var __vue_script__ = __webpack_require__(166)
 /* template */
-var __vue_template__ = __webpack_require__(145)
+var __vue_template__ = __webpack_require__(167)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31796,23 +44394,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 142 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(143);
+var content = __webpack_require__(165);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("67d4ab21", content, false);
+var update = __webpack_require__(2)("19bc52d9", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ErrorPopup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ErrorPopup.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ErrorPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ErrorPopup.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -31822,7 +44420,7 @@ if(false) {
 }
 
 /***/ }),
-/* 143 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -31836,7 +44434,7 @@ exports.push([module.i, "\n.error-modal{transition:box-shadow 1s\n}\n.error-moda
 
 
 /***/ }),
-/* 144 */
+/* 166 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31900,7 +44498,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 145 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31956,7 +44554,7 @@ if (false) {
 }
 
 /***/ }),
-/* 146 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -31969,58 +44567,6 @@ var normalizeComponent = __webpack_require__(0)
 var __vue_script__ = __webpack_require__(171)
 /* template */
 var __vue_template__ = __webpack_require__(172)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-a55411c4"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/events/createProject.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a55411c4", Component.options)
-  } else {
-    hotAPI.reload("data-v-a55411c4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 147 */,
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(149)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(151)
-/* template */
-var __vue_template__ = __webpack_require__(152)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32059,23 +44605,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 149 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(150);
+var content = __webpack_require__(170);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("ac2cd2c0", content, false);
+var update = __webpack_require__(2)("1f5c15d0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-526e2cbb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./confirmPopup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-526e2cbb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./confirmPopup.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-526e2cbb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./confirmPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-526e2cbb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./confirmPopup.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32085,7 +44631,7 @@ if(false) {
 }
 
 /***/ }),
-/* 150 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -32099,7 +44645,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 151 */
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32129,7 +44675,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 152 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32191,7 +44737,7 @@ if (false) {
 }
 
 /***/ }),
-/* 153 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32530,50 +45076,32 @@ if (false) {
 }
 
 /***/ }),
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div")
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7a3e570a", module.exports)
-  }
-}
-
-/***/ }),
-/* 166 */
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(184)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(167)
+var __vue_script__ = __webpack_require__(186)
 /* template */
-var __vue_template__ = __webpack_require__(168)
+var __vue_template__ = __webpack_require__(187)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -32586,7 +45114,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/partials/dashboardBoard.vue"
+Component.options.__file = "resources/assets/js/components/events/reportBugsPopup.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -32595,9 +45123,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-58e33808", Component.options)
+    hotAPI.createRecord("data-v-6c3c28fa", Component.options)
   } else {
-    hotAPI.reload("data-v-58e33808", Component.options)
+    hotAPI.reload("data-v-6c3c28fa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -32608,137 +45136,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 167 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {},
-  data: function data() {
-    return {};
-  }
-});
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "project-item" }, [
-      _c("div", { staticClass: "project-item__header" }, [
-        _c("span", { staticClass: "overlay-dark" }, [
-          _c("a", { attrs: { href: "javascript:void(0)" } }, [
-            _c("img", {
-              staticClass: "icon",
-              attrs: { src: "images/edit.svg", alt: "" }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("img", { attrs: { src: "images/dragon-girl.png", alt: "" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "project-item__content" }, [
-        _c("h5", [_vm._v("\n      Typography Culture\n    ")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "content-red" }, [
-          _c("div", { staticClass: "content-desc" }, [
-            _c("div", { staticClass: "content-people" }, [
-              _c("img", { attrs: { src: "images/kecil1.png", alt: "" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images/kecil6.jpg", alt: "" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images/kecil5.jpg", alt: "" } })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "project-item__footer" }, [
-        _c("div", { staticClass: "project-item__footer-items" }, [
-          _c("span", [_vm._v("Add people")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "project-item__footer-items" }, [
-          _c("span", [_vm._v("Details")])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-58e33808", module.exports)
-  }
-}
-
-/***/ }),
-/* 169 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(170);
+var content = __webpack_require__(185);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("28b288ad", content, false);
+var update = __webpack_require__(2)("56ea71d6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a55411c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./createProject.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a55411c4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./createProject.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c3c28fa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reportBugsPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c3c28fa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reportBugsPopup.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32748,338 +45162,7 @@ if(false) {
 }
 
 /***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.v--modal-overlay[data-v-a55411c4]{background:rgba(0,0,0,.6)\n}\n.createProjectModal-wrapper[data-v-a55411c4]{background:#edeff0\n}\n.createProjectForm[data-v-a55411c4]{padding:15px 0\n}\n.createProjectForm p[data-v-a55411c4]{font-size:14px;text-align:left;margin:8px 0\n}\n.modifyFooter[data-v-a55411c4]{display:inline-flex;align-items:center;justify-content:flex-end\n}\n.button--xl[data-v-a55411c4]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}\n.red-bg[data-v-a55411c4]{background:#ec008c\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 171 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-throw new Error("Cannot find module \"vue2-dropzone\"");
-throw new Error("Cannot find module \"vue2-dropzone/dist/vue2Dropzone.css\"");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-throw new Error("Cannot find module \"vue-select\"");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__router__ = __webpack_require__(5);
-throw new Error("Cannot find module \"vue2-medium-editor\"");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            createProjectFormInput: {
-                projectNameForm: '',
-                projectDescForm: '',
-                projectMemberForm: ''
-            },
-            dropzoneOptions: {
-                url: 'https://httpbin.org/post',
-                thumbnailWidth: 150,
-                addRemoveLinks: true,
-                maxFilesize: 0.5,
-                dictDefaultMessage: "Drag or click to upload cover",
-                maxFiles: 1,
-                parallelUploads: 1,
-                headers: {
-                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-                }
-            },
-            options: []
-        };
-    },
-
-    components: {
-        'vue-dropzone': __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default.a,
-        'editable': {
-            template: '<div contenteditable="true"></div>'
-        },
-        'v-select': __WEBPACK_IMPORTED_MODULE_3_vue_select___default.a
-    },
-    methods: {
-        getOptions: function getOptions(search, loading) {
-            var _this = this;
-
-            loading(true);
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('https://api.github.com/search/repositories', { //testing working api search Get
-                q: search
-            }).then(function (response) {
-                _this.options = response.data.items;
-                loading(false);
-            });
-        },
-        createProject: function createProject() {
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('http://localhost:8000/api/v1/user/signin', this.createProjectFormInput).then(function (response) {
-                __WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard');
-                if (__WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard') === false) {
-                    // add behavior here
-                }
-            });
-        }
-    },
-    computed: {
-        createProjectIsPassed: function createProjectIsPassed() {
-            return this.createProjectFormInput.projectNameForm && this.createProjectFormInput.projectDescForm && this.createProjectFormInput.projectMemberForm;
-        }
-    },
-    props: ['content']
-});
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "modal",
-    {
-      attrs: {
-        name: "create-project-modal",
-        classes: ["v--modal", "error-modal"],
-        "pivot-y": 0.5,
-        transition: "nice-modal-fade",
-        "min-width": 200,
-        "min-height": 200,
-        adaptive: true,
-        scrollable: true,
-        reset: true,
-        width: "60%",
-        height: "auto",
-        clickToClose: false
-      }
-    },
-    [
-      _c("div", { staticClass: "createProjectModal-wrapper" }, [
-        _c("div", { staticClass: "createProjectModal-content" }, [
-          _c(
-            "form",
-            { attrs: { action: "" } },
-            [
-              _c("vue-dropzone", {
-                ref: "myVueDropzone",
-                attrs: { id: "dropzone", options: _vm.dropzoneOptions }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "createProjectForm" },
-                [
-                  _c("p", [_vm._v("Nama project")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.createProjectFormInput.projectNameForm,
-                        expression: "createProjectFormInput.projectNameForm"
-                      }
-                    ],
-                    staticClass: "input-nofill input-text fontSize-s",
-                    attrs: {
-                      type: "text",
-                      placeholder: "ex: Project Umbrella"
-                    },
-                    domProps: {
-                      value: _vm.createProjectFormInput.projectNameForm
-                    },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.createProjectFormInput,
-                          "projectNameForm",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Deskripsi project")]),
-                  _vm._v(" "),
-                  _c("editable", {
-                    staticClass: "editableWrapper",
-                    attrs: {
-                      content: _vm.createProjectFormInput.projectDescForm
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Tambah anggota")]),
-                  _vm._v(" "),
-                  _c("v-select", {
-                    attrs: {
-                      debounce: 250,
-                      "on-search": _vm.getOptions,
-                      options: _vm.options,
-                      "aria-placeholder": "search member..."
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "createProjectModal-footer modifyFooter" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "button button-landing button--xl borderRadius-s button--melting-blue red-bg",
-                on: {
-                  click: function($event) {
-                    _vm.$modal.hide("create-project-modal")
-                  }
-                }
-              },
-              [_vm._v("Batalkan")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
-                attrs: { disabled: !_vm.createProjectIsPassed },
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.createProject($event)
-                  }
-                }
-              },
-              [_vm._v("Buat project")]
-            )
-          ])
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-a55411c4", module.exports)
-  }
-}
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(174);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("394c1f08", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7035745f\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./board.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 174 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -33093,73 +45176,180 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 175 */
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      report: {
+        title: '',
+        desc: '',
+        loader: false
+      }
+    };
+  },
+
+  components: {
+    'editable': {
+      template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
+    }
+  },
+  computed: {
+    isFillPassed: function isFillPassed() {
+      return this.report.title;
+    }
+  }
+
+});
+
+/***/ }),
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "board" }, [
-      _c("header", { attrs: { id: "boardHeaderId" } }, [
-        _c("div", { staticClass: "boardHeader" }, [
-          _c("nav", { staticClass: "boardHeader__Navigation" }, [
-            _c("div", { staticClass: "boardHeaderNavigation__item" }, [
-              _c("ul", [
-                _c("li", [_vm._v("board")]),
-                _vm._v(" "),
-                _c("li", [_vm._v("project")])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "boardWrapper" }, [
-        _c("div", { staticClass: "boardWrapper__Main" }, [
-          _vm._v("\n\t\t\tkanban here\n\t\t")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("aside", [
-        _c("div", { staticClass: "asideBoardWrapper" }, [
-          _c("div", { staticClass: "asideBoardWrapper__Core" }, [
-            _c("div", { staticClass: "asideBoard" }, [
-              _c("div", { staticClass: "asideBoard__ProjectTitle" }, [
-                _c("span", [_vm._v("Project name")]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("Project Octolist")])
-              ]),
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "report-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.8,
+        "pivot-x": 0.95,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        clickToClose: true
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content" }, [
+          _c(
+            "form",
+            { attrs: { action: "" } },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "validate",
+                    rawName: "v-validate",
+                    value: "required|alpha",
+                    expression: "'required|alpha'"
+                  },
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.report.title,
+                    expression: "report.title"
+                  }
+                ],
+                staticClass: "input-nofill input-text fontSize-s",
+                class: { "input-nofill": true },
+                staticStyle: {
+                  "font-size": "14px",
+                  "font-family": "'sf-pro-text'"
+                },
+                attrs: {
+                  type: "text",
+                  placeholder: "ex: Critical bugs on kanban",
+                  name: "",
+                  id: ""
+                },
+                domProps: { value: _vm.report.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.report, "title", $event.target.value)
+                  }
+                }
+              }),
               _vm._v(" "),
-              _c("div", { staticClass: "asideBoard__ProjectDesc" }, [
-                _c("span", [
-                  _vm._v(
-                    "\n\t\t\t\t\t\t\tlorem ipsum dolor sit amet , this project will be cool website ever cause gg dude :100:.\n\t\t\t\t\t\t"
-                  )
-                ])
-              ]),
+              _c("br"),
               _vm._v(" "),
-              _c("div", { staticClass: "asideBoard__ProjectMember" })
-            ])
-          ])
+              _c("editable", {
+                staticClass: "editableWrapper",
+                attrs: { content: _vm.report.desc },
+                model: {
+                  value: _vm.report.desc,
+                  callback: function($$v) {
+                    _vm.$set(_vm.report, "desc", $$v)
+                  },
+                  expression: "report.desc"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
+                  class: { loading: _vm.report.loader },
+                  attrs: {
+                    disabled: !_vm.isFillPassed,
+                    type: "button",
+                    name: "button"
+                  },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.submitReportBugs($event)
+                    }
+                  }
+                },
+                [_vm._v("submit")]
+              )
+            ],
+            1
+          )
         ])
       ])
-    ])
-  }
-]
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7035745f", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6c3c28fa", module.exports)
   }
 }
 

@@ -27,7 +27,7 @@
 						</div>
 						<div class="asideBoard__ProjectDesc">
 							<span>
-								lorem ipsum dolor sit amet , this project will be cool website ever cause gg dude :100:.
+								project ini mempunyai tujuan untuk mempermudah pengerjaan suatu proyek dan planning dalam sebuah team
 							</span>
 						</div>
 						<div class="asideBoard__ProjectMember">
