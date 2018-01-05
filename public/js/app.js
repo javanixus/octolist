@@ -41523,7 +41523,7 @@ var render = function() {
         name: "profile-popup-modal",
         classes: ["v--modal", "error-modal"],
         "pivot-y": 0.13,
-        "pivot-x": 0.93,
+        "pivot-x": 0.95,
         transition: "nice-modal-fade",
         "min-width": 200,
         "min-height": 200,
@@ -41553,7 +41553,15 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "profileMenuPopup__Content" }, [
               _c("ul", [
-                _c("li", [_vm._v("Profile")]),
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: { path: "/profile" } } }, [
+                      _vm._v("Profile")
+                    ])
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c("li", [_vm._v("Help")]),
                 _vm._v(" "),
@@ -41635,9 +41643,17 @@ var render = function() {
           "div",
           { staticClass: "navbar__profile navbar__profile--profile-page" },
           [
-            _vm._m(0),
+            _c(
+              "span",
+              [
+                _c("router-link", { attrs: { to: { path: "/dashboard" } } }, [
+                  _vm._v("Octolist")
+                ])
+              ],
+              1
+            ),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "wrapper-profile right-menu" }, [
               _c("div", {
@@ -41705,7 +41721,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "content__items" }, [
           _c("div", { staticClass: "project" }, [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "project__content" }, [
               _c(
@@ -41731,14 +41747,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "javascript:void(0)" } }, [
-      _c("span", [_vm._v("Octolist")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -42084,7 +42092,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.profile-head__title h4{text-align:center!important\n}", ""]);
 
 // exports
 
@@ -42095,127 +42103,16 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__);
 //
 //
 //
@@ -42283,7 +42180,62 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      projectIds: [],
+      projectItems: [],
+      resizable: false,
+      adaptive: false,
+      draggable: false,
+      canBeShown: false,
+      state: null,
+      isOpened: false,
+      profile: {
+        name: 'Fahmi Irsyad K',
+        quote: 'semua bisa diraih kalau punya niat dan semangat'
+      }
+    };
+  },
+
+  methods: {
+    show: function show(resizable, adaptive, draggable) {
+      var _this = this;
+
+      this.resizable = resizable;
+      this.adaptive = adaptive;
+      this.draggable = draggable;
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(function () {
+        _this.$modal.show('create-project-modal');
+        _this.$modal.show('profile-popup-modal');
+        _this.$modal.show('report-popup-modal');
+      });
+    },
+    detected: function detected(e) {
+      this.state = e;
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('create-project-modal');
+    }
+  },
+  components: {
+    'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
+    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a
+  }
+});
 
 /***/ }),
 /* 124 */
@@ -42293,107 +42245,101 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("nav", [
+  return _c(
+    "div",
+    [
+      _c("detectNetworkBar", { on: { "detected-condition": _vm.detected } }, [
+        _c("div", { attrs: { slot: "online" }, slot: "online" }),
+        _vm._v(" "),
+        _c("div", { attrs: { slot: "offline" }, slot: "offline" }, [
+          _c("div", { staticClass: "loading high-noon" }, [
+            _c("p", [_vm._v("Trying to connect to the serve.")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("create-project"),
+      _vm._v(" "),
+      _c("confirm-popup"),
+      _vm._v(" "),
+      _c("profile-popup"),
+      _vm._v(" "),
+      _c("report-popup"),
+      _vm._v(" "),
       _c("div", { staticClass: "navbar navbar--fixed" }, [
         _c(
           "div",
           { staticClass: "navbar__profile navbar__profile--profile-page" },
           [
+            _c(
+              "span",
+              [
+                _c("router-link", { attrs: { to: { path: "/dashboard" } } }, [
+                  _vm._v("Octolist")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
             _vm._m(0),
             _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
             _c("div", { staticClass: "wrapper-profile right-menu" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "icon-bell marginTop-xs marginRight-s",
-                  attrs: { id: "message" }
-                },
-                [
+              _c("div", { staticClass: "profile-badge" }, [
+                _c("a", { attrs: { href: "javascript:void(0)" } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "border-gradient" }, [
                   _c(
-                    "svg",
+                    "div",
                     {
-                      staticClass: "feather feather-message-circle",
-                      attrs: {
-                        height: "24",
-                        viewbox: "0 0 24 24",
-                        width: "24",
-                        xmlns: "http://www.w3.org/2000/svg"
+                      staticClass: "avatar avatar--s avatar-dp",
+                      attrs: { id: "avatar-dp-id" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.$modal.show("profile-popup-modal")
+                        }
                       }
                     },
                     [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                        }
+                      _c("img", {
+                        staticClass: "avatar-img",
+                        attrs: { src: "images/avatar0.jpg", alt: "" }
                       })
                     ]
                   )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "icon-message marginTop-xs marginRight-s",
-                  attrs: { id: "bell" }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "feather feather-bell",
-                      attrs: {
-                        height: "24",
-                        viewbox: "0 0 24 24",
-                        width: "24",
-                        xmlns: "http://www.w3.org/2000/svg"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(2)
+                ])
+              ])
             ])
           ]
-        ),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        _vm._m(4),
-        _vm._v(" "),
-        _vm._m(5),
-        _vm._v(" "),
-        _vm._m(6)
+        )
+      ]),
+      _vm._v(" "),
+      _c("header", [
+        _c("div", { staticClass: "wrapper-profile-head" }, [
+          _c("div", { staticClass: "profile-head marginMagic" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "profile-head__title" }, [
+              _c("h4", { staticClass: "fontSize-l" }, [
+                _vm._v(_vm._s(this.profile.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "profile-head__quotes" }, [
+              _c("q", { staticStyle: { color: "#6F6F6F" } }, [
+                _vm._v(_vm._s(this.profile.quote))
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm._m(7),
-    _vm._v(" "),
-    _vm._m(8)
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "javascript:void(0)" } }, [
-      _c("span", [_vm._v("Octolist")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -42404,11 +42350,13 @@ var staticRenderFns = [
           "navbar-searchbar input-nofill input-text fontSize-s borderRadius-m",
         attrs: {
           autocomplete: "off",
-          name: "",
-          placeholder: "Search",
+          autocorrect: "off",
+          autocapitalize: "off",
           spellcheck: "false",
           type: "text",
-          value: ""
+          name: "",
+          value: "",
+          placeholder: "Search"
         }
       }),
       _vm._v(" "),
@@ -42420,7 +42368,7 @@ var staticRenderFns = [
           top: "12px",
           right: "12px"
         },
-        attrs: { alt: "", src: "/resources/assets/svg/search.svg" }
+        attrs: { src: "images/search.svg", alt: "" }
       })
     ])
   },
@@ -42428,23 +42376,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile-badge" }, [
-      _c("a", { attrs: { href: "javascript:void(0)" } }, [
-        _c("div", { staticClass: "border-gradient" }, [
-          _c(
-            "div",
-            {
-              staticClass: "avatar avatar--s avatar-dp",
-              attrs: { id: "avatar-dp-id" }
-            },
-            [
-              _c("img", {
-                staticClass: "avatar-img",
-                attrs: { alt: "", src: "assets/img/avatar0.jpg" }
-              })
-            ]
-          )
-        ])
+    return _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
+      _c("div", { staticClass: "avatar avatar--xl avatar--glow marginMagic" }, [
+        _c("img", {
+          staticClass: "avatar-img",
+          attrs: { alt: "", src: "/images/avatar0.jpg" }
+        })
       ])
     ])
   },
@@ -42452,571 +42389,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-profile margin-l",
-        attrs: { id: "profile-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "profile-popup borderRadius-s" }, [
-          _c("div", { staticClass: "profile-popup__cover" }, [
-            _c("div", {
-              staticClass: "overlay-dark",
-              staticStyle: { display: "block" }
-            }),
-            _c("img", {
-              attrs: { alt: "", src: "/resources/assets/images/avatar0.jpg" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "profile-popup__cover-title" }, [
-              _c(
-                "p",
-                {
-                  staticClass: "fontWeight-6",
-                  staticStyle: { color: "white!important" }
-                },
-                [_vm._v("Fahmi Irsyad Khairi")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-popup__content padding-m" }, [
-            _c("div", { staticClass: "profile-popup__content__items" }, [
-              _c("ul", [
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "profile.html" }
-                    },
-                    [_vm._v("Profile")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Settings")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Task")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "fontWeight-6",
-                      attrs: { href: "javascript:void(0)" }
-                    },
-                    [_vm._v("Logout")]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-notification margin-l",
-        attrs: { id: "notification-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "notification-popup borderRadius-s" }, [
-          _c("div", { staticClass: "notification-popup__header padding-m" }, [
-            _c(
-              "p",
-              {
-                staticClass: "fontWeight-6",
-                staticStyle: {
-                  "font-family": "Open Sans",
-                  color: "#5d5b5b",
-                  margin: "0"
-                }
-              },
-              [_vm._v("Notification")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "notification-popup__content" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items notification-popup__items--unread padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "assets/img/love.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Cyntia pratita")
-                      ]),
-                      _vm._v(
-                        ' mengomentari "i like all these pictures, the overall mood is perfect."'
-                      ),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 4 jam yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: {
-                      alt: "",
-                      src: "/resources/assets/images/avatar0.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Pampam")
-                      ]),
-                      _vm._v(" menambahkan jadwal pada card "),
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("UI Concept")
-                      ]),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 2 menit yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: {
-                      alt: "",
-                      src: "/resources/assets/images/kecil6.jpg"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Klarak Luis D")
-                      ]),
-                      _vm._v(" menyelesaikan card "),
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Database Relation")
-                      ]),
-                      _vm._v("."),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [_vm._v("  - 15 menit yang lalu")]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup-button padding-xs textAlignCenter"
-              },
-              [
-                _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "fontSize-s fontWeight-6",
-                      staticStyle: {
-                        "font-family": "Open Sans",
-                        color: "#5d5b5b"
-                      }
-                    },
-                    [_vm._v("Lihat semua")]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "component-notification margin-l",
-        attrs: { id: "message-popup-show" }
-      },
-      [
-        _c("div", { staticClass: "message-popup borderRadius-s" }, [
-          _c("div", { staticClass: "notification-popup__header padding-m" }, [
-            _c(
-              "p",
-              {
-                staticClass: "fontWeight-6",
-                staticStyle: {
-                  "font-family": "Open Sans",
-                  color: "#5d5b5b",
-                  margin: "0"
-                }
-              },
-              [_vm._v("Pesan Masuk")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "notification-popup__content" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "/resources/assets/images/love.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Cyntia pratita")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "fontSize-s" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [
-                          _vm._v(
-                            "eh , yang ini di revisi yak :) . ada perubahan hehe , lagi males w."
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup__items notification-popup__items--unread padding-xs paddingLeft-m"
-              },
-              [
-                _c("div", { staticClass: "avatar avatar--m avatar--glow" }, [
-                  _c("img", {
-                    staticClass: "avatar-img",
-                    attrs: { alt: "", src: "/resources/assets/images/5.jpg" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "notification-popup-desc marginLeft-s" },
-                  [
-                    _c("span", { staticClass: "fontSize-s" }, [
-                      _c("span", { staticClass: "fontWeight-6" }, [
-                        _vm._v("Steve G")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "fontSize-s" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "fontSize-xs",
-                          staticStyle: { color: "#5d5b5b" }
-                        },
-                        [
-                          _vm._v(
-                            "i've uploaded new concept on project, pls review it and tell me if u found an issu ..."
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "notification-popup-button padding-xs textAlignCenter"
-              },
-              [
-                _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "fontSize-s fontWeight-6",
-                      staticStyle: {
-                        "font-family": "Open Sans",
-                        color: "#5d5b5b"
-                      }
-                    },
-                    [_vm._v("Lihat semua")]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-extended--profile" }, [
-      _c("div", { staticClass: "navbar-extended__item marginMagic" }, [
-        _c(
-          "a",
-          {
-            staticClass: "marginRight-s",
-            staticStyle: { color: "#0f55eb" },
-            attrs: { href: "#" }
-          },
-          [_vm._v("Feed")]
-        ),
-        _vm._v(" "),
-        _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-          _vm._v("Activity")
+    return _c("div", { staticClass: "wrapper-profile-menu paddingBottom-l" }, [
+      _c("ul", { staticClass: "profile-menu marginMagic" }, [
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Feed")])
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "marginRight-s", attrs: { href: "#" } }, [
-          _vm._v("Contribution")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [
-      _c("div", { staticClass: "wrapper-profile-head" }, [
-        _c("div", { staticClass: "profile-head marginMagic" }, [
-          _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-            _c(
-              "div",
-              { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
-              [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-head__title" }, [
-            _c("h4", { staticClass: "fontSize-l" }, [_vm._v("Fahmi irsyad k")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "profile-head__quotes" }, [
-            _c(
-              "q",
-              {
-                staticStyle: { color: "#6F6F6F" },
-                attrs: { cite: "https://facebook.com" }
-              },
-              [_vm._v("semua bisa diraih kalau punya niat dan semangat")]
-            )
-          ])
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Activity")])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "wrapper-profile-menu paddingBottom-l" }, [
-          _c("ul", { staticClass: "profile-menu marginMagic" }, [
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Feed")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Activity")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "profile-menu__items" }, [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Contribution")])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticStyle: { height: "1000px" } }, [
-      _c("main", [
-        _c("div", { staticClass: "wrapper-feed padding-l" }, [
-          _c("div", { staticClass: "feedpage" }, [
-            _c("div", { staticClass: "feed-items clearfix" }, [
-              _c("div", { staticClass: "feed-items__dp avatar avatar--m" }, [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "feed-items__content marginLeft-m borderRadius-s"
-                },
-                [
-                  _c("div", { staticClass: "feed-items__images" }, [
-                    _c("img", {
-                      attrs: {
-                        alt: "",
-                        src: "/resources/assets/images/background.jpg"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "feed-items__desc padding-m" }, [
-                    _c("div", { staticClass: "text-limit" }, [
-                      _c("span", [_vm._v("Update Link : https://google.com")])
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "feed-items clearfix" }, [
-              _c("div", { staticClass: "feed-items__dp avatar avatar--m" }, [
-                _c("img", {
-                  staticClass: "avatar-img",
-                  attrs: {
-                    alt: "",
-                    src: "/resources/assets/images/avatar0.jpg"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "feed-items__content marginLeft-m borderRadius-s"
-                },
-                [
-                  _c("div", { staticClass: "feed-items__images" }, [
-                    _c("img", {
-                      attrs: {
-                        alt: "",
-                        src: "/resources/assets/images/avatar0.jpg"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "feed-items__desc padding-m" }, [
-                    _c("div", { staticClass: "text-limit" }, [
-                      _c("span", [_vm._v("Update Link : https://google.com")])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
+        _c("li", { staticClass: "profile-menu__items" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Contribution")])
         ])
       ])
     ])
@@ -45859,7 +45243,7 @@ var render = function() {
         name: "report-popup-modal",
         classes: ["v--modal", "error-modal"],
         "pivot-y": 0.8,
-        "pivot-x": 0.93,
+        "pivot-x": 0.95,
         transition: "nice-modal-fade",
         "min-width": 200,
         "min-height": 200,

@@ -276,9 +276,6 @@
   background-color: white;
   position: relative;
 
-  .message-popup__header,
-  .notification-popup__header {}
-
   .message-popup__content,
   .notification-popup__content {
     .notification-popup__items,
@@ -366,9 +363,6 @@
   p {
     font-family: sf-pro-text;
   }
-}
-
-.confirm__visual {
 }
 
 .cf__visual--bg {
@@ -479,6 +473,12 @@
       color: #5d5b5b;
       font-size: 14px;
       margin-bottom: 10px;
+      a {
+        color: #5d5b5b;
+        &:hover {
+          color: $blue!important;
+        }
+      }
       &:hover, &:focus {
         color: $blue;
         margin-left: 5px;

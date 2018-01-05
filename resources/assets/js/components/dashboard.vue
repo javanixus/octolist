@@ -14,7 +14,7 @@
     <report-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
-        <a href="javascript:void(0)"><span>Octolist</span></a>
+        <span><router-link :to="{path: '/dashboard'}">Octolist</router-link></span>
         <div class="navbar-searchbar">
           <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" name="" value="" class="navbar-searchbar input-nofill input-text fontSize-s borderRadius-m" placeholder="Search" /> <img src="images/search.svg" style="width: 20px; height: 20px; position: absolute;top: 12px;right: 12px;"
             alt="" />

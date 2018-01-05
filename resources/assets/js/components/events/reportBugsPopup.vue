@@ -1,5 +1,5 @@
 <template>
-      <modal name="report-popup-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.8" :pivot-x="0.93" transition="nice-modal-fade" :min-width="200" :min-height="200" :adaptive="true" :reset="true" width="20%" height="auto" :clickToClose="true">
+      <modal name="report-popup-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.8" :pivot-x="0.95" transition="nice-modal-fade" :min-width="200" :min-height="200" :adaptive="true" :reset="true" width="20%" height="auto" :clickToClose="true">
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
                 <form action="">
