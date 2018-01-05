@@ -13,6 +13,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('/user/signup', 'AuthController@store');
     Route::post('/user', 'UserController@store');
     Route::get('/users', 'UserController@index');
+    Route::get('/users/{q}', 'UserController@index');
     Route::patch('/user/{id}', 'UserController@update');
     Route::delete('/user/{id}', 'UserController@destroy');
 
