@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
                 <form>
-                <!-- @submit.prevent="createProjectSubmit" -->
+                    <!-- @submit.prevent="createProjectSubmit" -->
                     <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
                     </vue-dropzone>
                     <div class="createProjectForm">
@@ -12,8 +12,7 @@
                         <p>Deskripsi project</p>
                         <editable :content="createProjectFormInput.projectDescForm" class="editableWrapper" />
                         <p>Tambah anggota</p>
-                        <v-select :debounce="250" :on-search="getOptions" label="full_name" aria-placeholder="search member..."></v-select>
-                        <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
+                        <v-select multiple :debounce="250" :on-search="getOptions" :options="options" label="name" v-model="selected"></v-select>
                     </div>
                 </form>
                 <div class="createProjectModal-footer modifyFooter">
@@ -90,7 +89,8 @@
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                     }
                 },
-                options: null,
+                options: [],
+                selected: null,
             }
         },
         components: {
@@ -103,8 +103,10 @@
         methods: {
             getOptions(search, loading) {
                 loading(true)
-                axios.get('http://localhost:8000/api/v1/users',{
-                    params: { q: search },
+                axios.get('http://localhost:8000/api/v1/users', {
+                    params: {
+                        q: search
+                    },
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }
