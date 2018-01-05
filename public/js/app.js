@@ -28459,6 +28459,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__);
 //
 //
 //
@@ -28534,6 +28536,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -28568,6 +28572,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$nextTick(function () {
         _this.$modal.show('create-project-modal');
         _this.$modal.show('profile-popup-modal');
+        _this.$modal.show('report-popup-modal');
       });
     },
     detected: function detected(e) {
@@ -28581,7 +28586,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
     'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
     'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
-    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a
   }
 });
 
@@ -41443,7 +41449,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}", ""]);
+exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ec008c!important\n}", ""]);
 
 // exports
 
@@ -41454,6 +41460,9 @@ exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopad
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -41548,7 +41557,18 @@ var render = function() {
                 _vm._v(" "),
                 _c("li", [_vm._v("Help")]),
                 _vm._v(" "),
-                _c("li", [_vm._v("Report Bugs")]),
+                _c(
+                  "li",
+                  {
+                    staticClass: "redColor",
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("report-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Report Bugs")]
+                ),
                 _vm._v(" "),
                 _c(
                   "li",
@@ -41607,6 +41627,8 @@ var render = function() {
       _c("confirm-popup"),
       _vm._v(" "),
       _c("profile-popup"),
+      _vm._v(" "),
+      _c("report-popup"),
       _vm._v(" "),
       _c("div", { staticClass: "navbar" }, [
         _c(
@@ -45666,6 +45688,284 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4a533ed8", module.exports)
+  }
+}
+
+/***/ }),
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(184)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(186)
+/* template */
+var __vue_template__ = __webpack_require__(187)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/events/reportBugsPopup.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6c3c28fa", Component.options)
+  } else {
+    hotAPI.reload("data-v-6c3c28fa", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(185);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("56ea71d6", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c3c28fa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reportBugsPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c3c28fa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reportBugsPopup.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_medium_editor__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      report: {
+        title: '',
+        desc: '',
+        loader: false
+      }
+    };
+  },
+
+  components: {
+    'editable': {
+      template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
+    }
+  },
+  computed: {
+    isFillPassed: function isFillPassed() {
+      return this.report.title;
+    }
+  }
+
+});
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "report-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.8,
+        "pivot-x": 0.93,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        clickToClose: true
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content" }, [
+          _c(
+            "form",
+            { attrs: { action: "" } },
+            [
+              _c("input", {
+                directives: [
+                  {
+                    name: "validate",
+                    rawName: "v-validate",
+                    value: "required|alpha",
+                    expression: "'required|alpha'"
+                  },
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.report.title,
+                    expression: "report.title"
+                  }
+                ],
+                staticClass: "input-nofill input-text fontSize-s",
+                class: { "input-nofill": true },
+                staticStyle: {
+                  "font-size": "14px",
+                  "font-family": "'sf-pro-text'"
+                },
+                attrs: {
+                  type: "text",
+                  placeholder: "ex: Critical bugs on kanban",
+                  name: "",
+                  id: ""
+                },
+                domProps: { value: _vm.report.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.report, "title", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("editable", {
+                staticClass: "editableWrapper",
+                attrs: { content: _vm.report.desc },
+                model: {
+                  value: _vm.report.desc,
+                  callback: function($$v) {
+                    _vm.$set(_vm.report, "desc", $$v)
+                  },
+                  expression: "report.desc"
+                }
+              }),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
+                  class: { loading: _vm.report.loader },
+                  attrs: {
+                    disabled: !_vm.isFillPassed,
+                    type: "button",
+                    name: "button"
+                  },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.submitReportBugs($event)
+                    }
+                  }
+                },
+                [_vm._v("submit")]
+              )
+            ],
+            1
+          )
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6c3c28fa", module.exports)
   }
 }
 

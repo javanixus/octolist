@@ -11,6 +11,7 @@
     <create-project />
     <confirm-popup />
     <profile-popup />
+    <report-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
         <a href="javascript:void(0)"><span>Octolist</span></a>
@@ -78,6 +79,7 @@
   import createProjectPopup from './events/createProject.vue';
   import profileMenuPopup from './events/profilemenuPopup.vue';
   import ConfirmPopup from './events/confirmPopup';
+  import reportPopup from './events/reportBugsPopup';
 
   export default {
     data(){
@@ -104,6 +106,7 @@
         this.$nextTick(() => {
           this.$modal.show('create-project-modal');
           this.$modal.show('profile-popup-modal');
+          this.$modal.show('report-popup-modal');
         })
       },
       detected(e) {
@@ -118,6 +121,7 @@
       'create-project': createProjectPopup,
       'profile-popup': profileMenuPopup,
       'confirm-popup': ConfirmPopup,
+      'report-popup': reportPopup,
     }
   }
 </script>

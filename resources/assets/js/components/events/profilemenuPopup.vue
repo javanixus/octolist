@@ -9,7 +9,7 @@
                         <ul>
                             <li>Profile</li>
                             <li>Help</li>
-                            <li>Report Bugs</li>
+                            <li @click="$modal.show('report-popup-modal')" class="redColor">Report Bugs</li>
                             <li @click="$modal.show('confirm-modal'),$modal.hide('profile-popup-modal') ">Keluar</li>
                         </ul>
                     </div>
@@ -26,6 +26,9 @@
     }
     .nopadding {
         padding: 0;
+    }
+    .redColor:hover {
+        color: #ec008c!important;
     }
 </style>
 <script>
