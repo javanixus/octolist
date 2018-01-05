@@ -103,7 +103,7 @@
         methods: {
             getOptions(search, loading) {
                 loading(true)
-                axios.get('http://localhost:8000/api/v1/user',{
+                axios.get('http://localhost:8000/api/v1/users',{
                     params: { q: search },
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
