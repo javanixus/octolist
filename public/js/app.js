@@ -27815,7 +27815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (response.data.passed === true) {
           window.localStorage.setItem('token', response.data.token);
           __WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].commit('LOGIN_USER');
-          __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/admin');
+          __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/dashboard');
         } else {
           _this.logItIn.msg = response.data.msg;
           _this.logItIn.loader = false;
@@ -28457,6 +28457,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
 //
 //
 //
@@ -28531,6 +28533,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -28576,7 +28580,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
     'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
-    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a
   }
 });
 
@@ -41545,7 +41550,18 @@ var render = function() {
                 _vm._v(" "),
                 _c("li", [_vm._v("Report Bugs")]),
                 _vm._v(" "),
-                _c("li", [_vm._v("Keluar")])
+                _c(
+                  "li",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("confirm-modal"),
+                          _vm.$modal.hide("profile-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Keluar")]
+                )
               ])
             ])
           ])
@@ -41587,6 +41603,8 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("create-project"),
+      _vm._v(" "),
+      _c("confirm-popup"),
       _vm._v(" "),
       _c("profile-popup"),
       _vm._v(" "),

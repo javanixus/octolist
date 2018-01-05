@@ -10,7 +10,7 @@
                             <li>Profile</li>
                             <li>Help</li>
                             <li>Report Bugs</li>
-                            <li>Keluar</li>
+                            <li @click="$modal.show('confirm-modal'),$modal.hide('profile-popup-modal') ">Keluar</li>
                         </ul>
                     </div>
                 </div>

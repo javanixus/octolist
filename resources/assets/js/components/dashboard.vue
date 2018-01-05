@@ -9,6 +9,7 @@
       </div>
     </detectNetworkBar>
     <create-project />
+    <confirm-popup />
     <profile-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
@@ -76,6 +77,7 @@
   import dashboardBoard from './partials/dashboardBoard.vue';
   import createProjectPopup from './events/createProject.vue';
   import profileMenuPopup from './events/profilemenuPopup.vue';
+  import ConfirmPopup from './events/confirmPopup';
 
   export default {
     data(){
@@ -115,6 +117,7 @@
       'dashboard-app': dashboardBoard,
       'create-project': createProjectPopup,
       'profile-popup': profileMenuPopup,
+      'confirm-popup': ConfirmPopup,
     }
   }
 </script>
