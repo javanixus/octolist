@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+use App\Http\Controllers\ProjectMemberController;
 use App\ProjectMember;
 use App\Teacher;
 use App\Project;
@@ -62,14 +63,17 @@ class ProjectController extends Controller
 				'project_creator'		=>	Auth::user()->id,
 			]);
 			$id = $project->id;
-			ProjectMember::Create([
-				'id_projects'		=>	$id,
-				'id_students'	 =>		$request->input('id_students')
-			]);
-
+			$ProjectMember = new ProjectMemberController;
+			$ProjectMember->store($id,$request);
+			// ProjectMember::Create([
+			// 	'id_projects'		=>	$id,
+			// 	'id_students'	 =>		$request->input('id_students')
+			// ]);
 			$response = [
-								'success !'
-			];
+										'msg' => 'Project Created',
+										'href' => "/v1/project/$id",
+										'method' => 'GET',
+									];
 
 			return response()->json($response,200);
 
@@ -104,9 +108,28 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update($id,Request $request)
     {
-        //
+        $this->validate($request,[
+					'project_title'	=>	'required'
+				]);
+				$user = Project::FindOrFail($id);
+				if(null == $request->input('project_deadline')){
+					$user->update($request->only('project_title'));
+					$response = [
+						'msg' => 'Project Info Updated without deadline update',
+						'href' => "/v1/project/$id",
+						'method' => 'GET',
+					];
+				}else{
+					$user->update($request->all());
+					$response = [
+												'msg' => 'Project Info Updated with deadline update',
+												'href' => "/v1/project/$id",
+												'method' => 'GET',
+											];
+				}
+				return response()->json($response,200);
     }
 
     /**
@@ -119,4 +142,9 @@ class ProjectController extends Controller
     {
         //
     }
+
+	/**
+	*	Edit the specified Member Of the Project
+	*
+	*/
 }
