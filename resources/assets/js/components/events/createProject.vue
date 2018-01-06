@@ -96,7 +96,7 @@
         components: {
             'vue-dropzone': vue2Dropzone,
             'editable': {
-                template: '<div contenteditable="true"></div>'
+                template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
             },
             'v-select': vSelect,
         },

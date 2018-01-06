@@ -37306,7 +37306,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         'vue-dropzone': __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default.a,
         'editable': {
-            template: '<div contenteditable="true"></div>'
+            template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
         },
         'v-select': __WEBPACK_IMPORTED_MODULE_3_vue_select___default.a
     },
@@ -42724,19 +42724,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(135)
+  __webpack_require__(202)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(137)
 /* template */
-var __vue_template__ = __webpack_require__(147)
+var __vue_template__ = __webpack_require__(204)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-2b641b76"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -42769,46 +42769,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(136);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("e59df4ea", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b641b76\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileSiswaPopup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b641b76\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileSiswaPopup.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
+/* 135 */,
+/* 136 */,
 /* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42816,6 +42778,8 @@ exports.push([module.i, "", ""]);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__);
 //
 //
 //
@@ -42840,6 +42804,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -42869,16 +42885,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 token: window.localStorage.getItem('token')
             },
             imgDataUrl: '/images/avatar0.jpg',
-            show: false
+            show: false,
+            editProfileSiswaInput: {
+                name: '',
+                bio: '',
+                phone: '',
+                email: ''
+            }
         };
     },
 
     components: {
-        'avatar-upload': __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default.a
+        'avatar-upload': __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default.a,
+        'editable': {
+            template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
+        }
     },
     methods: {
         toggleShow: function toggleShow() {
             this.show = !this.show;
+        }
+    },
+    computed: {
+        editProfileIsPassed: function editProfileIsPassed() {
+            return this.editProfileSiswaInput.name && this.editProfileSiswaInput.phone && this.editProfileSiswaInput.email;
         }
     }
 });
@@ -44627,86 +44657,7 @@ if (false) {
 }
 
 /***/ }),
-/* 147 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "modal",
-    {
-      attrs: {
-        name: "editprofile-siswa-popup-modal",
-        classes: ["v--modal", "error-modal"],
-        "pivot-y": 0.5,
-        transition: "nice-mo dal-fade",
-        "min-width": 500,
-        "min-height": 200,
-        adaptive: true,
-        reset: true,
-        width: "20%",
-        height: "auto",
-        clickToClose: false
-      }
-    },
-    [
-      _c("div", { staticClass: "createProjectModal-wrapper" }, [
-        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
-          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
-            _c("form", { attrs: { action: "POST" } }, [
-              _c(
-                "div",
-                { staticClass: "editProfileSiswaMenuPopup__Header" },
-                [
-                  _c("avatar-upload", {
-                    attrs: {
-                      field: "img",
-                      width: 300,
-                      langType: "en",
-                      height: 300,
-                      url: "https://httpbin.org/post",
-                      params: _vm.paramAvatar,
-                      "img-format": "jpg"
-                    },
-                    model: {
-                      value: _vm.show,
-                      callback: function($$v) {
-                        _vm.show = $$v
-                      },
-                      expression: "show"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticStyle: { cursor: "pointer" },
-                    attrs: { src: _vm.imgDataUrl },
-                    on: { click: _vm.toggleShow }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "profileMenuPopup__Content" })
-            ])
-          ])
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2b641b76", module.exports)
-  }
-}
-
-/***/ }),
+/* 147 */,
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47377,6 +47328,360 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4a533ed8", module.exports)
+  }
+}
+
+/***/ }),
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(203);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("816b47b0", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b641b76\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileSiswaPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b641b76\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileSiswaPopup.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.profileMenuPopup__Content[data-v-2b641b76]{padding:15px\n}\n.modifyFooter[data-v-2b641b76]{display:inline-flex;align-items:center;justify-content:flex-end;padding-top:15px\n}\n.button--xl[data-v-2b641b76]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}\n.red-bg[data-v-2b641b76]{background:#ec008c\n}\n.createProjectForm p[data-v-2b641b76]{font-size:14px;text-align:left;margin:8px 0\n}\n.createProjectModal-footer button[data-v-2b641b76]{width:auto;padding:10px 20px\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "editprofile-siswa-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.5,
+        transition: "nice-modal-fade",
+        "min-width": 500,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        scrollable: true,
+        clickToClose: false
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
+          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
+            _c("form", { attrs: { action: "POST" } }, [
+              _c(
+                "div",
+                { staticClass: "editProfileSiswaMenuPopup__Header" },
+                [
+                  _c("avatar-upload", {
+                    attrs: {
+                      field: "img",
+                      width: 300,
+                      langType: "en",
+                      height: 300,
+                      url: "https://httpbin.org/post",
+                      params: _vm.paramAvatar,
+                      "img-format": "jpg"
+                    },
+                    model: {
+                      value: _vm.show,
+                      callback: function($$v) {
+                        _vm.show = $$v
+                      },
+                      expression: "show"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticStyle: { cursor: "pointer" },
+                    attrs: { src: _vm.imgDataUrl },
+                    on: { click: _vm.toggleShow }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "profileMenuPopup__Content" }, [
+                _c(
+                  "div",
+                  { staticClass: "createProjectForm" },
+                  [
+                    _c("p", [_vm._v("Nama Lengkap")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required|alpha",
+                          expression: "'required|alpha'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.editProfileSiswaInput.name,
+                          expression: "editProfileSiswaInput.name"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("nama-lengkap")
+                      },
+                      attrs: {
+                        type: "text",
+                        name: "nama-lengkap",
+                        placeholder: "Nama lengkap"
+                      },
+                      domProps: { value: _vm.editProfileSiswaInput.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.editProfileSiswaInput,
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("nama-lengkap")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("nama-lengkap")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Bio")]),
+                    _vm._v(" "),
+                    _c("editable", {
+                      staticClass: "editableWrapper",
+                      attrs: { content: _vm.editProfileSiswaInput.bio }
+                    }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Email")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required|email",
+                          expression: "'required|email'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.editProfileSiswaInput.email,
+                          expression: "editProfileSiswaInput.email"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("email")
+                      },
+                      attrs: {
+                        type: "text",
+                        placeholder: "lorem@ipsum.com",
+                        name: "email"
+                      },
+                      domProps: { value: _vm.editProfileSiswaInput.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.editProfileSiswaInput,
+                            "email",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("email")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("email")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Phone")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required|digits:12",
+                          expression: "'required|digits:12'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.editProfileSiswaInput.phone,
+                          expression: "editProfileSiswaInput.phone"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("phone")
+                      },
+                      attrs: {
+                        type: "text",
+                        placeholder: "081666666",
+                        name: "phone"
+                      },
+                      domProps: { value: _vm.editProfileSiswaInput.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.editProfileSiswaInput,
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("phone")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("phone")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "createProjectModal-footer modifyFooter" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue red-bg",
+                        on: {
+                          click: function($event) {
+                            _vm.$modal.hide("editprofile-siswa-popup-modal")
+                          }
+                        }
+                      },
+                      [_vm._v("Batalkan")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
+                        attrs: { disabled: !_vm.editProfileIsPassed },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.createProject($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Update profile")]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2b641b76", module.exports)
   }
 }
 
