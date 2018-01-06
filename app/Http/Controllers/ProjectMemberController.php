@@ -37,5 +37,17 @@ class ProjectMemberController extends Controller
 			return response()->json($response,200);
 		}
 
-		public function destroy($id,Request $request)
+		public function destroy($id,$member){
+			ProjectMember::where('id_projects',$id)
+					->where('id_students',$member)
+					->delete();
+
+			$response = [
+						'msg' => 'Member Deleted',
+						'href' => "/v1/project/$id",
+						'method' => 'GET',
+					];
+
+					return response()->json($response,200);
+		}
 }

@@ -31,8 +31,12 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::post('/teacher/project/create','ProjectController@store');
 
 			Route::post('teacher/signup','TeacherController@store');
-			
+
 			Route::patch('/profile/teacher/edit/','TeacherController@update');
+
+			Route::post('/project/{id}/member/add/','ProjectMemberController@store');
+
+			Route::delete('/project/{id}/delete/member/{member}','ProjectMemberController@destroy');
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
     });
