@@ -28,8 +28,12 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 			Route::get('/dashboard','UserController@home')->name('dashboard');
 
+			Route::post('/teacher/project/create','ProjectController@store');
+
+			Route::post('teacher/signup','TeacherController@store');
+			
+			Route::patch('/profile/teacher/edit/','TeacherController@update');
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
-			Route::patch('/profile/teacher/edit/','TeacherController@update');
     });
 });
