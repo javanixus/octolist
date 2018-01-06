@@ -24694,7 +24694,7 @@ if (false) {
 /* unused harmony export Rules */
 /* unused harmony export version */
 /**
-  * vee-validate v2.0.0
+  * vee-validate v2.0.0-rc.27
   * (c) 2017 Abdelrahman Awad
   * @license MIT
   */
@@ -24721,7 +24721,6 @@ var setDataAttribute = function (el, name, value) { return el.setAttribute(("dat
  * Creates a proxy object if available in the environment.
  */
 var createProxy = function (target, handler) {
-  /* istanbul ignore next */
   if (typeof Proxy === 'undefined') {
     return target;
   }
@@ -25067,14 +25066,23 @@ var uniqId = function () {
  * finds the first element that satisfies the predicate callback, polyfills array.find
  */
 var find = function (arrayLike, predicate) {
-  var array = Array.isArray(arrayLike) ? arrayLike : toArray(arrayLike);
-  for (var i = 0; i < array.length; i++) {
-    if (predicate(array[i])) {
-      return array[i];
-    }
+  var array = toArray(arrayLike);
+
+  if (isCallable(array.find)) {
+    return array.find(predicate);
   }
 
-  return undefined;
+  var result;
+  array.some(function (item) {
+    if (predicate(item)) {
+      result = item;
+      return true;
+    }
+
+    return false;
+  });
+
+  return result;
 };
 
 /**
@@ -25811,6 +25819,10 @@ Generator.resolveRules = function resolveRules (el, binding) {
     return getDataAttribute(el, 'rules');
   }
 
+  if (typeof binding.value === 'string') {
+    return binding.value;
+  }
+
   if (~['string', 'object'].indexOf(typeof binding.value.rules)) {
     return binding.value.rules;
   }
@@ -25900,6 +25912,10 @@ Generator.resolveScope = function resolveScope (el, binding, vnode) {
     if ( vnode === void 0 ) vnode = {};
 
   var scope = null;
+  if (isObject(binding.value)) {
+    scope = binding.value.scope;
+  }
+
   if (vnode.child && isNullOrUndefined(scope)) {
     scope = vnode.child.$attrs && vnode.child.$attrs['data-vv-scope'];
   }
@@ -25918,12 +25934,17 @@ Generator.resolveModel = function resolveModel (binding, vnode) {
     return binding.arg;
   }
 
+  if (isObject(binding.value) && binding.value.arg) {
+    return binding.value.arg;
+  }
+
   var model = vnode.data.model || find(vnode.data.directives, function (d) { return d.name === 'model'; });
   if (!model) {
     return null;
   }
 
   var watchable = /^[a-z_]+[0-9]*(\w*\.[a-z_]\w*)*$/i.test(model.expression) && hasPath(model.expression, vnode.context);
+
   if (!watchable) {
     return null;
   }
@@ -26056,7 +26077,6 @@ var Field = function Field (el, options) {
   this.delay = 0;
   this.rules = {};
   this._cacheId(options);
-  this.classNames = assign({}, DEFAULT_OPTIONS.classNames);
   options = assign({}, DEFAULT_OPTIONS, options);
   this._delay = !isNullOrUndefined(options.delay) ? options.delay : 0; // cache initial delay
   this.validity = options.validity;
@@ -26186,7 +26206,7 @@ Field.prototype.update = function update (options) {
   this.model = options.model || this.model;
   this.listen = options.listen !== undefined ? options.listen : this.listen;
   this.classes = (options.classes || this.classes || false) && !this.component;
-  this.classNames = isObject(options.classNames) ? merge(this.classNames, options.classNames) : this.classNames;
+  this.classNames = options.classNames || this.classNames || DEFAULT_OPTIONS.classNames;
   this.getter = isCallable(options.getter) ? options.getter : this.getter;
   this._alias = options.alias || this._alias;
   this.events = (options.events) ? makeEventsArray(options.events) : this.events;
@@ -26205,7 +26225,6 @@ Field.prototype.update = function update (options) {
   }
 
   this.updated = true;
-  this.addValueListeners();
 
   // no need to continue.
   if (!this.el) {
@@ -26213,6 +26232,7 @@ Field.prototype.update = function update (options) {
   }
 
   this.updateClasses();
+  this.addValueListeners();
   this.updateAriaAttrs();
 };
 
@@ -26223,7 +26243,7 @@ Field.prototype.reset = function reset () {
     var this$1 = this;
 
   var defaults = createFlags();
-  Object.keys(this.flags).filter(function (flag) { return flag !== 'required'; }).forEach(function (flag) {
+  Object.keys(this.flags).forEach(function (flag) {
     this$1.flags[flag] = defaults[flag];
   });
 
@@ -26281,13 +26301,10 @@ Field.prototype.updateDependencies = function updateDependencies () {
 
   // we get the selectors for each field.
   var fields = Object.keys(this.rules).reduce(function (prev, r) {
-    if (Validator.isTargetRule(r)) {
-      var selector = this$1.rules[r][0];
-      if (r === 'confirmed' && !selector) {
-        selector = (this$1.name) + "_confirmation";
-      }
-
-      prev.push({ selector: selector, name: r });
+    if (r === 'confirmed') {
+      prev.push({ selector: this$1.rules[r][0] || ((this$1.name) + "_confirmation"), name: r });
+    } else if (Validator.isTargetRule(r)) {
+      prev.push({ selector: this$1.rules[r][0], name: r });
     }
 
     return prev;
@@ -26370,20 +26387,14 @@ Field.prototype.unwatch = function unwatch (tag) {
  * Updates the element classes depending on each field flag status.
  */
 Field.prototype.updateClasses = function updateClasses () {
-  if (!this.classes || this.isDisabled) { return; }
+  if (!this.classes) { return; }
 
   toggleClass(this.el, this.classNames.dirty, this.flags.dirty);
   toggleClass(this.el, this.classNames.pristine, this.flags.pristine);
+  toggleClass(this.el, this.classNames.valid, !!this.flags.valid);
+  toggleClass(this.el, this.classNames.invalid, !!this.flags.invalid);
   toggleClass(this.el, this.classNames.touched, this.flags.touched);
   toggleClass(this.el, this.classNames.untouched, this.flags.untouched);
-  // make sure we don't set any classes if the state is undetermined.
-  if (!isNullOrUndefined(this.flags.valid) && this.flags.validated) {
-    toggleClass(this.el, this.classNames.valid, this.flags.valid);
-  }
-
-  if (!isNullOrUndefined(this.flags.invalid) && this.flags.validated) {
-    toggleClass(this.el, this.classNames.invalid, this.flags.invalid);
-  }
 };
 
 /**
@@ -26516,51 +26527,39 @@ Field.prototype.addValueListeners = function addValueListeners () {
       debouncedFn.apply(void 0, args);
     };
 
-    this$1._addComponentEventListener(e, validate);
-    this$1._addHTMLEventListener(e, validate);
-  });
-};
-
-Field.prototype._addComponentEventListener = function _addComponentEventListener (evt, validate) {
-    var this$1 = this;
-
-  if (!this.component) { return; }
-
-  this.component.$on(evt, validate);
-  this.watchers.push({
-    tag: 'input_vue',
-    unwatch: function () {
-      this$1.component.$off(evt, validate);
-    }
-  });
-};
-
-Field.prototype._addHTMLEventListener = function _addHTMLEventListener (evt, validate) {
-    var this$1 = this;
-
-  if (!this.el) { return; }
-
-  if (~['radio', 'checkbox'].indexOf(this.el.type)) {
-    var els = document.querySelectorAll(("input[name=\"" + (this.el.name) + "\"]"));
-    toArray(els).forEach(function (el) {
-      el.addEventListener(evt, validate);
+    if (this$1.component) {
+      this$1.component.$on(e, validate);
       this$1.watchers.push({
-        tag: 'input_native',
+        tag: 'input_vue',
         unwatch: function () {
-          el.removeEventListener(evt, validate);
+          this$1.component.$off(e, validate);
         }
       });
-    });
-
-    return;
-  }
-
-  this.el.addEventListener(evt, validate);
-  this.watchers.push({
-    tag: 'input_native',
-    unwatch: function () {
-      this$1.el.removeEventListener(evt, validate);
+      return;
     }
+
+    if (~['radio', 'checkbox'].indexOf(this$1.el.type)) {
+      var els = document.querySelectorAll(("input[name=\"" + (this$1.el.name) + "\"]"));
+      toArray(els).forEach(function (el) {
+        el.addEventListener(e, validate);
+        this$1.watchers.push({
+          tag: 'input_native',
+          unwatch: function () {
+            el.removeEventListener(e, validate);
+          }
+        });
+      });
+
+      return;
+    }
+
+    this$1.el.addEventListener(e, validate);
+    this$1.watchers.push({
+      tag: 'input_native',
+      unwatch: function () {
+        this$1.el.removeEventListener(e, validate);
+      }
+    });
   });
 };
 
@@ -26587,7 +26586,8 @@ Field.prototype.updateCustomValidity = function updateCustomValidity () {
  * Removes all listeners.
  */
 Field.prototype.destroy = function destroy () {
-  this.unwatch();
+  this.watchers.forEach(function (w) { return w.unwatch(); });
+  this.watchers = [];
   this.dependencies.forEach(function (d) { return d.field.destroy(); });
   this.dependencies = [];
 };
@@ -26861,7 +26861,6 @@ Validator.localize = function localize (lang, dictionary) {
 Validator.prototype.attach = function attach (field) {
   // deprecate: handle old signature.
   if (arguments.length > 1) {
-    warn('This signature of the attach method has been deprecated, please consult the docs.');
     field = assign({}, {
       name: arguments[0],
       rules: arguments[1]
@@ -26996,18 +26995,18 @@ Validator.prototype.validate = function validate (name, value, scope) {
   var silentRun = field.isDisabled;
 
   return this._validate(field, value, silentRun).then(function (result) {
+    field.setFlags({
+      pending: false,
+      valid: result.valid,
+      validated: true
+    });
+
     this$1.errors.remove(field.name, field.scope, field.id);
     if (silentRun) {
       return Promise.resolve(true);
     } else if (result.errors) {
       result.errors.forEach(function (e) { return this$1.errors.add(e); });
     }
-
-    field.setFlags({
-      pending: false,
-      valid: result.valid,
-      validated: true
-    });
 
     return result.valid;
   });
@@ -27429,6 +27428,15 @@ var fakeFlags = createProxy({}, {
  * Checks if a parent validator instance was requested.
  */
 var requestsValidator = function (injections) {
+  if (! injections) {
+    return false;
+  }
+
+  /* istanbul ignore next */
+  if (Array.isArray(injections) && ~injections.indexOf('$validator')) {
+    return true;
+  }
+
   if (isObject(injections) && injections.$validator) {
     return true;
   }
@@ -27509,6 +27517,7 @@ var mixin = {
       return this.$validator.flags;
     };
   },
+
   beforeDestroy: function beforeDestroy () {
     if (isBuiltInComponent(this.$vnode)) { return; }
 
@@ -27585,16 +27594,15 @@ var Vue;
 function install (_Vue, options) {
   if ( options === void 0 ) options = {};
 
-  if (Vue && _Vue === Vue) {
-    if (true) {
-      warn('already installed, Vue.use(VeeValidate) should only be called once.');
-    }
+  if (Vue) {
+    warn('already installed, Vue.use(VeeValidate) should only be called once.');
     return;
   }
 
   Vue = _Vue;
   Config.merge(options);
   var ref = Config.current;
+  var locale = ref.locale;
   var dictionary = ref.dictionary;
   var i18n = ref.i18n;
 
@@ -27609,8 +27617,8 @@ function install (_Vue, options) {
     });
   }
 
-  if (!i18n && options.locale) {
-    Validator.localize(options.locale); // set the locale
+  if (!i18n) {
+    Validator.localize(locale); // set the locale
   }
 
   Validator.setStrictMode(Config.current.strict);
@@ -27750,8 +27758,7 @@ var locale = {
 
 if (isDefinedGlobally()) {
   // eslint-disable-next-line
-  VeeValidate.Validator.localize(( obj = {}, obj[locale.name] = locale, obj ));
-  var obj;
+  VeeValidate.Validator.addLocale(locale);
 }
 
 // 
@@ -31048,6 +31055,13 @@ var validate$8 = function (value, options) {
   return !! options.filter(function (option) { return option == value; }).length;
 };
 
+var is = function (value, ref) {
+  if ( ref === void 0 ) ref = [];
+  var other = ref[0];
+
+  return value === other;
+};
+
 var isIP_1 = createCommonjsModule(function (module, exports) {
 'use strict';
 
@@ -31147,20 +31161,6 @@ var ip = function (value, ref) {
   }
 
   return isIP(value, version);
-};
-
-var is = function (value, ref) {
-  if ( ref === void 0 ) ref = [];
-  var other = ref[0];
-
-  return value === other;
-};
-
-var is_not = function (value, ref) {
-  if ( ref === void 0 ) ref = [];
-  var other = ref[0];
-
-  return value !== other;
 };
 
 /**
@@ -31508,7 +31508,6 @@ var Rules = {
   integer: integer,
   length: length,
   ip: ip,
-  is_not: is_not,
   is: is,
   max: max$1,
   max_value: max_value,
@@ -31574,7 +31573,8 @@ var mapScope = function (scope, deep) {
     // scope.
     var isScope = field.indexOf('$') === 0;
     if (deep && isScope) {
-      return combine(mapScope(scope[field]), flags);
+      flags = mapScope(scope[field]);
+      return flags;
     } else if (!deep && isScope) {
       return flags;
     }
@@ -31638,7 +31638,7 @@ var mapFields = function (fields) {
   }, {});
 };
 
-var version = '2.0.0';
+var version = '2.0.0-rc.27';
 
 var rulesPlugin = function (ref) {
   var Validator$$1 = ref.Validator;
@@ -36249,7 +36249,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   beforeCreate: function beforeCreate() {
     if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
-      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/admin');
+      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/dashboard');
     }
     console.log(localStorage.getItem('token'));
   },
@@ -37270,6 +37270,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -37323,12 +37324,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (response) {
                 _this.options = response.data.students;
-<<<<<<< HEAD
                 console.log(response.data.students);
                 loading(false);
-=======
-                console.log(response);
->>>>>>> b1cae01794f837e17501090f736e47d623677a5f
             });
         },
         createProject: function createProject() {
