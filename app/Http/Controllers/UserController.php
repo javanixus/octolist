@@ -16,7 +16,8 @@ class UserController extends Controller
     {
         $que = $request->get('q');
         if (!empty($que)){
-            $students = User::Where('name', 'like', "%$que%")->get();
+            $students = User::Where('name', 'like', "%$que%")
+                        ->OrWhere('username', 'like', '%$que%')->get();
         } else {
             $students = User::all()->sortBy('name');
         }

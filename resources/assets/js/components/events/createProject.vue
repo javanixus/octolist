@@ -12,7 +12,7 @@
                         <p>Deskripsi project</p>
                         <editable :content="createProjectFormInput.projectDescForm" class="editableWrapper" />
                         <p>Tambah anggota</p>
-                        <v-select :debounce="250" :on-search="getOptions" label="full_name" aria-placeholder="search member..."></v-select>
+                        <v-select multiple :debounce="250" :on-search="getOptions" :options="options" label="name" v-model="selected"></v-select>
                         <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
@@ -29,34 +29,34 @@
     .v--modal-overlay {
         background: rgba(0, 0, 0, 0.6);
     }
-    
+
     .createProjectModal-wrapper {
         background: #edeff0;
     }
-    
+
     .createProjectForm {
         padding: 15px 0;
     }
-    
+
     .createProjectForm p {
         font-size: 14px;
         text-align: left;
         margin: 8px 0;
     }
-    
+
     .modifyFooter {
         display: inline-flex;
         align-items: center;
         justify-content: flex-end;
     }
-    
+
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
         margin-left: 15px;
         font-size: 14px;
     }
-    
+
     .red-bg {
         background: #ec008c;
     }
@@ -69,7 +69,7 @@
     import vSelect from 'vue-select'
     import router from './../../router'
     import editor from 'vue2-medium-editor'
-    
+
     export default {
         data() {
             return {
@@ -110,7 +110,7 @@
                     }
                 }).then(response => {
                     this.options = response.data.students
-                    console.log(response)
+                    console.log(response.data.students)
                     loading(false)
                 })
             },
