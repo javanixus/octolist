@@ -19,13 +19,12 @@ class TeacherController extends Controller
 	{
 			$users = Auth::user();
 			$id = $users->id;
-			$this->validate($request ,
-                [
-                    'codes'		  => 'required',		//for security reason, confirm identity with inputing password everytime user update
-                    'name'		 => 'required|min:6',
-                    'email'       => "required|email|unique:teachers,email,$id",
-                    'phone'     => "nullable|numeric|unique:teachers,phone,$id|",
-                ]);
+			$this->validate($request , [
+																			'codes'		  => 'required',		//for security reason, confirm identity with inputing password everytime user update
+																			'name'		 => 'required|min:6',
+																			'email'       => "required|email|unique:teachers,email,$id",
+																			'phone'     => "nullable|numeric|unique:teachers,phone,$id|",
+																		]);
 
 				//submit to another table as temporary data
 				//send email to first email
@@ -40,13 +39,13 @@ class TeacherController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-					// $user->update($request->except(['password','codes','password_confirmation']));
+				$user->update($request->except(['password','codes','password_confirmation']));
 
-				$user->update([
-                                'name' => $request->input('name'),
-                                'email' => $request->input('email') ,
-                                'phone' => $request->input('nomor'),
-                            ]);
+				// $user->update([
+				// 									'name' => $request->input('name'),
+				// 									'email' => $request->input('email') ,
+				// 									'phone' => $request->input('nomor'),
+				// 								]);
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
@@ -64,8 +63,39 @@ class TeacherController extends Controller
 					// 		}
 
 					return response()->json($user);
-			} else{
+			}
+			else{
 				die('password tidak cocok');
 			}
+		}
+		public function store(Request $request)
+		{
+				$this->validate($request, [
+						'name' 			=> 'required:min:1',
+						'username'  => 'required|min:1',
+						'email' 			=> 'required|email|unique:users|min:10',
+						'password' 	=> 'required|min:5|confirmed',
+						'gender'		=> 'required',
+						'phone'			=> 'nullable|min:12|numeric',
+						'avatar'		=>	'nullable'
+				]);
+
+				$user = Teacher::Create($request->all());
+
+				if ($user) {
+						$response = [
+								'msg' => 'User Created',
+								'href' => '/v1/users',
+								'method' => 'GET',
+						];
+						return response()->json($response, 200);
+				} else {
+						$response = [
+								'msg' => 'User Created',
+								'href' => '/v1/user',
+								'method' => 'GET',
+						];
+						return response()->json($response, 200);
+				}
 		}
 }

@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
                 <form>
-                <!-- @submit.prevent="createProjectSubmit" -->
+                    <!-- @submit.prevent="createProjectSubmit" -->
                     <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
                     </vue-dropzone>
                     <div class="createProjectForm">
@@ -90,7 +90,8 @@
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                     }
                 },
-                options: null,
+                options: [],
+                selected: null,
             }
         },
         components: {
@@ -101,10 +102,11 @@
             'v-select': vSelect,
         },
         methods: {
-            getOptions(search, loading) {
-                loading(true)
-                axios.get('http://localhost:8000/api/v1/users',{
-                    params: { q: search },
+            getOptions(search) {
+                axios.get('http://localhost:8000/api/v1/users', {
+                    params: {
+                        q: search
+                    },
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }
