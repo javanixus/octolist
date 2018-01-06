@@ -30,7 +30,7 @@
                             </div>
                             <div class="createProjectModal-footer modifyFooter">
                                 <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('editprofile-siswa-popup-modal')">Batalkan</div>
-                                <button :disabled="!editProfileIsPassed" class="button button-landing button--xl borderRadius-s button--melting-blue green-bg" @click.prevent="createProject">Update profile</button>
+                                <button :disabled="!editProfileIsPassed" class="button button-landing button--xl borderRadius-s button--melting-blue green-bg">Update profile</button>
                             </div>
                         </div>
                     </form>
@@ -76,8 +76,20 @@
 <script>
     import avatarUpload from 'vue-image-crop-upload'
     import editor from 'vue2-medium-editor'
-    
+    import axios from 'axios'
+
     export default {
+        beforeCreate(){
+            axios.get('http://localhost:8000/api/v1/users', {
+                headers: {
+                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                }
+            })
+            .then((response) => {
+                this.dataUser = response.data
+                console.log(response);
+            })
+        },
         data() {
             return {
                 en: {
@@ -109,7 +121,8 @@
                     bio: '',
                     phone: '',
                     email: '',
-                }
+                },
+                dataUser: [] 
             }
         },
         components: {

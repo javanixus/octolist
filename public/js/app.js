@@ -42782,6 +42782,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 //
 //
 //
@@ -42857,11 +42859,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    beforeCreate: function beforeCreate() {
+        var _this = this;
+
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/api/v1/users', {
+            headers: {
+                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+            }
+        }).then(function (response) {
+            _this.dataUser = response.data;
+            console.log(response);
+        });
+    },
     data: function data() {
         return {
             en: {
@@ -42893,7 +42908,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 bio: '',
                 phone: '',
                 email: ''
-            }
+            },
+            dataUser: []
         };
     },
 
@@ -46248,13 +46264,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_createProject__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_createProject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__events_createProject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__events_confirmPopup__);
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_createProject__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_createProject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__events_createProject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_confirmPopup__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__events_confirmPopup__);
 //
 //
 //
@@ -46380,7 +46393,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
 var AdminProfile = function AdminProfile(r) {
   return __webpack_require__.e/* require.ensure */(0).then((function () {
     return r(__webpack_require__(193));
@@ -46392,9 +46404,8 @@ var AdminProfile = function AdminProfile(r) {
     'admin-main': __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_Main___default.a,
     'admin-tracking': __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_tracking___default.a,
     'admin-profile': AdminProfile,
-    'error-popup': __WEBPACK_IMPORTED_MODULE_5__events_ErrorPopup___default.a,
-    'create-project': __WEBPACK_IMPORTED_MODULE_6__events_createProject___default.a,
-    'confirm-popup': __WEBPACK_IMPORTED_MODULE_7__events_confirmPopup___default.a
+    'create-project': __WEBPACK_IMPORTED_MODULE_5__events_createProject___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_6__events_confirmPopup___default.a
   },
   data: function data() {
     return {
@@ -46538,30 +46549,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -46573,72 +46560,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "AdminDashboardMain" } })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "admin-notify-bar is-admin-notify-bar--blue" }, [
-        _c("p", [
-          _vm._v("Tips: you can create project instantly just one click , "),
-          _c("b", [_vm._v("setup")]),
-          _vm._v(" on setting to activate")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "is-admin-notify-bar--close" }, [
-          _c("span", [_vm._v("x")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "admin-notify-bar is-admin-notify-bar--caution" },
-        [
-          _c("p", [
-            _vm._v("Please setting general profile before take action")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "is-admin-notify-bar--close" }, [
-            _c("span", [_vm._v("x")])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "admin-notify-bar is-admin-notify-bar--danger" },
-        [
-          _c("p", [
-            _c("b", [_vm._v("My master")]),
-            _vm._v(" , something error appear. Try Restart page to recovery.")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "is-admin-notify-bar--close" }, [
-            _c("span", [_vm._v("x")])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "admin-notify-bar is-admin-notify-bar--done" }, [
-        _c("p", [
-          _vm._v("Yay, project already created perfectly. You can see here  "),
-          _c(
-            "a",
-            { staticClass: "is-admin-notify-bar--link", attrs: { href: "" } },
-            [_vm._v("track project")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "is-admin-notify-bar--close" }, [
-          _c("span", [_vm._v("x")])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -46784,217 +46708,11 @@ if (false) {
 }
 
 /***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(188)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(190)
-/* template */
-var __vue_template__ = __webpack_require__(191)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/events/ErrorPopup.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0fa6e853", Component.options)
-  } else {
-    hotAPI.reload("data-v-0fa6e853", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 188 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(189);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("19bc52d9", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ErrorPopup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fa6e853\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ErrorPopup.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.error-modal{transition:box-shadow 1s\n}\n.error-modal.has-bugs{box-shadow:0 24px 80px -2px rgba(255,0,0,.6)!important\n}\n.error-modal-content{padding:10px;text-align:center\n}\n.error-modal-content .bugs-label{text-transform:uppercase;font-size:60px;font-weight:300;letter-spacing:2px;padding:40px\n}\n.error-modal-content button{width:180px\n}\n.error-modal-content sub{color:#ec625f;transition:opacity .25s\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 190 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ErrorPopup',
-  data: function data() {
-    return {
-      bugCount: 0,
-      message: '',
-      hasBugs: false,
-      draggable: true
-    };
-  },
-
-  methods: {
-    createBug: function createBug() {
-      this.bugCount++;
-    },
-    fixBug: function fixBug() {
-      this.bugCount = Math.max(this.bugCount - 1, 0);
-      this.hasBugs = false;
-    },
-    beforeOpen: function beforeOpen(event) {
-      this.bugCount = Math.round(Math.random() * 3) + 1;
-    },
-    beforeClose: function beforeClose(event) {
-      if (this.bugCount > 0) {
-        this.hasBugs = true;
-        /*
-        Stopping close event execution
-        */
-        event.stop();
-      }
-    }
-  }
-});
-
-/***/ }),
-/* 191 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "modal",
-    {
-      attrs: {
-        name: "error-modal",
-        classes: ["v--modal", "error-modal", _vm.hasBugs && "has-bugs"],
-        "pivot-y": 0.2,
-        width: 400,
-        height: 300,
-        draggable: _vm.draggable
-      },
-      on: { "before-open": _vm.beforeOpen, "before-close": _vm.beforeClose }
-    },
-    [
-      _c("div", { staticClass: "error-modal-content" }, [
-        _c("div", { staticClass: "bugs-label" }, [
-          _vm._v("bugs: " + _vm._s(_vm.bugCount))
-        ]),
-        _vm._v(" "),
-        _c("button", { on: { click: _vm.createBug } }, [
-          _vm._v("Create a bug")
-        ]),
-        _vm._v(" "),
-        _c("button", { on: { click: _vm.fixBug } }, [_vm._v("Fix a bug")]),
-        _vm._v(" "),
-        _c("div", { staticStyle: { padding: "10px" } }, [
-          _vm._v(
-            "\n      You will be able to close the window only if you have fixed all the bugs :)\n    "
-          )
-        ]),
-        _vm._v(" "),
-        _c("sub", { style: { opacity: _vm.hasBugs ? 1 : 0 } }, [
-          _vm._v("\n      " + _vm._s(_vm.bugCount) + " bugs to fix\n    ")
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0fa6e853", module.exports)
-  }
-}
-
-/***/ }),
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
 /* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -47006,8 +46724,6 @@ var render = function() {
     "div",
     { staticClass: "wrapper-admin-dashboard" },
     [
-      _c("error-popup"),
-      _vm._v(" "),
       _c("confirm-popup"),
       _vm._v(" "),
       _c("header", { staticClass: "admin-header" }, [
@@ -47657,13 +47373,7 @@ var render = function() {
                       {
                         staticClass:
                           "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
-                        attrs: { disabled: !_vm.editProfileIsPassed },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.createProject($event)
-                          }
-                        }
+                        attrs: { disabled: !_vm.editProfileIsPassed }
                       },
                       [_vm._v("Update profile")]
                     )
