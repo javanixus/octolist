@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectMember extends Model
 {
-    	protected $table = 'Project_Members';
+    	protected $table = 'project_members';
 
 		 protected $fillable = [
-			 'id_project','id_students'
+			 'id_projects','id_students'
 		 ];
 }
