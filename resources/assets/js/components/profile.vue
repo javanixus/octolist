@@ -12,6 +12,7 @@
     <confirm-popup />
     <profile-popup />
     <report-popup />
+    <editprofile-siswa-popup />
     <div class="navbar navbar--fixed">
       <div class="navbar__profile navbar__profile--profile-page">
         <span><router-link :to="{path: '/dashboard'}">Octolist</router-link></span>
@@ -45,6 +46,9 @@
 					<div class="profile-head__quotes">
 						<q style="color: #6F6F6F;">{{this.profile.quote}}</q>
 					</div>
+          <div class="profile-head__buttonChange">
+            <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="ghost--button alignCenter">Edit profile</button>
+          </div>
 				</div>
 				<div class="wrapper-profile-menu paddingBottom-l">
 					<ul class="profile-menu marginMagic">
@@ -70,8 +74,16 @@
   import profileMenuPopup from './events/profilemenuPopup.vue';
   import ConfirmPopup from './events/confirmPopup';
   import reportPopup from './events/reportBugsPopup';
-
+  import editProfileSiswaPopup from './events/editProfileSiswaPopup';
+  import store from './../store/index';
+  
   export default {
+    beforeCreate(){
+      if (store.state.isLogged){
+        this.disabled === false
+      }
+      console.log(localStorage.getItem('token'));
+    },
     data(){
       return {
         projectIds: [],
@@ -81,11 +93,12 @@
         draggable: false,
         canBeShown: false,
         state: null,
-		isOpened: false,
-		profile: {
-			name:'Fahmi Irsyad K',
-			quote:'semua bisa diraih kalau punya niat dan semangat'
-		}
+        isOpened: false,
+        disabled: false,
+        profile: {
+          name:'Fahmi Irsyad K',
+          quote:'semua bisa diraih kalau punya niat dan semangat'
+        }
       }
     },
     methods: {
@@ -108,6 +121,9 @@
       },
       popupCreateProjectClickOpen(){
         this.$modal.show('create-project-modal');
+      },
+      popupEditProfileSiswaClick(){
+        this.$modal.show('editprofile-siswa-popup-modal');
       }
     },
     components: {
@@ -116,6 +132,7 @@
       'profile-popup': profileMenuPopup,
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,
+      'editprofile-siswa-popup': editProfileSiswaPopup,
     }
   }
 </script>
@@ -123,5 +140,28 @@
 <style lang="css">
 .profile-head__title h4{
 	text-align: center!important;
+}
+.alignCenter {
+  text-align: center;
+}
+.profile-head__buttonChange {
+  width: inherit;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+.ghost--button {
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #8492A6;
+  background: #8492a6;
+  color: white;
+  padding: 8px;
+  border-radius: 3px;
+  max-width: 150px;
+  transition: ease-in-out .2s;
+}
+.ghost--button:hover {
+  background: rgb(110, 123, 139);
+  transition: ease-in-out .3s;
 }
 </style>

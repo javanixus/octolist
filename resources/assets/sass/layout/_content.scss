@@ -454,7 +454,7 @@
 }
 
 /// popup config 
-// popup message
+// popup profile
 .profileMenuPopupWrapper {
   .profileMenuPopup__Header {
     width: 100%;
@@ -485,4 +485,9 @@
       }
     }
   }
+}
+// popup editprofile
+.editProfileSiswaMenuPopup__Header {
+  height: 300px;
+  overflow: hidden;
 }
