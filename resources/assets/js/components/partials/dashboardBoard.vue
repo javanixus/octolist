@@ -31,9 +31,7 @@
 </template>
 <script>
 export default {
-  props: {
-    
-  },
+  props: ['pj'],
   data(){
     return {
 

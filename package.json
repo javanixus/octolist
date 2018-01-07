@@ -23,6 +23,7 @@
     "postcss": "^6.0.16",
     "vue-axios": "^2.0.2",
     "vue-top-progress": "^0.7.0",
+    "vuetable-2": "^1.7.2",
     "webpack-dashboard": "^1.0.2"
   },
   "name": "Octolist",
