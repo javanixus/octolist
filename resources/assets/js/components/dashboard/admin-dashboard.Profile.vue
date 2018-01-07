@@ -9,7 +9,7 @@
 						<h4 class="fontSize-l">Fahmi irsyad k</h4>
 					</div>
 					<div class="profile-head__quotes">
-						<q cite="https://facebook.com" style="color: #6F6F6F;">semua bisa diraih kalau punya niat dan semangat</q>
+						<q style="color: #6F6F6F;">semua bisa diraih kalau punya niat dan semangat</q>
 					</div>
 				</div>
 				<div class="wrapper-profile-menu paddingBottom-l">
@@ -31,7 +31,7 @@
 				<div class="wrapper-feed padding-l" style="">
 					<div class="feedpage">
 						<div class="feed-items clearfix">
-							<div class="feed-items__dp avatar avatar--m"><img alt="" class="avatar-img" src="/resources/assets/images/avatar0.jpg"></div>
+							<div class="feed-items__dp avatar avatar--m"><img alt="" class="avatar-img" src="/images/avatar0.jpg"></div>
 							<div class="feed-items__content marginLeft-m borderRadius-s">
 								<div class="feed-items__images"><progressive-img :blur="30" alt="" placeholder="https://wallinsider.com/wp-content/uploads/2017/05/Himiko-Toga-Wallpapers-2.jpg" src="https://wallinsider.com/wp-content/uploads/2017/05/Himiko-Toga-Wallpapers-2.jpg"/></div>
 								<div class="feed-items__desc padding-m">

@@ -109,7 +109,7 @@
                     },
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
-                    }
+                    },
                 }).then(response => {
                     this.options = response.data.students
                     console.log(response.data.students)

@@ -16,7 +16,7 @@ import '../sass/app.scss';
 // exec
 Vue.use(vBlur);
 Vue.use(vueKanban);
-Vue.use(VeeValidate);
+Vue.use(VeeValidate, { fieldsBagName: 'formFields' });
 Vue.use(VueProgressiveImage, {
   delay: 3000
 });

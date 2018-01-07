@@ -59,12 +59,7 @@
           </div>
           <div class="project__content">
             <div class="project">
-              <dashboard-app ids="projectIds">
-                <div v-for="projectItem in projectItems">
-                  <!-- items will be here -->
-                  <!-- on dashboard-app :pb="board" -->
-                </div>
-              </dashboard-app>
+              <dashboard-app ids="projectIds" v-for="project in projects" :pj="project" :key="project.id"></dashboard-app>
             </div>
           </div>
         </div>
@@ -84,14 +79,13 @@
   export default {
     data(){
       return {
-        projectIds: [],
-        projectItems: [],
         resizable: false,
         adaptive: false,
         draggable: false,
         canBeShown: false,
         state: null,
         isOpened: false,
+        projects: [],
       }
     },
     methods: {
