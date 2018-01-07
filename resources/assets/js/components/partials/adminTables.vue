@@ -1,6 +1,6 @@
 <template>
     <div>
-      <filter-bar></filter-bar>
+      <!-- <filter-bar></filter-bar> -->
         <div class="vuetable-pagination ui basic segment centered grid">
         <vuetable-pagination ref="pagination"
                              @vuetable-pagination:change-page="onChangePage"

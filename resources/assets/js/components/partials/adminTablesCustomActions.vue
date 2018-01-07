@@ -1,8 +1,7 @@
 <template>
       <div class="custom-actions">
-      <button class="ui basic button" @click="itemAction('view-item', rowData, rowIndex)"><i class="zoom icon"></i></button>
-      <button class="ui basic button" @click="itemAction('edit-item', rowData, rowIndex)"><i class="edit icon"></i></button>
-      <button class="ui basic button" @click="itemAction('delete-item', rowData, rowIndex)"><i class="delete icon"></i></button>
+      <button class="ui blue button" @click="itemAction('edit-item', rowData, rowIndex)"><i class="edit icon"></i></button>
+      <button class="ui teal button" @click="itemAction('delete-item', rowData, rowIndex)"><i class="delete icon"></i></button>
     </div>
 </template>
 <style>

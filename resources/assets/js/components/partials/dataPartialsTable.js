@@ -1,9 +1,4 @@
 export default [
-  {
-    name: '__checkbox',
-    titleClass: 'center aligned',
-    dataClass: 'center aligned'
-  },
   'name', 'email',
   {
     name: 'address.line1',

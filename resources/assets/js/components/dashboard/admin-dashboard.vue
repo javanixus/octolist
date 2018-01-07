@@ -110,9 +110,10 @@
     </content>
   </div>
 </template>
-<style>
-
-
+<style scoped>
+  .admin-logo h3 {
+    font-size: 1.35rem;
+  }
 </style>
 <script>
   // import component
