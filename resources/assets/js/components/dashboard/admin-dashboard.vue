@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper-admin-dashboard">
-    <error-popup/>
-    <confirm-popup></confirm-popup>
+    <confirm-popup />
     <header class="admin-header">
       <nav class="admin-navigation">
         <div class="admin__content">
@@ -122,7 +121,6 @@
   import store from './../../store/index'
   import AdminMain from "./admin-dashboard.Main"
   import AdminTracking from "./admin-dashboard.tracking"
-  import ErrorPopup from "../events/ErrorPopup"
   import CreateProjectPopup from "../events/createProject"
   import ConfirmPopup from "../events/confirmPopup"
   const AdminProfile = r => require.ensure([], () => r(require('./admin-dashboard.Profile')),
@@ -133,7 +131,6 @@
       'admin-main': AdminMain,
       'admin-tracking': AdminTracking,
       'admin-profile': AdminProfile,
-      'error-popup': ErrorPopup,
       'create-project': CreateProjectPopup,
       'confirm-popup': ConfirmPopup,
     },

@@ -13,6 +13,7 @@
                         <editable :content="createProjectFormInput.projectDescForm" class="editableWrapper" />
                         <p>Tambah anggota</p>
                         <v-select multiple :debounce="250" :on-search="getOptions" :options="options" label="name" v-model="selected"></v-select>
+                        <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
                 <div class="createProjectModal-footer modifyFooter">
@@ -96,7 +97,7 @@
         components: {
             'vue-dropzone': vue2Dropzone,
             'editable': {
-                template: '<div contenteditable="true"></div>'
+                template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
             },
             'v-select': vSelect,
         },
@@ -111,7 +112,8 @@
                     }
                 }).then(response => {
                     this.options = response.data.students
-                    console.log(response)
+                    console.log(response.data.students)
+                    loading(false)
                 })
             },
             createProject() {

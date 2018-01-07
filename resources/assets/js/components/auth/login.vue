@@ -62,7 +62,7 @@
     },
     beforeCreate(){
       if (store.state.isLogged){
-        router.push('/admin')
+        router.push('/dashboard')
       }
       console.log(localStorage.getItem('token'));
     },

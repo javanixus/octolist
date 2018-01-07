@@ -12,7 +12,6 @@ nav.admin-navigation {
 
 .admin__content { display: flex;  }
 .admin-nav--items {
-  align-items: center;
   display: flex;
 }
 
@@ -46,15 +45,15 @@ nav.admin-navigation {
 }
 
 .admin-logo {
-  padding: 0 70px 0 70px;
+  padding: 0 70px;
   background: #1E262E;
   max-height: 50px;
-  max-width: 400px;
+  display: flex;
+  align-items: center;
 h3 {
-  font-size: 1.19rem;
+  font-size: 1.09rem;
   color: white;
   margin-top: 2.5px;
-  word-break: break-all;
   }
 }
 
@@ -171,49 +170,6 @@ h3 {
     color: rgba(0, 0, 0, 0.7);
   }
 }
-
-
-//.admin-notify-bar {
-//  width: 100%;
-//  padding: 10px 20px;
-//  position: relative;
-//  display: flex;
-//  p {
-//    margin: 0;
-//  }
-//}
-//// event notify
-//.is-admin-notify-bar--default {
-//  background: #F9FAFC;
-//  p {
-//    color: #8492A6;
-//  }
-//}
-//
-//.is-admin-notify-bar--blue {
-//  background: #91b2eb;
-//  p {
-//    color: #0f55eb;
-//  }
-//}
-//.is-admin-notify-bar--caution {
-//  background: #fff8ac;
-//  p {
-//    color: #ff9d00;
-//  }
-//}
-//.is-admin-notify-bar--danger {
-//  background: #ecaccf;
-//  p {
-//    color: #ec008c;
-//  }
-//}
-//.is-admin-notify-bar--done {
-//  background: #a1edd0;
-//  p {
-//    color: #1FBF86;
-//  }
-//}
 
 .is-admin-notify-bar--close {
   justify-content: flex-end;
