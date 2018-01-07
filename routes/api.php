@@ -37,6 +37,8 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::post('/project/{id}/member/add/','ProjectMemberController@store');
 
 			Route::delete('/project/{id}/delete/member/{member}','ProjectMemberController@destroy');
+
+			Route::post('/project/{id}/card/add','CardController@store');
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
     });

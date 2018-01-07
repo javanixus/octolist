@@ -27204,11 +27204,19 @@ Generator.resolveModel = function resolveModel (binding, vnode) {
 };
 
 /**
+<<<<<<< HEAD
    * Resolves the field name to trigger validations.
    * @return {String} The field name.
    */
 Generator.resolveName = function resolveName (el, vnode) {
   var name = getDataAttribute(el, 'name');
+=======
+  * vee-validate v2.0.0
+  * (c) 2017 Abdelrahman Awad
+  * @license MIT
+  */
+// 
+>>>>>>> master
 
   if (!name && !vnode.child) {
     return el.name;
@@ -27223,10 +27231,20 @@ Generator.resolveName = function resolveName (el, vnode) {
     if (config && isCallable(config.name)) {
       var boundGetter = config.name.bind(vnode.child);
 
+<<<<<<< HEAD
       return boundGetter();
     }
 
     return vnode.child.name;
+=======
+/**
+ * Creates a proxy object if available in the environment.
+ */
+var createProxy = function (target, handler) {
+  /* istanbul ignore next */
+  if (typeof Proxy === 'undefined') {
+    return target;
+>>>>>>> master
   }
 
   return name;
@@ -27621,6 +27639,7 @@ Field.prototype.updateDependencies = function updateDependencies () {
 /**
  * Removes listeners.
  */
+<<<<<<< HEAD
 Field.prototype.unwatch = function unwatch (tag) {
     if ( tag === void 0 ) tag = null;
 
@@ -27646,6 +27665,17 @@ Field.prototype.updateClasses = function updateClasses () {
   toggleClass(this.el, this.classNames.invalid, !!this.flags.invalid);
   toggleClass(this.el, this.classNames.touched, this.flags.touched);
   toggleClass(this.el, this.classNames.untouched, this.flags.untouched);
+=======
+var find = function (arrayLike, predicate) {
+  var array = Array.isArray(arrayLike) ? arrayLike : toArray(arrayLike);
+  for (var i = 0; i < array.length; i++) {
+    if (predicate(array[i])) {
+      return array[i];
+    }
+  }
+
+  return undefined;
+>>>>>>> master
 };
 
 /**
@@ -28463,6 +28493,7 @@ Validator.prototype._test = function _test (field, value, rule) {
     throw createError(("No such validator '" + (rule.name) + "' exists."));
   }
 
+<<<<<<< HEAD
   // has field dependencies.
   if (TARGET_RULES.indexOf(rule.name) !== -1) {
     var target = find(field.dependencies, function (d) { return d.name === rule.name; });
@@ -28480,6 +28511,10 @@ Validator.prototype._test = function _test (field, value, rule) {
     if (rule.name !== 'date_format') {
       params.push(dateFormat);
     }
+=======
+  if (~['string', 'object'].indexOf(typeof binding.value.rules)) {
+    return binding.value.rules;
+>>>>>>> master
   }
 
   var result = validator(value, params);
@@ -28575,6 +28610,7 @@ Validator.prototype._resolveField = function _resolveField (name, scope) {
     return this.fields.find({ name: name, scope: scope });
   }
 
+<<<<<<< HEAD
   if (name[0] === '#') {
     return this.fields.find({ id: name.slice(1) });
   }
@@ -28587,6 +28623,11 @@ Validator.prototype._resolveField = function _resolveField (name, scope) {
     if (field) {
       return field;
     }
+=======
+  var scope = null;
+  if (vnode.child && isNullOrUndefined(scope)) {
+    scope = vnode.child.$attrs && vnode.child.$attrs['data-vv-scope'];
+>>>>>>> master
   }
 
   return this.fields.find({ name: name, scope: null });
@@ -28598,6 +28639,7 @@ Validator.prototype._resolveField = function _resolveField (name, scope) {
 Validator.prototype._handleFieldNotFound = function _handleFieldNotFound (name, scope) {
   if (!this.strict) { return Promise.resolve(true); }
 
+<<<<<<< HEAD
   var fullName = isNullOrUndefined(scope) ? name : ("" + (!isNullOrUndefined(scope) ? scope + '.' : '') + name);
   throw createError(
     ("Validating a non-existent field: \"" + fullName + "\". Use \"attach()\" first.")
@@ -28641,6 +28683,16 @@ Validator.prototype._validate = function _validate (field, value, silent) {
       valid: false,
       errors: errors
     });
+=======
+  var model = vnode.data.model || find(vnode.data.directives, function (d) { return d.name === 'model'; });
+  if (!model) {
+    return null;
+  }
+
+  var watchable = /^[a-z_]+[0-9]*(\w*\.[a-z_]\w*)*$/i.test(model.expression) && hasPath(model.expression, vnode.context);
+  if (!watchable) {
+    return null;
+>>>>>>> master
   }
 
   return Promise.all(promises).then(function (values) { return values.map(function (v) {
@@ -28753,9 +28805,33 @@ var mixin = {
       Vue.util.defineReactive(this.$validator, 'flags', this.$validator.flags);
     }
 
+<<<<<<< HEAD
     if (! this.$options.computed) {
       this.$options.computed = {};
     }
+=======
+  this.id = uniqId();
+  this.el = el;
+  this.updated = false;
+  this.dependencies = [];
+  this.watchers = [];
+  this.events = [];
+  this.delay = 0;
+  this.rules = {};
+  this._cacheId(options);
+  this.classNames = assign({}, DEFAULT_OPTIONS.classNames);
+  options = assign({}, DEFAULT_OPTIONS, options);
+  this._delay = !isNullOrUndefined(options.delay) ? options.delay : 0; // cache initial delay
+  this.validity = options.validity;
+  this.aria = options.aria;
+  this.flags = createFlags();
+  this.vm = options.vm;
+  this.component = options.component;
+  this.ctorConfig = this.component ? getPath('$options.$_veeValidate', this.component) : undefined;
+  this.update(options);
+  this.updated = false;
+};
+>>>>>>> master
 
     this.$options.computed[options.errorBagName || 'errors'] = function errorBagGetter () {
       return this.$validator.errors;
@@ -28898,11 +28974,32 @@ var isDefinedGlobally = function () {
   return typeof VeeValidate !== 'undefined';
 };
 
+<<<<<<< HEAD
 var messages = {
   _default: function (field) { return ("The " + field + " value is not valid."); },
   after: function (field, ref) {
     var target = ref[0];
     var inclusion = ref[1];
+=======
+  // update errors scope if the field scope was changed.
+  if (!isNullOrUndefined(options.scope) && options.scope !== this.scope && isCallable(this.validator.update)) {
+    this.validator.update(this.id, { scope: options.scope });
+  }
+  this.scope = !isNullOrUndefined(options.scope) ? options.scope
+    : !isNullOrUndefined(this.scope) ? this.scope : null;
+  this.name = (!isNullOrUndefined(options.name) ? String(options.name) : options.name) || this.name || null;
+  this.rules = options.rules !== undefined ? normalizeRules(options.rules) : this.rules;
+  this.model = options.model || this.model;
+  this.listen = options.listen !== undefined ? options.listen : this.listen;
+  this.classes = (options.classes || this.classes || false) && !this.component;
+  this.classNames = isObject(options.classNames) ? merge(this.classNames, options.classNames) : this.classNames;
+  this.getter = isCallable(options.getter) ? options.getter : this.getter;
+  this._alias = options.alias || this._alias;
+  this.events = (options.events) ? makeEventsArray(options.events) : this.events;
+  this.delay = (options.delay) ? makeDelayObject(this.events, options.delay, this._delay) : makeDelayObject(this.events, this.delay, this._delay);
+  this.updateDependencies();
+  this.addActionListeners();
+>>>>>>> master
 
     return ("The " + field + " must be after " + (inclusion ? 'or equal to ' : '') + target + ".");
 },
@@ -28920,6 +29017,7 @@ var messages = {
     var min = ref[0];
     var max = ref[1];
 
+<<<<<<< HEAD
     return ("The " + field + " field must be between " + min + " and " + max + ".");
 },
   confirmed: function (field) { return ("The " + field + " confirmation does not match."); },
@@ -28927,28 +29025,45 @@ var messages = {
   date_between: function (field, ref) {
     var min = ref[0];
     var max = ref[1];
+=======
+  this.updated = true;
+  this.addValueListeners();
+>>>>>>> master
 
     return ("The " + field + " must be between " + min + " and " + max + ".");
 },
   date_format: function (field, ref) {
     var format = ref[0];
 
+<<<<<<< HEAD
     return ("The " + field + " must be in the format " + format + ".");
 },
   decimal: function (field, ref) {
     if ( ref === void 0 ) ref = [];
     var decimals = ref[0]; if ( decimals === void 0 ) decimals = '*';
+=======
+  this.updateClasses();
+  this.updateAriaAttrs();
+};
+>>>>>>> master
 
     return ("The " + field + " field must be numeric and may contain " + (!decimals || decimals === '*' ? '' : decimals) + " decimal points.");
 },
   digits: function (field, ref) {
     var length = ref[0];
 
+<<<<<<< HEAD
     return ("The " + field + " field must be numeric and exactly contain " + length + " digits.");
 },
   dimensions: function (field, ref) {
     var width = ref[0];
     var height = ref[1];
+=======
+  var defaults = createFlags();
+  Object.keys(this.flags).filter(function (flag) { return flag !== 'required'; }).forEach(function (flag) {
+    this$1.flags[flag] = defaults[flag];
+  });
+>>>>>>> master
 
     return ("The " + field + " field must be " + width + " pixels by " + height + " pixels.");
 },
@@ -29012,7 +29127,20 @@ if (isDefinedGlobally()) {
   VeeValidate.Validator.addLocale(locale);
 }
 
+<<<<<<< HEAD
 // 
+=======
+  // we get the selectors for each field.
+  var fields = Object.keys(this.rules).reduce(function (prev, r) {
+    if (Validator.isTargetRule(r)) {
+      var selector = this$1.rules[r][0];
+      if (r === 'confirmed' && !selector) {
+        selector = (this$1.name) + "_confirmation";
+      }
+
+      prev.push({ selector: selector, name: r });
+    }
+>>>>>>> master
 
 function use (plugin, options) {
   if ( options === void 0 ) options = {};
@@ -29131,11 +29259,33 @@ function toDate (argument, dirtyOptions) {
 
   var dateStrings = splitDateString(argument);
 
+<<<<<<< HEAD
   var parseYearResult = parseYear(dateStrings.date, additionalDigits);
   var year = parseYearResult.year;
   var restDateString = parseYearResult.restDateString;
 
   var date = parseDate(restDateString, year);
+=======
+/**
+ * Updates the element classes depending on each field flag status.
+ */
+Field.prototype.updateClasses = function updateClasses () {
+  if (!this.classes || this.isDisabled) { return; }
+
+  toggleClass(this.el, this.classNames.dirty, this.flags.dirty);
+  toggleClass(this.el, this.classNames.pristine, this.flags.pristine);
+  toggleClass(this.el, this.classNames.touched, this.flags.touched);
+  toggleClass(this.el, this.classNames.untouched, this.flags.untouched);
+  // make sure we don't set any classes if the state is undetermined.
+  if (!isNullOrUndefined(this.flags.valid) && this.flags.validated) {
+    toggleClass(this.el, this.classNames.valid, this.flags.valid);
+  }
+
+  if (!isNullOrUndefined(this.flags.invalid) && this.flags.validated) {
+    toggleClass(this.el, this.classNames.invalid, this.flags.invalid);
+  }
+};
+>>>>>>> master
 
   if (date) {
     var timestamp = date.getTime();
@@ -29271,6 +29421,7 @@ function parseDate (dateString, year) {
     return dayOfISOYear(year, week)
   }
 
+<<<<<<< HEAD
   // YYYY-Www-D or YYYYWwwD
   token = patterns.WwwD.exec(dateString);
   if (token) {
@@ -29294,6 +29445,55 @@ function parseTime (timeString) {
     hours = parseFloat(token[1].replace(',', '.'));
     return (hours % 24) * MILLISECONDS_IN_HOUR
   }
+=======
+    this$1._addComponentEventListener(e, validate);
+    this$1._addHTMLEventListener(e, validate);
+  });
+};
+
+Field.prototype._addComponentEventListener = function _addComponentEventListener (evt, validate) {
+    var this$1 = this;
+
+  if (!this.component) { return; }
+
+  this.component.$on(evt, validate);
+  this.watchers.push({
+    tag: 'input_vue',
+    unwatch: function () {
+      this$1.component.$off(evt, validate);
+    }
+  });
+};
+
+Field.prototype._addHTMLEventListener = function _addHTMLEventListener (evt, validate) {
+    var this$1 = this;
+
+  if (!this.el) { return; }
+
+  if (~['radio', 'checkbox'].indexOf(this.el.type)) {
+    var els = document.querySelectorAll(("input[name=\"" + (this.el.name) + "\"]"));
+    toArray(els).forEach(function (el) {
+      el.addEventListener(evt, validate);
+      this$1.watchers.push({
+        tag: 'input_native',
+        unwatch: function () {
+          el.removeEventListener(evt, validate);
+        }
+      });
+    });
+
+    return;
+  }
+
+  this.el.addEventListener(evt, validate);
+  this.watchers.push({
+    tag: 'input_native',
+    unwatch: function () {
+      this$1.el.removeEventListener(evt, validate);
+    }
+  });
+};
+>>>>>>> master
 
   // hh:mm or hhmm
   token = patterns.HHMM.exec(timeString);
@@ -29323,11 +29523,22 @@ function parseTimezone (timezoneString) {
   var token;
   var absoluteOffset;
 
+<<<<<<< HEAD
   // Z
   token = patterns.timezoneZ.exec(timezoneString);
   if (token) {
     return 0
   }
+=======
+/**
+ * Removes all listeners.
+ */
+Field.prototype.destroy = function destroy () {
+  this.unwatch();
+  this.dependencies.forEach(function (d) { return d.field.destroy(); });
+  this.dependencies = [];
+};
+>>>>>>> master
 
   // ±hh
   token = patterns.timezoneHH.exec(timezoneString);
@@ -29902,10 +30113,21 @@ function buildParseFn (patterns, defaultType) {
  * locale.match.ordinalNumbers = buildMatchPatternFn(/^(\d+)(th|st|nd|rd)?/i)
  * locale.match.ordinalNumbers('3rd') //=> ['3rd', '3', 'rd', ...]
  */
+<<<<<<< HEAD
 function buildMatchPatternFn (pattern) {
   return function (dirtyString) {
     var string = String(dirtyString);
     return string.match(pattern)
+=======
+Validator.prototype.attach = function attach (field) {
+  // deprecate: handle old signature.
+  if (arguments.length > 1) {
+    warn('This signature of the attach method has been deprecated, please consult the docs.');
+    field = assign({}, {
+      name: arguments[0],
+      rules: arguments[1]
+    }, arguments[2] || { vm: { $validator: this } });
+>>>>>>> master
   }
 }
 
@@ -30082,6 +30304,7 @@ function getUTCISOWeek (dirtyDate, dirtyOptions) {
   return Math.round(diff / MILLISECONDS_IN_WEEK$2) + 1
 }
 
+<<<<<<< HEAD
 var formatters = {
   // Month: 1, 2, ..., 12
   'M': function (date) {
@@ -30098,6 +30321,25 @@ var formatters = {
   'MM': function (date) {
     return addLeadingZeros(date.getUTCMonth() + 1, 2)
   },
+=======
+  return this._validate(field, value, silentRun).then(function (result) {
+    this$1.errors.remove(field.name, field.scope, field.id);
+    if (silentRun) {
+      return Promise.resolve(true);
+    } else if (result.errors) {
+      result.errors.forEach(function (e) { return this$1.errors.add(e); });
+    }
+
+    field.setFlags({
+      pending: false,
+      valid: result.valid,
+      validated: true
+    });
+
+    return result.valid;
+  });
+};
+>>>>>>> master
 
   // Month: Jan, Feb, ..., Dec
   'MMM': function (date, options) {
@@ -30602,6 +30844,7 @@ function isAfter (dirtyDate, dirtyDateToCompare, dirtyOptions) {
  * var result = isBefore(new Date(1989, 6, 10), new Date(1987, 1, 11))
  * //=> false
  */
+<<<<<<< HEAD
 function isBefore (dirtyDate, dirtyDateToCompare, dirtyOptions) {
   if (arguments.length < 2) {
     throw new TypeError('2 arguments required, but only ' + arguments.length + ' present')
@@ -30639,6 +30882,11 @@ function isBefore (dirtyDate, dirtyDateToCompare, dirtyOptions) {
 function isEqual$1 (dirtyLeftDate, dirtyRightDate, dirtyOptions) {
   if (arguments.length < 2) {
     throw new TypeError('2 arguments required, but only ' + arguments.length + ' present')
+=======
+var requestsValidator = function (injections) {
+  if (isObject(injections) && injections.$validator) {
+    return true;
+>>>>>>> master
   }
 
   var dateLeft = toDate(dirtyLeftDate, dirtyOptions);
@@ -30746,6 +30994,7 @@ var parsers = {
       return parseDecimal$1(matchResult) - 1
     }
   },
+<<<<<<< HEAD
 
   // Month: Jan, Feb, ..., Dec
   'MMM': {
@@ -30755,6 +31004,15 @@ var parsers = {
     },
     parse: function (matchResult, options) {
       return options.locale.match.month(matchResult, {type: 'short'})
+=======
+  beforeDestroy: function beforeDestroy () {
+    if (isBuiltInComponent(this.$vnode)) { return; }
+
+    // mark the validator paused to prevent delayed validation.
+    if (this.$validator && this.$validator.ownerId === this._uid) {
+      this.$validator.pause();
+      this.$validator.destroy();
+>>>>>>> master
     }
   },
 
@@ -30793,6 +31051,36 @@ var parsers = {
       return options.locale.match.ordinalNumber(matchResult, {unit: 'isoWeek'})
     }
   },
+<<<<<<< HEAD
+=======
+  unbind: function unbind (el, binding, ref) {
+    var context = ref.context;
+
+    var field = findField(el, context);
+    if (!field) { return; }
+
+    context.$validator.detach(field);
+  }
+};
+
+var Vue;
+
+function install (_Vue, options) {
+  if ( options === void 0 ) options = {};
+
+  if (Vue && _Vue === Vue) {
+    if (true) {
+      warn('already installed, Vue.use(VeeValidate) should only be called once.');
+    }
+    return;
+  }
+
+  Vue = _Vue;
+  Config.merge(options);
+  var ref = Config.current;
+  var dictionary = ref.dictionary;
+  var i18n = ref.i18n;
+>>>>>>> master
 
   // ISO week: 01, 02, ..., 53
   'WW': {
@@ -30808,6 +31096,7 @@ var parsers = {
     parse: parseDecimal$1
   },
 
+<<<<<<< HEAD
   // Ordinal day of week
   'do': {
     unit: 'dayOfWeek',
@@ -30818,6 +31107,11 @@ var parsers = {
       return options.locale.match.ordinalNumber(matchResult, {unit: 'dayOfWeek'})
     }
   },
+=======
+  if (!i18n && options.locale) {
+    Validator.localize(options.locale); // set the locale
+  }
+>>>>>>> master
 
   // Day of week: Su, Mo, ..., Sa
   'dd': {
@@ -30973,12 +31267,20 @@ var parsers = {
     parse: parseDecimal$1
   },
 
+<<<<<<< HEAD
   // Hour: 1, 2, ..., 12
   'h': {
     unit: 'timeOfDayHours',
     match: patterns$1.M,
     parse: parseDecimal$1
   },
+=======
+if (isDefinedGlobally()) {
+  // eslint-disable-next-line
+  VeeValidate.Validator.localize(( obj = {}, obj[locale.name] = locale, obj ));
+  var obj;
+}
+>>>>>>> master
 
   // Hour: 01, 02, ..., 12
   'hh': {
@@ -33740,12 +34042,21 @@ function resolvePath (
     stack.unshift('');
   }
 
+<<<<<<< HEAD
   return stack.join('/')
 }
 
 function parsePath (path) {
   var hash = '';
   var query = '';
+=======
+  // eslint-disable-next-line
+  return !! options.filter(function (option) { return option == value; }).length;
+};
+
+var isIP_1 = createCommonjsModule(function (module, exports) {
+'use strict';
+>>>>>>> master
 
   var hashIndex = path.indexOf('#');
   if (hashIndex >= 0) {
@@ -33873,6 +34184,20 @@ function parse (str, options) {
 
   return tokens
 }
+
+var is = function (value, ref) {
+  if ( ref === void 0 ) ref = [];
+  var other = ref[0];
+
+  return value === other;
+};
+
+var is_not = function (value, ref) {
+  if ( ref === void 0 ) ref = [];
+  var other = ref[0];
+
+  return value !== other;
+};
 
 /**
  * Compile a string to a template function for the path.
@@ -34373,6 +34698,7 @@ function addRouteRecord (
   }
 }
 
+<<<<<<< HEAD
 function compileRouteRegex (path, pathToRegexpOptions) {
   var regex = pathToRegexp_1(path, [], pathToRegexpOptions);
   if (true) {
@@ -34381,6 +34707,62 @@ function compileRouteRegex (path, pathToRegexpOptions) {
       warn(!keys[key.name], ("Duplicate param keys in route with path: \"" + path + "\""));
       keys[key.name] = true;
     });
+=======
+  return isURL(value, options);
+};
+
+/* eslint-disable camelcase */
+var Rules = {
+  after: after,
+  alpha_dash: validate$1,
+  alpha_num: validate$2,
+  alpha_spaces: validate$3,
+  alpha: validate,
+  before: before,
+  between: validate$4,
+  confirmed: confirmed,
+  credit_card: credit_card,
+  date_between: date_between,
+  date_format: date_format,
+  decimal: validate$5,
+  digits: validate$6,
+  dimensions: dimensions,
+  email: validate$7,
+  ext: ext,
+  image: image,
+  in: validate$8,
+  integer: integer,
+  length: length,
+  ip: ip,
+  is_not: is_not,
+  is: is,
+  max: max$1,
+  max_value: max_value,
+  mimes: mimes,
+  min: min$1,
+  min_value: min_value,
+  not_in: validate$9,
+  numeric: numeric,
+  regex: regex,
+  required: required,
+  size: size,
+  url: url
+};
+
+// 
+
+var normalize = function (fields) {
+  if (Array.isArray(fields)) {
+    return fields.reduce(function (prev, curr) {
+      if (~curr.indexOf('.')) {
+        prev[curr.split('.')[1]] = curr;
+      } else {
+        prev[curr] = curr;
+      }
+
+      return prev;
+    }, {});
+>>>>>>> master
   }
   return regex
 }
@@ -34407,6 +34789,7 @@ function normalizeLocation (
     return next
   }
 
+<<<<<<< HEAD
   // relative params
   if (!next.path && next.params && current) {
     next = assign({}, next);
@@ -34420,6 +34803,14 @@ function normalizeLocation (
       next.path = fillParams(rawPath, params, ("path " + (current.path)));
     } else if (true) {
       warn(false, "relative params navigation requires a current route.");
+=======
+    // scope.
+    var isScope = field.indexOf('$') === 0;
+    if (deep && isScope) {
+      return combine(mapScope(scope[field]), flags);
+    } else if (!deep && isScope) {
+      return flags;
+>>>>>>> master
     }
     return next
   }
@@ -34459,6 +34850,7 @@ function assign (a, b) {
 /*  */
 
 
+<<<<<<< HEAD
 function createMatcher (
   routes,
   router
@@ -34467,6 +34859,9 @@ function createMatcher (
   var pathList = ref.pathList;
   var pathMap = ref.pathMap;
   var nameMap = ref.nameMap;
+=======
+var version = '2.0.0';
+>>>>>>> master
 
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap);
