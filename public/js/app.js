@@ -48247,6 +48247,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adminTablesCustomActions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__adminTablesCustomActions__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adminTablesFilterBar__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adminTablesFilterBar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__adminTablesFilterBar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dataPartialsTable__ = __webpack_require__(314);
 //
 //
 //
@@ -48268,6 +48269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -48280,26 +48282,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('custom-actions', __WEBPAC
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      fields: [{
-        name: '__checkbox',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned'
-      }, 'name', 'email', {
-        name: 'address.line1',
-        title: 'Address 1'
-      }, {
-        name: 'address.line2',
-        title: 'Address 2'
-      }, {
-        name: 'gender',
-        title: 'Gender',
-        callback: 'genderLabel'
-      }, {
-        name: '__component:custom-actions',
-        title: 'Actions',
-        titleClass: 'center aligned',
-        dataClass: 'center aligned'
-      }]
+      fields: __WEBPACK_IMPORTED_MODULE_5__dataPartialsTable__["a" /* default */]
     };
   },
 
@@ -53153,6 +53136,41 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-4a533ed8", module.exports)
   }
 }
+
+/***/ }),
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ([{
+  name: '__checkbox',
+  titleClass: 'center aligned',
+  dataClass: 'center aligned'
+}, 'name', 'email', {
+  name: 'address.line1',
+  title: 'Address 1'
+}, {
+  name: 'address.line2',
+  title: 'Address 2'
+}, {
+  name: 'gender',
+  title: 'Gender',
+  callback: 'genderLabel'
+}, {
+  name: '__component:custom-actions',
+  title: 'Actions',
+  titleClass: 'center aligned',
+  dataClass: 'center aligned'
+}]);
 
 /***/ })
 /******/ ]);

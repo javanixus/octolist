@@ -25,39 +25,14 @@ import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePaginationDropdown'
 import adminTableCustomActions from './adminTablesCustomActions'
 import adminTableFilter from './adminTablesFilterBar'
+import fieldDatas from './dataPartialsTable'
 
 Vue.component('custom-actions', adminTableCustomActions) // panggil global use
 
 export default {
   data(){
       return {
-        fields: [
-        {
-          name: '__checkbox',
-          titleClass: 'center aligned',
-          dataClass: 'center aligned'
-        },
-        'name', 'email',
-        {
-          name: 'address.line1',
-          title: 'Address 1'
-        },
-        {
-          name: 'address.line2',
-          title: 'Address 2'
-        },
-        {
-          name: 'gender',
-          title: 'Gender',
-          callback: 'genderLabel'
-        },
-        {
-          name: '__component:custom-actions',
-          title: 'Actions',
-          titleClass: 'center aligned',
-          dataClass: 'center aligned'
-        }
-        ]
+        fields: fieldDatas
       }
   },
   components: {
