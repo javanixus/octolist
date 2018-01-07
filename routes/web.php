@@ -10,7 +10,7 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
         return view('welcome');
     });
     Route::get('/admin', function (){
-        return view('welcome');
+        return view('admin');
     });
     Route::get('/profile', function(){
         return view('welcome');
