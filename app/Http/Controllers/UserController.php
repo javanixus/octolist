@@ -23,7 +23,7 @@ class UserController extends Controller
         }
         foreach($students as $student){
             $student->view_students = array(
-                'href' => 'api/v1/student/'.$student->id,
+                'href' => 'api/v1/user/'.$student->id,
                 'method' => 'GET',
             );
         }
@@ -32,6 +32,19 @@ class UserController extends Controller
             'msg' => 'List of Students',
             'students' => $students,
             'students_count' => $students->count(),
+        ];
+
+        return response()->json($response, 200);
+    }
+
+    public function show($id){
+        $student = User::findOrFail($id);
+
+        $response = [
+            'msg' => "User Profile",
+            'data' => $student,
+            'href' => "api/v1/users",
+            'method' => "GET",
         ];
 
         return response()->json($response, 200);
