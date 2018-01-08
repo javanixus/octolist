@@ -1,7 +1,6 @@
 // import deb
 import Router from 'vue-router';
 import Vue from 'vue';
-import axios from 'axios';
 
 // import pages to render
 import Welcome from './../components/welcome';
@@ -17,20 +16,10 @@ import GetStartedWelcome from './../components/getstarted/hello';
 import About from './../components/about';
 import ProfileSetup from './../components/getstarted/profile-setup';
 import AdminDashboard from './../components/dashboard/admin-dashboard';
+import TeacherDashboard from './../components/teacher/dashboardTeacher';
 
 // exec
 Vue.use(Router);
-/* header passing laravel axios */
-axios.defaults.baseURL = 'https://localhost:8000';
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-export const HTTP = axios.create({
-  headers: {
-    'Access-Control-Expose-Headers': ['Access-Token', 'Uid'],
-    Authorization: `Bearer ${  localStorage.getItem('token')}`
-  }
-});
-
-/* end of header passing */
 // routing map
 export default new Router({
   routes: [
@@ -85,6 +74,10 @@ export default new Router({
     {
       path: '/admin',
       component: AdminDashboard
+    },
+    {
+      path: '/teacher',
+      component: TeacherDashboard
     },
     {
       path: '/logout',

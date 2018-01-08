@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  isLogged: !!window.localStorage.getItem('token'),
+  isLogged: !!window.localStorage.getItem('token') && window.localStorage.getItem('key'),
 };
 
 const mutations = {
