@@ -141,7 +141,12 @@
             },
             editProfileAuth() {
                 const key_id_patch = window.localStorage.getItem('key');
-                axios.patch('http://localhost:8000/api/v1/user/'+ key_id_patch, this.dataUser, {
+                // decrypt //
+                const becrypt_slice_one = key_id_patch.slice(7);
+                const becrypt_zero = becrypt_slice_one / 100101010;
+                const becrypt_pharse = becrypt_zero / 8084334125;
+                // end decrypt //
+                axios.patch('http://localhost:8000/api/v1/user/'+ becrypt_pharse, this.dataUser, {
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }
