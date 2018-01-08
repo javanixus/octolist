@@ -22,14 +22,19 @@ class ProjectMemberController extends Controller
 				'id_students'				=> 'required',
 			]);
 
-			for($x=0;$x<=4;$x++){
-				if(null!=$request->input('id_students')[$x]){
-					echo $x;
-				}else
-				{
-						break;
-				}
-			}
+			// $collection = collect($request->input('id_students'));
+			// $collection->toJson();
+			// $collection = implode(',',$collection);
+			// return $collection;
+
+			// for($x=0;$x<=4;$x++){
+			// 	if(null!=$collection[$x]){
+			// 		echo $x;
+			// 	}else
+			// 	{
+			// 			break;
+			// 	}
+			// }
 
 			// ProjectMember::Create([
 			// 	'id_projects'		=>	$id,
