@@ -78,6 +78,8 @@
         .then((response) => {
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
+            const encryptkey = response.data.id;
+            window.localStorage.setItem('key', response.data.user.id);
             store.commit('LOGIN_USER');
             router.push('/dashboard');
           }
