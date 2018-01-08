@@ -78,8 +78,12 @@
         .then((response) => {
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
-            const encryptkey = response.data.id;
-            window.localStorage.setItem('key', response.data.user.id);
+            // encrypted alpha 
+            const encryptkey = response.data.user.id * 8084334125;
+            const zeroencrypt = encryptkey * 100101010;
+            const keypharse = "0b" + "0" + "x9" + "ca" + zeroencrypt;
+            // end of encrypted alpha
+            window.localStorage.setItem('key', keypharse);
             store.commit('LOGIN_USER');
             router.push('/dashboard');
           }

@@ -82,7 +82,12 @@
     export default {
         beforeCreate(){
             const key_id = window.localStorage.getItem('key');
-            axios.get('http://localhost:8000/api/v1/user/' + key_id , {
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
