@@ -41,10 +41,10 @@
 						</div>
 					</div>
 					<div class="profile-head__title">
-						<h4 class="fontSize-l">{{this.profile.name}}</h4>
+						<h4 class="fontSize-l">{{this.dataUser.name}}</h4>
 					</div>
 					<div class="profile-head__quotes">
-						<q style="color: #6F6F6F;">{{this.profile.quote}}</q>
+						<q style="color: #6F6F6F;">{{this.dataUser.email}}</q>
 					</div>
           <div class="profile-head__buttonChange">
             <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="ghost--button alignCenter">Edit profile</button>
@@ -76,14 +76,26 @@
   import reportPopup from './events/reportBugsPopup';
   import editProfileSiswaPopup from './events/editProfileSiswaPopup';
   import store from './../store/index';
-  
+  import axios from 'axios';
+
   export default {
-    beforeCreate(){
-      if (store.state.isLogged){
-        this.disabled === false
-      }
-      console.log(localStorage.getItem('token'));
-    },
+        beforeCreate(){
+            const key_id = window.localStorage.getItem('key');
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+                headers: {
+                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                }
+            })
+            .then((response) => {
+                this.dataUser = response.data.data
+                console.log(response);
+            })
+        },
     data(){
       return {
         projectIds: [],
@@ -95,10 +107,7 @@
         state: null,
         isOpened: false,
         disabled: false,
-        profile: {
-          name:'Fahmi Irsyad K',
-          quote:'semua bisa diraih kalau punya niat dan semangat'
-        }
+        dataUser: []
       }
     },
     methods: {

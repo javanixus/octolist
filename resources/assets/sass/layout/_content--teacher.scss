@@ -1,0 +1,43 @@
+@import "./../components/styleguide";
+
+.headerTeacherWrapper {
+    width: 100%;
+    background: #242626;
+}
+.headerTeacherNav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    width: inherit;
+    justify-content: space-between;
+}
+.headerTeacherNav__Title {
+    h3 {
+        color: #DFE3E2;
+        margin: 0;
+        font-size: 1.19em;
+    }
+}
+.headerTeacherExtend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(155, 155, 155, 0.151);
+    ul {
+        display: -webkit-inline-flex;
+        list-style: none;
+        li {
+            color: #DFE3E2;
+            margin: 0 15px;
+            font-size: 15px;
+            cursor: pointer;
+            &:hover , &:focus {
+                color: #5FD063;
+            }
+        }
+    }
+}
+.headerTeacherExtendActive {
+        color: #5FD063!important;
+    }

@@ -1,0 +1,32 @@
+<template>
+      <div class="custom-actions">
+      <button class="ui blue button" @click="itemAction('edit-item', rowData, rowIndex)"><i class="edit icon"></i></button>
+      <button class="ui teal button" @click="itemAction('delete-item', rowData, rowIndex)"><i class="delete icon"></i></button>
+    </div>
+</template>
+<style>
+    .custom-actions button.ui.button {
+      padding: 8px 8px;
+    }
+    .custom-actions button.ui.button > i.icon {
+      margin: auto !important;
+    }
+</style>
+<script>
+export default {
+      props: {
+      rowData: {
+        type: Object,
+        required: true
+      },
+      rowIndex: {
+        type: Number
+      }
+    },
+    methods: {
+      itemAction (action, data, index) {
+        console.log('custom-actions: ' + action, data.name, index)
+      }
+    }
+}
+</script>
