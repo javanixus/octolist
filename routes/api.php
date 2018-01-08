@@ -36,9 +36,15 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 			Route::post('/project/{id}/member/add/','ProjectMemberController@store');
 
-			Route::delete('/project/{id}/delete/member/{member}','ProjectMemberController@destroy');
+			Route::delete('/project/{id}/member/{member}/delete','ProjectMemberController@destroy');
 
 			Route::post('/project/{id}/card/add','CardController@store');
+
+			Route::delete('/project/{id}/card/{card}/delete','CardController@destroy');
+
+			Route::post('/project/{id}/card/{card}/member/add/','CardMemberController@store');
+
+			Route::delete('/project/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
     });

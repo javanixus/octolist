@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\ProjectMember;
-use App\Teacher;
 use App\Project;
 
 use JWTException;
@@ -23,11 +22,19 @@ class ProjectMemberController extends Controller
 				'id_students'				=> 'required',
 			]);
 
+			for($x=0;$x<=4;$x++){
+				if(null!=$request->input('id_students')[$x]){
+					echo $x;
+				}else
+				{
+						break;
+				}
+			}
 
-			ProjectMember::Create([
-				'id_projects'		=>	$id,
-				'id_students'	 =>		$request->input('id_students')
-			]);
+			// ProjectMember::Create([
+			// 	'id_projects'		=>	$id,
+			// 	'id_students'	 =>		$request->input('id_students')
+			// ]);
 			$response = [
 										'msg' => 'Project Created',
 										'href' => "/v1/project/$id",
