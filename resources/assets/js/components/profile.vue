@@ -77,9 +77,15 @@
   import editProfileSiswaPopup from './events/editProfileSiswaPopup';
   import store from './../store/index';
   import axios from 'axios';
+  import router from './../router'
 
   export default {
-        beforeCreate(){
+    beforeCreate(){
+      if(store.state.isLogged === false){
+        router.go('/logout')
+      }
+    },
+        mounted(){
             const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);
