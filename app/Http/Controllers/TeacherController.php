@@ -106,7 +106,7 @@ class TeacherController extends Controller
 			$response = [
 					'msg' => "Teacher Profile",
 					'data' => $user,
-					'href' => "api/v1/Teacher",
+					'href' => "v1/user",
 					'method' => "GET",
 			];
 
