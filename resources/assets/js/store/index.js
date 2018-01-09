@@ -4,16 +4,19 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  isLogged: !!window.localStorage.getItem('token') && window.localStorage.getItem('key'),
+  isLogged: !!window.localStorage.getItem('token'),
+  keyBypass: !!window.localStorage.getItem('key'),
 };
 
 const mutations = {
   LOGIN_USER(state) {
     state.isLogged = true;
+    state.keyBypass = window.localStorage.getItem('key');
   },
 
   LOGOUT_USER(state) {
     state.isLogged = false;
+    state.keyBypass = false;
   }
 };
 

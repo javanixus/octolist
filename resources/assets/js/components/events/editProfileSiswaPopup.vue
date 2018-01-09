@@ -11,7 +11,7 @@
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
                                 <p>Nama Lengkap</p>
-                                <input type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input-nofill input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
+                                <input type="text" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input-nofill input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('nama-lengkap')">
                                     {{ errors.first('nama-lengkap') }}
                                 </span>
@@ -126,7 +126,7 @@
                 },
                 imgDataUrl: '/images/avatar0.jpg',
                 show: false,
-                dataUser: [] 
+                dataUser: []
             }
         },
         components: {
@@ -153,6 +153,7 @@
                 })
                 .then((response) => {
                     router.go('/profile')
+                    this.dataUser = response.data.data;
                  })
             }
         },

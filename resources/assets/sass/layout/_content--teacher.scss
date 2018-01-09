@@ -39,5 +39,23 @@
     }
 }
 .headerTeacherExtendActive {
-        color: #5FD063!important;
-    }
+    color: #5FD063!important;
+}
+
+.teacherMainWrapper {
+    padding: 30px 60px;
+}
+.studentProjectWrapper {
+    display: flex;
+}
+
+.studentProject {
+   
+}
+
+.studentProject--item {
+  margin: 15px;
+  width: 250px;
+  height: 300px;
+  background-color: white;
+}
