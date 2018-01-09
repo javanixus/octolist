@@ -1,5 +1,6 @@
 <template>
   <div>
+    <teacher-profile-popup />
       <header>
           <div id="headerTeacher" class="headerTeacherWrapper">
             <div class="headerTeacherNav">
@@ -7,7 +8,7 @@
                     <h3>Teacher Dashboard</h3>
                 </div>
                 <div class="headerTeacherNav__Items">
-                    <div class="avatar avatar--s admin-avatars">
+                    <div @click="clickTeacherProfile" class="avatar avatar--s admin-avatars">
                         <img class="avatar-img" src="/images/love.jpg"
                         alt="" />
                     </div>
@@ -35,6 +36,7 @@ import router from './../../router'
 import store from './../../store/index'
 import teacherDashboardMain from './dashboardTeacherMain'
 import teacherDashboardProfile from './dashboardTeacherProfile'
+import teacherProfilePopup from './../events/profileteachermenuPopup'
 
 export default {
   data() {
@@ -44,7 +46,13 @@ export default {
   },
   components: {
       'teacher-main' : teacherDashboardMain,
-      'teacher-profile' : teacherDashboardProfile
+      'teacher-profile' : teacherDashboardProfile,
+      'teacher-profile-popup': teacherProfilePopup
+  },
+  methods: {
+      clickTeacherProfile() {
+        this.$modal.show('teacher-profile-popup');  
+      }
   }
 }
 </script>
