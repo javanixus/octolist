@@ -106,7 +106,7 @@ class UserController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-				$user->update($request->except(['password','codes','password_confirmation','avatar']));
+					$user->update($request->except(['password','codes','password_confirmation','avatar']));
 
 				if(null != $request->file('avatar')){
 					$file=$request->file('avatar');
@@ -128,7 +128,7 @@ class UserController extends Controller
 					}
 
 					return response()->json($user);
-    }
+            }
     }
 
     public function destroy($id, Request $request)
