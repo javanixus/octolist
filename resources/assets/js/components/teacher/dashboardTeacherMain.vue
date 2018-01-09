@@ -1,6 +1,12 @@
 <template>
-  <div>
-      <span>hello der</span>
+  <div class="teacherMainWrapper">
+      <div class="studentProjectWrapper">
+        <div class="studentProject">
+          <div class="studentProject--item">
+            
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 <style>
