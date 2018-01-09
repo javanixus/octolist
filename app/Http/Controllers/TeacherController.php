@@ -98,4 +98,19 @@ class TeacherController extends Controller
 						return response()->json($response, 200);
 				}
 		}
+
+		public function show($id)
+		{
+			$user = Teacher::findOrFail($id);
+
+			$response = [
+					'msg' => "Teacher Profile",
+					'data' => $user,
+					'href' => "api/v1/Teacher",
+					'method' => "GET",
+			];
+
+			return response()->json($response, 200);
+
+		}
 }
