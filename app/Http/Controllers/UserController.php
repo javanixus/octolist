@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
+use Auth;
+use JWTAuth;
+use JWTException;
+
 use App\User;
 
 class UserController extends Controller
@@ -82,10 +90,43 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $student = User::findOrFail($id);
-        $student->update($request->all());
+			$users = Auth::user();
+			$id = $users->id;
+			$this->validate($request , [
+																			'codes'		  => 'required',		//for security reason, confirm identity with inputing password everytime user update
+																			'name'		 => 'required|min:6',
+																			'email'       => "required|email|unique:users,email,$id",
+																			'phone'     => "nullable|numeric|unique:users,phone,$id|",
+																		]);
 
-        return response()->json();
+				$user = User::find($id);
+
+				//security check if the codes right then the output should be true
+
+				if(Hash::check($request->codes,$user->password)){
+
+				$user->update($request->except(['password','codes','password_confirmation','avatar']));
+
+				if(null != $request->file('avatar')){
+					$file=$request->file('avatar');
+					$filename = $users->username . '-' . time() . '.png';
+					if($file){
+						Storage::disk('local')->put($filename,File::get($file));
+						$user->update([
+							'avatar'	=>	$filename,
+						]);
+					}
+				}
+
+					if(null != $request->input('password') && null != $request->input('password_confirmation')){
+						if($request->input('password') == $request->input('password_confirmation')){
+							$user->update([
+								'password' => bcrypt($request->input('password')),
+							]);
+						}
+					}
+
+					return response()->json($user);
     }
 
     public function destroy($id, Request $request)
