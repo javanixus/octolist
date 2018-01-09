@@ -23,7 +23,7 @@ class UserController extends Controller
         }
         foreach($students as $student){
             $student->view_students = array(
-                'href' => 'api/v1/user/'.$student->id,
+                'href' => '/api/v1/user/'.$student->id,
                 'method' => 'GET',
             );
         }
@@ -43,7 +43,7 @@ class UserController extends Controller
         $response = [
             'msg' => "User Profile",
             'data' => $student,
-            'href' => "api/v1/users",
+            'href' => "/api/v1/users",
             'method' => "GET",
         ];
 
