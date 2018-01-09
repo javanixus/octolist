@@ -97,7 +97,18 @@ class UserController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-				$user->update($request->except(['password','codes','password_confirmation']));
+				$user->update($request->except(['password','codes','password_confirmation','avatar']));
+
+				if(null != $request->file('avatar')){
+					$file=$request->file('avatar');
+					$filename = $users->username . '-' . time() . '.png';
+					if($file){
+						Storage::disk('local')->put($filename,File::get($file));
+						$user->update([
+							'avatar'	=>	$filename,
+						]);
+					}
+				}
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
