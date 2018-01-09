@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 use Auth;
 use JWTAuth;
+use JWTException;
+
 use App\Project;
 use App\Teacher;
-use JWTException;
 
 class TeacherController extends Controller
 {
@@ -39,13 +42,23 @@ class TeacherController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-				$user->update($request->except(['password','codes','password_confirmation']));
+				$user->update($request->except(['password','codes','password_confirmation','avatar']));
 
 				// $user->update([
 				// 									'name' => $request->input('name'),
 				// 									'email' => $request->input('email') ,
 				// 									'phone' => $request->input('nomor'),
 				// 								]);
+					if(null != $request->file('avatar')){
+						$file=$request->file('avatar');
+						$filename = $users->username . '-' . time() . '.png';
+						if($file){
+							Storage::disk('local')->put($filename,File::get($file));
+							$user->update([
+								'avatar'	=>	$filename,
+							]);
+						}
+					}
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
