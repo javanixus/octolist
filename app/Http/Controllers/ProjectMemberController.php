@@ -22,30 +22,43 @@ class ProjectMemberController extends Controller
 				'id_students'				=> 'required',
 			]);
 
-			// $collection = collect($request->input('id_students'));
+			$collection = collect($request->input('id_students'));
+			$collection = str_replace('[','',$collection);
+			$collection = str_replace(']','',$collection);
+			$collection = str_replace('"','',$collection);
 			// $collection->toJson();
+			$collection = explode(',',$collection);
 			// $collection = implode(',',$collection);
 			// return $collection;
 
-			// for($x=0;$x<=4;$x++){
-			// 	if(null!=$collection[$x]){
-			// 		echo $x;
-			// 	}else
-			// 	{
-			// 			break;
-			// 	}
-			// }
+			for($x=0;$x<=(count($collection)-1);$x++){
+				if(null==$collection[$x]){
+					break;
+				}else
+				{
+					if(ProjectMember::where('id_projects',$id)->where('id_students',$collection[$x])->count()==0){
 
-			// ProjectMember::Create([
-			// 	'id_projects'		=>	$id,
-			// 	'id_students'	 =>		$request->input('id_students')
-			// ]);
+					ProjectMember::Create([
+						'id_projects'		=>	$id,
+						'id_students'	 =>		$collection[$x]
+					]);
+				}else{
+					continue;
+				}
+					// echo $collection[0];
+					// $data = str_replace('[','',$collection[0]);
+					// $data = str_replace(']','',$collection[$x]);
+					// echo $data;
+					// echo $collection[$x];
+				}
+			}
+
 			$response = [
 										'msg' => 'Project Created',
 										'href' => "/v1/project/$id",
 										'method' => 'GET',
 									];
-
+				// return $
 			return response()->json($response,200);
 		}
 
