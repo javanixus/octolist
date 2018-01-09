@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\CardMember;
 use Illuminate\Http\Request;
 
-use App\CardMember;
-use App\Card;
-
-use JWTException;
-use JWTAuth;
-use Auth;
-
-class CardController extends Controller
+class CardMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,40 +33,34 @@ class CardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id,Request $request)
+    public function store($id,$card,Request $request)
     {
 			$this->validate($request,[
-				'card_title' 			=> 'required',
-				'card_description' 	=> 'required',
+				'id_students'				=> 'required',
 			]);
 
-			$card = Card::Create($request->all());
-			$card = $card->id;
-			DB::table('project_cards')
-						->insert(['id_projects' => $id , 'id_cards' => $card]);
 
-			// ProjectMember::Create([
-			// 	'id_projects'		=>	$id,
-			// 	'id_students'	 =>		$request->input('id_students')
-			// ]);
+			CardMember::Create([
+				'id_cards'		=>	$card,
+				'id_students'	 =>		$request->input('id_students')
+			]);
 			$response = [
-										'msg' => 'Card Created',
+										'msg' => 'Project Card Member Added',
 										'href' => "/v1/project/$id",
 										'method' => 'GET',
 									];
 
 			return response()->json($response,200);
+		}
 
-
-    }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Card  $card
+     * @param  \App\CardMember  $cardMember
      * @return \Illuminate\Http\Response
      */
-    public function show(Card $card)
+    public function show(CardMember $cardMember)
     {
         //
     }
@@ -81,10 +68,10 @@ class CardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Card  $card
+     * @param  \App\CardMember  $cardMember
      * @return \Illuminate\Http\Response
      */
-    public function edit(Card $card)
+    public function edit(CardMember $cardMember)
     {
         //
     }
@@ -93,10 +80,10 @@ class CardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Card  $card
+     * @param  \App\CardMember  $cardMember
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Card $card)
+    public function update(Request $request, CardMember $cardMember)
     {
         //
     }
@@ -104,28 +91,21 @@ class CardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Card  $card
+     * @param  \App\CardMember  $cardMember
      * @return \Illuminate\Http\Response
      */
-		 public function destroy($id,$card)
-     {
-			 DB::table('project_cards')
-			 ->where('id_cards',$card)
-			 ->where('id_projects',$id)
-			 ->delete();
+    public function destroy($id,$card,$member)
+    {
+			CardMember::where('id_cards',$card)
+					->where('id_students',$member)
+					->delete();
 
-			 CardMember::where('id_cards',$card)
-			 ->delete();
+			$response = [
+						'msg' => 'Member Deleted',
+						'href' => "/v1/project/$id",
+						'method' => 'GET',
+					];
 
-  		 Card::where('id',$card)
-			 			->delete();
-
- 			$response = [
- 						'msg' => 'Card Deleted',
- 						'href' => "/v1/project/$id",
- 						'method' => 'GET',
- 					];
-
- 					return response()->json($response,200);
-     }
+					return response()->json($response,200);
+    }
 }
