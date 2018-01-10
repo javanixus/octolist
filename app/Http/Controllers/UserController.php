@@ -89,7 +89,7 @@ class UserController extends Controller
         }
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
 			$users = Auth::user();
 			$id = $users->id;
@@ -108,16 +108,16 @@ class UserController extends Controller
 
 					$user->update($request->except(['password','codes','password_confirmation','avatar']));
 
-				if(null != $request->file('avatar')){
-					$file=$request->file('avatar');
-					$filename = $users->username . '-' . time() . '.png';
-					if($file){
-						Storage::disk('local')->put($filename,File::get($file));
-						$user->update([
-							'avatar'	=>	$filename,
-						]);
-					}
-				}
+				// if(null != $request->file('avatar')){
+				// 	$file=$request->file('avatar');
+				// 	$filename = $users->username . '-' . time() . '.png';
+				// 	if($file){
+				// 		Storage::disk('local')->put($filename,File::get($file));
+				// 		$user->update([
+				// 			'avatar'	=>	$filename,
+				// 		]);
+				// 	}
+				// }
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
