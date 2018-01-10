@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
+use Storage;
 
 use Auth;
 use JWTAuth;
@@ -93,15 +94,15 @@ class UserController extends Controller
 			$users = Auth::user();
 			$id = $users->id;
 			$this->validate($request , [
-																			'codes'		  => 'required',		//for security reason, confirm identity with inputing password everytime user update
-																			'name'		 => 'required|min:6',
-																			'email'       => "required|email|unique:users,email,$id",
-																			'phone'     => "nullable|numeric|unique:users,phone,$id|",
-																		]);
+                'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
+                'name' => 'required|min:6',
+                'email'=> "required|email|unique:users,email,$id",
+                'phone'=> "nullable|numeric|unique:users,phone,$id|",
+            ]);
 
 				$user = User::find($id);
 
-				//security check if the codes right then the output should be true
+                //security check if the codes right then the output should be true
 
 				if(Hash::check($request->codes,$user->password)){
 
@@ -120,15 +121,15 @@ class UserController extends Controller
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
-							$user->update([
+						    	$user->update([
 								'password' => bcrypt($request->input('password')),
 							]);
 						}
 					}
 
 					return response()->json($user);
+            }
     }
-	}
 
     public function destroy($id, Request $request)
     {
