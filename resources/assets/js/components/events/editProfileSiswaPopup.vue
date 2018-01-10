@@ -146,7 +146,7 @@
                 const becrypt_zero = becrypt_slice_one / 100101010;
                 const becrypt_pharse = becrypt_zero / 8084334125;
                 // end decrypt //
-                axios.patch('http://localhost:8000/api/v1/user/'+ becrypt_pharse, this.dataUser, {
+                axios.patch('http://localhost:8000/api/v1/user/', this.dataUser, {
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }

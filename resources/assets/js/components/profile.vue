@@ -82,7 +82,7 @@
   export default {
     beforeCreate(){
       if(store.state.isLogged === false){
-        router.go('/logout')
+        router.push('/logout')
       }
     },
         mounted(){
@@ -99,7 +99,7 @@
             })
             .then((response) => {
                 this.dataUser = response.data.data
-                console.log(response);
+                // console.log(response);
             })
         },
     data(){

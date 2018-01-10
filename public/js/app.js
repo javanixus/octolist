@@ -43909,7 +43909,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
     if (__WEBPACK_IMPORTED_MODULE_6__store_index__["a" /* default */].state.isLogged === false) {
-      __WEBPACK_IMPORTED_MODULE_8__router__["a" /* default */].go('/logout');
+      __WEBPACK_IMPORTED_MODULE_8__router__["a" /* default */].push('/logout');
     }
   },
   mounted: function mounted() {
@@ -43927,7 +43927,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }).then(function (response) {
       _this.dataUser = response.data.data;
-      console.log(response);
+      // console.log(response);
     });
   },
   data: function data() {
@@ -44238,7 +44238,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var becrypt_zero = becrypt_slice_one / 100101010;
             var becrypt_pharse = becrypt_zero / 8084334125;
             // end decrypt //
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse, this.dataUser, {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch('http://localhost:8000/api/v1/user/', this.dataUser, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
