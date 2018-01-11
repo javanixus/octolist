@@ -44238,7 +44238,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var becrypt_zero = becrypt_slice_one / 100101010;
             var becrypt_pharse = becrypt_zero / 8084334125;
             // end decrypt //
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch('http://localhost:8000/api/v1/user/', this.dataUser, {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse, this.dataUser, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
@@ -53471,8 +53471,114 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      projectCover: 'images/avatar0.jpg',
+      projectCover1: 'images/prism.png',
+      projectCover2: 'images/gradient1.svg',
+      projectCover3: 'images/love.png',
+      projectCover4: 'images/plants.png'
+    };
+  }
+});
 
 /***/ }),
 /* 314 */
@@ -53482,25 +53588,220 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "teacherMainWrapper" }, [
+    _c("div", { staticClass: "studentProjectWrapper" }, [
+      _c("div", { staticClass: "studentProject" }, [
+        _c("div", { staticClass: "studentProject--item" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItem__Cover" }, [
+            _c("div", {
+              staticClass: "studentProjectCircleCover",
+              style: { backgroundImage: "url(" + this.projectCover + ")" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItemDetails" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "studentProject--item" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItem__Cover" }, [
+            _c("div", {
+              staticClass: "studentProjectCircleCover",
+              style: { backgroundImage: "url(" + this.projectCover1 + ")" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItemDetails" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "studentProject--item" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItem__Cover" }, [
+            _c("div", {
+              staticClass: "studentProjectCircleCover",
+              style: { backgroundImage: "url(" + this.projectCover2 + ")" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItemDetails" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "studentProject--item" }, [
+          _vm._m(6),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItem__Cover" }, [
+            _c("div", {
+              staticClass: "studentProjectCircleCover",
+              style: { backgroundImage: "url(" + this.projectCover3 + ")" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(7),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItemDetails" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "studentProject--item" }, [
+          _vm._m(8),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItem__Cover" }, [
+            _c("div", {
+              staticClass: "studentProjectCircleCover",
+              style: { backgroundImage: "url(" + this.projectCover4 + ")" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(9),
+          _vm._v(" "),
+          _c("div", { staticClass: "studentProjectItemDetails" })
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "teacherMainWrapper" }, [
-      _c("div", { staticClass: "studentProjectWrapper" }, [
-        _c("div", { staticClass: "studentProject" }, [
-          _c("div", { staticClass: "studentProject--item" }, [
-            _c("div", { staticClass: "studentProjectItem__Header" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "studentProjectItem__Cover" }, [
-              _c("div", { staticClass: "studentProjectCircleCover" })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "studentProjectItem__Title" })
-          ])
+    return _c("div", { staticClass: "studentProjectItem__Header" }, [
+      _c("div", { staticClass: "studentProjectHeaderMenu" }, [
+        _c("span", [_vm._v("edit")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("edit")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Title" }, [
+      _c("div", { staticClass: "studentProjectItemTitle" }, [
+        _c("h4", [_vm._v("Project Manta")]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "a web app it have ability to clone other web with a single click"
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Header" }, [
+      _c("div", { staticClass: "studentProjectHeaderMenu" }, [
+        _c("span", [_vm._v("edit")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("edit")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Title" }, [
+      _c("div", { staticClass: "studentProjectItemTitle" }, [
+        _c("h4", [_vm._v("Project Prism")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("a progressive web app with beatifull design")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Header" }, [
+      _c("div", { staticClass: "studentProjectHeaderMenu" }, [
+        _c("span", [_vm._v("edit")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("edit")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Title" }, [
+      _c("div", { staticClass: "studentProjectItemTitle" }, [
+        _c("h4", [_vm._v("Animate Design")]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "a web app it have ability to clone other web with a single click"
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Header" }, [
+      _c("div", { staticClass: "studentProjectHeaderMenu" }, [
+        _c("span", [_vm._v("edit")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("edit")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Title" }, [
+      _c("div", { staticClass: "studentProjectItemTitle" }, [
+        _c("h4", [_vm._v("Project Manta")]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "a web app it have ability to clone other web with a single click"
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Header" }, [
+      _c("div", { staticClass: "studentProjectHeaderMenu" }, [
+        _c("span", [_vm._v("edit")]),
+        _vm._v(" "),
+        _c("span", [_vm._v("edit")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "studentProjectItem__Title" }, [
+      _c("div", { staticClass: "studentProjectItemTitle" }, [
+        _c("h4", [_vm._v("Project Manta")]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v(
+            "a web app it have ability to clone other web with a single click"
+          )
         ])
       ])
     ])
