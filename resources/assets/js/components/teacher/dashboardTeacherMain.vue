@@ -1,4 +1,7 @@
 <template>
+<div>
+  <quick-config />
+  <quick-tooltip />
   <div class="teacherMainWrapper">
       <div class="studentProjectWrapper">
         <div class="studentProject">
@@ -114,11 +117,15 @@
         </div>
       </div>
   </div>
+  </div>
 </template>
 <style>
 
 </style>
 <script>
+import quickConfig from './../events/quickConfigTeacher'
+import quickTooltip from './../events/quickConfigTooltipTeacher'
+
 export default {
   data(){
     return {
@@ -128,6 +135,10 @@ export default {
       projectCover3: 'images/love.png',
       projectCover4: 'images/plants.png',
     }
+  },
+  components: {
+    'quick-config': quickConfig,
+    'quick-tooltip': quickTooltip
   }
 }
 </script>
