@@ -61,16 +61,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      imgObj: {
-        preLoad: 1.3,
-        error: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif',
-        loading: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif'
-      },
-      imgUrl: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/fancybox_loading.gif'
-    }
-  }
+
 }
 </script>
 

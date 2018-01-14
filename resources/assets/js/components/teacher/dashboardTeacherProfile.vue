@@ -7,7 +7,7 @@
         <div class="teacherProfileCoverItems">
           <div class="teacherProfileCoverCore">
             <div class="teacherProfileDp avatar--glow">
-              <img src="/images/love.jpg" alt="">
+              <img v-lazy="imgObj">
             </div>
             <div class="teacherProfileDesc">
               <h4>Fahmi irsyad khairi</h4>
@@ -30,9 +30,15 @@
 import teacherEditProfile from './../events/editProfileTeacher'
 
 export default {
-  data(){
+  data() {
     return {
-
+      imgObj: {
+        preLoad: 1.3,
+        src:'/images/love.jpg',
+        error: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif',
+        loading: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif'
+      },
+      imgUrl: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/fancybox_loading.gif'
     }
   },
   components: {
