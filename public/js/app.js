@@ -54151,7 +54151,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-3be47227"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -54194,13 +54194,13 @@ var content = __webpack_require__(327);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("69250234", content, false);
+var update = __webpack_require__(2)("65c8e491", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3be47227\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacherProfile.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3be47227\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacherProfile.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3be47227\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacherProfile.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3be47227\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacherProfile.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -54218,7 +54218,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.ghost--button[data-v-3be47227]{border:2px solid #5fd063!important;background:#5fd063!important\n}", ""]);
 
 // exports
 
@@ -54229,6 +54229,28 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events_editProfileTeacher__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events_editProfileTeacher___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__events_editProfileTeacher__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -54238,7 +54260,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+
+  components: {
+    'teacher-editprofile': __WEBPACK_IMPORTED_MODULE_0__events_editProfileTeacher___default.a
+  },
+  methods: {
+    clickTeacherEditProfile: function clickTeacherEditProfile() {
+      this.$modal.show('editprofile-teacher-popup-modal');
+    }
+  }
+});
 
 /***/ }),
 /* 329 */
@@ -54248,14 +54285,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "teacherProfileWrapper" },
+    [
+      _c("teacher-editprofile"),
+      _vm._v(" "),
+      _c("div", { staticClass: "teacherProfileLay" }, [
+        _c("div", { staticClass: "teacherProfileCover" }, [
+          _c("div", { staticClass: "filter-dark" }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "teacherProfileCoverItems" },
+            [
+              _c("div", { staticClass: "teacherProfileCoverCore" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "teacherProfileDesc" }, [
+                  _c("h4", [_vm._v("Fahmi irsyad khairi")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "ghost--button alignCenter",
+                      on: { click: _vm.clickTeacherEditProfile }
+                    },
+                    [_vm._v("Edit profile")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("progressive-background", {
+                attrs: {
+                  blur: 30,
+                  placeholder: "/images/cover.jpg",
+                  src: "/images/cover.jpg",
+                  alt: ""
+                }
+              })
+            ],
+            1
+          )
+        ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("span", [_vm._v("profile")])])
+    return _c("div", { staticClass: "teacherProfileDp avatar--glow" }, [
+      _c("img", { attrs: { src: "/images/love.jpg", alt: "" } })
+    ])
   }
 ]
 render._withStripped = true
@@ -54510,7 +54595,7 @@ var render = function() {
     [
       _c("teacher-profile-popup"),
       _vm._v(" "),
-      _c("header", [
+      _c("header", { staticClass: "headerTeacherCore" }, [
         _c(
           "div",
           {
@@ -54795,8 +54880,8 @@ var render = function() {
                 {
                   name: "validate",
                   rawName: "v-validate",
-                  value: "required|alpha",
-                  expression: "'required|alpha'"
+                  value: "required",
+                  expression: "'required'"
                 },
                 {
                   name: "model",
@@ -54849,8 +54934,8 @@ var render = function() {
                 {
                   name: "validate",
                   rawName: "v-validate",
-                  value: "required|alpha",
-                  expression: "'required|alpha'"
+                  value: "required",
+                  expression: "'required'"
                 },
                 {
                   name: "model",
@@ -54908,6 +54993,585 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-e1cc7f8e", module.exports)
+  }
+}
+
+/***/ }),
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(351)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(353)
+/* template */
+var __vue_template__ = __webpack_require__(354)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-dfe6165c"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/events/editProfileTeacher.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-dfe6165c", Component.options)
+  } else {
+    hotAPI.reload("data-v-dfe6165c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(352);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("d55c0d86", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dfe6165c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileTeacher.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dfe6165c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editProfileTeacher.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nopadding[data-v-dfe6165c]{padding:0\n}\n.profileMenuPopup__Content[data-v-dfe6165c]{padding:15px\n}\n.modifyFooter[data-v-dfe6165c]{display:inline-flex;align-items:center;justify-content:flex-end;padding-top:15px\n}\n.button--xl[data-v-dfe6165c]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}\n.red-bg[data-v-dfe6165c]{background:#ec008c\n}\n.createProjectForm p[data-v-dfe6165c]{font-size:14px;text-align:left;margin:8px 0\n}\n.createProjectModal-footer button[data-v-dfe6165c]{width:auto;padding:10px 20px\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 353 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_medium_editor__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(5);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    beforeCreate: function beforeCreate() {
+        var _this = this;
+
+        var key_id = window.localStorage.getItem('key');
+        // decrypt phase //
+        var becrypt_slice_one = key_id.slice(7);
+        var becrypt_zero = becrypt_slice_one / 100101010;
+        var becrypt_pharse = becrypt_zero / 8084334125;
+        // end decrypt //
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+            headers: {
+                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+            }
+        }).then(function (response) {
+            _this.dataUser = response.data.data;
+            console.log(response);
+        });
+    },
+    data: function data() {
+        return {
+            en: {
+                hint: 'Click or drag the file here to upload',
+                loading: 'Uploading…',
+                noSupported: 'Browser is not supported, please use IE10+ or other browsers',
+                success: 'Upload success',
+                fail: 'Upload failed',
+                preview: 'Preview',
+                btn: {
+                    off: 'Cancel',
+                    close: 'Close',
+                    back: 'Back',
+                    save: 'Save'
+                },
+                error: {
+                    onlyImg: 'Image only',
+                    outOfSize: 'Image exceeds size limit: ',
+                    lowestPx: 'Image\'s size is too low. Expected at least:'
+                }
+            },
+            paramAvatar: {
+                token: window.localStorage.getItem('token')
+            },
+            headerToken: {
+                Authorization: 'Bearer ' + window.localStorage.getItem('token')
+            },
+            imgDataUrl: '/images/avatar0.jpg',
+            show: false,
+            dataUser: []
+        };
+    },
+
+    components: {
+        'avatar-upload': __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default.a,
+        'editable': {
+            template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
+        }
+    },
+    methods: {
+        toggleShow: function toggleShow() {
+            this.show = !this.show;
+        },
+        editProfileAuth: function editProfileAuth() {
+            var _this2 = this;
+
+            var key_id_patch = window.localStorage.getItem('key');
+            // decrypt //
+            var becrypt_slice_one = key_id_patch.slice(7);
+            var becrypt_zero = becrypt_slice_one / 100101010;
+            var becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse, this.dataUser, {
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            }).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].go('/profile');
+                _this2.dataUser = response.data.data;
+            });
+        }
+    },
+    computed: {
+        editProfileIsPassed: function editProfileIsPassed() {
+            return this.dataUser.name && this.dataUser.phone && this.dataUser.email;
+        }
+    }
+});
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "editprofile-teacher-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.5,
+        transition: "nice-modal-fade",
+        "min-width": 500,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        scrollable: true,
+        clickToClose: false
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
+          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
+            _c("form", { attrs: { action: "POST" } }, [
+              _c(
+                "div",
+                { staticClass: "editProfileSiswaMenuPopup__Header" },
+                [
+                  _c("avatar-upload", {
+                    attrs: {
+                      field: "avatar",
+                      width: 300,
+                      langType: "en",
+                      height: 300,
+                      url: "http://localhost:8000/api/v1/user/6",
+                      params: _vm.paramAvatar,
+                      headers: _vm.headerToken,
+                      "img-format": "jpg"
+                    },
+                    model: {
+                      value: _vm.show,
+                      callback: function($$v) {
+                        _vm.show = $$v
+                      },
+                      expression: "show"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticStyle: { cursor: "pointer" },
+                    attrs: { src: _vm.imgDataUrl },
+                    on: { click: _vm.toggleShow }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "profileMenuPopup__Content" }, [
+                _c(
+                  "div",
+                  { staticClass: "createProjectForm" },
+                  [
+                    _c("p", [_vm._v("Nama Lengkap")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required",
+                          expression: "'required'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.dataUser.name,
+                          expression: "dataUser.name"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("nama-lengkap")
+                      },
+                      attrs: {
+                        type: "text",
+                        name: "nama-lengkap",
+                        placeholder: "Nama lengkap"
+                      },
+                      domProps: { value: _vm.dataUser.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.dataUser, "name", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("nama-lengkap")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("nama-lengkap")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Bio")]),
+                    _vm._v(" "),
+                    _c("editable", {
+                      staticClass: "editableWrapper",
+                      attrs: { content: _vm.dataUser.bio }
+                    }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Email")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required|email",
+                          expression: "'required|email'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.dataUser.email,
+                          expression: "dataUser.email"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("email")
+                      },
+                      attrs: {
+                        type: "text",
+                        placeholder: "lorem@ipsum.com",
+                        name: "email"
+                      },
+                      domProps: { value: _vm.dataUser.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.dataUser, "email", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("email")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("email")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Phone")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required|digits:12",
+                          expression: "'required|digits:12'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.dataUser.phone,
+                          expression: "dataUser.phone"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("phone")
+                      },
+                      attrs: {
+                        type: "text",
+                        placeholder: "081666666",
+                        name: "phone"
+                      },
+                      domProps: { value: _vm.dataUser.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.dataUser, "phone", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("phone")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.errors.first("phone")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "createProjectModal-footer modifyFooter" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue red-bg",
+                        on: {
+                          click: function($event) {
+                            _vm.$modal.hide("editprofile-teacher-popup-modal")
+                          }
+                        }
+                      },
+                      [_vm._v("Batalkan")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
+                        attrs: { disabled: !_vm.editProfileIsPassed },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.editProfileAuth($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Update profile")]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-dfe6165c", module.exports)
   }
 }
 

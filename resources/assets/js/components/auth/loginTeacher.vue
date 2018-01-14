@@ -16,12 +16,12 @@
                   <p>signin into your account</p>
                   <div class="formTeacherAuth">
                   <label for="teacherusername">username</label>
-                    <input type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="teacherAuth.username" class="input-text fontSize-s" placeholder="Username" name="username">
+                    <input type="text" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="teacherAuth.username" class="input-text fontSize-s" placeholder="Username" name="username">
                     <span style="font-size: 12px; color: red;" v-if="errors.has('username')">
                         {{ errors.first('username') }}
                     </span>
                   <label for="teacherpassword">password</label>
-                  <input type="password" v-validate="'required|alpha'" v-model="teacherAuth.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
+                  <input type="password" v-validate="'required'" v-model="teacherAuth.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
                   <span style="font-size: 12px; color: red;" v-if="errors.has('password')">
                     {{ errors.first('password') }}
                   </span>

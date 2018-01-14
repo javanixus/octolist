@@ -1,7 +1,7 @@
 <template>
   <div>
     <teacher-profile-popup />
-      <header>
+      <header class="headerTeacherCore">
           <div id="headerTeacher" class="headerTeacherWrapper">
             <div class="headerTeacherNav">
                 <div class="headerTeacherNav__Title">
@@ -47,7 +47,7 @@ export default {
   components: {
       'teacher-main' : teacherDashboardMain,
       'teacher-profile' : teacherDashboardProfile,
-      'teacher-profile-popup': teacherProfilePopup
+      'teacher-profile-popup': teacherProfilePopup,
   },
   methods: {
       clickTeacherProfile() {
