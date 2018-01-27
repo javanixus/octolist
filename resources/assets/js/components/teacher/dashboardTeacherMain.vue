@@ -123,9 +123,6 @@
 
 </style>
 <script>
-import quickConfig from './../events/quickConfigTeacher'
-import quickTooltip from './../events/quickConfigTooltipTeacher'
-
 export default {
   data(){
     return {
@@ -135,10 +132,6 @@ export default {
       projectCover3: 'images/love.png',
       projectCover4: 'images/plants.png',
     }
-  },
-  components: {
-    'quick-config': quickConfig,
-    'quick-tooltip': quickTooltip
   }
 }
 </script>
