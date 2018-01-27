@@ -18,11 +18,13 @@
             <h3 class="fontSize-l fontWeight-4 textAlignCenter">Selamat Datang</h3>
             <h3 class="fontSize-l fontWeight-4 textAlignCenter marginBottom-xl">Kembali</h3>
             <div class="marginBottom-s">
-              <input type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="logItIn.username" class="input-text fontSize-s" placeholder="Username" name="username">
+              <label for="loginUser"></label>
+              <input id="loginUser"type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="logItIn.username" class="input-text fontSize-s" placeholder="Username" name="username">
               <span style="font-size: 12px; color: red;" v-if="errors.has('username')">
                 {{ errors.first('username') }}
               </span>
-              <input type="password" v-validate="'required|alpha'" v-model="logItIn.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
+              <label for="loginPass"></label>
+              <input id="loginPass" type="password" v-validate="'required|alpha'" v-model="logItIn.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
               <span style="font-size: 12px; color: red;" v-if="errors.has('password')">
                 {{ errors.first('password') }}
               </span>
