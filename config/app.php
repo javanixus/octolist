@@ -170,7 +170,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class,
+        // Barryvdh\Cors\ServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         /*
          * Application Service Providers...
