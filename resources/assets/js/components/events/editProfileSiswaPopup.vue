@@ -124,7 +124,7 @@
                 headerToken: {
                     Authorization: 'Bearer ' + window.localStorage.getItem('token'),
                 },
-                imgDataUrl: '/images/avatar0.jpg',
+                imgDataUrl: '/spoiler/avatar0.jpg',
                 show: false,
                 dataUser: []
             }
