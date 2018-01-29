@@ -17,6 +17,7 @@ import About from './../components/about';
 import ProfileSetup from './../components/getstarted/profile-setup';
 import AdminDashboard from './../components/dashboard/admin-dashboard';
 import TeacherDashboard from './../components/teacher/dashboardTeacher';
+import loginTeacher from './../components/auth/loginTeacher';
 
 // exec
 Vue.use(Router);
@@ -74,6 +75,10 @@ export default new Router({
     {
       path: '/admin',
       component: AdminDashboard
+    },
+    {
+      path: '/teacher/login',
+      component: loginTeacher
     },
     {
       path: '/teacher',

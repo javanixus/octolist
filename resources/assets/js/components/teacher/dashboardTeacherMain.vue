@@ -1,4 +1,7 @@
 <template>
+<div>
+  <quick-config />
+  <quick-tooltip />
   <div class="teacherMainWrapper">
       <div class="studentProjectWrapper">
         <div class="studentProject">
@@ -113,6 +116,7 @@
           </div>
         </div>
       </div>
+  </div>
   </div>
 </template>
 <style>
