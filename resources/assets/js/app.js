@@ -8,7 +8,7 @@ import VeeValidate from 'vee-validate';
 import vBlur from 'v-blur';
 
 // import page
-import App from './App';
+import App from './App.vue';
 import router from './router';
 import store from './store/index';
 import '../sass/app.scss';
