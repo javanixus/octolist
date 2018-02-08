@@ -5216,6 +5216,10 @@ marked-terminal@^1.6.2:
     lodash.assign "^4.2.0"
     node-emoji "^1.4.1"
 
+marked@^0.3.12:
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
+
 marked@^0.3.6:
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.7.tgz#80ef3bbf1bd00d1c9cfebe42ba1b8c85da258d0d"
@@ -8348,9 +8352,9 @@ vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
-"vue-select@github:sagalbot/vue-select":
-  version "2.3.3"
-  resolved "https://codeload.github.com/sagalbot/vue-select/tar.gz/f8bc9c7405d6faeefcd4c8e5751b7ea6bca77859"
+vue-select@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-2.4.0.tgz#ef06547fe857f3259841ab2f3d29c5d8a1e52630"
 
 vue-style-loader@^3.0.0:
   version "3.0.3"
