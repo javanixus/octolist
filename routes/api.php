@@ -22,7 +22,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 //    Route::get('/users/{q}', 'UserController@index');
 
-    Route::patch('/user/', 'UserController@update');
+    Route::patch('/user/{id}', 'UserController@update');
 
     Route::delete('/user/{id}', 'UserController@destroy');
 

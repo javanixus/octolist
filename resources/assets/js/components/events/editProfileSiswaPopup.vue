@@ -44,21 +44,21 @@
     .profileMenuPopup__Content {
         padding: 15px;
     }
-    
+
     .modifyFooter {
         display: inline-flex;
         align-items: center;
         justify-content: flex-end;
         padding-top: 15px;
     }
-    
+
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
         margin-left: 15px;
         font-size: 14px;
     }
-    
+
     .red-bg {
         background: #ec008c;
     }
