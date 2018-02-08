@@ -42872,6 +42872,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -44928,6 +44933,66 @@ var render = function() {
                             _vm._v(
                               "\n                                " +
                                 _vm._s(_vm.errors.first("phone")) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Confirmasi password")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required",
+                          expression: "'required'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.dataUser.password,
+                          expression: "dataUser.password"
+                        }
+                      ],
+                      staticClass: "input-nofill input-text fontSize-s",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("konfirmasi-password")
+                      },
+                      attrs: {
+                        type: "text",
+                        name: "konfirmasi-password",
+                        placeholder: "Konfirmasi Password"
+                      },
+                      domProps: { value: _vm.dataUser.password },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.dataUser,
+                            "password",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("konfirmasi-password")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(
+                                  _vm.errors.first("konfirmasi-password")
+                                ) +
                                 "\n                            "
                             )
                           ]

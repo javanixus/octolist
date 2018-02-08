@@ -27,6 +27,11 @@
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('phone')">
                                     {{ errors.first('phone') }}
                                 </span>
+                                <p>Confirmasi password</p>
+                                <input type="text" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('konfirmasi-password') }" v-model="dataUser.password" class="input-nofill input-text fontSize-s" name="konfirmasi-password" placeholder="Konfirmasi Password">
+                                <span style="font-size: 12px; color: red;" v-if="errors.has('konfirmasi-password')">
+                                    {{ errors.first('konfirmasi-password') }}
+                                </span>
                             </div>
                             <div class="createProjectModal-footer modifyFooter">
                                 <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('editprofile-siswa-popup-modal')">Batalkan</div>
