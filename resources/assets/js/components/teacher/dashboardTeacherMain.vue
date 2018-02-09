@@ -1,7 +1,5 @@
 <template>
 <div>
-  <quick-config />
-  <quick-tooltip />
   <div class="teacherMainWrapper">
       <div class="studentProjectWrapper">
         <div class="studentProject">
@@ -123,7 +121,10 @@
 
 </style>
 <script>
+import offline from 'v-offline';
+
 export default {
+  components: { offline },
   data(){
     return {
       projectCover: 'images/avatar0.jpg',
@@ -132,6 +133,6 @@ export default {
       projectCover3: 'images/love.png',
       projectCover4: 'images/plants.png',
     }
-  }
+  },
 }
 </script>

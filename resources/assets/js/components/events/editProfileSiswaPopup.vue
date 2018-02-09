@@ -60,7 +60,7 @@
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
-        margin-left: 15px;
+        margin-right: 15px;
         font-size: 14px;
     }
 

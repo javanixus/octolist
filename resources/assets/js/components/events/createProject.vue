@@ -37,7 +37,9 @@
     .createProjectForm {
         padding: 15px 0;
     }
-
+    .createProjectModal-content {
+        padding: 15px;
+    }
     .createProjectForm p {
         font-size: 14px;
         text-align: left;
@@ -53,7 +55,7 @@
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
-        margin-left: 15px;
+        margin-right: 15px;
         font-size: 14px;
     }
 

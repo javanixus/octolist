@@ -1,13 +1,13 @@
 <template lang="html">
   <div id="dashboard-core">
-    <detectNetworkBar @detected-condition="detected">
+    <detectNetwork @detected-condition="detected">
       <div slot="online"></div>
       <div slot="offline">
         <div class="loading high-noon">
           <p>Trying to connect to the serve.</p>
         </div>
       </div>
-    </detectNetworkBar>
+    </detectNetwork>
     <create-project />
     <confirm-popup />
     <profile-popup />

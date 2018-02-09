@@ -1,13 +1,5 @@
 <template lang="html">
-	<div>
-	<detectNetworkBar @detected-condition="detected">
-      <div slot="online"></div>
-      <div slot="offline">
-        <div class="loading high-noon">
-          <p>Trying to connect to the serve.</p>
-        </div>
-      </div>
-    </detectNetworkBar>
+	<div id="profile-siswa">
     <create-project />
     <confirm-popup />
     <profile-popup />
@@ -77,7 +69,7 @@
   import editProfileSiswaPopup from './events/editProfileSiswaPopup';
   import store from './../store/index';
   import axios from 'axios';
-  import router from './../router'
+  import router from './../router';
 
   export default {
     beforeCreate(){
