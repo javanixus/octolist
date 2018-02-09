@@ -5,6 +5,10 @@
   src: url('../../fonts/sf-pro-text_semibold.woff2');
 };
 
+input[type="text"] {
+  font-family: -apple-system, BlinkMacSystemFont, 'sf-pro-text', Roboto, sans-serif
+}
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 a {

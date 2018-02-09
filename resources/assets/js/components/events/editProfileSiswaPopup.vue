@@ -50,6 +50,10 @@
         padding: 15px;
     }
 
+    .v--modal-overlay.scrollable {
+        padding: 10px 0;
+    }
+
     .modifyFooter {
         display: inline-flex;
         align-items: center;
