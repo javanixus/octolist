@@ -38,10 +38,10 @@ export default {
 
 <style lang="css" scoped>
   p {
-    color: #E6FBFF;
+    color: white;
   }
   button {
-    background-color: #E6FBFF;
+    background-color: white;
     color: #1f2d3d;
   }
 
@@ -50,13 +50,13 @@ export default {
   }
 
   .textGradient{
-    color: #E6FBFF;
+    color: white;
   }
   .getStarted-desc{
-    color: #273444;
+    color: hsla(0,0%,100%,.6);
   }
   #getStarted {
-      background-color: #6C58FE;
+      background-color: #7F6ADD;
   }
   .koper {
     width: auto;

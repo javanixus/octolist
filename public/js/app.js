@@ -45554,7 +45554,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\np[data-v-214ae8f0]{color:#e6fbff\n}\nbutton[data-v-214ae8f0]{background-color:#e6fbff;color:#1f2d3d\n}\nbutton[data-v-214ae8f0]:active{background:#e6fbff\n}\n.textGradient[data-v-214ae8f0]{color:#e6fbff\n}\n.getStarted-desc[data-v-214ae8f0]{color:#273444\n}\n#getStarted[data-v-214ae8f0]{background-color:#6c58fe\n}\n.koper[data-v-214ae8f0]{width:auto;height:120px;position:absolute\n}", ""]);
+exports.push([module.i, "\np[data-v-214ae8f0]{color:#fff\n}\nbutton[data-v-214ae8f0]{background-color:#fff;color:#1f2d3d\n}\nbutton[data-v-214ae8f0]:active{background:#e6fbff\n}\n.textGradient[data-v-214ae8f0]{color:#fff\n}\n.getStarted-desc[data-v-214ae8f0]{color:hsla(0,0%,100%,.6)\n}\n#getStarted[data-v-214ae8f0]{background-color:#7f6add\n}\n.koper[data-v-214ae8f0]{width:auto;height:120px;position:absolute\n}", ""]);
 
 // exports
 
@@ -45886,17 +45886,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -45908,38 +45897,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "getStarted" } }, [
-    _c(
-      "div",
-      { staticClass: "wrapper-getStarted" },
-      [
-        _c("div", {
-          staticClass: "GetStarted-illustration borderRadius-circle"
-        }),
-        _vm._v(" "),
-        _c("h1", { staticClass: "textGradient" }, [_vm._v("Hi.")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Organize your project easily")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "getStarted-desc" }, [
-          _vm._v("Lets start your journey , click start.")
-        ]),
-        _vm._v(" "),
-        _c("router-link", { attrs: { to: "/getstarted/profile-setup" } }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
-              attrs: { type: "button", name: "button" }
-            },
-            [_vm._v("Next step")]
-          )
-        ])
-      ],
-      1
-    )
-  ])
+  return _c("div", { attrs: { id: "getStarted" } })
 }
 var staticRenderFns = []
 render._withStripped = true
