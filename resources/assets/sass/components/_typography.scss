@@ -5,7 +5,7 @@
   src: url('../../fonts/sf-pro-text_semibold.woff2');
 };
 
-input[type="text"] {
+input[type="text"] , input[type="password"] {
   font-family: -apple-system, BlinkMacSystemFont, 'sf-pro-text', Roboto, sans-serif
 }
 

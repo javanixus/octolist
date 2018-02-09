@@ -16,7 +16,8 @@
                                     {{ errors.first('nama-lengkap') }}
                                 </span>
                                 <p>Bio</p>
-                                <editable :content="dataUser.bio" class="editableWrapper" />
+                                <!-- <editable :content.sync="this.dataUser.bio" class="editableWrapper" /> -->
+                                <textarea name="siswa.profile.bio" id="siswa.bio.pro" class="editableWrapper" v-model="dataUser.bio"/>
                                 <p>Email</p>
                                 <input type="text" v-validate="'required|email'" :class="{'input-nofill': true, 'input--danger': errors.has('email') }" v-model="dataUser.email" class="input-nofill input-text fontSize-s" placeholder="lorem@ipsum.com" name="email">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('email')">
@@ -84,7 +85,7 @@
 
 <script>
     import avatarUpload from 'vue-image-crop-upload'
-    import editor from 'vue2-medium-editor'
+    // import editor from 'vue2-medium-editor'
     import axios from 'axios'
     import router from './../../router'
 
@@ -133,7 +134,7 @@
                 headerToken: {
                     Authorization: 'Bearer ' + window.localStorage.getItem('token'),
                 },
-                imgDataUrl: '/spoiler/avatar0.jpg',
+                imgDataUrl: '/images/avatar0.jpg',
                 show: false,
                 dataUser: []
             }
@@ -141,8 +142,18 @@
         components: {
             'avatar-upload': avatarUpload,
             'editable': {
-                template: '<div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>'
+                template: `<textarea contenteditable="true" @input="$emit('update:content', $event.target.innerText)"></textarea>`
+                // <div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>
             },
+        },
+        props: ['content'],
+        mounted: function() {
+            this.$el.innerText = this.content;
+        },
+        watch: {
+            content: function(){
+                this.$el.innerText = this.content;
+            }
         },
         methods: {
             toggleShow() {
