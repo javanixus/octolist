@@ -1,13 +1,6 @@
-<template lang="html">
-<div id="getStarted">
-  <div class="wrapper-getStarted">
-    <h1 class="textGradient">Hi.</h1>
-    <p>Packing your Project with Octolist </p>
-    <p class="getStarted-desc">Lets start your journey , click start.</p>
-    <router-link :to="'/getstarted/hello'"><button type="button" name="button" class="textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Let's start</button></router-link>
-  </div>
-  <svg style="
-    position: absolute; right: 100px; bottom: 100px;" width="167px" height="274px" viewBox="0 0 167 374" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="167px" height="374px" viewBox="0 0 167 374" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>getStarted-1</title>
     <desc>Created with Sketch.</desc>
     <defs>
@@ -28,39 +21,4 @@
         <rect id="Rectangle-3" fill="#D700FF" mask="url(#mask-4)" x="25" y="122" width="19" height="252"></rect>
         <rect id="Rectangle-3" fill="#D700FF" mask="url(#mask-4)" x="123" y="120" width="19" height="256"></rect>
     </g>
-  </svg>
-</div>
-</template>
-<script>
-export default {
-}
-</script>
-
-<style lang="css" scoped>
-  p {
-    color: #E6FBFF;
-  }
-  button {
-    background-color: #E6FBFF;
-    color: #1f2d3d;
-  }
-
-  button:active {
-    background: #E6FBFF;
-  }
-
-  .textGradient{
-    color: #E6FBFF;
-  }
-  .getStarted-desc{
-    color: #273444;
-  }
-  #getStarted {
-      background-color: #6C58FE;
-  }
-  .koper {
-    width: auto;
-    height: 120px;
-    position: absolute;
-  }
-</style>
+</svg>
