@@ -42960,7 +42960,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     computed: {
         editProfileIsPassed: function editProfileIsPassed() {
-            return this.dataUser.name && this.dataUser.phone && this.dataUser.email;
+            return this.dataUser.name && this.dataUser.phone && this.dataUser.email && this.dataUser.codes;
         }
     }
 });
@@ -44956,7 +44956,7 @@ var render = function() {
                         "input--danger": _vm.errors.has("konfirmasi-password")
                       },
                       attrs: {
-                        type: "text",
+                        type: "password",
                         name: "konfirmasi-password",
                         placeholder: "Konfirmasi Password"
                       },
