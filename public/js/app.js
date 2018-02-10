@@ -42879,6 +42879,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import editor from 'vue2-medium-editor'
 
 
+var baseUrlAvatar = "http://localhost:8000/api/v1/user/";
+var key_id = window.localStorage.getItem('key');
+// decrypt phase //
+var becrypt_slice_one = key_id.slice(7);
+var becrypt_zero = becrypt_slice_one / 100101010;
+var becrypt_pharse = becrypt_zero / 8084334125;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -42920,6 +42926,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     lowestPx: 'Image\'s size is too low. Expected at least:'
                 }
             },
+            urlAvatar: baseUrlAvatar + becrypt_pharse,
             paramAvatar: {
                 token: window.localStorage.getItem('token')
             },
@@ -44749,7 +44756,7 @@ var render = function() {
                       width: 300,
                       langType: "en",
                       height: 300,
-                      url: "https://httpbin.org/post",
+                      url: _vm.urlAvatar,
                       params: _vm.paramAvatar,
                       headers: _vm.headerToken,
                       "img-format": "jpg"

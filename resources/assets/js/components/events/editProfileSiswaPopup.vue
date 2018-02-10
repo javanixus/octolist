@@ -5,7 +5,7 @@
                 <div class="profileMenuPopupWrapper">
                     <form action="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
-                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="https://httpbin.org/post" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
+                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" :url="urlAvatar" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
                             <img @click="toggleShow" style="cursor: pointer" :src="imgDataUrl">
                         </div>
                         <div class="profileMenuPopup__Content">
@@ -88,6 +88,12 @@
     // import editor from 'vue2-medium-editor'
     import axios from 'axios'
     import router from './../../router'
+    const baseUrlAvatar = "http://localhost:8000/api/v1/user/";
+    const key_id = window.localStorage.getItem('key');
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
 
     export default {
         beforeCreate(){
@@ -128,6 +134,7 @@
                         lowestPx: 'Image\'s size is too low. Expected at least:'
                     }
                 },
+                urlAvatar: baseUrlAvatar + becrypt_pharse,
                 paramAvatar: {
                     token: window.localStorage.getItem('token'),
                 },
