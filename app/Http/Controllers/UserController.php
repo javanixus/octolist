@@ -38,7 +38,7 @@ class UserController extends Controller
             );
         }
 
-        $students->avatar = asset($students->avatar);
+        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => 'List of Students',
@@ -52,7 +52,7 @@ class UserController extends Controller
     public function show($id){
         $student = User::findOrFail($id);
 
-        $student->avatar = asset('public/avatar/'.$student->avatar);
+        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => "User Profile",
@@ -117,7 +117,7 @@ class UserController extends Controller
 					$file=$request->file('avatar');
 					$filename = $users->username . '-' . time() . '.png';
 					if($file){
-						Storage::disk('local')->put($filename,File::get($file));
+                        Storage::disk('avatar')->put($filename,File::get($file));
 						$user->update([
 							'avatar'	=>	$filename,
 						]);
@@ -146,9 +146,9 @@ class UserController extends Controller
 		 	$file=$request->file('avatar');
 		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
 		 	if($file){  
-		 		if(Storage::disk('local')->put($filename,File::get($file))){
+		 		if(Storage::disk('avatar')->put($filename,File::get($file))){
 					if($user->update([
-						'avatar'	=>	$filename,
+						'avatar' =>	$filename,
 					])){
 						$response = [
 							'msg' => 'Item Telah Diupdate',

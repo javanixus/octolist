@@ -17,7 +17,7 @@
             <a href="javascript:void(0)"></a>
             <div class="border-gradient">
               <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
-                <img class="avatar-img" src="images/avatar0.jpg" alt="" />
+                <img class="avatar-img" :src="dataUser.avatar" alt="" />
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
 				<div class="profile-head marginMagic">
 					<div class="profile-head__avatar marginBottom-s">
 						<div class="avatar avatar--xl avatar--glow marginMagic">
-							<img alt="" class="avatar-img" src="/images/avatar0.jpg">
+							<img alt="" class="avatar-img" :src="dataUser.avatar">
 						</div>
 					</div>
 					<div class="profile-head__title">

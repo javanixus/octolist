@@ -103,7 +103,7 @@ class AuthController extends Controller
                 ], 500);
             }
 
-            $user->avatar = asset($user->avatar);
+            $user->avatar = asset('avatar/'.$user->avatar);
 
 
             $response = [

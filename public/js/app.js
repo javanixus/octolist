@@ -45131,7 +45131,7 @@ var render = function() {
                     [
                       _c("img", {
                         staticClass: "avatar-img",
-                        attrs: { src: "images/avatar0.jpg", alt: "" }
+                        attrs: { src: _vm.dataUser.avatar, alt: "" }
                       })
                     ]
                   )
@@ -45145,7 +45145,18 @@ var render = function() {
       _c("header", [
         _c("div", { staticClass: "wrapper-profile-head" }, [
           _c("div", { staticClass: "profile-head marginMagic" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
+              _c(
+                "div",
+                { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
+                [
+                  _c("img", {
+                    staticClass: "avatar-img",
+                    attrs: { alt: "", src: _vm.dataUser.avatar }
+                  })
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "profile-head__title" }, [
               _c("h4", { staticClass: "fontSize-l" }, [
@@ -45177,7 +45188,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(1)
         ])
       ])
     ],
@@ -45215,19 +45226,6 @@ var staticRenderFns = [
         },
         attrs: { src: "images/search.svg", alt: "" }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-      _c("div", { staticClass: "avatar avatar--xl avatar--glow marginMagic" }, [
-        _c("img", {
-          staticClass: "avatar-img",
-          attrs: { alt: "", src: "/images/avatar0.jpg" }
-        })
-      ])
     ])
   },
   function() {
