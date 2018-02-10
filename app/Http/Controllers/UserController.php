@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-//use Illuminate\Support\Facades\Storage;
-use Storage;
+use Illuminate\Support\Facades\Storage;
+// use Storage;
 
 use Auth;
 use JWTAuth;
@@ -130,6 +131,38 @@ class UserController extends Controller
 					return response()->json($user);
             }
     }
+
+	 public function update_avatar(Request $request)
+	 {
+		 $users = Auth::user();
+		 $id = $users->id;
+		 $user = User::find($id);
+
+	//	 if(null != $request->file('avatar')){
+		 	$file=$request->file('avatar');
+		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
+		 	// if($file){
+		 		Storage::disk('local')->put($filename,File::get($file));
+		 		$user->update([
+		 			'avatar'	=>	$filename,
+		 		]);
+
+				$response = [
+						'msg' => 'Item Telah Diupdate',
+						'href' => '/v1/users',
+						'method' =>'GET',
+				];
+
+//		 	}
+		// }else{
+		// 	$response = [
+		// 		'msg' => 'Item Gagal Diupdate',
+		// 		'href' => '/v1/users',
+		// 		'method' =>'GET',
+		// 	];
+		// }
+		 return response()->json($response);
+	 }
 
     public function destroy($id, Request $request)
     {
