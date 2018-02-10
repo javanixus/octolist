@@ -36,7 +36,7 @@
 						<h4 class="fontSize-l">{{this.dataUser.name}}</h4>
 					</div>
 					<div class="profile-head__quotes">
-						<q style="color: #6F6F6F;">{{this.dataUser.email}}</q>
+						<q style="color: #6F6F6F;">{{this.dataUser.bio}}</q>
 					</div>
           <div class="profile-head__buttonChange">
             <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="ghost--button alignCenter">Edit profile</button>

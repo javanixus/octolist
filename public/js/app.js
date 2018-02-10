@@ -45147,7 +45147,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "profile-head__quotes" }, [
               _c("q", { staticStyle: { color: "#6F6F6F" } }, [
-                _vm._v(_vm._s(this.dataUser.email))
+                _vm._v(_vm._s(this.dataUser.bio))
               ])
             ]),
             _vm._v(" "),
