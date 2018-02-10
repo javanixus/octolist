@@ -42879,6 +42879,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import editor from 'vue2-medium-editor'
 
 
+var baseUrlAvatar = "http://localhost:8000/api/v1/user/";
+var key_id = window.localStorage.getItem('key');
+// decrypt phase //
+var becrypt_slice_one = key_id.slice(7);
+var becrypt_zero = becrypt_slice_one / 100101010;
+var becrypt_pharse = becrypt_zero / 8084334125;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -42920,6 +42926,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     lowestPx: 'Image\'s size is too low. Expected at least:'
                 }
             },
+            urlAvatar: baseUrlAvatar + becrypt_pharse,
             paramAvatar: {
                 token: window.localStorage.getItem('token')
             },
@@ -44749,7 +44756,7 @@ var render = function() {
                       width: 300,
                       langType: "en",
                       height: 300,
-                      url: "http://localhost:8000/api/v1/user/6",
+                      url: _vm.urlAvatar,
                       params: _vm.paramAvatar,
                       headers: _vm.headerToken,
                       "img-format": "jpg"
@@ -45147,7 +45154,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "profile-head__quotes" }, [
               _c("q", { staticStyle: { color: "#6F6F6F" } }, [
-                _vm._v(_vm._s(this.dataUser.email))
+                _vm._v(_vm._s(this.dataUser.bio))
               ])
             ]),
             _vm._v(" "),
@@ -46555,20 +46562,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -46580,73 +46573,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { attrs: { id: "getStarted" } }, [
-      _c(
-        "div",
-        { staticClass: "wrapper-getStarted" },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/dashboard" } }, [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
-                attrs: { type: "button", name: "button" }
-              },
-              [_vm._v("Let's go")]
-            )
-          ])
-        ],
-        1
-      )
-    ])
-  ])
+  return _c("div", { attrs: { id: "profile-setup" } })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "GetStarted-profile" }, [
-      _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-        _c(
-          "div",
-          { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
-          [
-            _c("img", {
-              staticClass: "avatar-img",
-              attrs: { alt: "", src: "/resources/assets/images/avatar0.jpg" }
-            })
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "marginTop-m getStarted__content" }, [
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: {
-            type: "text",
-            name: "",
-            placeholder: "Masukkan nama lengkap"
-          }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: { type: "text", name: "", placeholder: "Masukkan password" }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: { type: "text", name: "", placeholder: "Confirm password" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
