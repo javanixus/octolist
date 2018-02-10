@@ -5,13 +5,12 @@
                 <div class="profileMenuPopupWrapper">
                     <form action="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
-                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/6" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
+                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="https://httpbin.org/post" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
                             <img @click="toggleShow" style="cursor: pointer" :src="imgDataUrl">
                         </div>
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
                                 <p>Nama Lengkap</p>
-                                  <div v-if="!image"><h2>Select an image</h2><input type="file" @change="onFileChange"></div><div v-else><img :src="dataUser.avatar" /><button @click="removeImage">Remove image</button></div>
                                 <input type="text" v-validate="'required'" :class="{'input--default': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input--default input--default-full input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('nama-lengkap')">
                                     {{ errors.first('nama-lengkap') }}
@@ -176,27 +175,8 @@
                     router.go('/profile')
                     this.dataUser = response.data.data;
                  })
-            },
-            onFileChange(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
-        return;
-      this.createImage(files[0]);
-    },
-    createImage(file) {
-      var image = new Image();
-      var reader = new FileReader();
-      var vm = this;
-
-      reader.onload = (e) => {
-        vm.image = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-    removeImage: function (e) {
-      this.dataUser.avatar = '';
-    }
-  },
+            }
+        },
         computed: {
             editProfileIsPassed(){
                 return this.dataUser.name && this.dataUser.phone && this.dataUser.email && this.dataUser.codes;

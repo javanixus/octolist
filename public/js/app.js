@@ -42874,7 +42874,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 // import editor from 'vue2-medium-editor'
@@ -42970,25 +42969,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
                 _this2.dataUser = response.data.data;
             });
-        },
-        onFileChange: function onFileChange(e) {
-            var files = e.target.files || e.dataTransfer.files;
-            if (!files.length) return;
-            this.createImage(files[0]);
-        },
-        createImage: function createImage(file) {
-            var image = new Image();
-            var reader = new FileReader();
-            var vm = this;
-
-            reader.onload = function (e) {
-                vm.image = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        },
-
-        removeImage: function removeImage(e) {
-            this.dataUser.avatar = '';
         }
     },
     computed: {
@@ -44769,7 +44749,7 @@ var render = function() {
                       width: 300,
                       langType: "en",
                       height: 300,
-                      url: "http://localhost:8000/api/v1/user/6",
+                      url: "https://httpbin.org/post",
                       params: _vm.paramAvatar,
                       headers: _vm.headerToken,
                       "img-format": "jpg"
@@ -44795,21 +44775,6 @@ var render = function() {
               _c("div", { staticClass: "profileMenuPopup__Content" }, [
                 _c("div", { staticClass: "createProjectForm" }, [
                   _c("p", [_vm._v("Nama Lengkap")]),
-                  _vm._v(" "),
-                  !_vm.image
-                    ? _c("div", [
-                        _c("h2", [_vm._v("Select an image")]),
-                        _c("input", {
-                          attrs: { type: "file" },
-                          on: { change: _vm.onFileChange }
-                        })
-                      ])
-                    : _c("div", [
-                        _c("img", { attrs: { src: _vm.dataUser.avatar } }),
-                        _c("button", { on: { click: _vm.removeImage } }, [
-                          _vm._v("Remove image")
-                        ])
-                      ]),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
