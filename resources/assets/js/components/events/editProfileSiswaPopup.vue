@@ -11,7 +11,7 @@
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
                                 <p>Nama Lengkap</p>
-                                <input type="text" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input-nofill input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
+                                <input type="text" v-validate="'required'" :class="{'input--default': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input--default input--default-full input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('nama-lengkap')">
                                     {{ errors.first('nama-lengkap') }}
                                 </span>
@@ -19,17 +19,17 @@
                                 <!-- <editable :content.sync="this.dataUser.bio" class="editableWrapper" /> -->
                                 <textarea name="siswa.profile.bio" id="siswa.bio.pro" class="editableWrapper" v-model="dataUser.bio"/>
                                 <p>Email</p>
-                                <input type="text" v-validate="'required|email'" :class="{'input-nofill': true, 'input--danger': errors.has('email') }" v-model="dataUser.email" class="input-nofill input-text fontSize-s" placeholder="lorem@ipsum.com" name="email">
+                                <input type="text" v-validate="'required|email'" :class="{'input--default': true, 'input--danger': errors.has('email') }" v-model="dataUser.email" class="input--default input--default-full input-text fontSize-s" placeholder="lorem@ipsum.com" name="email">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('email')">
                                     {{ errors.first('email') }}
                                 </span>
                                 <p>Phone</p>
-                                <input type="text" v-validate="'required|digits:12'" :class="{'input-nofill': true, 'input--danger': errors.has('phone') }" v-model="dataUser.phone" class="input-nofill input-text fontSize-s" placeholder="081666666" name="phone">
+                                <input type="text" v-validate="'required|digits:12'" :class="{'input--default': true, 'input--danger': errors.has('phone') }" v-model="dataUser.phone" class="input--default input--default-full input-text fontSize-s" placeholder="081666666" name="phone">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('phone')">
                                     {{ errors.first('phone') }}
                                 </span>
                                 <p>Confirmasi password</p>
-                                <input type="password" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('konfirmasi-password') }" v-model="dataUser.codes" class="input-nofill input-text fontSize-s" name="konfirmasi-password" placeholder="Konfirmasi Password">
+                                <input type="password" v-validate="'required'" :class="{'input--default': true, 'input--danger': errors.has('konfirmasi-password') }" v-model="dataUser.codes" class="input--default input--default-full input-text fontSize-s" name="konfirmasi-password" placeholder="Konfirmasi Password">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('konfirmasi-password')">
                                     {{ errors.first('konfirmasi-password') }}
                                 </span>

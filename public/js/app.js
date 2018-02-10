@@ -44791,9 +44791,10 @@ var render = function() {
                         expression: "dataUser.name"
                       }
                     ],
-                    staticClass: "input-nofill input-text fontSize-s",
+                    staticClass:
+                      "input--default input--default-full input-text fontSize-s",
                     class: {
-                      "input-nofill": true,
+                      "input--default": true,
                       "input--danger": _vm.errors.has("nama-lengkap")
                     },
                     attrs: {
@@ -44867,9 +44868,10 @@ var render = function() {
                         expression: "dataUser.email"
                       }
                     ],
-                    staticClass: "input-nofill input-text fontSize-s",
+                    staticClass:
+                      "input--default input--default-full input-text fontSize-s",
                     class: {
-                      "input-nofill": true,
+                      "input--default": true,
                       "input--danger": _vm.errors.has("email")
                     },
                     attrs: {
@@ -44919,9 +44921,10 @@ var render = function() {
                         expression: "dataUser.phone"
                       }
                     ],
-                    staticClass: "input-nofill input-text fontSize-s",
+                    staticClass:
+                      "input--default input--default-full input-text fontSize-s",
                     class: {
-                      "input-nofill": true,
+                      "input--default": true,
                       "input--danger": _vm.errors.has("phone")
                     },
                     attrs: {
@@ -44971,9 +44974,10 @@ var render = function() {
                         expression: "dataUser.codes"
                       }
                     ],
-                    staticClass: "input-nofill input-text fontSize-s",
+                    staticClass:
+                      "input--default input--default-full input-text fontSize-s",
                     class: {
-                      "input-nofill": true,
+                      "input--default": true,
                       "input--danger": _vm.errors.has("konfirmasi-password")
                     },
                     attrs: {
