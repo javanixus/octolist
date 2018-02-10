@@ -1,6 +1,5 @@
-<template lang="html">
-  <div id="getStarted">
-    <svg width="354px" height="282px" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="254px" height="182px" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
@@ -83,13 +82,3 @@
         </g>
     </g>
 </svg>
-  </div>
-</template>
-
-<script>
-export default {
-}
-</script>
-
-<style lang="css">
-</style>
