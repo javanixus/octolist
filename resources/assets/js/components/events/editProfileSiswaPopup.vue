@@ -5,8 +5,8 @@
                 <div class="profileMenuPopupWrapper">
                     <form action="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
-                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" :url="urlAvatar" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
-                            <img @click="toggleShow" style="cursor: pointer" :src="imgDataUrl">
+                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/avatarUpload" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
+                            <img @click="toggleShow" style="cursor: pointer" :src="dataUser.avatar">
                         </div>
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">

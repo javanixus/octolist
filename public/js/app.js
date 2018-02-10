@@ -44756,7 +44756,7 @@ var render = function() {
                       width: 300,
                       langType: "en",
                       height: 300,
-                      url: _vm.urlAvatar,
+                      url: "http://localhost:8000/api/v1/user/avatarUpload",
                       params: _vm.paramAvatar,
                       headers: _vm.headerToken,
                       "img-format": "jpg"
@@ -44772,7 +44772,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("img", {
                     staticStyle: { cursor: "pointer" },
-                    attrs: { src: _vm.imgDataUrl },
+                    attrs: { src: _vm.dataUser.avatar },
                     on: { click: _vm.toggleShow }
                   })
                 ],
@@ -45995,6 +45995,7 @@ var render = function() {
     _c(
       "svg",
       {
+        staticStyle: { position: "absolute", bottom: "10vh", left: "37.5vw" },
         attrs: {
           width: "354px",
           height: "282px",

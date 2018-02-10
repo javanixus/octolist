@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="getStarted">
-    <svg width="354px" height="282px" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="354px" height="282px" style="position: absolute; bottom: 10vh; left: 37.5vw;" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
