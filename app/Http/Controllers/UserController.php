@@ -109,16 +109,16 @@ class UserController extends Controller
 
 					$user->update($request->except(['password','codes','password_confirmation','avatar']));
 
-				// if(null != $request->file('avatar')){
-				// 	$file=$request->file('avatar');
-				// 	$filename = $users->username . '-' . time() . '.png';
-				// 	if($file){
-				// 		Storage::disk('local')->put($filename,File::get($file));
-				// 		$user->update([
-				// 			'avatar'	=>	$filename,
-				// 		]);
-				// 	}
-				// }
+				if(null != $request->file('avatar')){
+					$file=$request->file('avatar');
+					$filename = $users->username . '-' . time() . '.png';
+					if($file){
+						Storage::disk('local')->put($filename,File::get($file));
+						$user->update([
+							'avatar'	=>	$filename,
+						]);
+					}
+				}
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
@@ -138,29 +138,47 @@ class UserController extends Controller
 		 $id = $users->id;
 		 $user = User::find($id);
 
-	//	 if(null != $request->file('avatar')){
+		 if($request->hasFile('avatar')){
 		 	$file=$request->file('avatar');
 		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
-		 	// if($file){
-		 		Storage::disk('local')->put($filename,File::get($file));
-		 		$user->update([
-		 			'avatar'	=>	$filename,
-		 		]);
-
-				$response = [
-						'msg' => 'Item Telah Diupdate',
+		 	if($file){
+		 		if(Storage::disk('local')->put($filename,File::get($file))){
+					if($user->update([
+						'avatar'	=>	$filename,
+					])){
+						$response = [
+							'msg' => 'Item Telah Diupdate',
+							'href' => '/v1/users',
+							'method' =>'GET',
+						];
+					}else{
+						$response = [
+							'msg' => 'Item Gagal Diupdate',
+							'href' => '/v1/users',
+							'method' =>'GET',
+						];
+					}
+				}else{
+					$response = [
+						'msg' => 'Item Gagal Diupdate',
 						'href' => '/v1/users',
 						'method' =>'GET',
+					];
+				}
+		 	}else{
+				$response = [
+					'msg' => 'Item Gagal Diupdate',
+					'href' => '/v1/users',
+					'method' =>'GET',
 				];
-
-//		 	}
-		// }else{
-		// 	$response = [
-		// 		'msg' => 'Item Gagal Diupdate',
-		// 		'href' => '/v1/users',
-		// 		'method' =>'GET',
-		// 	];
-		// }
+			}
+		}else{
+			$response = [
+				'msg' => 'Item Gagal Diupdate',
+				'href' => '/v1/users',
+				'method' =>'GET',
+			];
+		}
 		 return response()->json($response);
 	 }
 

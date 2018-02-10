@@ -24,7 +24,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
     Route::patch('/user/{id}', 'UserController@update');
 
-	 Route::patch('/user/','UserController@update_avatar');
+	 Route::post('/user/avatarUpload','UserController@update_avatar');
 
     Route::delete('/user/{id}', 'UserController@destroy');
 
