@@ -42874,6 +42874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 // import editor from 'vue2-medium-editor'
@@ -42969,6 +42970,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
                 _this2.dataUser = response.data.data;
             });
+        },
+        onFileChange: function onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+            this.createImage(files[0]);
+        },
+        createImage: function createImage(file) {
+            var image = new Image();
+            var reader = new FileReader();
+            var vm = this;
+
+            reader.onload = function (e) {
+                vm.image = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        },
+
+        removeImage: function removeImage(e) {
+            this.dataUser.avatar = '';
         }
     },
     computed: {
@@ -44776,6 +44796,21 @@ var render = function() {
                 _c("div", { staticClass: "createProjectForm" }, [
                   _c("p", [_vm._v("Nama Lengkap")]),
                   _vm._v(" "),
+                  !_vm.image
+                    ? _c("div", [
+                        _c("h2", [_vm._v("Select an image")]),
+                        _c("input", {
+                          attrs: { type: "file" },
+                          on: { change: _vm.onFileChange }
+                        })
+                      ])
+                    : _c("div", [
+                        _c("img", { attrs: { src: _vm.dataUser.avatar } }),
+                        _c("button", { on: { click: _vm.removeImage } }, [
+                          _vm._v("Remove image")
+                        ])
+                      ]),
+                  _vm._v(" "),
                   _c("input", {
                     directives: [
                       {
@@ -46555,20 +46590,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -46580,73 +46601,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { attrs: { id: "getStarted" } }, [
-      _c(
-        "div",
-        { staticClass: "wrapper-getStarted" },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/dashboard" } }, [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue",
-                attrs: { type: "button", name: "button" }
-              },
-              [_vm._v("Let's go")]
-            )
-          ])
-        ],
-        1
-      )
-    ])
-  ])
+  return _c("div", { attrs: { id: "profile-setup" } })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "GetStarted-profile" }, [
-      _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-        _c(
-          "div",
-          { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
-          [
-            _c("img", {
-              staticClass: "avatar-img",
-              attrs: { alt: "", src: "/resources/assets/images/avatar0.jpg" }
-            })
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "marginTop-m getStarted__content" }, [
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: {
-            type: "text",
-            name: "",
-            placeholder: "Masukkan nama lengkap"
-          }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: { type: "text", name: "", placeholder: "Masukkan password" }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "input--default borderRadius-m marginBottom-s",
-          attrs: { type: "text", name: "", placeholder: "Confirm password" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
