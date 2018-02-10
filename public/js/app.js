@@ -42935,7 +42935,8 @@ var becrypt_pharse = becrypt_zero / 8084334125;
             },
             imgDataUrl: '/images/avatar0.jpg',
             show: false,
-            dataUser: []
+            dataUser: [],
+            avatar: []
         };
     },
 

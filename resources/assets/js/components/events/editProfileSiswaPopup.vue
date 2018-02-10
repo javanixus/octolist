@@ -143,7 +143,8 @@
                 },
                 imgDataUrl: '/images/avatar0.jpg',
                 show: false,
-                dataUser: []
+                dataUser: [],
+                avatar: [],
             }
         },
         components: {

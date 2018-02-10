@@ -103,6 +103,8 @@ class AuthController extends Controller
                 ], 500);
             }
 
+            $user->avatar = asset($user->avatar);
+
 
             $response = [
 //                'href' =>  '/user/profile',
