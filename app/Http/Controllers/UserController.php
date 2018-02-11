@@ -145,7 +145,13 @@ class UserController extends Controller
 		 if($request->hasFile('avatar')){
 		 	$file=$request->file('avatar');
 		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
-		 	if($file){  
+		 	if($file){
+
+                $exist = Storage::disk('avatar')->exists($user->avatar);
+		 	    if(isset($user->avatar) && $exist){
+                    $delete_avatar = Storage::disk('avatar')->delete($user->avatar);
+                }
+
 		 		if(Storage::disk('avatar')->put($filename,File::get($file))){
 					if($user->update([
 						'avatar' =>	$filename,
@@ -189,6 +195,7 @@ class UserController extends Controller
     public function destroy($id, Request $request)
     {
         $student = User::findOrFail($id);
+        $delete_avatar = Storage::disk('avatar')->delete($student->avatar);
         $student->delete();
 
         $response = [
