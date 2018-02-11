@@ -91,7 +91,7 @@
     // import editor from 'vue2-medium-editor'
     import axios from 'axios'
     import router from './../../router'
-    
+
     export default {
         beforeCreate(){
             const key_id = window.localStorage.getItem('key');
@@ -131,7 +131,6 @@
                         lowestPx: 'Image\'s size is too low. Expected at least:'
                     }
                 },
-                urlAvatar: baseUrlAvatar + becrypt_pharse,
                 paramAvatar: {
                     token: window.localStorage.getItem('token'),
                 },
