@@ -144,7 +144,7 @@ class UserController extends Controller
 		 	if($file){
 		 		if(Storage::disk('local')->put($filename,File::get($file))){
 					if($user->update([
-						'avatar'	=>	$filename,
+						'avatar'    =>	$filename,
 					])){
 						$response = [
 							'msg' => 'Item Telah Diupdate',
