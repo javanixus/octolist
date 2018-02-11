@@ -75,9 +75,11 @@
 <script>
     import axios from 'axios'
     import router from './../router'
+    import store from './../store/index';
 
     export default {
         beforeCreate(){
+          if (store.state.isLogged){
             const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);
@@ -93,6 +95,11 @@
                 this.dataUser = response.data.data
                 console.log(response);
             })
+            return
+          }
+          else {
+            router.push('/login')
+          }
         },
         data(){
           return {

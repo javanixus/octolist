@@ -36,11 +36,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="navbar-extended">
-        <div class="navbar-extended__item marginMagic">
-          <a href="#" style="color: #0f55eb;" class="marginRight-s">Feed</a>
-        </div>
-      </div> -->
     </div>
     <div class="content">
       <div class="content__header">

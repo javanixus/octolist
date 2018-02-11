@@ -34541,6 +34541,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(7);
 //
 //
 //
@@ -34615,34 +34616,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    beforeCreate: function beforeCreate() {
-        var _this = this;
+  beforeCreate: function beforeCreate() {
+    var _this = this;
 
-        var key_id = window.localStorage.getItem('key');
-        // decrypt phase //
-        var becrypt_slice_one = key_id.slice(7);
-        var becrypt_zero = becrypt_slice_one / 100101010;
-        var becrypt_pharse = becrypt_zero / 8084334125;
-        // end decrypt //
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
-            headers: {
-                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-            }
-        }).then(function (response) {
-            _this.dataUser = response.data.data;
-            console.log(response);
-        });
-    },
-    data: function data() {
-        return {
-            dataUser: []
-        };
+    if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
+      var key_id = window.localStorage.getItem('key');
+      // decrypt phase //
+      var becrypt_slice_one = key_id.slice(7);
+      var becrypt_zero = becrypt_slice_one / 100101010;
+      var becrypt_pharse = becrypt_zero / 8084334125;
+      // end decrypt //
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        _this.dataUser = response.data.data;
+        console.log(response);
+      });
+      return;
+    } else {
+      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/login');
     }
+  },
+  data: function data() {
+    return {
+      dataUser: []
+    };
+  }
 });
 
 /***/ }),
@@ -36906,11 +36913,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__events_confirmPopup__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -42955,12 +42957,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import editor from 'vue2-medium-editor'
 
 
-var baseUrlAvatar = "http://localhost:8000/api/v1/user/";
-var key_id = window.localStorage.getItem('key');
-// decrypt phase //
-var becrypt_slice_one = key_id.slice(7);
-var becrypt_zero = becrypt_slice_one / 100101010;
-var becrypt_pharse = becrypt_zero / 8084334125;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {

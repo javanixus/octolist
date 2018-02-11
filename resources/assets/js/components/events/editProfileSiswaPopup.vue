@@ -91,13 +91,7 @@
     // import editor from 'vue2-medium-editor'
     import axios from 'axios'
     import router from './../../router'
-    const baseUrlAvatar = "http://localhost:8000/api/v1/user/";
-    const key_id = window.localStorage.getItem('key');
-            // decrypt phase //
-            const becrypt_slice_one = key_id.slice(7);
-            const becrypt_zero = becrypt_slice_one / 100101010;
-            const becrypt_pharse = becrypt_zero / 8084334125;
-
+    
     export default {
         beforeCreate(){
             const key_id = window.localStorage.getItem('key');
