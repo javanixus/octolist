@@ -42874,6 +42874,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 // import editor from 'vue2-medium-editor'
@@ -42951,11 +42954,6 @@ var becrypt_pharse = becrypt_zero / 8084334125;
     mounted: function mounted() {
         this.$el.innerText = this.content;
     },
-    watch: {
-        content: function content() {
-            this.$el.innerText = this.content;
-        }
-    },
     methods: {
         toggleShow: function toggleShow() {
             this.show = !this.show;
@@ -42977,6 +42975,9 @@ var becrypt_pharse = becrypt_zero / 8084334125;
                 __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
                 _this2.dataUser = response.data.data;
             });
+        },
+        cropUploadSuccess: function cropUploadSuccess() {
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
         }
     },
     computed: {
@@ -44762,6 +44763,7 @@ var render = function() {
                       headers: _vm.headerToken,
                       "img-format": "jpg"
                     },
+                    on: { "crop-upload-success": _vm.cropUploadSuccess },
                     model: {
                       value: _vm.show,
                       callback: function($$v) {
@@ -44771,11 +44773,31 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("img", {
-                    staticStyle: { cursor: "pointer" },
-                    attrs: { src: _vm.dataUser.avatar },
-                    on: { click: _vm.toggleShow }
-                  })
+                  _c(
+                    "div",
+                    {
+                      staticClass: "containerProfilePictureEdit",
+                      on: { click: _vm.toggleShow }
+                    },
+                    [
+                      _c("div", {
+                        staticClass: "outerProfilePicture",
+                        style: {
+                          "background-image": "url(" + _vm.dataUser.avatar + ")"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticStyle: {
+                          height: "inherit",
+                          position: "absolute",
+                          left: "30%",
+                          "z-index": "2"
+                        },
+                        attrs: { src: _vm.dataUser.avatar }
+                      })
+                    ]
+                  )
                 ],
                 1
               ),

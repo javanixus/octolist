@@ -5,8 +5,11 @@
                 <div class="profileMenuPopupWrapper">
                     <form action="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
-                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/avatarUpload" :params="paramAvatar" :headers="headerToken" img-format="jpg"></avatar-upload>
-                            <img @click="toggleShow" style="cursor: pointer" :src="dataUser.avatar">
+                            <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/avatarUpload" :params="paramAvatar" :headers="headerToken" img-format="jpg" @crop-upload-success="cropUploadSuccess"></avatar-upload>
+                            <div class="containerProfilePictureEdit" @click="toggleShow">
+                                <div class="outerProfilePicture" :style="{ 'background-image': 'url(' + dataUser.avatar + ')' }" />
+                                <img style="height: inherit;position: absolute;left: 30%; z-index: 2;" :src="dataUser.avatar">
+                            </div>
                         </div>
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
@@ -158,11 +161,6 @@
         mounted: function() {
             this.$el.innerText = this.content;
         },
-        watch: {
-            content: function(){
-                this.$el.innerText = this.content;
-            }
-        },
         methods: {
             toggleShow() {
                 this.show = !this.show;
@@ -183,7 +181,10 @@
                     router.go('/profile')
                     this.dataUser = response.data.data;
                  })
-            }
+            },
+            cropUploadSuccess(){
+                router.go('/profile')
+			},
         },
         computed: {
             editProfileIsPassed(){
