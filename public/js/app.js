@@ -34540,6 +34540,8 @@ exports.locals = {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(7);
 //
 //
 //
@@ -34614,11 +34616,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common.Authorization = 'Bearer ' + window.localStorage.getItem('token');
+    var _this = this;
+
+    if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
+      var key_id = window.localStorage.getItem('key');
+      // decrypt phase //
+      var becrypt_slice_one = key_id.slice(7);
+      var becrypt_zero = becrypt_slice_one / 100101010;
+      var becrypt_pharse = becrypt_zero / 8084334125;
+      // end decrypt //
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        _this.dataUser = response.data.data;
+        console.log(response);
+      });
+      return;
+    } else {
+      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/login');
+    }
+  },
+  data: function data() {
+    return {
+      dataUser: []
+    };
   }
 });
 
@@ -35963,7 +35993,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                      Masuk\n                      "
+                            "\n                      " +
+                              _vm._s("Masuk " + this.dataUser.name) +
+                              "\n                      "
                           )
                         ]
                       )
@@ -36868,16 +36900,19 @@ exports.push([module.i, "\n.navbar[data-v-2073dee6]{box-shadow:0 3px 10px 0 rgba
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__events_createProject_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_confirmPopup__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__partials_dashboardBoard_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__partials_dashboardBoard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__partials_dashboardBoard_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_createProject_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_createProject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__events_createProject_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_profilemenuPopup_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_profilemenuPopup_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__events_profilemenuPopup_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_confirmPopup__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__events_confirmPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__events_confirmPopup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup__);
 //
 //
 //
@@ -36944,11 +36979,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
+
+
 
 
 
@@ -36957,6 +36989,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  beforeCreate: function beforeCreate() {
+    var _this = this;
+
+    var key_id = window.localStorage.getItem('key');
+    // decrypt phase //
+    var becrypt_slice_one = key_id.slice(7);
+    var becrypt_zero = becrypt_slice_one / 100101010;
+    var becrypt_pharse = becrypt_zero / 8084334125;
+    // end decrypt //
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      }
+    }).then(function (response) {
+      _this.dataUser = response.data.data;
+      console.log(response);
+    });
+  },
   data: function data() {
     return {
       resizable: false,
@@ -36965,13 +37015,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       canBeShown: false,
       state: null,
       isOpened: false,
-      projects: []
+      projects: [],
+      dataUser: []
     };
   },
 
   methods: {
     show: function show(resizable, adaptive, draggable) {
-      var _this = this;
+      var _this2 = this;
 
       this.resizable = resizable;
       this.adaptive = adaptive;
@@ -36981,9 +37032,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         "resizable, adaptive, draggable" values is not updated yet.. eh
       */
       this.$nextTick(function () {
-        _this.$modal.show('create-project-modal');
-        _this.$modal.show('profile-popup-modal');
-        _this.$modal.show('report-popup-modal');
+        _this2.$modal.show('create-project-modal');
+        _this2.$modal.show('profile-popup-modal');
+        _this2.$modal.show('report-popup-modal');
       });
     },
     detected: function detected(e) {
@@ -36994,11 +37045,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   components: {
-    'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
-    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
-    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
-    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
-    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a
+    'dashboard-app': __WEBPACK_IMPORTED_MODULE_2__partials_dashboardBoard_vue___default.a,
+    'create-project': __WEBPACK_IMPORTED_MODULE_3__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_4__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_5__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup___default.a
   }
 });
 
@@ -41533,6 +41584,9 @@ exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopad
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(4);
 //
 //
 //
@@ -41567,18 +41621,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      profilePopupCover: 'images/avatar0.jpg',
-      blurConfig: {
-        isBlurred: true, // activate and deactivate blur directive , i always turning on it
-        opacity: 1,
-        filter: 'blur(1px)',
-        transition: 'all .3s linear'
-      }
-    };
-  }
+    data: function data() {
+        return {
+            profilePopupCover: 'images/avatar0.jpg',
+            blurConfig: {
+                isBlurred: true, // activate and deactivate blur directive , i always turning on it
+                opacity: 1,
+                filter: 'blur(1px)',
+                transition: 'all .3s linear'
+            },
+            dataUser: []
+        };
+    },
+    beforeCreate: function beforeCreate() {
+        var _this = this;
+
+        var key_id = window.localStorage.getItem('key');
+        // decrypt phase //
+        var becrypt_slice_one = key_id.slice(7);
+        var becrypt_zero = becrypt_slice_one / 100101010;
+        var becrypt_pharse = becrypt_zero / 8084334125;
+        // end decrypt //
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+            headers: {
+                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+            }
+        }).then(function (response) {
+            _this.dataUser = response.data.data;
+            console.log(response);
+        });
+    }
 });
 
 /***/ }),
@@ -41621,7 +41696,7 @@ var render = function() {
                 }
               ],
               staticClass: "profileMenuPopup__Header",
-              style: { backgroundImage: "url(" + this.profilePopupCover + ")" }
+              style: { backgroundImage: "url(" + this.dataUser.avatar + ")" }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "profileMenuPopup__Content" }, [
@@ -42108,7 +42183,7 @@ var render = function() {
                     [
                       _c("img", {
                         staticClass: "avatar-img",
-                        attrs: { src: "images/avatar0.jpg", alt: "" }
+                        attrs: { src: _vm.dataUser.avatar, alt: "" }
                       })
                     ]
                   )
@@ -42882,12 +42957,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import editor from 'vue2-medium-editor'
 
 
-var baseUrlAvatar = "http://localhost:8000/api/v1/user/";
-var key_id = window.localStorage.getItem('key');
-// decrypt phase //
-var becrypt_slice_one = key_id.slice(7);
-var becrypt_zero = becrypt_slice_one / 100101010;
-var becrypt_pharse = becrypt_zero / 8084334125;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     beforeCreate: function beforeCreate() {
@@ -42938,8 +43007,7 @@ var becrypt_pharse = becrypt_zero / 8084334125;
             },
             imgDataUrl: '/images/avatar0.jpg',
             show: false,
-            dataUser: [],
-            avatar: []
+            dataUser: []
         };
     },
 

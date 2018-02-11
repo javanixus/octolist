@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content nopadding">
                 <div class="profileMenuPopupWrapper">
-                    <div class="profileMenuPopup__Header" v-blur="blurConfig" v-bind:style="{ 'backgroundImage': 'url(' + this.profilePopupCover + ')' }">
+                    <div class="profileMenuPopup__Header" v-blur="blurConfig" v-bind:style="{ 'backgroundImage': 'url(' + this.dataUser.avatar + ')' }">
                     </div>
                     <div class="profileMenuPopup__Content">
                         <ul>
@@ -32,6 +32,8 @@
     }
 </style>
 <script>
+    import axios from 'axios'
+    import router from './../../router'
 export default {
   data() {
       return {
@@ -41,8 +43,26 @@ export default {
             opacity: 1,
             filter: 'blur(1px)',
             transition: 'all .3s linear'
-          }
+          },
+          dataUser:[]
       }
-  }
+  },
+        beforeCreate(){
+            const key_id = window.localStorage.getItem('key');
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+                headers: {
+                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                }
+            })
+            .then((response) => {
+                this.dataUser = response.data.data
+                console.log(response);
+            })
+    },
 }
 </script>
