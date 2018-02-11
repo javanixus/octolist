@@ -42998,7 +42998,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     lowestPx: 'Image\'s size is too low. Expected at least:'
                 }
             },
-            urlAvatar: baseUrlAvatar + becrypt_pharse,
             paramAvatar: {
                 token: window.localStorage.getItem('token')
             },
