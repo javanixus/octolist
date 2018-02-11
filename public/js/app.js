@@ -34616,6 +34616,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -34626,6 +34631,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
+      this.userLogged = true;
       var key_id = window.localStorage.getItem('key');
       // decrypt phase //
       var becrypt_slice_one = key_id.slice(7);
@@ -34642,12 +34648,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
       return;
     } else {
-      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/login');
+      null;
     }
   },
   data: function data() {
     return {
-      dataUser: []
+      dataUser: [],
+      userLogged: false
     };
   }
 });
@@ -35985,20 +35992,35 @@ var render = function() {
                       }
                     },
                     [
-                      _c(
-                        "a",
-                        {
-                          staticClass:
-                            "button button-landing button--xl borderRadius-s button--melting-blue"
-                        },
-                        [
-                          _vm._v(
-                            "\n                      " +
-                              _vm._s("Masuk " + this.dataUser.name) +
-                              "\n                      "
+                      _vm.userLogged
+                        ? _c(
+                            "a",
+                            {
+                              staticClass:
+                                "button button-landing button--xl borderRadius-s button--melting-blue"
+                            },
+                            [
+                              _vm._v(
+                                "\n                      " +
+                                  _vm._s("Masuk ") +
+                                  "\n                      "
+                              )
+                            ]
                           )
-                        ]
-                      )
+                        : _c(
+                            "a",
+                            {
+                              staticClass:
+                                "button button-landing button--xl borderRadius-s button--melting-blue"
+                            },
+                            [
+                              _vm._v(
+                                "\n                      " +
+                                  _vm._s("Masuk " + this.dataUser.name) +
+                                  "\n                      "
+                              )
+                            ]
+                          )
                     ]
                   )
                 ],
