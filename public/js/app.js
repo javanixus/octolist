@@ -42874,6 +42874,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 // import editor from 'vue2-medium-editor'
@@ -42935,7 +42938,8 @@ var becrypt_pharse = becrypt_zero / 8084334125;
             },
             imgDataUrl: '/images/avatar0.jpg',
             show: false,
-            dataUser: []
+            dataUser: [],
+            avatar: []
         };
     },
 
@@ -42949,11 +42953,6 @@ var becrypt_pharse = becrypt_zero / 8084334125;
     props: ['content'],
     mounted: function mounted() {
         this.$el.innerText = this.content;
-    },
-    watch: {
-        content: function content() {
-            this.$el.innerText = this.content;
-        }
     },
     methods: {
         toggleShow: function toggleShow() {
@@ -42976,6 +42975,9 @@ var becrypt_pharse = becrypt_zero / 8084334125;
                 __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
                 _this2.dataUser = response.data.data;
             });
+        },
+        cropUploadSuccess: function cropUploadSuccess() {
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
         }
     },
     computed: {
@@ -44761,6 +44763,7 @@ var render = function() {
                       headers: _vm.headerToken,
                       "img-format": "jpg"
                     },
+                    on: { "crop-upload-success": _vm.cropUploadSuccess },
                     model: {
                       value: _vm.show,
                       callback: function($$v) {
@@ -44770,11 +44773,31 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("img", {
-                    staticStyle: { cursor: "pointer" },
-                    attrs: { src: _vm.dataUser.avatar },
-                    on: { click: _vm.toggleShow }
-                  })
+                  _c(
+                    "div",
+                    {
+                      staticClass: "containerProfilePictureEdit",
+                      on: { click: _vm.toggleShow }
+                    },
+                    [
+                      _c("div", {
+                        staticClass: "outerProfilePicture",
+                        style: {
+                          "background-image": "url(" + _vm.dataUser.avatar + ")"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticStyle: {
+                          height: "inherit",
+                          position: "absolute",
+                          left: "30%",
+                          "z-index": "2"
+                        },
+                        attrs: { src: _vm.dataUser.avatar }
+                      })
+                    ]
+                  )
                 ],
                 1
               ),
@@ -45130,7 +45153,7 @@ var render = function() {
                     [
                       _c("img", {
                         staticClass: "avatar-img",
-                        attrs: { src: "images/avatar0.jpg", alt: "" }
+                        attrs: { src: _vm.dataUser.avatar, alt: "" }
                       })
                     ]
                   )
@@ -45144,7 +45167,18 @@ var render = function() {
       _c("header", [
         _c("div", { staticClass: "wrapper-profile-head" }, [
           _c("div", { staticClass: "profile-head marginMagic" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
+              _c(
+                "div",
+                { staticClass: "avatar avatar--xl avatar--glow marginMagic" },
+                [
+                  _c("img", {
+                    staticClass: "avatar-img",
+                    attrs: { alt: "", src: _vm.dataUser.avatar }
+                  })
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "profile-head__title" }, [
               _c("h4", { staticClass: "fontSize-l" }, [
@@ -45176,7 +45210,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(1)
         ])
       ])
     ],
@@ -45214,19 +45248,6 @@ var staticRenderFns = [
         },
         attrs: { src: "images/search.svg", alt: "" }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "profile-head__avatar marginBottom-s" }, [
-      _c("div", { staticClass: "avatar avatar--xl avatar--glow marginMagic" }, [
-        _c("img", {
-          staticClass: "avatar-img",
-          attrs: { alt: "", src: "/images/avatar0.jpg" }
-        })
-      ])
     ])
   },
   function() {

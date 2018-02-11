@@ -86,3 +86,31 @@
         margin: 15px 0 8px 0!important;
     }
 }
+
+.createProjectModal-wrapper {
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.containerProfilePictureEdit{
+    height: inherit;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .3);
+}
+.outerProfilePicture {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    opacity: .9;
+    z-index: 1;
+    filter: blur(10px);
+    background-size: cover;
+    background-origin: border-box;
+}
+
+.vue-image-crop-upload{
+    z-index: 99!important;
+}
