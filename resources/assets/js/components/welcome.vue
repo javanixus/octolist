@@ -39,13 +39,13 @@
               <!-- Plan projects and manage resources with ease. Octolist helps you get the most out of your projects and teams. -->
               <div class="wrap-landing-button">
                 <router-link :to="{path: '/login', query:{ auth: 'login' }}">
-                  <a v-if="userLogged" class="button button-landing button--xl borderRadius-s button--melting-blue">
-                      {{ 'Masuk '}}
+                  <a :class="{'isCollapsed': !userLogged }" class="button button-landing button--xl borderRadius-s button--melting-blue">
+                      {{ 'Masuk '+ this.dataUser.name}}
                       <!-- Masuk -->
                       <!-- Login Now  -->
                   </a>
-                  <a v-else class="button button-landing button--xl borderRadius-s button--melting-blue">
-                      {{'Masuk '+ this.dataUser.name }}
+                  <a :class="{'isCollapsed': !!userLogged }" class="button button-landing button--xl borderRadius-s button--melting-blue">
+                      {{'Masuk ' }}
                       <!-- Masuk -->
                       <!-- Login Now  -->
                   </a>
@@ -83,9 +83,8 @@
     import store from './../store/index';
 
     export default {
-        beforeCreate(){
+        mounted(){
           if (store.state.isLogged){
-            this.userLogged = true;
             const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);
@@ -100,11 +99,8 @@
             .then((response) => {
                 this.dataUser = response.data.data
                 console.log(response);
+                this.userLogged = true;
             })
-            return
-          }
-          else {
-            null
           }
         },
         data(){

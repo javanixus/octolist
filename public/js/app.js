@@ -34634,11 +34634,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  beforeCreate: function beforeCreate() {
+  mounted: function mounted() {
     var _this = this;
 
     if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
-      this.userLogged = true;
       var key_id = window.localStorage.getItem('key');
       // decrypt phase //
       var becrypt_slice_one = key_id.slice(7);
@@ -34652,10 +34651,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).then(function (response) {
         _this.dataUser = response.data.data;
         console.log(response);
+        _this.userLogged = true;
       });
-      return;
-    } else {
-      null;
     }
   },
   data: function data() {
@@ -35999,35 +35996,37 @@ var render = function() {
                       }
                     },
                     [
-                      _vm.userLogged
-                        ? _c(
-                            "a",
-                            {
-                              staticClass:
-                                "button button-landing button--xl borderRadius-s button--melting-blue"
-                            },
-                            [
-                              _vm._v(
-                                "\n                      " +
-                                  _vm._s("Masuk ") +
-                                  "\n                      "
-                              )
-                            ]
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "button button-landing button--xl borderRadius-s button--melting-blue",
+                          class: { isCollapsed: !_vm.userLogged }
+                        },
+                        [
+                          _vm._v(
+                            "\n                      " +
+                              _vm._s("Masuk " + this.dataUser.name) +
+                              "\n                      "
                           )
-                        : _c(
-                            "a",
-                            {
-                              staticClass:
-                                "button button-landing button--xl borderRadius-s button--melting-blue"
-                            },
-                            [
-                              _vm._v(
-                                "\n                      " +
-                                  _vm._s("Masuk " + this.dataUser.name) +
-                                  "\n                      "
-                              )
-                            ]
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "button button-landing button--xl borderRadius-s button--melting-blue",
+                          class: { isCollapsed: !!_vm.userLogged }
+                        },
+                        [
+                          _vm._v(
+                            "\n                      " +
+                              _vm._s("Masuk ") +
+                              "\n                      "
                           )
+                        ]
+                      )
                     ]
                   )
                 ],
