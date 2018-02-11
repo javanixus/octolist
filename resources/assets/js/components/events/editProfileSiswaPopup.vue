@@ -147,7 +147,6 @@
                 imgDataUrl: '/images/avatar0.jpg',
                 show: false,
                 dataUser: [],
-                avatar: [],
             }
         },
         components: {

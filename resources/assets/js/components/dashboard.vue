@@ -30,7 +30,7 @@
             <a href="javascript:void(0)"></a>
             <div class="border-gradient">
               <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
-                <img class="avatar-img" src="images/avatar0.jpg" alt="" />
+                <img class="avatar-img" :src="dataUser.avatar" alt="" />
               </div>
             </div>
           </div>
@@ -70,6 +70,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import router from './../router'
   import dashboardBoard from './partials/dashboardBoard.vue';
   import createProjectPopup from './events/createProject.vue';
   import profileMenuPopup from './events/profilemenuPopup.vue';
@@ -77,6 +79,23 @@
   import reportPopup from './events/reportBugsPopup';
 
   export default {
+    beforeCreate(){
+            const key_id = window.localStorage.getItem('key');
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+                headers: {
+                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                }
+            })
+            .then((response) => {
+                this.dataUser = response.data.data
+                console.log(response);
+    })
+    },
     data(){
       return {
         resizable: false,
@@ -86,6 +105,7 @@
         state: null,
         isOpened: false,
         projects: [],
+        dataUser: [],
       }
     },
     methods: {

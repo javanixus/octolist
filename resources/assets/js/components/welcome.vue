@@ -40,7 +40,7 @@
               <div class="wrap-landing-button">
                 <router-link :to="{path: '/login', query:{ auth: 'login' }}">
                   <a class="button button-landing button--xl borderRadius-s button--melting-blue">
-                      Masuk
+                      {{ 'Masuk ' + this.dataUser.name }}
                       <!-- Masuk -->
                       <!-- Login Now  -->
                     </a>
@@ -73,12 +73,33 @@
 </template>
 
 <script>
-import axios from 'axios';
-export default {
-  beforeCreate(){
-    axios.defaults.headers.common.Authorization = 'Bearer ' + window.localStorage.getItem('token');
-  }
-};
+    import axios from 'axios'
+    import router from './../router'
+
+    export default {
+        beforeCreate(){
+            const key_id = window.localStorage.getItem('key');
+            // decrypt phase //
+            const becrypt_slice_one = key_id.slice(7);
+            const becrypt_zero = becrypt_slice_one / 100101010;
+            const becrypt_pharse = becrypt_zero / 8084334125;
+            // end decrypt //
+            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+                headers: {
+                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                }
+            })
+            .then((response) => {
+                this.dataUser = response.data.data
+                console.log(response);
+            })
+        },
+        data(){
+          return {
+            dataUser: []
+          }
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
