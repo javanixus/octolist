@@ -21,14 +21,6 @@ class User extends Authenticatable
         return $this->attributes['name'] = strtolower($value);
     }
 
-    public function setBioAttribute($value){ // Mutator
-        return $this->attributes['bio'] = strtolower($value);
-    }
-
-    public function setEmailAttribute($value){ // Mutator
-        return $this->attributes['email'] = strtolower($value);
-    }
-
     public function setUsernameAttribute($value){ // Mutator
         return $this->attributes['username'] = strtolower($value);
     }
@@ -38,7 +30,7 @@ class User extends Authenticatable
     }
 
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'nis', 'bio', 'gender', 'phone', 'id_class', 'id_major','avatar'
+        'role', 'username', 'password',
     ];
 
     protected $hidden = [
