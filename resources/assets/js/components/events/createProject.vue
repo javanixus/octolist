@@ -114,7 +114,7 @@
                 })
             },
             createProject() {
-                axios.post('http://localhost:8000/api/v1/user/signin', this.createProjectFormInput)
+                axios.post('http://localhost:8000/api/v1/project/create', this.createProjectFormInput)
                     .then((response) => {
                         router.push('/dashboard')
                         if (router.push('/dashboard') === false) {

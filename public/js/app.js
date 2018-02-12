@@ -36725,6 +36725,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -36737,31 +36739,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { class: _vm.$style.BgWhite, attrs: { id: "forgotpass" } }, [
-    _vm._m(0),
+    _c("header", { staticClass: "navbar" }, [
+      _c("div", { staticClass: "navbar--landing" }, [
+        _c(
+          "div",
+          { staticClass: "button-forgotpass" },
+          [
+            _c("router-link", { attrs: { to: { path: "/" } } }, [
+              _c(
+                "a",
+                {
+                  staticClass: "button button--xl button--nofill borderRadius-s"
+                },
+                [_vm._v("\n          Kembali\n        ")]
+              )
+            ])
+          ],
+          1
+        )
+      ])
+    ]),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", { staticClass: "navbar" }, [
-      _c("div", { staticClass: "navbar--landing" }, [
-        _c("div", { staticClass: "button-forgotpass" }, [
-          _c(
-            "a",
-            {
-              staticClass: "button button--xl button--nofill borderRadius-s",
-              attrs: { href: "#" }
-            },
-            [_vm._v("\n          Lupa Password\n        ")]
-          )
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -37398,7 +37400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         createProject: function createProject() {
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('http://localhost:8000/api/v1/user/signin', this.createProjectFormInput).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('http://localhost:8000/api/v1/project/create', this.createProjectFormInput).then(function (response) {
                 __WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard');
                 if (__WEBPACK_IMPORTED_MODULE_4__router__["a" /* default */].push('/dashboard') === false) {
                     // add behavior here
