@@ -28,13 +28,14 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
     Route::delete('/user/{id}', 'UserController@destroy');
 
+
     Route::group(['middleware' => ['jwt.auth','cors']], function(){
 
 			Route::get('/dashboard','UserController@home')->name('dashboard');
 
-			Route::post('/teacher/project/create','ProjectController@store');
-
 			Route::post('teacher/signup','TeacherController@store');
+			
+			Route::post('/project/create','ProjectController@store');
 
 			Route::patch('/profile/teacher/edit/','TeacherController@update');
 
