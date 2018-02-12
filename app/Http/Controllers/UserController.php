@@ -63,9 +63,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+
             'username' => 'required:min:1',
             'password' => 'required|min:1',
             'role' => 'required|min:1',
+
         ]);
 
         $student = User::Create($request->all());
@@ -94,8 +96,8 @@ class UserController extends Controller
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
-                'email'=> "required|email|unique:users,email,$id",
-                'phone'=> "nullable|numeric|unique:users,phone,$id|",
+                'email'=> "required|email|unique:students_info,email,$id",
+                'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
 
 				$user = User::find($id);
