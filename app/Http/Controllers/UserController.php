@@ -69,10 +69,11 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required:min:1',
             'nis' => 'required:min:1',
-            'username' => 'required|min:1',
-            'email' => 'required|email|unique:users|min:10',
+            'username' => 'required|unique:students_info|min:1',
+            'email' => 'required|email|unique:students_info|min:10',
             'password' => 'required|min:5',
-            'phone' => 'unique:users|min:12|max:15',
+            'phone' => 'unique:students_info|min:12|max:15',
+				'role'	=> 'min:1',
         ]);
 
         $student = User::Create($request->all());
@@ -101,8 +102,8 @@ class UserController extends Controller
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
-                'email'=> "required|email|unique:users,email,$id",
-                'phone'=> "nullable|numeric|unique:users,phone,$id|",
+                'email'=> "required|email|unique:students_info,email,$id",
+                'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
 
 				$user = User::find($id);
