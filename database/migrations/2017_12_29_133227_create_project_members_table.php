@@ -23,7 +23,7 @@ class CreateProjectMembersTable extends Migration
         Schema::table('project_members', function (Blueprint $table) {
             $table->foreign('id_students')
                 ->references('id')
-                ->on('users');
+                ->on('students_info');
         });
     }
 
