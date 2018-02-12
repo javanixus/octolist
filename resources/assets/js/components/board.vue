@@ -21,18 +21,6 @@
 			<div class="asideBoardWrapper">
 				<div class="asideBoardWrapper__Core">
 					<div class="asideBoard">
-						<div class="asideBoard__ProjectTitle">
-							<span>Project name</span>
-							<h3>Project Octolist</h3>
-						</div>
-						<div class="asideBoard__ProjectDesc">
-							<span>
-								project ini mempunyai tujuan untuk mempermudah pengerjaan suatu proyek dan planning dalam sebuah team
-							</span>
-						</div>
-						<div class="asideBoard__ProjectMember">
-							
-						</div>
 					</div>
 				</div>
 			</div>

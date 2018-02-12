@@ -10,4 +10,8 @@ class StudentsInfo extends Model
 		protected $fillable = [
 			'name','email','phone','avatar','id_admins',
 		];
+
+		public function User(){
+		    return $this->belongsTo('App\AdminsInfo', 'id_admins');
+        }
 }

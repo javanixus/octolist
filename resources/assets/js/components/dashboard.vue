@@ -12,6 +12,7 @@
     <confirm-popup />
     <profile-popup />
     <report-popup />
+    <getstarted-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
         <span><router-link :to="{path: '/dashboard'}">Octolist</router-link></span>
@@ -54,7 +55,37 @@
           </div>
           <div class="project__content">
             <div class="project">
-              <dashboard-app ids="projectIds" v-for="project in projects" :pj="project" :key="project.id"></dashboard-app>
+              <!-- awal item static -->
+                <div class="project-item">
+                  <div class="project-item__header">
+                    <span class="overlay-dark">
+                      <a href="javascript:void(0)">
+                        <img class="icon" src="images/edit.svg" alt="" />
+                      </a>
+                    </span>
+                    <img src="images/dragon-girl.png" alt="" />
+                  </div>
+                  <div class="project-item__content">
+                    <h5>
+                      Typography Culture
+                    </h5>
+                    <div class="content-red">
+                      <div class="content-desc">
+                        <div class="content-people">
+                          <img src="images/kecil1.png" alt="" />
+                          <img src="images/kecil6.jpg" alt="" />
+                          <img src="images/kecil5.jpg" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-item__footer">
+                    <div class="project-item__footer-items">
+                         <router-link :to="'/dashboard/board'"><span>Open project</span></router-link>
+                    </div>
+                  </div>
+              </div>
+              <!-- <dashboard-app ids="projectIds" v-for="project in projects" :pj="project" :key="project.id"></dashboard-app> -->
             </div>
           </div>
         </div>
@@ -67,15 +98,18 @@
 <script>
   import axios from 'axios'
   import router from './../router'
+  import store from './../store/index'
   import dashboardBoard from './partials/dashboardBoard.vue';
   import createProjectPopup from './events/createProject.vue';
   import profileMenuPopup from './events/profilemenuPopup.vue';
   import ConfirmPopup from './events/confirmPopup';
   import reportPopup from './events/reportBugsPopup';
+  import getStarted from './events/getStartedPopup';
 
   export default {
-    beforeCreate(){
-            const key_id = window.localStorage.getItem('key');
+    mounted(){
+      if (store.state.isLogged){
+        const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);
             const becrypt_zero = becrypt_slice_one / 100101010;
@@ -89,7 +123,9 @@
             .then((response) => {
                 this.dataUser = response.data.data
                 console.log(response);
-    })
+                this.$modal.show('getstarted-siswa-popup-modal');
+          })
+      }
     },
     data(){
       return {
@@ -116,6 +152,7 @@
           this.$modal.show('create-project-modal');
           this.$modal.show('profile-popup-modal');
           this.$modal.show('report-popup-modal');
+          this.$modal.show('getstarted-siswa-popup-modal');
         })
       },
       detected(e) {
@@ -131,6 +168,7 @@
       'profile-popup': profileMenuPopup,
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,
+      'getstarted-popup': getStarted,
     }
   }
 </script>
