@@ -27,7 +27,7 @@ class UserController extends Controller
         $que = $request->get('q');
         if (!empty($que)){
             $students = User::Where('name', 'like', "%$que%")
-                        ->OrWhere('username', 'like', '%$que%')->get();
+                        ->OrWhere(' username', 'like', '%$que%')->get();
         } else {
             $students = User::all()->sortBy('name');
         }
@@ -37,8 +37,6 @@ class UserController extends Controller
                 'method' => 'GET',
             );
         }
-
-        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => 'List of Students',
@@ -51,8 +49,6 @@ class UserController extends Controller
 
     public function show($id){
         $student = User::findOrFail($id);
-
-        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => "User Profile",
@@ -76,13 +72,13 @@ class UserController extends Controller
 
         if ($student) {
             $response = [
-                'msg' => 'User Created',
+                'msg' => 'User Berhasil dibuat',
                 'href' => '/v1/users',
                 'method' => 'GET',
             ];
         } else {
             $response = [
-                'msg' => 'False',
+                'msg' => 'User gagal dibuat',
                 'href' => '/v1/user',
                 'method' => 'GET',
             ];
