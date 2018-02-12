@@ -118,18 +118,30 @@ class UserController extends Controller
 
 				if(Hash::check($request->codes,$user->password)){
 
-					$info->update($request->except(['password','codes','password_confirmation','avatar']));
-
-				if(null != $request->file('avatar')){
-					$file=$request->file('avatar');
-					$filename = $users->username . '-' . time() . '.png';
-					if($file){
-                        Storage::disk('avatar')->put($filename,File::get($file));
-						$info->update([
-							'avatar'	=>	$filename,
-						]);
+					if($info->update($request->except(['password','codes','password_confirmation','avatar']))){
+						$response = [
+								'msg' => 'User Berhasil diedit',
+								'href' => '/v1/users',
+								'method' => 'GET',
+						];
+					}else{
+						$response = [
+								'msg' => 'User Gagal Diedit',
+								'href' => '/v1/users',
+								'method' => 'GET',
+						];
 					}
-				}
+
+				// if(null != $request->file('avatar')){
+				// 	$file=$request->file('avatar');
+				// 	$filename = $users->username . '-' . time() . '.png';
+				// 	if($file){
+        //                 Storage::disk('avatar')->put($filename,File::get($file));
+				// 		$info->update([
+				// 			'avatar'	=>	$filename,
+				// 		]);
+				// 	}
+				// }
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
@@ -139,8 +151,14 @@ class UserController extends Controller
 						}
 					}
 
-					return response()->json($user);
-            }
+				}else{
+					$response = [
+							'msg' => 'Password User Salah',
+							'href' => '/v1/users',
+							'method' => 'GET',
+					];
+				}
+				return response()->json($user);
     }
 
 	 public function update_avatar(Request $request)
@@ -148,7 +166,7 @@ class UserController extends Controller
 		 $users = Auth::user();
 		 $id = $users->id;
 		 $user = User::find($id);
-		 $info = StudentsINfo::where('id_students',$id);
+		 $info = StudentsInfo::where('id_students',$id);
 
 		 if($request->hasFile('avatar')){
 		 	$file=$request->file('avatar');
@@ -171,28 +189,28 @@ class UserController extends Controller
 						];
 					}else{
 						$response = [
-							'msg' => 'Item Gagal Diupdate',
+							'msg' => 'Item Gagal Diupdate database',
 							'href' => '/v1/users',
 							'method' =>'GET',
 						];
 					}
 				}else{
 					$response = [
-						'msg' => 'Item Gagal Diupdate',
+						'msg' => 'Item Gagal Diupdate pindah file',
 						'href' => '/v1/users',
 						'method' =>'GET',
 					];
 				}
 		 	}else{
 				$response = [
-					'msg' => 'Item Gagal Diupdate',
+					'msg' => 'Item Gagal Diupdate null',
 					'href' => '/v1/users',
 					'method' =>'GET',
 				];
 			}
 		}else{
 			$response = [
-				'msg' => 'Item Gagal Diupdate',
+				'msg' => 'Item Gagal Diupdate null 1',
 				'href' => '/v1/users',
 				'method' =>'GET',
 			];

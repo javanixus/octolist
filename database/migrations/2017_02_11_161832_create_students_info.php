@@ -15,7 +15,7 @@ class CreateStudentsInfo extends Migration
     {
         Schema::create('students_info', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nis')->unique();
+            $table->string('nis',15)->unique();
             $table->string('name');
             $table->string('email', 50)->unique();
             $table->string('bio', 255)->nullable();
