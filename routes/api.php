@@ -18,7 +18,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
     Route::post('/user/signup', 'AuthController@store');
 
-    Route::post('/user', 'UserController@store');
+		Route::post('/user', 'UserController@store');
 
 //    Route::get('/users/{q}', 'UserController@index');
 
@@ -34,7 +34,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::get('/dashboard','UserController@home')->name('dashboard');
 
 			Route::post('teacher/signup','TeacherController@store');
-			
+
 			Route::post('/project/create','ProjectController@store');
 
 			Route::patch('/profile/teacher/edit/','TeacherController@update');

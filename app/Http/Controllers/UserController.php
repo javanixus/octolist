@@ -14,6 +14,7 @@ use JWTAuth;
 use JWTException;
 
 use App\User;
+use App\StudentsInfo;
 
 class UserController extends Controller
 {
@@ -70,25 +71,41 @@ class UserController extends Controller
 
             'username' => 'required:min:1',
             'password' => 'required|min:1',
+				'name'	=>	'required|min:1',
+				'nis'		=>	'required|unique:students_info',
             'role' => 'required|min:1',
+				'gender'	=> 'required',
 
         ]);
 
-        $student = User::Create($request->all());
-
-        if ($student) {
-            $response = [
-                'msg' => 'User Created',
-                'href' => '/v1/users',
-                'method' => 'GET',
-            ];
-        } else {
-            $response = [
-                'msg' => 'False',
-                'href' => '/v1/user',
-                'method' => 'GET',
-            ];
-        }
+        $student = User::Create($request->except(['name','nis','gender']));
+		  if($student){
+				// $info = new StudentsInfo;
+				// $info->name = $request->name;
+				// $info->nis = $request->nis;
+				// $info->gender = $request->gender;
+				// $info->id_students = $student->id;
+        //
+				// if ($info->save()) {
+					$response = [
+						'msg' => 'User Created',
+						'href' => '/v1/users',
+						'method' => 'GET',
+					];
+				// } else {
+				// 	$response = [
+				// 		'msg' => 'False',
+				// 		'href' => '/v1/user',
+				// 		'method' => 'GET',
+				// 	];
+				// }
+			}else{
+				$response = [
+					'msg' => 'False',
+					'href' => '/v1/user',
+					'method' => 'GET',
+				];
+			}
 
         return response()->json($response, 200);
     }
@@ -96,7 +113,9 @@ class UserController extends Controller
     public function update(Request $request)
     {
 			$users = Auth::user();
+
 			$id = $users->id;
+
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
@@ -104,7 +123,8 @@ class UserController extends Controller
                 'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
 
-				$user = User::find($id);
+				$user = StudentsInfo::where('id_students', $id)->get();
+				// $user = User::find($id);
 
                 //security check if the codes right then the output should be true
 
