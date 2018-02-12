@@ -8,8 +8,6 @@
   </div>
   <svg style="
     position: absolute; right: 100px; bottom: 100px;" width="167px" height="274px" viewBox="0 0 167 374" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>getStarted-1</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <rect id="path-1" x="35" y="0" width="98" height="204" rx="27"></rect>
         <rect id="path-3" x="0" y="122" width="167" height="252" rx="40"></rect>

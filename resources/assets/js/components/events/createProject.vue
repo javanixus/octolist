@@ -29,11 +29,6 @@
     .v--modal-overlay {
         background: rgba(0, 0, 0, 0.6);
     }
-
-    .createProjectModal-wrapper {
-        background: #edeff0;
-    }
-
     .createProjectForm {
         padding: 15px 0;
     }
