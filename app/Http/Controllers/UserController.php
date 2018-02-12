@@ -27,10 +27,10 @@ class UserController extends Controller
     {
         $que = $request->get('q');
         if (!empty($que)){
-            $students = User::Where('name', 'like', "%$que%")
-                        ->OrWhere(' username', 'like', '%$que%')->get();
+            $students = StudentsInfo::Where('name', 'like', "%$que%");
+
         } else {
-            $students = User::all()->sortBy('name');
+            $students = StudentsInfo::all()->sortBy('name');
         }
         foreach($students as $student){
             $student->view_students = array(
@@ -49,7 +49,8 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $student = User::findOrFail($id);
+        $student = StudentsInfo::findOrFail($id);
+
 
         $response = [
             'msg' => "User Profile",
