@@ -14,6 +14,7 @@ use JWTAuth;
 use JWTException;
 
 use App\User;
+use App\StudentsInfo;
 
 class UserController extends Controller
 {
@@ -27,7 +28,7 @@ class UserController extends Controller
         $que = $request->get('q');
         if (!empty($que)){
             $students = User::Where('name', 'like', "%$que%")
-                        ->OrWhere('username', 'like', '%$que%')->get();
+                        ->OrWhere(' username', 'like', '%$que%')->get();
         } else {
             $students = User::all()->sortBy('name');
         }
@@ -37,8 +38,6 @@ class UserController extends Controller
                 'method' => 'GET',
             );
         }
-
-        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => 'List of Students',
@@ -51,8 +50,6 @@ class UserController extends Controller
 
     public function show($id){
         $student = User::findOrFail($id);
-
-        $student->avatar = asset('avatar/'.$student->avatar);
 
         $response = [
             'msg' => "User Profile",
@@ -67,31 +64,40 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required:min:1',
-            'nis' => 'required:min:1',
-            'username' => 'required|min:1',
-            'email' => 'required|email|unique:users|min:10',
-            'password' => 'required|min:5',
-            'phone' => 'unique:users|min:12|max:15',
+            'username' => 'required:min:1',
+            'password' => 'required|min:1',
+            'role' => 'required|min:1',
+            'name' => 'required',
+            'email' => 'required',
+            'nis' => 'required',
+            'gender' => 'required',
         ]);
 
         $student = User::Create($request->all());
 
+        $student_info = StudentsInfo::Create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'nis' => $request->nis,
+            'gender' => $request->gender,
+            'id_students' => $student->id,
+        ]);
+
         if ($student) {
             $response = [
-                'msg' => 'User Created',
+                'msg' => 'User Berhasil dibuat',
                 'href' => '/v1/users',
                 'method' => 'GET',
             ];
-            return response()->json($response, 200);
         } else {
             $response = [
-                'msg' => 'User Created',
+                'msg' => 'User gagal dibuat',
                 'href' => '/v1/user',
                 'method' => 'GET',
             ];
-            return response()->json($response, 200);
         }
+
+        return response()->json($response, 200);
     }
 
     public function update(Request $request)
@@ -101,8 +107,8 @@ class UserController extends Controller
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
-                'email'=> "required|email|unique:users,email,$id",
-                'phone'=> "nullable|numeric|unique:users,phone,$id|",
+                'email'=> "required|email|unique:students_info,email,$id",
+                'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
 
 				$user = User::find($id);

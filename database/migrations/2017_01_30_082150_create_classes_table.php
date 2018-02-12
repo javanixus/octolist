@@ -18,12 +18,6 @@ class CreateClassesTable extends Migration
             $table->string('name', 50);
             $table->timestamps();
         });
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('id_class')
-                  ->references('id')
-                  ->on('classes');
-        });
     }
 
     /**

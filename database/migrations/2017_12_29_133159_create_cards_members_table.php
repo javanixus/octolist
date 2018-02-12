@@ -1,4 +1,4 @@
-<?php
+<x></x><?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,11 +20,10 @@ class CreateCardsMembersTable extends Migration
             $table->timestamps();
         });
 
-
         Schema::table('cards_members', function (Blueprint $table) {
             $table->foreign('id_students')
                 ->references('id')
-                ->on('users');
+                ->on('students_info');
         });
 
         Schema::table('cards_members', function (Blueprint $table) {

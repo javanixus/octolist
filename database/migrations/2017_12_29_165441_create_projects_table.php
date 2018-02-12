@@ -31,7 +31,7 @@ class CreateProjectsTable extends Migration
         Schema::table('projects', function (Blueprint $table) {
             $table->foreign('project_link')
                   ->references('id')
-                  ->on('users');
+                  ->on('teachers_info');
         });
 
         Schema::table('project_members', function (Blueprint $table) {
