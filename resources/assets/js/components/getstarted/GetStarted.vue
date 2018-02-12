@@ -56,7 +56,8 @@ export default {
     color: hsla(0,0%,100%,.6);
   }
   #getStarted {
-      background-color: #7F6ADD;
+      /* background-color: #7F6ADD; */
+      background: #4F00EF;
   }
   .koper {
     width: auto;
