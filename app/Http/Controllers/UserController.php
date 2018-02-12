@@ -14,6 +14,7 @@ use JWTAuth;
 use JWTException;
 
 use App\User;
+use App\StudentsInfo;
 
 class UserController extends Controller
 {
@@ -63,14 +64,24 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
             'username' => 'required:min:1',
             'password' => 'required|min:1',
             'role' => 'required|min:1',
-
+            'name' => 'required',
+            'email' => 'required',
+            'nis' => 'required',
+            'gender' => 'required',
         ]);
 
         $student = User::Create($request->all());
+
+        $student_info = StudentsInfo::Create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'nis' => $request->nis,
+            'gender' => $request->gender,
+            'id_students' => $student->id,
+        ]);
 
         if ($student) {
             $response = [

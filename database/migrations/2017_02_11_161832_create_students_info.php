@@ -25,7 +25,7 @@ class CreateStudentsInfo extends Migration
             $table->integer('id_class')->unsigned()->nullable();
             $table->integer('id_major')->unsigned()->nullable();
             $table->integer('id_students')->unsigned();
-            $table->enum('new', [0 , 1])->nullable();
+            $table->enum('new', [0 , 1])->default(0);
             $table->timestamps();
         });
 

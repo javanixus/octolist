@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+//    Relation One to one | User has Info user
+    public function InfoUser(){
+        return$this->hasOne('App/StudentsInfo', 'id_students');
+    }
+
+    public function InfoTeacher(){
+        return$this->hasOne('App/TeachersInfo', 'id_teachers');
+    }
+
+    public function InfoAdmin(){
+        return$this->hasOne('App/AdminsInfo', 'id_students');
+    }
 }
