@@ -67,12 +67,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required:min:1',
-            'nis' => 'required:min:1',
-            'username' => 'required|min:1',
-            'email' => 'required|email|unique:users|min:10',
-            'password' => 'required|min:5',
-            'phone' => 'unique:users|min:12|max:15',
+            'username' => 'required:min:1',
+            'password' => 'required|min:1',
+            'role' => 'required|min:1',
         ]);
 
         $student = User::Create($request->all());
@@ -83,15 +80,15 @@ class UserController extends Controller
                 'href' => '/v1/users',
                 'method' => 'GET',
             ];
-            return response()->json($response, 200);
         } else {
             $response = [
-                'msg' => 'User Created',
+                'msg' => 'False',
                 'href' => '/v1/user',
                 'method' => 'GET',
             ];
-            return response()->json($response, 200);
         }
+
+        return response()->json($response, 200);
     }
 
     public function update(Request $request)

@@ -60,6 +60,7 @@ class AuthController extends Controller
                 'method'=> 'POST',
                 'params'=> 'username, password',
             ];
+
             $response = [
                 'msg' => 'User Created',
                 'user' => $user,
@@ -73,7 +74,6 @@ class AuthController extends Controller
         ];
 
         return response()->json($response, 200);
-
     }
 
     public function signin(Request $request){
@@ -86,6 +86,7 @@ class AuthController extends Controller
         $password = $request->password;
 
         if ($user = User::where('username', $username)->first()){
+
             $credentials = [
                 'username'=> $username,
                 'password'=> $password,
@@ -103,37 +104,27 @@ class AuthController extends Controller
                 ], 500);
             }
 
-            $user->avatar = asset('avatar/'.$user->avatar);
-
+            if ($user->role == 1) {
+                $user->role= 'admin';
+            } elseif ($user->role == 2) {
+                $user->role = 'teacher';
+            } else {
+                $user->role = 'students';
+            }
 
             $response = [
-//                'href' =>  '/user/profile',
-                'msg' => '',
                 'passed' => true,
                 'user' => $user,
                 'token' => $token,
                 'redirect' => route('dashboard'),
             ];
 
-				JWTAuth::setToken($token);
-				// TokenSaver::$token = $token;
-//				return ['redirect' => route('dashboard'),'data' => $response];
-				// return redirect('/api/v1/dashboard')
-				// 													->withHeaders([
-				// 														'Content-Type' => 'application/json',
-				// 														'Accept' => 'application/json',
-				// 														'Authorization' => 'Bearer '.$token,
-				// 													]);
+             JWTAuth::setToken($token);
              return response()->json($response, 201);
-						// 							 ->withHeaders([
-						// 								 'Content-Type' 	=> 'application/json',
-						// 								 'Accept'					=> 'application/json',
-						// 								 'Authorization'	=> 'Bearer'.$token;
-						// 							 ]);
         }
 
         $response = [
-            'msg' =>  'Akun Tidak Terdaftar', // Jika Username tidak ada maka mengembalikan error ini
+            'msg' =>  'Akun Tidak Terdaftar',
         ];
 
         return response()->json($response, 201);
