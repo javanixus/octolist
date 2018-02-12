@@ -112,19 +112,19 @@ class UserController extends Controller
             ]);
 
 				$user = User::find($id);
-
+				$info = StudentsInfo::where('id_students',$id);
                 //security check if the codes right then the output should be true
 
 				if(Hash::check($request->codes,$user->password)){
 
-					$user->update($request->except(['password','codes','password_confirmation','avatar']));
+					$info->update($request->except(['password','codes','password_confirmation','avatar']));
 
 				if(null != $request->file('avatar')){
 					$file=$request->file('avatar');
 					$filename = $users->username . '-' . time() . '.png';
 					if($file){
                         Storage::disk('avatar')->put($filename,File::get($file));
-						$user->update([
+						$info->update([
 							'avatar'	=>	$filename,
 						]);
 					}
@@ -147,6 +147,7 @@ class UserController extends Controller
 		 $users = Auth::user();
 		 $id = $users->id;
 		 $user = User::find($id);
+		 $info = StudentsINfo::where('id_students',$id);
 
 		 if($request->hasFile('avatar')){
 		 	$file=$request->file('avatar');
@@ -154,12 +155,12 @@ class UserController extends Controller
 		 	if($file){
 
                 $exist = Storage::disk('avatar')->exists($user->avatar);
-		 	    if(isset($user->avatar) && $exist){
+		 	    if(isset($info->avatar) && $exist){
                     $delete_avatar = Storage::disk('avatar')->delete($user->avatar);
                 }
 
 		 		if(Storage::disk('avatar')->put($filename,File::get($file))){
-					if($user->update([
+					if($info->update([
 						'avatar' =>	$filename,
 					])){
 						$response = [
@@ -201,8 +202,10 @@ class UserController extends Controller
     public function destroy($id, Request $request)
     {
         $student = User::findOrFail($id);
+		  $info = StudentsInfo::where('id_students',$id);
         $delete_avatar = Storage::disk('avatar')->delete($student->avatar);
         $student->delete();
+		  $info->delete();
 
         $response = [
             'msg' => 'Siswa Berhasil dihapus',

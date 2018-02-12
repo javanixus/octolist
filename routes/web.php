@@ -14,7 +14,7 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
     });
     Route::get('/teacher', function (){
         return view('teacher');
-    });    
+    });
     Route::get('/profile', function(){
         return view('welcome');
     });
