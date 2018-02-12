@@ -3,9 +3,11 @@
     <header class="navbar">
       <div class="navbar--landing">
         <div class="button-forgotpass">
-          <a href="#" class="button button--xl button--nofill borderRadius-s">
-            Lupa Password
+        <router-link :to="{path: '/'}">
+          <a class="button button--xl button--nofill borderRadius-s">
+            Kembali
           </a>
+          </router-link>
         </div>
       </div>
     </header>
