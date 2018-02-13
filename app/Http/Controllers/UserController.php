@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 // use Storage;
@@ -223,6 +224,10 @@ class UserController extends Controller
 			];
 		}
 		 return response()->json($response);
+	 }
+
+	 public function resetPass(Request $request){
+		 Mail::to($request->email)->send(new ResetPassword());
 	 }
 
     public function destroy($id, Request $request)
