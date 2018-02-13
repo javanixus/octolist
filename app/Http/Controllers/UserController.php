@@ -49,7 +49,7 @@ class UserController extends Controller
     }
 
     public function show($id){
-        $student = StudentsInfo::findOrFail($id);
+        $student = StudentsInfo::where('id_students',$id)->get();
 
 
         $response = [

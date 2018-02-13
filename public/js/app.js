@@ -43078,7 +43078,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       "Authorization": 'Bearer ' + window.localStorage.getItem('token')
     }
   }).then(function (response) {
-    _this.dataUser = response.data.data;
+    _this.dataUser = response.data;
     // console.log(response);
   });
 }), _defineProperty(_beforeCreate$beforeC, 'data', function data() {

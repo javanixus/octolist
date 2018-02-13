@@ -90,7 +90,7 @@
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
+                this.dataUser = response.data
                 // console.log(response);
             })
         },
