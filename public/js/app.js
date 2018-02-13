@@ -41702,7 +41702,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             dataUser: []
         };
     },
-    beforeCreate: function beforeCreate() {
+    mounted: function mounted() {
         var _this = this;
 
         var key_id = window.localStorage.getItem('key');
@@ -42981,10 +42981,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__router__ = __webpack_require__(3);
-var _beforeCreate$beforeC;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -43058,76 +43054,81 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_beforeCreate$beforeC = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
     if (__WEBPACK_IMPORTED_MODULE_6__store_index__["a" /* default */].state.isLogged === false) {
       __WEBPACK_IMPORTED_MODULE_8__router__["a" /* default */].push('/logout');
     }
-  }
-}, _defineProperty(_beforeCreate$beforeC, 'beforeCreate', function beforeCreate() {
-  var _this = this;
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-  var key_id = window.localStorage.getItem('key');
-  // decrypt phase //
-  var becrypt_slice_one = key_id.slice(7);
-  var becrypt_zero = becrypt_slice_one / 100101010;
-  var becrypt_pharse = becrypt_zero / 8084334125;
-  // end decrypt //
-  __WEBPACK_IMPORTED_MODULE_7_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
-    headers: {
-      "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-    }
-  }).then(function (response) {
-    _this.dataUser = response.data;
-    // console.log(response);
-  });
-}), _defineProperty(_beforeCreate$beforeC, 'data', function data() {
-  return {
-    projectIds: [],
-    projectItems: [],
-    resizable: false,
-    adaptive: false,
-    draggable: false,
-    canBeShown: false,
-    state: null,
-    isOpened: false,
-    disabled: false,
-    dataUser: []
-  };
-}), _defineProperty(_beforeCreate$beforeC, 'methods', {
-  show: function show(resizable, adaptive, draggable) {
-    var _this2 = this;
-
-    this.resizable = resizable;
-    this.adaptive = adaptive;
-    this.draggable = draggable;
-    /*
-      $nextTick is required because the data model with new
-      "resizable, adaptive, draggable" values is not updated yet.. eh
-    */
-    this.$nextTick(function () {
-      _this2.$modal.show('create-project-modal');
-      _this2.$modal.show('profile-popup-modal');
-      _this2.$modal.show('report-popup-modal');
+    var key_id = window.localStorage.getItem('key');
+    // decrypt phase //
+    var becrypt_slice_one = key_id.slice(7);
+    var becrypt_zero = becrypt_slice_one / 100101010;
+    var becrypt_pharse = becrypt_zero / 8084334125;
+    // end decrypt //
+    __WEBPACK_IMPORTED_MODULE_7_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      }
+    }).then(function (response) {
+      _this.dataUser = response.data.data;
+      // console.log(response);
     });
   },
-  detected: function detected(e) {
-    this.state = e;
+  data: function data() {
+    return {
+      projectIds: [],
+      projectItems: [],
+      resizable: false,
+      adaptive: false,
+      draggable: false,
+      canBeShown: false,
+      state: null,
+      isOpened: false,
+      disabled: false,
+      dataUser: []
+    };
   },
-  popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
-    this.$modal.show('create-project-modal');
+
+  methods: {
+    show: function show(resizable, adaptive, draggable) {
+      var _this2 = this;
+
+      this.resizable = resizable;
+      this.adaptive = adaptive;
+      this.draggable = draggable;
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(function () {
+        _this2.$modal.show('create-project-modal');
+        _this2.$modal.show('profile-popup-modal');
+        _this2.$modal.show('report-popup-modal');
+      });
+    },
+    detected: function detected(e) {
+      this.state = e;
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('create-project-modal');
+    },
+    popupEditProfileSiswaClick: function popupEditProfileSiswaClick() {
+      this.$modal.show('editprofile-siswa-popup-modal');
+    }
   },
-  popupEditProfileSiswaClick: function popupEditProfileSiswaClick() {
-    this.$modal.show('editprofile-siswa-popup-modal');
+  components: {
+    'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
+    'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a,
+    'editprofile-siswa-popup': __WEBPACK_IMPORTED_MODULE_5__events_editProfileSiswaPopup___default.a
   }
-}), _defineProperty(_beforeCreate$beforeC, 'components', {
-  'dashboard-app': __WEBPACK_IMPORTED_MODULE_0__partials_dashboardBoard_vue___default.a,
-  'create-project': __WEBPACK_IMPORTED_MODULE_1__events_createProject_vue___default.a,
-  'profile-popup': __WEBPACK_IMPORTED_MODULE_2__events_profilemenuPopup_vue___default.a,
-  'confirm-popup': __WEBPACK_IMPORTED_MODULE_3__events_confirmPopup___default.a,
-  'report-popup': __WEBPACK_IMPORTED_MODULE_4__events_reportBugsPopup___default.a,
-  'editprofile-siswa-popup': __WEBPACK_IMPORTED_MODULE_5__events_editProfileSiswaPopup___default.a
-}), _beforeCreate$beforeC);
+});
 
 /***/ }),
 /* 140 */
@@ -43231,6 +43232,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
+var _mounted$data$compone;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -43325,8 +43330,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    beforeCreate: function beforeCreate() {
+/* harmony default export */ __webpack_exports__["default"] = (_mounted$data$compone = {
+    mounted: function mounted() {
         var _this = this;
 
         var key_id = window.localStorage.getItem('key');
@@ -43335,13 +43340,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var becrypt_zero = becrypt_slice_one / 100101010;
         var becrypt_pharse = becrypt_zero / 8084334125;
         // end decrypt //
-        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://localhost:8000/api/v1/user/' + becrypt_pharse, {
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://localhost:8000/api/v1/user/2', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
         }).then(function (response) {
             _this.dataUser = response.data.data;
             console.log(response);
+        }).catch(function (error) {
+            console.log(error);
         });
     },
     data: function data() {
@@ -43384,42 +43391,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // <div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>
         }
     },
-    props: ['content'],
-    mounted: function mounted() {
-        this.$el.innerText = this.content;
+    props: ['content']
+}, _defineProperty(_mounted$data$compone, 'mounted', function mounted() {
+    this.$el.innerText = this.content;
+}), _defineProperty(_mounted$data$compone, 'methods', {
+    toggleShow: function toggleShow() {
+        this.show = !this.show;
     },
-    methods: {
-        toggleShow: function toggleShow() {
-            this.show = !this.show;
-        },
-        editProfileAuth: function editProfileAuth() {
-            var _this2 = this;
+    editProfileAuth: function editProfileAuth() {
+        var _this2 = this;
 
-            var key_id_patch = window.localStorage.getItem('key');
-            // decrypt //
-            var becrypt_slice_one = key_id_patch.slice(7);
-            var becrypt_zero = becrypt_slice_one / 100101010;
-            var becrypt_pharse = becrypt_zero / 8084334125;
-            // end decrypt //
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse, this.dataUser, {
-                headers: {
-                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-                }
-            }).then(function (response) {
-                __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
-                _this2.dataUser = response.data.data;
-            });
-        },
-        cropUploadSuccess: function cropUploadSuccess() {
+        var key_id_patch = window.localStorage.getItem('key');
+        // decrypt //
+        var becrypt_slice_one = key_id_patch.slice(7);
+        var becrypt_zero = becrypt_slice_one / 100101010;
+        var becrypt_pharse = becrypt_zero / 8084334125;
+        // end decrypt //
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse, this.dataUser, {
+            headers: {
+                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+            }
+        }).then(function (response) {
             __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
-        }
+            _this2.dataUser = response.data.data;
+        });
     },
-    computed: {
-        editProfileIsPassed: function editProfileIsPassed() {
-            return this.dataUser.name && this.dataUser.phone && this.dataUser.email && this.dataUser.codes;
-        }
+    cropUploadSuccess: function cropUploadSuccess() {
+        __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
     }
-});
+}), _defineProperty(_mounted$data$compone, 'computed', {
+    editProfileIsPassed: function editProfileIsPassed() {
+        return this.dataUser.name && this.dataUser.phone && this.dataUser.email && this.dataUser.codes;
+    }
+}), _mounted$data$compone);
 
 /***/ }),
 /* 144 */

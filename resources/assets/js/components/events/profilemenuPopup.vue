@@ -47,7 +47,7 @@ export default {
           dataUser:[]
       }
   },
-        beforeCreate(){
+        mounted(){
             const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);

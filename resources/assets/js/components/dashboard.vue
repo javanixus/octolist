@@ -22,7 +22,7 @@
         </div>
         <div class="wrapper-profile right-menu">
           <div id="message" class="icon-bell marginTop-xs marginRight-s">
-            
+
           </div>
           <div id="bell" class="icon-message marginTop-xs marginRight-s">
 

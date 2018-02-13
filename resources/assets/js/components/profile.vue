@@ -77,7 +77,7 @@
         router.push('/logout')
       }
     },
-        beforeCreate(){
+        mounted(){
             const key_id = window.localStorage.getItem('key');
             // decrypt phase //
             const becrypt_slice_one = key_id.slice(7);
@@ -90,7 +90,7 @@
                 }
             })
             .then((response) => {
-                this.dataUser = response.data
+                this.dataUser = response.data.data
                 // console.log(response);
             })
         },

@@ -27,14 +27,14 @@ class UserController extends Controller
     {
         $que = $request->get('q');
         if (!empty($que)){
-            $students = StudentsInfo::Where('name', 'like', "%$que%");
+            $students = StudentsInfo::where('name', 'like', "%$que%")->get();
 
         } else {
             $students = StudentsInfo::all()->sortBy('name');
         }
         foreach($students as $student){
             $student->view_students = array(
-                'href' => '/api/v1/user/'.$student->id,
+                'href' => '/api/v1/user/'.$student->id_students,
                 'method' => 'GET',
             );
         }
@@ -55,7 +55,7 @@ class UserController extends Controller
         $response = [
             'msg' => "User Profile",
             'data' => $student,
-            'href' => "/api/v1/users",
+            'href' => "/api/v1/user/$id",
             'method' => "GET",
         ];
 
@@ -75,14 +75,15 @@ class UserController extends Controller
         ]);
 
         $student = User::Create($request->all());
-
-        $student_info = StudentsInfo::Create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'nis' => $request->nis,
-            'gender' => $request->gender,
-            'id_students' => $student->id,
-        ]);
+			if($request->role == 3){
+				$student_info = StudentsInfo::Create([
+					'name' => $request->name,
+					'email' => $request->email,
+					'nis' => $request->nis,
+					'gender' => $request->gender,
+					'id_students' => $student->id,
+				]);
+			}
 
         if ($student) {
             $response = [
