@@ -15,6 +15,7 @@ use JWTException;
 
 use App\User;
 use App\StudentsInfo;
+use App\Mail\ResetPassword;
 
 class UserController extends Controller
 {
@@ -77,9 +78,14 @@ class UserController extends Controller
         $student = User::Create($request->all());
 			if($request->role == 3){
 				$student_info = StudentsInfo::Create([
+					'nis' => $request->nis,
 					'name' => $request->name,
 					'email' => $request->email,
-					'nis' => $request->nis,
+					'bio'	=>	$request->bio,
+					'phone'	=> $request->phone,
+					'avatar' => $request->avatar,
+					'id_class' => $request->class,
+					'id_major' => $request->major,
 					'gender' => $request->gender,
 					'id_students' => $student->id,
 				]);
