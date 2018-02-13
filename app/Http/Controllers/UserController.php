@@ -56,8 +56,7 @@ class UserController extends Controller
         $student = StudentsInfo::where('id_students', $id)->get();
 
         $response = [
-            'msg' => "User Profile",
-            'data' => $student,
+            'profile'=> $student,
             'href' => "/api/v1/user/$id",
             'method' => "GET",
         ];
