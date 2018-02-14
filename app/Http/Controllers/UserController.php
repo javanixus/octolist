@@ -55,6 +55,8 @@ class UserController extends Controller
         $id = $users->id;
         $student = StudentsInfo::where('id_students', $id)->get();
 
+		 $student->avatar = 'public/avatar/'.$student->avatar;
+
         $response = [
             'profile'=> $student,
             'href' => "/api/v1/user/",
@@ -113,12 +115,17 @@ class UserController extends Controller
     {
 			$users = Auth::user();
 			$id = $users->id;
+			$a = StudentsInfo::where('id_students',$id)->get();
+			foreach($a as $user){
+				$id = $user->id;
+			// $b = $a->get()->id;
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
                 'email'=> "required|email|unique:students_info,email,$id",
                 'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
+			}
 
 				$user = User::find($id);
 				$info = StudentsInfo::where('id_students',$id);

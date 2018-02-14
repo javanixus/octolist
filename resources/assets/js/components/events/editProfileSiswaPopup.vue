@@ -159,8 +159,8 @@
                     }
                 })
                 .then((response) => {
-                    this.dataUser = response.data.profile[0];
-                    router.go('/profile');                    
+                    this.dataUser = response.data.profile;
+                    
                  })
             },
             cropUploadSuccess(){

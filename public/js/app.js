@@ -43285,8 +43285,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
             }).then(function (response) {
-                _this2.dataUser = response.data.profile[0];
-                __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
+                _this2.dataUser = response.data.profile;
             });
         },
         cropUploadSuccess: function cropUploadSuccess() {
