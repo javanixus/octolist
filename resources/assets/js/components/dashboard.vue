@@ -1,13 +1,13 @@
 <template lang="html">
   <div id="dashboard-core">
-    <detectNetwork @detected-condition="detected">
+    <!-- <detectNetwork @detected-condition="detected">
       <div slot="online"></div>
       <div slot="offline">
         <div class="loading high-noon">
           <p>Trying to connect to the serve.</p>
         </div>
       </div>
-    </detectNetwork>
+    </detectNetwork> -->
     <create-project />
     <confirm-popup />
     <profile-popup />
@@ -42,7 +42,7 @@
       <div class="content__header">
         <div class="header-menu">
           <div class="header-menu__right paddingRight-xxl">
-            <div id="add-task" style="max-width: 300px;" @click="popupCreateProjectClickOpen()" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue green-bg button-green">
+            <div id="add-task" style="max-width: 300px;" @click="popupCreateProjectClickOpen()" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue">
               Buat Project Baru
             </div>
           </div>

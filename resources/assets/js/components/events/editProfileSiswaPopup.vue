@@ -39,7 +39,7 @@
                             </div>
                             <div class="createProjectModal-footer modifyFooter">
                                 <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('editprofile-siswa-popup-modal')">Batalkan</div>
-                                <button :disabled="!editProfileIsPassed" @click.prevent="editProfileAuth" class="button button-landing button--xl borderRadius-s button--melting-blue green-bg">Update profile</button>
+                                <button :disabled="!editProfileIsPassed" @click.prevent="editProfileAuth" class="button button-landing button--xl borderRadius-s button--melting-blue">Update profile</button>
                             </div>
                         </div>
                     </form>

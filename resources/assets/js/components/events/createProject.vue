@@ -18,7 +18,7 @@
                 </form>
                 <div class="createProjectModal-footer modifyFooter">
                     <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('create-project-modal')">Batalkan</div>
-                    <div class="button button-landing button--xl borderRadius-s button--melting-blue green-bg" @click.prevent="createProject" :disabled="!createProjectIsPassed">Buat project</div>
+                    <div class="button button-landing button--xl borderRadius-s button--melting-blue" @click.prevent="createProject" :disabled="!createProjectIsPassed">Buat project</div>
                 </div>
             </div>
         </div>

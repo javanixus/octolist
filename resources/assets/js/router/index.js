@@ -46,7 +46,7 @@ export default new Router({
       name: 'board'
     },
     {
-      path: '/getstarted/profile-setup',
+      path: '/start/setup',
       component: ProfileSetup,
     },
     {
@@ -58,7 +58,7 @@ export default new Router({
       component: nothing,
     },
     {
-      path: '/getstarted',
+      path: '/start',
       component: GetStarted,
       name: GetStarted
     },

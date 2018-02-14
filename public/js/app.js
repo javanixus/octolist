@@ -558,7 +558,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
     component: __WEBPACK_IMPORTED_MODULE_7__components_board___default.a,
     name: 'board'
   }, {
-    path: '/getstarted/profile-setup',
+    path: '/start/setup',
     component: __WEBPACK_IMPORTED_MODULE_12__components_getstarted_profile_setup___default.a
   }, {
     path: '/profile',
@@ -567,7 +567,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
     path: '/404',
     component: __WEBPACK_IMPORTED_MODULE_9__components_404___default.a
   }, {
-    path: '/getstarted',
+    path: '/start',
     component: __WEBPACK_IMPORTED_MODULE_10__components_getstarted_GetStarted___default.a,
     name: __WEBPACK_IMPORTED_MODULE_10__components_getstarted_GetStarted___default.a
   }, {
@@ -33228,7 +33228,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
+                  "button button-landing button--xl borderRadius-s button--melting-blue",
                 attrs: { disabled: !_vm.createProjectIsPassed },
                 on: {
                   click: function($event) {
@@ -42351,16 +42351,6 @@ var render = function() {
     "div",
     { attrs: { id: "dashboard-core" } },
     [
-      _c("detectNetwork", { on: { "detected-condition": _vm.detected } }, [
-        _c("div", { attrs: { slot: "online" }, slot: "online" }),
-        _vm._v(" "),
-        _c("div", { attrs: { slot: "offline" }, slot: "offline" }, [
-          _c("div", { staticClass: "loading high-noon" }, [
-            _c("p", [_vm._v("Trying to connect to the serve.")])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c("create-project"),
       _vm._v(" "),
       _c("confirm-popup"),
@@ -42437,7 +42427,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "button button-landing fontSize-s button--xl borderRadius-s button--melting-blue green-bg button-green",
+                    "button button-landing fontSize-s button--xl borderRadius-s button--melting-blue",
                   staticStyle: { "max-width": "300px" },
                   attrs: { id: "add-task" },
                   on: {
@@ -45427,7 +45417,7 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "button button-landing button--xl borderRadius-s button--melting-blue green-bg",
+                          "button button-landing button--xl borderRadius-s button--melting-blue",
                         attrs: { disabled: !_vm.editProfileIsPassed },
                         on: {
                           click: function($event) {
