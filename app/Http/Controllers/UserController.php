@@ -182,16 +182,16 @@ class UserController extends Controller
 		 $users = Auth::user();
 		 $id = $users->id;
 		 $user = User::find($id);
-		 $info = StudentsInfo::where('id_students',$id);
+		 $info = StudentsInfo::where('id_students',$id)->get()->first();
 
 		 if($request->hasFile('avatar')){
 		 	$file=$request->file('avatar');
 		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
 		 	if($file){
 
-                $exist = Storage::disk('avatar')->exists($user->avatar);
+                $exist = Storage::disk('avatar')->exists($info->avatar);
 		 	    if(isset($info->avatar) && $exist){
-                    $delete_avatar = Storage::disk('avatar')->delete($user->avatar);
+                    $delete_avatar = Storage::disk('avatar')->delete($info->avatar);
                 }
 
 		 		if(Storage::disk('avatar')->put($filename,File::get($file))){
@@ -239,7 +239,7 @@ class UserController extends Controller
     {
         $student = User::findOrFail($id);
 		  $info = StudentsInfo::where('id_students',$id);
-        $delete_avatar = Storage::disk('avatar')->delete($student->avatar);
+        $delete_avatar = Storage::disk('avatar')->delete($info->avatar);
 		  $info->delete();
         $student->delete();
 
