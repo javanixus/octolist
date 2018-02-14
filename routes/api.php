@@ -8,6 +8,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/login', 'UserController@login');
 
+Route::post('/resetPass','UserController@resetPassReq');
+
 Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
     Route::get('/users', 'UserController@index');

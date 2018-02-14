@@ -226,9 +226,6 @@ class UserController extends Controller
 		 return response()->json($response);
 	 }
 
-	 public function resetPass(Request $request){
-		 Mail::to($request->email)->send(new ResetPassword());
-	 }
 
     public function destroy($id, Request $request)
     {

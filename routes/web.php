@@ -18,4 +18,9 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
     Route::get('/profile', function(){
         return view('welcome');
     });
+
+	 Route::post('/resetPass','UserController@resetPassReq');
+	 Route::get('/resetPass',function(){
+		 return view('password');
+	 });
 });
