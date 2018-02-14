@@ -54,7 +54,7 @@ export default {
                 }
             })
             .then((response) => {
-                this.dataUser = response.data
+                this.dataUser = response.data.profile;
                 // console.log(response);
             })
     },

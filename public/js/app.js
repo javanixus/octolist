@@ -33361,7 +33361,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
         }).then(function (response) {
-            _this.dataUser = response.data;
+            _this.dataUser = response.data.profile;
             // console.log(response);
         });
     }
