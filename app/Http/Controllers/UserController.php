@@ -78,7 +78,8 @@ class UserController extends Controller
             'gender' => 'required',
         ]);
 
-        $student = User::Create($request->all());
+        // $student = User::Create($request->all());
+				$student = User::Create($request->only(['username','password','role']));
 			if($request->role == 3){
 				$student_info = StudentsInfo::Create([
 					'nis' => $request->nis,
@@ -239,8 +240,8 @@ class UserController extends Controller
         $student = User::findOrFail($id);
 		  $info = StudentsInfo::where('id_students',$id);
         $delete_avatar = Storage::disk('avatar')->delete($student->avatar);
-        $student->delete();
 		  $info->delete();
+        $student->delete();
 
         $response = [
             'msg' => 'Siswa Berhasil dihapus',
