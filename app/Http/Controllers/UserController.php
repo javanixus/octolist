@@ -126,14 +126,18 @@ class UserController extends Controller
                 'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
 
-				$info = StudentsInfo::where('id_students',$idusers);
+            $info = StudentsInfo::where('id_students',$idusers)->get()->first();
                 //security check if the codes right then the output should be true
 
-				if(Hash::check($request->codes,$user->password)){
+				if(Hash::check($request->codes,$users->password)){
 
 					if($info->update($request->except(['password','codes','password_confirmation','avatar']))){
+
+					    $info->avatar = 'avatar/'.$info->avatar;
+
 						$response = [
-								'msg' => 'User Berhasil diedit',
+						        'profile' => $info,
+						        'msg' => 'User Berhasil diedit',
 								'href' => '/v1/users',
 								'method' => 'GET',
 						];
@@ -162,7 +166,7 @@ class UserController extends Controller
 					];
 				}
 
-				return response()->json($user);
+				return response()->json($response);
     }
 
 	 public function update_avatar(Request $request)
