@@ -29,7 +29,7 @@
           </div>
           <div class="profile-badge">
             <a href="javascript:void(0)"></a>
-            <div class="border-gradient">
+            <div class="borderProfile">
               <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
                 <img class="avatar-img" :src="dataUser.avatar" alt="" />
               </div>

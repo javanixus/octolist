@@ -53,10 +53,6 @@
         margin-left: 15px;
         font-size: 14px;
     }
-
-    .red-bg {
-        background: #ec008c;
-    }
 </style>
 
 <script>

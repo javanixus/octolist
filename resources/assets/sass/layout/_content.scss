@@ -312,11 +312,11 @@
   }
 }
 
-.border-gradient {
+.borderProfile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  background: $blue;
 }
 
 .component-notification,

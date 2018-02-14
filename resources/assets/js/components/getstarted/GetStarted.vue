@@ -11,11 +11,7 @@
         <div class="titleHelloDesc">
             <h2 class="h2Hello">Wrapping up With One Tools</h2>
             <p class="getStarted-desc">with Octolist u can set deadline event also wrap up html , css , php</p>
-            <router-link :to="{path: '/getstarted/profile-setup'}">
-                <a class="button button-landing button--xl borderRadius-s button--melting-blue">
-                      Let's begin
-                </a>
-            </router-link> 
+            <button @click.prevent="startedNext()" class="button button-landing button--xl borderRadius-s button--melting-blue">Let's Begin</button>
         </div>
         </div>
     </div>
@@ -125,7 +121,15 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  import store from './../../store/index';
+  import router from './../../router';
 export default {
+    methods: {
+        startedNext(){
+            router.push('/start/setup');
+        }
+    }
 }
 </script>
 

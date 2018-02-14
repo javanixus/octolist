@@ -71,10 +71,6 @@
         margin-left: 15px;
         font-size: 14px;
     }
-
-    .red-bg {
-        background: #ec008c;
-    }
     .createProjectForm p {
         font-size: 14px;
         text-align: left;

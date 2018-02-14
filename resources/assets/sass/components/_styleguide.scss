@@ -24,6 +24,10 @@ $alert: #ffcc00;
 $done: #1FBF86;
 .blue-bg { background-color:$blue!important;}
 .green-bg { background-color:$done!important;}
+.red-bg {background-color: #FF4949;
+  &:active {
+    background-color: rgb(207, 60, 60);
+}}
 // end of Color Scheme //
 
 //border-radius Scheme //
@@ -84,25 +88,25 @@ h3 {font-size: 38px;}
 
 // button structure //
 .button { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; user-select: none; outline-style: none; text-decoration: none; transition: .1s ease-out; cursor: pointer; border:none;}
-.button--xl { max-width: 88px;max-height: 34px;font-size: 16px; padding: 10px 20px; }
-.button--l { max-width: 84px;max-height: 32px;font-size: 14px; padding: 8px 18px; }
-.button--m { max-width: 82px;max-height: 28px;font-size: 12px; padding: 6px 16px; }
-.button--s { max-width: 80px;max-height: 24px;font-size: 10px; padding: 4px 14px; }
-.button--xs { max-width: 98px;max-height: 22px;font-size: 8px; padding: 2px 12px; }
+.button--xl { font-size: 16px; padding: 10px 20px; }
+.button--l { font-size: 14px; padding: 8px 18px; }
+.button--m { font-size: 12px; padding: 6px 16px; }
+.button--s { font-size: 10px; padding: 4px 14px; }
+.button--xs { font-size: 8px; padding: 2px 12px; }
 .button--melting-blue { -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16); }
-.button--melting-green {-webkit-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16); }
-.button--nofill {
-  background: transparent!important;
-  border: 2px solid #6189e0!important;
-  box-shadow: none!important;
-  color: $blue !important;
-  &:hover {
-    color: #fff!important;
-    border-color: $blue !important;
-    background: $blue !important;
-    -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16)!important;
-  }
-}
+// .button--melting-green {-webkit-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16); }
+// .button--nofill {
+//   background: transparent!important;
+//   border: 2px solid #6189e0!important;
+//   box-shadow: none!important;
+//   color: $blue !important;
+//   &:hover {
+//     color: #fff!important;
+//     border-color: $blue !important;
+//     background: $blue !important;
+//     -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16)!important;
+//   }
+// }
 .button-group {
   position: relative;
   display: -ms-inline-flexbox;
