@@ -24,7 +24,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 //    Route::get('/users/{q}', 'UserController@index');
 
-    Route::patch('/user/', 'UserController@update');
+    Route::patch('/user', 'UserController@update');
 
 	 Route::post('/user/avatarUpload','UserController@update_avatar');
 
@@ -35,11 +35,13 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 			Route::get('/dashboard','UserController@home')->name('dashboard');
 
-			Route::post('teacher/signup','TeacherController@store');
+			Route::post('/teacher','TeacherController@store');
 
-			Route::post('/project/create','ProjectController@store');
+			Route::post('teacher/avatarUpload','TeacherController@update_avatar');
 
 			Route::patch('/profile/teacher/edit/','TeacherController@update');
+
+			Route::post('/project/create','ProjectController@store');
 
 			Route::post('/project/{id}/member/add/','ProjectMemberController@store');
 

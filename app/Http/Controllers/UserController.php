@@ -79,7 +79,7 @@ class UserController extends Controller
         ]);
 
         // $student = User::Create($request->all());
-				$student = User::Create($request->only(['username','password','role']));
+			$student = User::Create($request->only(['username','password','role']));
 			if($request->role == 3){
 				$student_info = StudentsInfo::Create([
 					'nis' => $request->nis,
