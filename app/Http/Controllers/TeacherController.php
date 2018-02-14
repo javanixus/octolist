@@ -134,30 +134,32 @@ class TeacherController extends Controller
 		public function store(Request $request)
 		{
 				$this->validate($request, [
-						'name' 			=> 'required:min:1',
-						'username'  => 'required|min:1',
-						'email' 			=> 'required|email|min:10',
-						'password' 	=> 'required|min:5|confirmed',
-						'gender'		=> 'required',
-						'phone'			=> 'nullable|min:12|numeric',
+				    'username' => 'required',
+                    'password' => 'required',
+                    'role' => 'required',
+//                    Personal Information
+                    'nip' => 'required',
+                    'name' => 'required',
+                    'email' => 'required',
+                    'gender' => 'required',
+                    'phone' => 'required',
 				]);
 
-				$student = User::Create($request->only(['username','password','role']));
-
+				$teacher = User::Create($request->only(['username','password','role']));
 				if($request->role == 2){
-					$student_info = TeachersInfo::Create([
+					$teacher_info = TeachersInfo::Create([
 						'nip' => $request->nip,
 						'name' => $request->name,
 						'email' => $request->email,
 						'bio'	=>	$request->bio,
-						'phone'	=> $request->phone,
-						'avatar' => $request->avatar,
-						'gender' => $request->gender,
-						'id_teachers' => $student->id,
+                        'gender' => $request->gender,
+                        'phone'	=> $request->phone,
+//						'avatar' => $request->avatar,
+						'id_teachers' => $teacher->id,
 					]);
 				}
 
-	        if ($student) {
+	        if ($teacher) {
 	            $response = [
 	                'msg' => 'User Berhasil dibuat',
 	                'href' => '/v1/users',
