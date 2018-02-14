@@ -160,7 +160,7 @@
                 })
                 .then((response) => {
                     this.dataUser = response.data.profile;
-                    
+                    console.log(response);
                  })
             },
             cropUploadSuccess(){
