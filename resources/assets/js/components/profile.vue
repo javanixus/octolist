@@ -86,8 +86,8 @@
                   }
               })
               .then((response) => {
-                  this.dataUser = response.data.profile[0]
-                  // console.log(response);
+                  this.dataUser = response.data.profile
+//                   console.log(response.data.profile);
               })
             } else {
               router.push('/logout')

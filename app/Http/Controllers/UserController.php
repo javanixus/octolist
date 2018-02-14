@@ -53,9 +53,9 @@ class UserController extends Controller
     public function show(){
         $users = Auth::user();
         $id = $users->id;
-        $student = StudentsInfo::where('id_students', $id)->get();
+        $student = StudentsInfo::where('id_students', $id)->get()->first();
 
-		 $student->avatar = 'public/avatar/'.$student->avatar;
+        $student->avatar = '/avatar/'.$student->avatar;
 
         $response = [
             'profile'=> $student,

@@ -8411,9 +8411,9 @@ vuedraggable@^2.16.0:
   dependencies:
     sortablejs "^1.7.0"
 
-vuetable-2@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/vuetable-2/-/vuetable-2-1.7.2.tgz#f58090328cff04d40c3dc89fee01213c6351562a"
+vuetable-2@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/vuetable-2/-/vuetable-2-1.7.5.tgz#7528c817279ccb774d9e26a169f1d19695b77310"
   dependencies:
     axios "^0.15.3"
 
