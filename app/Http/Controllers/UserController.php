@@ -115,21 +115,18 @@ class UserController extends Controller
     public function update(Request $request)
     {
 			$users = Auth::user();
-			$id = $users->id;
-			$a = StudentsInfo::where('id_students',$id)->get();
-			foreach($a as $user){
-				$id = $user->id;
-			// $b = $a->get()->id;
+			$idusers = $users->id;
+            $user = StudentsInfo::where('id_students',$idusers)->get()->first();
+            $id = $user->id;
+
 			$this->validate($request , [
                 'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
                 'name' => 'required|min:6',
                 'email'=> "required|email|unique:students_info,email,$id",
                 'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
             ]);
-			}
 
-				$user = User::find($id);
-				$info = StudentsInfo::where('id_students',$id);
+				$info = StudentsInfo::where('id_students',$idusers);
                 //security check if the codes right then the output should be true
 
 				if(Hash::check($request->codes,$user->password)){
@@ -148,16 +145,6 @@ class UserController extends Controller
 						];
 					}
 
-				// if(null != $request->file('avatar')){
-				// 	$file=$request->file('avatar');
-				// 	$filename = $users->username . '-' . time() . '.png';
-				// 	if($file){
-        //                 Storage::disk('avatar')->put($filename,File::get($file));
-				// 		$info->update([
-				// 			'avatar'	=>	$filename,
-				// 		]);
-				// 	}
-				// }
 
 					if(null != $request->input('password') && null != $request->input('password_confirmation')){
 						if($request->input('password') == $request->input('password_confirmation')){
@@ -174,6 +161,7 @@ class UserController extends Controller
 							'method' => 'GET',
 					];
 				}
+
 				return response()->json($user);
     }
 
