@@ -102,7 +102,7 @@
             })
             .then((response) => {
                 this.dataUser = response.data.profile[0]
-                // console.log(response);
+                console.log(response);
             })
         },
         data() {

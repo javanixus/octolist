@@ -43226,7 +43226,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         }).then(function (response) {
             _this.dataUser = response.data.profile[0];
-            // console.log(response);
+            console.log(response);
         });
     },
     data: function data() {
