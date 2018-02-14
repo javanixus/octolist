@@ -57,7 +57,7 @@ class UserController extends Controller
 
         $response = [
             'profile'=> $student,
-            'href' => "/api/v1/user/$id",
+            'href' => "/api/v1/user/",
             'method' => "GET",
         ];
 

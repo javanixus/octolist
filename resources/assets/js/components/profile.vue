@@ -84,13 +84,13 @@
             const becrypt_zero = becrypt_slice_one / 100101010;
             const becrypt_pharse = becrypt_zero / 8084334125;
             // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+            axios.get('http://localhost:8000/api/v1/user/', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
+                this.dataUser = response.data.profile
                 // console.log(response);
             })
         },
