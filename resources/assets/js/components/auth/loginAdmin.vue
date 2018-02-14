@@ -9,7 +9,7 @@
                         Login untuk Admin
                     </h4>
                     <p class="adminLoginFormTitle__Desc">
-                        masukkan dll iewqjelqwj
+                        
                     </p>
                 </div>
                 <form action="POST">
@@ -19,7 +19,7 @@
                     <p>Password</p>
                     <input type="text" class="input--default input--default-full input-text fontSize-s" placeholder="password" name="passwordAdmin" id="passwordAdmin" v-model="this.AdminAuth.password">
                     <div class="adminLoginFormCore__button">
-                        <button class="button button-landing button--xl borderRadius-s button--melting-blue">Masuk</button>
+                        <button :class="{'loading':logItIn.loader}" class="button button-landing button--xl borderRadius-s button--melting-blue">Masuk</button>
                     </div>
                 </div>
             </form>
@@ -38,7 +38,9 @@ export default {
                 username:'',
                 password:''
             },
-            imageCover: 'http://localhost:8000/images/gradient1.svg'
+            logItIn: {
+                loader: true,
+            }
         }
     }
 }

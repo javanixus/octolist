@@ -2,17 +2,18 @@
 .adminLoginContainter{
     display: flex;
     .adminLogin__Cover{
-        width: 60vw;
+        width: 70vw;
         height: 100vh;
-        background-image: url('http://localhost:8000/images/gradient1.svg');
+        background-image: url('http://localhost:8000/images/login.jpg');
+        // filter: blur(1px);
         background-size: cover;
     }
     .adminLogin__Form{
-        width: 40vw;
+        width: 30vw;
         height: 100vh;
         background: white;
         padding: 30px;
-        border-right: 1px solid #e6e6e6;
+        border-left: 1px solid #e6e6e6;
         display: block;
     }
 }
@@ -60,7 +61,5 @@
     color: red;
 }
 
-.adminDashboard__Main {
-
-
-}
+// .adminDashboard__Main {
+// }

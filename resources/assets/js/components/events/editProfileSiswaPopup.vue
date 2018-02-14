@@ -101,7 +101,7 @@
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.profile[0]
+                this.dataUser = response.data.profile;
                 console.log(response);
             })
         },
