@@ -29,7 +29,7 @@ class AdminController extends Controller
 			}
 			foreach($students as $student){
 					$student->view_students = array(
-							'href' => '/api/v1/admin/'.$student->id_admins,
+							'href' => '/api/v1/admins/'.$student->id_admins,
 							'method' => 'GET',
 					);
 			}
