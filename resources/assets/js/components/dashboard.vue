@@ -107,24 +107,25 @@
   import getStarted from './events/getStartedPopup';
 
   export default {
-    mounted(){
+    beforeCreate(){
+      if(store.state.keyBypass === false){
+        router.push('/logout')
+      }
+    },
+    beforeCreate(){
       if (store.state.isLogged){
-        const key_id = window.localStorage.getItem('key');
-            // decrypt phase //
-            const becrypt_slice_one = key_id.slice(7);
-            const becrypt_zero = becrypt_slice_one / 100101010;
-            const becrypt_pharse = becrypt_zero / 8084334125;
-            // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+          axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
+                this.dataUser = response.data.profile[0];
                 console.log(response);
                 this.$modal.show('getstarted-siswa-popup-modal');
           })
+      } else {
+        router.push('/logout')
       }
     },
     data(){

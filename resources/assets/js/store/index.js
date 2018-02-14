@@ -11,7 +11,7 @@ const state = {
 const mutations = {
   LOGIN_USER(state) {
     state.isLogged = true;
-    state.keyBypass = window.localStorage.getItem('key');
+    state.keyBypass = window.localStorage.getItem('key') + window.localStorage.getItem('token');
   },
 
   LOGOUT_USER(state) {

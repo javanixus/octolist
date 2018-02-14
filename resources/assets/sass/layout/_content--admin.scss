@@ -1,18 +1,66 @@
-// navbar 
-.sideNavbar {
-  height: 100vh;
-  padding: 30px 10px;
-  background: #161616;
-  max-width: 60px;
-  float: left;
+// loginpage 
+.adminLoginContainter{
+    display: flex;
+    .adminLogin__Cover{
+        width: 60vw;
+        height: 100vh;
+        background-image: url('http://localhost:8000/images/gradient1.svg');
+        background-size: cover;
+    }
+    .adminLogin__Form{
+        width: 40vw;
+        height: 100vh;
+        background: white;
+        padding: 30px;
+        border-right: 1px solid #e6e6e6;
+        display: block;
+    }
+}
+.adminLoginFormCore {
+    margin-top: 60px;
+    input {
+        display: block;
+    }
+    p {
+        margin: 15px 0;
+    }
+    .adminLoginFormCore__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 30px 0;    
+    }
+}
+// main core
+.adminDashboard__Navbar {
+    width: 100%;
+    height: 50px;
+    background: #777EE0;
+    position: fixed;
+}
+.adminDashboard__Main {
+    padding: 60px 15px 15px 15px;
 }
 
-// content wrap
-.contentDash {
-  float: left;
-  width: 300px;
-  height: 200px;
-  &::after, &::before{
-    clear: both;
-  }
+.adminDashboardNavbarExtends {
+    display: inline-flex;
+    align-items: center;
+    height: inherit;
+    ul li {
+        margin: 0 15px;
+        color: white;
+        display: inline-flex;
+        list-style-type: none;
+        cursor: pointer;
+    }
+}
+
+.adminDashboardNavbarExtendsActive {
+    color: red;
+}
+
+.adminDashboard__Main {
+
+
 }

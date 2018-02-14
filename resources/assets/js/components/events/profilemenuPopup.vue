@@ -47,21 +47,15 @@ export default {
           dataUser:[]
       }
   },
-        mounted(){
-            const key_id = window.localStorage.getItem('key');
-            // decrypt phase //
-            const becrypt_slice_one = key_id.slice(7);
-            const becrypt_zero = becrypt_slice_one / 100101010;
-            const becrypt_pharse = becrypt_zero / 8084334125;
-            // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/' , {
+        beforeCreate(){
+            axios.get('http://localhost:8000/api/v1/user' , {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
-                console.log(response);
+                this.dataUser = response.data
+                // console.log(response);
             })
     },
 }

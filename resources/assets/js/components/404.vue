@@ -37,4 +37,8 @@ export default {
   background: white!important;
   height: 100vh;
 }
+
+.wrapper-nothingpage-bigtitle h1{
+  font-size: 100px;
+}
 </style>
