@@ -1,7 +1,7 @@
 @import "./../components/styleguide";
 
 .content {
-  width: 67.44rem;
+  width: 80.44vw;
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -303,6 +303,7 @@
 }
 
 .avatar-dp {
+  cursor: pointer;
   &:hover {
     width: 30px;
     height: 30px;
@@ -491,6 +492,10 @@
     }
   }
 }
+.modifyFooter {
+  width: 100%;
+}
+
 // popup editprofile
 
 .editProfileSiswaMenuPopup__Header {

@@ -1,5 +1,5 @@
 <template>
-    <modal name="getstarted-siswa-popup-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.5" transition="nice-modal-fade" :min-width="300" :min-height="200" :adaptive="true" :reset="true" width="20%" height="auto" :scrollable="true" :clickToClose="true">
+    <modal name="getstarted-siswa-popup-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.5" transition="nice-modal-fade" :min-width="300" :min-height="200" :adaptive="true" :reset="true" width="20%" height="auto" :clickToClose="true">
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content nopadding">
                 <div class="profileMenuPopupWrapper">
@@ -61,20 +61,14 @@ export default {
       }
   },
         beforeCreate(){
-            const key_id = window.localStorage.getItem('key');
-            // decrypt phase //
-            const becrypt_slice_one = key_id.slice(7);
-            const becrypt_zero = becrypt_slice_one / 100101010;
-            const becrypt_pharse = becrypt_zero / 8084334125;
-            // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/' + becrypt_pharse , {
+            axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
-                console.log(response);
+                this.dataUser = response.data.profile[0];
+                // console.log(response);
             })
     },
 }

@@ -19,20 +19,12 @@
       <div class="wrapper-about1">
         <div class="about1-header">
           <h1>It's about</h1>
-          <h1>Build a </h1>
-          <span>
-            <h1 id="typed" style="white-space:pre; margin-top: -8rem;margin-left: 21rem;"></h1>
-          </span>
+          <h1>Build a Teamwork</h1>
         </div>
         <div class="text--grey-detail">
           <p>Interesting team management , its will help you and your team very much. Its a semi-git and a fusioner web , octolist can do much as u want. Creating your team , creating project , meeting with your friend. </p>
         </div>
         <div class="blue-panel"></div>
-        <div id="typed-strings">
-          <p>Happiness</p>
-          <p>Together</p>
-          <p>Teamwork</p>
-        </div>
       </div>
     </div>
     <div class="about2">
@@ -43,13 +35,13 @@
         </div>
         <div class="pic-user">
           <div class="avatar avatar--xl avatar--glow pic-user-1">
-            <img src="/resources/assets/images/avatar0.jpg" alt="" class="avatar-img">
+            <img src="/images/avatar0.jpg" alt="" class="avatar-img">
           </div>
           <div class="avatar avatar--m avatar--glow pic-user-2">
-            <img src="/resources/assets/images/kecil6.jpg" alt="" class="avatar-img">
+            <img src="/images/kecil6.jpg" alt="" class="avatar-img">
           </div>
           <div class="avatar avatar--l avatar--glow pic-user-3">
-            <img src="/resources/assets/images/kecil5.jpg" alt="" class="avatar-img">
+            <img src="/images/kecil5.jpg" alt="" class="avatar-img">
           </div>
         </div>
         <div class="desc-about2">
@@ -59,32 +51,35 @@
           <div class="content__items">
             <div class="project">
               <div class="project__content" style="justify-content: center;">
-                <div class="project-item" style="border: 0;">
+                <div class="project-item" style="border: none;">
                   <div class="project-item__header">
-                    <span class="overlay-dark"><a href="javascript:void(0)"><img class="icon" src="/resources/assets/svg/edit.svg" alt=""></a></span>
-                    <img src="/resources/assets/images/dragon-girl.png" alt="">
+                    <span class="overlay-dark">
+                      <a href="javascript:void(0)">
+                        <img class="icon" src="images/edit.svg" alt="" />
+                      </a>
+                    </span>
+                    <img src="images/dragon-girl.png" alt="" />
                   </div>
                   <div class="project-item__content">
-                    <h5>Typography Culture</h5>
+                    <h5>
+                      Typography Culture
+                    </h5>
                     <div class="content-red">
                       <div class="content-desc">
                         <div class="content-people">
-                          <img src="/resources/assets/images/kecil1.png" alt="">
-                          <img src="/resources/assets/images/kecil6.jpg" alt="">
-                          <img src="/resources/assets/images/kecil5.jpg" alt="">
+                          <img src="images/kecil1.png" alt="" />
+                          <img src="images/kecil6.jpg" alt="" />
+                          <img src="images/kecil5.jpg" alt="" />
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="project-item__footer">
                     <div class="project-item__footer-items">
-                      <span>Add people</span>
-                    </div>
-                    <div class="project-item__footer-items">
-                      <span>Details</span>
+                      <span>Open project</span>
                     </div>
                   </div>
-                </div>
+              </div>
               </div>
             </div>
           </div>

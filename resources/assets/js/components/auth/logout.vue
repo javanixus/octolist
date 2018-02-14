@@ -7,9 +7,6 @@
   import router from './../../router';
   
   export default {
-        beforeCreate() {
-            window.localStorage.removeItem('key');
-        },
         mounted() {
             window.localStorage.removeItem('token');
             store.commit('LOGOUT_USER');

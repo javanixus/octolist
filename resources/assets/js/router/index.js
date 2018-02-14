@@ -12,12 +12,10 @@ import DashboardSiswa from './../components/board';
 import Profile from './../components/profile';
 import nothing from './../components/404';
 import GetStarted from './../components/getstarted/GetStarted';
-import GetStartedWelcome from './../components/getstarted/hello';
 import About from './../components/about';
 import ProfileSetup from './../components/getstarted/profile-setup';
-import AdminDashboard from './../components/dashboard/admin-dashboard';
-import TeacherDashboard from './../components/teacher/dashboardTeacher';
-import loginTeacher from './../components/auth/loginTeacher';
+import adminDashboard from './../components/admin/adminDashboard';
+import loginAdmin from './../components/auth/loginAdmin';
 
 // exec
 Vue.use(Router);
@@ -65,24 +63,16 @@ export default new Router({
       name: GetStarted
     },
     {
-      path: '/getstarted/hello',
-      component: GetStartedWelcome
-    },
-    {
       path: '/about',
       component: About
     },
     {
       path: '/admin',
-      component: AdminDashboard
+      component: adminDashboard
     },
     {
-      path: '/teacher/login',
-      component: loginTeacher
-    },
-    {
-      path: '/teacher',
-      component: TeacherDashboard
+      path: '/admin/login',
+      component: loginAdmin
     },
     {
       path: '/logout',

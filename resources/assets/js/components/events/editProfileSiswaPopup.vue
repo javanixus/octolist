@@ -68,7 +68,7 @@
     .button--xl {
         max-width: 200px!important;
         max-height: 50px!important;
-        margin-right: 15px;
+        margin-left: 15px;
         font-size: 14px;
     }
 
@@ -94,19 +94,14 @@
 
     export default {
         mounted(){
-            const key_id = window.localStorage.getItem('key');
-            // decrypt phase //
-            const becrypt_slice_one = key_id.slice(7);
-            const becrypt_zero = becrypt_slice_one / 100101010;
-            const becrypt_pharse = becrypt_zero / 8084334125;
             // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/2', {
+            axios.get('http://localhost:8000/api/v1/user/', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data.data
+                this.dataUser = response.data
                 console.log(response);
             })
 				.catch((error) => {
@@ -161,24 +156,18 @@
                 this.show = !this.show;
             },
             editProfileAuth() {
-                const key_id_patch = window.localStorage.getItem('key');
-                // decrypt //
-                const becrypt_slice_one = key_id_patch.slice(7);
-                const becrypt_zero = becrypt_slice_one / 100101010;
-                const becrypt_pharse = becrypt_zero / 8084334125;
-                // end decrypt //
-                axios.patch('http://localhost:8000/api/v1/user/' + becrypt_pharse , this.dataUser, {
+                axios.patch('http://localhost:8000/api/v1/user', this.dataUser, {
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }
                 })
                 .then((response) => {
-                    router.go('/profile')
+                    // router.go('/profile')
                     this.dataUser = response.data.data;
                  })
             },
             cropUploadSuccess(){
-                router.go('/profile')
+                // router.go('/profile')
 			},
         },
         computed: {
