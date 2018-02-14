@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class StudentsInfo extends Model
+class TeachersInfo extends Model
 {
 		protected $table = 'teachers_info';
 		protected $fillable = [
