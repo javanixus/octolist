@@ -93,20 +93,17 @@
     import router from './../../router'
 
     export default {
-        mounted(){
+        beforeCreate(){
             // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user/', {
+            axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
             })
             .then((response) => {
-                this.dataUser = response.data
-                console.log(response);
+                this.dataUser = response.data.profile[0]
+                // console.log(response);
             })
-				.catch((error) => {
-					console.log(error);
-				})
         },
         data() {
             return {
@@ -162,12 +159,12 @@
                     }
                 })
                 .then((response) => {
-                    // router.go('/profile')
-                    this.dataUser = response.data.data;
+                    this.dataUser = response.data.profile[0];
+                    router.go('/profile');                    
                  })
             },
             cropUploadSuccess(){
-                // router.go('/profile')
+                router.go('/profile')
 			},
         },
         computed: {
