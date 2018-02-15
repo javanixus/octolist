@@ -919,14 +919,14 @@ module.exports = __webpack_require__(62);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 var state = {
-  isLogged: !!window.localStorage.getItem('token'),
-  keyBypass: !!window.localStorage.getItem('key')
+  isLogged: !!window.localStorage.getItem('token')
+  // keyBypass: !!window.localStorage.getItem('key'),
 };
 
 var mutations = {
   LOGIN_USER: function LOGIN_USER(state) {
     state.isLogged = true;
-    state.keyBypass = window.localStorage.getItem('key') + window.localStorage.getItem('token');
+    // state.keyBypass = window.localStorage.getItem('key') + window.localStorage.getItem('token');
   },
   LOGOUT_USER: function LOGOUT_USER(state) {
     state.isLogged = false;
@@ -26265,7 +26265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
+    beforeCreate: function beforeCreate() {
         var _this = this;
 
         if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
@@ -27839,8 +27839,8 @@ exports.locals = {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
 //
 //
 //
@@ -27883,7 +27883,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 
 
 
@@ -27907,10 +27906,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   beforeCreate: function beforeCreate() {
-    if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
-      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/dashboard');
+    if (__WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].state.isLogged) {
+      __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/dashboard');
     }
-    console.log(localStorage.getItem('token'));
   },
 
   methods: {
@@ -27925,14 +27923,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).then(function (response) {
         if (response.data.passed === true) {
           window.localStorage.setItem('token', response.data.token);
-          // encrypted alpha 
-          var encryptkey = response.data.user.id * 8084334125;
-          var zeroencrypt = encryptkey * 100101010;
-          var keypharse = "0b" + "0" + "x9" + "ca" + zeroencrypt;
-          // end of encrypted alpha
-          window.localStorage.setItem('key', keypharse);
-          __WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].commit('LOGIN_USER');
-          __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/dashboard');
+          __WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].commit('LOGIN_USER');
+          __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/dashboard');
         } else {
           _this.logItIn.msg = response.data.msg;
           _this.logItIn.loader = false;
@@ -27940,7 +27932,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         (function () {
           _this.logItIn.loader = false;
         });
-        // console.log(response);
       });
     }
   }
@@ -28592,18 +28583,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__events_reportBugsPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__events_reportBugsPopup__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__events_getStartedPopup__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__events_getStartedPopup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__events_getStartedPopup__);
-var _beforeCreate$beforeC;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -28704,71 +28683,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_beforeCreate$beforeC = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
-    if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.keyBypass === false) {
-      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/logout');
+    if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged == false) {
+      __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/');
     }
-  }
-}, _defineProperty(_beforeCreate$beforeC, 'beforeCreate', function beforeCreate() {
-  var _this = this;
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-  if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
     __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
       headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       }
     }).then(function (response) {
-      _this.dataUser = response.data.profile;;
-      console.log(response);
+      _this.dataUser = response.data.profile;
+      console.log(_this.dataUser);
       _this.$modal.show('getstarted-siswa-popup-modal');
     });
-  } else {
-    __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/logout');
-  }
-}), _defineProperty(_beforeCreate$beforeC, 'data', function data() {
-  return {
-    resizable: false,
-    adaptive: false,
-    draggable: false,
-    canBeShown: false,
-    state: null,
-    isOpened: false,
-    projects: [],
-    dataUser: []
-  };
-}), _defineProperty(_beforeCreate$beforeC, 'methods', {
-  show: function show(resizable, adaptive, draggable) {
-    var _this2 = this;
+  },
+  data: function data() {
+    return {
+      resizable: false,
+      adaptive: false,
+      draggable: false,
+      canBeShown: false,
+      // state: null,
+      isOpened: false,
+      projects: [],
+      dataUser: []
+    };
+  },
 
-    this.resizable = resizable;
-    this.adaptive = adaptive;
-    this.draggable = draggable;
-    /*
-      $nextTick is required because the data model with new
-      "resizable, adaptive, draggable" values is not updated yet.. eh
-    */
-    this.$nextTick(function () {
-      _this2.$modal.show('create-project-modal');
-      _this2.$modal.show('profile-popup-modal');
-      _this2.$modal.show('report-popup-modal');
-      _this2.$modal.show('getstarted-siswa-popup-modal');
-    });
+  methods: {
+    show: function show(resizable, adaptive, draggable) {
+      var _this2 = this;
+
+      this.resizable = resizable;
+      this.adaptive = adaptive;
+      this.draggable = draggable;
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(function () {
+        _this2.$modal.show('create-project-modal');
+        _this2.$modal.show('profile-popup-modal');
+        _this2.$modal.show('report-popup-modal');
+        _this2.$modal.show('getstarted-siswa-popup-modal');
+      });
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('create-project-modal');
+    }
   },
-  detected: function detected(e) {
-    this.state = e;
-  },
-  popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
-    this.$modal.show('create-project-modal');
+  components: {
+    'dashboard-app': __WEBPACK_IMPORTED_MODULE_3__partials_dashboardBoard_vue___default.a,
+    'create-project': __WEBPACK_IMPORTED_MODULE_4__events_createProject_vue___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_5__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_6__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_7__events_reportBugsPopup___default.a,
+    'getstarted-popup': __WEBPACK_IMPORTED_MODULE_8__events_getStartedPopup___default.a
   }
-}), _defineProperty(_beforeCreate$beforeC, 'components', {
-  'dashboard-app': __WEBPACK_IMPORTED_MODULE_3__partials_dashboardBoard_vue___default.a,
-  'create-project': __WEBPACK_IMPORTED_MODULE_4__events_createProject_vue___default.a,
-  'profile-popup': __WEBPACK_IMPORTED_MODULE_5__events_profilemenuPopup_vue___default.a,
-  'confirm-popup': __WEBPACK_IMPORTED_MODULE_6__events_confirmPopup___default.a,
-  'report-popup': __WEBPACK_IMPORTED_MODULE_7__events_reportBugsPopup___default.a,
-  'getstarted-popup': __WEBPACK_IMPORTED_MODULE_8__events_getStartedPopup___default.a
-}), _beforeCreate$beforeC);
+});
 
 /***/ }),
 /* 97 */
@@ -33286,7 +33263,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ec008c!important\n}", ""]);
+exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ff4949!important\n}", ""]);
 
 // exports
 
@@ -42151,7 +42128,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n*[data-v-53a69382]{margin:0;list-style:none\n}\n.nopadding[data-v-53a69382]{padding:0\n}\n.avatar-get[data-v-53a69382]{position:absolute;bottom:10px;right:80px;border:5px solid #fff\n}\n.redColor[data-v-53a69382]:hover{color:#ec008c!important\n}\n.profileMenuPopup__Header[data-v-53a69382]{height:200px;position:relative\n}\n.getStartedTitle[data-v-53a69382]{text-align:center;font-size:20px\n}\n.getStartedDesc[data-v-53a69382]{font-size:12px;text-align:center;color:#8492a6\n}", ""]);
+exports.push([module.i, "\n*[data-v-53a69382]{margin:0;list-style:none\n}\n.nopadding[data-v-53a69382]{padding:0\n}\n.avatar-get[data-v-53a69382]{position:absolute;bottom:10px;right:80px;border:5px solid #fff\n}\n.redColor[data-v-53a69382]:hover{color:#ff4949!important\n}\n.profileMenuPopup__Header[data-v-53a69382]{height:200px;position:relative\n}\n.getStartedTitle[data-v-53a69382]{text-align:center;font-size:20px\n}\n.getStartedDesc[data-v-53a69382]{font-size:12px;text-align:center;color:#8492a6\n}", ""]);
 
 // exports
 
@@ -45944,10 +45921,8 @@ exports.push([module.i, "\n.wrap-landing[data-v-214ae8f0]{height:100vh;overflow:
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
 //
 //
 //
@@ -46076,9 +46051,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
-        startedNext: function startedNext() {
-            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/start/setup');
-        }
+        startedNext: function startedNext() {}
     }
 });
 

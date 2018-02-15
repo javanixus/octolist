@@ -34,7 +34,7 @@
         border: 5px solid white;
     }
     .redColor:hover {
-        color: #ec008c!important;
+        color: #FF4949!important;
     }
     .profileMenuPopup__Header {
         height: 200px;

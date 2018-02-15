@@ -95,18 +95,18 @@ h3 {font-size: 38px;}
 .button--xs { font-size: 8px; padding: 2px 12px; }
 .button--melting-blue { -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16); }
 // .button--melting-green {-webkit-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16);box-shadow: 0px 3px 20px 4px rgba(31, 191, 134,0.16); }
-// .button--nofill {
-//   background: transparent!important;
-//   border: 2px solid #6189e0!important;
-//   box-shadow: none!important;
-//   color: $blue !important;
-//   &:hover {
-//     color: #fff!important;
-//     border-color: $blue !important;
-//     background: $blue !important;
-//     -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16)!important;
-//   }
-// }
+.button--nofill {
+  background: transparent!important;
+  border: 2px solid #6189e0!important;
+  box-shadow: none!important;
+  color: $blue !important;
+  &:hover {
+    color: #fff!important;
+    border-color: $blue !important;
+    background: $blue !important;
+    -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16)!important;
+  }
+}
 .button-group {
   position: relative;
   display: -ms-inline-flexbox;

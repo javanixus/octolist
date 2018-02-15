@@ -121,13 +121,13 @@
 </template>
 
 <script>
-  import axios from 'axios';
-  import store from './../../store/index';
-  import router from './../../router';
+import store from './../../store/index';
+import router from './../../router';
+
 export default {
     methods: {
         startedNext(){
-            router.push('/start/setup');
+
         }
     }
 }

@@ -79,7 +79,7 @@
     import store from './../store/index';
 
     export default {
-        mounted(){
+        beforeCreate(){
           if (store.state.isLogged){
             axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
