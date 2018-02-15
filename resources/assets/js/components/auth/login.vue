@@ -3,7 +3,7 @@
     <header class="navbar">
       <div class="navbar--landing">
         <div class="button-forgotpass">
-          <router-link :to="{ path: '/forgot' , query:{ auth: 'passforgot'}}">
+          <router-link :to="{ path: '/forgot'}">
             <a class="button button--xl button--nofill borderRadius-s">
                 Lupa Password
             </a>

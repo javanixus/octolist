@@ -16,7 +16,6 @@
         </div>
     </div>
     <svg width="354px" height="282px" style="position: absolute; bottom: 2vh; left: 37.5vw;z-index: 2;" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Box</title>
     <defs>
         <linearGradient x1="31.3428566%" y1="-122.977405%" x2="56.157051%" y2="64.292202%" id="linearGradient-1">
@@ -98,7 +97,6 @@
     </g>
 </svg>
 <svg style="position: absolute;bottom: 3vh;left: 25.5vw;z-index: 1;" width="348px" height="84px" viewBox="0 0 348 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Untitled</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>

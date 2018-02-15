@@ -27187,24 +27187,15 @@ var render = function() {
           "div",
           { staticClass: "button-forgotpass" },
           [
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: { path: "/forgot", query: { auth: "passforgot" } }
-                }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "button button--xl button--nofill borderRadius-s"
-                  },
-                  [_vm._v("\n                Lupa Password\n            ")]
-                )
-              ]
-            )
+            _c("router-link", { attrs: { to: { path: "/forgot" } } }, [
+              _c(
+                "a",
+                {
+                  staticClass: "button button--xl button--nofill borderRadius-s"
+                },
+                [_vm._v("\n                Lupa Password\n            ")]
+              )
+            ])
           ],
           1
         )
@@ -27613,47 +27604,39 @@ var render = function() {
                 "div",
                 { staticClass: "wrap-landing-button" },
                 [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: { path: "/login", query: { auth: "login" } }
-                      }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass:
-                            "button button-landing button--xl borderRadius-s button--melting-blue",
-                          class: { isCollapsed: !_vm.userLogged }
-                        },
-                        [
-                          _vm._v(
-                            "\n                      " +
-                              _vm._s("Masuk " + this.dataUser.name) +
-                              "\n                      "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass:
-                            "button button-landing button--xl borderRadius-s button--melting-blue",
-                          class: { isCollapsed: !!_vm.userLogged }
-                        },
-                        [
-                          _vm._v(
-                            "\n                      " +
-                              _vm._s("Masuk ") +
-                              "\n                      "
-                          )
-                        ]
-                      )
-                    ]
-                  )
+                  _c("router-link", { attrs: { to: { path: "/login" } } }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue",
+                        class: { isCollapsed: !_vm.userLogged }
+                      },
+                      [
+                        _vm._v(
+                          "\n                      " +
+                            _vm._s("Masuk " + this.dataUser.name) +
+                            "\n                      "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "button button-landing button--xl borderRadius-s button--melting-blue",
+                        class: { isCollapsed: !!_vm.userLogged }
+                      },
+                      [
+                        _vm._v(
+                          "\n                      " +
+                            _vm._s("Masuk ") +
+                            "\n                      "
+                        )
+                      ]
+                    )
+                  ])
                 ],
                 1
               )
@@ -27671,13 +27654,9 @@ var render = function() {
           _c(
             "li",
             [
-              _c(
-                "router-link",
-                {
-                  attrs: { to: { path: "/about", query: { first: "allow" } } }
-                },
-                [_c("a", [_vm._v("Tentang")])]
-              )
+              _c("router-link", { attrs: { to: { path: "/about" } } }, [
+                _c("a", [_vm._v("Tentang")])
+              ])
             ],
             1
           ),
@@ -27952,24 +27931,15 @@ var render = function() {
           "div",
           { staticClass: "button-forgotpass" },
           [
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: { path: "/forgot", query: { auth: "passforgot" } }
-                }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "button button--xl button--nofill borderRadius-s"
-                  },
-                  [_vm._v("\n              Lupa Password\n          ")]
-                )
-              ]
-            )
+            _c("router-link", { attrs: { to: { path: "/forgot" } } }, [
+              _c(
+                "a",
+                {
+                  staticClass: "button button--xl button--nofill borderRadius-s"
+                },
+                [_vm._v("\n              Lupa Password\n          ")]
+              )
+            ])
           ],
           1
         )
@@ -45923,8 +45893,6 @@ exports.push([module.i, "\n.wrap-landing[data-v-214ae8f0]{height:100vh;overflow:
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_index__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
-//
-//
 //
 //
 //
