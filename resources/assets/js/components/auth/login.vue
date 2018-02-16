@@ -3,7 +3,7 @@
     <header class="navbar">
       <div class="navbar--landing">
         <div class="button-forgotpass">
-          <router-link :to="{ path: '/forgot' , query:{ auth: 'passforgot'}}">
+          <router-link :to="{ path: '/forgot'}">
             <a class="button button--xl button--nofill borderRadius-s">
                 Lupa Password
             </a>
@@ -42,7 +42,6 @@
 
 <script>
   import axios from 'axios';
-  import { HTTP } from './../../router';
   import store from './../../store/index';
   import router from './../../router';
 
@@ -66,7 +65,6 @@
       if (store.state.isLogged){
         router.push('/dashboard')
       }
-      console.log(localStorage.getItem('token'));
     },
     methods: {
       authUser() {
@@ -80,12 +78,6 @@
         .then((response) => {
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
-            // encrypted alpha 
-            const encryptkey = response.data.user.id * 8084334125;
-            const zeroencrypt = encryptkey * 100101010;
-            const keypharse = "0b" + "0" + "x9" + "ca" + zeroencrypt;
-            // end of encrypted alpha
-            window.localStorage.setItem('key', keypharse);
             store.commit('LOGIN_USER');
             router.push('/dashboard');
           }
@@ -96,7 +88,6 @@
           () => {
             this.logItIn.loader = false
           }
-          // console.log(response);
         })
       }
     }

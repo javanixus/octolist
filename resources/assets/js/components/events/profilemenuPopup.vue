@@ -28,7 +28,7 @@
         padding: 0;
     }
     .redColor:hover {
-        color: #ec008c!important;
+        color: #FF4949!important;
     }
 </style>
 <script>

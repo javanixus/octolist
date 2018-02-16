@@ -11,16 +11,11 @@
         <div class="titleHelloDesc">
             <h2 class="h2Hello">Wrapping up With One Tools</h2>
             <p class="getStarted-desc">with Octolist u can set deadline event also wrap up html , css , php</p>
-            <router-link :to="{path: '/getstarted/profile-setup'}">
-                <a class="button button-landing button--xl borderRadius-s button--melting-blue">
-                      Let's begin
-                </a>
-            </router-link> 
+            <button @click.prevent="startedNext()" class="button button-landing button--xl borderRadius-s button--melting-blue">Let's Begin</button>
         </div>
         </div>
     </div>
     <svg width="354px" height="282px" style="position: absolute; bottom: 2vh; left: 37.5vw;z-index: 2;" viewBox="0 0 254 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Box</title>
     <defs>
         <linearGradient x1="31.3428566%" y1="-122.977405%" x2="56.157051%" y2="64.292202%" id="linearGradient-1">
@@ -102,7 +97,6 @@
     </g>
 </svg>
 <svg style="position: absolute;bottom: 3vh;left: 25.5vw;z-index: 1;" width="348px" height="84px" viewBox="0 0 348 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>Untitled</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
@@ -125,7 +119,15 @@
 </template>
 
 <script>
+import store from './../../store/index';
+import router from './../../router';
+
 export default {
+    methods: {
+        startedNext(){
+
+        }
+    }
 }
 </script>
 

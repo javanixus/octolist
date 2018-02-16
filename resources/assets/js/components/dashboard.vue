@@ -1,13 +1,5 @@
 <template lang="html">
   <div id="dashboard-core">
-    <detectNetwork @detected-condition="detected">
-      <div slot="online"></div>
-      <div slot="offline">
-        <div class="loading high-noon">
-          <p>Trying to connect to the serve.</p>
-        </div>
-      </div>
-    </detectNetwork>
     <create-project />
     <confirm-popup />
     <profile-popup />
@@ -29,7 +21,7 @@
           </div>
           <div class="profile-badge">
             <a href="javascript:void(0)"></a>
-            <div class="border-gradient">
+            <div class="borderProfile">
               <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
                 <img class="avatar-img" :src="dataUser.avatar" alt="" />
               </div>
@@ -42,7 +34,7 @@
       <div class="content__header">
         <div class="header-menu">
           <div class="header-menu__right paddingRight-xxl">
-            <div id="add-task" style="max-width: 300px;" @click="popupCreateProjectClickOpen()" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue green-bg button-green">
+            <div id="add-task" style="max-width: 300px;" @click="popupCreateProjectClickOpen()" class="button button-landing fontSize-s button--xl borderRadius-s button--melting-blue">
               Buat Project Baru
             </div>
           </div>
@@ -108,25 +100,20 @@
 
   export default {
     beforeCreate(){
-      if(store.state.keyBypass === false){
-        router.push('/logout')
+      if (store.state.isLogged == false){
+        router.push('/')
       }
     },
-    beforeCreate(){
-      if (store.state.isLogged){
-          axios.get('http://localhost:8000/api/v1/user', {
-                headers: {
-                    "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
-                }
-            })
-            .then((response) => {
-                this.dataUser = response.data.profile;;
-                console.log(response);
-                this.$modal.show('getstarted-siswa-popup-modal');
-          })
-      } else {
-        router.push('/logout')
-      }
+    mounted() {
+      axios.get('http://localhost:8000/api/v1/user',{
+        headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+        }
+      }).then((response) => {
+        this.dataUser = response.data.profile;
+        console.log(this.dataUser);
+        this.$modal.show('getstarted-siswa-popup-modal');        
+      })
     },
     data(){
       return {
@@ -134,7 +121,7 @@
         adaptive: false,
         draggable: false,
         canBeShown: false,
-        state: null,
+        // state: null,
         isOpened: false,
         projects: [],
         dataUser: [],
@@ -155,9 +142,6 @@
           this.$modal.show('report-popup-modal');
           this.$modal.show('getstarted-siswa-popup-modal');
         })
-      },
-      detected(e) {
-        this.state = e;
       },
       popupCreateProjectClickOpen(){
         this.$modal.show('create-project-modal');

@@ -3,7 +3,7 @@
     <header class="navbar">
       <div class="navbar--landing">
         <div class="button-forgotpass">
-          <router-link :to="{ path: '/forgot' , query:{ auth: 'passforgot'}}">
+          <router-link :to="{ path: '/forgot'}">
             <a class="button button--xl button--nofill borderRadius-s">
                 Lupa Password
             </a>
@@ -38,7 +38,7 @@
               <!-- Membuat rencana Proyek dan mengatur dengan mudah. Octolist membantu anda memaksimalkan proyek dan tim. -->
               <!-- Plan projects and manage resources with ease. Octolist helps you get the most out of your projects and teams. -->
               <div class="wrap-landing-button">
-                <router-link :to="{path: '/login', query:{ auth: 'login' }}">
+                <router-link :to="{path: '/login'}">
                   <a :class="{'isCollapsed': !userLogged }" class="button button-landing button--xl borderRadius-s button--melting-blue">
                       {{ 'Masuk '+ this.dataUser.name}}
                       <!-- Masuk -->
@@ -61,7 +61,7 @@
         <ul>
           <li><a href="#">Hubungi Kami</a></li>
           <li>
-            <router-link :to="{path: '/about', query:{ first: 'allow' }}">
+            <router-link :to="{path: '/about'}">
               <a>Tentang</a>
             </router-link>
           </li>
@@ -79,7 +79,7 @@
     import store from './../store/index';
 
     export default {
-        mounted(){
+        beforeCreate(){
           if (store.state.isLogged){
             axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
