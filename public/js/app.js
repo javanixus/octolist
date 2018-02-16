@@ -43279,7 +43279,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (response) {
                 _this2.dataUser = response.data.profile;
-                console.log(response);
             });
         },
         cropUploadSuccess: function cropUploadSuccess() {
