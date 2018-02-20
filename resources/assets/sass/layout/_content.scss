@@ -26,7 +26,9 @@
     .project__content {
       display: flex;
       flex-wrap: wrap;
-
+      .project-item {
+        border: none!important;
+      }
       .project-item {
         width: 14.94rem;
         min-height: 250px;
@@ -304,12 +306,6 @@
 
 .avatar-dp {
   cursor: pointer;
-  &:hover {
-    width: 37px;
-    height: 37px;
-    top: 1.2px;
-    left: 1px;
-  }
 }
 
 .borderProfile {

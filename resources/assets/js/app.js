@@ -16,6 +16,8 @@ import '../sass/app.scss';
 // exec
 Vue.component('detectNetwork', require('v-offline'));
 
+Vue.config.devtools = true;
+Vue.config.performance = true;
 Vue.use(vBlur);
 Vue.use(vueKanban);
 Vue.use(VeeValidate, { fieldsBagName: 'formFields' });

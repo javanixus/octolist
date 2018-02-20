@@ -37,11 +37,11 @@ export default new Router({
       component: ForgotPass
     },
     {
-      path: '/dashboard',
+      path: '/board',
       component: Dashboard,
     },
     {
-      path: '/dashboard/board',
+      path: '/board/p',
       component: DashboardSiswa,
       name: 'board'
     },

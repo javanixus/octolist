@@ -24,6 +24,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
      */
     Route::get('/users/{q}', 'UserController@index');
     Route::get('/users', 'UserController@index');
+    Route::get('/user/{id}','UserController@profile');
     Route::get('/user', 'UserController@show');
     Route::post('/user', 'UserController@store');
     Route::patch('/user', 'UserController@update');

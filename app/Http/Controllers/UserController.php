@@ -226,6 +226,21 @@ class UserController extends Controller
 		 return response()->json($response);
 	 }
 
+	public function profile($id){
+		// $users = Auth::user();
+        // $id = $users->id;
+        $student = StudentsInfo::where('id_students', $id)->get()->first();
+
+        $student->avatar = '/avatar/'.$student->avatar;
+
+        $response = [
+            'profile'=> $student,
+            'href' => "/api/v1/user/",
+            'method' => "GET",
+        ];
+
+        return response()->json($response, 200);
+	}
 
     public function destroy($id, Request $request)
     {

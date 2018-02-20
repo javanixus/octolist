@@ -58,7 +58,7 @@
                         <img class="icon" src="images/edit.svg" alt="" />
                       </a>
                     </span>
-                    <img src="images/dragon-girl.png" alt="" />
+                    <img src="images/projectsample.jpg" alt="" />
                   </div>
                   <div class="project-item__content">
                     <h5>

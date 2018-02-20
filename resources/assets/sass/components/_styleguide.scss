@@ -22,6 +22,7 @@ $grey: #62676d;
 $warning: #f95943;
 $alert: #ffcc00;
 $done: #1FBF86;
+.red-color {color: #FF4949;}
 .blue-bg { background-color:$blue!important;}
 .green-bg { background-color:$done!important;}
 .red-bg {background-color: #FF4949;
@@ -393,3 +394,14 @@ h3 {font-size: 38px;}
   }
 // end of profile-popup component //
 // -- END OF COMPONENT -- //
+.spinner{
+  width: 30px;
+  height: 30px;
+  animation: spin 1s infinite linear;
+  background-size: 30px;
+  margin: 0 auto;
+}
+@keyframes spin {
+0%  {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}	
+}

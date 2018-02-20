@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content nopadding">
                 <div class="profileMenuPopupWrapper">
-                    <div class="profileMenuPopup__Header" v-blur="blurConfig" v-bind:style="{ 'backgroundImage': 'url(' + this.dataUser.avatar + ')' }">
+                    <div class="profileMenuPopup__Header" v-bind:style="{ 'backgroundImage': 'url(' + this.dataUser.avatar + ')' }">
                     </div>
                     <div class="profileMenuPopup__Content">
                         <ul>
@@ -37,13 +37,6 @@
 export default {
   data() {
       return {
-          profilePopupCover: 'images/avatar0.jpg',
-          blurConfig: {
-            isBlurred: true, // activate and deactivate blur directive , i always turning on it
-            opacity: 1,
-            filter: 'blur(1px)',
-            transition: 'all .3s linear'
-          },
           dataUser:[]
       }
   },

@@ -15,7 +15,10 @@
   </div>
 </template>
 <style scoped>
-
+  #adminDashboard {
+    min-height: 100vh;
+    background-color: #F5F5F5!important;
+  }
 </style>
 <script>
   import axios from 'axios'
