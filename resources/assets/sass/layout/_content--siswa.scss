@@ -1,4 +1,13 @@
 @import "./../components/styleguide";
+
+.navbar__profile--profile-page {
+    span {
+        a {
+            font-weight: 600;
+        }
+    }
+}
+
 .createProjectModal-content {
     padding: 15px;
 }
@@ -115,4 +124,70 @@
 
 .isCollapsed {
     display: none;
+}
+
+// projects 
+.preProject__Container {
+    padding: 15px;
+}
+.preProjectTitle h4 {
+    text-align: center;
+}
+
+.preProjectList , .preProjectList__item{
+    padding: 10px;
+}
+.preProjectList {
+    display: inline-flex;
+}
+.preProjectList__item {
+    width: 200px;
+    height: 300px;
+    margin: 0 10px;
+    &:hover > .preProjectItem__header img {
+        box-shadow: 1px 9px 18px 1px rgba(60,60,60,.15)!important;
+        transition: .2s ease-in-out;
+        width: 100px;
+    }
+    // border: 1px solid red;
+    .preProjectItem__header {
+        text-align: center;
+        height: 100px;
+    }
+    .preProjectItem__content {
+        padding: 15px 0;
+        text-align: center;
+        h3 {
+            font-size: 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 12px;
+            text-align: center;
+            color: #5d5b5b;
+        }
+        button {
+            position: relative;
+            bottom: -40px;
+            cursor: pointer;
+        }
+    }
+    img {
+        border-radius: 50%;
+        width: 90px;
+        transition: .2s ease-in-out;
+        -webkit-user-drag: none;
+    }
+}
+
+.preSetup  {
+    padding: 15px;
+    text-align: center;
+    h4 {
+        text-align: center;
+        margin-bottom: 18px;
+    }
+    input {
+        margin-bottom: 15px;
+    }
 }

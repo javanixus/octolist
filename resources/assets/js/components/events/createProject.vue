@@ -3,9 +3,6 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
                 <form>
-                    <!-- @submit.prevent="createProjectSubmit" -->
-                    <!-- <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
-                    </vue-dropzone> -->
                     <div class="createProjectForm">
                         <p>Nama project</p>
                         <input type="text" v-model="createProjectFormInput.projectNameForm" class="input-nofill input-text fontSize-s" placeholder="ex: Project Umbrella">
@@ -13,12 +10,11 @@
                         <textarea name="create.project.desc" id="create.project.desc.pro" class="editableWrapper" v-model="createProjectFormInput.projectDescForm"/>
                         <p>Tambah anggota</p>
                         <v-select multiple :debounce="250" :on-search="getOptions" :options="options" label="name" v-model="selected"></v-select>
-                        <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
                 <div class="createProjectModal-footer modifyFooter">
                     <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('create-project-modal')">Batalkan</div>
-                    <div class="button button-landing button--xl borderRadius-s button--melting-blue green-bg" @click.prevent="createProject" :disabled="!createProjectIsPassed">Buat project</div>
+                    <div class="button button-landing button--xl borderRadius-s button--melting-blue" @click.prevent="createProject" :disabled="!createProjectIsPassed">Buat project</div>
                 </div>
             </div>
         </div>
@@ -52,10 +48,6 @@
         max-height: 50px!important;
         margin-left: 15px;
         font-size: 14px;
-    }
-
-    .red-bg {
-        background: #ec008c;
     }
 </style>
 
@@ -112,8 +104,8 @@
             createProject() {
                 axios.post('http://localhost:8000/api/v1/project/create', this.createProjectFormInput)
                     .then((response) => {
-                        router.push('/dashboard')
-                        if (router.push('/dashboard') === false) {
+                        router.push('/board')
+                        if (router.push('/board') === false) {
                             // add behavior here
                         }
                     })

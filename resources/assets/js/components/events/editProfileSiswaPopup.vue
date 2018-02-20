@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content nopadding">
                 <div class="profileMenuPopupWrapper">
-                    <form action="POST">
+                    <form method="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
                             <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/avatarUpload" :params="paramAvatar" :headers="headerToken" img-format="jpg" @crop-upload-success="cropUploadSuccess"></avatar-upload>
                             <div class="containerProfilePictureEdit" @click="toggleShow">
@@ -13,6 +13,7 @@
                         </div>
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
+                                <input type="hidden" name="_method" value="PATCH">
                                 <p>Nama Lengkap</p>
                                 <input type="text" v-validate="'required'" :class="{'input--default': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input--default input--default-full input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('nama-lengkap')">
@@ -39,7 +40,7 @@
                             </div>
                             <div class="createProjectModal-footer modifyFooter">
                                 <div class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('editprofile-siswa-popup-modal')">Batalkan</div>
-                                <button :disabled="!editProfileIsPassed" @click.prevent="editProfileAuth" class="button button-landing button--xl borderRadius-s button--melting-blue green-bg">Update profile</button>
+                                <button :disabled="!editProfileIsPassed" @click.prevent="editProfileAuth" class="button button-landing button--xl borderRadius-s button--melting-blue">Update profile</button>
                             </div>
                         </div>
                     </form>
@@ -70,10 +71,6 @@
         max-height: 50px!important;
         margin-left: 15px;
         font-size: 14px;
-    }
-
-    .red-bg {
-        background: #ec008c;
     }
     .createProjectForm p {
         font-size: 14px;
@@ -160,7 +157,7 @@
                 })
                 .then((response) => {
                     this.dataUser = response.data.profile;
-                    console.log(response);
+
                  })
             },
             cropUploadSuccess(){

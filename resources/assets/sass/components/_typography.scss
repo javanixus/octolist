@@ -1,15 +1,24 @@
 @font-face {
   font-family: sf-pro-text;
-  src: url('../../fonts/sf-pro-text_bold.woff2'),
-  url('../../fonts/sf-pro-text_regular.woff2'),
-  url('../../fonts/sf-pro-text_semibold.woff2');
+  src: url('../../fonts/sf-pro-text_regular.woff2');
+  font-weight: normal;
 };
+
+@font-face {
+  font-family: sf-pro-text;
+  src: url('../../fonts/sf-pro-text_semibold.woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: sf-pro-text;
+  src: url('../../fonts/sf-pro-text_bold.woff2');
+  font-weight: 700;
+}
 
 input[type="text"] , input[type="password"] {
   font-family: -apple-system, BlinkMacSystemFont, 'sf-pro-text', Roboto, sans-serif
 }
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 a {
   color: #0f55eb;

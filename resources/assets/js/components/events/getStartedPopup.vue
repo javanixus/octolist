@@ -34,7 +34,7 @@
         border: 5px solid white;
     }
     .redColor:hover {
-        color: #ec008c!important;
+        color: #FF4949!important;
     }
     .profileMenuPopup__Header {
         height: 200px;
@@ -60,7 +60,7 @@ export default {
           dataUser:[]
       }
   },
-        beforeCreate(){
+        mounted(){
             axios.get('http://localhost:8000/api/v1/user', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,

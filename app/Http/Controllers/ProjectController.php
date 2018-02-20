@@ -48,8 +48,7 @@ class ProjectController extends Controller
     {
 			$this->validate($request,[
 				'project_title' 			=> 'required',
-				'project_deadline' 	=> 'required',
-				'id_students'				=> 'required',
+
 			]);
 
 			// $input[] = $request->input('project_creator',Auth::user()->id);

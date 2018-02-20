@@ -20,12 +20,37 @@ use App\TeachersInfo;
 class TeacherController extends Controller
 {
 
+    public function index(Request $request)
+    {
+        $que = $request->get('q');
+        if (!empty($que)){
+            $teachers = TeachersInfo::where('name', 'like', "%$que%")->get();
+
+        } else {
+            $teachers = TeachersInfo::all()->sortBy('name');
+        }
+        foreach($teachers as $teacher){
+            $teacher->view_teacher = array(
+                'href' => '/api/v1/user/'.$teacher->id_students,
+                'method' => 'GET',
+            );
+        }
+
+        $response = [
+            'msg' => 'List of Teachers',
+            'teachers' => $teachers,
+            'students_count' => $teachers->count(),
+        ];
+
+        return response()->json($response, 200);
+    }
+
 	public function update(Request $request)
 	{
-		$users = Auth::user();
-		$idusers = $users->id;
-					$user = TeachersInfo::where('id_teachers',$idusers)->get()->first();
-					$id = $user->id;
+		$teachers = Auth::user();
+		$idteacher = $teachers->id;
+					$teacher = TeachersInfo::where('id_teachers',$idteacher)->get()->first();
+					$id = $teacher->id;
 
 		$this->validate($request , [
 							'codes'=> 'required', //for security reason, confirm identity with inputing password everytime user update
@@ -34,7 +59,7 @@ class TeacherController extends Controller
 							'phone'=> "nullable|numeric|unique:students_info,phone,$id|",
 					]);
 
-			$info = TeachersInfo::where('id_teachers',$idusers);
+			$info = TeachersInfo::where('id_teachers',$idteacher);
 							//security check if the codes right then the output should be true
 
 			if(Hash::check($request->codes,$user->password)){
@@ -176,15 +201,15 @@ class TeacherController extends Controller
 	        return response()->json($response, 200);
 	    }
 
-		public function show($id)
+		public function show()
 		{
-			$user = User::findOrFail($id);
+			$user = Auth::User();
 			$id = $user->id;
-			$user = TeachersInfo::where('id_teachers',$id)->get()->first();
+			$teacher = TeachersInfo::where('id_teachers',$id)->get()->first();
 
 			$response = [
 					'msg' => "Teacher Profile",
-					'data' => $user,
+					'data' => $teacher,
 					'href' => "v1/user",
 					'method' => "GET",
 			];
@@ -192,16 +217,17 @@ class TeacherController extends Controller
 			return response()->json($response, 200);
 
 		}
+
 		public function destroy($id, Request $request)
 		{
-				$student = User::findOrFail($id);
-			$info = StudentsInfo::where('id_students',$id);
-				$delete_avatar = Storage::disk('avatar')->delete($info->avatar);
+            $teacher = User::findOrFail($id);
+			$info = TeachersInfo::where('id_teachers',$id);
+			//	$delete_avatar = Storage::disk('avatar')->delete($info->avatar);
 			$info->delete();
-				$student->delete();
+            $teacher->delete();
 
 				$response = [
-						'msg' => 'Siswa Berhasil dihapus',
+						'msg' => 'Guru Berhasil dihapus',
 						'href' => '/v1/users',
 						'method' =>'GET',
 				];
