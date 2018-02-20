@@ -16,7 +16,7 @@ before_install:
   - mysql -e 'CREATE DATABASE octolist;'
 
 install:
-  - cp .env.dusk.testing .env
+  - cp .env.example .env
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
   - npm install
   - npm run production

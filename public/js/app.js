@@ -44315,7 +44315,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n#adminDashboard[data-v-570f5adc]{min-height:100vh;background-color:#f5f5f5!important\n}", ""]);
+exports.push([module.i, "\n#adminDashboard[data-v-570f5adc]{min-height:100vh;background-color:#f5f5f5!important\n}\n.adminDashboardNavbarExtendsActive svg[data-v-570f5adc]{stroke:#0f55eb!important\n}", ""]);
 
 // exports
 
@@ -44336,6 +44336,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adminDashboardTableStudent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__adminDashboardTableStudent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__adminDashboardTableTeacher__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__adminDashboardTableTeacher___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__adminDashboardTableTeacher__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -44813,6 +44822,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -44832,7 +44848,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "adminDashboardTableStudent" }, [
-      _c("p", [_vm._v("table student")])
+      _c("div", { staticClass: "adminDashboardHeader" }, [
+        _c("div", { staticClass: "adminDashboardHeader__Title" }, [
+          _c("h3", [_vm._v("Students")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "adminDashboardHeader__Profile" }, [
+          _c("p", [_vm._v("Pampam")])
+        ])
+      ])
     ])
   }
 ]
@@ -44950,6 +44974,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -44969,7 +45000,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "adminDashboardTableTeacher" }, [
-      _c("p", [_vm._v("table teacher")])
+      _c("div", { staticClass: "adminDashboardHeader" }, [
+        _c("div", { staticClass: "adminDashboardHeader__Title" }, [
+          _c("h3", [_vm._v("Teachers")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "adminDashboardHeader__Profile" }, [
+          _c("p", [_vm._v("Pampam")])
+        ])
+      ])
     ])
   }
 ]
@@ -45007,7 +45046,33 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Home")]
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "feather feather-home",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "#E0E6ED",
+                    "stroke-width": "2",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    }
+                  }),
+                  _c("polyline", { attrs: { points: "9 22 9 12 15 12 15 22" } })
+                ]
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -45023,7 +45088,36 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Siswa")]
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "feather feather-book",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "#E0E6ED",
+                    "stroke-width": "2",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: { d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20" }
+                  }),
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                    }
+                  })
+                ]
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -45039,7 +45133,51 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Guru")]
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "feather feather-server",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "#E0E6ED",
+                    "stroke-width": "2",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round"
+                  }
+                },
+                [
+                  _c("rect", {
+                    attrs: {
+                      x: "2",
+                      y: "2",
+                      width: "20",
+                      height: "8",
+                      rx: "2",
+                      ry: "2"
+                    }
+                  }),
+                  _c("rect", {
+                    attrs: {
+                      x: "2",
+                      y: "14",
+                      width: "20",
+                      height: "8",
+                      rx: "2",
+                      ry: "2"
+                    }
+                  }),
+                  _c("line", { attrs: { x1: "6", y1: "6", x2: "6", y2: "6" } }),
+                  _c("line", {
+                    attrs: { x1: "6", y1: "18", x2: "6", y2: "18" }
+                  })
+                ]
+              )
+            ]
           )
         ])
       ])
