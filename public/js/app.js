@@ -28110,12 +28110,11 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
 //
 //
 //
-
 
 
 
@@ -28123,8 +28122,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         window.localStorage.removeItem('token');
-        __WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].commit('LOGOUT_USER');
-        __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].push('/login');
+        __WEBPACK_IMPORTED_MODULE_0__store_index__["a" /* default */].commit('LOGOUT_USER');
+        __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/login');
     }
 });
 
@@ -28591,7 +28590,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }).then(function (response) {
       _this.dataUser = response.data.profile;
       console.log(_this.dataUser);
-      if (response.data.profile.role === 3) {
+      if (response.data.profile.role == 1) {
         __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/logout');
       }
       _this.$modal.show('getstarted-siswa-popup-modal');
@@ -29509,6 +29508,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -29534,7 +29535,9 @@ var render = function() {
     [
       _c("div", { staticClass: "createProjectModal-wrapper" }, [
         _c("div", { staticClass: "createProjectModal-content" }, [
-          _c("p", [_vm._v("Apakah kamu yakin ?")])
+          _c("div", { staticClass: "confirmContainer" }, [
+            _c("h4", [_vm._v("Apakah kamu yakin ?")])
+          ])
         ]),
         _vm._v(" "),
         _c(
