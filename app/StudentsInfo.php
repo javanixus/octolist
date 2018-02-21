@@ -28,7 +28,7 @@ class StudentsInfo extends Model
     }
 
     protected $fillable = [
-        'nis','name','email','bio','gender','phone','avatar','id_class','id_major','id_students',
+        'nis','name','email','bio','gender','phone','avatar','id_class','id_major','id_students','new'
     ];
 
 //		Information Student with User Auth info

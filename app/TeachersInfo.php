@@ -8,7 +8,7 @@ class TeachersInfo extends Model
 {
 		protected $table = 'teachers_info';
 		protected $fillable = [
-			'nip','name','email','bio','gender','phone','avatar','id_teachers',
+			'nip','name','email','bio','gender','phone','avatar','id_teachers','new'
 		];
 
 		public function User(){
