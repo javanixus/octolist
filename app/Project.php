@@ -9,6 +9,6 @@ class Project extends Model
 {
 
     protected $fillable = [
-			'project_title','project_creator','project_deadline'
+			'project_title','project_creator','project_deadline','project_link'
 		];
 }
