@@ -56,6 +56,7 @@ class UserController extends Controller
         $student = StudentsInfo::where('id_students', $id)->get()->first();
 
         $student->avatar = '/avatar/'.$student->avatar;
+			$student->role = Auth::user()->role;
 
         $response = [
             'profile'=> $student,
