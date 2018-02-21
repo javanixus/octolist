@@ -110,6 +110,9 @@
       }).then((response) => {
         this.dataUser = response.data.profile;
         console.log(this.dataUser);
+        if(response.data.profile.role === 3){
+          router.push('/logout')
+        }
         this.$modal.show('getstarted-siswa-popup-modal');        
       })
     },
