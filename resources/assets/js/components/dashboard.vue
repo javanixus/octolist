@@ -113,7 +113,7 @@
         if(response.data.profile.role == 1){
           router.push('/logout')
         }
-        this.$modal.show('getstarted-siswa-popup-modal');        
+        this.$modal.show('getstarted-siswa-popup-modal');
       })
     },
     data(){

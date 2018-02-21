@@ -60,21 +60,26 @@ class ProjectController extends Controller
 				'project_title'				=>	$request->input('project_title'),
 				'project_deadline'	=>	$request->input('project_deadline'),
 				'project_creator'		=>	Auth::user()->id,
+				'project_description' => $request->input('desc'),
 			]);
-			$id = $project->id;
-			$ProjectMember = new ProjectMemberController;
-			$ProjectMember->store($id,$request);
+			// $id = $project->id;
+			// $ProjectMember = new ProjectMemberController;
+			// $ProjectMember->store($id,$request);
 			// ProjectMember::Create([
 			// 	'id_projects'		=>	$id,
 			// 	'id_students'	 =>		$request->input('id_students')
 			// ]);
-			$response = [
-										'msg' => 'Project Created',
-										'href' => "/v1/project/$id",
-										'method' => 'GET',
-									];
+			if($project){
+				$id = $project->id;
 
-			return response()->json($response,200);
+				$response = [
+					'msg' => 'Project Created',
+					'href' => "/v1/project/$id",
+					'method' => 'GET',
+				];
+
+				return response()->json($response,200);
+			}
 
     }
 
