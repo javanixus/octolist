@@ -38906,19 +38906,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     if (__WEBPACK_IMPORTED_MODULE_4__store_index__["a" /* default */].state.isLogged) {
-      var key_id = window.localStorage.getItem('key');
-      // decrypt phase //
-      var becrypt_slice_one = key_id.slice(7);
-      var becrypt_zero = becrypt_slice_one / 100101010;
-      var becrypt_pharse = becrypt_zero / 8084334125;
-      // end decrypt //
       __WEBPACK_IMPORTED_MODULE_5_axios___default.a.get('http://localhost:8000/api/v1/user', {
         headers: {
           "Authorization": 'Bearer ' + window.localStorage.getItem('token')
         }
       }).then(function (response) {
         _this.dataUser = response.data.profile;
-        //                   console.log(response.data.profile);
       });
     } else {
       __WEBPACK_IMPORTED_MODULE_6__router__["a" /* default */].push('/logout');
@@ -39218,7 +39211,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'avatar-upload': __WEBPACK_IMPORTED_MODULE_0_vue_image_crop_upload___default.a,
         'editable': {
             template: '<textarea contenteditable="true" @input="$emit(\'update:content\', $event.target.innerText)"></textarea>'
-            // <div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>
         }
     },
     props: ['content'],
@@ -39238,6 +39230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (response) {
                 _this2.dataUser = response.data.profile;
+                __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/profile');
             });
         },
         cropUploadSuccess: function cropUploadSuccess() {
@@ -44386,6 +44379,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       currentView: 'admin-main'
     };
   },
+  beforeCreate: function beforeCreate() {},
 
   components: {
     'admin-main': __WEBPACK_IMPORTED_MODULE_3__adminDashboardMain___default.a,

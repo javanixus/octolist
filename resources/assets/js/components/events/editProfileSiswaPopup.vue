@@ -138,7 +138,6 @@
             'avatar-upload': avatarUpload,
             'editable': {
                 template: `<textarea contenteditable="true" @input="$emit('update:content', $event.target.innerText)"></textarea>`
-                // <div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>
             },
         },
         props: ['content'],
@@ -157,7 +156,7 @@
                 })
                 .then((response) => {
                     this.dataUser = response.data.profile;
-
+                    router.go('/profile')
                  })
             },
             cropUploadSuccess(){

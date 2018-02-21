@@ -42,6 +42,9 @@
         currentView: 'admin-main'
       }
     },
+    beforeCreate(){
+      
+    },
     components: {
       'admin-main': adminDashboardMain,
       'admin-table-student': adminDashboardTableSt,
