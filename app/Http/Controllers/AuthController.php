@@ -159,7 +159,6 @@ class AuthController extends Controller
                 ], 500);
             }
 
-<<<<<<< HEAD
                 $response = [
                     'passed' => true,
                     'user' => $user,
@@ -168,14 +167,6 @@ class AuthController extends Controller
 
                 JWTAuth::setToken($token);
                 return response()->json($response, 201);
-=======
-            if ($user->role == 1) {
-                $user->role= 'admin';
-            } elseif ($user->role == 2) {
-                $user->role = 'teacher';
-            } else {
-                $user->role = 'students';
->>>>>>> 9c3fc4b811ca18ff782cc86d5d60e7ba3032b81e
             }
 
             $response = [
@@ -213,16 +204,11 @@ class AuthController extends Controller
             'password'=> $password,
         ];
 
-<<<<<<< HEAD
                 $response = [
                     'passed' => true,
                     'user' => $user,
                     'token' => $token,
                 ];
-=======
-        $token = NULL;
-        if($user->role==2){
->>>>>>> 9c3fc4b811ca18ff782cc86d5d60e7ba3032b81e
 
             try {
                 if (! $token = JWTAuth::attempt($credentials)) {
@@ -261,14 +247,11 @@ class AuthController extends Controller
     return response()->json($response, 201);
 }
 
-<<<<<<< HEAD
                 $response = [
                     'passed' => true,
                     'user' => $user,
                     'token' => $token,
                 ];
-=======
->>>>>>> 9c3fc4b811ca18ff782cc86d5d60e7ba3032b81e
 
    public function AdminAuth(Request $request){
     $this->validate($request, [

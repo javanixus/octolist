@@ -47,12 +47,7 @@ class UserController extends Controller
     public function show($id){
         $student = StudentsInfo::where('id_students', $id)->get()->first();
 
-<<<<<<< HEAD
         if ($student){
-=======
-        $student->avatar = '/avatar/'.$student->avatar;
-			$student->role = Auth::user()->role;
->>>>>>> 9c3fc4b811ca18ff782cc86d5d60e7ba3032b81e
 
             $student->avatar = '/avatar/'.$student->avatar;
 
