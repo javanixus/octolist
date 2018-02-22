@@ -1,14 +1,8 @@
-<template>
-  <div id="startFinal">
-  <div class="startFinal__navbar">
-    <p>Octolist</p>
-  </div>
-  <div class="startFinal__Title">
-    <h3>You are already to start.</h3>
-    <p>Start the journey with click i'm ready below.</p>
-    <button>I'm Ready</button>
-  </div>
-      <svg style="position: absolute; bottom: 0px;" width="400px" height="158px" viewBox="0 0 400 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400px" height="158px" viewBox="0 0 400 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="65.0364027%" y1="-4.37439917%" x2="9.38124499%" y2="60.5456248%" id="linearGradient-1">
             <stop stop-color="#66546B" offset="0%"></stop>
@@ -23,14 +17,3 @@
         </g>
     </g>
 </svg>
-<div class="sun"></div>
-  </div>
-</template>
-<style scoped>
-
-</style>
-<script>
-export default {
-  
-}
-</script>
