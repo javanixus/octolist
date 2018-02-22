@@ -3,7 +3,7 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content nopadding">
                 <div class="profileMenuPopupWrapper">
-                    <form action="POST">
+                    <form method="POST">
                         <div class="editProfileSiswaMenuPopup__Header">
                             <avatar-upload field="avatar" v-model="show" :width="300" langType="en" :height="300" url="http://localhost:8000/api/v1/user/avatarUpload" :params="paramAvatar" :headers="headerToken" img-format="jpg" @crop-upload-success="cropUploadSuccess"></avatar-upload>
                             <div class="containerProfilePictureEdit" @click="toggleShow">
@@ -13,6 +13,7 @@
                         </div>
                         <div class="profileMenuPopup__Content">
                             <div class="createProjectForm">
+                                <input type="hidden" name="_method" value="PATCH">
                                 <p>Nama Lengkap</p>
                                 <input type="text" v-validate="'required'" :class="{'input--default': true, 'input--danger': errors.has('nama-lengkap') }" v-model="dataUser.name" class="input--default input--default-full input-text fontSize-s" name="nama-lengkap" placeholder="Nama lengkap">
                                 <span style="font-size: 12px; color: red;" v-if="errors.has('nama-lengkap')">
@@ -137,7 +138,6 @@
             'avatar-upload': avatarUpload,
             'editable': {
                 template: `<textarea contenteditable="true" @input="$emit('update:content', $event.target.innerText)"></textarea>`
-                // <div contenteditable="true" placeholder="isi deskripsi..." style="font-size: 14px; font-weight: lighter; overflow: hidden;"></div>
             },
         },
         props: ['content'],
@@ -156,7 +156,7 @@
                 })
                 .then((response) => {
                     this.dataUser = response.data.profile;
-
+                    router.go('/profile')
                  })
             },
             cropUploadSuccess(){

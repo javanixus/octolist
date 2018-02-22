@@ -8,7 +8,7 @@ class AdminsInfo extends Model
 {
     protected $table = 'admins_info';
     protected $fillable = [
-			'name','email','phone','avatar','id_admins',
+			'name','email','phone','avatar','id_admins','new'
 		];
 
 		public function User(){

@@ -1,13 +1,12 @@
 <template lang="html">
 	<div id="profile-siswa">
-    <create-project />
     <confirm-popup />
     <profile-popup />
     <report-popup />
     <editprofile-siswa-popup />
     <div class="navbar navbar--fixed">
       <div class="navbar__profile navbar__profile--profile-page">
-        <span><router-link :to="{path: '/dashboard'}">Octolist</router-link></span>
+        <span><router-link :to="{path: '/board'}">Octolist</router-link></span>
         <div class="navbar-searchbar">
           <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" name="" value="" class="navbar-searchbar input-nofill input-text fontSize-s borderRadius-m" placeholder="Search" /> <img src="images/search.svg" style="width: 20px; height: 20px; position: absolute;top: 12px;right: 12px;"
             alt="" />
@@ -61,8 +60,6 @@
 </template>
 
 <script>
-  import dashboardBoard from './partials/dashboardBoard.vue';
-  import createProjectPopup from './events/createProject.vue';
   import profileMenuPopup from './events/profilemenuPopup.vue';
   import ConfirmPopup from './events/confirmPopup';
   import reportPopup from './events/reportBugsPopup';
@@ -74,12 +71,6 @@
   export default {
       beforeCreate(){
             if(store.state.isLogged){
-              const key_id = window.localStorage.getItem('key');
-              // decrypt phase //
-              const becrypt_slice_one = key_id.slice(7);
-              const becrypt_zero = becrypt_slice_one / 100101010;
-              const becrypt_pharse = becrypt_zero / 8084334125;
-              // end decrypt //
               axios.get('http://localhost:8000/api/v1/user',{
                   headers: {
                       "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
@@ -87,7 +78,6 @@
               })
               .then((response) => {
                   this.dataUser = response.data.profile
-//                   console.log(response.data.profile);
               })
             } else {
               router.push('/logout')
@@ -133,8 +123,6 @@
       }
     },
     components: {
-      'dashboard-app': dashboardBoard,
-      'create-project': createProjectPopup,
       'profile-popup': profileMenuPopup,
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,
@@ -147,6 +135,11 @@
 .profile-head__title h4{
 	text-align: center!important;
 }
+
+.profile-head__quotes {
+  text-align: center;
+}
+
 .alignCenter {
   text-align: center;
 }

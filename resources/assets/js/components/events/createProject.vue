@@ -3,9 +3,6 @@
         <div class="createProjectModal-wrapper">
             <div class="createProjectModal-content">
                 <form>
-                    <!-- @submit.prevent="createProjectSubmit" -->
-                    <!-- <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
-                    </vue-dropzone> -->
                     <div class="createProjectForm">
                         <p>Nama project</p>
                         <input type="text" v-model="createProjectFormInput.projectNameForm" class="input-nofill input-text fontSize-s" placeholder="ex: Project Umbrella">
@@ -13,7 +10,6 @@
                         <textarea name="create.project.desc" id="create.project.desc.pro" class="editableWrapper" v-model="createProjectFormInput.projectDescForm"/>
                         <p>Tambah anggota</p>
                         <v-select multiple :debounce="250" :on-search="getOptions" :options="options" label="name" v-model="selected"></v-select>
-                        <!-- <input type="text" v-model="createProjectFormInput.projectMemberForm" > -->
                     </div>
                 </form>
                 <div class="createProjectModal-footer modifyFooter">
@@ -108,8 +104,8 @@
             createProject() {
                 axios.post('http://localhost:8000/api/v1/project/create', this.createProjectFormInput)
                     .then((response) => {
-                        router.push('/dashboard')
-                        if (router.push('/dashboard') === false) {
+                        router.push('/board')
+                        if (router.push('/board') === false) {
                             // add behavior here
                         }
                     })

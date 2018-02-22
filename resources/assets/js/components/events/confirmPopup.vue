@@ -7,7 +7,9 @@
   >
     <div class="createProjectModal-wrapper">
       <div class="createProjectModal-content">
-        <p>Apakah kamu yakin ?</p>
+        <div class="confirmContainer">
+          <h4>Apakah kamu yakin ?</h4>
+        </div>
       </div>
       <div class="createProjectModal-footer">
         <router-link :to="'/logout'"><button class="green-button">iya</button></router-link>

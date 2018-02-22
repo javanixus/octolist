@@ -125,7 +125,7 @@ import router from './../../router';
 export default {
     methods: {
         startedNext(){
-
+            router.push('/start/setup')
         }
     }
 }

@@ -1,13 +1,14 @@
 <template lang="html">
   <div id="dashboard-core">
-    <create-project />
+    <getstarted-popup />
+    <!-- <create-project /> -->
+    <precreate-project />
     <confirm-popup />
     <profile-popup />
     <report-popup />
-    <getstarted-popup />
     <div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
-        <span><router-link :to="{path: '/dashboard'}">Octolist</router-link></span>
+        <span><router-link :to="{path: '/board'}">Octolist</router-link></span>
         <div class="navbar-searchbar">
           <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" name="" value="" class="navbar-searchbar input-nofill input-text fontSize-s borderRadius-m" placeholder="Search" /> <img src="images/search.svg" style="width: 20px; height: 20px; position: absolute;top: 12px;right: 12px;"
             alt="" />
@@ -50,12 +51,11 @@
               <!-- awal item static -->
                 <div class="project-item">
                   <div class="project-item__header">
-                    <span class="overlay-dark">
-                      <a href="javascript:void(0)">
-                        <img class="icon" src="images/edit.svg" alt="" />
-                      </a>
-                    </span>
-                    <img src="images/dragon-girl.png" alt="" />
+                    <progressive-img src="images/projectsample.jpg"
+                      placeholder="images/projectsample2x.jpg"
+                      :blur="30"
+                      :delay="2000"
+                      alt="" />
                   </div>
                   <div class="project-item__content">
                     <h5>
@@ -73,11 +73,10 @@
                   </div>
                   <div class="project-item__footer">
                     <div class="project-item__footer-items">
-                         <router-link :to="'/dashboard/board'"><span>Open project</span></router-link>
+                         <router-link :to="'/board/p'"><span>Open project</span></router-link>
                     </div>
                   </div>
               </div>
-              <!-- <dashboard-app ids="projectIds" v-for="project in projects" :pj="project" :key="project.id"></dashboard-app> -->
             </div>
           </div>
         </div>
@@ -88,11 +87,10 @@
 </template>
 
 <script>
-  import axios from 'axios'
-  import router from './../router'
-  import store from './../store/index'
-  import dashboardBoard from './partials/dashboardBoard.vue';
-  import createProjectPopup from './events/createProject.vue';
+  import axios from 'axios';
+  import router from './../router';
+  import store from './../store/index';
+  import preCreateProject from './events/project/preCreateProject';
   import profileMenuPopup from './events/profilemenuPopup.vue';
   import ConfirmPopup from './events/confirmPopup';
   import reportPopup from './events/reportBugsPopup';
@@ -112,7 +110,10 @@
       }).then((response) => {
         this.dataUser = response.data.profile;
         console.log(this.dataUser);
-        this.$modal.show('getstarted-siswa-popup-modal');        
+        if(response.data.profile.role == 1){
+          router.push('/logout')
+        }
+        this.$modal.show('getstarted-siswa-popup-modal');
       })
     },
     data(){
@@ -144,12 +145,14 @@
         })
       },
       popupCreateProjectClickOpen(){
-        this.$modal.show('create-project-modal');
+        this.$modal.show('pre-project-modal');
+      },
+      createProject(){
+        this.$modal.show('pre-project--setup-modal');
       }
     },
     components: {
-      'dashboard-app': dashboardBoard,
-      'create-project': createProjectPopup,
+      'precreate-project': preCreateProject,
       'profile-popup': profileMenuPopup,
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,

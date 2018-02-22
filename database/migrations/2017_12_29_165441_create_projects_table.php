@@ -18,7 +18,8 @@ class CreateProjectsTable extends Migration
             $table->string('project_title', 50);
             $table->integer('project_creator')->unsigned();
             $table->date('project_deadline')->nullable();
-				$table->integer('project_link')->unsigned();
+				$table->integer('project_link')->unsigned()->nullable();
+				$table->string('project_description',50)->nullable();
             $table->timestamps();
         });
 

@@ -1,6 +1,13 @@
 <template>
   <div class="adminDashboardTableTeacher">
-      <p>table teacher</p>
+      <div class="adminDashboardHeader">
+        <div class="adminDashboardHeader__Title">
+          <h3>Teachers</h3>
+        </div>
+        <div class="adminDashboardHeader__Profile">
+          <p>Pampam</p>
+        </div>
+      </div>
   </div>
 </template>
 <style scoped>

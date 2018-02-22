@@ -47,7 +47,12 @@ class UserController extends Controller
     public function show($id){
         $student = StudentsInfo::where('id_students', $id)->get()->first();
 
+<<<<<<< HEAD
         if ($student){
+=======
+        $student->avatar = '/avatar/'.$student->avatar;
+			$student->role = Auth::user()->role;
+>>>>>>> 9c3fc4b811ca18ff782cc86d5d60e7ba3032b81e
 
             $student->avatar = '/avatar/'.$student->avatar;
 
@@ -235,6 +240,21 @@ class UserController extends Controller
 		 return response()->json($response);
 	 }
 
+	public function profile($id){
+		// $users = Auth::user();
+        // $id = $users->id;
+        $student = StudentsInfo::where('id_students', $id)->get()->first();
+
+        $student->avatar = '/avatar/'.$student->avatar;
+
+        $response = [
+            'profile'=> $student,
+            'href' => "/api/v1/user/",
+            'method' => "GET",
+        ];
+
+        return response()->json($response, 200);
+	}
 
     public function destroy($id, Request $request)
     {

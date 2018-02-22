@@ -19,20 +19,20 @@
             <h3 class="fontSize-l fontWeight-4 textAlignCenter marginBottom-xl">Kembali</h3>
             <div class="marginBottom-s">
               <label for="loginUser"></label>
-              <input id="loginUser"type="text" v-validate="'required|alpha'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="logItIn.username" class="input-text fontSize-s" placeholder="Username" name="username">
+              <input @focus="$event.target.select()" id="loginUser"type="text" v-validate="'required'" :class="{'input-nofill': true, 'input--danger': errors.has('username') }" v-model="logItIn.username" class="input-text fontSize-s" placeholder="Username" name="username">
               <span style="font-size: 12px; color: red;" v-if="errors.has('username')">
                 {{ errors.first('username') }}
               </span>
               <label for="loginPass"></label>
-              <input id="loginPass" type="password" v-validate="'required|alpha'" v-model="logItIn.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
+              <input @focus="$event.target.select()" id="loginPass" type="password" v-validate="'required'" v-model="logItIn.password" name="password" :class="{'input-nofill': true, 'input--danger': errors.has('password') }" class="input-nofill input-text fontSize-s" placeholder="Password">
               <span style="font-size: 12px; color: red;" v-if="errors.has('password')">
                 {{ errors.first('password') }}
               </span>
             </div>
+            <p class="red-color textAlignCenter">{{ logItIn.msg }}</p>
             <div class="marginTop-l">
-              <button @click.prevent="authUser" :class="{'loading':logItIn.loader}" :disabled="!authUserIsPassed" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue">Login</button>
+              <button @click.prevent="authUser" :disabled="!authUserIsPassed" type="button" name="button" class="login-button textAlignCenter button button-landing button--xl borderRadius-s button--melting-blue"><div style="background-image: url('/images/spinner.png');" :class="{'spinner':logItIn.loader}"></div>{{ state.login }}</button>
             </div>
-            {{ logItIn.msg }}
           </form>
         </div>
       </div>
@@ -53,6 +53,10 @@
           password: '',
           msg: '',
           loader: false,
+
+      },
+      state: {
+        login: 'Login',
       },
       }
     },
@@ -63,13 +67,14 @@
     },
     beforeCreate(){
       if (store.state.isLogged){
-        router.push('/dashboard')
+        router.push('/board')
       }
     },
     methods: {
       authUser() {
         this.logItIn.loader = true,
-        axios.post('http://localhost:8000/api/v1/user/signin', this.logItIn,{
+        this.state.login = ''
+        axios.post('http://localhost:8000/api/v1/student/login', this.logItIn,{
           headers: {
             'X-Requested-With': 'XMLHttpRequest'
           },
@@ -79,11 +84,12 @@
           if (response.data.passed === true){
             window.localStorage.setItem('token', response.data.token);
             store.commit('LOGIN_USER');
-            router.push('/dashboard');
+            router.push('/board');
           }
           else {
             this.logItIn.msg = (response.data.msg);
             this.logItIn.loader = false;
+            this.state.login = 'Login';
           }
           () => {
             this.logItIn.loader = false

@@ -5,7 +5,6 @@
         width: 70vw;
         height: 100vh;
         background-image: url('http://localhost:8000/images/login.jpg');
-        // filter: blur(1px);
         background-size: cover;
     }
     .adminLogin__Form{
@@ -33,25 +32,32 @@
         padding: 30px 0;    
     }
 }
+
+.adminLoginFormTitle__Big {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
 // main core
 .adminDashboard__Navbar {
-    width: 100%;
-    height: 50px;
-    background: #777EE0;
+    min-width: 70px;
+    height: 100vh;
+    background: #282936;
     position: fixed;
+    padding: 15px 0;
 }
 .adminDashboard__Main {
-    padding: 60px 15px 15px 15px;
+    padding: 15px 15px 15px 100px;
 }
 
 .adminDashboardNavbarExtends {
-    display: inline-flex;
-    align-items: center;
     height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ul li {
-        margin: 0 15px;
-        color: white;
-        display: inline-flex;
+        margin: 15px;
         list-style-type: none;
         cursor: pointer;
     }
@@ -61,5 +67,166 @@
     color: red;
 }
 
-// .adminDashboard__Main {
-// }
+.adminDashboardHeader {
+    padding-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .adminDashboardHeader__Title {
+        padding-left: 7.5px;
+        h3 {
+            font-weight: 700;
+            font-size: 30px;
+        }
+    }
+}
+
+.adminDashboardHeader__Profile {
+    padding: 0 30px;
+    &::after, &::before {
+        clear: both;
+    }
+}
+
+// content Home 
+
+.box-greeting {
+    background-image: url('/images/person-cropped.jpg')!important;
+    position: relative;
+    overflow: hidden;
+    span {
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background-color: rgba(120, 46, 176, 0.2) !important;
+        .box-greeting__details {
+            bottom: 15px;
+            left: 15px;
+            position: absolute;
+            h4 {
+               color: #F9FAFC;
+               font-size: 30px;
+               font-weight: 700;
+            }
+            p {
+                color: white;
+                opacity: .7;
+                font-weight: 500;
+            }
+        }
+    }
+}
+.box-version {
+    background-color: #782EB0!important;
+    color: white;
+    p {
+        font-size: 10px;
+        color: white;
+        opacity: .7;
+        margin: 10px 0;
+    }
+    label {
+        font-size: 12px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    input {
+        padding: 5px 7.5px;
+        border-radius: 1px;
+        border: none;
+        cursor: pointer;
+        width: 70%;
+        color: #8492A6;
+        outline: none;
+    }
+}
+
+.box-big1 {
+    background-size: cover;
+    background-image: url('/images/total.jpeg')!important;
+    position: relative;
+    overflow: hidden;
+    span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color:rgba(108, 123, 255, 0.2);
+        padding: 15px;
+        .box-details {
+            padding: 15px;
+            height: 100px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background-size: cover;
+            position: relative;
+            background-image: url('/images/teacher.png')!important;
+            .box-details__info{
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                display: inline-flex;
+                p {
+                    font-size: 14px;
+                    margin-right: 15px;
+                }
+                h3 {
+                    font-size: 40px;
+                }
+
+            }
+        }
+    }
+}
+
+.box-big2 {
+    // background-color: #589DFB!important;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/images/night.png')!important;
+    position: relative;
+    overflow: hidden;
+    padding: 30px!important;
+    .box-big2__info {
+        max-width: 300px;
+        position: absolute;
+        bottom: 30px;
+        h3 {
+            font-size: 25px;
+            color: white;
+            opacity: .9;
+        }
+        p {
+            margin-top: 30px;
+            font-size: 15px;
+            color: white;
+            opacity: .9;
+        }
+    }
+}
+
+.adminDashboardContent {
+    display: inline-flex;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.adminBox {
+    padding: 15px;
+    margin: 15px 7.5px;
+    background: white;
+}
+
+.box--small {
+    width: 300px;
+    height: 200px;
+}
+
+.box--big {
+    width: 440px;
+    height: 415px;
+}

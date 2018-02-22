@@ -66,5 +66,10 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::delete('project/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
+			Route::post('/admin','AdminController@store');
+
+			Route::get('/admin','AdminController@show');
+
+			Route::patch('/admin','AdminController@update');
     });
 });
