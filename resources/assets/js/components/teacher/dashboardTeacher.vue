@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="dashboard-core">
+  <div id="dashboardTeacher">
     <getstarted-popup />
     <!-- <create-project /> -->
     <precreate-project />
@@ -147,3 +147,4 @@
     border: none;
   }
 </style>
+

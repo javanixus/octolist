@@ -81,7 +81,8 @@
           withCredentials: true
         })
         .then((response) => {
-          if (response.data.passed === true){
+          console.log(response)
+          if (response.data.passed == true){
             window.localStorage.setItem('token', response.data.token);
             store.commit('LOGIN_USER');
             router.push('/board');
@@ -94,6 +95,8 @@
           () => {
             this.logItIn.loader = false
           }
+        }).catch((error) =>{
+          console.log(error.response.data)
         })
       }
     }
