@@ -48,34 +48,8 @@
           </div>
           <div class="project__content">
             <div class="project">
-              <!-- awal item static -->
-                <div class="project-item">
-                  <div class="project-item__header">
-                    <progressive-img src="images/projectsample.jpg"
-                      placeholder="images/projectsample2x.jpg"
-                      :blur="30"
-                      :delay="2000"
-                      alt="" />
-                  </div>
-                  <div class="project-item__content">
-                    <h5>
-                      Typography Culture
-                    </h5>
-                    <div class="content-red">
-                      <div class="content-desc">
-                        <div class="content-people">
-                          <img src="images/kecil1.png" alt="" />
-                          <img src="images/kecil6.jpg" alt="" />
-                          <img src="images/kecil5.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="project-item__footer">
-                    <div class="project-item__footer-items">
-                         <router-link :to="'/board/p'"><span>Open project</span></router-link>
-                    </div>
-                  </div>
+              <!-- awal item dynamic -->
+                <project-app v-for="project in projects" :prog="project" key="projectapp"></project-app>
               </div>
             </div>
           </div>
@@ -95,6 +69,7 @@
   import ConfirmPopup from './events/confirmPopup';
   import reportPopup from './events/reportBugsPopup';
   import getStarted from './events/getStartedPopup';
+  import ProjectComponent from './../components/project/projectApp';
 
   export default {
     beforeCreate(){
@@ -114,6 +89,7 @@
           router.push('/logout')
         }
         this.$modal.show('getstarted-siswa-popup-modal');
+        // axios.get('http://loca')
       })
     },
     data(){
@@ -157,6 +133,7 @@
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,
       'getstarted-popup': getStarted,
+      'project-app': ProjectComponent
     }
   }
 </script>

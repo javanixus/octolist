@@ -157,6 +157,8 @@
                 .then((response) => {
                     this.dataUser = response.data.profile;
                     router.go('/profile')
+                 }).catch((error) =>{
+                     console.log(error.response.data)
                  })
             },
             cropUploadSuccess(){

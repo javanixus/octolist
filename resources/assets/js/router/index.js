@@ -14,6 +14,7 @@ import nothing from './../components/404';
 import GetStarted from './../components/getstarted/GetStarted';
 import About from './../components/about';
 import ProfileSetup from './../components/getstarted/profile-setup';
+import final from './../components/getstarted/startFinal';
 import adminDashboard from './../components/admin/adminDashboard';
 import loginAdmin from './../components/auth/loginAdmin';
 
@@ -48,6 +49,10 @@ export default new Router({
     {
       path: '/start/setup',
       component: ProfileSetup,
+    },
+    {
+      path: '/start/final',
+      component: final
     },
     {
       path: '/profile',
