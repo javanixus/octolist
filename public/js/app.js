@@ -518,7 +518,7 @@ function applyToTag (styleElement, obj) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_adminDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_admin_adminDashboard__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher__);
 // import deb
 
@@ -13931,7 +13931,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // exec
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetwork', __webpack_require__(202));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetwork', __webpack_require__(207));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.devtools = true;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.performance = true;
@@ -46032,74 +46032,18 @@ if (false) {
 
 /***/ }),
 /* 202 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var VOffline = { render: function render() {
-    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', [_vm.onLine ? _c('div', { class: _vm.onlineClass }, [_vm._t("online")], 2) : _c('div', { class: _vm.offlineClass }, [_vm._t("offline")], 2)]);
-  }, staticRenderFns: [],
-  name: 'v-offline',
-  props: {
-    onlineClass: {
-      type: String,
-      required: false
-    },
-    offlineClass: {
-      type: String,
-      required: false
-    }
-  },
-  data: function data() {
-    return {
-      onLine: navigator.onLine || false
-    };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    window.addEventListener('load', function () {
-      _this.updateOnlineStatus();
-      window.addEventListener('online', _this.updateOnlineStatus);
-      window.addEventListener('offline', _this.updateOnlineStatus);
-    });
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-  },
-
-  methods: {
-    updateOnlineStatus: function updateOnlineStatus() {
-      this.isOnline = navigator.onLine || false;
-      this.$emit('detected-condition', this.isOnline);
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (VOffline);
-
-
-/***/ }),
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(210)
+  __webpack_require__(203)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(212)
+var __vue_script__ = __webpack_require__(205)
 /* template */
-var __vue_template__ = __webpack_require__(213)
+var __vue_template__ = __webpack_require__(206)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -46138,13 +46082,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(211);
+var content = __webpack_require__(204);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -46164,7 +46108,7 @@ if(false) {
 }
 
 /***/ }),
-/* 211 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(undefined);
@@ -46178,7 +46122,7 @@ exports.push([module.i, "\n.navbar[data-v-7ed252d2]{box-shadow:0 3px 10px 0 rgba
 
 
 /***/ }),
-/* 212 */
+/* 205 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46339,7 +46283,7 @@ throw new Error("Cannot find module \"./../components/project/projectApp\"");
 });
 
 /***/ }),
-/* 213 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -46514,6 +46458,56 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7ed252d2", module.exports)
   }
 }
+
+/***/ }),
+/* 207 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var VOffline = { render: function render() {
+    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', [_vm.onLine ? _c('div', { class: _vm.onlineClass }, [_vm._t("online")], 2) : _c('div', { class: _vm.offlineClass }, [_vm._t("offline")], 2)]);
+  }, staticRenderFns: [],
+  name: 'v-offline',
+  props: {
+    onlineClass: {
+      type: String,
+      required: false
+    },
+    offlineClass: {
+      type: String,
+      required: false
+    }
+  },
+  data: function data() {
+    return {
+      onLine: navigator.onLine || false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.addEventListener('load', function () {
+      _this.updateOnlineStatus();
+      window.addEventListener('online', _this.updateOnlineStatus);
+      window.addEventListener('offline', _this.updateOnlineStatus);
+    });
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.removeEventListener('online', this.updateOnlineStatus);
+    window.removeEventListener('offline', this.updateOnlineStatus);
+  },
+
+  methods: {
+    updateOnlineStatus: function updateOnlineStatus() {
+      this.isOnline = navigator.onLine || false;
+      this.$emit('detected-condition', this.isOnline);
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (VOffline);
+
 
 /***/ })
 /******/ ]);
