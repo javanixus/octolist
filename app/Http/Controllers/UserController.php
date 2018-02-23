@@ -45,9 +45,10 @@ class UserController extends Controller
     }
 
     public function show(){
-//        $student = StudentsInfo::where('id_students', $id)->get()->first();
-
         $student = Auth::user();
+        $student = StudentsInfo::where('id_students',  $student->id)->get()->first();
+
+
 
         if ($student){
 
