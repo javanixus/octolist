@@ -302,13 +302,17 @@ var singletonElement = null
 var singletonCounter = 0
 var isProduction = false
 var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
 
 // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 // tags it will allow on a page
 var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
 
-module.exports = function (parentId, list, _isProduction) {
+module.exports = function (parentId, list, _isProduction, _options) {
   isProduction = _isProduction
+
+  options = _options || {}
 
   var styles = listToStyles(parentId, list)
   addStylesToDom(styles)
@@ -373,7 +377,7 @@ function createStyleElement () {
 
 function addStyle (obj /* StyleObjectPart */) {
   var update, remove
-  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
 
   if (styleElement) {
     if (isProduction) {
@@ -455,6 +459,9 @@ function applyToTag (styleElement, obj) {
   if (media) {
     styleElement.setAttribute('media', media)
   }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
 
   if (sourceMap) {
     // https://developer.chrome.com/devtools/docs/javascript-debugging
@@ -511,11 +518,14 @@ function applyToTag (styleElement, obj) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_adminDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_admin_adminDashboard__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher__);
 // import deb
 
 
 
 // import pages to render
+
 
 
 
@@ -578,6 +588,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue_
   }, {
     path: '/admin/login',
     component: __WEBPACK_IMPORTED_MODULE_15__components_auth_loginAdmin___default.a
+  }, {
+    path: '/teacher/board',
+    component: __WEBPACK_IMPORTED_MODULE_16__components_teacher_dashboardTeacher___default.a
   }, {
     path: '/logout',
     component: __WEBPACK_IMPORTED_MODULE_4__components_auth_logout___default.a
@@ -13350,7 +13363,7 @@ var content = __webpack_require__(58);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0e553632", content, false);
+var update = __webpack_require__(2)("62486412", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -13644,7 +13657,7 @@ var content = __webpack_require__(81);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7beede32", content, false);
+var update = __webpack_require__(2)("14346086", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -13670,7 +13683,7 @@ var content = __webpack_require__(88);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("438bf4da", content, false);
+var update = __webpack_require__(2)("0921b038", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -13849,7 +13862,7 @@ var content = __webpack_require__(154);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d50cb7e4", content, false);
+var update = __webpack_require__(2)("014789ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23231,7 +23244,7 @@ var content = __webpack_require__(51);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7a9ef29d", content, false);
+var update = __webpack_require__(2)("89b8cd50", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26172,7 +26185,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
@@ -27808,7 +27821,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         withCredentials: true
       }).then(function (response) {
-        if (response.data.passed === true) {
+        console.log(response);
+        if (response.data.passed == true) {
           window.localStorage.setItem('token', response.data.token);
           __WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].commit('LOGIN_USER');
           __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/board');
@@ -27820,6 +27834,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         (function () {
           _this.logItIn.loader = false;
         });
+      }).catch(function (error) {
+        console.log(error.response.data);
       });
     }
   }
@@ -28426,7 +28442,7 @@ var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("dd8529da", content, false);
+var update = __webpack_require__(2)("0c24438a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28559,7 +28575,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     var _this = this;
 
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
       headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       }
@@ -28570,7 +28586,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/logout');
       }
       _this.$modal.show('getstarted-siswa-popup-modal');
-      // axios.get('http://loca')
+    }).catch(function (error) {
+      console.log(error.response.data);
     });
   },
   data: function data() {
@@ -28683,7 +28700,7 @@ var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("370d5ed9", content, false);
+var update = __webpack_require__(2)("3576ac42", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28863,7 +28880,7 @@ var content = __webpack_require__(101);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("05678876", content, false);
+var update = __webpack_require__(2)("18eae99f", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29233,7 +29250,7 @@ var content = __webpack_require__(106);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("207a0422", content, false);
+var update = __webpack_require__(2)("5379958c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29316,7 +29333,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     beforeCreate: function beforeCreate() {
         var _this = this;
 
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
@@ -29430,7 +29447,7 @@ var content = __webpack_require__(110);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("1f5c15d0", content, false);
+var update = __webpack_require__(2)("582033fd", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29582,7 +29599,7 @@ var content = __webpack_require__(114);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("56ea71d6", content, false);
+var update = __webpack_require__(2)("24dfa5fa", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38103,7 +38120,7 @@ var content = __webpack_require__(120);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("795fd5d8", content, false);
+var update = __webpack_require__(2)("083afd84", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38206,7 +38223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
@@ -38373,7 +38390,7 @@ var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("78caffb8", content, false);
+var update = __webpack_require__(2)("35c3039a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38768,7 +38785,7 @@ var content = __webpack_require__(131);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d0ee6cf8", content, false);
+var update = __webpack_require__(2)("1af86e8d", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38949,7 +38966,7 @@ var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d985a7da", content, false);
+var update = __webpack_require__(2)("c632dec2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -39071,7 +39088,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this = this;
 
     if (__WEBPACK_IMPORTED_MODULE_4__store_index__["a" /* default */].state.isLogged) {
-      __WEBPACK_IMPORTED_MODULE_5_axios___default.a.get('http://localhost:8000/api/v1/user', {
+      __WEBPACK_IMPORTED_MODULE_5_axios___default.a.get('http://localhost:8000/api/v1/student', {
         headers: {
           "Authorization": 'Bearer ' + window.localStorage.getItem('token')
         }
@@ -39194,7 +39211,7 @@ var content = __webpack_require__(140);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("816b47b0", content, false);
+var update = __webpack_require__(2)("ea5e0f9a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -39330,7 +39347,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         // end decrypt //
-        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://localhost:8000/api/v1/user', {
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://localhost:8000/api/v1/student', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
@@ -39389,7 +39406,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         editProfileAuth: function editProfileAuth() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.patch('http://localhost:8000/api/v1/user', this.dataUser, {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.patch('http://localhost:8000/api/v1/student', this.dataUser, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
@@ -39473,7 +39490,7 @@ var content = __webpack_require__(144);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("a2d18fd8", content, false);
+var update = __webpack_require__(2)("19b213fa", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -42040,7 +42057,7 @@ var content = __webpack_require__(159);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4ff0c512", content, false);
+var update = __webpack_require__(2)("1444fe78", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43379,7 +43396,7 @@ var content = __webpack_require__(164);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4f4a350a", content, false);
+var update = __webpack_require__(2)("0711bb6b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43874,7 +43891,7 @@ var content = __webpack_require__(169);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d75e11ee", content, false);
+var update = __webpack_require__(2)("e1343d0e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44018,7 +44035,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     beforeCreate: function beforeCreate() {
         var _this = this;
 
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/user', {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')
             }
@@ -44031,7 +44048,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         profileRenew: function profileRenew() {
             console.log(this.dataUser);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.patch('http://localhost:8000/api/v1/user', this.patchUser, {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.patch('http://localhost:8000/api/v1/student', this.patchUser, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
@@ -44457,7 +44474,7 @@ var content = __webpack_require__(174);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("68429a66", content, false);
+var update = __webpack_require__(2)("2417df3e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44722,7 +44739,7 @@ var content = __webpack_require__(179);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4120e53e", content, false);
+var update = __webpack_require__(2)("1379dd74", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44882,7 +44899,7 @@ var content = __webpack_require__(183);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("5148fed1", content, false);
+var update = __webpack_require__(2)("48ddb4cc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -45211,7 +45228,7 @@ var content = __webpack_require__(188);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0930a558", content, false);
+var update = __webpack_require__(2)("2ebe5e72", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -45363,7 +45380,7 @@ var content = __webpack_require__(193);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4b705fba", content, false);
+var update = __webpack_require__(2)("4019d2cc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -45695,7 +45712,7 @@ var content = __webpack_require__(199);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2a3854fc", content, false);
+var update = __webpack_require__(2)("1dd3af92", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -46062,6 +46079,441 @@ var VOffline = { render: function render() {
 
 /* harmony default export */ __webpack_exports__["default"] = (VOffline);
 
+
+/***/ }),
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(210)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-7ed252d2"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/teacher/dashboardTeacher.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7ed252d2", Component.options)
+  } else {
+    hotAPI.reload("data-v-7ed252d2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(211);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("4f311477", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ed252d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacher.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ed252d2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboardTeacher.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.navbar[data-v-7ed252d2]{box-shadow:0 3px 10px 0 rgba(0,0,0,.03)\n}\n.navbar__profile[data-v-7ed252d2]{border:none\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+throw new Error("Cannot find module \"./../router\"");
+throw new Error("Cannot find module \"./../store/index\"");
+throw new Error("Cannot find module \"./events/project/preCreateProject\"");
+throw new Error("Cannot find module \"./events/profilemenuPopup.vue\"");
+throw new Error("Cannot find module \"./events/confirmPopup\"");
+throw new Error("Cannot find module \"./events/reportBugsPopup\"");
+throw new Error("Cannot find module \"./events/getStartedPopup\"");
+throw new Error("Cannot find module \"./../components/project/projectApp\"");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  beforeCreate: function beforeCreate() {
+    if (__WEBPACK_IMPORTED_MODULE_2__store_index___default.a.state.isLogged == false) {
+      __WEBPACK_IMPORTED_MODULE_1__router___default.a.push('/');
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      }
+    }).then(function (response) {
+      _this.dataUser = response.data.profile;
+      console.log(_this.dataUser);
+      if (response.data.profile.role == 1) {
+        __WEBPACK_IMPORTED_MODULE_1__router___default.a.push('/logout');
+      }
+      _this.$modal.show('getstarted-siswa-popup-modal');
+    }).catch(function (error) {
+      console.log(error.response.data);
+    });
+  },
+  data: function data() {
+    return {
+      resizable: false,
+      adaptive: false,
+      draggable: false,
+      canBeShown: false,
+      // state: null,
+      isOpened: false,
+      projects: [],
+      dataUser: []
+    };
+  },
+
+  methods: {
+    show: function show(resizable, adaptive, draggable) {
+      var _this2 = this;
+
+      this.resizable = resizable;
+      this.adaptive = adaptive;
+      this.draggable = draggable;
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(function () {
+        _this2.$modal.show('create-project-modal');
+        _this2.$modal.show('profile-popup-modal');
+        _this2.$modal.show('report-popup-modal');
+        _this2.$modal.show('getstarted-siswa-popup-modal');
+      });
+    },
+    popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
+      this.$modal.show('pre-project-modal');
+    },
+    createProject: function createProject() {
+      this.$modal.show('pre-project--setup-modal');
+    }
+  },
+  components: {
+    'precreate-project': __WEBPACK_IMPORTED_MODULE_3__events_project_preCreateProject___default.a,
+    'profile-popup': __WEBPACK_IMPORTED_MODULE_4__events_profilemenuPopup_vue___default.a,
+    'confirm-popup': __WEBPACK_IMPORTED_MODULE_5__events_confirmPopup___default.a,
+    'report-popup': __WEBPACK_IMPORTED_MODULE_6__events_reportBugsPopup___default.a,
+    'getstarted-popup': __WEBPACK_IMPORTED_MODULE_7__events_getStartedPopup___default.a,
+    'project-app': __WEBPACK_IMPORTED_MODULE_8__components_project_projectApp___default.a
+  }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "dashboardTeacher" } },
+    [
+      _c("getstarted-popup"),
+      _vm._v(" "),
+      _c("precreate-project"),
+      _vm._v(" "),
+      _c("confirm-popup"),
+      _vm._v(" "),
+      _c("profile-popup"),
+      _vm._v(" "),
+      _c("report-popup"),
+      _vm._v(" "),
+      _c("div", { staticClass: "navbar" }, [
+        _c(
+          "div",
+          { staticClass: "navbar__profile navbar__profile--profile-page" },
+          [
+            _c(
+              "span",
+              [
+                _c("router-link", { attrs: { to: { path: "/board" } } }, [
+                  _vm._v("Octolist")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "wrapper-profile right-menu" }, [
+              _c("div", {
+                staticClass: "icon-bell marginTop-xs marginRight-s",
+                attrs: { id: "message" }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "icon-message marginTop-xs marginRight-s",
+                attrs: { id: "bell" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "profile-badge" }, [
+                _c("a", { attrs: { href: "javascript:void(0)" } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "borderProfile" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "avatar avatar--s avatar-dp",
+                      attrs: { id: "avatar-dp-id" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.$modal.show("profile-popup-modal")
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "avatar-img",
+                        attrs: { src: _vm.dataUser.avatar, alt: "" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _c("div", { staticClass: "content__header" }, [
+          _c("div", { staticClass: "header-menu" }, [
+            _c("div", { staticClass: "header-menu__right paddingRight-xxl" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "button button-landing fontSize-s button--xl borderRadius-s button--melting-blue",
+                  staticStyle: { "max-width": "300px" },
+                  attrs: { id: "add-task" },
+                  on: {
+                    click: function($event) {
+                      _vm.popupCreateProjectClickOpen()
+                    }
+                  }
+                },
+                [_vm._v("\n            Buat Project Baru\n          ")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "content__items" }, [
+          _c("div", { staticClass: "project" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "project__content" }, [
+              _c(
+                "div",
+                { staticClass: "project" },
+                _vm._l(_vm.projects, function(project) {
+                  return _c("project-app", {
+                    key: "projectapp",
+                    attrs: { prog: project }
+                  })
+                })
+              )
+            ])
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-searchbar" }, [
+      _c("input", {
+        staticClass:
+          "navbar-searchbar input-nofill input-text fontSize-s borderRadius-m",
+        attrs: {
+          autocomplete: "off",
+          autocorrect: "off",
+          autocapitalize: "off",
+          spellcheck: "false",
+          type: "text",
+          name: "",
+          value: "",
+          placeholder: "Search"
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticStyle: {
+          width: "20px",
+          height: "20px",
+          position: "absolute",
+          top: "12px",
+          right: "12px"
+        },
+        attrs: { src: "images/search.svg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "project__header marginTop-m" }, [
+      _c("span", [_vm._v("4 Projects Showed")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7ed252d2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

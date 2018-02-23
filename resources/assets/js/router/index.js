@@ -17,6 +17,7 @@ import ProfileSetup from './../components/getstarted/profile-setup';
 import final from './../components/getstarted/startFinal';
 import adminDashboard from './../components/admin/adminDashboard';
 import loginAdmin from './../components/auth/loginAdmin';
+import dashboardTeacher from './../components/teacher/dashboardTeacher';
 
 // exec
 Vue.use(Router);
@@ -78,6 +79,10 @@ export default new Router({
     {
       path: '/admin/login',
       component: loginAdmin
+    },
+    {
+      path: '/teacher/board',
+      component: dashboardTeacher
     },
     {
       path: '/logout',

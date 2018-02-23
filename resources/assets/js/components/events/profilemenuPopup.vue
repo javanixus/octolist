@@ -41,7 +41,7 @@ export default {
       }
   },
         beforeCreate(){
-            axios.get('http://localhost:8000/api/v1/user' , {
+            axios.get('http://localhost:8000/api/v1/student' , {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }

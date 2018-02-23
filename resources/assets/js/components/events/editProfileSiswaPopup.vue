@@ -92,7 +92,7 @@
     export default {
         beforeCreate(){
             // end decrypt //
-            axios.get('http://localhost:8000/api/v1/user', {
+            axios.get('http://localhost:8000/api/v1/student', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
@@ -149,7 +149,7 @@
                 this.show = !this.show;
             },
             editProfileAuth() {
-                axios.patch('http://localhost:8000/api/v1/user', this.dataUser, {
+                axios.patch('http://localhost:8000/api/v1/student', this.dataUser, {
                     headers: {
                         "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                     }

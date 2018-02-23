@@ -71,3 +71,5 @@ typings/
 
 #public ignoring
 public/
+resources/assets/.DS_Store
+resources/assets/images/.DS_Store
