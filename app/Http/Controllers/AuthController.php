@@ -291,6 +291,7 @@ class AuthController extends Controller
                  }
 
                  $response = [
+                     'passed' => true,
                      'user' => $user,
                      'token' => $token,
                  ];
@@ -349,6 +350,7 @@ class AuthController extends Controller
                  }
 
                  $response = [
+                     'passed' => true,
                      'user' => $user,
                      'token' => $token,
                  ];
@@ -407,6 +409,7 @@ class AuthController extends Controller
                  }
 
                  $response = [
+                     'passed' => true,
                      'user' => $user,
                      'token' => $token,
                  ];
