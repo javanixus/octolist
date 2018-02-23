@@ -24,7 +24,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
      */
     Route::get('students/{q}', 'UserController@search');
     Route::delete('student/{id}', 'UserController@destroy');
-    Route::get('student/{id}', 'UserController@show');
+    Route::get('student', 'UserController@show');
     Route::get('students', 'UserController@index');
     Route::post('student', 'UserController@store');
     Route::patch('student', 'UserController@update');

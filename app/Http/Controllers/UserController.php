@@ -44,8 +44,10 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
-    public function show($id){
-        $student = StudentsInfo::where('id_students', $id)->get()->first();
+    public function show(){
+//        $student = StudentsInfo::where('id_students', $id)->get()->first();
+
+        $student = Auth::user();
 
         if ($student){
 
