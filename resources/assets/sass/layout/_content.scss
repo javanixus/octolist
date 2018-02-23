@@ -473,6 +473,7 @@
       transition: ease-out .1s;
       font-weight: lighter;
       color: #5d5b5b;
+      font-weight: 600;
       font-size: 14px;
       margin-bottom: 10px;
       a {
@@ -494,6 +495,15 @@
 
 .confirmContainer h4{
   text-align: center;
+}
+
+.createProjectModal-footer {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  button {
+    margin: 15px;
+  }
 }
 
 // popup editprofile

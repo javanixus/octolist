@@ -12,8 +12,8 @@
         </div>
       </div>
       <div class="createProjectModal-footer">
-        <router-link :to="'/logout'"><button class="green-button">iya</button></router-link>
-        <button class="red-button" @click="$modal.hide('confirm-modal')">ga, jadi</button>
+        <button @click.prevent="logout" class="button button-landing button--xl borderRadius-s button--melting-blue">Keluar</button>
+        <button class="button button-landing button--xl borderRadius-s button--melting-blue red-bg" @click="$modal.hide('confirm-modal')">Batalkan</button>
       </div>
     </div>
   </modal>
@@ -22,5 +22,13 @@
 
 </style>
 <script>
-  export default {}
+  import router from './../../router'
+
+  export default {
+    methods: {
+      logout() {
+        router.push('/logout')
+      }
+    }
+  }
 </script>

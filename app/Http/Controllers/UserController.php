@@ -25,15 +25,10 @@ class UserController extends Controller
         $this->middleware('jwt.auth');
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $que = $request->get('q');
-        if (!empty($que)){
-            $students = StudentsInfo::where('name', 'like', "%$que%")->get();
+        $students = StudentsInfo::all()->sortBy('name');
 
-        } else {
-            $students = StudentsInfo::all()->sortBy('name');
-        }
         foreach($students as $student){
             $student->view_students = array(
                 'href' => '/api/v1/user/'.$student->id_students,
@@ -42,7 +37,6 @@ class UserController extends Controller
         }
 
         $response = [
-            'msg' => 'List of Students',
             'students' => $students,
             'students_count' => $students->count(),
         ];
@@ -51,66 +45,83 @@ class UserController extends Controller
     }
 
     public function show(){
-        $users = Auth::user();
-        $id = $users->id;
-        $student = StudentsInfo::where('id_students', $id)->get()->first();
+        $student = Auth::user();
+        $student = StudentsInfo::where('id_students',  $student->id)->get()->first();
 
-        $student->avatar = '/avatar/'.$student->avatar;
-			$student->role = Auth::user()->role;
 
-        $response = [
-            'profile'=> $student,
-            'href' => "/api/v1/user/",
-            'method' => "GET",
-        ];
 
-        return response()->json($response, 200);
+        if ($student){
+
+            $student->avatar = '/avatar/'.$student->avatar;
+
+            $response = [
+                'profile'=> $student,
+                'href' => "/api/v1/user/",
+            ];
+
+            return response()->json($response, 200);
+        } else
+
+            $response = [
+                'msg'=> 'not found',
+                'href' => "/404",
+            ];
+
+            return response()->json($response,404);
     }
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'username' => 'required:min:1',
-            'password' => 'required|min:1',
-            'role' => 'required|min:1',
-            'name' => 'required',
-            'email' => 'required',
-            'nis' => 'required',
-            'gender' => 'required',
-        ]);
+        $admin = Auth::user();
+        if ($admin->role == 1){
 
-        // $student = User::Create($request->all());
-			$student = User::Create($request->only(['username','password','role']));
-			if($request->role == 3){
-				$student_info = StudentsInfo::Create([
-					'nis' => $request->nis,
-					'name' => $request->name,
-					'email' => $request->email,
-					'bio'	=>	$request->bio,
-					'phone'	=> $request->phone,
-					'avatar' => $request->avatar,
-					'id_class' => $request->class,
-					'id_major' => $request->major,
-					'gender' => $request->gender,
-					'id_students' => $student->id,
-				]);
-			}
+            $this->validate($request, [
+                'username' => 'required:min:1',
+                'password' => 'required|min:1',
+                'role' => 'required|min:1',
+                'name' => 'required',
+                'email' => 'required',
+                'nis' => 'required',
+                'gender' => 'required',
+            ]);
 
-        if ($student) {
-            $response = [
-                'msg' => 'User Berhasil dibuat',
-                'href' => '/v1/users',
-                'method' => 'GET',
-            ];
+            // $student = User::Create($request->all());
+            $student = User::Create($request->only(['username', 'password', 'role']));
+            if ($request->role == 3) {
+                $student_info = StudentsInfo::Create([
+                    'nis' => $request->nis,
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'bio' => $request->bio,
+                    'phone' => $request->phone,
+                    'avatar' => $request->avatar,
+                    'id_class' => $request->class,
+                    'id_major' => $request->major,
+                    'gender' => $request->gender,
+                    'id_students' => $student->id,
+                ]);
+            }
+
+            if ($student) {
+                $response = [
+                    'msg' => 'user berhasil dibuat',
+                    'href' => '/v1/users',
+                    'method' => 'GET',
+                ];
+            } else {
+                $response = [
+                    'msg' => 'user gagal dibuat',
+                    'href' => '/v1/user',
+                    'method' => 'GET',
+                ];
+            }
+
+            return response()->json($response, 200);
+
         } else {
-            $response = [
-                'msg' => 'User gagal dibuat',
-                'href' => '/v1/user',
-                'method' => 'GET',
-            ];
-        }
 
-        return response()->json($response, 200);
+            return  response()->json('api not allowed', 403);
+        }
     }
 
     public function update(Request $request)
@@ -258,6 +269,30 @@ class UserController extends Controller
         ];
 
         return response()->json($response);
+    }
+
+    public function search(Request $request)
+    {
+        $que = $request->get('q');
+        if (!empty($que)){
+            $students = StudentsInfo::where('name', 'like', "%$que%")->get();
+
+        } else {
+            $students = StudentsInfo::all()->sortBy('name');
+        }
+        foreach($students as $student){
+            $student->view_students = array(
+                'href' => '/api/v1/user/'.$student->id_students,
+                'method' => 'GET',
+            );
+        }
+
+        $response = [
+            'msg' => 'List of Students',
+            'students' => $students,
+        ];
+
+        return response()->json($response, 200);
     }
 
 

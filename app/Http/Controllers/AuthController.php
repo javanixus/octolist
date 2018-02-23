@@ -129,350 +129,305 @@ class AuthController extends Controller
    //
    //     return response()->json($response, 201);
    // }
+//
+//   public function studentAuth(Request $request){
+//    $this->validate($request, [
+//        'username' => 'required',
+//        'password' => 'required',
+//    ]);
+//
+//    $username = $request->username;
+//    $password = $request->password;
+//
+//    if ($user = User::where('username', $username)->first()){
+//
+//        $credentials = [
+//            'username'=> $username,
+//            'password'=> $password,
+//        ];
+//
+//        $token = NULL;
+//        if($user->role==3){
+//
+//            try {
+//                if (! $token = JWTAuth::attempt($credentials)) {
+//                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+//                    ], 201);
+//                }
+//            } catch (JWTException $e) {
+//                return response()->json(['msg' => 'could_not_create_token',
+//                ], 500);
+//            }
+//
+//                $response = [
+//                    'passed' => true,
+//                    'user' => $user,
+//                    'token' => $token,
+//                ];
+//
+//                JWTAuth::setToken($token);
+//                return response()->json($response, 201);
+//            }
+//
+//            $response = [
+//                'passed' => true,
+//                'user' => $user,
+//                'token' => $token,
+//                'redirect' => route('dashboard'),
+//            ];
+//
+//            JWTAuth::setToken($token);
+//             return response()->json($response, 201);
+//        }
+//    }
+//
+//    $response = [
+//        'msg' =>  'Akun Tidak Terdaftar',
+//    ];
+//
+//    return response()->json($response, 201);
+//}
+//
+//   public function TeacherAuth(Request $request){
+//    $this->validate($request, [
+//        'username' => 'required',
+//        'password' => 'required',
+//    ]);
+//
+//    $username = $request->username;
+//    $password = $request->password;
+//
+//    if ($user = User::where('username', $username)->first()){
+//
+//        $credentials = [
+//            'username'=> $username,
+//            'password'=> $password,
+//        ];
+//
+//                $response = [
+//                    'passed' => true,
+//                    'user' => $user,
+//                    'token' => $token,
+//                ];
+//
+//            try {
+//                if (! $token = JWTAuth::attempt($credentials)) {
+//                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+//                    ], 201);
+//                }
+//            } catch (JWTException $e) {
+//                return response()->json(['msg' => 'could_not_create_token',
+//                ], 500);
+//            }
+//
+//            if ($user->role == 1) {
+//                $user->role= 'admin';
+//            } elseif ($user->role == 2) {
+//                $user->role = 'teacher';
+//            } else {
+//                $user->role = 'students';
+//            }
+//
+//            $response = [
+//                'passed' => true,
+//                'user' => $user,
+//                'token' => $token,
+//                'redirect' => route('dashboard'),
+//            ];
+//
+//            JWTAuth::setToken($token);
+//             return response()->json($response, 201);
+//        }
+//    }
+//
+//    $response = [
+//        'msg' =>  'Akun Tidak Terdaftar',
+//    ];
+//
+//    return response()->json($response, 201);
+//}
+//
+//                $response = [
+//                    'passed' => true,
+//                    'user' => $user,
+//                    'token' => $token,
+//                ];
 
-   public function studentAuth(Request $request){
-    $this->validate($request, [
-        'username' => 'required',
-        'password' => 'required',
-    ]);
+     public function studentAuth(Request $request){
+         $this->validate($request, [
+             'username' => 'required',
+             'password' => 'required',
+         ]);
 
-    $username = $request->username;
-    $password = $request->password;
+         $username = $request->username;
+         $password = $request->password;
 
-    if ($user = User::where('username', $username)->first()){
+         if ($user = User::where('username', $username)->first()){
+             if ($user->role === 3){
 
-        $credentials = [
-            'username'=> $username,
-            'password'=> $password,
-        ];
+                 $credentials = [
+                     'username'=> $username,
+                     'password'=> $password,
+                 ];
 
-        $token = NULL;
-        if($user->role==3){
+                 $token = NULL;
 
-            try {
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-                    ], 201);
-                }
-            } catch (JWTException $e) {
-                return response()->json(['msg' => 'could_not_create_token',
-                ], 500);
-            }
+                 try {
+                     if (! $token = JWTAuth::attempt($credentials)) {
+                         return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+                         ], 201);
+                     }
+                 } catch (JWTException $e) {
+                     return response()->json(['msg' => 'could_not_create_token',
+                     ], 500);
+                 }
 
-            if ($user->role == 1) {
-                $user->role= 'admin';
-            } elseif ($user->role == 2) {
-                $user->role = 'teacher';
-            } else {
-                $user->role = 'students';
-            }
+                 if ($user->role == 1) {
+                     $user->role= 'admin';
+                 } elseif ($user->role == 2) {
+                     $user->role = 'teacher';
+                 } else {
+                     $user->role = 'students';
+                 }
 
-            $response = [
-                'passed' => true,
-                'user' => $user,
-                'token' => $token,
-                'redirect' => route('dashboard'),
-            ];
+                 $response = [
+                     'passed' => true,
+                     'user' => $user,
+                     'token' => $token,
+                 ];
 
-            JWTAuth::setToken($token);
+                 JWTAuth::setToken($token);
+                 return response()->json($response, 201);
+             }
+             $response = [
+                 'msg' =>  'Username atau Password salah',
+             ];
+
              return response()->json($response, 201);
-        }
-    }
+         }
+         $response = [
+             'msg' =>  'Username atau Password salah',
+         ];
 
-    $response = [
-        'msg' =>  'Akun Tidak Terdaftar',
-    ];
+         return response()->json($response, 201);
+     }
 
-    return response()->json($response, 201);
-}
+     public function teacherAuth(Request $request){
+         $this->validate($request, [
+             'username' => 'required',
+             'password' => 'required',
+         ]);
 
-   public function TeacherAuth(Request $request){
-    $this->validate($request, [
-        'username' => 'required',
-        'password' => 'required',
-    ]);
+         $username = $request->username;
+         $password = $request->password;
 
-    $username = $request->username;
-    $password = $request->password;
+         if ($user = User::where('username', $username)->first()){
+             if ($user->role === 2){
 
-    if ($user = User::where('username', $username)->first()){
+                 $credentials = [
+                     'username'=> $username,
+                     'password'=> $password,
+                 ];
 
-        $credentials = [
-            'username'=> $username,
-            'password'=> $password,
-        ];
+                 $token = NULL;
 
-        $token = NULL;
-        if($user->role==2){
+                 try {
+                     if (! $token = JWTAuth::attempt($credentials)) {
+                         return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+                         ], 201);
+                     }
+                 } catch (JWTException $e) {
+                     return response()->json(['msg' => 'could_not_create_token',
+                     ], 500);
+                 }
 
-            try {
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-                    ], 201);
-                }
-            } catch (JWTException $e) {
-                return response()->json(['msg' => 'could_not_create_token',
-                ], 500);
-            }
+                 if ($user->role == 1) {
+                     $user->role= 'admin';
+                 } elseif ($user->role == 2) {
+                     $user->role = 'teacher';
+                 } else {
+                     $user->role = 'students';
+                 }
 
-            if ($user->role == 1) {
-                $user->role= 'admin';
-            } elseif ($user->role == 2) {
-                $user->role = 'teacher';
-            } else {
-                $user->role = 'students';
-            }
+                 $response = [
+                     'passed' => true,
+                     'user' => $user,
+                     'token' => $token,
+                 ];
 
-            $response = [
-                'passed' => true,
-                'user' => $user,
-                'token' => $token,
-                'redirect' => route('dashboard'),
-            ];
+                 JWTAuth::setToken($token);
+                 return response()->json($response, 201);
+             }
+             $response = [
+                 'msg' =>  'Username atau Password salah',
+             ];
 
-            JWTAuth::setToken($token);
              return response()->json($response, 201);
-        }
-    }
+         }
+         $response = [
+             'msg' =>  'Username atau Password salah',
+         ];
 
-    $response = [
-        'msg' =>  'Akun Tidak Terdaftar',
-    ];
+         return response()->json($response, 201);
+     }
 
-    return response()->json($response, 201);
-}
+     public function adminAuth(Request $request){
+         $this->validate($request, [
+             'username' => 'required',
+             'password' => 'required',
+         ]);
 
+         $username = $request->username;
+         $password = $request->password;
 
-   public function AdminAuth(Request $request){
-    $this->validate($request, [
-        'username' => 'required',
-        'password' => 'required',
-    ]);
+         if ($user = User::where('username', $username)->first()){
+             if ($user->role === 1){
 
-    $username = $request->username;
-    $password = $request->password;
+                 $credentials = [
+                     'username'=> $username,
+                     'password'=> $password,
+                 ];
 
-    if ($user = User::where('username', $username)->first()){
+                 $token = NULL;
 
-        $credentials = [
-            'username'=> $username,
-            'password'=> $password,
-        ];
+                 try {
+                     if (! $token = JWTAuth::attempt($credentials)) {
+                         return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
+                         ], 201);
+                     }
+                 } catch (JWTException $e) {
+                     return response()->json(['msg' => 'could_not_create_token',
+                     ], 500);
+                 }
 
-        $token = NULL;
-        if($user->role==1){
+                 if ($user->role == 1) {
+                     $user->role= 'admin';
+                 } elseif ($user->role == 2) {
+                     $user->role = 'teacher';
+                 } else {
+                     $user->role = 'students';
+                 }
 
-            try {
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-                    ], 201);
-                }
-            } catch (JWTException $e) {
-                return response()->json(['msg' => 'could_not_create_token',
-                ], 500);
-            }
+                 $response = [
+                     'passed' => true,
+                     'user' => $user,
+                     'token' => $token,
+                 ];
 
-            if ($user->role == 1) {
-                $user->role= 'admin';
-            } elseif ($user->role == 2) {
-                $user->role = 'teacher';
-            } else {
-                $user->role = 'students';
-            }
+                 JWTAuth::setToken($token);
+                 return response()->json($response, 201);
+             }
+             $response = [
+                 'msg' =>  'Username atau Password Salah',
+             ];
 
-            $response = [
-                'passed' => true,
-                'user' => $user,
-                'token' => $token,
-                'redirect' => route('dashboard'),
-            ];
-
-            JWTAuth::setToken($token);
              return response()->json($response, 201);
-        }
-    }
+         }
+         $response = [
+             'msg' =>  'Username atau Password Salah',
+         ];
 
-    $response = [
-        'msg' =>  'Akun Tidak Terdaftar',
-    ];
-
-    return response()->json($response, 201);
-}
-
-
-
-    // public function studentAuth(Request $request){
-    //     $this->validate($request, [
-    //         'username' => 'required',
-    //         'password' => 'required',
-    //     ]);
-
-    //     $username = $request->username;
-    //     $password = $request->password;
-
-    //     if ($user = User::where('username', $username)->first()){
-    //         if ($user->role === 3){
-
-    //             $credentials = [
-    //                 'username'=> $username,
-    //                 'password'=> $password,
-    //             ];
-
-    //             $token = NULL;
-
-    //             try {
-    //                 if (! $token = JWTAuth::attempt($credentials)) {
-    //                     return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-    //                     ], 201);
-    //                 }
-    //             } catch (JWTException $e) {
-    //                 return response()->json(['msg' => 'could_not_create_token',
-    //                 ], 500);
-    //             }
-
-    //             if ($user->role == 1) {
-    //                 $user->role= 'admin';
-    //             } elseif ($user->role == 2) {
-    //                 $user->role = 'teacher';
-    //             } else {
-    //                 $user->role = 'students';
-    //             }
-
-    //             $response = [
-    //                 'user' => $user,
-    //                 'token' => $token,
-    //             ];
-
-    //             JWTAuth::setToken($token);
-    //             return response()->json($response, 201);
-    //         }
-    //         $response = [
-    //             'msg' =>  'Username atau Password salah',
-    //         ];
-
-    //         return response()->json($response, 201);
-    //     }
-    //     $response = [
-    //         'msg' =>  'Username atau Password salah',
-    //     ];
-
-    //     return response()->json($response, 201);
-    // }
-
-    // public function teacherAuth(Request $request){
-    //     $this->validate($request, [
-    //         'username' => 'required',
-    //         'password' => 'required',
-    //     ]);
-    //
-    //     $username = $request->username;
-    //     $password = $request->password;
-    //
-    //     if ($user = User::where('username', $username)->first()){
-    //         if ($user->role === 2){
-    //
-    //             $credentials = [
-    //                 'username'=> $username,
-    //                 'password'=> $password,
-    //             ];
-    //
-    //             $token = NULL;
-    //
-    //             try {
-    //                 if (! $token = JWTAuth::attempt($credentials)) {
-    //                     return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-    //                     ], 201);
-    //                 }
-    //             } catch (JWTException $e) {
-    //                 return response()->json(['msg' => 'could_not_create_token',
-    //                 ], 500);
-    //             }
-    //
-    //             if ($user->role == 1) {
-    //                 $user->role= 'admin';
-    //             } elseif ($user->role == 2) {
-    //                 $user->role = 'teacher';
-    //             } else {
-    //                 $user->role = 'students';
-    //             }
-    //
-    //             $response = [
-    //                 'user' => $user,
-    //                 'token' => $token,
-    //             ];
-    //
-    //             JWTAuth::setToken($token);
-    //             return response()->json($response, 201);
-    //         }
-    //         $response = [
-    //             'msg' =>  'Username atau Password salah',
-    //         ];
-    //
-    //         return response()->json($response, 201);
-    //     }
-    //     $response = [
-    //         'msg' =>  'Username atau Password salah',
-    //     ];
-    //
-    //     return response()->json($response, 201);
-    // }
-    //
-    // public function adminAuth(Request $request){
-    //     $this->validate($request, [
-    //         'username' => 'required',
-    //         'password' => 'required',
-    //     ]);
-    //
-    //     $username = $request->username;
-    //     $password = $request->password;
-    //
-    //     if ($user = User::where('username', $username)->first()){
-    //         if ($user->role === 1){
-    //
-    //             $credentials = [
-    //                 'username'=> $username,
-    //                 'password'=> $password,
-    //             ];
-    //
-    //             $token = NULL;
-    //
-    //             try {
-    //                 if (! $token = JWTAuth::attempt($credentials)) {
-    //                     return response()->json(['msg' => 'Username atau Password Salah', // Jika salah password akan mengembalikan invalid credentials
-    //                     ], 201);
-    //                 }
-    //             } catch (JWTException $e) {
-    //                 return response()->json(['msg' => 'could_not_create_token',
-    //                 ], 500);
-    //             }
-    //
-    //             if ($user->role == 1) {
-    //                 $user->role= 'admin';
-    //             } elseif ($user->role == 2) {
-    //                 $user->role = 'teacher';
-    //             } else {
-    //                 $user->role = 'students';
-    //             }
-    //
-    //             $response = [
-    //                 'user' => $user,
-    //                 'token' => $token,
-    //             ];
-    //
-    //             JWTAuth::setToken($token);
-    //             return response()->json($response, 201);
-    //         }
-    //         $response = [
-    //             'msg' =>  'Username atau Password Salah',
-    //         ];
-    //
-    //         return response()->json($response, 201);
-    //     }
-    //     $response = [
-    //         'msg' =>  'Username atau Password Salah',
-    //     ];
-    //
-    //     return response()->json($response, 201);
-    // }
+         return response()->json($response, 201);
+     }
 
 }
