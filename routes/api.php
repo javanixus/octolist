@@ -28,10 +28,6 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::get('students', 'UserController@index');
     Route::post('student', 'UserController@store');
     Route::patch('student', 'UserController@update');
-    // Gimana ya agar si avatarnya update nya jadi 1 sama fungsi update ?
-    // Kenapa di gabungin sama si fungsi upload data bukanya dipisah fungsinya sama aja ?
-    // Tentu beda, dengan memakai nama fungsi yang disarankan laravel kita bisa lebih simpel tanpa memanggil controller 1 per 1
-    // dengan menggunakan function  Route::resource bisa menditeksi fungsi2 yang di butuhkan
     Route::post('user/avatarUpload','UserController@update_avatar');
 
     //    Route::post('/user/signup', 'AuthController@store');

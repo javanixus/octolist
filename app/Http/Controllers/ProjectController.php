@@ -98,6 +98,25 @@ class ProjectController extends Controller
         //
     }
 
+	public function showStudentProject()
+	{
+		$id = Auth::user()->id;
+		$user = StudentsInfo::where('id_students',$id)->get()->first()->id;
+		// $project = ProjectMember::where('id_students',$user)->get();
+		$project = Project::join('project_members', 'projects.id', '=', 'project_members.id_projects')
+											->select('project')
+											->where('project_members.id_students', '=', $user);
+											->get();
+		if($user){
+			$response = [
+				'msg' => 'List of Project',
+				'projects' => $project,
+				'projects_count' => $project->count(),
+			];
+			return response()->json($response,200);
+		}
+	}
+
     /**
      * Show the form for editing the specified resource.
      *
