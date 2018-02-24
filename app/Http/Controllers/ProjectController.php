@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Http\Controllers\ProjectMemberController;
 use App\ProjectMember;
-use App\Teacher;
+use App\StudentsInfo;
 use App\Project;
+use App\User;
 
 use JWTException;
 use JWTAuth;
@@ -63,14 +64,17 @@ class ProjectController extends Controller
 				'project_description' => $request->input('desc'),
 			]);
 			// $id = $project->id;
-			// $ProjectMember = new ProjectMemberController;
-			// $ProjectMember->store($id,$request);
-			// ProjectMember::Create([
-			// 	'id_projects'		=>	$id,
-			// 	'id_students'	 =>		$request->input('id_students')
-			// ]);
 			if($project){
 				$id = $project->id;
+				$user = Auth::user()->id;
+				$user = StudentsInfo::where('id_students',$user)->get()->first()->id;
+				// $ProjectMember = new ProjectMemberController;
+				// $ProjectMember->store($id,$request);
+
+				ProjectMember::Create([
+					'id_projects'		=>	$id,
+					'id_students'	 =>	$user,
+					]);
 
 				$response = [
 					'msg' => 'Project Created',

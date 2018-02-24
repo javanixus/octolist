@@ -100,7 +100,7 @@ export default {
       },
   },
   beforeCreate(){
-            axios.get('http://localhost:8000/api/v1/user', {
+            axios.get('http://localhost:8000/api/v1/student', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }
@@ -113,7 +113,7 @@ export default {
   methods: {
       profileRenew(){
             console.log(this.dataUser);
-            axios.patch('http://localhost:8000/api/v1/user', this.patchUser, {
+            axios.patch('http://localhost:8000/api/v1/student', this.patchUser, {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
                 }

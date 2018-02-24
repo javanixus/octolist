@@ -78,7 +78,7 @@
       }
     },
     mounted() {
-      axios.get('http://localhost:8000/api/v1/user',{
+      axios.get('http://localhost:8000/api/v1/student',{
         headers: {
           "Authorization": `Bearer ${window.localStorage.getItem('token')}`
         }
@@ -89,7 +89,8 @@
           router.push('/logout')
         }
         this.$modal.show('getstarted-siswa-popup-modal');
-        // axios.get('http://loca')
+      }).catch((error) =>{
+        console.log(error.response.data)
       })
     },
     data(){
