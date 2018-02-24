@@ -253,7 +253,7 @@ class AuthController extends Controller
 //                    'token' => $token,
 //                ];
 
-     public function studentAuth(Request $request){
+     public function userAuth(Request $request){
          $this->validate($request, [
              'username' => 'required',
              'password' => 'required',
@@ -263,7 +263,7 @@ class AuthController extends Controller
          $password = $request->password;
 
          if ($user = User::where('username', $username)->first()){
-             if ($user->role === 3){
+             if ($user->role === 3 || $user->role === 2){
 
                  $credentials = [
                      'username'=> $username,
