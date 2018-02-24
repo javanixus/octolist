@@ -15,7 +15,6 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
      *
      */
     Route::post('user/login', 'AuthController@userAuth');
-//    Route::post('teacher/login', 'AuthController@teacherAuth');
     Route::post('admin/login', 'AuthController@adminAuth');
 
     /**
