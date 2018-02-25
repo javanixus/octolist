@@ -35,4 +35,15 @@ class StudentsInfo extends Model
     public function User (){
         return $this->belongsTo('App\User', 'id_students');
     }
+
+    public function ProjectMember (){
+        return $this->belongsToMany('App\Project', 'project_members',
+            'id_students', 'id_projects')->withTimestamps();
+    }
+
+    public function Card() {
+        return $this->belongsToMany('App\Card', 'cards_member',
+            'id_students', 'id_cards')->withTimestamps();
+    }
+
 }

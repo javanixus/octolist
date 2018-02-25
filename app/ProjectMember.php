@@ -8,7 +8,7 @@ class ProjectMember extends Model
 {
     	protected $table = 'project_members';
 
-		 protected $fillable = [
-			 'id_projects','id_students'
-		 ];
+        protected $fillable = [
+            'id_projects','id_students'
+        ];
 }
