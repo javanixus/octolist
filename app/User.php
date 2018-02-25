@@ -14,7 +14,7 @@ class User extends Authenticatable
     }
 
     public function setPasswordAttribute($value){ // Mutator
-        return $this->attributes['password'] = bcrypt($value);
+        return $this->attributes['password'] = bcrypt($value);z
     }
 
     protected $fillable = [
@@ -26,15 +26,20 @@ class User extends Authenticatable
     ];
 
 //    Relation One to one | User has Info user
+    public function ProjectCreator(){
+        return $this->hasOne('App\Project', 'project_creator');
+    }
+
     public function InfoUser(){
-        return$this->hasOne('App/StudentsInfo', 'id_students');
+        return $this->hasOne('App\StudentsInfo', 'id_students');
     }
 
     public function InfoTeacher(){
-        return$this->hasOne('App/TeachersInfo', 'id_teachers');
+        return $this->hasOne('App\TeachersInfo', 'id_teachers');
     }
 
     public function InfoAdmin(){
-        return$this->hasOne('App/AdminsInfo', 'id_students');
+        return $this->hasOne('App\AdminsInfo', 'id_students');
     }
+
 }

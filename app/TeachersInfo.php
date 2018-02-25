@@ -14,4 +14,9 @@ class TeachersInfo extends Model
 		public function User(){
 		    return $this->belongsTo('App\User', 'id_teachers');
         }
+
+        public function ProjectLink(){
+            return $this->hasMany('App\Project', 'project_link')
+        }
+
 }

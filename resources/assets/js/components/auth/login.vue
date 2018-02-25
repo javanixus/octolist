@@ -74,7 +74,7 @@
       authUser() {
         this.logItIn.loader = true,
         this.state.login = ''
-        axios.post('http://localhost:8000/api/v1/student/login', this.logItIn,{
+        axios.post('http://localhost:8000/api/v1/user/login', this.logItIn,{
           headers: {
             'X-Requested-With': 'XMLHttpRequest'
           },
