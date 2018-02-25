@@ -72,34 +72,32 @@
   import ProjectComponent from './../components/project/projectApp';
 
   export default {
-    beforeCreate(){
+    created(){
       if (store.state.isLogged == false){
         router.push('/')
       }
-    },
-    mounted() {
       axios.get('http://localhost:8000/api/v1/student',{
         headers: {
           "Authorization": `Bearer ${window.localStorage.getItem('token')}`
         }
-      }).then((response) => {
+      }).then((response) =>{
         this.dataUser = response.data.profile;
         console.log(this.dataUser);
-        if(response.data.profile.role == 1){
+        if(this.dataUser.role == 1){
           router.push('/logout')
         }
-        this.$modal.show('getstarted-siswa-popup-modal');
+        if(this.dataUser.new == 0){
+          router.push('/start')
+        }
       }).catch((error) =>{
         console.log(error.response.data)
       })
     },
+    mounted() {
+        setTimeout(() => this.$modal.show('getstarted-siswa-popup-modal'), 2000);
+    },
     data(){
       return {
-        resizable: false,
-        adaptive: false,
-        draggable: false,
-        canBeShown: false,
-        // state: null,
         isOpened: false,
         projects: [],
         dataUser: [],

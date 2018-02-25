@@ -43,6 +43,42 @@
   display: inline-grid;
 }
 
+// form 
+.profileSetup__Container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileForm__Title {
+  text-align: center;
+  padding-bottom: 30px;
+  p {
+    color: #8492A6;
+  }
+}
+
+.profileForm__Content {
+  fieldset {
+    padding: 0 0 5px 0 !important;
+    border: none;
+    position: relative;
+    label {
+      color: #3C4858;
+      display: block;
+      margin: 15px 0 10px 0;
+    }
+    input {
+      display: inline-block;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
 
 // final
 #startFinal {
