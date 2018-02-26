@@ -16,7 +16,7 @@ class TeachersInfo extends Model
         }
 
         public function ProjectLink(){
-            return $this->hasMany('App\Project', 'project_link')
+            return $this->hasMany('App\Project', 'project_link');
         }
 
 }
