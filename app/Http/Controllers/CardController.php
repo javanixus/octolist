@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\CardMember;
+use App\Project;
 use App\Card;
 
 use JWTException;
@@ -47,20 +48,32 @@ class CardController extends Controller
 				'card_description' 	=> 'required',
 			]);
 
-			$card = Card::Create($request->all());
-			$card = $card->id;
-			DB::table('project_cards')
-						->insert(['id_projects' => $id , 'id_cards' => $card]);
+
+			// $card = Card::Create($request->all());
+			// $card = $card->id;
+      //
+			// DB::table('project_cards')
+			// ->insert(['id_projects' => $id , 'id_cards' => $card]);
+
+			$project = Project::find($id);
+			// return 	$project;
+			// $project = $project;
 
 			// ProjectMember::Create([
 			// 	'id_projects'		=>	$id,
 			// 	'id_students'	 =>		$request->input('id_students')
 			// ]);
+
+
 			$response = [
-										'msg' => 'Card Created',
-										'href' => "/v1/project/$id",
-										'method' => 'GET',
+										'msg' => $project,
 									];
+
+			// $response = [
+			// 							'msg' => 'Card Created',
+			// 							'href' => "/v1/project/$id",
+			// 							'method' => 'GET',
+			// 						];
 
 			return response()->json($response,200);
 
@@ -73,9 +86,23 @@ class CardController extends Controller
      * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show(Card $card)
+    public function show($id)
     {
-        //
+			$cards = Project::find($id)->card()->all();
+
+			if($cards){
+				$response = [
+					'msg' => 'List of Project',
+					'projects' => $project,
+					'projects_count' => $project->count(),
+				];
+				return response()->json($response,200);
+			}else{
+				$response = [
+					'msg' => 'User not found',
+				];
+				return response()->json($response,404);
+			}
     }
 
     /**

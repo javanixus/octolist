@@ -26,7 +26,7 @@ class Project extends Model
     }
 
     public function Card (){
-        return $this->belongsToMany('App\Card', 'project_members',
+        return $this->belongsToMany('App\Card', 'project_cards',
             'id_projects', 'id_cards')->withTimestamps();
     }
 }
