@@ -1,7 +1,6 @@
 <template lang="html">
   <div id="dashboard-core">
     <getstarted-popup />
-    <!-- <create-project /> -->
     <precreate-project />
     <confirm-popup />
     <profile-popup />
@@ -44,7 +43,7 @@
       <div class="content__items">
         <div class="project">
           <div class="project__header marginTop-m">
-            <span>4 Projects Showed</span>
+            <span>{{dataProject.projects_count}} Projects Showed</span>
           </div>
           <div class="project__content">
             <div class="project project__teacher">
@@ -102,6 +101,7 @@
         }).then((response) =>{
           console.log(response)
           this.projects = response.data.projects
+          this.dataProject = response.data
         }).catch((error) =>{
           console.log(error.response.data)
         })
@@ -110,6 +110,7 @@
       return {
         isOpened: false,
         projects: [],
+        dataProject: [],
         dataUser: [],
       }
     },
