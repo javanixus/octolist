@@ -18,8 +18,8 @@ class CreateProjectsTable extends Migration
             $table->string('project_title', 50);
             $table->integer('project_creator')->unsigned();
             $table->date('project_deadline')->nullable();
-				$table->integer('project_link')->unsigned()->nullable();
-				$table->string('project_description',50)->nullable();
+            $table->integer('project_link')->unsigned()->nullable();
+            $table->string('project_description',50)->nullable();
             $table->timestamps();
         });
 
@@ -41,8 +41,8 @@ class CreateProjectsTable extends Migration
                 ->on('projects');
         });
 
-        Schema::table('project_cards', function (Blueprint $table) {
-            $table->foreign('id_projects')
+        Schema::table('cards', function (Blueprint $table) {
+            $table->foreign('project_id')
                 ->references('id')
                 ->on('projects');
         });

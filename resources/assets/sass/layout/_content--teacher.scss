@@ -20,3 +20,64 @@
         }
     }
 }
+
+.project__teacher {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-red__teacher {
+    padding: 0!important;
+}
+
+.project-item__header {
+    height: auto!important;
+    min-height: 50px!important;
+    padding: 15px;
+    p {
+        color: $silver;
+        font-size: 12px;
+    }
+    .project-dp-id {
+        margin: 0 auto;
+    }
+}
+
+.project-item__teacher {
+    width: 18.94rem!important;
+    min-height: 150px!important;
+}
+
+.project-item__content__teacher {
+    padding: 0!important;
+    h5 {
+        color: $steel !important;
+        font-size: 17px!important;
+        text-align: center!important;
+    }
+}
+
+.content-people__teacher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+// status project color
+.project-status {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-status__active {
+    color: $done;
+}
+
+.project-status__inactive {
+    color: #FF4949;
+}
+
+.project-status__disabled {
+    color: $silver;
+}

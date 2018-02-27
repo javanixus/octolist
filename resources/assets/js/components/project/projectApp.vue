@@ -31,7 +31,9 @@
   </div>
 </template>
 <style scoped>
-
+.project-item__header{
+  padding: 0;
+}
 </style>
 <script>
 export default {

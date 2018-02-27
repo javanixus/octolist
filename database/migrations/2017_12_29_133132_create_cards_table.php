@@ -18,6 +18,7 @@ class CreateCardsTable extends Migration
             $table->string('card_title', 50);
             $table->string('card_description', 255)->nullable();
             $table->string('image_card', 255)->nullable();
+            $table->integer('project_id')->unsigned();
             $table->timestamps();
         });
     }

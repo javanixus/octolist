@@ -42,28 +42,22 @@ class CardController extends Controller
      */
     public function store($id,Request $request)
     {
-			$this->validate($request,[
-				'card_title' 			=> 'required',
-				'card_description' 	=> 'required',
-			]);
+        $this->validate($request,[
+            'card_title' => 'required',
+            'card_description' 	=> 'required',
+        ]);
 
-			$card = Card::Create($request->all());
-			$card = $card->id;
-			DB::table('project_cards')
-						->insert(['id_projects' => $id , 'id_cards' => $card]);
+        $card = Card::Create($request->all());
+        $card = $card->id;
+        DB::table('project_cards')->insert(['id_projects' => $id , 'id_cards' => $card]);
 
-			// ProjectMember::Create([
-			// 	'id_projects'		=>	$id,
-			// 	'id_students'	 =>		$request->input('id_students')
-			// ]);
-			$response = [
-										'msg' => 'Card Created',
-										'href' => "/v1/project/$id",
-										'method' => 'GET',
-									];
+        $response = [
+            'msg' => 'Card Created',
+            'href' => "/v1/project/$id",
+            'method' => 'GET',
+        ];
 
-			return response()->json($response,200);
-
+        return response()->json($response,200);
 
     }
 
@@ -117,7 +111,7 @@ class CardController extends Controller
 			 CardMember::where('id_cards',$card)
 			 ->delete();
 
-  		 Card::where('id',$card)
+  		    Card::where('id',$card)
 			 			->delete();
 
  			$response = [
