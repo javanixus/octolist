@@ -24,19 +24,6 @@
                 <button :disabled="!patchUserIsPassed" @click.prevent="profileRenew" class="button button-landing button--xl borderRadius-s button--melting-blue">Let's Begin</button>
             </div>
         </div>
-            <!-- <div class="titleHello">
-                <div class="titleHelloDesc">
-                    <input type="email" name="" id="" v-model="dataUser.email">
-                    <p>Masukkan password lama</p>
-                    <input type="password" v-model="dataUser.codes">
-                    <p>Masukkan password baru</p>
-                    <input type="password" v-model="dataUser.newpass">
-                    <p>konfirmasi password baru</p>
-                    <input type="password" v-model="dataUser.retypepass">
-                    <br/>
-                    <button :disabled="!patchUserIsPassed" @click.prevent="profileRenew" class="button button-landing button--xl borderRadius-s button--melting-blue">Let's Begin</button>
-                </div>
-            </div> -->
       </div>
   </div>
 </template>

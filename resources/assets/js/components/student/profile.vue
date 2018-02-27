@@ -23,7 +23,8 @@
         </div>
       </div>
     </div>
- 		<header>
+    <div class="profileContainer">
+       		<header>
 			<div class="wrapper-profile-head">
 				<div class="profile-head marginMagic">
 					<div class="profile-head__avatar marginBottom-s">
@@ -41,7 +42,7 @@
             <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="ghost--button alignCenter">Edit profile</button>
           </div>
 				</div>
-				<div class="wrapper-profile-menu paddingBottom-l">
+				<!-- <div class="wrapper-profile-menu paddingBottom-l">
 					<ul class="profile-menu marginMagic">
 						<li class="profile-menu__items">
 							<a href="#">Feed</a>
@@ -53,20 +54,25 @@
 							<a href="#">Contribution</a>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</header>
+    <div class="profile-content">
+      <component :is="currentView"></component>
+    </div>
+    </div>
 	</div>
 </template>
 
 <script>
-  import profileMenuPopup from './events/profilemenuPopup.vue';
-  import ConfirmPopup from './events/confirmPopup';
-  import reportPopup from './events/reportBugsPopup';
-  import editProfileSiswaPopup from './events/editProfileSiswaPopup';
-  import store from './../store/index';
+  import profileMenuPopup from './../events/profilemenuPopup.vue';
+  import ConfirmPopup from './../events/confirmPopup';
+  import reportPopup from './../events/reportBugsPopup';
+  import editProfileSiswaPopup from './../events/editProfileSiswaPopup';
+  import profileMain from './profileMain';
+  import store from './../../store/index';
   import axios from 'axios';
-  import router from './../router';
+  import router from './../../router';
 
   export default {
       beforeCreate(){
@@ -94,6 +100,7 @@
         state: null,
         isOpened: false,
         disabled: false,
+        currentView: 'profile-main',
         dataUser: []
       }
     },
@@ -127,6 +134,7 @@
       'confirm-popup': ConfirmPopup,
       'report-popup': reportPopup,
       'editprofile-siswa-popup': editProfileSiswaPopup,
+      'profile-main': profileMain
     }
   }
 </script>

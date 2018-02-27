@@ -45,8 +45,8 @@ import store from './../../store/index'
 import dashboardTCMain from './dashboardTeacherMain'
 import dashboardTCProject from './dashboardTeacherProject'
 import profileMenuPopup from './events/profileMenuTeacher'
-import ConfirmPopup from './../events/confirmPopup';
-import reportPopup from './../events/reportBugsPopup';
+import ConfirmPopup from './../events/confirmPopup'
+import reportPopup from './../events/reportBugsPopup'
   
 
 export default {
