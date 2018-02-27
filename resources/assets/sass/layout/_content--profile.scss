@@ -1,14 +1,23 @@
+.profileContainer {
+  display: inline-flex;
+}
+
+.profileMain {
+  padding: 85px 15px 15px 15px;
+}
+
 .wrapper-profile-head {
-  height: 400px;
+  height: 100vh;
+  width: 400px;
   display: flex;
   text-align: center;
   position: relative;
   word-break: break-all;
-  align-items: center;
+  padding-top: 20vh;
   border-bottom: 1px solid #e6e5e6;
   background-color: white;
   .profile-head {
-    width: 200pxt;
+    width: 200px;
     height: 200px;
   }
 }
@@ -71,10 +80,6 @@
 }
 .text-limit {
   max-width: 400px;}
-
-.outer-edit-profile {
-
-}
 
 .wrapper-edit-profile {
   width: 300px;

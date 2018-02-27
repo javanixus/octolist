@@ -9,7 +9,7 @@ import logout from './../components/auth/logout';
 import ForgotPass from './../components/auth/forgotpass';
 import Dashboard from './../components/dashboard';
 import DashboardSiswa from './../components/board';
-import Profile from './../components/profile';
+import Profile from './../components/student/profile';
 import nothing from './../components/404';
 import GetStarted from './../components/getstarted/GetStarted';
 import About from './../components/about';

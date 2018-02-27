@@ -13,7 +13,8 @@
 
   .project {
     width: inherit;
-
+    // display: inline-flex;
+    // flex-wrap: nowrap;
     .project__header {
       padding: 10px 0 20px;
 
@@ -111,7 +112,7 @@
 .content-red {
   width: inherit;
   height: 60px;
-  padding: 10px 10px 10px 5px;
+  padding: 10px;
 }
 
 .content-people {

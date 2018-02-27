@@ -47,9 +47,9 @@
             <span>4 Projects Showed</span>
           </div>
           <div class="project__content">
-            <div class="project">
+            <div class="project project__teacher">
               <!-- awal item dynamic -->
-                <project-app v-for="project in projects" :prog="project" key="projectapp"></project-app>
+                <project-app v-for="project in projects" :prog="project" :key="project.id_projects"></project-app>
               </div>
             </div>
           </div>
@@ -95,6 +95,16 @@
     },
     mounted() {
         setTimeout(() => this.$modal.show('getstarted-siswa-popup-modal'), 2000);
+        axios.get('http://localhost:8000/api/v1/project/all',{
+          headers: {
+            "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+          }
+        }).then((response) =>{
+          console.log(response)
+          this.projects = response.data.projects
+        }).catch((error) =>{
+          console.log(error.response.data)
+        })
     },
     data(){
       return {
