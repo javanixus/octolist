@@ -316,7 +316,7 @@ class UserController extends Controller
 					{
 						$response = [
 							'msg' => 'welcome to Octolist',
-						],
+						];
 					}
 				}
 
