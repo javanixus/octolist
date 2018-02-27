@@ -28596,6 +28596,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setTimeout(function () {
       return _this2.$modal.show('getstarted-siswa-popup-modal');
     }, 2000);
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/all', {
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+      }
+    }).then(function (response) {
+      console.log(response);
+      _this2.projects = response.data.projects;
+    }).catch(function (error) {
+      console.log(error.response.data);
+    });
   },
   data: function data() {
     return {
@@ -38415,7 +38425,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.project-item__header[data-v-64b7a455]{padding:0\n}", ""]);
 
 // exports
 
@@ -38426,6 +38436,8 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -38657,10 +38669,10 @@ var render = function() {
             _c("div", { staticClass: "project__content" }, [
               _c(
                 "div",
-                { staticClass: "project" },
+                { staticClass: "project project__teacher" },
                 _vm._l(_vm.projects, function(project) {
                   return _c("project-app", {
-                    key: "projectapp",
+                    key: project.id_projects,
                     attrs: { prog: project }
                   })
                 })
