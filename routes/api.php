@@ -28,6 +28,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('student', 'UserController@store');
     Route::patch('student', 'UserController@update');
     Route::post('user/avatarUpload','UserController@update_avatar');
+	 Route::post('/student/started','UserController@start');
 
     //    Route::post('/user/signup', 'AuthController@store');
 
@@ -51,6 +52,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::delete('/{id}/member/{member}/delete','ProjectMemberController@destroy');
 				Route::post('/{id}/card/add','CardController@store');
 				Route::get('/{id}/cards','CardController@show');
+
 				Route::delete('/{id}/card/{card}/delete','CardController@destroy');
 				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
 				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
