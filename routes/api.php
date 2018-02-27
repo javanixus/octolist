@@ -27,10 +27,6 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::get('students', 'UserController@index');
     Route::post('student', 'UserController@store');
     Route::patch('student', 'UserController@update');
-    // Gimana ya agar si avatarnya update nya jadi 1 sama fungsi update ?
-    // Kenapa di gabungin sama si fungsi upload data bukanya dipisah fungsinya sama aja ?
-    // Tentu beda, dengan memakai nama fungsi yang disarankan laravel kita bisa lebih simpel tanpa memanggil controller 1 per 1
-    // dengan menggunakan function  Route::resource bisa menditeksi fungsi2 yang di butuhkan
     Route::post('user/avatarUpload','UserController@update_avatar');
 
     //    Route::post('/user/signup', 'AuthController@store');
@@ -47,7 +43,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::delete('teacher/{id}','TeacherController@destroy');
 			Route::post('teacher/avatarUpload','TeacherController@update_avatar');
 			Route::patch('profile/teacher/edit','TeacherController@update');
-
+			Route::get('/projects','ProjectController@showTeacherProject');
 
 			Route::group(['prefix' => 'project'],function(){
 				Route::post('/create','ProjectController@store');
@@ -57,6 +53,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::delete('/{id}/card/{card}/delete','CardController@destroy');
 				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
 				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
+				Route::get('/all','ProjectController@showStudentProject');
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 

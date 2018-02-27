@@ -14,7 +14,7 @@ class User extends Authenticatable
     }
 
     public function setPasswordAttribute($value){ // Mutator
-        return $this->attributes['password'] = bcrypt($value);z
+        return $this->attributes['password'] = bcrypt($value);
     }
 
     protected $fillable = [

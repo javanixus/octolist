@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\ProjectMemberController;
 use App\ProjectMember;
 use App\StudentsInfo;
+use App\TeachersInfo;
 use App\Project;
 use App\User;
 
@@ -97,6 +98,56 @@ class ProjectController extends Controller
     {
         //
     }
+
+	public function showTeacherProject()
+	{
+		$id = Auth::user()->id;
+		$user = TeachersInfo::where('id_teachers',$id)->get()->first()->id;
+
+		$project = Project::join('project_members', 'project_members.id_projects', '=', 'projects.id')
+											->select('*')
+											->where('projects.project_link', '=', $user)
+											->get();
+
+		if($user){
+			$response = [
+				'msg' => 'List of Project',
+				'projects' => $project,
+				'projects_count' => $project->count(),
+			];
+			return response()->json($response,200);
+		}else{
+			$response = [
+				'msg' => 'User not found',
+			];
+			return response()->json($response,404);
+		}
+	}
+
+	public function showStudentProject()
+	{
+		$id = Auth::user()->id;
+		$user = StudentsInfo::where('id_students',$id)->get()->first()->id;
+		// $project = ProjectMember::where('id_students',$user)->get();
+		// $project = Project::where()
+		$project = Project::join('project_members', 'project_members.id_projects', '=', 'projects.id')
+											->select('*')
+											->where('project_members.id_students', '=', $user)
+											->get();
+		if($user){
+			$response = [
+				'msg' => 'List of Project',
+				'projects' => $project,
+				'projects_count' => $project->count(),
+			];
+			return response()->json($response,200);
+		}else{
+			$response = [
+				'msg' => 'User not found',
+			];
+			return response()->json($response,404);
+		}
+	}
 
     /**
      * Show the form for editing the specified resource.
