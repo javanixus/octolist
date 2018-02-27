@@ -1,0 +1,22 @@
+@import "./../components/styleguide";
+
+.navbarExtends {
+    padding: 15px;
+    width: inherit;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul li {
+        list-style: none;
+        display: inline;
+        cursor: pointer;
+        margin: 0 15px;
+        color: #5d5b5b;
+        font-weight: 600;
+        font-size: 15px;
+        &:hover {
+            color: $blue;
+        }
+    }
+}
