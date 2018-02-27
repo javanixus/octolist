@@ -28554,7 +28554,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -28603,6 +28602,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }).then(function (response) {
       console.log(response);
       _this2.projects = response.data.projects;
+      _this2.dataProject = response.data;
     }).catch(function (error) {
       console.log(error.response.data);
     });
@@ -28611,6 +28611,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       isOpened: false,
       projects: [],
+      dataProject: [],
       dataUser: []
     };
   },
@@ -38664,7 +38665,13 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "content__items" }, [
           _c("div", { staticClass: "project" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "project__header marginTop-m" }, [
+              _c("span", [
+                _vm._v(
+                  _vm._s(_vm.dataProject.projects_count) + " Projects Showed"
+                )
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "project__content" }, [
               _c(
@@ -38716,14 +38723,6 @@ var staticRenderFns = [
         },
         attrs: { src: "images/search.svg", alt: "" }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "project__header marginTop-m" }, [
-      _c("span", [_vm._v("4 Projects Showed")])
     ])
   }
 ]
