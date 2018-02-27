@@ -43,7 +43,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::delete('teacher/{id}','TeacherController@destroy');
 			Route::post('teacher/avatarUpload','TeacherController@update_avatar');
 			Route::patch('profile/teacher/edit','TeacherController@update');
-
+			Route::get('/projects','ProjectController@showTeacherProject');
 
 			Route::group(['prefix' => 'project'],function(){
 				Route::post('/create','ProjectController@store');
@@ -53,6 +53,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::delete('/{id}/card/{card}/delete','CardController@destroy');
 				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
 				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
+				Route::get('/all','ProjectController@showStudentProject');
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
