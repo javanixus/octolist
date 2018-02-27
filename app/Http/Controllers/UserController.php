@@ -298,20 +298,23 @@ class UserController extends Controller
 		public function start(Request $request)
 	  {
 	      $id = Auth::user()->id;
+			$user = StudentsInfo::where('id_students',$id);
+			$ids = $user->first()->id;
 	      $this->validate($request , [
-	                                      'email'       => "required|email|unique:students,email,$id",
+	                                      'email'       => "required|email|unique:students_info,email,$ids",
 														'password' => "required|confirmed",
 														'codes'			=> 'required',
 	                                    ]);
 
 	      // dd($request);
-				$user = StudentsInfo::where('id_student',$id);
 				$pass = User::find($id);
 				if(Hash::check($request->codes,$pass->password))
 				{
 					$update = $user->update(['email' => $request->email ,
-																'password' => bcrypt($request->password),
-																'status' => 1]);
+																'new' => 1]);
+					$pass->update([
+						'password' => bcrypt($request->password),
+					]);
 					if($update)
 					{
 						$response = [
