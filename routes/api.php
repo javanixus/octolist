@@ -28,7 +28,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
     Route::post('student', 'UserController@store');
     Route::patch('student', 'UserController@update');
     Route::post('user/avatarUpload','UserController@update_avatar');
-	 Route::post('/student/started','UserController@start');
+	Route::patch('/student/started','UserController@start');
 
     //    Route::post('/user/signup', 'AuthController@store');
 
