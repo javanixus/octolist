@@ -36,6 +36,9 @@
 						<h4 class="fontSize-l">{{this.dataUser.name}}</h4>
 					</div>
 					<div class="profile-head__quotes">
+						<p style="color: rgb(111, 111, 111);text-align: center;font-size: 12px; margin-bottom: 12px;">{{this.dataUser.email}}</p>
+					</div>
+					<div class="profile-head__quotes">
 						<q style="color: #6F6F6F;">{{this.dataUser.bio}}</q>
 					</div>
           <div class="profile-head__buttonChange">
@@ -46,6 +49,9 @@
           <div class="wrapper-profile-content__header">
             <p>Badges</p>
             <p class="grey">Tampilkan semua</p>
+          </div>
+          <div class="wrapper-profile-content__badges">
+            <p class="textAlignCenter">coming soon</p>
           </div>
         </div>
 			</div>
