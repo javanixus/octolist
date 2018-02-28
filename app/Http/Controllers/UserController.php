@@ -311,21 +311,23 @@ class UserController extends Controller
 				$pass = User::find($id);
 				if(Hash::check($request->codes,$pass->password))
 				{
-					$password = bcrypt($request->password);
-					$update = $user->update(['email' => $request->email ,
-																'new' => 1]);
+					// $password = bcrypt($request->password);
+					$update = $user->update([
+                        'email' => $request->email ,
+                        'new' => '1'
+                    ]);
 					if($update)
 					{
 						// echo $password;
 						$update = $pass->update([
-							'password' => $password,
+							'password' => $request->password,
 						]);
 
 						if($update)
 						{
 							$response = [
-								'pass' => $password,
-								'aa' => $password,
+								// 'pass' => $password,
+								// 'aa' => $password,
 								'pass1' => $request->password,
 								'msg' => 'welcome to Octolist',
 							];
