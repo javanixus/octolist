@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\CardMember;
+use App\Project;
 use App\Card;
 
 use JWTException;
@@ -67,9 +68,23 @@ class CardController extends Controller
      * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show(Card $card)
+    public function show($id)
     {
-        //
+			$cards = Project::find($id)->card()->all();
+
+			if($cards){
+				$response = [
+					'msg' => 'List of Project',
+					'projects' => $project,
+					'projects_count' => $project->count(),
+				];
+				return response()->json($response,200);
+			}else{
+				$response = [
+					'msg' => 'User not found',
+				];
+				return response()->json($response,404);
+			}
     }
 
     /**

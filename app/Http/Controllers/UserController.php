@@ -295,5 +295,60 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
+		public function start(Request $request)
+	  {
+	      $id = Auth::user()->id;
+			$user = StudentsInfo::where('id_students',$id);
+			$ids = $user->first()->id;
+	      $this->validate($request , [
+              'email' => "required|email|unique:students_info,email,$ids",
+              'password' => "required|confirmed",
+              'codes' => 'required',
+            ]);
+
+	      // dd($request);
+				$pass = User::find($id);
+				if(Hash::check($request->codes,$pass->password))
+				{
+					$password = bcrypt($request->password);
+					$update = $user->update(['email' => $request->email ,
+																'new' => 1]);
+					if($update)
+					{
+						// echo $password;
+						$update = $pass->update([
+							'password' => $password,
+						]);
+
+						if($update)
+						{
+							$response = [
+								'pass' => $password,
+								'aa' => $password,
+								'pass1' => $request->password,
+								'msg' => 'welcome to Octolist',
+							];
+						}else{
+							$response = [
+								'msg' => 'password error'
+							];
+
+						}
+					}else{
+						$response = [
+							'msg' => 'error email input',
+						];
+					}
+				}else{
+					// die(bcrypt($request->password));
+					$response = [
+						'msg' => 'password lama salah',
+					];
+				}
+
+	      return response()->json($response,200);
+
+	  }
+
 
 }
