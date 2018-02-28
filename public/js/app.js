@@ -39086,6 +39086,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -41815,6 +41821,21 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "profile-head__quotes" }, [
+                _c(
+                  "p",
+                  {
+                    staticStyle: {
+                      color: "rgb(111, 111, 111)",
+                      "text-align": "center",
+                      "font-size": "12px",
+                      "margin-bottom": "12px"
+                    }
+                  },
+                  [_vm._v(_vm._s(this.dataUser.email))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "profile-head__quotes" }, [
                 _c("q", { staticStyle: { color: "#6F6F6F" } }, [
                   _vm._v(_vm._s(this.dataUser.bio))
                 ])
@@ -41896,6 +41917,10 @@ var staticRenderFns = [
         _c("p", [_vm._v("Badges")]),
         _vm._v(" "),
         _c("p", { staticClass: "grey" }, [_vm._v("Tampilkan semua")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "wrapper-profile-content__badges" }, [
+        _c("p", { staticClass: "textAlignCenter" }, [_vm._v("coming soon")])
       ])
     ])
   }
