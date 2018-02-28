@@ -295,72 +295,61 @@ class UserController extends Controller
         return response()->json($response, 200);
     }
 
-    public function start(Request $request)
-    {
+		public function start(Request $request)
+	  {
+	      $id = Auth::user()->id;
+            $user = StudentsInfo::where('id_students',$id)->get()->first();
+            $ids = $user->first()->id;
 
-      $id = Auth::user()->id;
-      $user = StudentsInfo::where('id_students', $id)->get()->first();
-      $ids = $user->get()->first()->id;
+            $this->validate($request , [
+                'email'       => "required|email|unique:students_info,email,$ids",
+                'password' => "required|confirmed",
+                'codes'			=> 'required',
+             ]);
 
-      $this->validate($request , [
-          'email' => "required|email|unique:students_info,email,$ids",
-          'password' => "required|confirmed",
-          'codes' => 'required',
-        ]);
+	      // dd($request);
+				$pass = User::find($id);
+				if(Hash::check($request->codes,$pass->password))
+				{
+					$password = bcrypt($request->password);
+					$update = $user->update(['email' => $request->email ,
+																'new' => 1]);
+					if($update)
+					{
+						// echo $password;
+						$update = $pass->update([
+							'password' => $password,
+						]);
 
-        $response = [
-                    $ids,
-                ];
+						if($update)
+						{
+							$response = [
+								'pass' => $password,
+								'aa' => $password,
+								'pass1' => $request->password,
+								'msg' => 'welcome to Octolist',
+							];
+						}else{
+							$response = [
+								'msg' => 'password error'
+							];
 
-        return response()->json($response, 200);
+						}
+					}else{
+						$response = [
+							'msg' => 'error email input',
+						];
+					}
+				}else{
+					// die(bcrypt($request->password));
+					$response = [
+						'msg' => 'password lama salah',
+					];
+				}
 
-        $pass = User::find($id);
+	      return response()->json($response,200);
 
+	  }
 
-        if(Hash::check($request->codes,$pass->password))
-        {
-            $password = bcrypt($request->password);
-
-            $update = $user->update([
-                'email' => $request->email ,
-                'new' => 1,
-            ]);
-
-            if($update)
-            {
-                // echo $password;
-                $update = $pass->update([
-                    'password' => $password,
-                ]);
-
-                if($update)
-                {
-                    $response = [
-                        'pass' => $password,
-                        'aa' => $password,
-                        'pass1' => $request->password,
-                        'msg' => 'welcome to Octolist',
-                    ];
-                } else {
-                    $response = [
-                        'msg' => 'password error'
-                    ];
-
-                }
-            } else {
-                $response = [
-                    'msg' => 'error email input',
-                ];
-            }
-        }else{
-            // die(bcrypt($request->password));
-            $response = [
-                'msg' => 'password lama salah',
-            ];
-        }
-
-      return response()->json($response,200);
-
-    }
 
 }
