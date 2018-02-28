@@ -30,8 +30,15 @@
   background-color: red;
 }
 
+.wrapper-profile-content__badges , .wrapper-profile-content {
+  padding: 15px;  
+}
+
 .wrapper-profile-content {
-  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  max-height: 200px;
+  width: 100%;
   border-top: 1px solid #e6e5e6;
 }
 
