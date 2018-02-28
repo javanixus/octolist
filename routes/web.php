@@ -3,6 +3,9 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
     Route::get('/', function () {
         return view('welcome');
     });
+    Route::get('/start', function () {
+        return view('getstart');
+    });
     Route::get('/login', function () {
         return view('welcome');
     });
