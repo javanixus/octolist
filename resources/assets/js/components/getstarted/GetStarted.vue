@@ -119,10 +119,33 @@
 </template>
 
 <script>
+import axios from 'axios';
 import store from './../../store/index';
 import router from './../../router';
 
 export default {
+      beforeCreate(){
+            if(store.state.isLogged){
+              axios.get('http://localhost:8000/api/v1/student',{
+                  headers: {
+                      "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                  }
+              })
+              .then((response) => {
+                  this.dataUser = response.data.profile
+                  if(this.dataUser.new == 1){
+                      router.push('/board')
+                  }
+              })
+            } else {
+              router.push('/logout')
+            }
+  },
+  data(){
+      return {
+          dataUser: []
+      }
+  },
     methods: {
         startedNext(){
             router.push('/start/setup')
