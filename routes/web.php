@@ -9,6 +9,9 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
     Route::get('/forgot', function () {
         return view('welcome');
     });
+    Route::get('/board', function () {
+        return view('student');
+    });
     Route::get('/admin', function (){
         return view('admin');
     });
