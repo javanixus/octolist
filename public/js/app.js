@@ -28595,17 +28595,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setTimeout(function () {
       return _this2.$modal.show('getstarted-siswa-popup-modal');
     }, 2000);
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/all', {
-      headers: {
-        "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-      }
-    }).then(function (response) {
-      console.log(response);
-      _this2.projects = response.data.projects;
-      _this2.dataProject = response.data;
-    }).catch(function (error) {
-      console.log(error.response.data);
-    });
+    this.realtimeProject();
   },
   data: function data() {
     return {
@@ -28617,8 +28607,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    show: function show(resizable, adaptive, draggable) {
+    realtimeProject: function realtimeProject() {
       var _this3 = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/all', {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        _this3.projects = response.data.projects;
+        _this3.dataProject = response.data;
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
+    },
+    show: function show(resizable, adaptive, draggable) {
+      var _this4 = this;
 
       this.resizable = resizable;
       this.adaptive = adaptive;
@@ -28628,10 +28633,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         "resizable, adaptive, draggable" values is not updated yet.. eh
       */
       this.$nextTick(function () {
-        _this3.$modal.show('create-project-modal');
-        _this3.$modal.show('profile-popup-modal');
-        _this3.$modal.show('report-popup-modal');
-        _this3.$modal.show('getstarted-siswa-popup-modal');
+        _this4.$modal.show('create-project-modal');
+        _this4.$modal.show('profile-popup-modal');
+        _this4.$modal.show('report-popup-modal');
+        _this4.$modal.show('getstarted-siswa-popup-modal');
       });
     },
     popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
@@ -28985,6 +28990,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }).then(function (response) {
                 console.log(response);
+                __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/board');
             }).catch(function (error) {
                 console.log(error.response.data);
             });
@@ -38680,7 +38686,8 @@ var render = function() {
                 _vm._l(_vm.projects, function(project) {
                   return _c("project-app", {
                     key: project.id_projects,
-                    attrs: { prog: project }
+                    attrs: { prog: project },
+                    on: { realtime: _vm.realtimeProject }
                   })
                 })
               )
@@ -44119,9 +44126,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -44131,42 +44135,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             patchUser: {
-                codes: 'secret',
-                new: '1',
-                email: 'fahmiirsyad11@icloud.com',
-                name: 'fahmi irysad khairi'
-            },
-            dataUser: []
+                email: '',
+                codes: '',
+                password: '',
+                password_confirmation: ''
+            }
         };
     },
 
     computed: {
         patchUserIsPassed: function patchUserIsPassed() {
-            return this.dataUser.codes && this.dataUser.newpass && this.dataUser.retypepass;
+            return this.patchUser.email && this.patchUser.codes && this.patchUser.password && this.password_confirmation;
         }
     },
-    beforeCreate: function beforeCreate() {
-        var _this = this;
-
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
-            headers: {
-                "Authorization": 'Bearer ' + window.localStorage.getItem('token')
-            }
-        }).then(function (response) {
-            _this.dataUser = response.data.profile;
-            console.log(response);
-        });
-    },
-
     methods: {
         profileRenew: function profileRenew() {
-            console.log(this.dataUser);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.patch('http://localhost:8000/api/v1/student', this.patchUser, {
+            console.log(this.patchUser);
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/student/started', this.patchUser, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
             }).then(function (response) {
-                // this.patchUser = response.data.profile
                 console.log(response);
             }).catch(function (error) {
                 console.log(error.response.data);
@@ -44189,50 +44178,18 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "profileForm__Content" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.patchUser.new,
-                expression: "patchUser.new"
-              }
-            ],
-            attrs: { type: "hidden", name: "newState" },
-            domProps: { value: _vm.patchUser.new },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.patchUser, "new", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
           _c("fieldset", [
-            _c("label", { attrs: { for: "stateName" } }, [
-              _vm._v("Nama lengkap")
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass:
-                "input--default input--default-full input-text fontSize-s",
-              attrs: {
-                type: "text",
-                placeholder: "Fahmi irsyad dkk",
-                name: "stateName"
-              },
-              on: {
-                focus: function($event) {
-                  $event.target.select()
-                }
-              }
-            }),
-            _vm._v(" "),
             _c("label", { attrs: { for: "stateEmail" } }, [_vm._v("Email")]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.patchUser.email,
+                  expression: "patchUser.email"
+                }
+              ],
               staticClass:
                 "input--default input--default-full input-text fontSize-s",
               attrs: {
@@ -44240,9 +44197,16 @@ var render = function() {
                 placeholder: "fahmi@fmail.com",
                 name: "stateEmail"
               },
+              domProps: { value: _vm.patchUser.email },
               on: {
                 focus: function($event) {
                   $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.patchUser, "email", $event.target.value)
                 }
               }
             })
@@ -44254,15 +44218,30 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.patchUser.codes,
+                  expression: "patchUser.codes"
+                }
+              ],
               staticClass:
                 "input--default input--default-full input-text fontSize-s",
               attrs: {
                 type: "password",
                 placeholder: "masukkan password lama"
               },
+              domProps: { value: _vm.patchUser.codes },
               on: {
                 focus: function($event) {
                   $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.patchUser, "codes", $event.target.value)
                 }
               }
             }),
@@ -44272,27 +44251,61 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.patchUser.password,
+                  expression: "patchUser.password"
+                }
+              ],
               staticClass: "input--default input-text fontSize-s",
               attrs: {
                 type: "password",
                 placeholder: "masukkan password baru"
               },
+              domProps: { value: _vm.patchUser.password },
               on: {
                 focus: function($event) {
                   $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.patchUser, "password", $event.target.value)
                 }
               }
             }),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.patchUser.password_confirmation,
+                  expression: "patchUser.password_confirmation"
+                }
+              ],
               staticClass: "input--default input-text fontSize-s",
               attrs: {
                 type: "password",
                 placeholder: "konfirmasi password baru"
               },
+              domProps: { value: _vm.patchUser.password_confirmation },
               on: {
                 focus: function($event) {
                   $event.target.select()
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.patchUser,
+                    "password_confirmation",
+                    $event.target.value
+                  )
                 }
               }
             })
@@ -44303,7 +44316,6 @@ var render = function() {
             {
               staticClass:
                 "button button-landing button--xl borderRadius-s button--melting-blue",
-              attrs: { disabled: !_vm.patchUserIsPassed },
               on: {
                 click: function($event) {
                   $event.preventDefault()

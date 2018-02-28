@@ -50,6 +50,7 @@ export default {
                 }
             }).then((response) => {
                 console.log(response)
+                router.go('/board')
             }).catch((error) =>{
                 console.log(error.response.data)
             })

@@ -48,7 +48,7 @@
           <div class="project__content">
             <div class="project project__teacher">
               <!-- awal item dynamic -->
-                <project-app v-for="project in projects" :prog="project" :key="project.id_projects"></project-app>
+                <project-app v-for="project in projects" :prog="project" :key="project.id_projects" @realtime="realtimeProject"></project-app>
               </div>
             </div>
           </div>
@@ -94,17 +94,7 @@
     },
     mounted() {
         setTimeout(() => this.$modal.show('getstarted-siswa-popup-modal'), 2000);
-        axios.get('http://localhost:8000/api/v1/project/all',{
-          headers: {
-            "Authorization": `Bearer ${window.localStorage.getItem('token')}`
-          }
-        }).then((response) =>{
-          console.log(response)
-          this.projects = response.data.projects
-          this.dataProject = response.data
-        }).catch((error) =>{
-          console.log(error.response.data)
-        })
+        this.realtimeProject()
     },
     data(){
       return {
@@ -115,6 +105,19 @@
       }
     },
     methods: {
+      realtimeProject() {
+        axios.get('http://localhost:8000/api/v1/project/all',{
+          headers: {
+            "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+          }
+        }).then((response) =>{
+          this.projects = response.data.projects
+          this.dataProject = response.data
+          console.log(response)
+        }).catch((error) =>{
+          console.log(error.response.data)
+        })
+      },
       show(resizable, adaptive, draggable) {
         this.resizable = resizable
         this.adaptive = adaptive
