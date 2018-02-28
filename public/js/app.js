@@ -39002,7 +39002,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.profile-head__title h4{text-align:center!important\n}\n.alignCenter,.profile-head__quotes{text-align:center\n}\n.profile-head__buttonChange{width:inherit;padding:20px 0 0;text-align:center\n}\n.ghost--button{cursor:pointer;outline:none;border:2px solid #8492a6;background:#8492a6;color:#fff;padding:8px;border-radius:3px;max-width:150px;transition:.2s ease-in-out\n}\n.ghost--button:hover{background:#6e7b8b;transition:.3s ease-in-out\n}", ""]);
+exports.push([module.i, "\n.grey{color:#6f6f6f\n}\n.profile-head__title h4{text-align:center!important\n}\n.alignCenter,.profile-head__quotes{text-align:center\n}\n.profile-head__buttonChange{width:inherit;padding:20px 0 0;text-align:center\n}\n.buttonExtend{width:100%;text-align:center\n}\n.navbar__profile{border:none!important;box-shadow:0 3px 10px 0 rgba(0,0,0,.03)\n}", ""]);
 
 // exports
 
@@ -39027,13 +39027,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__router__ = __webpack_require__(3);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -39121,12 +39114,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data: function data() {
     return {
-      projectIds: [],
-      projectItems: [],
-      resizable: false,
-      adaptive: false,
-      draggable: false,
-      canBeShown: false,
       state: null,
       isOpened: false,
       disabled: false,
@@ -39136,25 +39123,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
   methods: {
-    show: function show(resizable, adaptive, draggable) {
-      var _this2 = this;
-
-      this.resizable = resizable;
-      this.adaptive = adaptive;
-      this.draggable = draggable;
-      /*
-        $nextTick is required because the data model with new
-        "resizable, adaptive, draggable" values is not updated yet.. eh
-      */
-      this.$nextTick(function () {
-        _this2.$modal.show('create-project-modal');
-        _this2.$modal.show('profile-popup-modal');
-        _this2.$modal.show('report-popup-modal');
-      });
-    },
-    detected: function detected(e) {
-      this.state = e;
-    },
     popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
       this.$modal.show('create-project-modal');
     },
@@ -41856,7 +41824,8 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "ghost--button alignCenter",
+                    staticClass:
+                      "button buttonExtend button--l button--nofill borderRadius-s",
                     attrs: { disabled: this.disabled },
                     on: {
                       click: function($event) {
@@ -41868,7 +41837,9 @@ var render = function() {
                   [_vm._v("Edit profile")]
                 )
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
           ])
         ]),
         _vm._v(" "),
@@ -41914,6 +41885,18 @@ var staticRenderFns = [
         },
         attrs: { src: "images/search.svg", alt: "" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "wrapper-profile-content" }, [
+      _c("div", { staticClass: "wrapper-profile-content__header" }, [
+        _c("p", [_vm._v("Badges")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "grey" }, [_vm._v("Tampilkan semua")])
+      ])
     ])
   }
 ]

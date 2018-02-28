@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="profileContainer">
-       		<header>
+    <header>
 			<div class="wrapper-profile-head">
 				<div class="profile-head marginMagic">
 					<div class="profile-head__avatar marginBottom-s">
@@ -39,22 +39,15 @@
 						<q style="color: #6F6F6F;">{{this.dataUser.bio}}</q>
 					</div>
           <div class="profile-head__buttonChange">
-            <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="ghost--button alignCenter">Edit profile</button>
+            <button @click.prevent="popupEditProfileSiswaClick()" :disabled="this.disabled" class="button buttonExtend button--l button--nofill borderRadius-s">Edit profile</button>
           </div>
 				</div>
-				<!-- <div class="wrapper-profile-menu paddingBottom-l">
-					<ul class="profile-menu marginMagic">
-						<li class="profile-menu__items">
-							<a href="#">Feed</a>
-						</li>
-						<li class="profile-menu__items">
-							<a href="#">Activity</a>
-						</li>
-						<li class="profile-menu__items">
-							<a href="#">Contribution</a>
-						</li>
-					</ul>
-				</div> -->
+        <div class="wrapper-profile-content">
+          <div class="wrapper-profile-content__header">
+            <p>Badges</p>
+            <p class="grey">Tampilkan semua</p>
+          </div>
+        </div>
 			</div>
 		</header>
     <div class="profile-content">
@@ -91,12 +84,6 @@
         },
     data(){
       return {
-        projectIds: [],
-        projectItems: [],
-        resizable: false,
-        adaptive: false,
-        draggable: false,
-        canBeShown: false,
         state: null,
         isOpened: false,
         disabled: false,
@@ -105,23 +92,6 @@
       }
     },
     methods: {
-      show(resizable, adaptive, draggable) {
-        this.resizable = resizable
-        this.adaptive = adaptive
-        this.draggable = draggable
-        /*
-          $nextTick is required because the data model with new
-          "resizable, adaptive, draggable" values is not updated yet.. eh
-        */
-        this.$nextTick(() => {
-          this.$modal.show('create-project-modal');
-          this.$modal.show('profile-popup-modal');
-          this.$modal.show('report-popup-modal');
-        })
-      },
-      detected(e) {
-        this.state = e;
-      },
       popupCreateProjectClickOpen(){
         this.$modal.show('create-project-modal');
       },
@@ -140,6 +110,10 @@
 </script>
 
 <style lang="css">
+.grey {
+  color: #6f6f6f;
+}
+
 .profile-head__title h4{
 	text-align: center!important;
 }
@@ -156,19 +130,15 @@
   padding: 20px 0 0 0;
   text-align: center;
 }
-.ghost--button {
-  cursor: pointer;
-  outline: none;
-  border: 2px solid #8492A6;
-  background: #8492a6;
-  color: white;
-  padding: 8px;
-  border-radius: 3px;
-  max-width: 150px;
-  transition: ease-in-out .2s;
+
+.buttonExtend {
+  width: 100%;
+  text-align: center;
 }
-.ghost--button:hover {
-  background: rgb(110, 123, 139);
-  transition: ease-in-out .3s;
+
+.navbar__profile {
+  border: none!important;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,.03);
 }
+
 </style>
