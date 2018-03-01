@@ -621,18 +621,22 @@ module.exports = __webpack_require__(60);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 var state = {
-  isLogged: !!window.localStorage.getItem('token')
-  // keyBypass: !!window.localStorage.getItem('key'),
+  isLogged: !!window.localStorage.getItem('token'),
+  start: false
 };
 
 var mutations = {
   LOGIN_USER: function LOGIN_USER(state) {
     state.isLogged = true;
-    // state.keyBypass = window.localStorage.getItem('key') + window.localStorage.getItem('token');
+  },
+  START_USER: function START_USER(state) {
+    state.start = true;
+  },
+  END_START_USER: function END_START_USER(state) {
+    state.start = false;
   },
   LOGOUT_USER: function LOGOUT_USER(state) {
     state.isLogged = false;
-    state.keyBypass = false;
   }
 };
 
@@ -13931,10 +13935,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // exec
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('detectNetwork', __webpack_require__(229));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.devtools = true;
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.performance = true;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_v_blur___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue_kanban__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vee_validate__["a" /* default */], { fieldsBagName: 'formFields' });
@@ -42259,8 +42261,10 @@ exports.push([module.i, "\n.wrap-landing[data-v-214ae8f0]{height:100vh;overflow:
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_index__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
 //
 //
 //
@@ -42381,14 +42385,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    beforeCreate: function beforeCreate() {
+        var _this = this;
+
+        if (__WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].state.isLogged) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            }).then(function (response) {
+                _this.dataUser = response.data.profile;
+                if (_this.dataUser.new == 1) {
+                    __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/board');
+                }
+            });
+        } else {
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/logout');
+        }
+    },
+    data: function data() {
+        return {
+            dataUser: []
+        };
+    },
+
     methods: {
         startedNext: function startedNext() {
-            __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/start/setup');
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/start/setup');
         }
     }
 });
@@ -44134,12 +44163,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    beforeCreate: function beforeCreate() {
+        var _this = this;
+
+        if (__WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].state.isLogged) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            }).then(function (response) {
+                _this.dataUser = response.data.profile;
+                if (_this.dataUser.new == 1) {
+                    __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/board');
+                }
+            });
+        } else {
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/logout');
+        }
+    },
     data: function data() {
         return {
             patchUser: {
@@ -44147,26 +44208,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 codes: '',
                 password: '',
                 password_confirmation: ''
-            }
+            },
+            dataUser: [],
+            disabled: true
         };
     },
 
     computed: {
         patchUserIsPassed: function patchUserIsPassed() {
-            return this.patchUser.email && this.patchUser.codes && this.patchUser.password && this.password_confirmation;
+            return this.patchUser.email && this.patchUser.codes && this.patchUser.password && this.patchUser.password_confirmation;
         }
     },
     methods: {
         profileRenew: function profileRenew() {
-            console.log(this.patchUser);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/student/started', this.patchUser, {
-                headers: {
-                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+            var _this2 = this;
+
+            this.$validator.validateAll().then(function (result) {
+                if (result) {
+
+                    console.log(_this2.patchUser);
+                    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/student/started', _this2.patchUser, {
+                        headers: {
+                            "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                        }
+                    }).then(function (response) {
+                        window.localStorage.setItem('resolution_renew', _this2.patchUser.password);
+                        __WEBPACK_IMPORTED_MODULE_1__store_index__["a" /* default */].commit('START_USER');
+                        __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/start/final');
+                    }).catch(function (error) {
+                        console.log(error.response.data);
+                    });
+                    return;
                 }
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error.response.data);
             });
         }
     }
@@ -44192,6 +44265,12 @@ var render = function() {
             _c("input", {
               directives: [
                 {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required|email",
+                  expression: "'required|email'"
+                },
+                {
                   name: "model",
                   rawName: "v-model",
                   value: _vm.patchUser.email,
@@ -44200,6 +44279,10 @@ var render = function() {
               ],
               staticClass:
                 "input--default input--default-full input-text fontSize-s",
+              class: {
+                "input-nofill": true,
+                "input--danger": _vm.errors.has("stateEmail")
+              },
               attrs: {
                 type: "text",
                 placeholder: "fahmi@fmail.com",
@@ -44217,7 +44300,21 @@ var render = function() {
                   _vm.$set(_vm.patchUser, "email", $event.target.value)
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _vm.errors.has("stateEmail")
+              ? _c(
+                  "span",
+                  { staticStyle: { "font-size": "12px", color: "red" } },
+                  [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.errors.first("stateEmail")) +
+                        "\n                  "
+                    )
+                  ]
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
           _c("fieldset", [
@@ -44228,6 +44325,12 @@ var render = function() {
             _c("input", {
               directives: [
                 {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required",
+                  expression: "'required'"
+                },
+                {
                   name: "model",
                   rawName: "v-model",
                   value: _vm.patchUser.codes,
@@ -44236,7 +44339,12 @@ var render = function() {
               ],
               staticClass:
                 "input--default input--default-full input-text fontSize-s",
+              class: {
+                "input-nofill": true,
+                "input--danger": _vm.errors.has("passwordlama")
+              },
               attrs: {
+                name: "passwordlama",
                 type: "password",
                 placeholder: "masukkan password lama"
               },
@@ -44254,12 +44362,32 @@ var render = function() {
               }
             }),
             _vm._v(" "),
+            _vm.errors.has("passwordlama")
+              ? _c(
+                  "span",
+                  { staticStyle: { "font-size": "12px", color: "red" } },
+                  [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.errors.first("passwordlama")) +
+                        "\n                  "
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("label", { attrs: { for: "stateNewPass" } }, [
               _vm._v("Password baru")
             ]),
             _vm._v(" "),
             _c("input", {
               directives: [
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required",
+                  expression: "'required'"
+                },
                 {
                   name: "model",
                   rawName: "v-model",
@@ -44268,7 +44396,9 @@ var render = function() {
                 }
               ],
               staticClass: "input--default input-text fontSize-s",
+              class: { "input--danger": _vm.errors.has("password") },
               attrs: {
+                name: "password",
                 type: "password",
                 placeholder: "masukkan password baru"
               },
@@ -44289,6 +44419,12 @@ var render = function() {
             _c("input", {
               directives: [
                 {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required|confirmed:password",
+                  expression: "'required|confirmed:password'"
+                },
+                {
                   name: "model",
                   rawName: "v-model",
                   value: _vm.patchUser.password_confirmation,
@@ -44296,7 +44432,11 @@ var render = function() {
                 }
               ],
               staticClass: "input--default input-text fontSize-s",
+              class: {
+                "input--danger": _vm.errors.has("password_confirmation")
+              },
               attrs: {
+                name: "password_confirmation",
                 type: "password",
                 placeholder: "konfirmasi password baru"
               },
@@ -44320,10 +44460,54 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.errors.any(),
+                  expression: "errors.any()"
+                }
+              ]
+            },
+            [
+              _vm.errors.has("password")
+                ? _c(
+                    "span",
+                    { staticStyle: { "font-size": "12px", color: "red" } },
+                    [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(_vm.errors.first("password")) +
+                          "\n                  "
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.errors.has("password_confirmation")
+                ? _c(
+                    "span",
+                    { staticStyle: { "font-size": "12px", color: "red" } },
+                    [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(_vm.errors.first("password_confirmation")) +
+                          "\n                  "
+                      )
+                    ]
+                  )
+                : _vm._e()
+            ]
+          ),
+          _vm._v(" "),
+          _c(
             "button",
             {
               staticClass:
                 "button button-landing button--xl borderRadius-s button--melting-blue",
+              attrs: { disabled: !_vm.patchUserIsPassed },
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -44460,6 +44644,11 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_index__ = __webpack_require__(5);
+//
 //
 //
 //
@@ -44492,7 +44681,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            dataUser: []
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
+                headers: {
+                    "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+                }
+            }).then(function (response) {
+                _this.dataUser = response.data.profile;
+                if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.start == false) {
+                    __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/start');
+                }
+            });
+        } else {
+            __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/logout');
+        }
+    },
+
+    methods: {
+        startPortal: function startPortal() {
+            __WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].commit('END_START_USER');
+            __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].push('/board');
+        }
+    }
+});
 
 /***/ }),
 /* 181 */
@@ -44505,7 +44729,15 @@ var render = function() {
   return _c("div", { attrs: { id: "startFinal" } }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
+    _c("div", { staticClass: "startFinal__Title" }, [
+      _c("h3", [_vm._v(_vm._s(_vm.dataUser.name))]),
+      _vm._v(" "),
+      _c("h3", [_vm._v("You are already to start.")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Start the journey with click i'm ready below.")]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.startPortal } }, [_vm._v("I'm Ready")])
+    ]),
     _vm._v(" "),
     _c(
       "svg",
@@ -44604,18 +44836,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "startFinal__navbar" }, [
       _c("p", [_vm._v("Octolist")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "startFinal__Title" }, [
-      _c("h3", [_vm._v("You are already to start.")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Start the journey with click i'm ready below.")]),
-      _vm._v(" "),
-      _c("button", [_vm._v("I'm Ready")])
     ])
   }
 ]
@@ -47087,56 +47307,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7ed252d2", module.exports)
   }
 }
-
-/***/ }),
-/* 229 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var VOffline = { render: function render() {
-    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', [_vm.onLine ? _c('div', { class: _vm.onlineClass }, [_vm._t("online")], 2) : _c('div', { class: _vm.offlineClass }, [_vm._t("offline")], 2)]);
-  }, staticRenderFns: [],
-  name: 'v-offline',
-  props: {
-    onlineClass: {
-      type: String,
-      required: false
-    },
-    offlineClass: {
-      type: String,
-      required: false
-    }
-  },
-  data: function data() {
-    return {
-      onLine: navigator.onLine || false
-    };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    window.addEventListener('load', function () {
-      _this.updateOnlineStatus();
-      window.addEventListener('online', _this.updateOnlineStatus);
-      window.addEventListener('offline', _this.updateOnlineStatus);
-    });
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-  },
-
-  methods: {
-    updateOnlineStatus: function updateOnlineStatus() {
-      this.isOnline = navigator.onLine || false;
-      this.$emit('detected-condition', this.isOnline);
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (VOffline);
-
 
 /***/ })
 /******/ ]);

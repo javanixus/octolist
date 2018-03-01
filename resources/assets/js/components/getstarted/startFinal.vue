@@ -4,9 +4,10 @@
     <p>Octolist</p>
   </div>
   <div class="startFinal__Title">
+    <h3>{{dataUser.name}}</h3>
     <h3>You are already to start.</h3>
     <p>Start the journey with click i'm ready below.</p>
-    <button>I'm Ready</button>
+    <button @click="startPortal">I'm Ready</button>
   </div>
       <svg style="position: absolute; bottom: 0px;" width="400px" height="158px" viewBox="0 0 400 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
@@ -30,7 +31,38 @@
 
 </style>
 <script>
+import axios from 'axios';
+import router from './../../router';
+import store from './../../store/index';
+
 export default {
-  
-}
+    data(){
+        return {
+            dataUser: []
+        }
+    },
+    mounted(){
+        if(store.state.isLogged){
+                axios.get('http://localhost:8000/api/v1/student',{
+                    headers: {
+                        "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+                    }
+                })
+                .then((response) => {
+                    this.dataUser = response.data.profile
+                    if(store.state.start == false){
+                        router.push('/start')
+                    }
+                })
+                } else {
+                router.push('/logout')
+                }
+        },
+    methods: {
+        startPortal(){
+            store.commit('END_START_USER');
+            router.push('/board')
+        }
+    }
+  }
 </script>
