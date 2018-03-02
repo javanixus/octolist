@@ -38527,9 +38527,11 @@ var render = function() {
           "div",
           { staticClass: "project-item__footer-items" },
           [
-            _c("router-link", { attrs: { to: "/board/p" } }, [
-              _c("span", [_vm._v("Open project")])
-            ])
+            _c(
+              "router-link",
+              { attrs: { to: "/board/p/" + _vm.prog.id_projects } },
+              [_c("span", [_vm._v("Open project")])]
+            )
           ],
           1
         )
@@ -38917,7 +38919,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       projectInfo: []
     };
   },
-  mounted: function mounted() {
+  beforeCreate: function beforeCreate() {
     __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/' + this.$route.params.projectId + '/cards', {
       headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
@@ -38926,6 +38928,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(response);
     }).catch(function (error) {
       console.log(error.response.data);
+      if (error.response.status == 500) {
+        __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/404');
+      }
     });
   },
 
@@ -39364,7 +39369,7 @@ var render = function() {
         [
           _c(
             "span",
-            { staticStyle: { margin: "0 auto" } },
+            { staticStyle: { margin: "0 auto!important" } },
             [
               _c("router-link", { attrs: { to: { path: "/board" } } }, [
                 _c("img", {

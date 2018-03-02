@@ -24,7 +24,7 @@
     </div>
     <div class="project-item__footer">
       <div class="project-item__footer-items">
-          <router-link :to="'/board/p'"><span>Open project</span></router-link>
+          <router-link :to="'/board/p/'+prog.id_projects"><span>Open project</span></router-link>
       </div>
     </div>      
   </div>

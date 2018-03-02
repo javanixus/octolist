@@ -2,7 +2,7 @@
 	<div class="board">
 	<div class="navbar">
       <div class="navbar__profile navbar__profile--profile-page">
-      <span style="margin: 0 auto;"><router-link :to="{path: '/board'}"><img style="margin-left: 15px;" class="octolist-logo" src="/images/octolist.svg"></router-link></span>
+      <span style="margin: 0 auto!important;"><router-link :to="{path: '/board'}"><img style="margin-left: 15px;" class="octolist-logo" src="/images/octolist.svg"></router-link></span>
         <div class="wrapper-profile right-menu">
           <div class="profile-badge">
             <a href="javascript:void(0)"></a>
@@ -63,7 +63,7 @@ export default {
       projectInfo: []
     }
   },
-  mounted(){
+  beforeCreate(){
     axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId +'/cards',{
       headers: {
         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
@@ -72,6 +72,9 @@ export default {
       console.log(response)
     }).catch((error) =>{
       console.log(error.response.data)
+      if(error.response.status == 500){
+        router.push('/404')
+      }
     })
   },
   components:{
