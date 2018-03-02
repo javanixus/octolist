@@ -163,7 +163,7 @@ class TeacherController extends Controller
                     'password' => 'required',
                     'role' => 'required',
 //                    Personal Information
-                    'nip' => 'required',
+                    'nip' => 'optional',
                     'name' => 'required',
                     'email' => 'required',
                     'gender' => 'required',
