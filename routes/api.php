@@ -50,7 +50,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::post('/create','ProjectController@store');
 				Route::post('/{id}/member/add','ProjectMemberController@store');
 				Route::delete('/{id}/member/{member}/delete','ProjectMemberController@destroy');
-				Route::get('/{id}/members'.'ProjectMemberController@show');
+				Route::get('/{id}/members','ProjectMemberController@show');
 				Route::post('/{id}/card/add','CardController@store');
 				Route::get('/{id}/cards','CardController@show');
 

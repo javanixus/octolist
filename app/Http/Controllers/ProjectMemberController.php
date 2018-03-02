@@ -46,13 +46,16 @@ class ProjectMemberController extends Controller
 				}
 
 		public function show($id){
-			$member = ProjectMember::where('id_projects',$id)
-										->join('students_info','project_members.id_students','=','students_info.id')
-										->all();
+			// return $id;
+			// $member = Project::where('id_projects',$id)->ProjectMember()->get();
+			$member = ProjectMember::join('students_info','project_members.id_students','=','students_info.id')
+										->where('id_projects',$id)
+										->select('*')
+										->get();
 			$response = [
 				'msg' => $member,
 			];
-
+      //
 			return response()->json($response,200);
 		}
 
