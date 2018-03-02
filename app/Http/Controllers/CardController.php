@@ -70,13 +70,13 @@ class CardController extends Controller
      */
     public function show($id)
     {
-			$cards = Project::find($id)->card()->all();
+			$cards = Project::find($id)->card()->get();
 
 			if($cards){
 				$response = [
 					'msg' => 'List of Project',
-					'projects' => $project,
-					'projects_count' => $project->count(),
+					'cards' => $cards,
+					'cards_count' => $cards->count(),
 				];
 				return response()->json($response,200);
 			}else{
