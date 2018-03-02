@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="236px" height="43px" viewBox="0 0 236 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="21.8554928%" y1="16.0532101%" x2="73.6188887%" y2="77.596716%" id="linearGradient-1">
+            <stop stop-color="#F23A21" offset="0%"></stop>
+            <stop stop-color="#F95943" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <text id="Octolist" font-family="KittenSlant, Kitten" font-size="30" font-style="italic" font-weight="normal" fill="#4F00EF">
+                <tspan x="65" y="37">Octolist</tspan>
+            </text>
+            <rect id="Rectangle" fill="url(#linearGradient-1)" style="mix-blend-mode: multiply;" transform="translate(18.520020, 21.835484) rotate(-22.000000) translate(-18.520020, -21.835484) " x="6.02002016" y="3.33548373" width="25" height="37" rx="3"></rect>
+            <rect id="Rectangle-Copy" fill="#FFCC00" style="mix-blend-mode: multiply;" transform="translate(42.520020, 21.835484) scale(-1, 1) rotate(-22.000000) translate(-42.520020, -21.835484) " x="30.0200202" y="3.33548373" width="25" height="37" rx="3"></rect>
+            <rect id="Rectangle-2" fill="#1FBF86" x="167" y="18" width="69" height="20" rx="3"></rect>
+            <text id="alpha" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#FFFFFF">
+                <tspan x="184" y="32">alpha</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
