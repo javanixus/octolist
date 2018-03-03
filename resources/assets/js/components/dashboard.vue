@@ -106,7 +106,7 @@
     },
     methods: {
       realtimeProject() {
-        axios.get('http://localhost:8000/api/v1/project/all',{
+        axios.get('http://localhost:8000/api/v1/project',{
           headers: {
             "Authorization": `Bearer ${window.localStorage.getItem('token')}`
           }

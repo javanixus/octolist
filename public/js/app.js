@@ -28612,7 +28612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     realtimeProject: function realtimeProject() {
       var _this3 = this;
 
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/all', {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project', {
         headers: {
           "Authorization": 'Bearer ' + window.localStorage.getItem('token')
         }
@@ -38902,6 +38902,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -38915,20 +38924,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       currentView: 'board-storage',
+      id_students: '',
+      members: [],
       dataUser: [],
-      projectInfo: []
+      projectInfo: [],
+      addMemberEvent: false
     };
   },
   beforeCreate: function beforeCreate() {
-    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/' + this.$route.params.projectId + '/cards', {
+    var _this = this;
+
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/' + this.$route.params.projectId, {
       headers: {
         "Authorization": 'Bearer ' + window.localStorage.getItem('token')
       }
     }).then(function (response) {
-      console.log(response);
+      // console.log(response.data.projects)
+      _this.projectInfo = response.data.projects;
+      // console.log(this.projectInfo.project_title)
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/student', {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        _this.dataUser = response.data.profile;
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/' + _this.$route.params.projectId + '/members', {
+          headers: {
+            "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+          }
+        }).then(function (response) {
+          console.log(response);
+          _this.members = response.data.msg;
+        }).catch(function (error) {
+          console.log(error.response.data);
+        });
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
     }).catch(function (error) {
       console.log(error.response.data);
-      if (error.response.status == 500) {
+      if (error.response.status == 500, 400, 404) {
         __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push('/404');
       }
     });
@@ -38939,6 +38974,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     'board-deck': __WEBPACK_IMPORTED_MODULE_3__boardDeck___default.a,
     'board-team': __WEBPACK_IMPORTED_MODULE_5__boardTeam___default.a,
     'member-project': __WEBPACK_IMPORTED_MODULE_6__memberProjectApp___default.a
+  },
+  methods: {
+    addMemberClick: function addMemberClick() {
+      this.addMemberEvent = true;
+    },
+    addMemberClickDone: function addMemberClickDone() {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/project/' + this.$route.params.projectId + '/member/add', {
+        id_students: this.id_students
+      }, {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
+      this.addMemberEvent = false;
+    },
+    addMemberClickCancel: function addMemberClickCancel() {
+      this.addMemberEvent = false;
+    }
   }
 });
 
@@ -39458,6 +39515,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['who']
@@ -39471,7 +39530,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "memberProject" })
+  return _c("div", { staticClass: "memberProject" }, [
+    _c("div", { staticClass: "avatar avatar--s avatar-dp" }, [
+      _c("img", {
+        staticClass: "avatar-img",
+        attrs: {
+          alt: "",
+          src: "http://localhost:8000/avatar/" + _vm.who.avatar
+        }
+      })
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39529,7 +39598,12 @@ var render = function() {
                       }
                     }
                   },
-                  [_c("img", { staticClass: "avatar-img", attrs: { alt: "" } })]
+                  [
+                    _c("img", {
+                      staticClass: "avatar-img",
+                      attrs: { alt: "", src: _vm.dataUser.avatar }
+                    })
+                  ]
                 )
               ])
             ])
@@ -39539,17 +39613,107 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "navbarExtendsProject" }, [
         _c("div", { staticClass: "navbarExtendsProjectCore" }, [
-          _c("h4", [_vm._v("Octolist Alpha")]),
+          _c("h4", [_vm._v(_vm._s(_vm.projectInfo.project_title))]),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "navbarExtendProject_member" },
             [
-              _vm._m(0),
+              _vm.addMemberEvent
+                ? _c("div", { staticClass: "addMember__panel" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "validate",
+                          rawName: "v-validate",
+                          value: "required",
+                          expression: "'required'"
+                        },
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.id_students,
+                          expression: "id_students"
+                        }
+                      ],
+                      staticClass: "input-text fontSize-xs",
+                      class: {
+                        "input-nofill": true,
+                        "input--danger": _vm.errors.has("addMember")
+                      },
+                      attrs: {
+                        type: "text",
+                        placeholder: "masukkan id teman...",
+                        name: "addMember"
+                      },
+                      domProps: { value: _vm.id_students },
+                      on: {
+                        keyup: [
+                          function($event) {
+                            if (
+                              !("button" in $event) &&
+                              _vm._k($event.keyCode, "esc", 27, $event.key)
+                            ) {
+                              return null
+                            }
+                            _vm.addMemberClickCancel($event)
+                          },
+                          function($event) {
+                            if (
+                              !("button" in $event) &&
+                              _vm._k($event.keyCode, "enter", 13, $event.key)
+                            ) {
+                              return null
+                            }
+                            _vm.addMemberClickDone($event)
+                          }
+                        ],
+                        focus: function($event) {
+                          $event.target.select()
+                        },
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.id_students = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.has("addMember")
+                      ? _c(
+                          "span",
+                          {
+                            staticStyle: { "font-size": "12px", color: "red" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                isi terlebih dahulu\n              "
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.addMemberEvent
+                ? _c("div", { staticClass: "addMember__panel" }, [
+                    _c("span", { staticClass: "addMember" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "http://localhost:8000/images/member-add.svg",
+                          alt: "add_member",
+                          title: "add member"
+                        },
+                        on: { click: _vm.addMemberClick }
+                      })
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
               _vm._l(_vm.members, function(member) {
                 return _c("member-project", {
-                  key: _vm.project.id_projects,
+                  key: _vm.members.id,
                   attrs: { who: member }
                 })
               })
@@ -39618,22 +39782,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "addMember" }, [
-      _c("img", {
-        attrs: {
-          src: "http://localhost:8000/images/member-add.svg",
-          alt: "add_member",
-          title: "add member"
-        }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
