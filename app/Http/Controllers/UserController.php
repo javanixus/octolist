@@ -326,8 +326,6 @@ class UserController extends Controller
 						if($update)
 						{
 							$response = [
-								// 'pass' => $password,
-								// 'aa' => $password,
 								'pass1' => $request->password,
 								'msg' => 'welcome to Octolist',
 							];
@@ -335,7 +333,6 @@ class UserController extends Controller
 							$response = [
 								'msg' => 'password error'
 							];
-
 						}
 					}else{
 						$response = [
