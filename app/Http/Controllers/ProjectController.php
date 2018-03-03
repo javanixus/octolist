@@ -120,7 +120,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-			$user = Project::where('id',$id)->get();
+			$user = Project::where('id',$id)->first();
 			// $project = ProjectMember::where('id_students',$user)->get();
 			// $project = Project::where()
 			// $project = Project::join('project_members', 'project_members.id_projects', '=', 'projects.id')
