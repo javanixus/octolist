@@ -1,6 +1,8 @@
 <template>
   <div class="memberProject">
-
+    <div class="avatar avatar--s avatar-dp">
+      <img class="avatar-img" alt="" :src="'http://localhost:8000/avatar/'+who.avatar"/>
+    </div>
   </div>
 </template>
 <style scoped>
