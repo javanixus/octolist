@@ -118,9 +118,27 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show($id)
     {
-        //
+			$user = Project::where('id',$id)->get();
+			// $project = ProjectMember::where('id_students',$user)->get();
+			// $project = Project::where()
+			// $project = Project::join('project_members', 'project_members.id_projects', '=', 'projects.id')
+			// 									->select('*')
+			// 									->where('project_members.id_students', '=', $user)
+			// 									->get();
+			if($user){
+				$response = [
+					'msg' => 'List of Project',
+					'projects' => $user,
+				];
+				return response()->json($response,200);
+			}else{
+				$response = [
+					'msg' => 'User not found',
+				];
+				return response()->json($response,404);
+			}
     }
 
 	public function showTeacherProject()
