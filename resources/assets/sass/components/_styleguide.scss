@@ -1,10 +1,10 @@
-//===================| Link : github.com/blubMe/melting-ui-kit
+//===================| Link : github.com/blubMe/melting-ui-framework (not deploy yet)
 //          ,---.    | Name: Melting UI kit
-//   i'm   ( @ @ )   | Version : v0.20 Pre-Rerelease (Oksida)
+//   i'm   ( @ @ )   | Version : v0.9 Pre-Rerelease (Oksida)
 // melting  ).-.(    | Codename : Oksida
 //  now    '/|||\`   | Deploy : Octolist Project
 //          '|`      | Created by : Pampam
-//===================| Last Update : deleting some codes
+//===================| Last Update : going to stable
 // Color Scheme //
 $magenta: #ec008c;
 $black: #1F2D3D;
@@ -107,17 +107,6 @@ h3 {font-size: 38px;}
     background: $blue !important;
     -webkit-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);-moz-box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16);box-shadow: 0px 3px 20px 4px rgba(24,117,240,0.16)!important;
   }
-}
-.button-group {
-  position: relative;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  vertical-align: middle;
-}
-
-.button-group>.button:first-child:not(:last-child):not(.dropdown-toggle) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 }
 // End Of Button //
 

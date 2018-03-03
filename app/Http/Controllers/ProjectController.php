@@ -66,22 +66,46 @@ class ProjectController extends Controller
 			]);
 			// $id = $project->id;
 			if($project){
-				$id = $project->id;
-				$user = Auth::user()->id;
-				$user = StudentsInfo::where('id_students',$user)->get()->first()->id;
-				// $ProjectMember = new ProjectMemberController;
-				// $ProjectMember->store($id,$request);
-
-				ProjectMember::Create([
-					'id_projects'		=>	$id,
-					'id_students'	 =>	$user,
+				if(Auth::user()->role == 3){
+					$id = $project->id;
+					$user = Auth::user()->id;
+					$user = StudentsInfo::where('id_students',$user)->get()->first()->id;
+					$member = ProjectMember::Create([
+						'id_projects'		=>	$id,
+						'id_students'	 =>	$user,
 					]);
+					if($member){
+						$response = [
+							'msg' => 'Project Created',
+							'href' => "/v1/project/$id",
+							'method' => 'GET',
+						];
+					}else{
+						$response = [
+							'msg' => 'project creation failed by student'
+						];
+					}
+					// $ProjectMember = new ProjectMemberController;
+					// $ProjectMember->store($id,$request);
+				}elseif(Auth::user()->role == 2){
+					$id = $project->id;
+					$user = Auth::user()->id;
+					$user = TeachersInfo::where('id_teachers',$user)->first()->id;
 
-				$response = [
-					'msg' => 'Project Created',
-					'href' => "/v1/project/$id",
-					'method' => 'GET',
-				];
+					$update = Project::find($id)->update(['project_link' => $user]);
+					if($update){
+						$response = [
+							'msg' => 'Project Created by teacher',
+							'href' => "/v1/project/$id",
+							'method' => 'GET',
+						];
+					}else{
+						$response = [
+							'msg' => 'project creation failed by teacher',
+						];
+					}
+				}
+
 
 				return response()->json($response,200);
 			}
@@ -94,9 +118,27 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show($id)
     {
-        //
+			$user = Project::where('id',$id)->get();
+			// $project = ProjectMember::where('id_students',$user)->get();
+			// $project = Project::where()
+			// $project = Project::join('project_members', 'project_members.id_projects', '=', 'projects.id')
+			// 									->select('*')
+			// 									->where('project_members.id_students', '=', $user)
+			// 									->get();
+			if($user){
+				$response = [
+					'msg' => 'List of Project',
+					'projects' => $user,
+				];
+				return response()->json($response,200);
+			}else{
+				$response = [
+					'msg' => 'User not found',
+				];
+				return response()->json($response,404);
+			}
     }
 
 	public function showTeacherProject()

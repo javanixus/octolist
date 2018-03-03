@@ -15,6 +15,9 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
     Route::get('/board', function () {
         return view('student');
     });
+    Route::get('board/p', function () {
+        return view('project');
+    });
     Route::get('/admin', function (){
         return view('admin');
     });
