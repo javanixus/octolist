@@ -4,7 +4,7 @@
     use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Database\Migrations\Migration;
 
-class CreateFileProjectsTable extends Migration
+class CreateFilesProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFileProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('file_projects', function (Blueprint $table) {
+        Schema::create('files_projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
             $table->string('file_name', 50);
@@ -21,7 +21,7 @@ class CreateFileProjectsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('file_projects', function (Blueprint $table) {
+        Schema::table('files_projects', function (Blueprint $table) {
             $table->foreign('project_id')
                   ->references('id')
                   ->on('projects');

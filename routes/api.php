@@ -63,8 +63,8 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 
 				// Upload File
 
-				Route::post('upload/{id}', 'FileControlller@store');
-				Route::delete('upload/{id}', 'FileController@destroy');
+				Route::post('upload/{id}', 'FileProjectController@store');
+				Route::delete('upload/{id}', 'FileProjectController@destroy');
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 

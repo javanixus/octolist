@@ -29,4 +29,9 @@ class Project extends Model
         return $this->belongsToMany('App\Card', 'project_cards',
             'id_projects', 'id_cards')->withTimestamps();
     }
+
+    public function FileProject(){
+		    return $this->hasOne('App\FileProject', 'project_id');
+    }
+
 }
