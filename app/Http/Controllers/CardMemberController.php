@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\CardMember;
+use App\Project;
+use App\Card;
+
 use Illuminate\Http\Request;
 
 class CardMemberController extends Controller
@@ -60,9 +63,12 @@ class CardMemberController extends Controller
      * @param  \App\CardMember  $cardMember
      * @return \Illuminate\Http\Response
      */
-    public function show(CardMember $cardMember)
+    public function show($id,$card)
     {
-        //
+			$memb = CardMember::join('students_info','cards_members.id_students','=','students_info.id')
+									->where('id_cards',$card)
+										->get();
+			return $memb;
     }
 
     /**
