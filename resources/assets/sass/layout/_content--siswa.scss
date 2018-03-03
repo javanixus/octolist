@@ -11,83 +11,6 @@
 .createProjectModal-content {
     padding: 15px;
 }
-.board {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-}
-
-.boardWrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 30px;
-    bottom: 0;
-    padding: 20px 0 0 95px;
-}
-
-.boardWrapper__Main {
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-right: 0;
-    -webkit-transition: margin .1s ease-in;
-    transition: margin .1s ease-in;
-}
-
-.boardHeader {
-    position: relative;
-    padding-left: 80px;
-}
-
-.boardHeader__Navigation {
-    width: 100%;
-    min-height: 30px;
-    background: $blue;
-    padding: 10px 20px;
-    box-shadow: 0 3px 20px 4px rgba(24,117,240,.16);
-}
-
-.boardHeaderNavigation__item {
-    ul {
-        display: inline-flex;
-        text-decoration: none;
-        list-style: none;
-        color: white;
-        li {
-            margin-right: 5px;
-        }
-    }
-}
-
-// aside
-
-.asideBoardWrapper {
-    background: #fff;
-    position: fixed;
-    width: 80px;
-    height: 100vh;
-    top: 0;
-    .asideBoardWrapper__Core {
-        padding: 15px;
-    }
-}
-
-.asideBoard__ProjectTitle {
-    span { font-size: 14px; color:$grey; }
-    h3 {
-        font-size: 25px;
-        margin-top: 10px;
-    }
-}
-.asideBoard__ProjectDesc {
-    span { font-size: 13px; font-family: 'Roboto'; color: $grey;}
-}
 .profileMenuPopup__Content {
     p {
         margin: 15px 0 8px 0!important;
@@ -189,5 +112,29 @@
     }
     input {
         margin-bottom: 15px;
+    }
+}
+
+.navbarExtendsProject {
+    width: 100%;
+    padding: 15px 15px 0 15px;
+    background: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    .navbarExtendsProjectCore {
+        text-align: center;
+        h4 {
+            font-size: 25px;
+        }
+    }
+}
+.navbarExtendProject_member {
+    margin-top: 15px;
+}
+.addMember {
+    img{
+        cursor: pointer;
+        height: 30px;
     }
 }

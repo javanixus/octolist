@@ -8,7 +8,7 @@ import login from './../components/auth/login';
 import logout from './../components/auth/logout';
 import ForgotPass from './../components/auth/forgotpass';
 import Dashboard from './../components/dashboard';
-import DashboardSiswa from './../components/board';
+import DashboardSiswa from './../components/project/board';
 import Profile from './../components/student/profile';
 import nothing from './../components/404';
 import GetStarted from './../components/getstarted/GetStarted';
@@ -43,7 +43,7 @@ export default new Router({
       component: Dashboard,
     },
     {
-      path: '/board/p',
+      path: '/board/p/:projectId',
       component: DashboardSiswa,
       name: 'board'
     },
