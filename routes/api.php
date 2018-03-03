@@ -57,6 +57,11 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
 				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
 				Route::get('/all','ProjectController@showStudentProject');
+
+				// Upload File
+
+				Route::post('upload/{id}', 'FileControlller@store');
+				Route::delete('upload/{id}', 'FileController@destroy');
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 
