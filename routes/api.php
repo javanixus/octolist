@@ -47,6 +47,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 			Route::get('/projects','ProjectController@showTeacherProject');
 
 			Route::group(['prefix' => 'project'],function(){
+				Route::get('/','ProjectController@showStudentProject');
 				Route::get('/{id}','ProjectController@show');
 				Route::post('/create','ProjectController@store');
 				Route::post('/{id}/member/add','ProjectMemberController@store');
@@ -59,7 +60,7 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
 				Route::get('/{id}/card/{card}/members','CardMemberController@show');
 				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
-				Route::get('/all','ProjectController@showStudentProject');
+				// Route::get('all','ProjectController@showStudentProject');
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');
 

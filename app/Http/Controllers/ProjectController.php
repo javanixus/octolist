@@ -191,6 +191,10 @@ class ProjectController extends Controller
 		}
 	}
 
+	public function aa(){
+
+	}
+
     /**
      * Show the form for editing the specified resource.
      *
