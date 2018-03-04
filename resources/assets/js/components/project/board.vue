@@ -24,14 +24,13 @@
              <span style="font-size: 12px; color: red;" v-if="errors.has('addMember')">
                 isi terlebih dahulu
               </span>
-            <!-- <button @click="addMemberClickDone">Invite</button> -->
           </div>
           <div v-if="!addMemberEvent" class="addMember__panel">
             <span class="addMember">
               <img @click="addMemberClick" src="http://localhost:8000/images/member-add.svg" alt="add_member" title="add member">
+                <member-project v-for="member in members" :who="member" :key="members.id"></member-project>
             </span>
-          </div>          
-          <member-project v-for="member in members" :who="member" :key="members.id"></member-project>
+          </div>
           </div>
         </div>
       </div>
@@ -72,7 +71,7 @@ export default {
       members: [],
       dataUser: [],
       projectInfo: [],
-      addMemberEvent: false
+      addMemberEvent: false,
     }
   },
   beforeCreate(){
@@ -132,11 +131,12 @@ export default {
       }).catch((error) =>{
           console.log(error.response.data)
       })
+      this.$forceUpdate()
       this.addMemberEvent = false
     },
     addMemberClickCancel(){
       this.addMemberEvent = false
-    }
+    },
   }
 }
 </script>
