@@ -13804,19 +13804,19 @@ if(false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(105)
+  __webpack_require__(259)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(107)
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(261)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-5cfba31a"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -28560,7 +28560,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {
+  beforeCreate: function beforeCreate() {
     var _this = this;
 
     if (__WEBPACK_IMPORTED_MODULE_2__store_index__["a" /* default */].state.isLogged == false) {
@@ -28589,7 +28589,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     setTimeout(function () {
       return _this2.$modal.show('getstarted-siswa-popup-modal');
     }, 2000);
+  },
+  created: function created() {
+    var _this3 = this;
+
     this.realtimeProject();
+    window.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        _this3.$modal.hide('pre-project-modal');
+        _this3.$modal.hide('pre-project-setup-modal');
+      }
+    });
+    window.addEventListener('keyup', function (e) {
+      if (e.keyCode === 114) {
+        _this3.$modal.show('pre-project-modal');
+      }
+    });
   },
   data: function data() {
     return {
@@ -28602,22 +28617,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     realtimeProject: function realtimeProject() {
-      var _this3 = this;
+      var _this4 = this;
 
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project', {
         headers: {
           "Authorization": 'Bearer ' + window.localStorage.getItem('token')
         }
       }).then(function (response) {
-        _this3.projects = response.data.projects;
-        _this3.dataProject = response.data;
+        _this4.projects = response.data.projects;
+        _this4.dataProject = response.data;
         console.log(response);
       }).catch(function (error) {
         console.log(error.response.data);
       });
     },
     show: function show(resizable, adaptive, draggable) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.resizable = resizable;
       this.adaptive = adaptive;
@@ -28627,10 +28642,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         "resizable, adaptive, draggable" values is not updated yet.. eh
       */
       this.$nextTick(function () {
-        _this4.$modal.show('create-project-modal');
-        _this4.$modal.show('profile-popup-modal');
-        _this4.$modal.show('report-popup-modal');
-        _this4.$modal.show('getstarted-siswa-popup-modal');
+        _this5.$modal.show('create-project-modal');
+        _this5.$modal.show('profile-popup-modal');
+        _this5.$modal.show('report-popup-modal');
+        _this5.$modal.show('getstarted-siswa-popup-modal');
       });
     },
     popupCreateProjectClickOpen: function popupCreateProjectClickOpen() {
@@ -28916,7 +28931,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.modifyFooter[data-v-2e16222e]{display:inline-flex;padding-top:15px;align-items:center;justify-content:flex-end\n}\n.button--xl[data-v-2e16222e]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}", ""]);
+exports.push([module.i, "\n*[data-v-2e16222e]{text-align:left\n}\n.modifyFooter[data-v-2e16222e]{display:inline-flex;padding-top:15px;align-items:center;justify-content:flex-end\n}\n.button--xl[data-v-2e16222e]{max-width:200px!important;max-height:50px!important;margin-left:15px;font-size:14px\n}", ""]);
 
 // exports
 
@@ -28931,6 +28946,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
+//
+//
+//
 //
 //
 //
@@ -28976,8 +28994,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
+    props: ['realtime'],
     methods: {
-        createProject: function createProject() {
+        createProject: function createProject(realtime) {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/project/create', this.project, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
@@ -29253,46 +29272,8 @@ if (false) {
 }
 
 /***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(106);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("207a0422", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ff4949!important\n}", ""]);
-
-// exports
-
-
-/***/ }),
+/* 105 */,
+/* 106 */,
 /* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29357,98 +29338,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "modal",
-    {
-      attrs: {
-        name: "profile-popup-modal",
-        classes: ["v--modal", "error-modal"],
-        "pivot-y": 0.13,
-        "pivot-x": 0.95,
-        transition: "nice-modal-fade",
-        "min-width": 200,
-        "min-height": 200,
-        adaptive: true,
-        reset: true,
-        width: "20%",
-        height: "auto",
-        clickToClose: true
-      }
-    },
-    [
-      _c("div", { staticClass: "createProjectModal-wrapper" }, [
-        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
-          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
-            _c("div", {
-              staticClass: "profileMenuPopup__Header",
-              style: { backgroundImage: "url(" + this.dataUser.avatar + ")" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "profileMenuPopup__Content" }, [
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: { path: "/profile" } } }, [
-                      _vm._v("Profile")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("li", [_vm._v("Help")]),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "redColor",
-                    on: {
-                      click: function($event) {
-                        _vm.$modal.show("report-popup-modal")
-                      }
-                    }
-                  },
-                  [_vm._v("Report Bugs")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.$modal.show("confirm-modal"),
-                          _vm.$modal.hide("profile-popup-modal")
-                      }
-                    }
-                  },
-                  [_vm._v("Keluar")]
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5cfba31a", module.exports)
-  }
-}
-
-/***/ }),
+/* 108 */,
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38681,7 +38571,7 @@ var render = function() {
                 _vm._l(_vm.projects, function(project) {
                   return _c("project-app", {
                     key: project.id_projects,
-                    attrs: { prog: project },
+                    attrs: { realtime: project, prog: project },
                     on: { realtime: _vm.realtimeProject }
                   })
                 })
@@ -38959,6 +38849,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     });
   },
+  created: function created() {
+    var _this2 = this;
+
+    this.fetchData();
+    window.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        _this2.addMemberClickCancel();
+      }
+    });
+  },
 
   components: {
     'board-storage': __WEBPACK_IMPORTED_MODULE_4__boardStorage___default.a,
@@ -38971,6 +38871,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.addMemberEvent = true;
     },
     addMemberClickDone: function addMemberClickDone() {
+      var _this3 = this;
+
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/project/' + this.$route.params.projectId + '/member/add', {
         id_students: this.id_students
       }, {
@@ -38979,14 +38881,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       }).then(function (response) {
         console.log(response);
+        _this3.fetchData();
       }).catch(function (error) {
         console.log(error.response.data);
       });
-      this.$forceUpdate();
+      this.id_students = '';
       this.addMemberEvent = false;
     },
     addMemberClickCancel: function addMemberClickCancel() {
+      this.id_students = '';
       this.addMemberEvent = false;
+    },
+    fetchData: function fetchData() {
+      var _this4 = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/project/' + this.$route.params.projectId + '/members', {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {
+        console.log(response);
+        _this4.members = response.data.msg;
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
+    },
+    onMemberDelete: function onMemberDelete(id) {
+      var position = this.members.findIndex(function (element) {
+        return element.id == id;
+      });
+      this.members.splice(position, 1);
     }
   }
 });
@@ -39489,7 +39413,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.memberProjectDelete[data-v-bd3c8c62]{text-align:center\n}", ""]);
 
 // exports
 
@@ -39500,6 +39424,13 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39511,8 +39442,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['who']
+  props: ['who'],
+  methods: {
+    onDeleteMember: function onDeleteMember() {
+      this.$emit('memberDeleted', this.who.id);
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete('http://localhost:8000/api/v1/project/' + this.who.id_projects + '/member/' + this.who.id + '/delete', {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token')
+        }
+      }).then(function (response) {}).catch(function (error) {
+        console.log(error.response.data);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -39534,11 +39478,22 @@ var render = function() {
         _c("img", {
           staticClass: "avatar-img",
           attrs: {
-            alt: "",
+            alt: _vm.who.name,
+            title: _vm.who.name,
             src: "http://localhost:8000/avatar/" + _vm.who.avatar
           }
         })
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "memberProjectDelete",
+        attrs: { alt: "remove", title: "remove" },
+        on: { click: _vm.onDeleteMember }
+      },
+      [_c("p", [_vm._v("-")])]
     )
   ])
 }
@@ -39709,7 +39664,12 @@ var render = function() {
                       _vm._l(_vm.members, function(member) {
                         return _c("member-project", {
                           key: _vm.members.id,
-                          attrs: { who: member }
+                          attrs: { who: member },
+                          on: {
+                            memberDeleted: function($event) {
+                              _vm.onMemberDelete($event)
+                            }
+                          }
                         })
                       })
                     ],
@@ -47806,19 +47766,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(245)
+  __webpack_require__(256)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(247)
 /* template */
-var __vue_template__ = __webpack_require__(248)
+var __vue_template__ = __webpack_require__(258)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-6ab7e748"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -47851,46 +47811,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 245 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(246);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("30872fa0", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ab7e748\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profileMenuTeacher.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ab7e748\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profileMenuTeacher.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 246 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n*{margin:0;text-align:left;list-style:none\n}\n.nopadding{padding:0\n}\n.redColor:hover{color:#ff4949!important\n}", ""]);
-
-// exports
-
-
-/***/ }),
+/* 245 */,
+/* 246 */,
 /* 247 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -47956,100 +47878,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 248 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "modal",
-    {
-      attrs: {
-        name: "profile-popup-modal",
-        classes: ["v--modal", "error-modal"],
-        "pivot-y": 0.13,
-        "pivot-x": 0.95,
-        transition: "nice-modal-fade",
-        "min-width": 200,
-        "min-height": 200,
-        adaptive: true,
-        reset: true,
-        width: "20%",
-        height: "auto",
-        clickToClose: true
-      }
-    },
-    [
-      _c("div", { staticClass: "createProjectModal-wrapper" }, [
-        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
-          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
-            _c("div", {
-              staticClass: "profileMenuPopup__Header",
-              style: { backgroundImage: "url(" + this.dataUser.avatar + ")" }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "profileMenuPopup__Content" }, [
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { path: "/teacher/profile" } } },
-                      [_vm._v("Profile")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("li", [_vm._v("Help")]),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "redColor",
-                    on: {
-                      click: function($event) {
-                        _vm.$modal.show("report-popup-modal")
-                      }
-                    }
-                  },
-                  [_vm._v("Report Bugs")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.$modal.show("confirm-modal"),
-                          _vm.$modal.hide("profile-popup-modal")
-                      }
-                    }
-                  },
-                  [_vm._v("Keluar")]
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6ab7e748", module.exports)
-  }
-}
-
-/***/ }),
+/* 248 */,
 /* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48170,6 +47999,278 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-7ed252d2", module.exports)
+  }
+}
+
+/***/ }),
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(257);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0bf75e86", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ab7e748\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profileMenuTeacher.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6ab7e748\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profileMenuTeacher.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-6ab7e748]{margin:0;text-align:left;list-style:none\n}\n.nopadding[data-v-6ab7e748]{padding:0\n}\n.redColor[data-v-6ab7e748]:hover{color:#ff4949!important\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "profile-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.13,
+        "pivot-x": 0.95,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        clickToClose: true
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
+          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
+            _c("div", {
+              staticClass: "profileMenuPopup__Header",
+              style: { backgroundImage: "url(" + this.dataUser.avatar + ")" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "profileMenuPopup__Content" }, [
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: { path: "/teacher/profile" } } },
+                      [_vm._v("Profile")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [_vm._v("Help")]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "redColor",
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("report-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Report Bugs")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("confirm-modal"),
+                          _vm.$modal.hide("profile-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Keluar")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6ab7e748", module.exports)
+  }
+}
+
+/***/ }),
+/* 259 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(260);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("03325016", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5cfba31a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./profilemenuPopup.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-5cfba31a]{margin:0;text-align:left;list-style:none\n}\n.nopadding[data-v-5cfba31a]{padding:0\n}\n.redColor[data-v-5cfba31a]:hover{color:#ff4949!important\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "profile-popup-modal",
+        classes: ["v--modal", "error-modal"],
+        "pivot-y": 0.13,
+        "pivot-x": 0.95,
+        transition: "nice-modal-fade",
+        "min-width": 200,
+        "min-height": 200,
+        adaptive: true,
+        reset: true,
+        width: "20%",
+        height: "auto",
+        clickToClose: true
+      }
+    },
+    [
+      _c("div", { staticClass: "createProjectModal-wrapper" }, [
+        _c("div", { staticClass: "createProjectModal-content nopadding" }, [
+          _c("div", { staticClass: "profileMenuPopupWrapper" }, [
+            _c("div", {
+              staticClass: "profileMenuPopup__Header",
+              style: { backgroundImage: "url(" + this.dataUser.avatar + ")" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "profileMenuPopup__Content" }, [
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c("router-link", { attrs: { to: { path: "/profile" } } }, [
+                      _vm._v("Profile")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", [_vm._v("Help")]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "redColor",
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("report-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Report Bugs")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$modal.show("confirm-modal"),
+                          _vm.$modal.hide("profile-popup-modal")
+                      }
+                    }
+                  },
+                  [_vm._v("Keluar")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5cfba31a", module.exports)
   }
 }
 

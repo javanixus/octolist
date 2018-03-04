@@ -28,7 +28,7 @@
           <div v-if="!addMemberEvent" class="addMember__panel">
             <span class="addMember">
               <img @click="addMemberClick" src="http://localhost:8000/images/member-add.svg" alt="add_member" title="add member">
-                <member-project v-for="member in members" :who="member" :key="members.id"></member-project>
+                <member-project v-for="member in members" :who="member" :key="members.id" @memberDeleted="onMemberDelete($event)"></member-project>
             </span>
           </div>
           </div>
@@ -109,6 +109,14 @@ export default {
       }
     })
   },
+  created(){
+    this.fetchData()
+    window.addEventListener('keyup', e => {
+      if(e.keyCode === 27){
+        this.addMemberClickCancel()   
+      }
+    })
+  },
   components:{
 	  'board-storage': boardStorage,
 	  'board-deck': boardDeck,
@@ -128,15 +136,35 @@ export default {
         }
       }).then((response) =>{
           console.log(response)
+          this.fetchData()
       }).catch((error) =>{
           console.log(error.response.data)
       })
-      this.$forceUpdate()
+      this.id_students = ''
       this.addMemberEvent = false
     },
     addMemberClickCancel(){
+      this.id_students = ''
       this.addMemberEvent = false
     },
+    fetchData(){
+          axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId+'/members',{
+          headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+        }
+    }).then((response) =>{
+      console.log(response)
+      this.members = response.data.msg
+    }).catch((error) =>{
+    console.log(error.response.data)
+    })
+    },
+    onMemberDelete(id){
+      const position = this.members.findIndex((element) =>{
+        return element.id == id
+      })
+      this.members.splice(position, 1);
+    }
   }
 }
 </script>

@@ -48,7 +48,7 @@
           <div class="project__content">
             <div class="project project__teacher">
               <!-- awal item dynamic -->
-                <project-app v-for="project in projects" :prog="project" :key="project.id_projects" @realtime="realtimeProject"></project-app>
+                <project-app v-for="project in projects" :realtime="project" :prog="project" :key="project.id_projects" @realtime="realtimeProject"></project-app>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
   import ProjectComponent from './../components/project/projectApp';
 
   export default {
-    created(){
+    beforeCreate(){
       if (store.state.isLogged == false){
         router.push('/')
       }
@@ -94,7 +94,20 @@
     },
     mounted() {
         setTimeout(() => this.$modal.show('getstarted-siswa-popup-modal'), 2000);
-        this.realtimeProject()
+    },
+    created(){
+      this.realtimeProject()
+      window.addEventListener('keyup', e => {
+        if(e.keyCode === 27){
+          this.$modal.hide('pre-project-modal')
+          this.$modal.hide('pre-project-setup-modal')
+        }
+      })
+      window.addEventListener('keyup', e => {
+        if(e.keyCode === 114){
+          this.$modal.show('pre-project-modal')
+        }
+      })
     },
     data(){
       return {

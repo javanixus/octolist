@@ -141,3 +141,26 @@
         height: 30px;
     }
 }
+
+.memberProject {
+    position: relative;
+    &:hover > .memberProjectDelete {
+        display: block!important;
+    }
+}
+.memberProjectDelete {
+    display: none;
+    border: 2px solid white;
+    height: 15px;
+    width: 15px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    right: -5;
+    top: -5;
+    cursor: pointer;
+    p {
+        margin-top: -4px;
+        color: white;
+    }
+}

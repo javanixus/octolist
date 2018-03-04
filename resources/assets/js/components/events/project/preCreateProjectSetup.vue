@@ -14,6 +14,9 @@
     </modal>
 </template>
 <style scoped>
+    * {
+        text-align: left;
+    }
     .modifyFooter {
         display: inline-flex;
         padding-top: 15px;
@@ -42,15 +45,16 @@ export default {
             }
         }
     },
+    props: ['realtime'],
     methods:{
-        createProject(){
+        createProject(realtime){
             axios.post('http://localhost:8000/api/v1/project/create', this.project , {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                 }
             }).then((response) => {
                 console.log(response)
-                router.go('/board')
+                router.go('/board')                
             }).catch((error) =>{
                 console.log(error.response.data)
             })
