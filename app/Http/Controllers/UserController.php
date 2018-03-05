@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $students = StudentsInfo::all()->sortBy('name');
+        $students = StudentsInfo::get()->sortBy('name');
 
 
         // foreach($students as $student){
@@ -35,7 +35,7 @@ class UserController extends Controller
         //         'href' => '/api/v1/user/'.$student->id_students,
         //         'method' => 'GET',
             // );
-        
+
 
         $response = [
             'students' => $students,
