@@ -34,8 +34,8 @@ class UserController extends Controller
         //     $student->view_students = array(
         //         'href' => '/api/v1/user/'.$student->id_students,
         //         'method' => 'GET',
-        //     );
-        }
+            // );
+        
 
         $response = [
             'students' => $students,
