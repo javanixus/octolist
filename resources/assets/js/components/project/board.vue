@@ -20,10 +20,19 @@
           <div class="navbarExtendProject_member">
           <!-- awal add member dynamic -->
           <div v-if="addMemberEvent" class="addMember__panel">
-            <input @keyup.esc="addMemberClickCancel" @keyup.enter="addMemberClickDone" v-validate="'required'" type="text" placeholder="masukkan id teman..." @focus="$event.target.select()" :class="{'input-nofill': true, 'input--danger': errors.has('addMember') }" class="input-text fontSize-xs" name="addMember" v-model="id_students">
+            <!-- <input @keyup.esc="addMemberClickCancel" @keyup.enter="addMemberClickDone" v-validate="'required'" type="text" placeholder="masukkan id teman..." @focus="$event.target.select()" :class="{'input-nofill': true, 'input--danger': errors.has('addMember') }" class="input-text fontSize-xs" name="addMember" v-model="id_students">
              <span style="font-size: 12px; color: red;" v-if="errors.has('addMember')">
                 isi terlebih dahulu
-              </span>
+              </span> -->
+              <v-select :on-search="getOptions" :options="dataSearch" label="name" @input="catchInput">
+              <template slot="selected-option" slot-scope="option">
+                <div class="selected">
+                  <img class="selected-img" :src="'http://localhost:8000/avatar/'+avatarStudent"/> 
+                  <p style="margin-left: 8px; font-weight: 600;">{{ dataNameStudent }}</p>
+                </div>
+              </template>
+              </v-select>
+              <button @click.prevent="addMemberClickDone">send</button>
           </div>
           <div v-if="!addMemberEvent" class="addMember__panel">
             <span class="addMember">
@@ -52,10 +61,19 @@
   .DashboardNavbarExtendsActive {
     color: #0f55eb!important;
   }
+  .selected-img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .selected {
+    display: -webkit-box!important;
+  }
 </style>
 
 <script>
 import axios from 'axios'
+import vSelect from 'vue-select'
 import store from './../../store/index'
 import router from './../../router'
 import boardDeck from './boardDeck'
@@ -67,10 +85,13 @@ export default {
     data(){
     return {
       currentView: 'board-storage',
-      id_students: '',
       members: [],
       dataUser: [],
+      id_students: '',
       projectInfo: [],
+      dataNameStudent: '',
+      avatarStudent: '',
+      dataSearch: [],
       addMemberEvent: false,
     }
   },
@@ -80,9 +101,7 @@ export default {
         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
       }
     }).then((response) =>{
-      // console.log(response.data.projects)
       this.projectInfo = response.data.projects
-      // console.log(this.projectInfo.project_title)
       axios.get('http://localhost:8000/api/v1/student',{
         headers: {
           "Authorization": `Bearer ${window.localStorage.getItem('token')}`
@@ -94,7 +113,6 @@ export default {
               "Authorization": `Bearer ${window.localStorage.getItem('token')}`
             }
           }).then((response) =>{
-            console.log(response)
             this.members = response.data.msg
           }).catch((error) =>{
             console.log(error.response.data)
@@ -121,9 +139,30 @@ export default {
 	  'board-storage': boardStorage,
 	  'board-deck': boardDeck,
 	  'board-team': boardTeam,
-    'member-project': boardMember
+    'member-project': boardMember,
+    'v-select': vSelect,
   },
   methods:{
+    getOptions(search) {
+      axios.get('http://localhost:8000/api/v1/students', {
+        params: {
+          q: search
+        },
+        headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
+        },
+        }).then(response => {
+            this.dataSearch = response.data.students
+        }).catch((error) =>{
+            console.log(error.response.data)
+        })
+    },
+    catchInput(value){
+      console.log(value.id_students)
+      this.dataNameStudent = value.name
+      this.avatarStudent = value.avatar
+      this.id_students = value.id_students
+    },
     addMemberClick(){
       this.addMemberEvent = true
     },
@@ -134,17 +173,19 @@ export default {
         headers: {
           "Authorization": `Bearer ${window.localStorage.getItem('token')}`
         }
-      }).then((response) =>{
+      }).then((response) => {
           console.log(response)
           this.fetchData()
       }).catch((error) =>{
           console.log(error.response.data)
       })
       this.id_students = ''
+      this.errors.clear();
       this.addMemberEvent = false
     },
     addMemberClickCancel(){
       this.id_students = ''
+      this.errors.clear();
       this.addMemberEvent = false
     },
     fetchData(){
@@ -153,7 +194,7 @@ export default {
           "Authorization": `Bearer ${window.localStorage.getItem('token')}`
         }
     }).then((response) =>{
-      console.log(response)
+      // console.log(response)
       this.members = response.data.msg
     }).catch((error) =>{
     console.log(error.response.data)

@@ -85,7 +85,6 @@
 
 <script>
     import avatarUpload from 'vue-image-crop-upload'
-    // import editor from 'vue2-medium-editor'
     import axios from 'axios'
     import router from './../../router'
 

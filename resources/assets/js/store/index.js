@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 const state = {
   isLogged: !!window.localStorage.getItem('token'),
-  start: false
+  start: false,
+  isLoggedAdmin: !!window.localStorage.getItem('token'),
 };
 
 const mutations = {
@@ -24,6 +25,15 @@ const mutations = {
   LOGOUT_USER(state) {
     state.isLogged = false;
   },
+
+  LOGIN_ADMIN(state) {
+    state.isLoggedAdmin = true;
+  },
+
+  LOGOUT_ADMIN(state) {
+    state.isLoggedAdmin = false;
+  },
+
 };
 
 export default new Vuex.Store({

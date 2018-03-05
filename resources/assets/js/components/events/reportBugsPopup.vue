@@ -17,7 +17,6 @@
 
 </style>
 <script>
-import editor from 'vue2-medium-editor'
 
 export default {
   data(){

@@ -5,7 +5,7 @@
         <h3>Dashboard</h3>
       </div>
       <div class="adminDashboardHeader__Profile">
-        <p>Pampam</p>
+        <p>{{admin.name}}</p>
       </div>
     </div>
     <div class="adminDashboardContent">
@@ -13,7 +13,7 @@
         <div class="adminBox box--small borderRadius-s box-greeting">
           <span>
             <div class="box-greeting__details">
-              <h4>Welcome, Pampam</h4>
+              <h4>Welcome, {{admin.name}}</h4>
               <p>selamat datang kembali</p>
             </div>
           </span>
@@ -22,7 +22,7 @@
           Gate Key
           <p>Click the EYE to get the key, pls dont share the key for security reason</p>
           <label for="key">Access Key</label>
-          <input name="key" type="text" @focus="$event.target.select()" value="0b0x9ca2427750033269899000">
+          <input name="key" type="text" @focus="$event.target.select()" :value="token">
           <p>Get new gate key > </p>
         </div>
       </div>
@@ -66,22 +66,15 @@ import store from './../../store/index';
 import router from './../../router';
 
 export default {
-    data(){
-      return {
-        dataUser: []
-      }
-    },
-    // beforeCreate(){
-    //   axios.get('http://localhost:8000/api/v1/user',{
-    //     headers: {
-    //       "Authorization": `Bearer ${window.localStorage.getItem('token')}`
-    //     }
-    //   }).then((response) => {
-    //     this.dataUser = response.data.user
-    //     console.log(response)
-    //   }).catch((error) => {
-    //       console.log(error.response.data)
-    //   })
-    // }
+  data(){
+    return {
+      token: window.localStorage.getItem('token_admin'),
+      dataStudentsCount: '',
+      dataTeacherCount: ''
+    }
+  },
+  mounted(){
+  },
+  props: ['admin']
 }
 </script>

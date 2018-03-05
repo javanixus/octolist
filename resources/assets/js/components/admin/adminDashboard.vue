@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="adminDashboard__Main">
-        <component :is="currentView"></component>
+        <component :is="currentView" :admin="dataAdmin"></component>
       </div>
   </div>
 </template>
@@ -39,11 +39,20 @@
   export default {
     data(){
       return {
-        currentView: 'admin-main'
+        currentView: 'admin-main',
+        dataAdmin: []
       }
     },
     beforeCreate(){
-      
+      axios.get('http://localhost:8000/api/v1/admin',{
+        headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token_admin')}`
+        }
+      }).then((response) =>{
+        this.dataAdmin = response.data.profile
+      }).catch((error) =>{
+        console.log(error.response.data)
+      })
     },
     components: {
       'admin-main': adminDashboardMain,
