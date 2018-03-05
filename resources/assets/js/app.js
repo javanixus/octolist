@@ -3,9 +3,7 @@ import Vue from 'vue';
 import VueLazyload from 'vue-lazyload';
 import VModal from 'vue-js-modal';
 import VueProgressiveImage from 'vue-progressive-image';
-import vueKanban from 'vue-kanban';
 import VeeValidate from 'vee-validate';
-import vBlur from 'v-blur';
 
 // import page
 import App from './App.vue';
@@ -15,8 +13,6 @@ import '../sass/app.scss';
 // exec
 
 Vue.config.devtools = true;
-Vue.use(vBlur);
-Vue.use(vueKanban);
 Vue.use(VeeValidate, { fieldsBagName: 'formFields' });
 Vue.use(VueProgressiveImage, {
   delay: 3000

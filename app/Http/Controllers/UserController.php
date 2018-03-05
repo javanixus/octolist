@@ -27,14 +27,15 @@ class UserController extends Controller
 
     public function index()
     {
-        $students = StudentsInfo::all()->sortBy('name');
+        $students = StudentsInfo::get();
 
-        foreach($students as $student){
-            $student->view_students = array(
-                'href' => '/api/v1/user/'.$student->id_students,
-                'method' => 'GET',
-            );
-        }
+
+        // foreach($students as $student){
+        //     $student->view_students = array(
+        //         'href' => '/api/v1/user/'.$student->id_students,
+        //         'method' => 'GET',
+            // );
+
 
         $response = [
             'students' => $students,
@@ -278,14 +279,14 @@ class UserController extends Controller
             $students = StudentsInfo::where('name', 'like', "%$que%")->get();
 
         } else {
-            $students = StudentsInfo::all()->sortBy('name');
+            $students = StudentsInfo::get();
         }
-        foreach($students as $student){
-            $student->view_students = array(
-                'href' => '/api/v1/user/'.$student->id_students,
-                'method' => 'GET',
-            );
-        }
+        // foreach($students as $student){
+        //     $student->view_students = array(
+        //         'href' => '/api/v1/user/'.$student->id_students,
+        //         'method' => 'GET',
+        //     );
+        // }
 
         $response = [
             'msg' => 'List of Students',

@@ -24,7 +24,10 @@ class ProjectMemberController extends Controller
 			]);
 				// die($request->id_students);
 				$id_member = StudentsInfo::where('id_students',$request->id_students)->first()->id;
-					if(ProjectMember::where('id_projects',$id)->where('id_students',$request->id_students)->count()==0){
+				// echo ProjectMember::where([['id_projects','=',$id],
+				// 																['id_students','=',$id_member]])
+				// 											->count();
+					if(ProjectMember::where('id_projects',$id)->where('id_students',$id_member)->count()==0){
 
 					$memb = ProjectMember::Create([
 											'id_projects'		=>	$id,
@@ -40,9 +43,14 @@ class ProjectMemberController extends Controller
 							'msg' => 'member doesnt added',
 						];
 					}
+					return response()->json($response,200);
+				}else{
+					$response = [
+						'msg' => 'students already exist',
+					];
+					return response()->json($response,200);
 				}
 
-					return response()->json($response,200);
 				}
 
 		public function show($id){

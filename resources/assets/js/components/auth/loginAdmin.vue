@@ -67,9 +67,9 @@ export default {
             })
             .then((response) => {
             console.log(response)
-            if (response.data.user === 1){
-                window.localStorage.setItem('token', response.data.token);
-                // store.commit('LOGIN_USER');
+            if (response.data.passed == true){
+                window.localStorage.setItem('token_admin', response.data.token);
+                store.commit('LOGIN_ADMIN');
                 router.push('/admin');
             }
             else {
