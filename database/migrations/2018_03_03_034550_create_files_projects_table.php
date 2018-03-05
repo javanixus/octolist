@@ -17,7 +17,7 @@ class CreateFilesProjectsTable extends Migration
             $table->increments('id');
             $table->string('name', 50);
             $table->string('file_name', 50);
-            $table->integer('project_id')->unsigned()->nullable();
+            $table->integer('project_id')->unsigned()->nullable()->unique();
             $table->timestamps();
         });
 

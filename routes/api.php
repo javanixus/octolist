@@ -57,12 +57,16 @@ Route::group(['middleware' => ['api','cors'], 'prefix' => 'v1'], function(){
 				Route::get('/{id}/cards','CardController@show');
 
 				Route::delete('/{id}/card/{card}/delete','CardController@destroy');
-				Route::post('/{id}/card/{card}/member/add','CardMemberController@store');
-				Route::get('/{id}/card/{card}/members','CardMemberController@show');
-				Route::delete('/{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
+				Route::post('{id}/card/{card}/member/add','CardMemberController@store');
+				Route::get('{id}/card/{card}/members','CardMemberController@show');
+				Route::delete('{id}/card/{card}/member/{member}/delete','CardMemberController@destroy');
 
 				// Project File Upload
-				Route::post('upload/{id}', 'FileProjectController@store');
+				Route::post('file/upload/{id}', 'FileProjectController@up');
+				Route::get('file/download/{id}', 'FileProjectController@down');
+				Route::delete('file/delete/{id}', 'FileProjectController@destroy');
+				// Route::delete('delete/{id}', 'FileProjectController@destroy');
+
 
 			});
 			// Route::post('/profile/edit/','TestAuthController@EditProfile');

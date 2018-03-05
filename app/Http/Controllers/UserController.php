@@ -188,7 +188,7 @@ class UserController extends Controller
 		 $user = User::find($id);
 		 $info = StudentsInfo::where('id_students',$id)->get()->first();
 
-		 if($request->hasFile('avatar')){
+		 if($request->hasFile('avatar')){ //
 		 	$file=$request->file('avatar');
 		 	$filename = $users->username . '-' . time() . '.' . $file->getClientOriginalExtension();
 		 	if($file){

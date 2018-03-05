@@ -1,9 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Project;
 use App\FilesProject;
+
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
+use JWTException;
+use JWTAuth;
+use Auth;
 
 class FileProjectController extends Controller
 {
@@ -12,93 +20,77 @@ class FileProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        //
+        $this->middleware('jwt.auth');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function up(Request $request, $id)
     {
-        //
-    }
+        $project = Project::Where('id', $id)->get()->first();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, $id)
-    {
-        $file = FilesProject::Create([
-            'name' => $request->name,
-            'file_name' => $request->name,
-            'project_id' => $id,
-        ]);
+        if ($project) {
+            $file_project = FilesProject::Where('project_id', $id)->get()->first();
+                if($request->hasFile('filefield')){
+                    $file = $request->file('filefield');
+                    $filename = $project->id . '_' . time() . '.' . $file->getClientOriginalExtension();
 
-        if ($file) {
-            $response = [
-                'msg' => 'file berhasil diupload',
-            ];
+                    if ($file_project) {
+                        $exist = Storage::disk('file_project')
+                        ->exists($file_project->file_name);
 
-            return response()->json($response, 200);
+                        if (isset($file_project->file_name) AND $exist) {
+                            Storage::disk('file_project')->delete($file_project->file_name);
+                        }
+                    }
+
+                    if (Storage::disk('file_project')->put($filename, File::get($request->filefield))) {
+                        $file_project = FilesProject::Create([
+                            'name' => $project->project_title,
+                            'file_name' => $filename,
+                            'project_id' => $project->id,
+                        ]);
+
+                        $response = [
+                            'msg' => 'File Berhasil diupload',
+                        ];
+                    }
+                }
         } else {
             $response = [
-                'msg' => 'file gagal didupload',
+                'msg' => 'project tidak ada',
             ];
-
-            return response()->json($response, 200);
         }
 
+        return response()->json($response, 200);
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function down(Request $request, $id)
     {
-        //
+        $file_project = FilesProject::Where('project_id', $id)->firstOrFail();
+        $file = Storage::disk('file_project')->get($file_project->file_name);
+
+        return response()->download('/storage/file_project/namafile');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $file_delete = FilesProject::where('project_id', $id)->get()->first();
+
+        if ($file_delete) {
+            $file_delete->delete();
+            Storage::disk('file_project')->delete($file_delete->file_name);
+            $response = [
+                'msg' => 'File berhasil dihapus',
+            ];
+        } else {
+             $response = [
+                'msg' => 'Tidak ada File',
+            ];
+        }
+
+        return response()->json($response);
     }
 }

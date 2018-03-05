@@ -1,5 +1,5 @@
 <?php
-Route::group(['middleware'=> ['web', 'cors']], function(){
+Route::group(['middleware'=> ['web','cors']], function(){
     Route::get('/', function () {
         return view('welcome');
     });
@@ -28,6 +28,7 @@ Route::group(['middleware'=> ['web', 'cors']], function(){
         return view('welcome');
     });
 
+     Route::get('project/file/download/{id}', 'FileProjectController@down');
 	 Route::post('/resetPass','UserController@resetPassReq');
 	 Route::get('/resetPass',function(){
 		 return view('password');
