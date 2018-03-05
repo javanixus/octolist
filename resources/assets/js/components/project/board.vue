@@ -18,12 +18,7 @@
         <div class="navbarExtendsProjectCore">
           <h4>{{projectInfo.project_title}}</h4>
           <div class="navbarExtendProject_member">
-          <!-- awal add member dynamic -->
           <div v-if="addMemberEvent" class="addMember__panel">
-            <!-- <input @keyup.esc="addMemberClickCancel" @keyup.enter="addMemberClickDone" v-validate="'required'" type="text" placeholder="masukkan id teman..." @focus="$event.target.select()" :class="{'input-nofill': true, 'input--danger': errors.has('addMember') }" class="input-text fontSize-xs" name="addMember" v-model="id_students">
-             <span style="font-size: 12px; color: red;" v-if="errors.has('addMember')">
-                isi terlebih dahulu
-              </span> -->
               <v-select :on-search="getOptions" :options="dataSearch" label="name" @input="catchInput">
               <template slot="selected-option" slot-scope="option">
                 <div class="selected">
@@ -32,7 +27,7 @@
                 </div>
               </template>
               </v-select>
-              <button @click.prevent="addMemberClickDone">send</button>
+              <button :disabled="!isMemberFill" class="button button-landing button--m borderRadius-s button--melting-blue" @click.prevent="addMemberClickDone">send</button>
           </div>
           <div v-if="!addMemberEvent" class="addMember__panel">
             <span class="addMember">
@@ -68,6 +63,10 @@
   }
   .selected {
     display: -webkit-box!important;
+  }
+  input.form-control{
+    height: auto;
+    padding: .5em;
   }
 </style>
 
@@ -141,6 +140,11 @@ export default {
 	  'board-team': boardTeam,
     'member-project': boardMember,
     'v-select': vSelect,
+  },
+  computed: {
+      isMemberFill() {
+        return this.id_students
+      },
   },
   methods:{
     getOptions(search) {
