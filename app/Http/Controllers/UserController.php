@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $students = StudentsInfo::get()->sortBy('name');
+        $students = StudentsInfo::get();
 
 
         // foreach($students as $student){
