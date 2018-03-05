@@ -29,11 +29,12 @@ class UserController extends Controller
     {
         $students = StudentsInfo::all()->sortBy('name');
 
-        foreach($students as $student){
-            $student->view_students = array(
-                'href' => '/api/v1/user/'.$student->id_students,
-                'method' => 'GET',
-            );
+
+        // foreach($students as $student){
+        //     $student->view_students = array(
+        //         'href' => '/api/v1/user/'.$student->id_students,
+        //         'method' => 'GET',
+        //     );
         }
 
         $response = [
