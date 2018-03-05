@@ -22,7 +22,7 @@ class ProjectMemberController extends Controller
 			$this->validate($request,[
 				'id_students'				=> 'required',
 			]);
-
+				// die($request->id_students);
 				$id_member = StudentsInfo::where('id_students',$request->id_students)->first()->id;
 				// echo ProjectMember::where([['id_projects','=',$id],
 				// 																['id_students','=',$id_member]])

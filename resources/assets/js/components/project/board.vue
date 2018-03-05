@@ -8,7 +8,7 @@
             <a href="javascript:void(0)"></a>
             <div class="borderProfile">
               <div id="avatar-dp-id" class="avatar avatar--s avatar-dp" @click.prevent="$modal.show('profile-popup-modal')">
-                <img class="avatar-img" alt="" />
+                <img class="avatar-img" alt="" :src="dataUser.avatar"/>
               </div>
             </div>
           </div>
@@ -16,13 +16,21 @@
       </div>
       <div class="navbarExtendsProject">
         <div class="navbarExtendsProjectCore">
-          <h4>Octolist Alpha</h4>
+          <h4>{{projectInfo.project_title}}</h4>
           <div class="navbarExtendProject_member">
           <!-- awal add member dynamic -->
-          <span class="addMember">
-            <img src="http://localhost:8000/images/member-add.svg" alt="add_member" title="add member">
-          </span>
-          <member-project v-for="member in members" :who="member" :key="project.id_projects"></member-project>
+          <div v-if="addMemberEvent" class="addMember__panel">
+            <input @keyup.esc="addMemberClickCancel" @keyup.enter="addMemberClickDone" v-validate="'required'" type="text" placeholder="masukkan id teman..." @focus="$event.target.select()" :class="{'input-nofill': true, 'input--danger': errors.has('addMember') }" class="input-text fontSize-xs" name="addMember" v-model="id_students">
+             <span style="font-size: 12px; color: red;" v-if="errors.has('addMember')">
+                isi terlebih dahulu
+              </span>
+          </div>
+          <div v-if="!addMemberEvent" class="addMember__panel">
+            <span class="addMember">
+              <img @click="addMemberClick" src="http://localhost:8000/images/member-add.svg" alt="add_member" title="add member">
+                <member-project v-for="member in members" :who="member" :key="members.id" @memberDeleted="onMemberDelete($event)"></member-project>
+            </span>
+          </div>
           </div>
         </div>
       </div>
@@ -59,21 +67,53 @@ export default {
     data(){
     return {
       currentView: 'board-storage',
+      id_students: '',
+      members: [],
       dataUser: [],
-      projectInfo: []
+      projectInfo: [],
+      addMemberEvent: false,
     }
   },
   beforeCreate(){
-    axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId +'/cards',{
+    axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId,{
       headers: {
         "Authorization": `Bearer ${window.localStorage.getItem('token')}`
       }
     }).then((response) =>{
-      console.log(response)
+      // console.log(response.data.projects)
+      this.projectInfo = response.data.projects
+      // console.log(this.projectInfo.project_title)
+      axios.get('http://localhost:8000/api/v1/student',{
+        headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+        }
+      }).then((response) =>{
+          this.dataUser = response.data.profile
+          axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId+'/members',{
+            headers: {
+              "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+            }
+          }).then((response) =>{
+            console.log(response)
+            this.members = response.data.msg
+          }).catch((error) =>{
+            console.log(error.response.data)
+          })
+      }).catch((error) =>{
+          console.log(error.response.data)
+      })
     }).catch((error) =>{
       console.log(error.response.data)
-      if(error.response.status == 500){
+      if(error.response.status == 500,400,404){
         router.push('/404')
+      }
+    })
+  },
+  created(){
+    this.fetchData()
+    window.addEventListener('keyup', e => {
+      if(e.keyCode === 27){
+        this.addMemberClickCancel()   
       }
     })
   },
@@ -82,6 +122,49 @@ export default {
 	  'board-deck': boardDeck,
 	  'board-team': boardTeam,
     'member-project': boardMember
+  },
+  methods:{
+    addMemberClick(){
+      this.addMemberEvent = true
+    },
+    addMemberClickDone(){
+      axios.post('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId +'/member/add',{
+        id_students: this.id_students
+      },{
+        headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+        }
+      }).then((response) =>{
+          console.log(response)
+          this.fetchData()
+      }).catch((error) =>{
+          console.log(error.response.data)
+      })
+      this.id_students = ''
+      this.addMemberEvent = false
+    },
+    addMemberClickCancel(){
+      this.id_students = ''
+      this.addMemberEvent = false
+    },
+    fetchData(){
+          axios.get('http://localhost:8000/api/v1/project/'+ this.$route.params.projectId+'/members',{
+          headers: {
+          "Authorization": `Bearer ${window.localStorage.getItem('token')}`
+        }
+    }).then((response) =>{
+      console.log(response)
+      this.members = response.data.msg
+    }).catch((error) =>{
+    console.log(error.response.data)
+    })
+    },
+    onMemberDelete(id){
+      const position = this.members.findIndex((element) =>{
+        return element.id == id
+      })
+      this.members.splice(position, 1);
+    }
   }
 }
 </script>

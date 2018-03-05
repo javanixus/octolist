@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\FilesProject;
 
-class FileController extends Controller
+class FileProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,10 +33,28 @@ class FileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id, Request $request)
+    public function store(Request $request, $id)
     {
-        //
-        die('hard');
+        $file = FilesProject::Create([
+            'name' => $request->name,
+            'file_name' => $request->name,
+            'project_id' => $id,
+        ]);
+
+        if ($file) {
+            $response = [
+                'msg' => 'file berhasil diupload',
+            ];
+
+            return response()->json($response, 200);
+        } else {
+            $response = [
+                'msg' => 'file gagal didupload',
+            ];
+
+            return response()->json($response, 200);
+        }
+
     }
 
     /**

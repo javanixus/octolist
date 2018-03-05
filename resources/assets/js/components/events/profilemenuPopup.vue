@@ -18,7 +18,7 @@
         </div>
     </modal>
 </template>
-<style>
+<style scoped>
     * {
         margin: 0;
         text-align: left;
