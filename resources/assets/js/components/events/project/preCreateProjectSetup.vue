@@ -33,7 +33,6 @@
 </style>
 <script>
 import axios from 'axios';
-import store from './../../../store/index';
 import router from './../../../router';
 
 export default {
@@ -45,15 +44,13 @@ export default {
             }
         }
     },
-    props: ['realtime'],
     methods:{
-        createProject(realtime){
+        createProject(){
             axios.post('http://localhost:8000/api/v1/project/create', this.project , {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`
                 }
             }).then((response) => {
-                console.log(response)
                 router.go('/board')                
             }).catch((error) =>{
                 console.log(error.response.data)

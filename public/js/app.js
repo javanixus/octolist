@@ -27672,34 +27672,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      resizable: false,
-      adaptive: false,
-      draggable: false,
-      canBeShown: false
-    };
-  },
+    methods: {
+        createProject: function createProject() {
+            var _this = this;
 
-  methods: {
-    show: function show(resizable, adaptive, draggable) {
-      this.resizable = resizable;
-      this.adaptive = adaptive;
-      this.draggable = draggable;
-      /*
-        $nextTick is required because the data model with new
-        "resizable, adaptive, draggable" values is not updated yet.. eh
-      */
-      this.$nextTick(function () {});
+            this.$nextTick(function () {
+                _this.$modal.hide('pre-project-modal');
+                _this.$modal.show('pre-project-setup-modal');
+            });
+        }
     },
-    createProject: function createProject() {
-      this.$modal.hide('pre-project-modal');
-      this.$modal.show('pre-project-setup-modal');
+    components: {
+        'precreate-project-setup': __WEBPACK_IMPORTED_MODULE_0__preCreateProjectSetup___default.a
     }
-  },
-  components: {
-    'precreate-project-setup': __WEBPACK_IMPORTED_MODULE_0__preCreateProjectSetup___default.a
-  }
 });
 
 /***/ }),
@@ -27801,8 +27786,7 @@ exports.push([module.i, "\n*[data-v-2e16222e]{text-align:left\n}\n.modifyFooter[
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_index__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(3);
 //
 //
 //
@@ -27836,7 +27820,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
 
 
 
@@ -27851,16 +27834,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    props: ['realtime'],
     methods: {
-        createProject: function createProject(realtime) {
+        createProject: function createProject() {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('http://localhost:8000/api/v1/project/create', this.project, {
                 headers: {
                     "Authorization": 'Bearer ' + window.localStorage.getItem('token')
                 }
             }).then(function (response) {
-                console.log(response);
-                __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go('/board');
+                __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].go('/board');
             }).catch(function (error) {
                 console.log(error.response.data);
             });
@@ -28007,7 +27988,7 @@ var render = function() {
         {
           attrs: {
             name: "pre-project-modal",
-            classes: ["v--modal", "error-modal"],
+            classes: ["v--modal"],
             "pivot-y": 0.5,
             transition: "nice-modal-fade",
             "min-width": 700,
@@ -30951,7 +30932,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     beforeCreate: function beforeCreate() {
         var _this = this;
 
-        // end decrypt //
         __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://localhost:8000/api/v1/student', {
             headers: {
                 "Authorization": 'Bearer ' + window.localStorage.getItem('token')

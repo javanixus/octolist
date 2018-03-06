@@ -1,7 +1,7 @@
 <template>
     <div id="precreate">
     <precreate-project-setup /> 
-    <modal name="pre-project-modal" :classes="['v--modal', 'error-modal']" :pivot-y="0.5" transition="nice-modal-fade" :min-width="700" :min-height="200" :adaptive="true" :scrollable="true" :reset="true" height="auto" :clickToClose="true"> 
+    <modal name="pre-project-modal" :classes="['v--modal']" :pivot-y="0.5" transition="nice-modal-fade" :min-width="700" :min-height="200" :adaptive="true" :scrollable="true" :reset="true" height="auto" :clickToClose="true"> 
       <div class="preProject__Container">
           <div class="preProjectTitle">
               <h4>Pilih tipe project</h4>
@@ -49,30 +49,12 @@
 import preCreateProjectSetup from './preCreateProjectSetup';
 
 export default {
-  data(){
-      return {
-        resizable: false,
-        adaptive: false,
-        draggable: false,
-        canBeShown: false,
-      }
-  },
   methods: {
-        show(resizable, adaptive, draggable) {
-        this.resizable = resizable
-        this.adaptive = adaptive
-        this.draggable = draggable
-        /*
-          $nextTick is required because the data model with new
-          "resizable, adaptive, draggable" values is not updated yet.. eh
-        */
-        this.$nextTick(() => {
-        })
-      },
       createProject(){
-        this.$modal.hide('pre-project-modal');
-        this.$modal.show('pre-project-setup-modal');
-        
+        this.$nextTick(() => {
+            this.$modal.hide('pre-project-modal');
+            this.$modal.show('pre-project-setup-modal');
+        })        
       }
   },
   components: {

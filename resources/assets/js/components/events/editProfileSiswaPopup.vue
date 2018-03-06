@@ -90,7 +90,6 @@
 
     export default {
         beforeCreate(){
-            // end decrypt //
             axios.get('http://localhost:8000/api/v1/student', {
                 headers: {
                     "Authorization": `Bearer ${window.localStorage.getItem('token')}`,

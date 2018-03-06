@@ -15,7 +15,7 @@
       <div class="content-red">
         <div class="content-desc">
             <div class="content-people">
-                <img src="images/kecil1.png" alt="" />
+                              <img src="images/kecil1.png" alt="" />
                     <img src="images/kecil6.jpg" alt="" />
                 <img src="images/kecil5.jpg" alt="" />
             </div>
