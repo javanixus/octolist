@@ -33,14 +33,14 @@
               <p>Teachers</p>
               <div class="box-details__info">
                 <p>Totals:</p>
-                <h3>10</h3>
+                <h3>{{teachers.teachers_count}}</h3>
               </div>
             </div>
             <div class="box-details" style="background-image:url('/images/students.png')!important">
               <p>Students</p>
               <div class="box-details__info">
                 <p>Totals:</p>
-                <h3>210</h3>
+                <h3>{{student.students_count}}</h3>
               </div>
             </div>
           </span>
@@ -75,6 +75,6 @@ export default {
   },
   mounted(){
   },
-  props: ['admin']
+  props: ['admin','student','teachers']
 }
 </script>

@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="adminDashboard__Main">
-        <component :is="currentView" :admin="dataAdmin"></component>
+        <component :is="currentView" :admin="dataAdmin" :teachers="dataTeachers" :student="dataStudents"></component>
       </div>
   </div>
 </template>
@@ -40,7 +40,9 @@
     data(){
       return {
         currentView: 'admin-main',
-        dataAdmin: []
+        dataAdmin: [],
+        dataStudents: [],
+        dataTeachers: []
       }
     },
     beforeCreate(){
@@ -50,6 +52,28 @@
         }
       }).then((response) =>{
         this.dataAdmin = response.data.profile
+      }).catch((error) =>{
+        console.log(error.response.data)
+      })
+    },
+    created(){
+      axios.get('http://localhost:8000/api/v1/students',{
+        headers:{
+          "Authorization": `Bearer ${window.localStorage.getItem('token_admin')}`
+        }
+      }).then((response) =>{
+        console.log(response)
+        this.dataStudents = response.data
+        axios.get('http://localhost:8000/api/v1/teachers',{
+          headers:{
+            "Authorization": `Bearer ${window.localStorage.getItem('token_admin')}`
+          }
+        }).then((response) =>{
+            console.log(response)
+            this.dataTeachers = response.data
+        }).catch((error)=>{
+            console.log(error.response.data)
+        })
       }).catch((error) =>{
         console.log(error.response.data)
       })

@@ -36577,7 +36577,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       currentView: 'admin-main',
-      dataAdmin: []
+      dataAdmin: [],
+      dataStudents: [],
+      dataTeachers: []
     };
   },
   beforeCreate: function beforeCreate() {
@@ -36589,6 +36591,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }).then(function (response) {
       _this.dataAdmin = response.data.profile;
+    }).catch(function (error) {
+      console.log(error.response.data);
+    });
+  },
+  created: function created() {
+    var _this2 = this;
+
+    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/students', {
+      headers: {
+        "Authorization": 'Bearer ' + window.localStorage.getItem('token_admin')
+      }
+    }).then(function (response) {
+      console.log(response);
+      _this2.dataStudents = response.data;
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('http://localhost:8000/api/v1/teachers', {
+        headers: {
+          "Authorization": 'Bearer ' + window.localStorage.getItem('token_admin')
+        }
+      }).then(function (response) {
+        console.log(response);
+        _this2.dataTeachers = response.data;
+      }).catch(function (error) {
+        console.log(error.response.data);
+      });
     }).catch(function (error) {
       console.log(error.response.data);
     });
@@ -36779,7 +36805,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted: function mounted() {},
 
-  props: ['admin']
+  props: ['admin', 'student', 'teachers']
 });
 
 /***/ }),
@@ -36843,9 +36869,46 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "adminDashboardContent__MansoryBig" }, [
+        _c(
+          "div",
+          { staticClass: "adminBox box--big borderRadius-s box-big1" },
+          [
+            _c("span", [
+              _c("div", { staticClass: "box-details" }, [
+                _c("p", [_vm._v("Teachers")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "box-details__info" }, [
+                  _c("p", [_vm._v("Totals:")]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v(_vm._s(_vm.teachers.teachers_count))])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "box-details",
+                  staticStyle: {
+                    "background-image": "url('/images/students.png')!important"
+                  }
+                },
+                [
+                  _c("p", [_vm._v("Students")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "box-details__info" }, [
+                    _c("p", [_vm._v("Totals:")]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v(_vm._s(_vm.student.students_count))])
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(1)
     ])
   ])
 }
@@ -36856,45 +36919,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "adminDashboardHeader__Title" }, [
       _c("h3", [_vm._v("Dashboard")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "adminDashboardContent__MansoryBig" }, [
-      _c("div", { staticClass: "adminBox box--big borderRadius-s box-big1" }, [
-        _c("span", [
-          _c("div", { staticClass: "box-details" }, [
-            _c("p", [_vm._v("Teachers")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "box-details__info" }, [
-              _c("p", [_vm._v("Totals:")]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("10")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "box-details",
-              staticStyle: {
-                "background-image": "url('/images/students.png')!important"
-              }
-            },
-            [
-              _c("p", [_vm._v("Students")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "box-details__info" }, [
-                _c("p", [_vm._v("Totals:")]),
-                _vm._v(" "),
-                _c("h3", [_vm._v("210")])
-              ])
-            ]
-          )
-        ])
-      ])
     ])
   },
   function() {
@@ -37038,8 +37062,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['admin', 'students']
+});
 
 /***/ }),
 /* 201 */
@@ -37049,21 +37091,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "adminDashboardTableStudent" }, [
+    _c("div", { staticClass: "adminDashboardHeader" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "adminDashboardHeader__Profile" }, [
+        _c("p", [_vm._v(_vm._s(_vm.admin.name))])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "adminDashboardTableStudent" }, [
-      _c("div", { staticClass: "adminDashboardHeader" }, [
-        _c("div", { staticClass: "adminDashboardHeader__Title" }, [
-          _c("h3", [_vm._v("Students")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "adminDashboardHeader__Profile" }, [
-          _c("p", [_vm._v("Pampam")])
+    return _c("div", { staticClass: "adminDashboardHeader__Title" }, [
+      _c("h3", [_vm._v("Students")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "adminDashboardContent" }, [
+      _c("div", { staticClass: "studentTable" }, [
+        _c("div", { staticClass: "studentTableSort" }, [
+          _c("ul", [
+            _c("li", [_vm._v("id")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("name")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("username")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("email")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("gender")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("phone")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("nis")])
+          ])
         ])
       ])
     ])
@@ -37398,7 +37468,11 @@ var render = function() {
       [
         _c(_vm.currentView, {
           tag: "component",
-          attrs: { admin: _vm.dataAdmin }
+          attrs: {
+            admin: _vm.dataAdmin,
+            teachers: _vm.dataTeachers,
+            student: _vm.dataStudents
+          }
         })
       ],
       1

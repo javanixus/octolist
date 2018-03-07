@@ -39,7 +39,7 @@ class TeacherController extends Controller
         $response = [
             'msg' => 'List of Teachers',
             'teachers' => $teachers,
-            'students_count' => $teachers->count(),
+            'teachers_count' => $teachers->count(),
         ];
 
         return response()->json($response, 200);
