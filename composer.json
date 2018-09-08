@@ -16,7 +16,6 @@
         "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.1",
         "filp/whoops": "~2.0",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0"
