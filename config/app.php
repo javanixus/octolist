@@ -230,7 +230,6 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
